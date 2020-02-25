@@ -11,49 +11,6 @@
     }
   ],
   "paths": {
-    "/People/{id}": {
-      "get": {
-        "tags": [
-          "People"
-        ],
-        "summary": "Gets a single person.",
-        "description": "Gets a single person.",
-        "operationId": "get-people-id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Format - int32. The requested person identifier.",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The person was successfully retrieved.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Person"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The person does not exist.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/Orders/{id}": {
       "get": {
         "tags": [
@@ -96,6 +53,49 @@
           }
         }
       }
+    },
+    "/People/{id}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Gets a single person.",
+        "description": "Gets a single person.",
+        "operationId": "get-people-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested person identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The person was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The person does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -106,19 +106,19 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Gets or sets the unique identifier for the order.",
-            "format": "int32"
+          "customer": {
+            "type": "string",
+            "description": "Gets or sets the name of the ordering customer."
           },
           "createdDate": {
             "type": "string",
             "description": "Gets or sets the date and time when the order was created.",
             "format": "date-time"
           },
-          "customer": {
-            "type": "string",
-            "description": "Gets or sets the name of the ordering customer."
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for the order.",
+            "format": "int32"
           }
         },
         "additionalProperties": false,
@@ -161,11 +161,6 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Gets or sets the unique identifier for a person.",
-            "format": "int32"
-          },
           "firstName": {
             "maxLength": 25,
             "minLength": 0,
@@ -177,6 +172,11 @@
             "minLength": 0,
             "type": "string",
             "description": "Gets or sets the last name of a person."
+          },
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for a person.",
+            "format": "int32"
           }
         },
         "additionalProperties": false,

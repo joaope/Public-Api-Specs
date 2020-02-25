@@ -11,102 +11,6 @@
     }
   ],
   "paths": {
-    "/Orders/{id}": {
-      "get": {
-        "tags": [
-          "Orders"
-        ],
-        "summary": "Gets a single order.",
-        "description": "Gets a single order.",
-        "operationId": "get-orders-id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Format - int32. The requested order identifier.",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The order was successfully retrieved.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The order does not exist.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/People/{id}": {
-      "get": {
-        "tags": [
-          "People"
-        ],
-        "summary": "Gets a single person.",
-        "description": "Gets a single person.",
-        "operationId": "get-people-id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Format - int32. The requested person identifier.",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The person was successfully retrieved.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Person"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "The person does not exist.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/Orders": {
       "post": {
         "tags": [
@@ -179,6 +83,59 @@
         }
       }
     },
+    "/Orders/{id}": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Gets a single order.",
+        "description": "Gets a single order.",
+        "operationId": "get-orders-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested order identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The order was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The order does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/People": {
       "get": {
         "tags": [
@@ -200,6 +157,49 @@
           }
         }
       }
+    },
+    "/People/{id}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Gets a single person.",
+        "description": "Gets a single person.",
+        "operationId": "get-people-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested person identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The person was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The person does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -210,10 +210,9 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Gets or sets the unique identifier for the order.",
-            "format": "int32"
+          "customer": {
+            "type": "string",
+            "description": "Gets or sets the name of the ordering customer."
           },
           "createdDate": {
             "type": "string",
@@ -225,9 +224,10 @@
             "description": "Gets or sets the date and time when the order becomes effective.",
             "format": "date-time"
           },
-          "customer": {
-            "type": "string",
-            "description": "Gets or sets the name of the ordering customer."
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for the order.",
+            "format": "int32"
           }
         },
         "additionalProperties": false,
@@ -270,11 +270,6 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Gets or sets the unique identifier for a person.",
-            "format": "int32"
-          },
           "firstName": {
             "maxLength": 25,
             "minLength": 0,
@@ -286,6 +281,11 @@
             "minLength": 0,
             "type": "string",
             "description": "Gets or sets the last name of a person."
+          },
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for a person.",
+            "format": "int32"
           },
           "email": {
             "type": "string",
