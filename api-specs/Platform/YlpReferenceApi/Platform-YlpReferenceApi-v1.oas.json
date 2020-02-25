@@ -1,4 +1,5 @@
 {
+  "openapi": "3.0.1",
   "info": {
     "title": "Reference",
     "description": "TODO",
@@ -9,16 +10,2029 @@
       "url": "https://api.appyway.com/reference/v1"
     }
   ],
-  "security": [
-    {
-      "apiKey": []
+  "paths": {
+    "/all/list": {
+      "get": {
+        "tags": [
+          "All"
+        ],
+        "summary": "List",
+        "description": "Gets all reference data",
+        "operationId": "get-all-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/All"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/All"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/All"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
     },
-    {
-      "oAuth2": []
+    "/specialRestriction/list": {
+      "get": {
+        "tags": [
+          "SpecialRestrictions"
+        ],
+        "summary": "List",
+        "description": "Gets all special restrictions",
+        "operationId": "get-specialrestriction-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpecialRestrictionListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpecialRestrictionListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpecialRestrictionListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/authorityType/list": {
+      "get": {
+        "tags": [
+          "AuthorityType"
+        ],
+        "summary": "List",
+        "description": "Gets all authority types",
+        "operationId": "get-authoritytype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/activityType/list": {
+      "get": {
+        "tags": [
+          "ActivityType"
+        ],
+        "summary": "List",
+        "description": "Gets all activity types",
+        "operationId": "get-activitytype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivityTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/paymentMethod/list": {
+      "get": {
+        "tags": [
+          "PaymentMethod"
+        ],
+        "summary": "List",
+        "description": "Gets all payment methods",
+        "operationId": "get-paymentmethod-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMethodListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMethodListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentMethodListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/noteVisibilityType/list": {
+      "get": {
+        "tags": [
+          "NoteVisibilityType"
+        ],
+        "summary": "List",
+        "description": "Gets all note visibility types",
+        "operationId": "get-notevisibilitytype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/zoneType/list": {
+      "get": {
+        "tags": [
+          "ZoneType"
+        ],
+        "summary": "List",
+        "description": "Gets all zone types",
+        "operationId": "get-zonetype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/facilityType/list": {
+      "get": {
+        "tags": [
+          "FacilityType"
+        ],
+        "summary": "List",
+        "description": "Gets all facility types",
+        "operationId": "get-facilitytype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacilityTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacilityTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FacilityTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/permitType/list": {
+      "get": {
+        "tags": [
+          "PermitType"
+        ],
+        "summary": "List",
+        "description": "Gets all permit types",
+        "operationId": "get-permittype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermitTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermitTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermitTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/exemptionTimeType/list": {
+      "get": {
+        "tags": [
+          "ExemptionTimeType"
+        ],
+        "summary": "List",
+        "description": "Gets all exemption time types",
+        "operationId": "get-exemptiontimetype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/onStreetParkingType/list": {
+      "get": {
+        "tags": [
+          "OnStreetParkingType"
+        ],
+        "summary": "List",
+        "description": "Gets all on street parking types",
+        "operationId": "get-onstreetparkingtype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/fuelType/list": {
+      "get": {
+        "tags": [
+          "FuelType"
+        ],
+        "summary": "List",
+        "description": "Gets all fuel types",
+        "operationId": "get-fueltype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuelTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuelTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuelTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/entitlementType/list": {
+      "get": {
+        "tags": [
+          "EntitlementType"
+        ],
+        "summary": "List",
+        "description": "Gets all entitlement types",
+        "operationId": "get-entitlementtype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/baseMap/list": {
+      "get": {
+        "tags": [
+          "BaseMap"
+        ],
+        "summary": "List",
+        "description": "Gets all base maps",
+        "operationId": "get-basemap-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseMapListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseMapListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseMapListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/vehicleType/list": {
+      "get": {
+        "tags": [
+          "VehicleType"
+        ],
+        "summary": "List",
+        "description": "Gets all vehicle types",
+        "operationId": "get-vehicletype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/exceptionType/list": {
+      "get": {
+        "tags": [
+          "ExceptionType"
+        ],
+        "summary": "List",
+        "description": "Gets all exception types",
+        "operationId": "get-exceptiontype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExceptionTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/restrictionType/list": {
+      "get": {
+        "tags": [
+          "RestrictionType"
+        ],
+        "summary": "List",
+        "description": "Gets all restriction types",
+        "operationId": "get-restrictiontype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestrictionTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestrictionTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestrictionTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/exemptionType/list": {
+      "get": {
+        "tags": [
+          "ExemptionType"
+        ],
+        "summary": "List",
+        "description": "Gets all exemption types",
+        "operationId": "get-exemptiontype-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExemptionTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExemptionTypeListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExemptionTypeListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/country/list": {
+      "get": {
+        "tags": [
+          "Country"
+        ],
+        "summary": "List",
+        "description": "Gets all countries",
+        "operationId": "get-country-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/region/list": {
+      "get": {
+        "tags": [
+          "Region"
+        ],
+        "summary": "List",
+        "description": "Gets all regions",
+        "operationId": "get-region-list",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionListGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionListGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/monitor": {
+      "get": {
+        "tags": [
+          "Monitor"
+        ],
+        "summary": "/monitor - GET",
+        "operationId": "get-monitor",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
     }
-  ],
-  "openapi": "3.0.1",
+  },
   "components": {
+    "schemas": {
+      "ActivityType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthorityType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "CanHaveRestrictions": {
+            "type": "boolean"
+          },
+          "CanHaveShape": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseMap": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "AvailableInCountries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SpecialDay": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "IsHoliday": {
+            "type": "boolean"
+          },
+          "Dates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Country": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "SpecialDays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpecialDay"
+            },
+            "nullable": true
+          },
+          "Bounds": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              }
+            },
+            "nullable": true
+          },
+          "DefaultBaseMapId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "EntitlementTypes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "RestrictionTypes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntitlementType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "Code": {
+            "type": "string",
+            "nullable": true
+          },
+          "RestrictionTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "ApplicableExemptionTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "HasTariff": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExceptionType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExemptionTimeType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExemptionType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FacilityType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FuelType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NoteVisibilityType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OnStreetParkingType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentMethod": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PermitType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Date": {
+            "type": "string"
+          },
+          "Start": {
+            "type": "string",
+            "nullable": true
+          },
+          "End": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Venue": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "EventsMustSupplyHours": {
+            "type": "boolean"
+          },
+          "Events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Region": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "CountryId": {
+            "type": "string",
+            "nullable": true
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Venues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Venue"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RestrictionType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "Code": {
+            "type": "string",
+            "nullable": true
+          },
+          "CanHaveTariff": {
+            "type": "boolean"
+          },
+          "DefaultWidth": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SpecialRestriction": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VehicleType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZoneType": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "CanHaveRestrictions": {
+            "type": "boolean"
+          },
+          "CanHaveShape": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "All": {
+        "type": "object",
+        "properties": {
+          "ActivityTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityType"
+            },
+            "nullable": true
+          },
+          "AuthorityTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuthorityType"
+            },
+            "nullable": true
+          },
+          "BaseMaps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseMap"
+            },
+            "nullable": true
+          },
+          "Countries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Country"
+            },
+            "nullable": true
+          },
+          "EntitlementTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementType"
+            },
+            "nullable": true
+          },
+          "ExceptionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExceptionType"
+            },
+            "nullable": true
+          },
+          "ExemptionTimeTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExemptionTimeType"
+            },
+            "nullable": true
+          },
+          "ExemptionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExemptionType"
+            },
+            "nullable": true
+          },
+          "FacilityTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FacilityType"
+            },
+            "nullable": true
+          },
+          "FuelTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FuelType"
+            },
+            "nullable": true
+          },
+          "NoteVisibilityTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NoteVisibilityType"
+            },
+            "nullable": true
+          },
+          "OnStreetParkingTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnStreetParkingType"
+            },
+            "nullable": true
+          },
+          "PaymentMethods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentMethod"
+            },
+            "nullable": true
+          },
+          "PermitTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PermitType"
+            },
+            "nullable": true
+          },
+          "Regions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Region"
+            },
+            "nullable": true
+          },
+          "RestrictionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RestrictionType"
+            },
+            "nullable": true
+          },
+          "SpecialRestrictions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpecialRestriction"
+            },
+            "nullable": true
+          },
+          "VehicleTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VehicleType"
+            },
+            "nullable": true
+          },
+          "ZoneTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZoneType"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ActivityTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ActivityType"
+        }
+      },
+      "ActivityTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ActivityType"
+        }
+      },
+      "ActivityTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ActivityType"
+        }
+      },
+      "AuthorityTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AuthorityType"
+        }
+      },
+      "AuthorityTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AuthorityType"
+        }
+      },
+      "AuthorityTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AuthorityType"
+        }
+      },
+      "BaseMapListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/BaseMap"
+        }
+      },
+      "BaseMapListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/BaseMap"
+        }
+      },
+      "BaseMapListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/BaseMap"
+        }
+      },
+      "CountryListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Country"
+        }
+      },
+      "CountryListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Country"
+        }
+      },
+      "CountryListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Country"
+        }
+      },
+      "EntitlementTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/EntitlementType"
+        }
+      },
+      "EntitlementTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/EntitlementType"
+        }
+      },
+      "EntitlementTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/EntitlementType"
+        }
+      },
+      "ExceptionTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExceptionType"
+        }
+      },
+      "ExceptionTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExceptionType"
+        }
+      },
+      "ExceptionTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExceptionType"
+        }
+      },
+      "ExemptionTimeTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExemptionTimeType"
+        }
+      },
+      "ExemptionTimeTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExemptionTimeType"
+        }
+      },
+      "ExemptionTimeTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExemptionTimeType"
+        }
+      },
+      "ExemptionTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExemptionType"
+        }
+      },
+      "ExemptionTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExemptionType"
+        }
+      },
+      "ExemptionTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ExemptionType"
+        }
+      },
+      "FacilityTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FacilityType"
+        }
+      },
+      "FacilityTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FacilityType"
+        }
+      },
+      "FacilityTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FacilityType"
+        }
+      },
+      "FuelTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FuelType"
+        }
+      },
+      "FuelTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FuelType"
+        }
+      },
+      "FuelTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FuelType"
+        }
+      },
+      "NoteVisibilityTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/NoteVisibilityType"
+        }
+      },
+      "NoteVisibilityTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/NoteVisibilityType"
+        }
+      },
+      "NoteVisibilityTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/NoteVisibilityType"
+        }
+      },
+      "OnStreetParkingTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OnStreetParkingType"
+        }
+      },
+      "OnStreetParkingTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OnStreetParkingType"
+        }
+      },
+      "OnStreetParkingTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OnStreetParkingType"
+        }
+      },
+      "PaymentMethodListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PaymentMethod"
+        }
+      },
+      "PaymentMethodListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PaymentMethod"
+        }
+      },
+      "PaymentMethodListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PaymentMethod"
+        }
+      },
+      "PermitTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PermitType"
+        }
+      },
+      "PermitTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PermitType"
+        }
+      },
+      "PermitTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PermitType"
+        }
+      },
+      "RegionListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Region"
+        }
+      },
+      "RegionListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Region"
+        }
+      },
+      "RegionListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Region"
+        }
+      },
+      "RestrictionTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RestrictionType"
+        }
+      },
+      "RestrictionTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RestrictionType"
+        }
+      },
+      "RestrictionTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RestrictionType"
+        }
+      },
+      "SpecialRestrictionListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SpecialRestriction"
+        }
+      },
+      "SpecialRestrictionListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SpecialRestriction"
+        }
+      },
+      "SpecialRestrictionListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SpecialRestriction"
+        }
+      },
+      "VehicleTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/VehicleType"
+        }
+      },
+      "VehicleTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/VehicleType"
+        }
+      },
+      "VehicleTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/VehicleType"
+        }
+      },
+      "ZoneTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ZoneType"
+        }
+      },
+      "ZoneTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ZoneType"
+        }
+      },
+      "ZoneTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ZoneType"
+        }
+      }
+    },
     "securitySchemes": {
       "apiKey": {
         "name": "API-KEY",
@@ -35,2121 +2049,14 @@
         },
         "type": "oauth2"
       }
-    },
-    "schemas": {
-      "ExemptionTimeTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExemptionTimeType"
-        },
-        "type": "array"
-      },
-      "VehicleTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/VehicleType"
-        },
-        "type": "array"
-      },
-      "Event": {
-        "additionalProperties": false,
-        "properties": {
-          "Date": {
-            "type": "string"
-          },
-          "End": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Start": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "PaymentMethodListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/PaymentMethod"
-        },
-        "type": "array"
-      },
-      "RestrictionTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/RestrictionType"
-        },
-        "type": "array"
-      },
-      "NoteVisibilityTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/NoteVisibilityType"
-        },
-        "type": "array"
-      },
-      "FacilityType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "ActivityTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ActivityType"
-        },
-        "type": "array"
-      },
-      "OnStreetParkingType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "ActivityType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "Country": {
-        "additionalProperties": false,
-        "properties": {
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "type": "string",
-            "nullable": true
-          },
-          "EntitlementTypes": {
-            "items": {
-              "format": "int32",
-              "type": "integer"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "RestrictionTypes": {
-            "items": {
-              "format": "int32",
-              "type": "integer"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "DefaultBaseMapId": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "Bounds": {
-            "items": {
-              "items": {
-                "format": "double",
-                "type": "number"
-              },
-              "type": "array"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "SpecialDays": {
-            "items": {
-              "$ref": "#/components/schemas/SpecialDay"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "BaseMap": {
-        "additionalProperties": false,
-        "properties": {
-          "AvailableInCountries": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "VehicleTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/VehicleType"
-        },
-        "type": "array"
-      },
-      "ZoneTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ZoneType"
-        },
-        "type": "array"
-      },
-      "OnStreetParkingTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/OnStreetParkingType"
-        },
-        "type": "array"
-      },
-      "ExemptionTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExemptionType"
-        },
-        "type": "array"
-      },
-      "VehicleTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/VehicleType"
-        },
-        "type": "array"
-      },
-      "PaymentMethodListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/PaymentMethod"
-        },
-        "type": "array"
-      },
-      "ZoneTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ZoneType"
-        },
-        "type": "array"
-      },
-      "SpecialRestriction": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "NoteVisibilityType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "RestrictionTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/RestrictionType"
-        },
-        "type": "array"
-      },
-      "ExceptionTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExceptionType"
-        },
-        "type": "array"
-      },
-      "FacilityTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/FacilityType"
-        },
-        "type": "array"
-      },
-      "FuelTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/FuelType"
-        },
-        "type": "array"
-      },
-      "RestrictionTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/RestrictionType"
-        },
-        "type": "array"
-      },
-      "RegionListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/Region"
-        },
-        "type": "array"
-      },
-      "All": {
-        "additionalProperties": false,
-        "properties": {
-          "FuelTypes": {
-            "items": {
-              "$ref": "#/components/schemas/FuelType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "VehicleTypes": {
-            "items": {
-              "$ref": "#/components/schemas/VehicleType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "NoteVisibilityTypes": {
-            "items": {
-              "$ref": "#/components/schemas/NoteVisibilityType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ExemptionTimeTypes": {
-            "items": {
-              "$ref": "#/components/schemas/ExemptionTimeType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ExemptionTypes": {
-            "items": {
-              "$ref": "#/components/schemas/ExemptionType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "PaymentMethods": {
-            "items": {
-              "$ref": "#/components/schemas/PaymentMethod"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "OnStreetParkingTypes": {
-            "items": {
-              "$ref": "#/components/schemas/OnStreetParkingType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ZoneTypes": {
-            "items": {
-              "$ref": "#/components/schemas/ZoneType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Countries": {
-            "items": {
-              "$ref": "#/components/schemas/Country"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "SpecialRestrictions": {
-            "items": {
-              "$ref": "#/components/schemas/SpecialRestriction"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "RestrictionTypes": {
-            "items": {
-              "$ref": "#/components/schemas/RestrictionType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ExceptionTypes": {
-            "items": {
-              "$ref": "#/components/schemas/ExceptionType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "ActivityTypes": {
-            "items": {
-              "$ref": "#/components/schemas/ActivityType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "PermitTypes": {
-            "items": {
-              "$ref": "#/components/schemas/PermitType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "AuthorityTypes": {
-            "items": {
-              "$ref": "#/components/schemas/AuthorityType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "EntitlementTypes": {
-            "items": {
-              "$ref": "#/components/schemas/EntitlementType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "BaseMaps": {
-            "items": {
-              "$ref": "#/components/schemas/BaseMap"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "FacilityTypes": {
-            "items": {
-              "$ref": "#/components/schemas/FacilityType"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Regions": {
-            "items": {
-              "$ref": "#/components/schemas/Region"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "MarkingTypes": {
-            "items": {
-              "$ref": "#/components/schemas/MarkingType"
-            },
-            "type": "array",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "AuthorityType": {
-        "additionalProperties": false,
-        "properties": {
-          "CanHaveShape": {
-            "type": "boolean"
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "CanHaveRestrictions": {
-            "type": "boolean"
-          },
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "RegionListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/Region"
-        },
-        "type": "array"
-      },
-      "BaseMapListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/BaseMap"
-        },
-        "type": "array"
-      },
-      "RestrictionType": {
-        "additionalProperties": false,
-        "properties": {
-          "CanHaveTariff": {
-            "type": "boolean"
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Code": {
-            "type": "string",
-            "nullable": true
-          },
-          "DefaultWidth": {
-            "format": "double",
-            "type": "number"
-          }
-        },
-        "type": "object"
-      },
-      "PaymentMethod": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "CountryListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/Country"
-        },
-        "type": "array"
-      },
-      "SpecialRestrictionListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/SpecialRestriction"
-        },
-        "type": "array"
-      },
-      "BaseMapListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/BaseMap"
-        },
-        "type": "array"
-      },
-      "ExemptionTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExemptionType"
-        },
-        "type": "array"
-      },
-      "FacilityTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/FacilityType"
-        },
-        "type": "array"
-      },
-      "AuthorityTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/AuthorityType"
-        },
-        "type": "array"
-      },
-      "Region": {
-        "additionalProperties": false,
-        "properties": {
-          "CountryId": {
-            "type": "string",
-            "nullable": true
-          },
-          "Venues": {
-            "items": {
-              "$ref": "#/components/schemas/Venue"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "ExceptionTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExceptionType"
-        },
-        "type": "array"
-      },
-      "ExemptionType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "MarkingType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "FuelType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "PermitTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/PermitType"
-        },
-        "type": "array"
-      },
-      "MarkingTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/MarkingType"
-        },
-        "type": "array"
-      },
-      "MarkingTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/MarkingType"
-        },
-        "type": "array"
-      },
-      "EntitlementTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/EntitlementType"
-        },
-        "type": "array"
-      },
-      "ExemptionTimeTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExemptionTimeType"
-        },
-        "type": "array"
-      },
-      "SpecialRestrictionListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/SpecialRestriction"
-        },
-        "type": "array"
-      },
-      "ExemptionTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExemptionType"
-        },
-        "type": "array"
-      },
-      "CountryListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/Country"
-        },
-        "type": "array"
-      },
-      "AuthorityTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/AuthorityType"
-        },
-        "type": "array"
-      },
-      "EntitlementTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/EntitlementType"
-        },
-        "type": "array"
-      },
-      "FuelTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/FuelType"
-        },
-        "type": "array"
-      },
-      "FacilityTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/FacilityType"
-        },
-        "type": "array"
-      },
-      "NoteVisibilityTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/NoteVisibilityType"
-        },
-        "type": "array"
-      },
-      "PermitTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/PermitType"
-        },
-        "type": "array"
-      },
-      "SpecialRestrictionListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/SpecialRestriction"
-        },
-        "type": "array"
-      },
-      "ExemptionTimeType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "ActivityTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ActivityType"
-        },
-        "type": "array"
-      },
-      "RegionListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/Region"
-        },
-        "type": "array"
-      },
-      "EntitlementTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/EntitlementType"
-        },
-        "type": "array"
-      },
-      "VehicleType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "ExceptionType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "EntitlementType": {
-        "additionalProperties": false,
-        "properties": {
-          "ApplicableExemptionTypeIds": {
-            "items": {
-              "format": "int32",
-              "type": "integer"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "RestrictionTypeIds": {
-            "items": {
-              "format": "int32",
-              "type": "integer"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Code": {
-            "type": "string",
-            "nullable": true
-          },
-          "HasTariff": {
-            "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "ExemptionTimeTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExemptionTimeType"
-        },
-        "type": "array"
-      },
-      "OnStreetParkingTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/OnStreetParkingType"
-        },
-        "type": "array"
-      },
-      "SpecialDay": {
-        "additionalProperties": false,
-        "properties": {
-          "Dates": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "IsHoliday": {
-            "type": "boolean"
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "AuthorityTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/AuthorityType"
-        },
-        "type": "array"
-      },
-      "ZoneType": {
-        "additionalProperties": false,
-        "properties": {
-          "CanHaveShape": {
-            "type": "boolean"
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "CanHaveRestrictions": {
-            "type": "boolean"
-          },
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "ZoneTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ZoneType"
-        },
-        "type": "array"
-      },
-      "PaymentMethodListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/PaymentMethod"
-        },
-        "type": "array"
-      },
-      "ActivityTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ActivityType"
-        },
-        "type": "array"
-      },
-      "MarkingTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/MarkingType"
-        },
-        "type": "array"
-      },
-      "PermitTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/PermitType"
-        },
-        "type": "array"
-      },
-      "Venue": {
-        "additionalProperties": false,
-        "properties": {
-          "EventsMustSupplyHours": {
-            "type": "boolean"
-          },
-          "Events": {
-            "items": {
-              "$ref": "#/components/schemas/Event"
-            },
-            "type": "array",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "OnStreetParkingTypeListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/OnStreetParkingType"
-        },
-        "type": "array"
-      },
-      "CountryListGet200TextPlainResponse": {
-        "items": {
-          "$ref": "#/components/schemas/Country"
-        },
-        "type": "array"
-      },
-      "PermitType": {
-        "additionalProperties": false,
-        "properties": {
-          "Description": {
-            "type": "string",
-            "nullable": true
-          },
-          "Name": {
-            "type": "string",
-            "nullable": true
-          },
-          "Id": {
-            "format": "int32",
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "ExceptionTypeListGet200TextJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/ExceptionType"
-        },
-        "type": "array"
-      },
-      "FuelTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/FuelType"
-        },
-        "type": "array"
-      },
-      "BaseMapListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/BaseMap"
-        },
-        "type": "array"
-      },
-      "NoteVisibilityTypeListGet200ApplicationJsonResponse": {
-        "items": {
-          "$ref": "#/components/schemas/NoteVisibilityType"
-        },
-        "type": "array"
-      }
     }
   },
-  "paths": {
-    "/exemptionTimeType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all exemption time types",
-        "tags": [
-          "ExemptionTimeType"
-        ],
-        "operationId": "get-exemptiontimetype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
+  "security": [
+    {
+      "apiKey": []
     },
-    "/specialRestriction/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all special restrictions",
-        "tags": [
-          "SpecialRestrictions"
-        ],
-        "operationId": "get-specialrestriction-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpecialRestrictionListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpecialRestrictionListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpecialRestrictionListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/activityType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all activity types",
-        "tags": [
-          "ActivityType"
-        ],
-        "operationId": "get-activitytype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActivityTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActivityTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ActivityTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/paymentMethod/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all payment methods",
-        "tags": [
-          "PaymentMethod"
-        ],
-        "operationId": "get-paymentmethod-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentMethodListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/markingType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all marking types",
-        "tags": [
-          "MarkingType"
-        ],
-        "operationId": "get-markingtype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MarkingTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MarkingTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MarkingTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/zoneType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all zone types",
-        "tags": [
-          "ZoneType"
-        ],
-        "operationId": "get-zonetype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ZoneTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ZoneTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ZoneTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/facilityType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all facility types",
-        "tags": [
-          "FacilityType"
-        ],
-        "operationId": "get-facilitytype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FacilityTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/FacilityTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FacilityTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/permitType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all permit types",
-        "tags": [
-          "PermitType"
-        ],
-        "operationId": "get-permittype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PermitTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/PermitTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PermitTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/noteVisibilityType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all note visibility types",
-        "tags": [
-          "NoteVisibilityType"
-        ],
-        "operationId": "get-notevisibilitytype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/baseMap/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all base maps",
-        "tags": [
-          "BaseMap"
-        ],
-        "operationId": "get-basemap-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseMapListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseMapListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BaseMapListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/monitor": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "/monitor - GET",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "description": "Success"
-          }
-        },
-        "tags": [
-          "Monitor"
-        ],
-        "operationId": "get-monitor"
-      }
-    },
-    "/onStreetParkingType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all on street parking types",
-        "tags": [
-          "OnStreetParkingType"
-        ],
-        "operationId": "get-onstreetparkingtype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/restrictionType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all restriction types",
-        "tags": [
-          "RestrictionType"
-        ],
-        "operationId": "get-restrictiontype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RestrictionTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/RestrictionTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RestrictionTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/entitlementType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all entitlement types",
-        "tags": [
-          "EntitlementType"
-        ],
-        "operationId": "get-entitlementtype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntitlementTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntitlementTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EntitlementTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/authorityType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all authority types",
-        "tags": [
-          "AuthorityType"
-        ],
-        "operationId": "get-authoritytype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthorityTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthorityTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthorityTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/exceptionType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all exception types",
-        "tags": [
-          "ExceptionType"
-        ],
-        "operationId": "get-exceptiontype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExceptionTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/all/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all reference data",
-        "tags": [
-          "All"
-        ],
-        "operationId": "get-all-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/All"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/All"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/All"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/vehicleType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all vehicle types",
-        "tags": [
-          "VehicleType"
-        ],
-        "operationId": "get-vehicletype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VehicleTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/VehicleTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VehicleTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/exemptionType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all exemption types",
-        "tags": [
-          "ExemptionType"
-        ],
-        "operationId": "get-exemptiontype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExemptionTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExemptionTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExemptionTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/country/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all countries",
-        "tags": [
-          "Country"
-        ],
-        "operationId": "get-country-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CountryListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/region/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all regions",
-        "tags": [
-          "Region"
-        ],
-        "operationId": "get-region-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegionListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegionListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegionListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/fuelType/list": {
-      "get": {
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "List",
-        "description": "Gets all fuel types",
-        "tags": [
-          "FuelType"
-        ],
-        "operationId": "get-fueltype-list",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          },
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FuelTypeListGet200ApplicationJsonResponse"
-                }
-              },
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/FuelTypeListGet200TextPlainResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FuelTypeListGet200TextJsonResponse"
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
+    {
+      "oAuth2": []
     }
-  }
+  ]
 }

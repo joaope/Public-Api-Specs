@@ -1,14 +1,2123 @@
+openapi: 3.0.1
 info:
   title: Security
   description: API used for managing authorisation
   version: "1.0"
 servers:
 - url: https://api.appyway.com/security/v1
-security:
-- apiKey: []
-- oAuth2: []
-openapi: 3.0.1
+paths:
+  /apiKey:
+    get:
+      tags:
+      - ApiKey
+      summary: All API Keys
+      description: All API Keys
+      operationId: get-apikey
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of API Keys
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiKeyGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKeyGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiKeyGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - ApiKey
+      summary: Update API Key
+      description: Update API Key
+      operationId: put-apikey
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The API Key to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiKey'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiKey'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiKey'
+      responses:
+        "200":
+          description: Update succeeded
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CreatedApiKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatedApiKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CreatedApiKey'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Could not find API Key
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+    delete:
+      tags:
+      - ApiKey
+      summary: Delete API Key
+      description: Delete API Key
+      operationId: delete-apikey
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The hash of the API Key to delete
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+      responses:
+        "200":
+          description: API Key is deleted
+        "400":
+          description: API Key is empty
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: API Key not found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - ApiKey
+      summary: Create API Key
+      description: Create API Key
+      operationId: post-apikey
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The API Key information to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiKey'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiKey'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiKey'
+      responses:
+        "200":
+          description: Returns the API Key
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CreatedApiKey'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatedApiKey'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CreatedApiKey'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /user/{userId}:
+    delete:
+      tags:
+      - User
+      summary: Removes a user
+      description: Removes a user
+      operationId: delete-user-userid
+      parameters:
+      - name: userId
+        in: path
+        description: The user to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: User is deleted
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /resourceType:
+    get:
+      tags:
+      - ResourceType
+      summary: All resource types
+      description: All resource types
+      operationId: get-resourcetype
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of resource types
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ResourceTypeGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceTypeGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ResourceTypeGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - ResourceType
+      summary: Update resource type
+      description: Update resource type
+      operationId: put-resourcetype
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The resource type to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceType'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ResourceType'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ResourceType'
+      responses:
+        "200":
+          description: ""
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ResourceType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceType'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ResourceType'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - ResourceType
+      summary: Create resource type
+      description: Create resource type
+      operationId: post-resourcetype
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The resource type to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceType'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ResourceType'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ResourceType'
+      responses:
+        "200":
+          description: Returns the created resource type
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ResourceType'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceType'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ResourceType'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /apiKey/unblock:
+    post:
+      tags:
+      - ApiKey
+      summary: Unblock API Key
+      description: Unblock API Key
+      operationId: post-apikey-unblock
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The hash of the API Key to unblock
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+      responses:
+        "200":
+          description: API Key is unblocked
+        "400":
+          description: API Key is empty
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: API Key not found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /organisation/{id}:
+    delete:
+      tags:
+      - Organisation
+      summary: Removes an organisation
+      description: Removes an organisation
+      operationId: delete-organisation-id
+      parameters:
+      - name: id
+        in: path
+        description: The organisation to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: organisation is deleted
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /permission/token:
+    get:
+      tags:
+      - Permissions
+      summary: Takes a token without permissions and embeds the permissions in the returned token
+      description: Takes a token without permissions and embeds the permissions in the returned token
+      operationId: get-permission-token
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Success
+        "400":
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /permission/{id}:
+    delete:
+      tags:
+      - Permissions
+      summary: Delete permission
+      description: Delete permission
+      operationId: delete-permission-id
+      parameters:
+      - name: id
+        in: path
+        description: ID of the permission to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Permission is deleted
+        "400":
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /organisation:
+    get:
+      tags:
+      - Organisation
+      summary: All Organisations
+      description: All Organisations
+      operationId: get-organisation
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of Organisations
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/OrganisationGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganisationGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/OrganisationGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - Organisation
+      summary: Update an organisation
+      description: Update an organisation
+      operationId: put-organisation
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The organisation to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organisation'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Organisation'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Organisation'
+      responses:
+        "200":
+          description: Update is correct
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - Organisation
+      summary: Create new organisation
+      description: Create new organisation
+      operationId: post-organisation
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The organisation to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organisation'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Organisation'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Organisation'
+      responses:
+        "200":
+          description: Returns the organisation
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Organisation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organisation'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Organisation'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /permission:
+    get:
+      tags:
+      - Permissions
+      summary: All Permissions
+      description: All Permissions
+      operationId: get-permission
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of Permissions
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PermissionGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PermissionGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PermissionGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - Permissions
+      summary: Update permission
+      description: Update permission
+      operationId: put-permission
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The permission to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+      responses:
+        "200":
+          description: ""
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Permission'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - Permissions
+      summary: Create permission
+      description: Create permission
+      operationId: post-permission
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The permission to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Permission'
+      responses:
+        "200":
+          description: Returns the created permission
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Permission'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Permission'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /apiKey/block:
+    post:
+      tags:
+      - ApiKey
+      summary: Blocks API Key
+      description: Blocks API Key
+      operationId: post-apikey-block
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The hash of the API to block
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApiIdentifier'
+      responses:
+        "200":
+          description: API Key is blocked
+        "400":
+          description: API Key is empty
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: API Key not found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /role/{id}:
+    delete:
+      tags:
+      - Role
+      summary: Delete role
+      description: Delete role
+      operationId: delete-role-id
+      parameters:
+      - name: id
+        in: path
+        description: ID of the role to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Role is deleted
+        "400":
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /application/{id}:
+    delete:
+      tags:
+      - Applications
+      summary: Delete application
+      description: Delete application
+      operationId: delete-application-id
+      parameters:
+      - name: id
+        in: path
+        description: ID of the application to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Application is deleted
+        "400":
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /monitor:
+    get:
+      tags:
+      - Monitor
+      summary: /monitor - GET
+      operationId: get-monitor
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorGet200ApplicationJsonResponse'
+        "503":
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorGet503ApplicationJsonResponse'
+  /group/{id}:
+    delete:
+      tags:
+      - Groups
+      summary: Delete group
+      description: Delete group
+      operationId: delete-group-id
+      parameters:
+      - name: id
+        in: path
+        description: ID of the group to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Group is deleted
+        "400":
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /resourceType/{id}:
+    delete:
+      tags:
+      - ResourceType
+      summary: Delete resourcetype
+      description: Delete resourcetype
+      operationId: delete-resourcetype-id
+      parameters:
+      - name: id
+        in: path
+        description: ID of the resource type to delete
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Resource type is deleted
+        "400":
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          description: Too many requests
+  /application:
+    get:
+      tags:
+      - Applications
+      summary: All Applications
+      description: All Applications
+      operationId: get-application
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of Applications
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApplicationGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - Applications
+      summary: Update application
+      description: Update application
+      operationId: put-application
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The application to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Application'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Application'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Application'
+      responses:
+        "200":
+          description: ""
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Application'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - Applications
+      summary: Create application
+      description: Create application
+      operationId: post-application
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The application to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Application'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Application'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Application'
+      responses:
+        "200":
+          description: Returns the created application
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Application'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /role:
+    get:
+      tags:
+      - Role
+      summary: All roles
+      description: All roles
+      operationId: get-role
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/RoleGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RoleGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - Role
+      summary: Update role
+      description: Update role
+      operationId: put-role
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The role to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Role'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Role'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Role'
+      responses:
+        "200":
+          description: ""
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Role'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - Role
+      summary: Create role
+      description: Create role
+      operationId: post-role
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The role to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Role'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Role'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Role'
+      responses:
+        "200":
+          description: Returns the created role
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Role'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /group:
+    get:
+      tags:
+      - Groups
+      summary: All groups
+      description: All groups
+      operationId: get-group
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of groups
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GroupGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GroupGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - Groups
+      summary: Update group
+      description: Update group
+      operationId: put-group
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The group to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        "200":
+          description: ""
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Group'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - Groups
+      summary: Create group
+      description: Create group
+      operationId: post-group
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The group to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        "200":
+          description: Returns the created group
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Group'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+  /user:
+    get:
+      tags:
+      - User
+      summary: All Users
+      description: All Users
+      operationId: get-user
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: A list of Users
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UserGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UserGet200TextJsonResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    put:
+      tags:
+      - User
+      summary: Update a user
+      description: Update a user
+      operationId: put-user
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The user to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: Update is correct
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
+    post:
+      tags:
+      - User
+      summary: Create new user
+      description: Create new user
+      operationId: post-user
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        description: The user information to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/NewUserRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/NewUserRequest'
+      responses:
+        "200":
+          description: Returns the user and the password reset link
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CreatedUser'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatedUser'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CreatedUser'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "429":
+          description: Too many requests
 components:
+  schemas:
+    ResourceAssignment:
+      type: object
+      properties:
+        resourceTypeId:
+          type: string
+          nullable: true
+        resourceIds:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    RoleAssignment:
+      type: object
+      properties:
+        roleId:
+          type: string
+          nullable: true
+        resourceAssignments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceAssignment'
+          nullable: true
+      additionalProperties: false
+    PermissionAssignment:
+      type: object
+      properties:
+        permissionId:
+          type: string
+          nullable: true
+        resourceTypeId:
+          type: string
+          nullable: true
+        resourceId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiKey:
+      required:
+      - organisation
+      type: object
+      properties:
+        cacheId:
+          type: string
+          description: The identifier to be used when performing operations on the API Key
+          nullable: true
+        name:
+          type: string
+          description: Display name of the API Key
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        organisation:
+          type: string
+          description: Organisation this belongs to.
+        blocked:
+          type: boolean
+          description: Currently blocked from logging in
+          nullable: true
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
+          nullable: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermissionAssignment'
+          nullable: true
+        groups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        managedGroups:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    CreatedApiKey:
+      type: object
+      properties:
+        apiKey:
+          allOf:
+          - $ref: '#/components/schemas/ApiKey'
+          description: Metadata for the created key
+          nullable: true
+        key:
+          type: string
+          description: Value to add in to the API-KEY header
+          nullable: true
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+        additionalProperties: false
+    ApiIdentifier:
+      required:
+      - cacheId
+      type: object
+      properties:
+        cacheId:
+          type: string
+      additionalProperties: false
+    Application:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        organisationId:
+          type: string
+          nullable: true
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
+          nullable: true
+        groups:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    Organisation:
+      required:
+      - code
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        code:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        internalNotes:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Permission:
+      required:
+      - description
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+        resourceTypeId:
+          type: string
+          nullable: true
+        applicationId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Resource:
+      required:
+      - name
+      - value
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+        value:
+          type: string
+        resourceTypeId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ResourceType:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+          nullable: true
+      additionalProperties: false
+    Role:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        isBuiltIn:
+          type: boolean
+        permissions:
+          type: array
+          items:
+            type: string
+          nullable: true
+        applicationId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    User:
+      required:
+      - email
+      - firstName
+      - lastName
+      - organisation
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        firstName:
+          type: string
+          description: First name
+        lastName:
+          type: string
+          description: Last name
+        picture:
+          type: string
+          nullable: true
+        isAuth0User:
+          type: boolean
+        id:
+          type: string
+          nullable: true
+        organisation:
+          type: string
+          description: Organisation this belongs to.
+        blocked:
+          type: boolean
+          description: Currently blocked from logging in
+          nullable: true
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
+          nullable: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermissionAssignment'
+          nullable: true
+        groups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        managedGroups:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    NewUserRequest:
+      required:
+      - redirect
+      - user
+      type: object
+      properties:
+        user:
+          allOf:
+          - $ref: '#/components/schemas/User'
+        redirect:
+          type: string
+          description: URL the user should be redirected to after his first login
+      additionalProperties: false
+    CreatedUser:
+      type: object
+      properties:
+        user:
+          allOf:
+          - $ref: '#/components/schemas/User'
+          nullable: true
+        passwordResetLink:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiKeyGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApiKey'
+    ApiKeyGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApiKey'
+    ApiKeyGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApiKey'
+    ApplicationGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Application'
+    ApplicationGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Application'
+    ApplicationGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Application'
+    GroupGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Group'
+    GroupGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Group'
+    GroupGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Group'
+    OrganisationGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Organisation'
+    OrganisationGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Organisation'
+    OrganisationGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Organisation'
+    PermissionGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+    PermissionGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+    PermissionGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+    ResourceTypeGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceType'
+    ResourceTypeGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceType'
+    ResourceTypeGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceType'
+    RoleGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Role'
+    RoleGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Role'
+    RoleGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Role'
+    UserGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    UserGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    UserGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    MonitorGet200ApplicationJsonResponse:
+      properties:
+        status:
+          type: string
+        errors:
+          type: array
+      example:
+        status: healthy
+        errors: []
+    MonitorGet503ApplicationJsonResponse:
+      properties:
+        status:
+          type: string
+        errors:
+          type: array
+      example:
+        status: unhealthy
+        errors: []
   securitySchemes:
     apiKey:
       name: API-KEY
@@ -21,2116 +2130,7 @@ components:
           authorizationUrl: https://auth.appyway.com/authorize
           tokenUrl: https://auth.appyway.com/oauth/token
       type: oauth2
-  schemas:
-    PermissionGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/Permission'
-      type: array
-    ApiKeyGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/ApiKey'
-      type: array
-    UserGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/User'
-      type: array
-    ResourceTypeGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/ResourceType'
-      type: array
-    UserGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/User'
-      type: array
-    GroupGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/Group'
-      type: array
-    PermissionAssignment:
-      additionalProperties: false
-      properties:
-        resourceId:
-          type: string
-          nullable: true
-        resourceTypeId:
-          type: string
-          nullable: true
-        permissionId:
-          type: string
-          nullable: true
-      type: object
-    MonitorGet503ApplicationJsonResponse:
-      properties:
-        status:
-          type: string
-        errors:
-          type: array
-      example:
-        status: unhealthy
-        errors: []
-    UserGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/User'
-      type: array
-    NewUserRequest:
-      additionalProperties: false
-      properties:
-        user:
-          allOf:
-          - $ref: '#/components/schemas/User'
-        redirect:
-          description: URL the user should be redirected to after his first login
-          type: string
-      type: object
-      required:
-      - redirect
-      - user
-    ResourceAssignment:
-      additionalProperties: false
-      properties:
-        resourceTypeId:
-          type: string
-          nullable: true
-        resourceIds:
-          items:
-            type: string
-          type: array
-          nullable: true
-      type: object
-    OrganisationGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/Organisation'
-      type: array
-    User:
-      additionalProperties: false
-      properties:
-        organisation:
-          description: Organisation this belongs to.
-          type: string
-        lastName:
-          description: Last name
-          type: string
-        blocked:
-          description: Currently blocked from logging in
-          type: boolean
-          nullable: true
-        isAuth0User:
-          type: boolean
-        permissions:
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
-          type: array
-          nullable: true
-        firstName:
-          description: First name
-          type: string
-        groups:
-          items:
-            type: string
-          type: array
-          nullable: true
-        managedGroups:
-          items:
-            type: string
-          type: array
-          nullable: true
-        picture:
-          type: string
-          nullable: true
-        id:
-          type: string
-          nullable: true
-        email:
-          format: email
-          type: string
-        roles:
-          items:
-            $ref: '#/components/schemas/RoleAssignment'
-          type: array
-          nullable: true
-      type: object
-      required:
-      - email
-      - firstName
-      - lastName
-      - organisation
-    Group:
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-          nullable: true
-        roles:
-          items:
-            $ref: '#/components/schemas/RoleAssignment'
-          type: array
-          nullable: true
-        groups:
-          items:
-            type: string
-          type: array
-          nullable: true
-        organisationId:
-          type: string
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-      type: object
-    ResourceTypeGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/ResourceType'
-      type: array
-    GroupGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/Group'
-      type: array
-    PermissionGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/Permission'
-      type: array
-    Organisation:
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-          nullable: true
-        internalNotes:
-          type: string
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        name:
-          type: string
-        code:
-          type: string
-      type: object
-      required:
-      - code
-      - name
-    GroupGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/Group'
-      type: array
-    PermissionGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/Permission'
-      type: array
-    ApiKeyGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/ApiKey'
-      type: array
-    ProblemDetails:
-      additionalProperties:
-        additionalProperties: false
-        type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        status:
-          format: int32
-          type: integer
-          nullable: true
-      type: object
-    RoleAssignment:
-      additionalProperties: false
-      properties:
-        resourceAssignments:
-          items:
-            $ref: '#/components/schemas/ResourceAssignment'
-          type: array
-          nullable: true
-        roleId:
-          type: string
-          nullable: true
-      type: object
-    ApplicationGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/Application'
-      type: array
-    RoleGet200ApplicationJsonResponse:
-      items:
-        $ref: '#/components/schemas/Role'
-      type: array
-    Resource:
-      additionalProperties: false
-      properties:
-        name:
-          type: string
-        id:
-          type: string
-          nullable: true
-        value:
-          type: string
-        resourceTypeId:
-          type: string
-          nullable: true
-      type: object
-      required:
-      - name
-      - value
-    Permission:
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-          nullable: true
-        applicationId:
-          type: string
-          nullable: true
-        description:
-          type: string
-        name:
-          type: string
-        resourceTypeId:
-          type: string
-          nullable: true
-      type: object
-      required:
-      - description
-      - name
-    ApiKeyGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/ApiKey'
-      type: array
-    OrganisationGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/Organisation'
-      type: array
-    ApiIdentifier:
-      additionalProperties: false
-      properties:
-        cacheId:
-          type: string
-      type: object
-      required:
-      - cacheId
-    ApplicationGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/Application'
-      type: array
-    ResourceType:
-      additionalProperties: false
-      properties:
-        name:
-          type: string
-        id:
-          type: string
-          nullable: true
-        resources:
-          items:
-            $ref: '#/components/schemas/Resource'
-          type: array
-          nullable: true
-      type: object
-      required:
-      - name
-    OrganisationGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/Organisation'
-      type: array
-    Role:
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-          nullable: true
-        applicationId:
-          type: string
-          nullable: true
-        permissions:
-          items:
-            type: string
-          type: array
-          nullable: true
-        description:
-          type: string
-          nullable: true
-        name:
-          type: string
-        isBuiltIn:
-          type: boolean
-      type: object
-      required:
-      - name
-    Application:
-      additionalProperties: false
-      properties:
-        description:
-          type: string
-          nullable: true
-        name:
-          type: string
-          nullable: true
-        id:
-          type: string
-          nullable: true
-      type: object
-    ApiKey:
-      additionalProperties: false
-      properties:
-        id:
-          type: string
-          nullable: true
-        organisation:
-          description: Organisation this belongs to.
-          type: string
-        groups:
-          items:
-            type: string
-          type: array
-          nullable: true
-        permissions:
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
-          type: array
-          nullable: true
-        roles:
-          items:
-            $ref: '#/components/schemas/RoleAssignment'
-          type: array
-          nullable: true
-        name:
-          description: Display name of the API Key
-          type: string
-          nullable: true
-        cacheId:
-          description: The identifier to be used when performing operations on the API Key
-          type: string
-          nullable: true
-        managedGroups:
-          items:
-            type: string
-          type: array
-          nullable: true
-        blocked:
-          description: Currently blocked from logging in
-          type: boolean
-          nullable: true
-      type: object
-      required:
-      - organisation
-    ResourceTypeGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/ResourceType'
-      type: array
-    CreatedUser:
-      additionalProperties: false
-      properties:
-        user:
-          allOf:
-          - $ref: '#/components/schemas/User'
-          nullable: true
-        passwordResetLink:
-          type: string
-          nullable: true
-      type: object
-    RoleGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/Role'
-      type: array
-    ApplicationGet200TextPlainResponse:
-      items:
-        $ref: '#/components/schemas/Application'
-      type: array
-    MonitorGet200ApplicationJsonResponse:
-      properties:
-        status:
-          type: string
-        errors:
-          type: array
-      example:
-        status: healthy
-        errors: []
-    CreatedApiKey:
-      additionalProperties: false
-      properties:
-        key:
-          description: Value to add in to the API-KEY header
-          type: string
-          nullable: true
-        apiKey:
-          allOf:
-          - $ref: '#/components/schemas/ApiKey'
-          description: Metadata for the created key
-          nullable: true
-      type: object
-    RoleGet200TextJsonResponse:
-      items:
-        $ref: '#/components/schemas/Role'
-      type: array
-paths:
-  /apiKey:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All API Keys
-      description: All API Keys
-      tags:
-      - ApiKey
-      operationId: get-apikey
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiKeyGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ApiKeyGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ApiKeyGet200TextJsonResponse'
-          description: A list of API Keys
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update API Key
-      description: Update API Key
-      tags:
-      - ApiKey
-      operationId: put-apikey
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiKey'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiKey'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiKey'
-        description: The API Key to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-          description: Update succeeded
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Could not find API Key
-        "403":
-          description: Forbidden
-    delete:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Delete API Key
-      description: Delete API Key
-      tags:
-      - ApiKey
-      operationId: delete-apikey
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-        description: The hash of the API Key to delete
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: API Key is empty
-        "401":
-          description: Unauthorized
-        "200":
-          description: API Key is deleted
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: API Key not found
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create API Key
-      description: Create API Key
-      tags:
-      - ApiKey
-      operationId: post-apikey
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiKey'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiKey'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiKey'
-        description: The API Key information to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-          description: Returns the API Key
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /user/{userId}:
-    delete:
-      parameters:
-      - name: userId
-        description: The user to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Removes a user
-      description: Removes a user
-      tags:
-      - User
-      operationId: delete-user-userid
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          description: User is deleted
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /resourceType:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All resource types
-      description: All resource types
-      tags:
-      - ResourceType
-      operationId: get-resourcetype
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceTypeGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceTypeGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ResourceTypeGet200TextJsonResponse'
-          description: A list of resource types
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update resource type
-      description: Update resource type
-      tags:
-      - ResourceType
-      operationId: put-resourcetype
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ResourceType'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ResourceType'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ResourceType'
-        description: The resource type to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-          description: ""
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create resource type
-      description: Create resource type
-      tags:
-      - ResourceType
-      operationId: post-resourcetype
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ResourceType'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ResourceType'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ResourceType'
-        description: The resource type to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-          description: Returns the created resource type
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /apiKey/unblock:
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Unblock API Key
-      description: Unblock API Key
-      tags:
-      - ApiKey
-      operationId: post-apikey-unblock
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-        description: The hash of the API Key to unblock
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: API Key is empty
-        "401":
-          description: Unauthorized
-        "200":
-          description: API Key is unblocked
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: API Key not found
-        "403":
-          description: Forbidden
-  /organisation/{id}:
-    delete:
-      parameters:
-      - name: id
-        description: The organisation to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Removes an organisation
-      description: Removes an organisation
-      tags:
-      - Organisation
-      operationId: delete-organisation-id
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          description: organisation is deleted
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /permission/token:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Takes a token without permissions and embeds the permissions in the returned token
-      description: Takes a token without permissions and embeds the permissions in the returned token
-      tags:
-      - Permissions
-      operationId: get-permission-token
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Bad Request
-        "401":
-          description: Unauthorized
-        "200":
-          description: Success
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /permission/{id}:
-    delete:
-      parameters:
-      - name: id
-        description: ID of the permission to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Delete permission
-      description: Delete permission
-      tags:
-      - Permissions
-      operationId: delete-permission-id
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Bad Request
-        "401":
-          description: Unauthorized
-        "200":
-          description: Permission is deleted
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Not Found
-        "403":
-          description: Forbidden
-  /organisation:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All Organisations
-      description: All Organisations
-      tags:
-      - Organisation
-      operationId: get-organisation
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OrganisationGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/OrganisationGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/OrganisationGet200TextJsonResponse'
-          description: A list of Organisations
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update an organisation
-      description: Update an organisation
-      tags:
-      - Organisation
-      operationId: put-organisation
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Organisation'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Organisation'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Organisation'
-        description: The organisation to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          description: Update is correct
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create new organisation
-      description: Create new organisation
-      tags:
-      - Organisation
-      operationId: post-organisation
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Organisation'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Organisation'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Organisation'
-        description: The organisation to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Organisation'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Organisation'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Organisation'
-          description: Returns the organisation
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /permission:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All Permissions
-      description: All Permissions
-      tags:
-      - Permissions
-      operationId: get-permission
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PermissionGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/PermissionGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/PermissionGet200TextJsonResponse'
-          description: A list of Permissions
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update permission
-      description: Update permission
-      tags:
-      - Permissions
-      operationId: put-permission
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Permission'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Permission'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Permission'
-        description: The permission to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Permission'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Permission'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Permission'
-          description: ""
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create permission
-      description: Create permission
-      tags:
-      - Permissions
-      operationId: post-permission
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Permission'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Permission'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Permission'
-        description: The permission to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Permission'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Permission'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Permission'
-          description: Returns the created permission
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /apiKey/block:
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Blocks API Key
-      description: Blocks API Key
-      tags:
-      - ApiKey
-      operationId: post-apikey-block
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ApiIdentifier'
-        description: The hash of the API to block
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: API Key is empty
-        "401":
-          description: Unauthorized
-        "200":
-          description: API Key is blocked
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: API Key not found
-        "403":
-          description: Forbidden
-  /role/{id}:
-    delete:
-      parameters:
-      - name: id
-        description: ID of the role to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Delete role
-      description: Delete role
-      tags:
-      - Role
-      operationId: delete-role-id
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Bad Request
-        "401":
-          description: Unauthorized
-        "200":
-          description: Role is deleted
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Not Found
-        "403":
-          description: Forbidden
-  /application/{id}:
-    delete:
-      parameters:
-      - name: id
-        description: ID of the application to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Delete application
-      description: Delete application
-      tags:
-      - Applications
-      operationId: delete-application-id
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Bad Request
-        "401":
-          description: Unauthorized
-        "200":
-          description: Application is deleted
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Not Found
-        "403":
-          description: Forbidden
-  /monitor:
-    get:
-      summary: /monitor - GET
-      tags:
-      - Monitor
-      responses:
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MonitorGet503ApplicationJsonResponse'
-          description: Service Unavailable
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MonitorGet200ApplicationJsonResponse'
-          description: OK
-      operationId: get-monitor
-  /group/{id}:
-    delete:
-      parameters:
-      - name: id
-        description: ID of the group to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Delete group
-      description: Delete group
-      tags:
-      - Groups
-      operationId: delete-group-id
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Bad Request
-        "401":
-          description: Unauthorized
-        "200":
-          description: Group is deleted
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Not Found
-        "403":
-          description: Forbidden
-  /resourceType/{id}:
-    delete:
-      parameters:
-      - name: id
-        description: ID of the resource type to delete
-        in: path
-        schema:
-          type: string
-        required: true
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Delete resourcetype
-      description: Delete resourcetype
-      tags:
-      - ResourceType
-      operationId: delete-resourcetype-id
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Bad Request
-        "401":
-          description: Unauthorized
-        "200":
-          description: Resource type is deleted
-        "429":
-          description: Too many requests
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: Not Found
-        "403":
-          description: Forbidden
-  /application:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All Applications
-      description: All Applications
-      tags:
-      - Applications
-      operationId: get-application
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApplicationGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ApplicationGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ApplicationGet200TextJsonResponse'
-          description: A list of Applications
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update application
-      description: Update application
-      tags:
-      - Applications
-      operationId: put-application
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Application'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Application'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Application'
-        description: The application to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Application'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Application'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Application'
-          description: ""
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create application
-      description: Create application
-      tags:
-      - Applications
-      operationId: post-application
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Application'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Application'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Application'
-        description: The application to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Application'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Application'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Application'
-          description: Returns the created application
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /role:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All roles
-      description: All roles
-      tags:
-      - Role
-      operationId: get-role
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RoleGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/RoleGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/RoleGet200TextJsonResponse'
-          description: Success
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update role
-      description: Update role
-      tags:
-      - Role
-      operationId: put-role
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Role'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Role'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Role'
-        description: The role to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Role'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Role'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Role'
-          description: ""
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create role
-      description: Create role
-      tags:
-      - Role
-      operationId: post-role
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Role'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Role'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Role'
-        description: The role to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Role'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Role'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Role'
-          description: Returns the created role
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /group:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All groups
-      description: All groups
-      tags:
-      - Groups
-      operationId: get-group
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GroupGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/GroupGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/GroupGet200TextJsonResponse'
-          description: A list of groups
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update group
-      description: Update group
-      tags:
-      - Groups
-      operationId: put-group
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Group'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Group'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Group'
-        description: The group to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Group'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Group'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Group'
-          description: ""
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create group
-      description: Create group
-      tags:
-      - Groups
-      operationId: post-group
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Group'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Group'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Group'
-        description: The group to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Group'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Group'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Group'
-          description: Returns the created group
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-  /user:
-    get:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: All Users
-      description: All Users
-      tags:
-      - User
-      operationId: get-user
-      responses:
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
-        "429":
-          description: Too many requests
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserGet200ApplicationJsonResponse'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/UserGet200TextPlainResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/UserGet200TextJsonResponse'
-          description: A list of Users
-    put:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Update a user
-      description: Update a user
-      tags:
-      - User
-      operationId: put-user
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/User'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/User'
-        description: The user to update
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          description: Update is correct
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
-    post:
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
-      summary: Create new user
-      description: Create new user
-      tags:
-      - User
-      operationId: post-user
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NewUserRequest'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/NewUserRequest'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/NewUserRequest'
-        description: The user information to create
-      responses:
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-          description: If the request has any errors
-        "401":
-          description: Unauthorized
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreatedUser'
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CreatedUser'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CreatedUser'
-          description: Returns the user and the password reset link
-        "429":
-          description: Too many requests
-        "403":
-          description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
 

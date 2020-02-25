@@ -1,4 +1,5 @@
 {
+  "openapi": "3.0.1",
   "info": {
     "title": "AppyParking Mock Api",
     "description": "TODO This API version has been deprecated.",
@@ -9,16 +10,179 @@
       "url": "https://api.appyway.com/appyparkingmockapi/v1"
     }
   ],
-  "security": [
-    {
-      "apiKey": []
+  "paths": {
+    "/People/{id}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "summary": "Gets a single person.",
+        "description": "Gets a single person.",
+        "operationId": "get-people-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested person identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The person was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The person does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
     },
-    {
-      "oAuth2": []
+    "/Orders/{id}": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Gets a single order.",
+        "description": "Gets a single order.",
+        "operationId": "get-orders-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested order identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The order was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The order does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
     }
-  ],
-  "openapi": "3.0.1",
+  },
   "components": {
+    "schemas": {
+      "Order": {
+        "required": [
+          "customer"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for the order.",
+            "format": "int32"
+          },
+          "createdDate": {
+            "type": "string",
+            "description": "Gets or sets the date and time when the order was created.",
+            "format": "date-time"
+          },
+          "customer": {
+            "type": "string",
+            "description": "Gets or sets the name of the ordering customer."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an order."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": false
+        }
+      },
+      "Person": {
+        "required": [
+          "firstName",
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for a person.",
+            "format": "int32"
+          },
+          "firstName": {
+            "maxLength": 25,
+            "minLength": 0,
+            "type": "string",
+            "description": "Gets or sets the first name of a person."
+          },
+          "lastName": {
+            "maxLength": 25,
+            "minLength": 0,
+            "type": "string",
+            "description": "Gets or sets the last name of a person."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a person."
+      }
+    },
     "securitySchemes": {
       "apiKey": {
         "name": "API-KEY",
@@ -35,178 +199,14 @@
         },
         "type": "oauth2"
       }
-    },
-    "schemas": {
-      "Person": {
-        "description": "Represents a person.",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "format": "int32",
-            "description": "Gets or sets the unique identifier for a person.",
-            "type": "integer"
-          },
-          "firstName": {
-            "maxLength": 25,
-            "description": "Gets or sets the first name of a person.",
-            "type": "string",
-            "minLength": 0
-          },
-          "lastName": {
-            "maxLength": 25,
-            "description": "Gets or sets the last name of a person.",
-            "type": "string",
-            "minLength": 0
-          }
-        },
-        "required": [
-          "firstName",
-          "lastName"
-        ]
-      },
-      "ProblemDetails": {
-        "additionalProperties": {
-          "additionalProperties": false,
-          "type": "object"
-        },
-        "properties": {
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "instance": {
-            "type": "string",
-            "nullable": true
-          },
-          "detail": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "format": "int32",
-            "type": "integer",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "Order": {
-        "description": "Represents an order.",
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "createdDate": {
-            "format": "date-time",
-            "description": "Gets or sets the date and time when the order was created.",
-            "type": "string"
-          },
-          "customer": {
-            "description": "Gets or sets the name of the ordering customer.",
-            "type": "string"
-          },
-          "id": {
-            "format": "int32",
-            "description": "Gets or sets the unique identifier for the order.",
-            "type": "integer"
-          }
-        },
-        "required": [
-          "customer"
-        ]
-      }
     }
   },
-  "paths": {
-    "/Orders/{id}": {
-      "get": {
-        "parameters": [
-          {
-            "name": "id",
-            "description": "Format - int32. The requested order identifier.",
-            "in": "path",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Gets a single order.",
-        "description": "Gets a single order.",
-        "tags": [
-          "Orders"
-        ],
-        "operationId": "get-orders-id",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              }
-            },
-            "description": "The order was successfully retrieved."
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            },
-            "description": "The order does not exist."
-          }
-        }
-      }
+  "security": [
+    {
+      "apiKey": []
     },
-    "/People/{id}": {
-      "get": {
-        "parameters": [
-          {
-            "name": "id",
-            "description": "Format - int32. The requested person identifier.",
-            "in": "path",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Gets a single person.",
-        "description": "Gets a single person.",
-        "tags": [
-          "People"
-        ],
-        "operationId": "get-people-id",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Person"
-                }
-              }
-            },
-            "description": "The person was successfully retrieved."
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            },
-            "description": "The person does not exist."
-          }
-        }
-      }
+    {
+      "oAuth2": []
     }
-  }
+  ]
 }
