@@ -11,14 +11,14 @@
     }
   ],
   "paths": {
-    "/v1/activityType/list": {
+    "/activityType/list": {
       "get": {
         "tags": [
           "ActivityType"
         ],
         "summary": "List",
         "description": "Gets all activity types",
-        "operationId": "get-v1-activitytype-list",
+        "operationId": "get-activitytype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -34,17 +34,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ActivityTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/ActivityTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ActivityTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/ActivityTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ActivityTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/ActivityTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -61,14 +61,14 @@
         }
       }
     },
-    "/v1/all/list": {
+    "/all/list": {
       "get": {
         "tags": [
           "All"
         ],
         "summary": "List",
         "description": "Gets all reference data",
-        "operationId": "get-v1-all-list",
+        "operationId": "get-all-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -111,14 +111,14 @@
         }
       }
     },
-    "/v1/authorityType/list": {
+    "/authorityType/list": {
       "get": {
         "tags": [
           "AuthorityType"
         ],
         "summary": "List",
         "description": "Gets all authority types",
-        "operationId": "get-v1-authoritytype-list",
+        "operationId": "get-authoritytype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -134,17 +134,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1AuthorityTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/AuthorityTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1AuthorityTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/AuthorityTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1AuthorityTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/AuthorityTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -161,14 +161,14 @@
         }
       }
     },
-    "/v1/baseMap/list": {
+    "/baseMap/list": {
       "get": {
         "tags": [
           "BaseMap"
         ],
         "summary": "List",
         "description": "Gets all base maps",
-        "operationId": "get-v1-basemap-list",
+        "operationId": "get-basemap-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -184,17 +184,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1BaseMapListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/BaseMapListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1BaseMapListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/BaseMapListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1BaseMapListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/BaseMapListGet200TextJsonResponse"
                 }
               }
             }
@@ -211,14 +211,14 @@
         }
       }
     },
-    "/v1/country/list": {
+    "/country/list": {
       "get": {
         "tags": [
           "Country"
         ],
         "summary": "List",
         "description": "Gets all countries",
-        "operationId": "get-v1-country-list",
+        "operationId": "get-country-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -234,17 +234,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1CountryListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/CountryListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1CountryListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/CountryListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1CountryListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/CountryListGet200TextJsonResponse"
                 }
               }
             }
@@ -261,14 +261,14 @@
         }
       }
     },
-    "/v1/entitlementType/list": {
+    "/entitlementType/list": {
       "get": {
         "tags": [
           "EntitlementType"
         ],
         "summary": "List",
         "description": "Gets all entitlement types",
-        "operationId": "get-v1-entitlementtype-list",
+        "operationId": "get-entitlementtype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -284,17 +284,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1EntitlementTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/EntitlementTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1EntitlementTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/EntitlementTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1EntitlementTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/EntitlementTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -311,14 +311,14 @@
         }
       }
     },
-    "/v1/exceptionType/list": {
+    "/exceptionType/list": {
       "get": {
         "tags": [
           "ExceptionType"
         ],
         "summary": "List",
         "description": "Gets all exception types",
-        "operationId": "get-v1-exceptiontype-list",
+        "operationId": "get-exceptiontype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -334,17 +334,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExceptionTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/ExceptionTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExceptionTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/ExceptionTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExceptionTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/ExceptionTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -361,14 +361,14 @@
         }
       }
     },
-    "/v1/exemptionTimeType/list": {
+    "/exemptionTimeType/list": {
       "get": {
         "tags": [
           "ExemptionTimeType"
         ],
         "summary": "List",
         "description": "Gets all exemption time types",
-        "operationId": "get-v1-exemptiontimetype-list",
+        "operationId": "get-exemptiontimetype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -384,17 +384,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExemptionTimeTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExemptionTimeTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExemptionTimeTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -411,14 +411,14 @@
         }
       }
     },
-    "/v1/exemptionType/list": {
+    "/exemptionType/list": {
       "get": {
         "tags": [
           "ExemptionType"
         ],
         "summary": "List",
         "description": "Gets all exemption types",
-        "operationId": "get-v1-exemptiontype-list",
+        "operationId": "get-exemptiontype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -434,17 +434,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExemptionTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/ExemptionTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExemptionTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/ExemptionTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ExemptionTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/ExemptionTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -461,14 +461,14 @@
         }
       }
     },
-    "/v1/facilityType/list": {
+    "/facilityType/list": {
       "get": {
         "tags": [
           "FacilityType"
         ],
         "summary": "List",
         "description": "Gets all facility types",
-        "operationId": "get-v1-facilitytype-list",
+        "operationId": "get-facilitytype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -484,17 +484,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1FacilityTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/FacilityTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1FacilityTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/FacilityTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1FacilityTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/FacilityTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -511,14 +511,14 @@
         }
       }
     },
-    "/v1/fuelType/list": {
+    "/fuelType/list": {
       "get": {
         "tags": [
           "FuelType"
         ],
         "summary": "List",
         "description": "Gets all fuel types",
-        "operationId": "get-v1-fueltype-list",
+        "operationId": "get-fueltype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -534,17 +534,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1FuelTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/FuelTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1FuelTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/FuelTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1FuelTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/FuelTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -561,13 +561,13 @@
         }
       }
     },
-    "/v1/monitor": {
+    "/monitor": {
       "get": {
         "tags": [
           "Monitor"
         ],
-        "summary": "/v1/monitor - GET",
-        "operationId": "get-v1-monitor",
+        "summary": "/monitor - GET",
+        "operationId": "get-monitor",
         "parameters": [
           {
             "name": "API-KEY",
@@ -593,14 +593,14 @@
         }
       }
     },
-    "/v1/noteVisibilityType/list": {
+    "/noteVisibilityType/list": {
       "get": {
         "tags": [
           "NoteVisibilityType"
         ],
         "summary": "List",
         "description": "Gets all note visibility types",
-        "operationId": "get-v1-notevisibilitytype-list",
+        "operationId": "get-notevisibilitytype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -616,17 +616,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1NoteVisibilityTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1NoteVisibilityTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1NoteVisibilityTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -643,14 +643,14 @@
         }
       }
     },
-    "/v1/onStreetParkingType/list": {
+    "/onStreetParkingType/list": {
       "get": {
         "tags": [
           "OnStreetParkingType"
         ],
         "summary": "List",
         "description": "Gets all on street parking types",
-        "operationId": "get-v1-onstreetparkingtype-list",
+        "operationId": "get-onstreetparkingtype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -666,17 +666,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1OnStreetParkingTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1OnStreetParkingTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1OnStreetParkingTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -693,14 +693,14 @@
         }
       }
     },
-    "/v1/paymentMethod/list": {
+    "/paymentMethod/list": {
       "get": {
         "tags": [
           "PaymentMethod"
         ],
         "summary": "List",
         "description": "Gets all payment methods",
-        "operationId": "get-v1-paymentmethod-list",
+        "operationId": "get-paymentmethod-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -716,17 +716,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1PaymentMethodListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/PaymentMethodListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1PaymentMethodListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/PaymentMethodListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1PaymentMethodListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/PaymentMethodListGet200TextJsonResponse"
                 }
               }
             }
@@ -743,14 +743,14 @@
         }
       }
     },
-    "/v1/permitType/list": {
+    "/permitType/list": {
       "get": {
         "tags": [
           "PermitType"
         ],
         "summary": "List",
         "description": "Gets all permit types",
-        "operationId": "get-v1-permittype-list",
+        "operationId": "get-permittype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -766,17 +766,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1PermitTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/PermitTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1PermitTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/PermitTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1PermitTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/PermitTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -793,14 +793,14 @@
         }
       }
     },
-    "/v1/region/list": {
+    "/region/list": {
       "get": {
         "tags": [
           "Region"
         ],
         "summary": "List",
         "description": "Gets all regions",
-        "operationId": "get-v1-region-list",
+        "operationId": "get-region-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -816,17 +816,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1RegionListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/RegionListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1RegionListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/RegionListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1RegionListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/RegionListGet200TextJsonResponse"
                 }
               }
             }
@@ -843,14 +843,14 @@
         }
       }
     },
-    "/v1/restrictionType/list": {
+    "/restrictionType/list": {
       "get": {
         "tags": [
           "RestrictionType"
         ],
         "summary": "List",
         "description": "Gets all restriction types",
-        "operationId": "get-v1-restrictiontype-list",
+        "operationId": "get-restrictiontype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -866,17 +866,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1RestrictionTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/RestrictionTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1RestrictionTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/RestrictionTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1RestrictionTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/RestrictionTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -893,14 +893,14 @@
         }
       }
     },
-    "/v1/specialRestriction/list": {
+    "/specialRestriction/list": {
       "get": {
         "tags": [
           "SpecialRestrictions"
         ],
         "summary": "List",
         "description": "Gets all special restrictions",
-        "operationId": "get-v1-specialrestriction-list",
+        "operationId": "get-specialrestriction-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -916,17 +916,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1SpecialRestrictionListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/SpecialRestrictionListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1SpecialRestrictionListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/SpecialRestrictionListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1SpecialRestrictionListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/SpecialRestrictionListGet200TextJsonResponse"
                 }
               }
             }
@@ -943,14 +943,14 @@
         }
       }
     },
-    "/v1/vehicleType/list": {
+    "/vehicleType/list": {
       "get": {
         "tags": [
           "VehicleType"
         ],
         "summary": "List",
         "description": "Gets all vehicle types",
-        "operationId": "get-v1-vehicletype-list",
+        "operationId": "get-vehicletype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -966,17 +966,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1VehicleTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/VehicleTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1VehicleTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/VehicleTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1VehicleTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/VehicleTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -993,14 +993,14 @@
         }
       }
     },
-    "/v1/zoneType/list": {
+    "/zoneType/list": {
       "get": {
         "tags": [
           "ZoneType"
         ],
         "summary": "List",
         "description": "Gets all zone types",
-        "operationId": "get-v1-zonetype-list",
+        "operationId": "get-zonetype-list",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1016,17 +1016,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ZoneTypeListGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/ZoneTypeListGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ZoneTypeListGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/ZoneTypeListGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/V1ZoneTypeListGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/ZoneTypeListGet200TextJsonResponse"
                 }
               }
             }
@@ -1690,343 +1690,343 @@
         },
         "additionalProperties": false
       },
-      "V1ActivityTypeListGet200TextPlainResponse": {
+      "ActivityTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ActivityType"
         }
       },
-      "V1ActivityTypeListGet200ApplicationJsonResponse": {
+      "ActivityTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ActivityType"
         }
       },
-      "V1ActivityTypeListGet200TextJsonResponse": {
+      "ActivityTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ActivityType"
         }
       },
-      "V1AuthorityTypeListGet200TextPlainResponse": {
+      "AuthorityTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AuthorityType"
         }
       },
-      "V1AuthorityTypeListGet200ApplicationJsonResponse": {
+      "AuthorityTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AuthorityType"
         }
       },
-      "V1AuthorityTypeListGet200TextJsonResponse": {
+      "AuthorityTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/AuthorityType"
         }
       },
-      "V1BaseMapListGet200TextPlainResponse": {
+      "BaseMapListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BaseMap"
         }
       },
-      "V1BaseMapListGet200ApplicationJsonResponse": {
+      "BaseMapListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BaseMap"
         }
       },
-      "V1BaseMapListGet200TextJsonResponse": {
+      "BaseMapListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BaseMap"
         }
       },
-      "V1CountryListGet200TextPlainResponse": {
+      "CountryListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Country"
         }
       },
-      "V1CountryListGet200ApplicationJsonResponse": {
+      "CountryListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Country"
         }
       },
-      "V1CountryListGet200TextJsonResponse": {
+      "CountryListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Country"
         }
       },
-      "V1EntitlementTypeListGet200TextPlainResponse": {
+      "EntitlementTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EntitlementType"
         }
       },
-      "V1EntitlementTypeListGet200ApplicationJsonResponse": {
+      "EntitlementTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EntitlementType"
         }
       },
-      "V1EntitlementTypeListGet200TextJsonResponse": {
+      "EntitlementTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EntitlementType"
         }
       },
-      "V1ExceptionTypeListGet200TextPlainResponse": {
+      "ExceptionTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExceptionType"
         }
       },
-      "V1ExceptionTypeListGet200ApplicationJsonResponse": {
+      "ExceptionTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExceptionType"
         }
       },
-      "V1ExceptionTypeListGet200TextJsonResponse": {
+      "ExceptionTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExceptionType"
         }
       },
-      "V1ExemptionTimeTypeListGet200TextPlainResponse": {
+      "ExemptionTimeTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExemptionTimeType"
         }
       },
-      "V1ExemptionTimeTypeListGet200ApplicationJsonResponse": {
+      "ExemptionTimeTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExemptionTimeType"
         }
       },
-      "V1ExemptionTimeTypeListGet200TextJsonResponse": {
+      "ExemptionTimeTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExemptionTimeType"
         }
       },
-      "V1ExemptionTypeListGet200TextPlainResponse": {
+      "ExemptionTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExemptionType"
         }
       },
-      "V1ExemptionTypeListGet200ApplicationJsonResponse": {
+      "ExemptionTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExemptionType"
         }
       },
-      "V1ExemptionTypeListGet200TextJsonResponse": {
+      "ExemptionTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ExemptionType"
         }
       },
-      "V1FacilityTypeListGet200TextPlainResponse": {
+      "FacilityTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FacilityType"
         }
       },
-      "V1FacilityTypeListGet200ApplicationJsonResponse": {
+      "FacilityTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FacilityType"
         }
       },
-      "V1FacilityTypeListGet200TextJsonResponse": {
+      "FacilityTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FacilityType"
         }
       },
-      "V1FuelTypeListGet200TextPlainResponse": {
+      "FuelTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FuelType"
         }
       },
-      "V1FuelTypeListGet200ApplicationJsonResponse": {
+      "FuelTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FuelType"
         }
       },
-      "V1FuelTypeListGet200TextJsonResponse": {
+      "FuelTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FuelType"
         }
       },
-      "V1NoteVisibilityTypeListGet200TextPlainResponse": {
+      "NoteVisibilityTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/NoteVisibilityType"
         }
       },
-      "V1NoteVisibilityTypeListGet200ApplicationJsonResponse": {
+      "NoteVisibilityTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/NoteVisibilityType"
         }
       },
-      "V1NoteVisibilityTypeListGet200TextJsonResponse": {
+      "NoteVisibilityTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/NoteVisibilityType"
         }
       },
-      "V1OnStreetParkingTypeListGet200TextPlainResponse": {
+      "OnStreetParkingTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OnStreetParkingType"
         }
       },
-      "V1OnStreetParkingTypeListGet200ApplicationJsonResponse": {
+      "OnStreetParkingTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OnStreetParkingType"
         }
       },
-      "V1OnStreetParkingTypeListGet200TextJsonResponse": {
+      "OnStreetParkingTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OnStreetParkingType"
         }
       },
-      "V1PaymentMethodListGet200TextPlainResponse": {
+      "PaymentMethodListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PaymentMethod"
         }
       },
-      "V1PaymentMethodListGet200ApplicationJsonResponse": {
+      "PaymentMethodListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PaymentMethod"
         }
       },
-      "V1PaymentMethodListGet200TextJsonResponse": {
+      "PaymentMethodListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PaymentMethod"
         }
       },
-      "V1PermitTypeListGet200TextPlainResponse": {
+      "PermitTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PermitType"
         }
       },
-      "V1PermitTypeListGet200ApplicationJsonResponse": {
+      "PermitTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PermitType"
         }
       },
-      "V1PermitTypeListGet200TextJsonResponse": {
+      "PermitTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/PermitType"
         }
       },
-      "V1RegionListGet200TextPlainResponse": {
+      "RegionListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Region"
         }
       },
-      "V1RegionListGet200ApplicationJsonResponse": {
+      "RegionListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Region"
         }
       },
-      "V1RegionListGet200TextJsonResponse": {
+      "RegionListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Region"
         }
       },
-      "V1RestrictionTypeListGet200TextPlainResponse": {
+      "RestrictionTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RestrictionType"
         }
       },
-      "V1RestrictionTypeListGet200ApplicationJsonResponse": {
+      "RestrictionTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RestrictionType"
         }
       },
-      "V1RestrictionTypeListGet200TextJsonResponse": {
+      "RestrictionTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/RestrictionType"
         }
       },
-      "V1SpecialRestrictionListGet200TextPlainResponse": {
+      "SpecialRestrictionListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SpecialRestriction"
         }
       },
-      "V1SpecialRestrictionListGet200ApplicationJsonResponse": {
+      "SpecialRestrictionListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SpecialRestriction"
         }
       },
-      "V1SpecialRestrictionListGet200TextJsonResponse": {
+      "SpecialRestrictionListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SpecialRestriction"
         }
       },
-      "V1VehicleTypeListGet200TextPlainResponse": {
+      "VehicleTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/VehicleType"
         }
       },
-      "V1VehicleTypeListGet200ApplicationJsonResponse": {
+      "VehicleTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/VehicleType"
         }
       },
-      "V1VehicleTypeListGet200TextJsonResponse": {
+      "VehicleTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/VehicleType"
         }
       },
-      "V1ZoneTypeListGet200TextPlainResponse": {
+      "ZoneTypeListGet200TextPlainResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ZoneType"
         }
       },
-      "V1ZoneTypeListGet200ApplicationJsonResponse": {
+      "ZoneTypeListGet200ApplicationJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ZoneType"
         }
       },
-      "V1ZoneTypeListGet200TextJsonResponse": {
+      "ZoneTypeListGet200TextJsonResponse": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ZoneType"
