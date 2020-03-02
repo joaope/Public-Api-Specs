@@ -11,14 +11,14 @@
     }
   ],
   "paths": {
-    "/api/v0.1": {
+    "/": {
       "post": {
         "tags": [
           "Static Entity Data"
         ],
         "summary": "Bulk Retrieval",
         "description": "Returns the static details for a list of entities by their IDs",
-        "operationId": "post-api-v0-1",
+        "operationId": "post",
         "parameters": [
           {
             "name": "API-KEY",
@@ -80,14 +80,14 @@
         }
       }
     },
-    "/api/v0.1/authority/{id}": {
+    "/authority/{id}": {
       "get": {
         "tags": [
           "Static Entity Data"
         ],
         "summary": "Authority by ID",
         "description": "Returns the static details for a specific authority by its ID",
-        "operationId": "get-api-v0-1-authority-id",
+        "operationId": "get-authority-id",
         "parameters": [
           {
             "name": "id",
@@ -138,14 +138,14 @@
         }
       }
     },
-    "/api/v0.1/monitor": {
+    "/monitor": {
       "get": {
         "tags": [
           "Monitor"
         ],
         "summary": "Monitor",
         "description": "Returns information on the health of the Map Entity service",
-        "operationId": "get-api-v0-1-monitor",
+        "operationId": "get-monitor",
         "parameters": [
           {
             "name": "API-KEY",
@@ -171,14 +171,14 @@
         }
       }
     },
-    "/api/v0.1/parking/{id}": {
+    "/parking/{id}": {
       "get": {
         "tags": [
           "Static Entity Data"
         ],
         "summary": "Parking Entity by ID",
         "description": "Returns the static details for a parking entity by its ID",
-        "operationId": "get-api-v0-1-parking-id",
+        "operationId": "get-parking-id",
         "parameters": [
           {
             "name": "id",
@@ -229,14 +229,14 @@
         }
       }
     },
-    "/api/v0.1/parking/{id}/paymentProvider": {
+    "/parking/{id}/paymentProvider": {
       "get": {
         "tags": [
           "Static Entity Data"
         ],
         "summary": "Payment Providers by entity ID",
         "description": "Returns payment providers for the given parking entity ID",
-        "operationId": "get-api-v0-1-parking-id-paymentprovider",
+        "operationId": "get-parking-id-paymentprovider",
         "parameters": [
           {
             "name": "id",
@@ -287,14 +287,14 @@
         }
       }
     },
-    "/api/v0.1/search/parking/centreAndViewportSize": {
+    "/search/parking/centreAndViewportSize": {
       "post": {
         "tags": [
           "Search"
         ],
         "summary": "Parking by centre and viewport size",
         "description": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns all Parking Entities within that viewport.",
-        "operationId": "post-api-v0-1-search-parking-centreandviewportsize",
+        "operationId": "post-search-parking-centreandviewportsize",
         "parameters": [
           {
             "name": "API-KEY",
@@ -356,14 +356,14 @@
         }
       }
     },
-    "/api/v0.1/search/parking/viewport": {
+    "/search/parking/viewport": {
       "post": {
         "tags": [
           "Search"
         ],
         "summary": "Parking by viewport",
         "description": "This query creates a custom viewport from the supplied GeoJson polygon and returns all results within the bounds of that polygon.",
-        "operationId": "post-api-v0-1-search-parking-viewport",
+        "operationId": "post-search-parking-viewport",
         "parameters": [
           {
             "name": "API-KEY",
@@ -425,14 +425,14 @@
         }
       }
     },
-    "/api/v0.1/search/zone/viewport": {
+    "/search/zone/viewport": {
       "post": {
         "tags": [
           "Search"
         ],
         "summary": "Zones by viewport",
         "description": "Returns defaults for zones that are at least partially within the specified viewport. Also returns the ID of the zone and authority in which the centroid of the viewport resides.",
-        "operationId": "post-api-v0-1-search-zone-viewport",
+        "operationId": "post-search-zone-viewport",
         "parameters": [
           {
             "name": "API-KEY",
@@ -494,14 +494,14 @@
         }
       }
     },
-    "/api/v0.1/zone/{id}": {
+    "/zone/{id}": {
       "get": {
         "tags": [
           "Static Entity Data"
         ],
         "summary": "Zone By ID",
         "description": "Returns the static details for a specific zone by its ID",
-        "operationId": "get-api-v0-1-zone-id",
+        "operationId": "get-zone-id",
         "parameters": [
           {
             "name": "id",
@@ -580,7 +580,7 @@
           4
         ],
         "type": "integer",
-        "description": "Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.",
+        "description": "Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.\n\n- OnStreet (1) - An on street parking area\r\n- Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.\r\n- Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.\r\nA zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may\r\ndefine rules parking entities that can be overridden by individual entities.\r\n- Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.\r\n",
         "format": "int32"
       },
       "SearchParkingByViewportFilters": {
@@ -662,7 +662,7 @@
             "items": {
               "$ref": "#/components/schemas/Permit"
             },
-            "description": "Any permits held by the operator (e.g. blue badge, car club permit)",
+            "description": "Any permits held by the operator (e.g. blue disabled badge, car club permit)",
             "nullable": true
           }
         },
@@ -678,18 +678,6 @@
         ],
         "type": "object",
         "properties": {
-          "startTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "Start of the window for which to retrieve state. Required.",
-            "format": "date-time"
-          },
-          "endTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "End of the window for which to retrieve state. Required.",
-            "format": "date-time"
-          },
           "viewportCenter": {
             "$ref": "#/components/schemas/LatLng"
           },
@@ -699,11 +687,23 @@
             "description": "Length of one side of the square viewport in meters. Required.",
             "format": "int32"
           },
-          "vehicleOperatorContext": {
-            "$ref": "#/components/schemas/VehicleOperatorContext"
+          "startTime": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "endTime": {
+            "minLength": 1,
+            "type": "string",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
           },
           "filters": {
             "$ref": "#/components/schemas/SearchParkingByViewportFilters"
+          },
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
           }
         },
         "additionalProperties": false,
@@ -715,7 +715,7 @@
           2
         ],
         "type": "integer",
-        "description": "Indicates how clients should interpret the value in a SurchargeDetails object - as a flat rate (absolute cost) or percentage of the original charge",
+        "description": "Indicates how clients should interpret the value in a SurchargeDetails object - as a flat rate (absolute cost) or percentage of the original charge\n\n- FlatRate (1) - The value should be interpreted as an absolute amount\r\n- Percentage (2) - The value should be interpreted as a percentage of the original cost (before surcharge)\r\n",
         "format": "int32"
       },
       "SurchargeCriteria": {
@@ -773,13 +773,13 @@
           },
           "canExtendUntil": {
             "type": "string",
-            "description": "The maximum time until which the user can park. This value ignores the requested window and is the\r\nlatest time the user is able to remain parked in the space if they were to extend their session\r\nbeyond the requested window.",
+            "description": "The maximum time until which the user can park. This value ignores the requested window and is the\r\nlatest time the user is able to remain parked in the space if they were to extend their session\r\nbeyond the requested window.\r\nDates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time",
             "nullable": true
           },
           "pricedUntil": {
             "type": "string",
-            "description": "The maximum time until which the user can park for the price specified in the 'cost' field. The\r\n'cost' field is the cost for the requested time window, but that price may entitle the user to\r\npark longer than requested, in which case this field holds the time that the cost will entitle\r\nthem to park.",
+            "description": "The maximum time until which the user can park for the price specified in the 'cost' field. The\r\n'cost' field is the cost for the requested time window, but that price may entitle the user to\r\npark longer than requested, in which case this field holds the time that the cost will entitle\r\nthem to park.\r\nDates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time",
             "nullable": true
           },
@@ -817,12 +817,12 @@
           },
           "rulesApplyUntil": {
             "type": "string",
-            "description": "The date and time until the rules on which this quote is based apply.",
+            "description": "The date and time until the rules on which this quote is based apply.\r\nDates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
           "onStreetParkingType": {
             "type": "integer",
-            "description": "The type of the on street parking for the purposes of this quote. On street parking entities may have multiple types that apply\r\nat different times or simultaneously. If multiple types apply AND the vehicle operator context is such that more than one type allows\r\nthe user to park, then multiple quotes will be returned for a single result and each will have a different On Street Parking Type.\r\n            \r\nFor example, a bay may be simultaneously a Standard Bay and a Disabled Bay (if, for example, parking is free for blue disabled badge holders but\r\npaid for everyone else). If the vehicle operator has a blue badge permit, they will get two quotes back. One will have a type of StandardBay and\r\nthe other will have a type of DisabledBay.\r\n            \r\nThis field will not have a value for car parks.",
+            "description": "The type of the on street parking for the purposes of this quote. On street parking entities may have multiple types that apply\r\nat different times or simultaneously. If multiple types apply AND the vehicle operator context is such that more than one type allows\r\nthe user to park, then multiple quotes will be returned for a single result and each will have a different On Street Parking Type.\r\n            \r\nFor example, a bay may be simultaneously a Standard Bay and a Disabled Bay (if, for example, parking is free for blue disabled badge holders but\r\npaid for everyone else). If the vehicle operator has a blue disabled badge permit, they will get two quotes back. One will have a type of StandardBay and\r\nthe other will have a type of DisabledBay.\r\n            \r\nThis field will not have a value for car parks.",
             "format": "int32",
             "nullable": true
           },
@@ -840,7 +840,7 @@
           3
         ],
         "type": "integer",
-        "description": "Enum to indicate the different scenarios whereby parking may be allowed or denied.",
+        "description": "Enum to indicate the different scenarios whereby parking may be allowed or denied.\n\n- FullSession (1) - Parking is allowed for the whole of the requested window\r\n- TruncatedSession (2) - Parking is allowed for part of the requested window only\r\n- NoParking (3) - Parking is not allowed.\r\n",
         "format": "int32"
       },
       "NoParkingReasonType": {
@@ -851,7 +851,7 @@
           4
         ],
         "type": "integer",
-        "description": "Reasons that parking is not permitted at a parking entity",
+        "description": "Reasons that parking is not permitted at a parking entity\n\n- NoParkingAllowed (1) - Parking is never allowed at this location for anybody\r\n- IncorrectVehicleOperatorContext (2) - Parking is allowed during the requested window, but not for the vehicle operator making the request\r\n- SpecialRestrictionsApply (3) - The parking entity is subject to special restrictions that apply during the requested window\r\n- CarParkClosed (4) - A car park that is closed during the requested window\r\n",
         "format": "int32"
       },
       "NoParkingReason": {
@@ -1047,26 +1047,26 @@
         ],
         "type": "object",
         "properties": {
-          "startTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "Start of the window for which to retrieve state. Required.",
-            "format": "date-time"
-          },
           "endTime": {
             "minLength": 1,
             "type": "string",
-            "description": "End of the window for which to retrieve state. Required.",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
-          "vehicleOperatorContext": {
-            "$ref": "#/components/schemas/VehicleOperatorContext"
+          "startTime": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "viewport": {
+            "$ref": "#/components/schemas/Polygon"
           },
           "filters": {
             "$ref": "#/components/schemas/SearchParkingByViewportFilters"
           },
-          "viewport": {
-            "$ref": "#/components/schemas/Polygon"
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
           }
         },
         "additionalProperties": false,
@@ -1080,12 +1080,12 @@
           },
           "startTime": {
             "type": "string",
-            "description": "Start of the window for which to retrieve state. Required.",
+            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
           "endTime": {
             "type": "string",
-            "description": "End of the window for which to retrieve state. Required.",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
           "vehicleOperatorContext": {
@@ -1347,7 +1347,7 @@
           10
         ],
         "type": "integer",
-        "description": "Different types of Zone",
+        "description": "Different types of Zone\n\n- ControlledParkingZone (1) - An ordinary zone in which authority-defined restrictions are in place.\r\n- RestrictedParkingZone (2) - A zone in which parking is never allowed.\r\n- FreeParking (3) - A zone in which parking is always allowed.\r\n- Private (4) - A region not under authority control (such as a shopping centre).\r\n- CongestionCharge (5) - A region in which congestion charges apply.\r\n- Container (7) - A zone that exists to contain On Street Parking entities that don't really belong in a zone.\r\n- ResidentsParkingScheme (8) - A zone in which a resident's permit parking scheme applies\r\n- PermitParkingArea (9) - Area of residential streets where parking is reserved for permit holders Gn++n++ a sign at the entrance to the street will show that parking is for permit holders only. \r\nPPAs may not have signs or bay markings within them. Sometimes there may be small plates to remind motorists of the controls in place\r\n- PedestrianZone (10) - Pedestrian area where no parking is allowed\r\n",
         "format": "int32"
       },
       "Zone": {
