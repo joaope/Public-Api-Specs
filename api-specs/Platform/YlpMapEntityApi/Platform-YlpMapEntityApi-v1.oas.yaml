@@ -6,13 +6,13 @@ info:
 servers:
 - url: https://api.appyway.com/mapentity/v1
 paths:
-  /:
+  /api/v1:
     post:
       tags:
       - Static Entity Data
       summary: List
       description: Retrieve a list of entities by their IDs
-      operationId: post
+      operationId: post-api-v1
       parameters:
       - name: API-KEY
         in: header
@@ -48,13 +48,13 @@ paths:
           description: Forbidden
         "429":
           description: Too many requests
-  /authority/{id}:
+  /api/v1/authority/{id}:
     get:
       tags:
       - Static Entity Data
       summary: Authority by ID
       description: Returns a specific authority by its ID
-      operationId: get-authority-id
+      operationId: get-api-v1-authority-id
       parameters:
       - name: id
         in: path
@@ -72,25 +72,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuthorityOkResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
         "404":
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
         "429":
           description: Too many requests
-  /monitor:
+  /api/v1/monitor:
     get:
       tags:
       - Monitor
       summary: Monitor
       description: Returns information on the health of the Map Entity service
-      operationId: get-monitor
+      operationId: get-api-v1-monitor
       parameters:
       - name: API-KEY
         in: header
@@ -105,13 +105,13 @@ paths:
           description: Forbidden
         "429":
           description: Too many requests
-  /parking/{id}:
+  /api/v1/parking/{id}:
     get:
       tags:
       - Static Entity Data
       summary: Parking Entity by ID
       description: Retrieves a parking entity by its ID
-      operationId: get-parking-id
+      operationId: get-api-v1-parking-id
       parameters:
       - name: id
         in: path
@@ -129,25 +129,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParkingEntityOkResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
         "404":
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
         "429":
           description: Too many requests
-  /parking/{id}/paymentProvider:
+  /api/v1/parking/{id}/paymentProvider:
     get:
       tags:
       - Static Entity Data
       summary: Payment Providers by entity ID
       description: Returns payment providers for the given parking entity ID
-      operationId: get-parking-id-paymentprovider
+      operationId: get-api-v1-parking-id-paymentprovider
       parameters:
       - name: id
         in: path
@@ -165,25 +165,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PaymentProvidersResponseOkResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
         "404":
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
         "429":
           description: Too many requests
-  /search/authority/viewport:
+  /api/v1/search/authority/viewport:
     post:
       tags:
       - Search
       summary: Authorities by viewport
       description: Returns authorities that are at least partially within the specified viewport.
-      operationId: post-search-authority-viewport
+      operationId: post-api-v1-search-authority-viewport
       parameters:
       - name: API-KEY
         in: header
@@ -219,7 +219,7 @@ paths:
           description: Forbidden
         "429":
           description: Too many requests
-  /search/parking/centreAndViewportSize:
+  /api/v1/search/parking/centreAndViewportSize:
     post:
       tags:
       - Search
@@ -228,7 +228,7 @@ paths:
         This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.
         It then returns an unordered list of search results for all parking entities within the bounds of that polygon. Results contain
         data on whether parking is allowed and how much it costs.
-      operationId: post-search-parking-centreandviewportsize
+      operationId: post-api-v1-search-parking-centreandviewportsize
       parameters:
       - name: API-KEY
         in: header
@@ -264,7 +264,7 @@ paths:
           description: Forbidden
         "429":
           description: Too many requests
-  /search/parking/viewport:
+  /api/v1/search/parking/viewport:
     post:
       tags:
       - Search
@@ -273,7 +273,7 @@ paths:
         This query creates a custom viewport from the supplied GeoJson polygon.
         It then returns an unordered list of search results for all parking entities within the bounds of that polygon. Results contain
         data on whether parking is allowed and how much it costs.
-      operationId: post-search-parking-viewport
+      operationId: post-api-v1-search-parking-viewport
       parameters:
       - name: API-KEY
         in: header
@@ -309,13 +309,13 @@ paths:
           description: Forbidden
         "429":
           description: Too many requests
-  /search/zone/viewport:
+  /api/v1/search/zone/viewport:
     post:
       tags:
       - Search
       summary: Zones by viewport
       description: Returns default rules for parking entities for zones that are at least partially within the specified viewport.
-      operationId: post-search-zone-viewport
+      operationId: post-api-v1-search-zone-viewport
       parameters:
       - name: API-KEY
         in: header
@@ -351,13 +351,13 @@ paths:
           description: Forbidden
         "429":
           description: Too many requests
-  /zone/{id}:
+  /api/v1/zone/{id}:
     get:
       tags:
       - Static Entity Data
       summary: Zone By ID
       description: Returns a specific zone by its ID
-      operationId: get-zone-id
+      operationId: get-api-v1-zone-id
       parameters:
       - name: id
         in: path
@@ -375,16 +375,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ZoneOkResponse'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
         "404":
           description: Not Found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
-        "401":
-          description: Unauthorized
-        "403":
-          description: Forbidden
         "429":
           description: Too many requests
 components:
@@ -490,15 +490,6 @@ components:
       - viewportSize
       type: object
       properties:
-        viewportCenter:
-          $ref: '#/components/schemas/LatLng'
-        viewportSize:
-          maximum: 750
-          exclusiveMaximum: true
-          minLength: 1
-          type: integer
-          description: Length of one side of the square viewport in meters. Required.
-          format: int32
         startTime:
           minLength: 1
           type: string
@@ -509,10 +500,19 @@ components:
           type: string
           description: End of the window for which to retrieve state. Required.
           format: date-time
-        filters:
-          $ref: '#/components/schemas/SearchParkingByViewportFilters'
+        viewportCenter:
+          $ref: '#/components/schemas/LatLng'
+        viewportSize:
+          maximum: 750
+          exclusiveMaximum: true
+          minLength: 1
+          type: integer
+          description: Length of one side of the square viewport in meters. Required.
+          format: int32
         vehicleOperatorContext:
           $ref: '#/components/schemas/VehicleOperatorContext'
+        filters:
+          $ref: '#/components/schemas/SearchParkingByViewportFilters'
       additionalProperties: false
       description: |-
         Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
@@ -791,22 +791,22 @@ components:
       - startTime
       type: object
       properties:
-        endTime:
-          minLength: 1
-          type: string
-          description: End of the window for which to retrieve state. Required.
-          format: date-time
         startTime:
           minLength: 1
           type: string
           description: Start of the window for which to retrieve state. Required.
           format: date-time
-        viewport:
-          $ref: '#/components/schemas/Polygon'
-        filters:
-          $ref: '#/components/schemas/SearchParkingByViewportFilters'
+        endTime:
+          minLength: 1
+          type: string
+          description: End of the window for which to retrieve state. Required.
+          format: date-time
         vehicleOperatorContext:
           $ref: '#/components/schemas/VehicleOperatorContext'
+        filters:
+          $ref: '#/components/schemas/SearchParkingByViewportFilters'
+        viewport:
+          $ref: '#/components/schemas/Polygon'
       additionalProperties: false
       description: |-
         Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
@@ -817,20 +817,16 @@ components:
       - startTime
       type: object
       properties:
-        endTime:
-          minLength: 1
-          type: string
-          description: End of the window for which to retrieve state. Required.
-          format: date-time
         startTime:
           minLength: 1
           type: string
           description: Start of the window for which to retrieve state. Required.
           format: date-time
-        viewport:
-          $ref: '#/components/schemas/Polygon'
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
+        endTime:
+          minLength: 1
+          type: string
+          description: End of the window for which to retrieve state. Required.
+          format: date-time
         onStreetParkingTypeIds:
           type: array
           items:
@@ -840,6 +836,10 @@ components:
             On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types
             in the zone for which they are defined.
           nullable: true
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+        viewport:
+          $ref: '#/components/schemas/Polygon'
       additionalProperties: false
       description: A request to search for zone default information by viewport
     ZoneDefault:

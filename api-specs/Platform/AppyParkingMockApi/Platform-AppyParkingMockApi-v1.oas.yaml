@@ -6,13 +6,13 @@ info:
 servers:
 - url: https://api.appyway.com/appyparkingmockapi/v1
 paths:
-  /Orders/{id}:
+  /api/v1/Orders/{id}:
     get:
       tags:
       - Orders
       summary: Gets a single order.
       description: Gets a single order.
-      operationId: get-orders-id
+      operationId: get-api-v1-orders-id
       parameters:
       - name: id
         in: path
@@ -33,13 +33,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-  /People/{id}:
+  /api/v1/People/{id}:
     get:
       tags:
       - People
       summary: Gets a single person.
       description: Gets a single person.
-      operationId: get-people-id
+      operationId: get-api-v1-people-id
       parameters:
       - name: id
         in: path
@@ -70,14 +70,14 @@ components:
         customer:
           type: string
           description: Gets or sets the name of the ordering customer.
-        createdDate:
-          type: string
-          description: Gets or sets the date and time when the order was created.
-          format: date-time
         id:
           type: integer
           description: Gets or sets the unique identifier for the order.
           format: int32
+        createdDate:
+          type: string
+          description: Gets or sets the date and time when the order was created.
+          format: date-time
       additionalProperties: false
       description: Represents an order.
     ProblemDetails:
@@ -108,16 +108,16 @@ components:
       - lastName
       type: object
       properties:
-        firstName:
-          maxLength: 25
-          minLength: 0
-          type: string
-          description: Gets or sets the first name of a person.
         lastName:
           maxLength: 25
           minLength: 0
           type: string
           description: Gets or sets the last name of a person.
+        firstName:
+          maxLength: 25
+          minLength: 0
+          type: string
+          description: Gets or sets the first name of a person.
         id:
           type: integer
           description: Gets or sets the unique identifier for a person.

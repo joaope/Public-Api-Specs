@@ -60,6 +60,94 @@
           }
         }
       },
+      "post": {
+        "tags": [
+          "ApiKey"
+        ],
+        "summary": "Create API Key",
+        "description": "Create API Key",
+        "operationId": "post-apikey",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The API Key information to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKey"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKey"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKey"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the API Key",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatedApiKey"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatedApiKey"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatedApiKey"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the request has any errors",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      },
       "put": {
         "tags": [
           "ApiKey"
@@ -253,94 +341,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "ApiKey"
-        ],
-        "summary": "Create API Key",
-        "description": "Create API Key",
-        "operationId": "post-apikey",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "The API Key information to create",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ApiKey"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ApiKey"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ApiKey"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Returns the API Key",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreatedApiKey"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreatedApiKey"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreatedApiKey"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "If the request has any errors",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
           },
           "429": {
             "description": "Too many requests"
@@ -583,13 +583,13 @@
           }
         }
       },
-      "put": {
+      "post": {
         "tags": [
           "Applications"
         ],
-        "summary": "Update application",
-        "description": "Update application",
-        "operationId": "put-application",
+        "summary": "Create application",
+        "description": "Create application",
+        "operationId": "post-application",
         "parameters": [
           {
             "name": "API-KEY",
@@ -600,7 +600,7 @@
           }
         ],
         "requestBody": {
-          "description": "The application to update",
+          "description": "The application to create",
           "content": {
             "application/json": {
               "schema": {
@@ -621,7 +621,7 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "Returns the created application",
             "content": {
               "text/plain": {
                 "schema": {
@@ -671,13 +671,13 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "Applications"
         ],
-        "summary": "Create application",
-        "description": "Create application",
-        "operationId": "post-application",
+        "summary": "Update application",
+        "description": "Update application",
+        "operationId": "put-application",
         "parameters": [
           {
             "name": "API-KEY",
@@ -688,7 +688,7 @@
           }
         ],
         "requestBody": {
-          "description": "The application to create",
+          "description": "The application to update",
           "content": {
             "application/json": {
               "schema": {
@@ -709,7 +709,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns the created application",
+            "description": "",
             "content": {
               "text/plain": {
                 "schema": {
@@ -891,13 +891,13 @@
           }
         }
       },
-      "put": {
+      "post": {
         "tags": [
           "Groups"
         ],
-        "summary": "Update group",
-        "description": "Update group",
-        "operationId": "put-group",
+        "summary": "Create group",
+        "description": "Create group",
+        "operationId": "post-group",
         "parameters": [
           {
             "name": "API-KEY",
@@ -908,7 +908,7 @@
           }
         ],
         "requestBody": {
-          "description": "The group to update",
+          "description": "The group to create",
           "content": {
             "application/json": {
               "schema": {
@@ -929,7 +929,7 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "Returns the created group",
             "content": {
               "text/plain": {
                 "schema": {
@@ -979,13 +979,13 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "Groups"
         ],
-        "summary": "Create group",
-        "description": "Create group",
-        "operationId": "post-group",
+        "summary": "Update group",
+        "description": "Update group",
+        "operationId": "put-group",
         "parameters": [
           {
             "name": "API-KEY",
@@ -996,7 +996,7 @@
           }
         ],
         "requestBody": {
-          "description": "The group to create",
+          "description": "The group to update",
           "content": {
             "application/json": {
               "schema": {
@@ -1017,7 +1017,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns the created group",
+            "description": "",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1182,13 +1182,13 @@
       }
     },
     "/organisation": {
-      "get": {
+      "post": {
         "tags": [
           "Organisation"
         ],
-        "summary": "All Organisations",
-        "description": "All Organisations",
-        "operationId": "get-organisation",
+        "summary": "Create new organisation",
+        "description": "Create new organisation",
+        "operationId": "post-organisation",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1198,23 +1198,63 @@
             }
           }
         ],
+        "requestBody": {
+          "description": "The organisation to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Organisation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Organisation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Organisation"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "A list of Organisations",
+            "description": "Returns the organisation",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganisationGet200TextPlainResponse"
+                  "$ref": "#/components/schemas/Organisation"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganisationGet200ApplicationJsonResponse"
+                  "$ref": "#/components/schemas/Organisation"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/OrganisationGet200TextJsonResponse"
+                  "$ref": "#/components/schemas/Organisation"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "If the request has any errors",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -1301,13 +1341,13 @@
           }
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Organisation"
         ],
-        "summary": "Create new organisation",
-        "description": "Create new organisation",
-        "operationId": "post-organisation",
+        "summary": "All Organisations",
+        "description": "All Organisations",
+        "operationId": "get-organisation",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1317,63 +1357,23 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "The organisation to create",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Organisation"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Organisation"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Organisation"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
-            "description": "Returns the organisation",
+            "description": "A list of Organisations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organisation"
+                  "$ref": "#/components/schemas/OrganisationGet200TextPlainResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organisation"
+                  "$ref": "#/components/schemas/OrganisationGet200ApplicationJsonResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organisation"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "If the request has any errors",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "$ref": "#/components/schemas/OrganisationGet200TextJsonResponse"
                 }
               }
             }
@@ -1501,13 +1501,13 @@
           }
         }
       },
-      "put": {
+      "post": {
         "tags": [
           "Permissions"
         ],
-        "summary": "Update permission",
-        "description": "Update permission",
-        "operationId": "put-permission",
+        "summary": "Create permission",
+        "description": "Create permission",
+        "operationId": "post-permission",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1518,7 +1518,7 @@
           }
         ],
         "requestBody": {
-          "description": "The permission to update",
+          "description": "The permission to create",
           "content": {
             "application/json": {
               "schema": {
@@ -1539,7 +1539,7 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "Returns the created permission",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1589,13 +1589,13 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "Permissions"
         ],
-        "summary": "Create permission",
-        "description": "Create permission",
-        "operationId": "post-permission",
+        "summary": "Update permission",
+        "description": "Update permission",
+        "operationId": "put-permission",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1606,7 +1606,7 @@
           }
         ],
         "requestBody": {
-          "description": "The permission to create",
+          "description": "The permission to update",
           "content": {
             "application/json": {
               "schema": {
@@ -1627,7 +1627,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns the created permission",
+            "description": "",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1862,13 +1862,13 @@
           }
         }
       },
-      "put": {
+      "post": {
         "tags": [
           "ResourceType"
         ],
-        "summary": "Update resource type",
-        "description": "Update resource type",
-        "operationId": "put-resourcetype",
+        "summary": "Create resource type",
+        "description": "Create resource type",
+        "operationId": "post-resourcetype",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1879,7 +1879,7 @@
           }
         ],
         "requestBody": {
-          "description": "The resource type to update",
+          "description": "The resource type to create",
           "content": {
             "application/json": {
               "schema": {
@@ -1900,7 +1900,7 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "Returns the created resource type",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1950,13 +1950,13 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "ResourceType"
         ],
-        "summary": "Create resource type",
-        "description": "Create resource type",
-        "operationId": "post-resourcetype",
+        "summary": "Update resource type",
+        "description": "Update resource type",
+        "operationId": "put-resourcetype",
         "parameters": [
           {
             "name": "API-KEY",
@@ -1967,7 +1967,7 @@
           }
         ],
         "requestBody": {
-          "description": "The resource type to create",
+          "description": "The resource type to update",
           "content": {
             "application/json": {
               "schema": {
@@ -1988,7 +1988,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns the created resource type",
+            "description": "",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2170,13 +2170,13 @@
           }
         }
       },
-      "put": {
+      "post": {
         "tags": [
           "Role"
         ],
-        "summary": "Update role",
-        "description": "Update role",
-        "operationId": "put-role",
+        "summary": "Create role",
+        "description": "Create role",
+        "operationId": "post-role",
         "parameters": [
           {
             "name": "API-KEY",
@@ -2187,7 +2187,7 @@
           }
         ],
         "requestBody": {
-          "description": "The role to update",
+          "description": "The role to create",
           "content": {
             "application/json": {
               "schema": {
@@ -2208,7 +2208,7 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "Returns the created role",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2258,13 +2258,13 @@
           }
         }
       },
-      "post": {
+      "put": {
         "tags": [
           "Role"
         ],
-        "summary": "Create role",
-        "description": "Create role",
-        "operationId": "post-role",
+        "summary": "Update role",
+        "description": "Update role",
+        "operationId": "put-role",
         "parameters": [
           {
             "name": "API-KEY",
@@ -2275,7 +2275,7 @@
           }
         ],
         "requestBody": {
-          "description": "The role to create",
+          "description": "The role to update",
           "content": {
             "application/json": {
               "schema": {
@@ -2296,7 +2296,7 @@
         },
         "responses": {
           "200": {
-            "description": "Returns the created role",
+            "description": "",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2430,125 +2430,6 @@
       }
     },
     "/user": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "summary": "All Users",
-        "description": "All Users",
-        "operationId": "get-user",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of Users",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserGet200TextPlainResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserGet200TextJsonResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "User"
-        ],
-        "summary": "Update a user",
-        "description": "Update a user",
-        "operationId": "put-user",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "The user to update",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Update is correct"
-          },
-          "400": {
-            "description": "If the request has any errors",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
-          }
-        }
-      },
       "post": {
         "tags": [
           "User"
@@ -2636,6 +2517,125 @@
             "description": "Too many requests"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update a user",
+        "description": "Update a user",
+        "operationId": "put-user",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The user to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update is correct"
+          },
+          "400": {
+            "description": "If the request has any errors",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "All Users",
+        "description": "All Users",
+        "operationId": "get-user",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of Users",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
       }
     },
     "/user/{userId}": {
@@ -2693,6 +2693,51 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too many requests"
+          }
+        }
+      }
+    },
+    "/webhooks/auth0": {
+      "post": {
+        "tags": [
+          "WebHooks"
+        ],
+        "summary": "/webhooks/auth0 - POST",
+        "operationId": "post-webhooks-auth0",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
           },
           "429": {
             "description": "Too many requests"
@@ -3173,6 +3218,79 @@
             "nullable": true
           },
           "passwordResetLink": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "connection": {
+            "type": "string",
+            "nullable": true
+          },
+          "connection_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "client_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "hostname": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "strategy": {
+            "type": "string",
+            "nullable": true
+          },
+          "StrategyType": {
+            "type": "string",
+            "nullable": true
+          },
+          "log_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "isMobile": {
+            "type": "boolean"
+          },
+          "user_agent": {
             "type": "string",
             "nullable": true
           }
