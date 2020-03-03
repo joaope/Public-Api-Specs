@@ -1754,11 +1754,6 @@ components:
           type: boolean
           description: Currently blocked from logging in
           nullable: true
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
-          nullable: true
         roles:
           type: array
           items:
@@ -1769,10 +1764,19 @@ components:
           items:
             type: string
           nullable: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermissionAssignment'
+          nullable: true
         managedGroups:
           type: array
           items:
             type: string
+          nullable: true
+        lastLogin:
+          type: string
+          format: date-time
           nullable: true
       additionalProperties: false
     CreatedApiKey:
@@ -1986,11 +1990,6 @@ components:
           type: boolean
           description: Currently blocked from logging in
           nullable: true
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
-          nullable: true
         roles:
           type: array
           items:
@@ -2001,10 +2000,19 @@ components:
           items:
             type: string
           nullable: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermissionAssignment'
+          nullable: true
         managedGroups:
           type: array
           items:
             type: string
+          nullable: true
+        lastLogin:
+          type: string
+          format: date-time
           nullable: true
       additionalProperties: false
     NewUserRequest:
