@@ -1,7 +1,6 @@
 openapi: 3.0.1
 info:
   title: Security
-  description: API used for managing authorisation
   version: "1.0"
 servers:
 - url: https://api.appyway.com/security/v1
@@ -13,11 +12,6 @@ paths:
       summary: All API Keys
       description: All API Keys
       operationId: get-apikey
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of API Keys
@@ -35,19 +29,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     post:
       tags:
       - ApiKey
       summary: Create API Key
       description: Create API Key
       operationId: post-apikey
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The API Key information to create
         content:
@@ -89,19 +76,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - ApiKey
       summary: Update API Key
       description: Update API Key
       operationId: put-apikey
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The API Key to update
         content:
@@ -155,19 +135,12 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
     delete:
       tags:
       - ApiKey
       summary: Delete API Key
       description: Delete API Key
       operationId: delete-apikey
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The hash of the API Key to delete
         content:
@@ -211,8 +184,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /apiKey/block:
     post:
       tags:
@@ -220,11 +191,6 @@ paths:
       summary: Blocks API Key
       description: Blocks API Key
       operationId: post-apikey-block
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The hash of the API to block
         content:
@@ -268,8 +234,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /apiKey/unblock:
     post:
       tags:
@@ -277,11 +241,6 @@ paths:
       summary: Unblock API Key
       description: Unblock API Key
       operationId: post-apikey-unblock
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The hash of the API Key to unblock
         content:
@@ -325,8 +284,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /application:
     get:
       tags:
@@ -334,11 +291,6 @@ paths:
       summary: All Applications
       description: All Applications
       operationId: get-application
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of Applications
@@ -356,19 +308,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     post:
       tags:
       - Applications
       summary: Create application
       description: Create application
       operationId: post-application
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The application to create
         content:
@@ -410,19 +355,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - Applications
       summary: Update application
       description: Update application
       operationId: put-application
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The application to update
         content:
@@ -464,8 +402,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /application/{id}:
     delete:
       tags:
@@ -478,10 +414,6 @@ paths:
         in: path
         description: ID of the application to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -515,8 +447,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /group:
     get:
       tags:
@@ -524,11 +454,6 @@ paths:
       summary: All groups
       description: All groups
       operationId: get-group
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of groups
@@ -546,19 +471,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     post:
       tags:
       - Groups
       summary: Create group
       description: Create group
       operationId: post-group
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The group to create
         content:
@@ -600,19 +518,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - Groups
       summary: Update group
       description: Update group
       operationId: put-group
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The group to update
         content:
@@ -654,8 +565,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /group/{id}:
     delete:
       tags:
@@ -668,10 +577,6 @@ paths:
         in: path
         description: ID of the group to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -705,27 +610,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
-  /monitor:
-    get:
-      tags:
-      - Monitor
-      summary: /monitor - GET
-      operationId: get-monitor
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MonitorGet200ApplicationJsonResponse'
-        "503":
-          description: Service Unavailable
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MonitorGet503ApplicationJsonResponse'
   /organisation:
     post:
       tags:
@@ -733,11 +617,6 @@ paths:
       summary: Create new organisation
       description: Create new organisation
       operationId: post-organisation
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The organisation to create
         content:
@@ -779,19 +658,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - Organisation
       summary: Update an organisation
       description: Update an organisation
       operationId: put-organisation
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The organisation to update
         content:
@@ -823,19 +695,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     get:
       tags:
       - Organisation
       summary: All Organisations
       description: All Organisations
       operationId: get-organisation
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of Organisations
@@ -853,8 +718,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /organisation/{id}:
     delete:
       tags:
@@ -867,10 +730,6 @@ paths:
         in: path
         description: The organisation to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -892,8 +751,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /permission:
     get:
       tags:
@@ -901,11 +758,6 @@ paths:
       summary: All Permissions
       description: All Permissions
       operationId: get-permission
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of Permissions
@@ -923,19 +775,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     post:
       tags:
       - Permissions
       summary: Create permission
       description: Create permission
       operationId: post-permission
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The permission to create
         content:
@@ -977,19 +822,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - Permissions
       summary: Update permission
       description: Update permission
       operationId: put-permission
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The permission to update
         content:
@@ -1031,8 +869,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /permission/{id}:
     delete:
       tags:
@@ -1045,10 +881,6 @@ paths:
         in: path
         description: ID of the permission to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -1082,8 +914,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /permission/token:
     get:
       tags:
@@ -1091,11 +921,6 @@ paths:
       summary: Takes a token without permissions and embeds the permissions in the returned token
       description: Takes a token without permissions and embeds the permissions in the returned token
       operationId: get-permission-token
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: Success
@@ -1115,8 +940,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /resourceType:
     get:
       tags:
@@ -1124,11 +947,6 @@ paths:
       summary: All resource types
       description: All resource types
       operationId: get-resourcetype
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of resource types
@@ -1146,19 +964,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     post:
       tags:
       - ResourceType
       summary: Create resource type
       description: Create resource type
       operationId: post-resourcetype
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The resource type to create
         content:
@@ -1200,19 +1011,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - ResourceType
       summary: Update resource type
       description: Update resource type
       operationId: put-resourcetype
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The resource type to update
         content:
@@ -1254,8 +1058,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /resourceType/{id}:
     delete:
       tags:
@@ -1268,10 +1070,6 @@ paths:
         in: path
         description: ID of the resource type to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -1305,8 +1103,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /role:
     get:
       tags:
@@ -1314,11 +1110,6 @@ paths:
       summary: All roles
       description: All roles
       operationId: get-role
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: Success
@@ -1336,19 +1127,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     post:
       tags:
       - Role
       summary: Create role
       description: Create role
       operationId: post-role
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The role to create
         content:
@@ -1390,19 +1174,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - Role
       summary: Update role
       description: Update role
       operationId: put-role
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The role to update
         content:
@@ -1444,8 +1221,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /role/{id}:
     delete:
       tags:
@@ -1458,10 +1233,6 @@ paths:
         in: path
         description: ID of the role to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -1495,8 +1266,6 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-        "429":
-          description: Too many requests
   /user:
     post:
       tags:
@@ -1504,11 +1273,6 @@ paths:
       summary: Create new user
       description: Create new user
       operationId: post-user
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The user information to create
         content:
@@ -1550,19 +1314,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     put:
       tags:
       - User
       summary: Update a user
       description: Update a user
       operationId: put-user
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         description: The user to update
         content:
@@ -1594,19 +1351,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
     get:
       tags:
       - User
       summary: All Users
       description: All Users
       operationId: get-user
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: A list of Users
@@ -1624,8 +1374,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /user/{userId}:
     delete:
       tags:
@@ -1638,10 +1386,6 @@ paths:
         in: path
         description: The user to delete
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -1663,19 +1407,12 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
   /webhooks/auth0:
     post:
       tags:
       - WebHooks
       summary: /webhooks/auth0 - POST
       operationId: post-webhooks-auth0
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -1690,8 +1427,10 @@ paths:
       responses:
         "200":
           description: Success
-        "429":
-          description: Too many requests
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
 components:
   schemas:
     ResourceAssignment:
@@ -1737,8 +1476,10 @@ components:
       type: object
       properties:
         organisation:
+          minLength: 1
           type: string
           description: Organisation this belongs to.
+          nullable: true
         cacheId:
           type: string
           description: The identifier to be used when performing operations on the API Key
@@ -1783,10 +1524,7 @@ components:
       type: object
       properties:
         apiKey:
-          allOf:
-          - $ref: '#/components/schemas/ApiKey'
-          description: Metadata for the created key
-          nullable: true
+          $ref: '#/components/schemas/ApiKey'
         key:
           type: string
           description: Value to add in to the API-KEY header
@@ -1820,7 +1558,9 @@ components:
       type: object
       properties:
         cacheId:
+          minLength: 1
           type: string
+          nullable: true
       additionalProperties: false
     Application:
       type: object
@@ -1855,7 +1595,7 @@ components:
           items:
             $ref: '#/components/schemas/RoleAssignment'
           nullable: true
-        groups:
+        childGroups:
           type: array
           items:
             type: string
@@ -1868,9 +1608,13 @@ components:
       type: object
       properties:
         name:
+          minLength: 1
           type: string
+          nullable: true
         code:
+          minLength: 1
           type: string
+          nullable: true
         id:
           type: string
           nullable: true
@@ -1888,9 +1632,13 @@ components:
       type: object
       properties:
         description:
+          minLength: 1
           type: string
+          nullable: true
         name:
+          minLength: 1
           type: string
+          nullable: true
         id:
           type: string
           nullable: true
@@ -1908,9 +1656,13 @@ components:
       type: object
       properties:
         name:
+          minLength: 1
           type: string
+          nullable: true
         value:
+          minLength: 1
           type: string
+          nullable: true
         id:
           type: string
           nullable: true
@@ -1924,7 +1676,9 @@ components:
       type: object
       properties:
         name:
+          minLength: 1
           type: string
+          nullable: true
         id:
           type: string
           nullable: true
@@ -1940,7 +1694,9 @@ components:
       type: object
       properties:
         name:
+          minLength: 1
           type: string
+          nullable: true
         id:
           type: string
           nullable: true
@@ -1967,17 +1723,25 @@ components:
       type: object
       properties:
         email:
+          minLength: 1
+          pattern: ^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-||_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+([a-z]+|\d|-|\.{0,1}|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])?([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$
           type: string
-          format: email
+          nullable: true
         firstName:
+          minLength: 1
           type: string
           description: First name
+          nullable: true
         lastName:
+          minLength: 1
           type: string
           description: Last name
+          nullable: true
         organisation:
+          minLength: 1
           type: string
           description: Organisation this belongs to.
+          nullable: true
         picture:
           type: string
           nullable: true
@@ -2022,19 +1786,18 @@ components:
       type: object
       properties:
         user:
-          allOf:
-          - $ref: '#/components/schemas/User'
+          $ref: '#/components/schemas/User'
         redirect:
+          minLength: 1
           type: string
           description: URL the user should be redirected to after his first login
+          nullable: true
       additionalProperties: false
     CreatedUser:
       type: object
       properties:
         user:
-          allOf:
-          - $ref: '#/components/schemas/User'
-          nullable: true
+          $ref: '#/components/schemas/User'
         passwordResetLink:
           type: string
           nullable: true
@@ -2129,24 +1892,6 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Group'
-    MonitorGet200ApplicationJsonResponse:
-      properties:
-        status:
-          type: string
-        errors:
-          type: array
-      example:
-        status: healthy
-        errors: []
-    MonitorGet503ApplicationJsonResponse:
-      properties:
-        status:
-          type: string
-        errors:
-          type: array
-      example:
-        status: unhealthy
-        errors: []
     OrganisationGet200TextPlainResponse:
       type: array
       items:

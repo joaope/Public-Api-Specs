@@ -2,7 +2,6 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Security",
-    "description": "API used for managing authorisation",
     "version": "0.1"
   },
   "servers": [
@@ -19,15 +18,6 @@
         "summary": "All API Keys",
         "description": "All API Keys",
         "operationId": "get-apikey",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of API Keys",
@@ -54,9 +44,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -67,15 +54,6 @@
         "summary": "Create API Key",
         "description": "Create API Key",
         "operationId": "post-apikey",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The API Key information to create",
           "content": {
@@ -142,9 +120,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -155,15 +130,6 @@
         "summary": "Update API Key",
         "description": "Update API Key",
         "operationId": "put-apikey",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The API Key to update",
           "content": {
@@ -250,9 +216,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -263,15 +226,6 @@
         "summary": "Delete API Key",
         "description": "Delete API Key",
         "operationId": "delete-apikey",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The hash of the API Key to delete",
           "content": {
@@ -341,9 +295,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -356,15 +307,6 @@
         "summary": "Blocks API Key",
         "description": "Blocks API Key",
         "operationId": "post-apikey-block",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The hash of the API to block",
           "content": {
@@ -434,9 +376,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -449,15 +388,6 @@
         "summary": "Unblock API Key",
         "description": "Unblock API Key",
         "operationId": "post-apikey-unblock",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The hash of the API Key to unblock",
           "content": {
@@ -527,9 +457,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -542,15 +469,6 @@
         "summary": "All Applications",
         "description": "All Applications",
         "operationId": "get-application",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of Applications",
@@ -577,9 +495,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -590,15 +505,6 @@
         "summary": "Create application",
         "description": "Create application",
         "operationId": "post-application",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The application to create",
           "content": {
@@ -665,9 +571,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -678,15 +581,6 @@
         "summary": "Update application",
         "description": "Update application",
         "operationId": "put-application",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The application to update",
           "content": {
@@ -753,9 +647,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -774,13 +665,6 @@
             "in": "path",
             "description": "ID of the application to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -835,9 +719,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -850,15 +731,6 @@
         "summary": "All groups",
         "description": "All groups",
         "operationId": "get-group",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of groups",
@@ -885,9 +757,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -898,15 +767,6 @@
         "summary": "Create group",
         "description": "Create group",
         "operationId": "post-group",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The group to create",
           "content": {
@@ -973,9 +833,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -986,15 +843,6 @@
         "summary": "Update group",
         "description": "Update group",
         "operationId": "put-group",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The group to update",
           "content": {
@@ -1061,9 +909,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -1082,13 +927,6 @@
             "in": "path",
             "description": "ID of the group to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -1143,40 +981,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
-          }
-        }
-      }
-    },
-    "/monitor": {
-      "get": {
-        "tags": [
-          "Monitor"
-        ],
-        "summary": "/monitor - GET",
-        "operationId": "get-monitor",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MonitorGet200ApplicationJsonResponse"
-                }
-              }
-            }
-          },
-          "503": {
-            "description": "Service Unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MonitorGet503ApplicationJsonResponse"
-                }
-              }
-            }
           }
         }
       }
@@ -1189,15 +993,6 @@
         "summary": "Create new organisation",
         "description": "Create new organisation",
         "operationId": "post-organisation",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The organisation to create",
           "content": {
@@ -1264,9 +1059,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -1277,15 +1069,6 @@
         "summary": "Update an organisation",
         "description": "Update an organisation",
         "operationId": "put-organisation",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The organisation to update",
           "content": {
@@ -1335,9 +1118,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -1348,15 +1128,6 @@
         "summary": "All Organisations",
         "description": "All Organisations",
         "operationId": "get-organisation",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of Organisations",
@@ -1383,9 +1154,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -1404,13 +1172,6 @@
             "in": "path",
             "description": "The organisation to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -1445,9 +1206,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -1460,15 +1218,6 @@
         "summary": "All Permissions",
         "description": "All Permissions",
         "operationId": "get-permission",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of Permissions",
@@ -1495,9 +1244,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -1508,15 +1254,6 @@
         "summary": "Create permission",
         "description": "Create permission",
         "operationId": "post-permission",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The permission to create",
           "content": {
@@ -1583,9 +1320,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -1596,15 +1330,6 @@
         "summary": "Update permission",
         "description": "Update permission",
         "operationId": "put-permission",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The permission to update",
           "content": {
@@ -1671,9 +1396,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -1692,13 +1414,6 @@
             "in": "path",
             "description": "ID of the permission to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -1753,9 +1468,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -1768,15 +1480,6 @@
         "summary": "Takes a token without permissions and embeds the permissions in the returned token",
         "description": "Takes a token without permissions and embeds the permissions in the returned token",
         "operationId": "get-permission-token",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -1806,9 +1509,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -1821,15 +1521,6 @@
         "summary": "All resource types",
         "description": "All resource types",
         "operationId": "get-resourcetype",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of resource types",
@@ -1856,9 +1547,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -1869,15 +1557,6 @@
         "summary": "Create resource type",
         "description": "Create resource type",
         "operationId": "post-resourcetype",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The resource type to create",
           "content": {
@@ -1944,9 +1623,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -1957,15 +1633,6 @@
         "summary": "Update resource type",
         "description": "Update resource type",
         "operationId": "put-resourcetype",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The resource type to update",
           "content": {
@@ -2032,9 +1699,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -2053,13 +1717,6 @@
             "in": "path",
             "description": "ID of the resource type to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -2114,9 +1771,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -2129,15 +1783,6 @@
         "summary": "All roles",
         "description": "All roles",
         "operationId": "get-role",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -2164,9 +1809,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -2177,15 +1819,6 @@
         "summary": "Create role",
         "description": "Create role",
         "operationId": "post-role",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The role to create",
           "content": {
@@ -2252,9 +1885,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -2265,15 +1895,6 @@
         "summary": "Update role",
         "description": "Update role",
         "operationId": "put-role",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The role to update",
           "content": {
@@ -2340,9 +1961,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -2361,13 +1979,6 @@
             "in": "path",
             "description": "ID of the role to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -2422,9 +2033,6 @@
                 }
               }
             }
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -2437,15 +2045,6 @@
         "summary": "Create new user",
         "description": "Create new user",
         "operationId": "post-user",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The user information to create",
           "content": {
@@ -2512,9 +2111,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -2525,15 +2121,6 @@
         "summary": "Update a user",
         "description": "Update a user",
         "operationId": "put-user",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "description": "The user to update",
           "content": {
@@ -2583,9 +2170,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       },
@@ -2596,15 +2180,6 @@
         "summary": "All Users",
         "description": "All Users",
         "operationId": "get-user",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "A list of Users",
@@ -2631,9 +2206,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -2652,13 +2224,6 @@
             "in": "path",
             "description": "The user to delete",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -2693,9 +2258,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }
@@ -2707,15 +2269,6 @@
         ],
         "summary": "/webhooks/auth0 - POST",
         "operationId": "post-webhooks-auth0",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -2739,8 +2292,11 @@
           "200": {
             "description": "Success"
           },
-          "429": {
-            "description": "Too many requests"
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         }
       }
@@ -2807,8 +2363,10 @@
         "type": "object",
         "properties": {
           "organisation": {
+            "minLength": 1,
             "type": "string",
-            "description": "Organisation this belongs to."
+            "description": "Organisation this belongs to.",
+            "nullable": true
           },
           "cacheId": {
             "type": "string",
@@ -2869,13 +2427,7 @@
         "type": "object",
         "properties": {
           "apiKey": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ApiKey"
-              }
-            ],
-            "description": "Metadata for the created key",
-            "nullable": true
+            "$ref": "#/components/schemas/ApiKey"
           },
           "key": {
             "type": "string",
@@ -2922,7 +2474,9 @@
         "type": "object",
         "properties": {
           "cacheId": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2971,7 +2525,7 @@
             },
             "nullable": true
           },
-          "groups": {
+          "childGroups": {
             "type": "array",
             "items": {
               "type": "string"
@@ -2989,10 +2543,14 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "code": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "id": {
             "type": "string",
@@ -3017,10 +2575,14 @@
         "type": "object",
         "properties": {
           "description": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "name": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "id": {
             "type": "string",
@@ -3045,10 +2607,14 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "value": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "id": {
             "type": "string",
@@ -3068,7 +2634,9 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "id": {
             "type": "string",
@@ -3091,7 +2659,9 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
           },
           "id": {
             "type": "string",
@@ -3128,20 +2698,28 @@
         "type": "object",
         "properties": {
           "email": {
+            "minLength": 1,
+            "pattern": "^((([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+(\\.([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+)*)|((\\x22)((((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(([\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]|\\x21|[\\x23-\\x5b]|[\\x5d-\\x7e]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(\\\\([\\x01-\\x09\\x0b\\x0c\\x0d-\\x7f]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]))))*(((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(\\x22)))@((([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-||_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.)+(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+|(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+([a-z]+|\\d|-|\\.{0,1}|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])?([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))$",
             "type": "string",
-            "format": "email"
+            "nullable": true
           },
           "firstName": {
+            "minLength": 1,
             "type": "string",
-            "description": "First name"
+            "description": "First name",
+            "nullable": true
           },
           "lastName": {
+            "minLength": 1,
             "type": "string",
-            "description": "Last name"
+            "description": "Last name",
+            "nullable": true
           },
           "organisation": {
+            "minLength": 1,
             "type": "string",
-            "description": "Organisation this belongs to."
+            "description": "Organisation this belongs to.",
+            "nullable": true
           },
           "picture": {
             "type": "string",
@@ -3203,15 +2781,13 @@
         "type": "object",
         "properties": {
           "user": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/User"
-              }
-            ]
+            "$ref": "#/components/schemas/User"
           },
           "redirect": {
+            "minLength": 1,
             "type": "string",
-            "description": "URL the user should be redirected to after his first login"
+            "description": "URL the user should be redirected to after his first login",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3220,12 +2796,7 @@
         "type": "object",
         "properties": {
           "user": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/User"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/User"
           },
           "passwordResetLink": {
             "type": "string",
@@ -3359,34 +2930,6 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Group"
-        }
-      },
-      "MonitorGet200ApplicationJsonResponse": {
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "errors": {
-            "type": "array"
-          }
-        },
-        "example": {
-          "status": "healthy",
-          "errors": []
-        }
-      },
-      "MonitorGet503ApplicationJsonResponse": {
-        "properties": {
-          "status": {
-            "type": "string"
-          },
-          "errors": {
-            "type": "array"
-          }
-        },
-        "example": {
-          "status": "unhealthy",
-          "errors": []
         }
       },
       "OrganisationGet200TextPlainResponse": {
