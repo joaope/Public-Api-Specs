@@ -2,7 +2,6 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Tokens",
-    "description": "API used for exchanging tokens and API keys",
     "version": "1.0"
   },
   "servers": [
@@ -19,15 +18,6 @@
         "summary": "Takes a token without permissions and embeds the permissions in the returned token",
         "description": "Takes a token without permissions and embeds the permissions in the returned token",
         "operationId": "get-token",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -57,9 +47,6 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "429": {
-            "description": "Too many requests"
           }
         }
       }

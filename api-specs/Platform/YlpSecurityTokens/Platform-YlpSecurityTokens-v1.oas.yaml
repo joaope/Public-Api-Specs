@@ -1,7 +1,6 @@
 openapi: 3.0.1
 info:
   title: Tokens
-  description: API used for exchanging tokens and API keys
   version: "1.0"
 servers:
 - url: https://api.appyway.com/token/v1
@@ -13,11 +12,6 @@ paths:
       summary: Takes a token without permissions and embeds the permissions in the returned token
       description: Takes a token without permissions and embeds the permissions in the returned token
       operationId: get-token
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: Success
@@ -37,8 +31,6 @@ paths:
           description: Unauthorized
         "403":
           description: Forbidden
-        "429":
-          description: Too many requests
 components:
   schemas:
     ProblemDetails:
