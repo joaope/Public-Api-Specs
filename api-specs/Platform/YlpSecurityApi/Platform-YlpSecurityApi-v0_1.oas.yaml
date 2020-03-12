@@ -2,6 +2,10 @@ openapi: 3.0.1
 info:
   title: Security
   version: "0.1"
+  contact:
+    email: support@appyway.com
+    url: https://appyway.com/get-in-touch-support/
+    name: AppyWay Support
 servers:
 - url: https://api.appyway.com/security/v0.1
 paths:
@@ -26,9 +30,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiKeyGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     post:
       tags:
       - ApiKey
@@ -73,9 +79,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - ApiKey
@@ -120,9 +128,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Could not find API Key
           content:
@@ -135,6 +143,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     delete:
       tags:
       - ApiKey
@@ -169,9 +179,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: API Key not found
           content:
@@ -184,6 +194,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /apiKey/block:
     post:
       tags:
@@ -219,9 +231,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: API Key not found
           content:
@@ -234,6 +246,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /apiKey/unblock:
     post:
       tags:
@@ -269,9 +283,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: API Key not found
           content:
@@ -284,6 +298,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /application:
     get:
       tags:
@@ -305,9 +321,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApplicationGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     post:
       tags:
       - Applications
@@ -352,9 +370,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - Applications
@@ -399,9 +419,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /application/{id}:
     delete:
       tags:
@@ -432,9 +454,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -447,6 +469,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /group:
     get:
       tags:
@@ -468,9 +492,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/GroupGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     post:
       tags:
       - Groups
@@ -515,9 +541,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - Groups
@@ -562,9 +590,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /group/{id}:
     delete:
       tags:
@@ -595,9 +625,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -610,6 +640,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /organisation:
     post:
       tags:
@@ -655,9 +687,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - Organisation
@@ -692,9 +726,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     get:
       tags:
       - Organisation
@@ -715,9 +751,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrganisationGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /organisation/{id}:
     delete:
       tags:
@@ -748,9 +786,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /permission:
     get:
       tags:
@@ -772,9 +812,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PermissionGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     post:
       tags:
       - Permissions
@@ -819,9 +861,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - Permissions
@@ -866,9 +910,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /permission/{id}:
     delete:
       tags:
@@ -899,9 +945,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -914,6 +960,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /permission/token:
     get:
       tags:
@@ -937,9 +985,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /resourceType:
     get:
       tags:
@@ -961,9 +1011,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResourceTypeGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     post:
       tags:
       - ResourceType
@@ -1008,9 +1060,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - ResourceType
@@ -1055,9 +1109,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /resourceType/{id}:
     delete:
       tags:
@@ -1088,9 +1144,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -1103,6 +1159,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /role:
     get:
       tags:
@@ -1124,9 +1182,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/RoleGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     post:
       tags:
       - Role
@@ -1171,9 +1231,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - Role
@@ -1218,9 +1280,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /role/{id}:
     delete:
       tags:
@@ -1251,9 +1315,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -1266,6 +1330,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /user:
     post:
       tags:
@@ -1311,9 +1377,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     put:
       tags:
       - User
@@ -1348,9 +1416,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
     get:
       tags:
       - User
@@ -1371,9 +1441,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /user/{userId}:
     delete:
       tags:
@@ -1404,9 +1476,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /webhooks/auth0:
     post:
       tags:
@@ -1428,9 +1502,11 @@ paths:
         "200":
           description: Success
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
     ResourceAssignment:
@@ -1964,6 +2040,13 @@ components:
           authorizationUrl: https://auth.appyway.com/authorize
           tokenUrl: https://auth.appyway.com/oauth/token
       type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
 security:
 - apiKey: []
 - oAuth2: []

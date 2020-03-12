@@ -3,6 +3,10 @@ info:
   title: AppyParking Mock Api
   description: TODO
   version: "2.0"
+  contact:
+    email: support@appyway.com
+    url: https://appyway.com/get-in-touch-support/
+    name: AppyWay Support
 servers:
 - url: https://api.appyway.com/appyparkingmockapi/v2
 paths:
@@ -20,6 +24,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiV2OrdersGet200ApplicationJsonResponse'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
     post:
       tags:
       - Orders
@@ -51,6 +61,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
   /api/v2/Orders/{id}:
     get:
       tags:
@@ -84,6 +100,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
   /api/v2/People:
     get:
       tags:
@@ -98,6 +120,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiV2PeopleGet200ApplicationJsonResponse'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
   /api/v2/People/{id}:
     get:
       tags:
@@ -125,6 +153,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
 components:
   schemas:
     Order:
@@ -217,6 +251,13 @@ components:
           authorizationUrl: https://auth.appyway.com/authorize
           tokenUrl: https://auth.appyway.com/oauth/token
       type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
 security:
 - apiKey: []
 - oAuth2: []

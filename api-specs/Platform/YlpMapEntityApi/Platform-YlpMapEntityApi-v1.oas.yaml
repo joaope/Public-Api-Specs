@@ -3,6 +3,10 @@ info:
   title: Map Entity
   description: TODO
   version: "1.0"
+  contact:
+    email: support@appyway.com
+    url: https://appyway.com/get-in-touch-support/
+    name: AppyWay Support
 servers:
 - url: https://api.appyway.com/mapentity/v1
 paths:
@@ -43,11 +47,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /authority/{id}:
     get:
       tags:
@@ -73,9 +77,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorityOkResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -83,7 +87,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /monitor:
     get:
       tags:
@@ -100,11 +104,11 @@ paths:
         "200":
           description: Success
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /parking/{id}:
     get:
       tags:
@@ -130,9 +134,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ParkingEntityOkResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -140,7 +144,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /parking/{id}/paymentProvider:
     get:
       tags:
@@ -166,9 +170,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaymentProvidersResponseOkResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -176,7 +180,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /search/authority/viewport:
     post:
       tags:
@@ -214,11 +218,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /search/parking/centreAndViewportSize:
     post:
       tags:
@@ -256,11 +260,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /search/parking/viewport:
     post:
       tags:
@@ -298,11 +302,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /search/zone/viewport:
     post:
       tags:
@@ -340,11 +344,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /zone/{id}:
     get:
       tags:
@@ -370,9 +374,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ZoneOkResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "404":
           description: Not Found
           content:
@@ -380,7 +384,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
     LatLng:
@@ -1281,6 +1285,13 @@ components:
           authorizationUrl: https://auth.appyway.com/authorize
           tokenUrl: https://auth.appyway.com/oauth/token
       type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
 security:
 - apiKey: []
 - oAuth2: []

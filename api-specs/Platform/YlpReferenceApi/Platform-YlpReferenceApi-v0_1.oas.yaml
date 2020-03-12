@@ -3,6 +3,10 @@ info:
   title: Reference
   description: TODO
   version: "0.1"
+  contact:
+    email: support@appyway.com
+    url: https://appyway.com/get-in-touch-support/
+    name: AppyWay Support
 servers:
 - url: https://api.appyway.com/reference/v0.1
 paths:
@@ -32,11 +36,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ActivityTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /all/list:
     get:
       tags:
@@ -63,11 +67,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/All'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /authorityType/list:
     get:
       tags:
@@ -94,11 +98,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorityTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /baseMap/list:
     get:
       tags:
@@ -125,11 +129,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/BaseMapListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /country/list:
     get:
       tags:
@@ -156,11 +160,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/CountryListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /entitlementType/list:
     get:
       tags:
@@ -187,11 +191,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/EntitlementTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /exceptionType/list:
     get:
       tags:
@@ -218,11 +222,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExceptionTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /exemptionTimeType/list:
     get:
       tags:
@@ -249,11 +253,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /exemptionType/list:
     get:
       tags:
@@ -280,11 +284,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExemptionTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /facilityType/list:
     get:
       tags:
@@ -311,11 +315,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/FacilityTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /fuelType/list:
     get:
       tags:
@@ -342,11 +346,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/FuelTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /monitor:
     get:
       tags:
@@ -362,11 +366,11 @@ paths:
         "200":
           description: Success
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /noteVisibilityType/list:
     get:
       tags:
@@ -393,11 +397,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /onStreetParkingType/list:
     get:
       tags:
@@ -424,11 +428,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /paymentMethod/list:
     get:
       tags:
@@ -455,11 +459,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaymentMethodListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /permitType/list:
     get:
       tags:
@@ -486,11 +490,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PermitTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /region/list:
     get:
       tags:
@@ -517,11 +521,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/RegionListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /restrictionType/list:
     get:
       tags:
@@ -548,11 +552,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/RestrictionTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /specialRestriction/list:
     get:
       tags:
@@ -579,11 +583,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/SpecialRestrictionListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /vehicleType/list:
     get:
       tags:
@@ -610,11 +614,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/VehicleTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
   /zoneType/list:
     get:
       tags:
@@ -641,11 +645,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ZoneTypeListGet200TextJsonResponse'
         "401":
-          description: Unauthorized
+          $ref: '#/components/responses/Unauthorized'
         "403":
-          description: Forbidden
+          $ref: '#/components/responses/Forbidden'
         "429":
-          description: Too many requests
+          $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
     ActivityType:
@@ -1351,6 +1355,13 @@ components:
           authorizationUrl: https://auth.appyway.com/authorize
           tokenUrl: https://auth.appyway.com/oauth/token
       type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
 security:
 - apiKey: []
 - oAuth2: []
