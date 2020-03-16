@@ -1,7 +1,6 @@
 openapi: 3.0.1
 info:
   title: Map Entity
-  description: TODO
   version: "1.0"
   contact:
     email: support@appyway.com
@@ -13,15 +12,10 @@ paths:
   /:
     post:
       tags:
-      - Static Entity Data
+      - Entity
       summary: List
       description: Retrieve a list of entities by their IDs
       operationId: post
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -55,7 +49,7 @@ paths:
   /authority/{id}:
     get:
       tags:
-      - Static Entity Data
+      - Entity
       summary: Authority by ID
       description: Returns a specific authority by its ID
       operationId: get-authority-id
@@ -63,10 +57,6 @@ paths:
       - name: id
         in: path
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -95,11 +85,6 @@ paths:
       summary: Monitor
       description: Returns information on the health of the Map Entity service
       operationId: get-monitor
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       responses:
         "200":
           description: Success
@@ -112,7 +97,7 @@ paths:
   /parking/{id}:
     get:
       tags:
-      - Static Entity Data
+      - Entity
       summary: Parking Entity by ID
       description: Retrieves a parking entity by its ID
       operationId: get-parking-id
@@ -120,10 +105,6 @@ paths:
       - name: id
         in: path
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -148,7 +129,7 @@ paths:
   /parking/{id}/paymentProvider:
     get:
       tags:
-      - Static Entity Data
+      - Entity
       summary: Payment Providers by entity ID
       description: Returns payment providers for the given parking entity ID
       operationId: get-parking-id-paymentprovider
@@ -156,10 +137,6 @@ paths:
       - name: id
         in: path
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -188,11 +165,6 @@ paths:
       summary: Authorities by viewport
       description: Returns authorities that are at least partially within the specified viewport.
       operationId: post-search-authority-viewport
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -228,13 +200,8 @@ paths:
       tags:
       - Search
       summary: Parking by centre and viewport size
-      description: "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns an unordered list of search results for all parking entities within the bounds of that polygon.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy."
+      description: "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy."
       operationId: post-search-parking-centreandviewportsize
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -270,13 +237,8 @@ paths:
       tags:
       - Search
       summary: Parking by viewport
-      description: "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns an unordered list of search results for all parking entities within the bounds of that polygon.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy."
+      description: "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy."
       operationId: post-search-parking-viewport
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -314,11 +276,6 @@ paths:
       summary: Zones by viewport
       description: Returns default rules for parking entities for zones that are at least partially within the specified viewport.
       operationId: post-search-zone-viewport
-      parameters:
-      - name: API-KEY
-        in: header
-        schema:
-          type: string
       requestBody:
         content:
           application/json:
@@ -352,7 +309,7 @@ paths:
   /zone/{id}:
     get:
       tags:
-      - Static Entity Data
+      - Entity
       summary: Zone By ID
       description: Returns a specific zone by its ID
       operationId: get-zone-id
@@ -360,10 +317,6 @@ paths:
       - name: id
         in: path
         required: true
-        schema:
-          type: string
-      - name: API-KEY
-        in: header
         schema:
           type: string
       responses:
@@ -387,570 +340,6 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
-    LatLng:
-      type: object
-      properties:
-        lat:
-          type: number
-          description: Latitude
-          format: double
-        lng:
-          type: number
-          description: Longitude
-          format: double
-      additionalProperties: false
-      description: Models a latitude and longitude
-    MapEntityType:
-      enum:
-      - 1
-      - 2
-      - 3
-      - 4
-      type: integer
-      description: |+
-        Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.
-
-        - OnStreet (1) - An on street parking area
-        - Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.
-        - Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.
-        A zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may
-        define rules parking entities that can be overridden by individual entities.
-        - Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.
-      format: int32
-    SearchParkingByViewportFilters:
-      type: object
-      properties:
-        excludeEntityTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/MapEntityType'
-          description: |-
-            If supplied, entities that have the given Map Entity Types types will be excluded from the response. Passing Zone or Authority
-            entity types will result in a Bad Request response.
-          nullable: true
-        excludePaidParking:
-          type: boolean
-          description: TRUE to exclude paid parking bays from the result. Optional. Defaults to FALSE if omitted.
-          nullable: true
-        excludeFreeParking:
-          type: boolean
-          description: TRUE to exclude free parking bays from the result. Optional. Defaults to FALSE if omitted.
-          nullable: true
-        excludeNoParking:
-          type: boolean
-          description: TRUE to exclude from the result any bays where parking is not allowed for the entirety of the requested time window for the given vehicle operator. Optional. Defaults to FALSE if omitted.
-          nullable: true
-        excludeTruncatedParking:
-          type: boolean
-          description: "TRUE to exclude from the result any bays where parking is not allowed for part of the requested time window for the given vehicle operator. Optional. Defaults to FALSE if omitted.\r\n            \r\nNote that this filter does not imply the exclusion of bays where parking is not allowed for the entirety of the requested time window. To exclude such results, use the ExcludeNoParking filter.\r\nif using ExcludeTruncatedParking."
-          nullable: true
-        excludeCostGreaterThan:
-          type: number
-          description: "If supplied, bays for which the total cost over the requested duration exceeds the supplied value will not be included in the result.\r\n            \r\nIf the ExcludePaidParking filter is set to TRUE, this property will have no effect."
-          format: float
-          nullable: true
-      additionalProperties: false
-      description: Filters that a caller can apply to limit the results returned when searching for parking by viewport
-    Permit:
-      type: object
-      properties:
-        permitTypeId:
-          type: integer
-          description: The type of the permit
-          format: int32
-      additionalProperties: false
-      description: A permit that can be held by a vehicle operator
-    VehicleOperatorContext:
-      type: object
-      properties:
-        vehicleTypeId:
-          type: integer
-          description: Type of vehicle being operated
-          format: int32
-          nullable: true
-        activityTypeId:
-          type: integer
-          description: Activity the operator is seeking to perform at the kerbside (parking, loading)
-          format: int32
-          nullable: true
-        fuelTypeId:
-          type: integer
-          description: Fuel type of the vehicle
-          format: int32
-          nullable: true
-        permits:
-          type: array
-          items:
-            $ref: '#/components/schemas/Permit'
-          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
-          nullable: true
-      additionalProperties: false
-      description: |-
-        A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)
-        that affect whether or not they can park and/or the price they pay if they do.
-    SearchParkingByCentreAndViewportSizeQuery:
-      required:
-      - endTime
-      - startTime
-      - viewportCenter
-      - viewportSize
-      type: object
-      properties:
-        viewportCenter:
-          $ref: '#/components/schemas/LatLng'
-        viewportSize:
-          maximum: 750
-          exclusiveMaximum: true
-          minLength: 1
-          type: integer
-          description: Length of one side of the square viewport in meters. Required.
-          format: int32
-        startTime:
-          minLength: 1
-          type: string
-          description: |-
-            Start of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        endTime:
-          minLength: 1
-          type: string
-          description: |-
-            End of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        filters:
-          $ref: '#/components/schemas/SearchParkingByViewportFilters'
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
-      additionalProperties: false
-      description: |-
-        Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
-        the centre point and the length of one side.
-    SurchargeValueType:
-      enum:
-      - 1
-      - 2
-      type: integer
-      description: |+
-        Indicates how clients should interpret the value in a SurchargeDetails object - as a flat rate (absolute cost) or percentage of the original charge
-
-        - FlatRate (1) - The value should be interpreted as an absolute amount
-        - Percentage (2) - The value should be interpreted as a percentage of the original cost (before surcharge)
-      format: int32
-    SurchargeCriteria:
-      type: object
-      properties:
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
-        maxVehicleManufactureYear:
-          type: integer
-          description: The latest year of manufacture of the vehicle for which the surcharge applies
-          format: int32
-          nullable: true
-      additionalProperties: false
-      description: The criteria for which a surcharge may be applied
-    SurchargeDetails:
-      type: object
-      properties:
-        value:
-          type: number
-          description: The amount of the surcharge
-          format: float
-        valueType:
-          $ref: '#/components/schemas/SurchargeValueType'
-        criteria:
-          $ref: '#/components/schemas/SurchargeCriteria'
-      additionalProperties: false
-      description: |-
-        Details of a surcharge that may be applied to a parking charge, including the amount of the surcharge
-        and the criteria under which it is applied.
-    ParkingQuote:
-      type: object
-      properties:
-        cost:
-          type: number
-          description: The total cost of parking given the context of the quote.
-          format: float
-        currency:
-          type: string
-          description: Currency of the value in the Cost field
-          nullable: true
-        minCost:
-          type: number
-          description: |-
-            Minimum cost for parking. This is the minimum amount the user will pay for parking,
-            regardless of when they leave the space.
-          format: float
-          nullable: true
-        canExtendUntil:
-          type: string
-          description: |-
-            The maximum time until which the user can park. This value ignores the requested window and is the
-            latest time the user is able to remain parked in the space if they were to extend their session
-            beyond the requested window.
-            Dates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-          nullable: true
-        pricedUntil:
-          type: string
-          description: |-
-            The maximum time until which the user can park for the price specified in the 'cost' field. The
-            'cost' field is the cost for the requested time window, but that price may entitle the user to
-            park longer than requested, in which case this field holds the time that the cost will entitle
-            them to park.
-            Dates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-          nullable: true
-        noReturn:
-          type: string
-          description: The 'no return' window, i.e. the time after parking during which the user is not allowed to return to the bay.
-          nullable: true
-          example: 3.17:25:30.5000000
-        isFreeParking:
-          type: boolean
-          description: TRUE if parking is free, false if it is paid.
-        relevance:
-          type: integer
-          description: |-
-            Server-calculated relevance for this quote. May be used by the client if required to easily choose
-            between multiple quotes for a parking entity to display a single price for a bay.
-          format: int32
-        paymentMethodIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: Payment method(s) for which this quote is valid
-          nullable: true
-        permittedContexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/VehicleOperatorContext'
-          description: Vehicle operators for whom this quote is valid
-          nullable: true
-        rulesApplyUntil:
-          type: string
-          description: |-
-            The date and time until the rules on which this quote is based apply.
-            Dates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        onStreetParkingType:
-          type: integer
-          description: "The type of the on street parking for the purposes of this quote. On street parking entities may have multiple types that apply\r\nat different times or simultaneously. If multiple types apply AND the vehicle operator context is such that more than one type allows\r\nthe user to park, then multiple quotes will be returned for a single result and each will have a different On Street Parking Type.\r\n            \r\nFor example, a bay may be simultaneously a Standard Bay and a Disabled Bay (if, for example, parking is free for blue disabled badge holders but\r\npaid for everyone else). If the vehicle operator has a blue disabled badge permit, they will get two quotes back. One will have a type of StandardBay and\r\nthe other will have a type of DisabledBay.\r\n            \r\nThis field will not have a value for car parks."
-          format: int32
-          nullable: true
-        surcharge:
-          $ref: '#/components/schemas/SurchargeDetails'
-      additionalProperties: false
-      description: A contextualized quote for a parking session, including related data such as No Return and Minimum Cost
-    ParkingAllowed:
-      enum:
-      - 1
-      - 2
-      - 3
-      type: integer
-      description: |+
-        Enum to indicate the different scenarios whereby parking may be allowed or denied.
-
-        - FullSession (1) - Parking is allowed for the whole of the requested window
-        - TruncatedSession (2) - Parking is allowed for part of the requested window only
-        - NoParking (3) - Parking is not allowed.
-      format: int32
-    NoParkingReasonType:
-      enum:
-      - 1
-      - 2
-      - 3
-      - 4
-      type: integer
-      description: |+
-        Reasons that parking is not permitted at a parking entity
-
-        - NoParkingAllowed (1) - Parking is never allowed at this location for anybody
-        - IncorrectVehicleOperatorContext (2) - Parking is allowed during the requested window, but not for the vehicle operator making the request
-        - SpecialRestrictionsApply (3) - The parking entity is subject to special restrictions that apply during the requested window
-        - CarParkClosed (4) - A car park that is closed during the requested window
-      format: int32
-    NoParkingReason:
-      type: object
-      properties:
-        reasonType:
-          $ref: '#/components/schemas/NoParkingReasonType'
-        requiredContexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/VehicleOperatorContext'
-          nullable: true
-        specialRestrictions:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    ParkingEntitySearchResult:
-      type: object
-      properties:
-        entityId:
-          type: string
-          description: Identifier of the parking entity
-          nullable: true
-        entityType:
-          $ref: '#/components/schemas/MapEntityType'
-        quotes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParkingQuote'
-          description: |-
-            List of quotes for parking at this parking entity. If the context of the search means that there are multiple prices returned,
-            one quote will be generated for each price and the quotes will be decorated with the payment methods, bay types and vehicle operator
-            context for which they are valid. If parking is not allowed, no quotes are returned.
-          nullable: true
-        parkingAllowed:
-          $ref: '#/components/schemas/ParkingAllowed'
-        noParkingReason:
-          $ref: '#/components/schemas/NoParkingReason'
-        entityETag:
-          type: string
-          description: |-
-            The Etag of the current latest version of the Parking Entity referred to by this result. This allows
-            clients to determine if they have the latest version of the parking entity in their local cache and only
-            request the entity if it is missing.
-          nullable: true
-      additionalProperties: false
-      description: Represents a single result returned from a search for Parking Entities.
-    ParkingSearchResponse:
-      type: object
-      properties:
-        parking:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParkingEntitySearchResult'
-          description: List of Parking Entities returned by the response
-          nullable: true
-      additionalProperties: false
-      description: Response shape for parking search requests
-    ParkingSearchResponseOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the response was successful
-          readOnly: true
-        result:
-          $ref: '#/components/schemas/ParkingSearchResponse'
-      additionalProperties: false
-      description: A successful response
-    Error:
-      type: object
-      properties:
-        property:
-          type: string
-          description: The property that caused the problem
-          nullable: true
-        code:
-          type: string
-          description: Machine-readable code representing the type of error
-          nullable: true
-        message:
-          type: string
-          description: Human-readable message for the error
-          nullable: true
-      additionalProperties: false
-      description: Represents a validation error
-    BadRequestResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the request was successful
-          readOnly: true
-          example: false
-        message:
-          type: string
-          description: Human-readable message for this response
-          nullable: true
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Error'
-          description: Collection of validation errors caused by the request
-          nullable: true
-      additionalProperties: false
-      description: A response indicating the request was invalid
-    CrsProperties:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      additionalProperties: false
-    Crs:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        properties:
-          $ref: '#/components/schemas/CrsProperties'
-      additionalProperties: false
-    Polygon:
-      type: object
-      properties:
-        coordinates:
-          type: array
-          items:
-            type: array
-            items:
-              type: array
-              items:
-                type: number
-                format: double
-          nullable: true
-        type:
-          type: string
-          nullable: true
-        crs:
-          $ref: '#/components/schemas/Crs'
-      additionalProperties: false
-    SearchParkingByGeoJsonViewportQuery:
-      required:
-      - endTime
-      - startTime
-      type: object
-      properties:
-        endTime:
-          minLength: 1
-          type: string
-          description: |-
-            End of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        startTime:
-          minLength: 1
-          type: string
-          description: |-
-            Start of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        viewport:
-          $ref: '#/components/schemas/Polygon'
-        filters:
-          $ref: '#/components/schemas/SearchParkingByViewportFilters'
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
-      additionalProperties: false
-      description: |-
-        Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
-        the centre point and the length of one side.
-    SearchZonesByViewportQuery:
-      required:
-      - endTime
-      - startTime
-      type: object
-      properties:
-        endTime:
-          minLength: 1
-          type: string
-          description: |-
-            End of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        startTime:
-          minLength: 1
-          type: string
-          description: |-
-            Start of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        viewport:
-          $ref: '#/components/schemas/Polygon'
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
-        onStreetParkingTypeIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: |-
-            On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types
-            in the zone for which they are defined.
-          nullable: true
-      additionalProperties: false
-      description: A request to search for zone default information by viewport
-    ZoneDefault:
-      type: object
-      properties:
-        onStreetParkingTypeId:
-          type: integer
-          description: Type of markings (bays, single yellow lines etc) to which these defaults apply
-          format: int32
-          nullable: true
-        parkingAllowed:
-          $ref: '#/components/schemas/ParkingAllowed'
-        isFreeParking:
-          type: boolean
-          description: Whether parking is free or paid
-        permittedContexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/VehicleOperatorContext'
-          description: The vehicle operators for whom this default applies
-          nullable: true
-      additionalProperties: false
-      description: A default zone-wide setting that applies to all parking entities of the given bay type unless overridden specifically at the Parking Entity level
-    ZoneSearchResult:
-      type: object
-      properties:
-        entityId:
-          type: string
-          description: Entity ID of the zone referred to by this result
-          nullable: true
-        entityETag:
-          type: string
-          description: |-
-            The Etag of the current latest version of the Zone referred to by this result. This allows
-            clients to determine if they have the latest version of the zone in their local cache and only
-            request the entity if it is missing.
-          nullable: true
-        defaults:
-          type: array
-          items:
-            $ref: '#/components/schemas/ZoneDefault'
-          description: List of defaults for this zone
-          nullable: true
-      additionalProperties: false
-      description: Represents a single result returned from a search for zones
-    ZoneSearchResponse:
-      type: object
-      properties:
-        zones:
-          type: array
-          items:
-            $ref: '#/components/schemas/ZoneSearchResult'
-          description: List of search results returned in this response
-          nullable: true
-      additionalProperties: false
-      description: Response shape for zone search requests
-    ZoneSearchResponseOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the response was successful
-          readOnly: true
-        result:
-          $ref: '#/components/schemas/ZoneSearchResponse'
-      additionalProperties: false
-      description: A successful response
-    SearchAuthoritiesByViewportQuery:
-      type: object
-      properties:
-        viewport:
-          $ref: '#/components/schemas/Polygon'
-      additionalProperties: false
-      description: A request to search for zone default information by viewport
     MapEntitiesListQuery:
       type: object
       properties:
@@ -983,6 +372,22 @@ components:
           nullable: true
       additionalProperties: false
       description: A standard address for an Onstreet bay or Car park
+    CrsProperties:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Crs:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        properties:
+          $ref: '#/components/schemas/CrsProperties'
+      additionalProperties: false
     Geometry:
       type: object
       properties:
@@ -1006,6 +411,23 @@ components:
         crs:
           $ref: '#/components/schemas/Crs'
       additionalProperties: false
+    MapEntityType:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      description: |+
+        Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.
+
+        *OnStreet (1) - An on street parking area
+        *Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.
+        *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.
+        A zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may
+        define rules parking entities that can be overridden by individual entities.
+        *Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.
+      format: int32
     ParkingEntity:
       type: object
       properties:
@@ -1077,7 +499,7 @@ components:
       - 9
       - 10
       type: integer
-      description: "Different types of Zone\n\n- ControlledParkingZone (1) - An ordinary zone in which authority-defined restrictions are in place.\r\n- RestrictedParkingZone (2) - A zone in which parking is never allowed.\r\n- FreeParking (3) - A zone in which parking is always allowed.\r\n- Private (4) - A region not under authority control (such as a shopping centre).\r\n- CongestionCharge (5) - A region in which congestion charges apply.\r\n- Container (7) - A zone that exists to contain On Street Parking entities that don't really belong in a zone.\r\n- ResidentsParkingScheme (8) - A zone in which a resident's permit parking scheme applies\r\n- PermitParkingArea (9) - Area of residential streets where parking is reserved for permit holders Gn++n++ a sign at the entrance to the street will show that parking is for permit holders only. \r\nPPAs may not have signs or bay markings within them. Sometimes there may be small plates to remind motorists of the controls in place\r\n- PedestrianZone (10) - Pedestrian area where no parking is allowed\r\n"
+      description: "Different types of Zone\n\n*ControlledParkingZone (1) - An ordinary zone in which authority-defined restrictions are in place.\r\n*RestrictedParkingZone (2) - A zone in which parking is never allowed.\r\n*FreeParking (3) - A zone in which parking is always allowed.\r\n*Private (4) - A region not under authority control (such as a shopping centre).\r\n*CongestionCharge (5) - A region in which congestion charges apply.\r\n*Container (7) - A zone that exists to contain On Street Parking entities that don't really belong in a zone.\r\n*ResidentsParkingScheme (8) - A zone in which a resident's permit parking scheme applies\r\n*PermitParkingArea (9) - Area of residential streets where parking is reserved for permit holders Gn++n++ a sign at the entrance to the street will show that parking is for permit holders only. \r\nPPAs may not have signs or bay markings within them. Sometimes there may be small plates to remind motorists of the controls in place\r\n*PedestrianZone (10) - Pedestrian area where no parking is allowed\r\n"
       format: int32
     Zone:
       type: object
@@ -1204,6 +626,43 @@ components:
           $ref: '#/components/schemas/MapEntitiesResponse'
       additionalProperties: false
       description: A successful response
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          description: The property that caused the problem
+          nullable: true
+        code:
+          type: string
+          description: Machine-readable code representing the type of error
+          nullable: true
+        message:
+          type: string
+          description: Human-readable message for the error
+          nullable: true
+      additionalProperties: false
+      description: Represents a validation error
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the request was successful
+          readOnly: true
+          example: false
+        message:
+          type: string
+          description: Human-readable message for this response
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          description: Collection of validation errors caused by the request
+          nullable: true
+      additionalProperties: false
+      description: A response indicating the request was invalid
     ParkingEntityOkResponse:
       type: object
       properties:
@@ -1273,6 +732,512 @@ components:
           $ref: '#/components/schemas/Authority'
       additionalProperties: false
       description: A successful response
+    LatLng:
+      type: object
+      properties:
+        lat:
+          type: number
+          description: Latitude
+          format: double
+        lng:
+          type: number
+          description: Longitude
+          format: double
+      additionalProperties: false
+      description: Models a latitude and longitude
+    SearchParkingByViewportFilters:
+      type: object
+      properties:
+        excludeEntityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/MapEntityType'
+          description: |-
+            If supplied, entities that have the given Map Entity types will be excluded from the response. Passing Zone or Authority
+            entity types will result in a Bad Request response.
+          nullable: true
+        excludePaidParking:
+          type: boolean
+          description: TRUE to exclude paid parking bays from the result. Optional. Defaults to FALSE if omitted.
+          nullable: true
+        excludeFreeParking:
+          type: boolean
+          description: TRUE to exclude free parking bays from the result. Optional. Defaults to FALSE if omitted.
+          nullable: true
+        excludeNoParking:
+          type: boolean
+          description: TRUE to exclude from the result any bays where parking is not allowed for the entirety of the requested time window for the given vehicle operator. Optional. Defaults to FALSE if omitted.
+          nullable: true
+        excludeTruncatedParking:
+          type: boolean
+          description: "TRUE to exclude from the result any bays where parking is not allowed for part of the requested time window for the given vehicle operator. Optional. Defaults to FALSE if omitted.\r\n            \r\nNote that this filter does not imply the exclusion of bays where parking is not allowed for the entirety of the requested time window. To exclude such results, use the ExcludeNoParking filter.\r\nif using ExcludeTruncatedParking."
+          nullable: true
+        excludeCostGreaterThan:
+          type: number
+          description: "If supplied, bays for which the total cost over the requested duration exceeds the supplied value will not be included in the result.\r\n            \r\nIf the ExcludePaidParking filter is set to TRUE, this property will have no effect."
+          format: float
+          nullable: true
+      additionalProperties: false
+      description: Filters that a caller can apply to limit the results returned when searching for parking by viewport
+    Permit:
+      type: object
+      properties:
+        permitTypeId:
+          type: integer
+          description: The type of the permit
+          format: int32
+      additionalProperties: false
+      description: A permit that can be held by a vehicle operator
+    VehicleOperatorContext:
+      type: object
+      properties:
+        vehicleTypeId:
+          type: integer
+          description: Type of vehicle being operated
+          format: int32
+          nullable: true
+        activityTypeId:
+          type: integer
+          description: Activity the operator is seeking to perform at the kerbside (parking, loading)
+          format: int32
+          nullable: true
+        fuelTypeId:
+          type: integer
+          description: Fuel type of the vehicle
+          format: int32
+          nullable: true
+        permits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permit'
+          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
+          nullable: true
+      additionalProperties: false
+      description: |-
+        A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)
+        that affect whether or not they can park and/or the price they pay if they do.
+    SearchParkingByCentreAndViewportSizeQuery:
+      required:
+      - endTime
+      - startTime
+      - viewportCenter
+      - viewportSize
+      type: object
+      properties:
+        viewportCenter:
+          $ref: '#/components/schemas/LatLng'
+        viewportSize:
+          maximum: 750
+          exclusiveMaximum: true
+          minLength: 1
+          type: integer
+          description: Length of one side of the square viewport in meters. Required.
+          format: int32
+        startTime:
+          minLength: 1
+          type: string
+          description: |-
+            Start of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        endTime:
+          minLength: 1
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        filters:
+          $ref: '#/components/schemas/SearchParkingByViewportFilters'
+        distanceCalculationLocation:
+          $ref: '#/components/schemas/LatLng'
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+      additionalProperties: false
+      description: |-
+        Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
+        the centre point and the length of one side.
+    SurchargeValueType:
+      enum:
+      - 1
+      - 2
+      type: integer
+      description: |+
+        Indicates how clients should interpret the value in a SurchargeDetails object - as a flat rate (absolute cost) or percentage of the original charge
+
+        *FlatRate (1) - The value should be interpreted as an absolute amount
+        *Percentage (2) - The value should be interpreted as a percentage of the original cost (before surcharge)
+      format: int32
+    SurchargeCriteria:
+      type: object
+      properties:
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+        maxVehicleManufactureYear:
+          type: integer
+          description: The latest year of manufacture of the vehicle for which the surcharge applies
+          format: int32
+          nullable: true
+      additionalProperties: false
+      description: The criteria for which a surcharge may be applied
+    SurchargeDetails:
+      type: object
+      properties:
+        value:
+          type: number
+          description: The amount of the surcharge
+          format: float
+        valueType:
+          $ref: '#/components/schemas/SurchargeValueType'
+        criteria:
+          $ref: '#/components/schemas/SurchargeCriteria'
+      additionalProperties: false
+      description: |-
+        Details of a surcharge that may be applied to a parking charge, including the amount of the surcharge
+        and the criteria under which it is applied.
+    ParkingQuote:
+      type: object
+      properties:
+        cost:
+          type: number
+          description: The total cost of parking given the context of the quote.
+          format: float
+        currency:
+          type: string
+          description: Currency of the value in the Cost field
+          nullable: true
+        minCost:
+          type: number
+          description: |-
+            Minimum cost for parking. This is the minimum amount the user will pay for parking,
+            regardless of when they leave the space.
+          format: float
+          nullable: true
+        canExtendUntil:
+          type: string
+          description: |-
+            The maximum time until which the user can park. This value ignores the requested window and is the
+            latest time the user is able to remain parked in the space if they were to extend their session
+            beyond the requested window.
+            Dates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+          nullable: true
+        pricedUntil:
+          type: string
+          description: |-
+            The maximum time until which the user can park for the price specified in the 'cost' field. The
+            'cost' field is the cost for the requested time window, but that price may entitle the user to
+            park longer than requested, in which case this field holds the time that the cost will entitle
+            them to park.
+            Dates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+          nullable: true
+        noReturn:
+          type: string
+          description: The 'no return' window, i.e. the time after parking during which the user is not allowed to return to the bay.
+          nullable: true
+          example: 3.17:25:30.5000000
+        isFreeParking:
+          type: boolean
+          description: TRUE if parking is free, false if it is paid.
+        relevance:
+          type: integer
+          description: |-
+            Server-calculated relevance for this quote. May be used by the client if required to easily choose
+            between multiple quotes for a parking entity to display a single price for a bay.
+          format: int32
+        paymentMethodIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Payment method(s) for which this quote is valid
+          nullable: true
+        permittedContexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleOperatorContext'
+          description: Vehicle operators for whom this quote is valid
+          nullable: true
+        rulesApplyUntil:
+          type: string
+          description: |-
+            The date and time until the rules on which this quote is based apply.
+            Dates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        onStreetParkingType:
+          type: integer
+          description: "The type of the on street parking for the purposes of this quote. On street parking entities may have multiple types that apply\r\nat different times or simultaneously. If multiple types apply AND the vehicle operator context is such that more than one type allows\r\nthe user to park, then multiple quotes will be returned for a single result and each will have a different On Street Parking Type.\r\n            \r\nFor example, a bay may be simultaneously a Standard Bay and a Disabled Bay (if, for example, parking is free for blue disabled badge holders but\r\npaid for everyone else). If the vehicle operator has a blue disabled badge permit, they will get two quotes back. One will have a type of StandardBay and\r\nthe other will have a type of DisabledBay.\r\n            \r\nThis field will not have a value for car parks."
+          format: int32
+          nullable: true
+        surcharge:
+          $ref: '#/components/schemas/SurchargeDetails'
+      additionalProperties: false
+      description: A contextualized quote for a parking session, including related data such as No Return and Minimum Cost
+    ParkingAllowed:
+      enum:
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |+
+        Enum to indicate the different scenarios whereby parking may be allowed or denied.
+
+        *FullSession (1) - Parking is allowed for the whole of the requested window
+        *TruncatedSession (2) - Parking is allowed for part of the requested window only
+        *NoParking (3) - Parking is not allowed.
+      format: int32
+    NoParkingReasonType:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      description: |+
+        Reasons that parking is not permitted at a parking entity
+
+        *NoParkingAllowed (1) - Parking is never allowed at this location for anybody
+        *IncorrectVehicleOperatorContext (2) - Parking is allowed during the requested window, but not for the vehicle operator making the request
+        *SpecialRestrictionsApply (3) - The parking entity is subject to special restrictions that apply during the requested window
+        *CarParkClosed (4) - A car park that is closed during the requested window
+      format: int32
+    NoParkingReason:
+      type: object
+      properties:
+        reasonType:
+          $ref: '#/components/schemas/NoParkingReasonType'
+        requiredContexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleOperatorContext'
+          nullable: true
+        specialRestrictions:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    ParkingEntitySearchResult:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Identifier of the parking entity
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/MapEntityType'
+        quotes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingQuote'
+          description: |-
+            List of quotes for parking at this parking entity. If the context of the search means that there are multiple prices returned,
+            one quote will be generated for each price and the quotes will be decorated with the payment methods, bay types and vehicle operator
+            context for which they are valid. If parking is not allowed, no quotes are returned.
+          nullable: true
+        distance:
+          type: number
+          description: How far away the parking entity is, in meters. Distances are relative to the DistanceCalculationLocation if supplied in the query, otherwise they are relative to the centre of the viewport.
+          format: double
+        parkingAllowed:
+          $ref: '#/components/schemas/ParkingAllowed'
+        noParkingReason:
+          $ref: '#/components/schemas/NoParkingReason'
+        entityETag:
+          type: string
+          description: |-
+            The Etag of the current latest version of the Parking Entity referred to by this result. This allows
+            clients to determine if they have the latest version of the parking entity in their local cache and only
+            request the entity if it is missing.
+          nullable: true
+      additionalProperties: false
+      description: Represents a single result returned from a search for Parking Entities.
+    ParkingSearchResponse:
+      type: object
+      properties:
+        parking:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingEntitySearchResult'
+          description: List of Parking Entities returned by the response
+          nullable: true
+      additionalProperties: false
+      description: Response shape for parking search requests
+    ParkingSearchResponseOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/ParkingSearchResponse'
+      additionalProperties: false
+      description: A successful response
+    Polygon:
+      type: object
+      properties:
+        coordinates:
+          type: array
+          items:
+            type: array
+            items:
+              type: array
+              items:
+                type: number
+                format: double
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        crs:
+          $ref: '#/components/schemas/Crs'
+      additionalProperties: false
+    SearchParkingByGeoJsonViewportQuery:
+      required:
+      - endTime
+      - startTime
+      - viewport
+      type: object
+      properties:
+        viewport:
+          $ref: '#/components/schemas/Polygon'
+        startTime:
+          minLength: 1
+          type: string
+          description: |-
+            Start of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        endTime:
+          minLength: 1
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        filters:
+          $ref: '#/components/schemas/SearchParkingByViewportFilters'
+        distanceCalculationLocation:
+          $ref: '#/components/schemas/LatLng'
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+      additionalProperties: false
+      description: |-
+        Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
+        the centre point and the length of one side.
+    SearchZonesByViewportQuery:
+      required:
+      - endTime
+      - startTime
+      - viewport
+      type: object
+      properties:
+        viewport:
+          $ref: '#/components/schemas/Polygon'
+        startTime:
+          minLength: 1
+          type: string
+          description: |-
+            Start of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        endTime:
+          minLength: 1
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+        onStreetParkingTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: |-
+            On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types
+            in the zone for which they are defined.
+          nullable: true
+      additionalProperties: false
+      description: A request to search for zone default information by viewport
+    ZoneDefault:
+      type: object
+      properties:
+        onStreetParkingTypeId:
+          type: integer
+          description: Type of markings (bays, single yellow lines etc) to which these defaults apply
+          format: int32
+          nullable: true
+        parkingAllowed:
+          $ref: '#/components/schemas/ParkingAllowed'
+        isFreeParking:
+          type: boolean
+          description: Whether parking is free or paid
+        permittedContexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleOperatorContext'
+          description: The vehicle operators for whom this default applies
+          nullable: true
+      additionalProperties: false
+      description: A default zone-wide setting that applies to all parking entities of the given bay type unless overridden specifically at the Parking Entity level
+    ZoneSearchResult:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Entity ID of the zone referred to by this result
+          nullable: true
+        entityETag:
+          type: string
+          description: |-
+            The Etag of the current latest version of the Zone referred to by this result. This allows
+            clients to determine if they have the latest version of the zone in their local cache and only
+            request the entity if it is missing.
+          nullable: true
+        defaults:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZoneDefault'
+          description: List of defaults for this zone
+          nullable: true
+      additionalProperties: false
+      description: Represents a single result returned from a search for zones
+    ZoneSearchResponse:
+      type: object
+      properties:
+        zones:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZoneSearchResult'
+          description: List of search results returned in this response
+          nullable: true
+      additionalProperties: false
+      description: Response shape for zone search requests
+    ZoneSearchResponseOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/ZoneSearchResponse'
+      additionalProperties: false
+      description: A successful response
+    SearchAuthoritiesByViewportQuery:
+      required:
+      - viewport
+      type: object
+      properties:
+        viewport:
+          $ref: '#/components/schemas/Polygon'
+      additionalProperties: false
+      description: A request to search for zone default information by viewport
   securitySchemes:
     apiKey:
       name: API-KEY
