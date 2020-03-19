@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Map Entity",
-    "version": "1.0",
+    "version": "0.1",
     "contact": {
       "email": "support@appyway.com",
       "url": "https://appyway.com/get-in-touch-support/",
@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://api.appyway.com/mapentity/v1"
+      "url": "https://api.appyway.com/v0.1/mapentity"
     }
   ],
   "paths": {
@@ -20,8 +20,8 @@
         "tags": [
           "Entity"
         ],
-        "summary": "List",
-        "description": "Retrieve a list of entities by their IDs",
+        "summary": "Bulk Retrieval",
+        "description": "Returns the static details for a list of entities by their IDs",
         "operationId": "post",
         "requestBody": {
           "content": {
@@ -81,7 +81,7 @@
           "Entity"
         ],
         "summary": "Authority by ID",
-        "description": "Returns a specific authority by its ID",
+        "description": "Returns the static details for a specific authority by its ID",
         "operationId": "get-authority-id",
         "parameters": [
           {
@@ -156,7 +156,7 @@
           "Entity"
         ],
         "summary": "Parking Entity by ID",
-        "description": "Retrieves a parking entity by its ID",
+        "description": "Returns the static details for a parking entity by its ID",
         "operationId": "get-parking-id",
         "parameters": [
           {
@@ -252,73 +252,13 @@
         }
       }
     },
-    "/search/authority/viewport": {
-      "post": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Authorities by viewport",
-        "description": "Returns authorities that are at least partially within the specified viewport.",
-        "operationId": "post-search-authority-viewport",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchAuthoritiesByViewportQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchAuthoritiesByViewportQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchAuthoritiesByViewportQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ZoneSearchResponseOkResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
     "/search/parking/centreAndViewportSize": {
       "post": {
         "tags": [
           "Search"
         ],
         "summary": "Parking by centre and viewport size",
-        "description": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+        "description": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns all Parking Entities within that viewport.",
         "operationId": "post-search-parking-centreandviewportsize",
         "requestBody": {
           "content": {
@@ -378,7 +318,7 @@
           "Search"
         ],
         "summary": "Parking by viewport",
-        "description": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+        "description": "This query creates a custom viewport from the supplied GeoJson polygon and returns all results within the bounds of that polygon.",
         "operationId": "post-search-parking-viewport",
         "requestBody": {
           "content": {
@@ -438,7 +378,7 @@
           "Search"
         ],
         "summary": "Zones by viewport",
-        "description": "Returns default rules for parking entities for zones that are at least partially within the specified viewport.",
+        "description": "Returns defaults for zones that are at least partially within the specified viewport. Also returns the ID of the zone and authority in which the centroid of the viewport resides.",
         "operationId": "post-search-zone-viewport",
         "requestBody": {
           "content": {
@@ -498,7 +438,7 @@
           "Entity"
         ],
         "summary": "Zone By ID",
-        "description": "Returns a specific zone by its ID",
+        "description": "Returns the static details for a specific zone by its ID",
         "operationId": "get-zone-id",
         "parameters": [
           {
@@ -1156,8 +1096,6 @@
             "$ref": "#/components/schemas/LatLng"
           },
           "viewportSize": {
-            "maximum": 750,
-            "exclusiveMaximum": true,
             "minLength": 1,
             "type": "integer",
             "description": "Length of one side of the square viewport in meters. Required.",
@@ -1487,27 +1425,20 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+        "description": "Request for searching for Parking Entities for a custom viewport, specified as a GeoJson polygon.\r\nSee https://tools.ietf.org/html/rfc7946"
       },
       "SearchZonesByViewportQuery": {
-        "required": [
-          "endTime",
-          "startTime",
-          "viewport"
-        ],
         "type": "object",
         "properties": {
           "viewport": {
             "$ref": "#/components/schemas/Polygon"
           },
           "startTime": {
-            "minLength": 1,
             "type": "string",
             "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
           "endTime": {
-            "minLength": 1,
             "type": "string",
             "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
@@ -1515,13 +1446,13 @@
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
           },
-          "onStreetParkingTypeIds": {
+          "markingTypeIds": {
             "type": "array",
             "items": {
               "type": "integer",
               "format": "int32"
             },
-            "description": "On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types\r\nin the zone for which they are defined.",
+            "description": "Marking types for which to return state. Optional. If omitted, defaults are returned for all the marking types\r\nin the zone for which they are defined.",
             "nullable": true
           }
         },
@@ -1531,11 +1462,10 @@
       "ZoneDefault": {
         "type": "object",
         "properties": {
-          "onStreetParkingTypeId": {
+          "markingTypeId": {
             "type": "integer",
             "description": "Type of markings (bays, single yellow lines etc) to which these defaults apply",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "parkingAllowed": {
             "$ref": "#/components/schemas/ParkingAllowed"
@@ -1610,19 +1540,6 @@
         },
         "additionalProperties": false,
         "description": "A successful response"
-      },
-      "SearchAuthoritiesByViewportQuery": {
-        "required": [
-          "viewport"
-        ],
-        "type": "object",
-        "properties": {
-          "viewport": {
-            "$ref": "#/components/schemas/Polygon"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A request to search for zone default information by viewport"
       }
     },
     "securitySchemes": {
