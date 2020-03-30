@@ -1,22 +1,60 @@
 openapi: 3.0.1
 info:
-  title: AppyParking Mock Api
-  description: TODO This API version has been deprecated.
-  version: "1.0"
+  title: API Pipeline Demo (AspNetCore)
+  description: ' This API version has been deprecated.'
+  version: "2.0"
   contact:
     email: support@appyway.com
     url: https://appyway.com/get-in-touch-support/
     name: AppyWay Support
 servers:
-- url: https://api.appyway.com/v1/appyparkingmockapi
+- url: https://api.appyway.com/v2/ApiPipelineDemoAspNetCore
 paths:
-  /api/v1/Orders/{id}:
+  /Orders:
+    post:
+      tags:
+      - Orders
+      summary: Places a new order.
+      description: Places a new order.
+      operationId: post-orders
+      requestBody:
+        description: The order to place.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        "201":
+          description: The order was successfully placed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        "400":
+          description: The order is invalid.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /Orders/{id}:
     get:
       tags:
       - Orders
       summary: Gets a single order.
       description: Gets a single order.
-      operationId: get-api-v1-orders-id
+      operationId: get-orders-id
       parameters:
       - name: id
         in: path
@@ -43,13 +81,13 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
-  /api/v1/People/{id}:
+  /People/{id}:
     get:
       tags:
       - People
       summary: Gets a single person.
       description: Gets a single person.
-      operationId: get-api-v1-people-id
+      operationId: get-people-id
       parameters:
       - name: id
         in: path
@@ -86,14 +124,14 @@ components:
         customer:
           type: string
           description: Gets or sets the name of the ordering customer.
-        id:
-          type: integer
-          description: Gets or sets the unique identifier for the order.
-          format: int32
         createdDate:
           type: string
           description: Gets or sets the date and time when the order was created.
           format: date-time
+        id:
+          type: integer
+          description: Gets or sets the unique identifier for the order.
+          format: int32
       additionalProperties: false
       description: Represents an order.
     ProblemDetails:
@@ -124,16 +162,16 @@ components:
       - lastName
       type: object
       properties:
-        lastName:
-          maxLength: 25
-          minLength: 0
-          type: string
-          description: Gets or sets the last name of a person.
         firstName:
           maxLength: 25
           minLength: 0
           type: string
           description: Gets or sets the first name of a person.
+        lastName:
+          maxLength: 25
+          minLength: 0
+          type: string
+          description: Gets or sets the last name of a person.
         id:
           type: integer
           description: Gets or sets the unique identifier for a person.
@@ -159,6 +197,11 @@ components:
       description: Unauthorized
     Forbidden:
       description: Forbidden
+tags:
+- name: Orders
+  description: Represents a RESTful service of orders.
+- name: People
+  description: Represents a RESTful people service.
 security:
 - apiKey: []
 - oAuth2: []

@@ -1,0 +1,294 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API Pipeline Demo (Net46)",
+    "version": "2.0",
+    "contact": {
+      "email": "support@appyway.com",
+      "url": "https://appyway.com/get-in-touch-support/",
+      "name": "AppyWay Support"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.appyway.com/v2/ApiPipelineDemoNet46"
+    }
+  ],
+  "paths": {
+    "/orders": {
+      "post": {
+        "tags": [
+          "OrdersV1"
+        ],
+        "summary": "Places a new order.",
+        "description": "Places a new order.",
+        "operationId": "OrdersV1_Post",
+        "requestBody": {
+          "description": "The order to place.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "Customer": {
+                    "type": "string"
+                  },
+                  "Id": {
+                    "type": "integer"
+                  },
+                  "CreatedDate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The order was successfully placed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The order is invalid."
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/orders/{id}": {
+      "get": {
+        "tags": [
+          "OrdersV1"
+        ],
+        "summary": "Gets a single order.",
+        "description": "Gets a single order.",
+        "operationId": "OrdersV1_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested order identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The order was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The order does not exist."
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/people/{id}": {
+      "get": {
+        "tags": [
+          "PeopleV1"
+        ],
+        "summary": "Gets a single person.",
+        "description": "Gets a single person.",
+        "operationId": "PeopleV1_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Format - int32. The requested person identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The person was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The person does not exist."
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Object": {
+        "type": "object"
+      },
+      "Order": {
+        "required": [
+          "Customer"
+        ],
+        "type": "object",
+        "properties": {
+          "Customer": {
+            "type": "string",
+            "description": "Gets or sets the name of the ordering customer."
+          },
+          "CreatedDate": {
+            "type": "string",
+            "description": "Gets or sets the date and time when the order was created.",
+            "format": "date-time"
+          },
+          "Id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for the order.",
+            "format": "int32"
+          }
+        },
+        "description": "Represents an order."
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "name": "API-KEY",
+        "in": "header",
+        "type": "apiKey"
+      },
+      "oAuth2": {
+        "flows": {
+          "authorizationCode": {
+            "scopes": {},
+            "authorizationUrl": "https://auth.appyway.com/authorize",
+            "tokenUrl": "https://auth.appyway.com/oauth/token"
+          }
+        },
+        "type": "oauth2"
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Too many requests"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized"
+      },
+      "Forbidden": {
+        "description": "Forbidden"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "oAuth2": []
+    }
+  ]
+}

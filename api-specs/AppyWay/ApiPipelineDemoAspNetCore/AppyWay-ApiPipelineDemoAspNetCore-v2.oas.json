@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "AppyParking Mock Api",
-    "description": "TODO",
+    "title": "API Pipeline Demo (AspNetCore)",
+    "description": " This API version has been deprecated.",
     "version": "2.0",
     "contact": {
       "email": "support@appyway.com",
@@ -12,47 +12,18 @@
   },
   "servers": [
     {
-      "url": "https://api.appyway.com/v2/appyparkingmockapi"
+      "url": "https://api.appyway.com/v2/ApiPipelineDemoAspNetCore"
     }
   ],
   "paths": {
-    "/api/v2/Orders": {
-      "get": {
-        "tags": [
-          "Orders"
-        ],
-        "summary": "Retrieves all orders.",
-        "description": "Retrieves all orders.",
-        "operationId": "get-api-v2-orders",
-        "responses": {
-          "200": {
-            "description": "The successfully retrieved orders.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiV2OrdersGet200ApplicationJsonResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          }
-        }
-      },
+    "/Orders": {
       "post": {
         "tags": [
           "Orders"
         ],
         "summary": "Places a new order.",
         "description": "Places a new order.",
-        "operationId": "post-api-v2-orders",
+        "operationId": "post-orders",
         "requestBody": {
           "description": "The order to place.",
           "content": {
@@ -106,14 +77,14 @@
         }
       }
     },
-    "/api/v2/Orders/{id}": {
+    "/Orders/{id}": {
       "get": {
         "tags": [
           "Orders"
         ],
         "summary": "Gets a single order.",
         "description": "Gets a single order.",
-        "operationId": "get-api-v2-orders-id",
+        "operationId": "get-orders-id",
         "parameters": [
           {
             "name": "id",
@@ -132,16 +103,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Order"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -168,45 +129,14 @@
         }
       }
     },
-    "/api/v2/People": {
-      "get": {
-        "tags": [
-          "People"
-        ],
-        "summary": "Gets all people.",
-        "description": "Gets all people.",
-        "operationId": "get-api-v2-people",
-        "responses": {
-          "200": {
-            "description": "The successfully retrieved people.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiV2PeopleGet200ApplicationJsonResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          }
-        }
-      }
-    },
-    "/api/v2/People/{id}": {
+    "/People/{id}": {
       "get": {
         "tags": [
           "People"
         ],
         "summary": "Gets a single person.",
         "description": "Gets a single person.",
-        "operationId": "get-api-v2-people-id",
+        "operationId": "get-people-id",
         "parameters": [
           {
             "name": "id",
@@ -264,20 +194,15 @@
             "type": "string",
             "description": "Gets or sets the name of the ordering customer."
           },
-          "id": {
-            "type": "integer",
-            "description": "Gets or sets the unique identifier for the order.",
-            "format": "int32"
-          },
-          "effectiveDate": {
-            "type": "string",
-            "description": "Gets or sets the date and time when the order becomes effective.",
-            "format": "date-time"
-          },
           "createdDate": {
             "type": "string",
             "description": "Gets or sets the date and time when the order was created.",
             "format": "date-time"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the unique identifier for the order.",
+            "format": "int32"
           }
         },
         "additionalProperties": false,
@@ -320,22 +245,17 @@
         ],
         "type": "object",
         "properties": {
-          "lastName": {
-            "maxLength": 25,
-            "minLength": 0,
-            "type": "string",
-            "description": "Gets or sets the last name of a person."
-          },
           "firstName": {
             "maxLength": 25,
             "minLength": 0,
             "type": "string",
             "description": "Gets or sets the first name of a person."
           },
-          "email": {
+          "lastName": {
+            "maxLength": 25,
+            "minLength": 0,
             "type": "string",
-            "description": "Gets or sets the email address for a person.",
-            "nullable": true
+            "description": "Gets or sets the last name of a person."
           },
           "id": {
             "type": "integer",
@@ -345,18 +265,6 @@
         },
         "additionalProperties": false,
         "description": "Represents a person."
-      },
-      "ApiV2OrdersGet200ApplicationJsonResponse": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Order"
-        }
-      },
-      "ApiV2PeopleGet200ApplicationJsonResponse": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Person"
-        }
       }
     },
     "securitySchemes": {
@@ -388,6 +296,16 @@
       }
     }
   },
+  "tags": [
+    {
+      "name": "Orders",
+      "description": "Represents a RESTful service of orders."
+    },
+    {
+      "name": "People",
+      "description": "Represents a RESTful people service."
+    }
+  ],
   "security": [
     {
       "apiKey": []
