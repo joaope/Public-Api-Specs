@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "API Pipeline Demo (Net46)",
-    "version": "2.0",
+    "version": "1.0",
     "contact": {
       "email": "support@appyway.com",
       "url": "https://appyway.com/get-in-touch-support/",
@@ -11,18 +11,62 @@
   },
   "servers": [
     {
-      "url": "https://api.appyway.com/v2/ApiPipelineDemoNet46"
+      "url": "https://api.appyway.com/v1/ApiPipelineDemoNet46"
     }
   ],
   "paths": {
     "/orders": {
+      "get": {
+        "tags": [
+          "OrdersV2"
+        ],
+        "summary": "Retrieves all orders.",
+        "description": "Retrieves all orders.",
+        "operationId": "OrdersV2_Get",
+        "responses": {
+          "200": {
+            "description": "The successfully retrieved orders.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      },
       "post": {
         "tags": [
-          "OrdersV1"
+          "OrdersV2"
         ],
         "summary": "Places a new order.",
         "description": "Places a new order.",
-        "operationId": "OrdersV1_Post",
+        "operationId": "OrdersV2_Post",
         "requestBody": {
           "description": "The order to place.",
           "content": {
@@ -54,6 +98,9 @@
                   },
                   "Id": {
                     "type": "integer"
+                  },
+                  "EffectiveDate": {
+                    "type": "string"
                   },
                   "CreatedDate": {
                     "type": "string"
@@ -107,11 +154,11 @@
     "/orders/{id}": {
       "get": {
         "tags": [
-          "OrdersV1"
+          "OrdersV2"
         ],
         "summary": "Gets a single order.",
         "description": "Gets a single order.",
-        "operationId": "OrdersV1_GetById",
+        "operationId": "OrdersV2_GetById",
         "parameters": [
           {
             "name": "id",
@@ -164,14 +211,60 @@
         }
       }
     },
+    "/people": {
+      "get": {
+        "tags": [
+          "PeopleV2"
+        ],
+        "summary": "Gets all people.",
+        "description": "Gets all people.",
+        "operationId": "PeopleV2_Get",
+        "responses": {
+          "200": {
+            "description": "The successfully retrieved people.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
     "/people/{id}": {
       "get": {
         "tags": [
-          "PeopleV1"
+          "PeopleV2"
         ],
         "summary": "Gets a single person.",
         "description": "Gets a single person.",
-        "operationId": "PeopleV1_GetById",
+        "operationId": "PeopleV2_GetById",
         "parameters": [
           {
             "name": "id",
@@ -243,6 +336,11 @@
           "CreatedDate": {
             "type": "string",
             "description": "Gets or sets the date and time when the order was created.",
+            "format": "date-time"
+          },
+          "EffectiveDate": {
+            "type": "string",
+            "description": "Gets or sets the date and time when the order becomes effective.",
             "format": "date-time"
           },
           "Id": {
