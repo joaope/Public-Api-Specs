@@ -774,6 +774,11 @@
           "geometry": {
             "$ref": "#/components/schemas/GeometryCollection"
           },
+          "hasFreeParkingOutsideZone": {
+            "type": "boolean",
+            "description": "This flag gives an indication of whether parking is likely to be available outside of designated\r\ncontrolled parking zones. The flag indicates the availability of parking for sections of the kerb where\r\nthis API does NOT return a specific OnStreetParking result. If TRUE, parking is likely to be free and\r\nunrestricted where the Parking Search results do not indicate otherwise. if FALSE, it is likely to be no parking.\r\n            \r\nThis is an indication only, and clients should inform their end users that they should always check local\r\nsignage when parking.\r\n            \r\nIf NULL, it is not known whether parking is available for this authority outside of designated zones.\r\n            \r\nNOTE that inside controlled parking zones, it is likely that parking is not available in areas where no\r\nOnStreetParking result is returned.",
+            "nullable": true
+          },
           "entityId": {
             "type": "string",
             "description": "Unique identifer for this entity",
@@ -1188,6 +1193,12 @@
             "format": "float",
             "nullable": true
           },
+          "minStayUntil": {
+            "type": "string",
+            "description": "The amount of time that the vehicle operator is entitled to stay in the space if they pay the amount\r\nspecified in the MinCost field, i.e. the minimum duration that must be paid for in order to park.",
+            "format": "date-time",
+            "nullable": true
+          },
           "canExtendUntil": {
             "type": "string",
             "description": "The maximum time until which the user can park. This value ignores the requested window and is the\r\nlatest time the user is able to remain parked in the space if they were to extend their session\r\nbeyond the requested window.\r\nDates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
@@ -1200,20 +1211,16 @@
             "format": "date-time",
             "nullable": true
           },
-          "noReturn": {
+          "noReturnUntil": {
             "type": "string",
-            "description": "The 'no return' window, i.e. the time after parking during which the user is not allowed to return to the bay.",
-            "nullable": true,
-            "example": "3.17:25:30.5000000"
+            "description": "The 'no return until', i.e. the time after parking during which the user is not allowed to return to the bay.",
+            "format": "date-time",
+            "nullable": true
           },
           "isFreeParking": {
             "type": "boolean",
-            "description": "TRUE if parking is free, false if it is paid."
-          },
-          "relevance": {
-            "type": "integer",
-            "description": "Server-calculated relevance for this quote. May be used by the client if required to easily choose\r\nbetween multiple quotes for a parking entity to display a single price for a bay.",
-            "format": "int32"
+            "description": "TRUE if parking is free, false if it is paid.",
+            "readOnly": true
           },
           "paymentMethodIds": {
             "type": "array",
@@ -1224,23 +1231,13 @@
             "description": "Payment method(s) for which this quote is valid",
             "nullable": true
           },
-          "permittedContexts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VehicleOperatorContext"
-            },
-            "description": "Vehicle operators for whom this quote is valid",
-            "nullable": true
+          "permittedContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
           },
           "rulesApplyUntil": {
             "type": "string",
             "description": "The date and time until the rules on which this quote is based apply.\r\nDates/times are returned in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
-            "format": "date-time"
-          },
-          "onStreetParkingType": {
-            "type": "integer",
-            "description": "The type of the on street parking for the purposes of this quote. On street parking entities may have multiple types that apply\r\nat different times or simultaneously. If multiple types apply AND the vehicle operator context is such that more than one type allows\r\nthe user to park, then multiple quotes will be returned for a single result and each will have a different On Street Parking Type.\r\n            \r\nFor example, a bay may be simultaneously a Standard Bay and a Disabled Bay (if, for example, parking is free for blue disabled badge holders but\r\npaid for everyone else). If the vehicle operator has a blue disabled badge permit, they will get two quotes back. One will have a type of StandardBay and\r\nthe other will have a type of DisabledBay.\r\n            \r\nThis field will not have a value for car parks.",
-            "format": "int32",
+            "format": "date-time",
             "nullable": true
           },
           "surcharge": {
@@ -1317,7 +1314,8 @@
           "distance": {
             "type": "number",
             "description": "How far away the parking entity is, in meters. Distances are relative to the DistanceCalculationLocation if supplied in the query, otherwise they are relative to the centre of the viewport.",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "parkingAllowed": {
             "$ref": "#/components/schemas/ParkingAllowed"
@@ -1334,6 +1332,17 @@
         "additionalProperties": false,
         "description": "Represents a single result returned from a search for Parking Entities."
       },
+      "GeneralOnStreetPolicyType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "description": "The different policies that may apply to sections of the kerb within a given area where no specific data is present.\n\n*Restricted (1) - Unspecified sections of kerb are restricted (no parking) for everyone.\r\n*LikelyRestricted (2) - Unspecified sections of kerb are likely to be restricted (no parking) for everyone.\r\n*LikelyUnrestricted (3) - Unspecified sections of kerb are likely to be unrestricted (free parking)\r\n*Unknown (4) - We cannot say with confidence whether or not unspecified kerb sections are restricted.\r\n",
+        "format": "int32"
+      },
       "ParkingSearchResponse": {
         "type": "object",
         "properties": {
@@ -1344,6 +1353,9 @@
             },
             "description": "List of Parking Entities returned by the response",
             "nullable": true
+          },
+          "generalOnstreetPolicy": {
+            "$ref": "#/components/schemas/GeneralOnStreetPolicyType"
           }
         },
         "additionalProperties": false,
