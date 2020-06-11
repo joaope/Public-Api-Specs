@@ -606,6 +606,45 @@
   },
   "components": {
     "schemas": {
+      "BasemapTranslation": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "GeometryType": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "Different types of geometries that can be returned\n\n*POI (1) - Point of interest: A single point, will be of type \"Point\"\r\n*Kerb (2) - Single line along the kerbedge, will be of type \"LineString\"\r\n*Outline (3) - A complete representation of the parking area, will be of type \"Polygon\". Only available for Ordnance Survey base maps\r\n",
+        "format": "int32"
+      },
+      "GeometryPreference": {
+        "type": "object",
+        "properties": {
+          "basemap": {
+            "$ref": "#/components/schemas/BasemapTranslation"
+          },
+          "geometryTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeometryType"
+            },
+            "description": "List of the types of geometries you want to receive for this basemap",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Indicates the type of geometries you want to retrieve"
+      },
       "MapEntitiesListQuery": {
         "type": "object",
         "properties": {
@@ -616,6 +655,9 @@
             },
             "description": "List of Ids of entities to fetch",
             "nullable": true
+          },
+          "geometryPreference": {
+            "$ref": "#/components/schemas/GeometryPreference"
           }
         },
         "additionalProperties": false,
@@ -647,6 +689,16 @@
         },
         "additionalProperties": false,
         "description": "A standard address for an Onstreet bay or Car park"
+      },
+      "FeatureInfo": {
+        "type": "object",
+        "properties": {
+          "basemap": {
+            "$ref": "#/components/schemas/BasemapTranslation"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Provides information about the geometry contained in the feature"
       },
       "CrsProperties": {
         "type": "object",
@@ -704,6 +756,48 @@
         },
         "additionalProperties": false
       },
+      "GeometryCollectionFeatureInfoFeature": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "$ref": "#/components/schemas/FeatureInfo"
+          },
+          "geometry": {
+            "$ref": "#/components/schemas/GeometryCollection"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeometryCollectionFeatureInfoFeatureCollection": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeometryCollectionFeatureInfoFeature"
+            },
+            "nullable": true
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "MapEntityType": {
         "enum": [
           1,
@@ -742,8 +836,8 @@
             "description": "ID of the authority in which the parking entity resides",
             "nullable": true
           },
-          "geometry": {
-            "$ref": "#/components/schemas/GeometryCollection"
+          "features": {
+            "$ref": "#/components/schemas/GeometryCollectionFeatureInfoFeatureCollection"
           },
           "paymentMethodIds": {
             "type": "array",
