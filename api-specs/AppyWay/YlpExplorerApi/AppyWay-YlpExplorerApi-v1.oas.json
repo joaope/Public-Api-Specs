@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Map Entity",
+    "title": "Explorer API",
     "version": "1.0",
     "contact": {
       "email": "support@appyway.com",
@@ -11,33 +11,93 @@
   },
   "servers": [
     {
-      "url": "https://api.appyway.com/v1/mapentity"
+      "url": "https://api.appyway.com/v1/explorer"
     }
   ],
   "paths": {
-    "/": {
+    "/fetchAuthorityById": {
       "post": {
         "tags": [
-          "Entity"
+          "Authorities"
         ],
-        "summary": "List",
-        "description": "Retrieve a list of entities by their IDs",
-        "operationId": "post",
+        "summary": "Fetch an authority by ID",
+        "description": "Returns a specific authority by its ID",
+        "operationId": "post-fetchauthoritybyid",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MapEntitiesListQuery"
+                "$ref": "#/components/schemas/FetchAuthorityByIdQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MapEntitiesListQuery"
+                "$ref": "#/components/schemas/FetchAuthorityByIdQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MapEntitiesListQuery"
+                "$ref": "#/components/schemas/FetchAuthorityByIdQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityOkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchEntitiesByIds": {
+      "post": {
+        "tags": [
+          "Bulk"
+        ],
+        "summary": "Fetches entities by their IDs",
+        "description": "Retrieve a bulk list of entities of different types by their IDs",
+        "operationId": "post-fetchentitiesbyids",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchEntitiesByIdsQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchEntitiesByIdsQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchEntitiesByIdsQuery"
               }
             }
           }
@@ -75,99 +135,33 @@
         }
       }
     },
-    "/authority/{id}": {
-      "get": {
+    "/fetchParkingEntityById": {
+      "post": {
         "tags": [
-          "Entity"
+          "Parking"
         ],
-        "summary": "Authority by ID",
-        "description": "Returns a specific authority by its ID",
-        "operationId": "get-authority-id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthorityOkResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotFoundResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/monitor": {
-      "get": {
-        "tags": [
-          "Monitor"
-        ],
-        "summary": "Monitor",
-        "description": "Returns information on the health of the Map Entity service",
-        "operationId": "get-monitor",
-        "responses": {
-          "200": {
-            "description": "Success"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/parking/{id}": {
-      "get": {
-        "tags": [
-          "Entity"
-        ],
-        "summary": "Parking Entity by ID",
+        "summary": "Fetch a parking Entity by ID",
         "description": "Retrieves a parking entity by its ID",
-        "operationId": "get-parking-id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
+        "operationId": "post-fetchparkingentitybyid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingEntityByIdQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingEntityByIdQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingEntityByIdQuery"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
@@ -201,200 +195,29 @@
         }
       }
     },
-    "/parking/{id}/paymentProvider": {
-      "get": {
-        "tags": [
-          "Entity"
-        ],
-        "summary": "Payment Providers by entity ID",
-        "description": "Returns payment providers for the given parking entity ID",
-        "operationId": "get-parking-id-paymentprovider",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PaymentProvidersResponseOkResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotFoundResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/search/authority/viewport": {
+    "/fetchParkingQuoteById": {
       "post": {
         "tags": [
-          "Search"
+          "Parking"
         ],
-        "summary": "Authorities by viewport",
-        "description": "Returns authorities that are at least partially within the specified viewport.",
-        "operationId": "post-search-authority-viewport",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchAuthoritiesByViewportQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchAuthoritiesByViewportQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchAuthoritiesByViewportQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ZoneSearchResponseOkResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/search/parking/centreAndViewportSize": {
-      "post": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Parking by centre and viewport size",
-        "description": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
-        "operationId": "post-search-parking-centreandviewportsize",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchParkingByCentreAndViewportSizeQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchParkingByCentreAndViewportSizeQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchParkingByCentreAndViewportSizeQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ParkingSearchResponseOkResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/search/parking/id": {
-      "post": {
-        "tags": [
-          "Search"
-        ],
-        "summary": "Search Parking by id",
+        "summary": "Fetch a parking quote by id",
         "description": "Searches for a parking result with the supplied ID. Result indicates whether parking is allowed at the location.\r\nIf parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
-        "operationId": "post-search-parking-id",
+        "operationId": "post-fetchparkingquotebyid",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ParkingByEntityQuery"
+                "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ParkingByEntityQuery"
+                "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ParkingByEntityQuery"
+                "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
               }
             }
           }
@@ -432,29 +255,29 @@
         }
       }
     },
-    "/search/parking/viewport": {
+    "/fetchParkingQuotesByIds": {
       "post": {
         "tags": [
-          "Search"
+          "Parking"
         ],
-        "summary": "Parking by viewport",
-        "description": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
-        "operationId": "post-search-parking-viewport",
+        "summary": "Fetch parking quotes by ids",
+        "description": "Searches for a parking result with the supplied IDs. Result indicates whether parking is allowed at the location.\r\nIf parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+        "operationId": "post-fetchparkingquotesbyids",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SearchParkingByGeoJsonViewportQuery"
+                "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SearchParkingByGeoJsonViewportQuery"
+                "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SearchParkingByGeoJsonViewportQuery"
+                "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
               }
             }
           }
@@ -465,17 +288,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ParkingSearchResponseOkResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
+                  "$ref": "#/components/schemas/ParkingEntitySearchResultListOkResponse"
                 }
               }
             }
@@ -492,29 +305,149 @@
         }
       }
     },
-    "/search/zone/viewport": {
+    "/fetchPaymentProvidersByParkingEntityId": {
       "post": {
         "tags": [
-          "Search"
+          "Parking"
         ],
-        "summary": "Zones by viewport",
-        "description": "Returns default rules for parking entities for zones that are at least partially within the specified viewport.",
-        "operationId": "post-search-zone-viewport",
+        "summary": "Fetch payment providers by parking entity ID",
+        "description": "Returns payment providers for the given parking entity ID",
+        "operationId": "post-fetchpaymentprovidersbyparkingentityid",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SearchZonesByViewportQuery"
+                "$ref": "#/components/schemas/FetchPaymentProvidersByParkingEntityIdQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SearchZonesByViewportQuery"
+                "$ref": "#/components/schemas/FetchPaymentProvidersByParkingEntityIdQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SearchZonesByViewportQuery"
+                "$ref": "#/components/schemas/FetchPaymentProvidersByParkingEntityIdQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentProvidersResponseOkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchZoneById": {
+      "post": {
+        "tags": [
+          "Zones"
+        ],
+        "summary": "Fetch a zone By ID",
+        "description": "Returns a specific zone by its ID",
+        "operationId": "post-fetchzonebyid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchZoneByIdQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchZoneByIdQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchZoneByIdQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneOkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findAuthorityIdsByViewport": {
+      "post": {
+        "tags": [
+          "Authorities"
+        ],
+        "summary": "Find Authority Ids by viewport",
+        "description": "Returns the Ids of authorities that are at least partially within the specified GeoJson viewport.",
+        "operationId": "post-findauthorityidsbyviewport",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindAuthorityIdsByViewportQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindAuthorityIdsByViewportQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindAuthorityIdsByViewportQuery"
               }
             }
           }
@@ -552,31 +485,50 @@
         }
       }
     },
-    "/zone/{id}": {
-      "get": {
+    "/findParkingQuotesByCentreAndViewportSize": {
+      "post": {
         "tags": [
-          "Entity"
+          "Parking"
         ],
-        "summary": "Zone By ID",
-        "description": "Returns a specific zone by its ID",
-        "operationId": "get-zone-id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
+        "summary": "Find parking quotes by centre and viewport size",
+        "description": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+        "operationId": "post-findparkingquotesbycentreandviewportsize",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingQuotesByCentreAndViewportSizeQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingQuotesByCentreAndViewportSizeQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingQuotesByCentreAndViewportSizeQuery"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ZoneOkResponse"
+                  "$ref": "#/components/schemas/ParkingSearchResponseOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
                 }
               }
             }
@@ -587,15 +539,149 @@
           "403": {
             "$ref": "#/components/responses/Forbidden"
           },
-          "404": {
-            "description": "Not Found",
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findParkingQuotesByViewport": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "Find Parking quotes by viewport",
+        "description": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+        "operationId": "post-findparkingquotesbyviewport",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingQuotesByViewportQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingQuotesByViewportQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingQuotesByViewportQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/NotFoundResponse"
+                  "$ref": "#/components/schemas/ParkingSearchResponseOkResponse"
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findZoneDefaultRulesByViewport": {
+      "post": {
+        "tags": [
+          "Zones"
+        ],
+        "summary": "Find Zone Default Rules by Viewport",
+        "description": "Returns default rules for parking entities for zones that are at least partially within the specified GeoJson viewport.",
+        "operationId": "post-findzonedefaultrulesbyviewport",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneSearchResponseOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/monitor": {
+      "get": {
+        "tags": [
+          "Monitor"
+        ],
+        "summary": "Monitor",
+        "description": "Returns information on the health of the Explorer API service",
+        "operationId": "get-monitor",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "429": {
             "$ref": "#/components/responses/TooManyRequests"
@@ -606,99 +692,61 @@
   },
   "components": {
     "schemas": {
-      "BasemapTranslation": {
+      "FetchAuthorityByIdQuery": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier of the Authority to fetch",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Note": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "The text of the note",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Models a note that can be attached to an entity"
+      },
+      "PaymentProvider": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Provider name",
+            "nullable": true
+          },
+          "cardPaymentsExternalUrl": {
+            "type": "string",
+            "description": "URL for taking payments (if online payments are supported)",
+            "nullable": true
+          },
+          "paymentsTelephone": {
+            "type": "string",
+            "description": "Phone number for taking payments (if pay-by-phone is supported)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "An organization that supports parking payments."
+      },
+      "MapEntityType": {
         "enum": [
           1,
           2,
           3,
-          4,
           4
         ],
         "type": "integer",
+        "description": "Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.\n\n*OnStreet (1) - An on street parking area\r\n*Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.\r\n*Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.\r\nA zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may\r\ndefine rules parking entities that can be overridden by individual entities.\r\n*Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.\r\n",
         "format": "int32"
-      },
-      "GeometryType": {
-        "enum": [
-          1,
-          2,
-          3
-        ],
-        "type": "integer",
-        "description": "Different types of geometries that can be returned\n\n*POI (1) - Point of interest: A single point, will be of type \"Point\"\r\n*Kerb (2) - Single line along the kerbedge, will be of type \"LineString\"\r\n*Outline (3) - A complete representation of the parking area, will be of type \"Polygon\". Only available for Ordnance Survey base maps\r\n",
-        "format": "int32"
-      },
-      "GeometryPreference": {
-        "type": "object",
-        "properties": {
-          "basemap": {
-            "$ref": "#/components/schemas/BasemapTranslation"
-          },
-          "geometryTypes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeometryType"
-            },
-            "description": "List of the types of geometries you want to receive for this basemap",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Indicates the type of geometries you want to retrieve"
-      },
-      "MapEntitiesListQuery": {
-        "type": "object",
-        "properties": {
-          "ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "List of Ids of entities to fetch",
-            "nullable": true
-          },
-          "geometryPreference": {
-            "$ref": "#/components/schemas/GeometryPreference"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Request allowing a client to fetch a list of entities"
-      },
-      "Address": {
-        "type": "object",
-        "properties": {
-          "street": {
-            "type": "string",
-            "description": "Street address",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "description": "Town or city",
-            "nullable": true
-          },
-          "country": {
-            "type": "string",
-            "description": "Country",
-            "nullable": true
-          },
-          "postcode": {
-            "type": "string",
-            "description": "Postal code",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A standard address for an Onstreet bay or Car park"
-      },
-      "FeatureInfo": {
-        "type": "object",
-        "properties": {
-          "basemap": {
-            "$ref": "#/components/schemas/BasemapTranslation"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Provides information about the geometry contained in the feature"
       },
       "CrsProperties": {
         "type": "object",
@@ -756,6 +804,407 @@
         },
         "additionalProperties": false
       },
+      "Authority": {
+        "type": "object",
+        "properties": {
+          "notes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Note"
+            },
+            "description": "Any special notes associated with this authority",
+            "nullable": true
+          },
+          "paymentProviders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentProvider"
+            },
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/MapEntityType"
+          },
+          "geometry": {
+            "$ref": "#/components/schemas/GeometryCollection"
+          },
+          "hasFreeParkingOutsideZone": {
+            "type": "boolean",
+            "description": "This flag gives an indication of whether parking is likely to be available outside of designated\r\ncontrolled parking zones. The flag indicates the availability of parking for sections of the kerb where\r\nthis API does NOT return a specific OnStreetParking result. If TRUE, parking is likely to be free and\r\nunrestricted where the Parking Search results do not indicate otherwise. if FALSE, it is likely to be no parking.\r\n            \r\nThis is an indication only, and clients should inform their end users that they should always check local\r\nsignage when parking.\r\n            \r\nIf NULL, it is not known whether parking is available for this authority outside of designated zones.\r\n            \r\nNOTE that inside controlled parking zones, it is likely that parking is not available in areas where no\r\nOnStreetParking result is returned.",
+            "nullable": true
+          },
+          "entityId": {
+            "type": "string",
+            "description": "Unique identifer for this entity",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "User-readable name for this entity",
+            "nullable": true
+          },
+          "eTag": {
+            "type": "string",
+            "description": "ETag for the entity. The ETag is specific to each version of this entity and changes whenever the entity data changes. Clients can\r\nsend the eTags of cached entities to the server when requesting data and the server can return only entities for which the current ETag does\r\nnot match the requested tag - i.e. just those entities that have changed.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly."
+      },
+      "AuthorityOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/Authority"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "NotFoundResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the request was successful",
+            "readOnly": true,
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message for this response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A response indicating the requested resource was not found"
+      },
+      "Polygon": {
+        "type": "object",
+        "properties": {
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "crs": {
+            "$ref": "#/components/schemas/Crs"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindAuthorityIdsByViewportQuery": {
+        "required": [
+          "viewport"
+        ],
+        "type": "object",
+        "properties": {
+          "viewport": {
+            "$ref": "#/components/schemas/Polygon"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A request to search for zone default information by viewport"
+      },
+      "ParkingAllowed": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "Enum to indicate the different scenarios whereby parking may be allowed or denied.\n\n*FullSession (1) - Parking is allowed for the whole of the requested window\r\n*TruncatedSession (2) - Parking is allowed for part of the requested window only\r\n*NoParking (3) - Parking is not allowed.\r\n",
+        "format": "int32"
+      },
+      "Permit": {
+        "type": "object",
+        "properties": {
+          "permitTypeId": {
+            "type": "integer",
+            "description": "The type of the permit",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A permit that can be held by a vehicle operator"
+      },
+      "VehicleOperatorContext": {
+        "type": "object",
+        "properties": {
+          "vehicleTypeId": {
+            "type": "integer",
+            "description": "Type of vehicle being operated",
+            "format": "int32",
+            "nullable": true
+          },
+          "activityTypeId": {
+            "type": "integer",
+            "description": "Activity the operator is seeking to perform at the kerbside (parking, loading)",
+            "format": "int32",
+            "nullable": true
+          },
+          "fuelTypeId": {
+            "type": "integer",
+            "description": "Fuel type of the vehicle",
+            "format": "int32",
+            "nullable": true
+          },
+          "permits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Permit"
+            },
+            "description": "Any permits held by the operator (e.g. blue disabled badge, car club permit)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)\r\nthat affect whether or not they can park and/or the price they pay if they do."
+      },
+      "ZoneDefault": {
+        "type": "object",
+        "properties": {
+          "onStreetParkingTypeId": {
+            "type": "integer",
+            "description": "Type of markings (bays, single yellow lines etc) to which these defaults apply",
+            "format": "int32",
+            "nullable": true
+          },
+          "parkingAllowed": {
+            "$ref": "#/components/schemas/ParkingAllowed"
+          },
+          "isFreeParking": {
+            "type": "boolean",
+            "description": "Whether parking is free or paid"
+          },
+          "permittedContexts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VehicleOperatorContext"
+            },
+            "description": "The vehicle operators for whom this default applies",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A default zone-wide setting that applies to all parking entities of the given bay type unless overridden specifically at the Parking Entity level"
+      },
+      "ZoneSearchResult": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "description": "Entity ID of the zone referred to by this result",
+            "nullable": true
+          },
+          "entityETag": {
+            "type": "string",
+            "description": "The Etag of the current latest version of the Zone referred to by this result. This allows\r\nclients to determine if they have the latest version of the zone in their local cache and only\r\nrequest the entity if it is missing.",
+            "nullable": true
+          },
+          "defaults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZoneDefault"
+            },
+            "description": "List of defaults for this zone",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a single result returned from a search for zones"
+      },
+      "ZoneSearchResponse": {
+        "type": "object",
+        "properties": {
+          "zones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZoneSearchResult"
+            },
+            "description": "List of search results returned in this response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response shape for zone search requests"
+      },
+      "ZoneSearchResponseOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ZoneSearchResponse"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "string",
+            "description": "The property that caused the problem",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "description": "Machine-readable code representing the type of error",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message for the error",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a validation error"
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the request was successful",
+            "readOnly": true,
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message for this response",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "description": "Collection of validation errors caused by the request",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A response indicating the request was invalid"
+      },
+      "BasemapTranslation": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "GeometryType": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "Different types of geometries that can be returned\n\n*POI (1) - Point of interest: A single point, will be of type \"Point\"\r\n*Kerb (2) - Single line along the kerbedge, will be of type \"LineString\"\r\n*Outline (3) - A complete representation of the parking area, will be of type \"Polygon\". Only available for Ordnance Survey base maps\r\n",
+        "format": "int32"
+      },
+      "GeometryPreference": {
+        "type": "object",
+        "properties": {
+          "basemap": {
+            "$ref": "#/components/schemas/BasemapTranslation"
+          },
+          "geometryTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeometryType"
+            },
+            "description": "List of the types of geometries you want to receive for this basemap",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Indicates the type of geometries you want to retrieve"
+      },
+      "FetchEntitiesByIdsQuery": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of Ids of entities to fetch",
+            "nullable": true
+          },
+          "geometryPreference": {
+            "$ref": "#/components/schemas/GeometryPreference"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request allowing a client to fetch a list of entities"
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "description": "Street address",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "Town or city",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "description": "Country",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "description": "Postal code",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A standard address for an Onstreet bay or Car park"
+      },
+      "FeatureInfo": {
+        "type": "object",
+        "properties": {
+          "basemap": {
+            "$ref": "#/components/schemas/BasemapTranslation"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Provides information about the geometry contained in the feature"
+      },
       "GeometryCollectionFeatureInfoFeature": {
         "type": "object",
         "properties": {
@@ -797,17 +1246,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "MapEntityType": {
-        "enum": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "type": "integer",
-        "description": "Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.\n\n*OnStreet (1) - An on street parking area\r\n*Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.\r\n*Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.\r\nA zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may\r\ndefine rules parking entities that can be overridden by individual entities.\r\n*Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.\r\n",
-        "format": "int32"
       },
       "ParkingEntity": {
         "type": "object",
@@ -870,18 +1308,6 @@
         "additionalProperties": false,
         "description": "Base class for Map Entities that support parking, either onstreet or car parks"
       },
-      "Note": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "description": "The text of the note",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Models a note that can be attached to an entity"
-      },
       "ZoneType": {
         "enum": [
           1,
@@ -942,76 +1368,6 @@
         "additionalProperties": false,
         "description": "A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.\r\nA zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may\r\ndefine rules parking entities that can be overridden by individual entities."
       },
-      "PaymentProvider": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Provider name",
-            "nullable": true
-          },
-          "cardPaymentsExternalUrl": {
-            "type": "string",
-            "description": "URL for taking payments (if online payments are supported)",
-            "nullable": true
-          },
-          "paymentsTelephone": {
-            "type": "string",
-            "description": "Phone number for taking payments (if pay-by-phone is supported)",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "An organization that supports parking payments."
-      },
-      "Authority": {
-        "type": "object",
-        "properties": {
-          "notes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Note"
-            },
-            "description": "Any special notes associated with this authority",
-            "nullable": true
-          },
-          "paymentProviders": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PaymentProvider"
-            },
-            "nullable": true
-          },
-          "entityType": {
-            "$ref": "#/components/schemas/MapEntityType"
-          },
-          "geometry": {
-            "$ref": "#/components/schemas/GeometryCollection"
-          },
-          "hasFreeParkingOutsideZone": {
-            "type": "boolean",
-            "description": "This flag gives an indication of whether parking is likely to be available outside of designated\r\ncontrolled parking zones. The flag indicates the availability of parking for sections of the kerb where\r\nthis API does NOT return a specific OnStreetParking result. If TRUE, parking is likely to be free and\r\nunrestricted where the Parking Search results do not indicate otherwise. if FALSE, it is likely to be no parking.\r\n            \r\nThis is an indication only, and clients should inform their end users that they should always check local\r\nsignage when parking.\r\n            \r\nIf NULL, it is not known whether parking is available for this authority outside of designated zones.\r\n            \r\nNOTE that inside controlled parking zones, it is likely that parking is not available in areas where no\r\nOnStreetParking result is returned.",
-            "nullable": true
-          },
-          "entityId": {
-            "type": "string",
-            "description": "Unique identifer for this entity",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "description": "User-readable name for this entity",
-            "nullable": true
-          },
-          "eTag": {
-            "type": "string",
-            "description": "ETag for the entity. The ETag is specific to each version of this entity and changes whenever the entity data changes. Clients can\r\nsend the eTags of cached entities to the server when requesting data and the server can return only entities for which the current ETag does\r\nnot match the requested tag - i.e. just those entities that have changed.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly."
-      },
       "MapEntitiesResponse": {
         "type": "object",
         "properties": {
@@ -1058,53 +1414,16 @@
         "additionalProperties": false,
         "description": "A successful response"
       },
-      "Error": {
+      "FetchParkingEntityByIdQuery": {
         "type": "object",
         "properties": {
-          "property": {
+          "id": {
             "type": "string",
-            "description": "The property that caused the problem",
-            "nullable": true
-          },
-          "code": {
-            "type": "string",
-            "description": "Machine-readable code representing the type of error",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "description": "Human-readable message for the error",
+            "description": "Identifier of the Parking Entity to fetch",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "Represents a validation error"
-      },
-      "BadRequestResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the request was successful",
-            "readOnly": true,
-            "example": false
-          },
-          "message": {
-            "type": "string",
-            "description": "Human-readable message for this response",
-            "nullable": true
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Error"
-            },
-            "description": "Collection of validation errors caused by the request",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A response indicating the request was invalid"
+        "additionalProperties": false
       },
       "ParkingEntityOkResponse": {
         "type": "object",
@@ -1121,23 +1440,15 @@
         "additionalProperties": false,
         "description": "A successful response"
       },
-      "NotFoundResponse": {
+      "FetchPaymentProvidersByParkingEntityIdQuery": {
         "type": "object",
         "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the request was successful",
-            "readOnly": true,
-            "example": false
-          },
-          "message": {
+          "entityId": {
             "type": "string",
-            "description": "Human-readable message for this response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A response indicating the requested resource was not found"
+        "additionalProperties": false
       },
       "PaymentProvidersResponse": {
         "type": "object",
@@ -1169,36 +1480,6 @@
         "additionalProperties": false,
         "description": "A successful response"
       },
-      "ZoneOkResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the response was successful",
-            "readOnly": true
-          },
-          "result": {
-            "$ref": "#/components/schemas/Zone"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A successful response"
-      },
-      "AuthorityOkResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the response was successful",
-            "readOnly": true
-          },
-          "result": {
-            "$ref": "#/components/schemas/Authority"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A successful response"
-      },
       "LatLng": {
         "type": "object",
         "properties": {
@@ -1216,7 +1497,7 @@
         "additionalProperties": false,
         "description": "Models a latitude and longitude"
       },
-      "SearchParkingByViewportFilters": {
+      "FindParkingQuotesByViewportFilters": {
         "type": "object",
         "properties": {
           "excludeEntityTypes": {
@@ -1257,52 +1538,7 @@
         "additionalProperties": false,
         "description": "Filters that a caller can apply to limit the results returned when searching for parking by viewport"
       },
-      "Permit": {
-        "type": "object",
-        "properties": {
-          "permitTypeId": {
-            "type": "integer",
-            "description": "The type of the permit",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A permit that can be held by a vehicle operator"
-      },
-      "VehicleOperatorContext": {
-        "type": "object",
-        "properties": {
-          "vehicleTypeId": {
-            "type": "integer",
-            "description": "Type of vehicle being operated",
-            "format": "int32",
-            "nullable": true
-          },
-          "activityTypeId": {
-            "type": "integer",
-            "description": "Activity the operator is seeking to perform at the kerbside (parking, loading)",
-            "format": "int32",
-            "nullable": true
-          },
-          "fuelTypeId": {
-            "type": "integer",
-            "description": "Fuel type of the vehicle",
-            "format": "int32",
-            "nullable": true
-          },
-          "permits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Permit"
-            },
-            "description": "Any permits held by the operator (e.g. blue disabled badge, car club permit)",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)\r\nthat affect whether or not they can park and/or the price they pay if they do."
-      },
-      "SearchParkingByCentreAndViewportSizeQuery": {
+      "FindParkingQuotesByCentreAndViewportSizeQuery": {
         "required": [
           "endTime",
           "startTime",
@@ -1335,7 +1571,7 @@
             "format": "date-time"
           },
           "filters": {
-            "$ref": "#/components/schemas/SearchParkingByViewportFilters"
+            "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
           },
           "distanceCalculationLocation": {
             "$ref": "#/components/schemas/LatLng"
@@ -1463,16 +1699,6 @@
         "additionalProperties": false,
         "description": "A contextualized quote for a parking session, including related data such as No Return and Minimum Cost"
       },
-      "ParkingAllowed": {
-        "enum": [
-          1,
-          2,
-          3
-        ],
-        "type": "integer",
-        "description": "Enum to indicate the different scenarios whereby parking may be allowed or denied.\n\n*FullSession (1) - Parking is allowed for the whole of the requested window\r\n*TruncatedSession (2) - Parking is allowed for part of the requested window only\r\n*NoParking (3) - Parking is not allowed.\r\n",
-        "format": "int32"
-      },
       "NoParkingReasonType": {
         "enum": [
           1,
@@ -1592,34 +1818,7 @@
         "additionalProperties": false,
         "description": "A successful response"
       },
-      "Polygon": {
-        "type": "object",
-        "properties": {
-          "coordinates": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "array",
-                "items": {
-                  "type": "number",
-                  "format": "double"
-                }
-              }
-            },
-            "nullable": true
-          },
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "crs": {
-            "$ref": "#/components/schemas/Crs"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SearchParkingByGeoJsonViewportQuery": {
+      "FindParkingQuotesByViewportQuery": {
         "required": [
           "endTime",
           "startTime",
@@ -1643,7 +1842,7 @@
             "format": "date-time"
           },
           "filters": {
-            "$ref": "#/components/schemas/SearchParkingByViewportFilters"
+            "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
           },
           "distanceCalculationLocation": {
             "$ref": "#/components/schemas/LatLng"
@@ -1655,7 +1854,7 @@
         "additionalProperties": false,
         "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
       },
-      "ParkingByEntityQuery": {
+      "FetchParkingQuoteByIdQuery": {
         "type": "object",
         "properties": {
           "entityId": {
@@ -1694,7 +1893,80 @@
         "additionalProperties": false,
         "description": "A successful response"
       },
-      "SearchZonesByViewportQuery": {
+      "FetchParkingQuotesByIdsQuery": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of Ids of entities to fetch",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingEntitySearchResultListOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingEntitySearchResult"
+            },
+            "description": "Payload of the response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "FetchZoneByIdQuery": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier of the Zone to fetch",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZoneOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/Zone"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "FindZoneDefaultRulesByViewportQuery": {
         "required": [
           "endTime",
           "startTime",
@@ -1728,102 +2000,6 @@
             },
             "description": "On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types\r\nin the zone for which they are defined.",
             "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A request to search for zone default information by viewport"
-      },
-      "ZoneDefault": {
-        "type": "object",
-        "properties": {
-          "onStreetParkingTypeId": {
-            "type": "integer",
-            "description": "Type of markings (bays, single yellow lines etc) to which these defaults apply",
-            "format": "int32",
-            "nullable": true
-          },
-          "parkingAllowed": {
-            "$ref": "#/components/schemas/ParkingAllowed"
-          },
-          "isFreeParking": {
-            "type": "boolean",
-            "description": "Whether parking is free or paid"
-          },
-          "permittedContexts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VehicleOperatorContext"
-            },
-            "description": "The vehicle operators for whom this default applies",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A default zone-wide setting that applies to all parking entities of the given bay type unless overridden specifically at the Parking Entity level"
-      },
-      "ZoneSearchResult": {
-        "type": "object",
-        "properties": {
-          "entityId": {
-            "type": "string",
-            "description": "Entity ID of the zone referred to by this result",
-            "nullable": true
-          },
-          "entityETag": {
-            "type": "string",
-            "description": "The Etag of the current latest version of the Zone referred to by this result. This allows\r\nclients to determine if they have the latest version of the zone in their local cache and only\r\nrequest the entity if it is missing.",
-            "nullable": true
-          },
-          "defaults": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ZoneDefault"
-            },
-            "description": "List of defaults for this zone",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a single result returned from a search for zones"
-      },
-      "ZoneSearchResponse": {
-        "type": "object",
-        "properties": {
-          "zones": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ZoneSearchResult"
-            },
-            "description": "List of search results returned in this response",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Response shape for zone search requests"
-      },
-      "ZoneSearchResponseOkResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the response was successful",
-            "readOnly": true
-          },
-          "result": {
-            "$ref": "#/components/schemas/ZoneSearchResponse"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A successful response"
-      },
-      "SearchAuthoritiesByViewportQuery": {
-        "required": [
-          "viewport"
-        ],
-        "type": "object",
-        "properties": {
-          "viewport": {
-            "$ref": "#/components/schemas/Polygon"
           }
         },
         "additionalProperties": false,
