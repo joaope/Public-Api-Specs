@@ -606,74 +606,42 @@ components:
           $ref: '#/components/schemas/Polygon'
       additionalProperties: false
       description: A request to search for zone default information by viewport
-    ParkingAllowed:
-      enum:
-      - 1
-      - 2
-      - 3
-      type: integer
-      description: |+
-        Enum to indicate the different scenarios whereby parking may be allowed or denied.
-
-        *FullSession (1) - Parking is allowed for the whole of the requested window
-        *TruncatedSession (2) - Parking is allowed for part of the requested window only
-        *NoParking (3) - Parking is not allowed.
-      format: int32
-    Permit:
+    ZoneDefaultApplicableTime:
       type: object
       properties:
-        permitTypeId:
+        startTime:
+          type: string
+          description: The time and date that the window starts
+          format: date-time
+        endTime:
+          type: string
+          description: The time and date that the window ends
+          format: date-time
+        maxStay:
           type: integer
-          description: The type of the permit
+          description: The maximum stay policy that applies during this time window. NULL if there is no maximum stay.
           format: int32
-      additionalProperties: false
-      description: A permit that can be held by a vehicle operator
-    VehicleOperatorContext:
-      type: object
-      properties:
-        vehicleTypeId:
-          type: integer
-          description: Type of vehicle being operated
-          format: int32
-          nullable: true
-        activityTypeId:
-          type: integer
-          description: Activity the operator is seeking to perform at the kerbside (parking, loading)
-          format: int32
-          nullable: true
-        fuelTypeId:
-          type: integer
-          description: Fuel type of the vehicle
-          format: int32
-          nullable: true
-        permits:
-          type: array
-          items:
-            $ref: '#/components/schemas/Permit'
-          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
           nullable: true
       additionalProperties: false
-      description: |-
-        A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)
-        that affect whether or not they can park and/or the price they pay if they do.
+      description: Represents a window of time during which a zone default applies.
     ZoneDefault:
       type: object
       properties:
         onStreetParkingTypeId:
           type: integer
-          description: Type of markings (bays, single yellow lines etc) to which these defaults apply
+          description: Type of on street parking (standard bays, single yellow lines etc) to which these defaults apply
           format: int32
           nullable: true
-        parkingAllowed:
-          $ref: '#/components/schemas/ParkingAllowed'
-        isFreeParking:
-          type: boolean
-          description: Whether parking is free or paid
-        permittedContexts:
+        specialRestrictionTypeId:
+          type: integer
+          description: If special restrictions apply to this bay (OnStreetParkingTypeId is SpecialBay (10)) then this field will indicate the type of the special restrictions. NULL otherwise.
+          format: int32
+          nullable: true
+        applicableTimes:
           type: array
           items:
-            $ref: '#/components/schemas/VehicleOperatorContext'
-          description: The vehicle operators for whom this default applies
+            $ref: '#/components/schemas/ZoneDefaultApplicableTime'
+          description: "All the time windows for which this zone default applies which intersect the requested period. \r\nAny window that applies for at least part of the requested period will be returned."
           nullable: true
       additionalProperties: false
       description: A default zone-wide setting that applies to all parking entities of the given bay type unless overridden specifically at the Parking Entity level
@@ -1096,6 +1064,43 @@ components:
           nullable: true
       additionalProperties: false
       description: Filters that a caller can apply to limit the results returned when searching for parking by viewport
+    Permit:
+      type: object
+      properties:
+        permitTypeId:
+          type: integer
+          description: The type of the permit
+          format: int32
+      additionalProperties: false
+      description: A permit that can be held by a vehicle operator
+    VehicleOperatorContext:
+      type: object
+      properties:
+        vehicleTypeId:
+          type: integer
+          description: Type of vehicle being operated
+          format: int32
+          nullable: true
+        activityTypeId:
+          type: integer
+          description: Activity the operator is seeking to perform at the kerbside (parking, loading)
+          format: int32
+          nullable: true
+        fuelTypeId:
+          type: integer
+          description: Fuel type of the vehicle
+          format: int32
+          nullable: true
+        permits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permit'
+          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
+          nullable: true
+      additionalProperties: false
+      description: |-
+        A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)
+        that affect whether or not they can park and/or the price they pay if they do.
     FindParkingQuotesByCentreAndViewportSizeQuery:
       required:
       - endTime
@@ -1248,6 +1253,19 @@ components:
           $ref: '#/components/schemas/SurchargeDetails'
       additionalProperties: false
       description: A contextualized quote for a parking session, including related data such as No Return and Minimum Cost
+    ParkingAllowed:
+      enum:
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |+
+        Enum to indicate the different scenarios whereby parking may be allowed or denied.
+
+        *FullSession (1) - Parking is allowed for the whole of the requested window
+        *TruncatedSession (2) - Parking is allowed for part of the requested window only
+        *NoParking (3) - Parking is not allowed.
+      format: int32
     NoParkingReasonType:
       enum:
       - 1
@@ -1389,19 +1407,26 @@ components:
         Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
         the centre point and the length of one side.
     FetchParkingQuoteByIdQuery:
+      required:
+      - endTime
+      - entityId
+      - startTime
       type: object
       properties:
         entityId:
+          minLength: 1
           type: string
           description: Identifier of the Parking Entity to fetch
           nullable: true
         startTime:
+          minLength: 1
           type: string
           description: |-
             Start of the window for which to retrieve state. Required.
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
         endTime:
+          minLength: 1
           type: string
           description: |-
             End of the window for which to retrieve state. Required.
@@ -1422,21 +1447,28 @@ components:
       additionalProperties: false
       description: A successful response
     FetchParkingQuotesByIdsQuery:
+      required:
+      - endTime
+      - ids
+      - startTime
       type: object
       properties:
         ids:
+          minLength: 1
           type: array
           items:
             type: string
           description: List of Ids of entities to fetch
           nullable: true
         startTime:
+          minLength: 1
           type: string
           description: |-
             Start of the window for which to retrieve state. Required.
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
         endTime:
+          minLength: 1
           type: string
           description: |-
             End of the window for which to retrieve state. Required.
@@ -1502,8 +1534,6 @@ components:
             End of the window for which to retrieve state. Required.
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
         onStreetParkingTypeIds:
           type: array
           items:
