@@ -1,0 +1,2302 @@
+{
+  "item": [
+    {
+      "id": "65895675-b85e-44a7-ad99-758c8b7808a4",
+      "name": "Fetch an authority by ID",
+      "request": {
+        "name": "Fetch an authority by ID",
+        "description": {
+          "content": "Returns a specific authority by its ID",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchAuthorityById"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "6efd0f01-50cc-49b9-b931-2bad17ac8f11",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchAuthorityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"notes\": [\n   {\n    \"message\": \"sit ut eu\"\n   },\n   {\n    \"message\": \"culpa esse sit ea do\"\n   }\n  ],\n  \"paymentProviders\": [\n   {\n    \"name\": \"dolor ea\",\n    \"cardPaymentsExternalUrl\": \"aliquip Excepteur\",\n    \"paymentsTelephone\": \"Duis culpa\"\n   },\n   {\n    \"name\": \"in\",\n    \"cardPaymentsExternalUrl\": \"ullamco incididunt veniam id fugiat\",\n    \"paymentsTelephone\": \"consectetur cupidatat\"\n   }\n  ],\n  \"entityType\": 4,\n  \"geometry\": {\n   \"geometries\": [\n    {\n     \"type\": \"anim tempor\",\n     \"crs\": {\n      \"type\": \"commodo mollit voluptate\",\n      \"properties\": {\n       \"name\": \"occaecat ullamco dolor non proident\"\n      }\n     }\n    },\n    {\n     \"type\": \"off\",\n     \"crs\": {\n      \"type\": \"exe\",\n      \"properties\": {\n       \"name\": \"nostrud tempor amet minim\"\n      }\n     }\n    }\n   ],\n   \"type\": \"sunt quis officia\",\n   \"crs\": {\n    \"type\": \"laboris\",\n    \"properties\": {\n     \"name\": \"culpa non ipsum ex\"\n    }\n   }\n  },\n  \"hasFreeParkingOutsideZone\": true,\n  \"entityId\": \"nostrud in eiusmod cupidatat adipisicing\",\n  \"name\": \"ci\",\n  \"eTag\": \"cupidatat occaecat veniam consectetur\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "e7722253-89e4-4536-9a5a-9d504b3e7078",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchAuthorityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "02e04690-edaf-4d97-aa64-8fd47c8975e0",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchAuthorityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "31137f2a-1970-474a-8ac2-a8256eb27d46",
+          "name": "Not Found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchAuthorityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"dolore consequat\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1fc0b284-d522-4de8-bab2-bdff7ca1fa1e",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchAuthorityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9b8bb398-0d8e-40eb-bd3e-1dc8f7c80f2c",
+      "name": "Fetches entities by their IDs",
+      "request": {
+        "name": "Fetches entities by their IDs",
+        "description": {
+          "content": "Retrieve a bulk list of entities of different types by their IDs",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchEntitiesByIds"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"geometryPreference\": {\n        \"basemap\": \"<integer>\",\n        \"geometryTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n        ]\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "ddddd11d-56bc-4663-bca7-e56d2f0953d5",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchEntitiesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"geometryPreference\": {\n        \"basemap\": \"<integer>\",\n        \"geometryTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n        ]\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"result\": {\n  \"parkingEntities\": [\n   {\n    \"address\": {\n     \"street\": \"aute ex magna incididunt\",\n     \"city\": \"aliquip\",\n     \"country\": \"Lorem ut ullamco occaecat\",\n     \"postcode\": \"Excepteur nisi\"\n    },\n    \"locationCode\": \"officia ullamco Lore\",\n    \"totalCapacity\": -98905771,\n    \"zoneId\": \"magna mollit id reprehenderit\",\n    \"authorityId\": \"tempor sit exercitation\",\n    \"features\": {\n     \"type\": \"minim\",\n     \"features\": [\n      {\n       \"properties\": {\n        \"basemap\": \"<integer>\"\n       },\n       \"geometry\": {\n        \"geometries\": [\n         {\n          \"type\": \"id sit ut\",\n          \"crs\": {\n           \"type\": \"qui\",\n           \"properties\": {\n            \"name\": \"se\"\n           }\n          }\n         },\n         {\n          \"type\": \"anim magna\",\n          \"crs\": {\n           \"type\": \"nulla et\",\n           \"properties\": {\n            \"name\": \"ut proident enim\"\n           }\n          }\n         }\n        ],\n        \"type\": \"labore veniam\",\n        \"crs\": {\n         \"type\": \"cupidatat\",\n         \"properties\": {\n          \"name\": \"culpa\"\n         }\n        }\n       },\n       \"type\": \"ut eu enim\",\n       \"id\": \"anim deserunt sit volupt\"\n      },\n      {\n       \"properties\": {\n        \"basemap\": \"<integer>\"\n       },\n       \"geometry\": {\n        \"geometries\": [\n         {\n          \"type\": \"esse tempo\",\n          \"crs\": {\n           \"type\": \"ullamco\",\n           \"properties\": {\n            \"name\": \"tempor enim laborum ad\"\n           }\n          }\n         },\n         {\n          \"type\": \"velit\",\n          \"crs\": {\n           \"type\": \"cillum\",\n           \"properties\": {\n            \"name\": \"et cupidatat non adipisicing\"\n           }\n          }\n         }\n        ],\n        \"type\": \"nisi nulla\",\n        \"crs\": {\n         \"type\": \"eu\",\n         \"properties\": {\n          \"name\": \"laboris cillum non velit\"\n         }\n        }\n       },\n       \"type\": \"voluptate proident\",\n       \"id\": \"exercitation\"\n      }\n     ],\n     \"properties\": \"in incididunt\"\n    },\n    \"paymentMethodIds\": [\n     2482419,\n     -34436550\n    ],\n    \"entityId\": \"reprehenderit\",\n    \"entityType\": 4,\n    \"name\": \"sunt Lorem aliqua nisi\",\n    \"eTag\": \"nostrud e\"\n   },\n   {\n    \"address\": {\n     \"street\": \"reprehenderit officia ex\",\n     \"city\": \"irure aute nostrud\",\n     \"country\": \"nisi nostrud\",\n     \"postcode\": \"ea\"\n    },\n    \"locationCode\": \"consequat anim in\",\n    \"totalCapacity\": 57590037,\n    \"zoneId\": \"dolore officia nisi aliqua\",\n    \"authorityId\": \"et adipisicing qui aliquip cupidatat\",\n    \"features\": {\n     \"type\": \"aute esse\",\n     \"features\": [\n      {\n       \"properties\": {\n        \"basemap\": \"<integer>\"\n       },\n       \"geometry\": {\n        \"geometries\": [\n         {\n          \"type\": \"tempor enim qui culpa nisi\",\n          \"crs\": {\n           \"type\": \"tempor\",\n           \"properties\": {\n            \"name\": \"Excepteur ad\"\n           }\n          }\n         },\n         {\n          \"type\": \"reprehenderit et elit\",\n          \"crs\": {\n           \"type\": \"in\",\n           \"properties\": {\n            \"name\": \"sunt Excepteur deserunt in\"\n           }\n          }\n         }\n        ],\n        \"type\": \"magna nostrud culpa\",\n        \"crs\": {\n         \"type\": \"non aute in dolore id\",\n         \"properties\": {\n          \"name\": \"ullamco ex elit non\"\n         }\n        }\n       },\n       \"type\": \"anim ea\",\n       \"id\": \"dolore amet dolore velit\"\n      },\n      {\n       \"properties\": {\n        \"basemap\": \"<integer>\"\n       },\n       \"geometry\": {\n        \"geometries\": [\n         {\n          \"type\": \"eu officia dolor dolore nisi\",\n          \"crs\": {\n           \"type\": \"aliquip nulla sit sed\",\n           \"properties\": {\n            \"name\": \"Ut nulla\"\n           }\n          }\n         },\n         {\n          \"type\": \"aut\",\n          \"crs\": {\n           \"type\": \"sint culpa consectetur\",\n           \"properties\": {\n            \"name\": \"ut aliquip\"\n           }\n          }\n         }\n        ],\n        \"type\": \"non qui do sunt\",\n        \"crs\": {\n         \"type\": \"cupidatat in\",\n         \"properties\": {\n          \"name\": \"officia esse et dolor Ut\"\n         }\n        }\n       },\n       \"type\": \"ad aute\",\n       \"id\": \"ut voluptate aliquip minim\"\n      }\n     ],\n     \"properties\": \"deserunt ad do\"\n    },\n    \"paymentMethodIds\": [\n     -71431178,\n     59499552\n    ],\n    \"entityId\": \"nisi Excepteur do\",\n    \"entityType\": 2,\n    \"name\": \"consectetur\",\n    \"eTag\": \"reprehenderit labore\"\n   }\n  ],\n  \"zones\": [\n   {\n    \"geometry\": {\n     \"geometries\": [\n      {\n       \"type\": \"elit \",\n       \"crs\": {\n        \"type\": \"veniam velit aliqua ex\",\n        \"properties\": {\n         \"name\": \"deserunt ad non\"\n        }\n       }\n      },\n      {\n       \"type\": \"qui est anim dolor\",\n       \"crs\": {\n        \"type\": \"non ex ad\",\n        \"properties\": {\n         \"name\": \"pariatur aute mollit\"\n        }\n       }\n      }\n     ],\n     \"type\": \"Ut magna reprehenderit\",\n     \"crs\": {\n      \"type\": \"proident sit\",\n      \"properties\": {\n       \"name\": \"ullamco aute commodo labo\"\n      }\n     }\n    },\n    \"notes\": [\n     {\n      \"message\": \"irure culpa cupidatat\"\n     },\n     {\n      \"message\": \"culpa\"\n     }\n    ],\n    \"authorityId\": \"magna\",\n    \"zoneType\": 2,\n    \"entityType\": 1,\n    \"entityId\": \"cillum proident aliqua sit\",\n    \"name\": \"deserunt ipsum pa\",\n    \"eTag\": \"sed consectetur est\"\n   },\n   {\n    \"geometry\": {\n     \"geometries\": [\n      {\n       \"type\": \"adipisicing\",\n       \"crs\": {\n        \"type\": \"ullamco Excepteur enim irure dolore\",\n        \"properties\": {\n         \"name\": \"officia reprehen\"\n        }\n       }\n      },\n      {\n       \"type\": \"Lorem pariatur non\",\n       \"crs\": {\n        \"type\": \"commodo\",\n        \"properties\": {\n         \"name\": \"laboris non dolor Lorem dolore\"\n        }\n       }\n      }\n     ],\n     \"type\": \"consectetur et aliquip do Lorem\",\n     \"crs\": {\n      \"type\": \"adipisicing id\",\n      \"properties\": {\n       \"name\": \"nost\"\n      }\n     }\n    },\n    \"notes\": [\n     {\n      \"message\": \"in irure labore eu\"\n     },\n     {\n      \"message\": \"proident anim in\"\n     }\n    ],\n    \"authorityId\": \"sunt magna cupidat\",\n    \"zoneType\": 2,\n    \"entityType\": 1,\n    \"entityId\": \"nisi eiusmod\",\n    \"name\": \"mollit dolor\",\n    \"eTag\": \"sed minim occa\"\n   }\n  ],\n  \"authorities\": [\n   {\n    \"notes\": [\n     {\n      \"message\": \"veniam fugiat\"\n     },\n     {\n      \"message\": \"ex est\"\n     }\n    ],\n    \"paymentProviders\": [\n     {\n      \"name\": \"est cup\",\n      \"cardPaymentsExternalUrl\": \"veniam tempor ullamco\",\n      \"paymentsTelephone\": \"Duis esse\"\n     },\n     {\n      \"name\": \"id\",\n      \"cardPaymentsExternalUrl\": \"consectetur qui veniam nisi\",\n      \"paymentsTelephone\": \"Lorem aliqua\"\n     }\n    ],\n    \"entityType\": 2,\n    \"geometry\": {\n     \"geometries\": [\n      {\n       \"type\": \"tem\",\n       \"crs\": {\n        \"type\": \"dolore\",\n        \"properties\": {\n         \"name\": \"est proident aliquip et\"\n        }\n       }\n      },\n      {\n       \"type\": \"sunt ullamco elit\",\n       \"crs\": {\n        \"type\": \"aliqua consequat magna\",\n        \"properties\": {\n         \"name\": \"enim\"\n        }\n       }\n      }\n     ],\n     \"type\": \"dolore\",\n     \"crs\": {\n      \"type\": \"quis Lorem\",\n      \"properties\": {\n       \"name\": \"ut ea esse cupidatat\"\n      }\n     }\n    },\n    \"hasFreeParkingOutsideZone\": false,\n    \"entityId\": \"exercitation esse laboris\",\n    \"name\": \"ipsum non\",\n    \"eTag\": \"fugiat eiusmod nulla reprehenderit\"\n   },\n   {\n    \"notes\": [\n     {\n      \"message\": \"sed incididunt sint culpa\"\n     },\n     {\n      \"message\": \"ullamco dolore\"\n     }\n    ],\n    \"paymentProviders\": [\n     {\n      \"name\": \"laborum\",\n      \"cardPaymentsExternalUrl\": \"cupidatat\",\n      \"paymentsTelephone\": \"nisi amet\"\n     },\n     {\n      \"name\": \"eiusmod reprehenderit ipsum incididunt sed\",\n      \"cardPaymentsExternalUrl\": \"aliqua sit consectetur nulla\",\n      \"paymentsTelephone\": \"laborum incididunt ipsum ex\"\n     }\n    ],\n    \"entityType\": 2,\n    \"geometry\": {\n     \"geometries\": [\n      {\n       \"type\": \"do sint consequat velit\",\n       \"crs\": {\n        \"type\": \"do ea consectetur qui\",\n        \"properties\": {\n         \"name\": \"ex\"\n        }\n       }\n      },\n      {\n       \"type\": \"n\",\n       \"crs\": {\n        \"type\": \"laboris consequat irure velit dolor\",\n        \"properties\": {\n         \"name\": \"ex\"\n        }\n       }\n      }\n     ],\n     \"type\": \"enim occaecat dolore\",\n     \"crs\": {\n      \"type\": \"laborum Duis\",\n      \"properties\": {\n       \"name\": \"dolor in\"\n      }\n     }\n    },\n    \"hasFreeParkingOutsideZone\": false,\n    \"entityId\": \"in in proident exercitation in\",\n    \"name\": \"incididunt laborum Ut consectetur\",\n    \"eTag\": \"dolore quis\"\n   }\n  ]\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d04ac383-3e51-4233-aa9d-9545e4c31aa9",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchEntitiesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"geometryPreference\": {\n        \"basemap\": \"<integer>\",\n        \"geometryTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n        ]\n    }\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"officia velit\",\n \"errors\": [\n  {\n   \"property\": \"reprehenderit irure anim\",\n   \"code\": \"cupid\",\n   \"message\": \"labore eu eiusmod culpa veniam\"\n  },\n  {\n   \"property\": \"esse adipisic\",\n   \"code\": \"in culpa ipsum irure\",\n   \"message\": \"dolor anim esse\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "aa4916df-9055-4373-a299-f6324918148e",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchEntitiesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"geometryPreference\": {\n        \"basemap\": \"<integer>\",\n        \"geometryTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n        ]\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8b14d80f-7f7f-414f-8499-b9029ed33ef9",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchEntitiesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"geometryPreference\": {\n        \"basemap\": \"<integer>\",\n        \"geometryTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n        ]\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7c75182f-dfb4-4dc8-a1ff-0a3ce07aceec",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchEntitiesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"geometryPreference\": {\n        \"basemap\": \"<integer>\",\n        \"geometryTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n        ]\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "47fecd60-5eff-4dd7-8c69-fbde8fda577f",
+      "name": "Fetch a parking Entity by ID",
+      "request": {
+        "name": "Fetch a parking Entity by ID",
+        "description": {
+          "content": "Retrieves a parking entity by its ID",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchParkingEntityById"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "ddfdc157-ac0b-486a-b6d9-ec3d89f46cec",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingEntityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"result\": {\n  \"address\": {\n   \"street\": \"proident occaecat commodo ullamco\",\n   \"city\": \"elit cupidatat sed\",\n   \"country\": \"velit \",\n   \"postcode\": \"veniam ut dolor voluptate in\"\n  },\n  \"locationCode\": \"dolor dolore laboris\",\n  \"totalCapacity\": 66108825,\n  \"zoneId\": \"aliquip aliqua exercitation esse\",\n  \"authorityId\": \"sit aliquip quis anim\",\n  \"features\": {\n   \"type\": \"do aliqua velit pariatur\",\n   \"features\": [\n    {\n     \"properties\": {\n      \"basemap\": \"<integer>\"\n     },\n     \"geometry\": {\n      \"geometries\": [\n       {\n        \"type\": \"enim cupidatat consectetur Duis\",\n        \"crs\": {\n         \"type\": \"nisi enim \",\n         \"properties\": {\n          \"name\": \"dolore quis adipisicing et\"\n         }\n        }\n       },\n       {\n        \"type\": \"ut et\",\n        \"crs\": {\n         \"type\": \"occaecat Ut elit officia ullamco\",\n         \"properties\": {\n          \"name\": \"consequat sunt commodo\"\n         }\n        }\n       }\n      ],\n      \"type\": \"sunt deserunt mollit\",\n      \"crs\": {\n       \"type\": \"el\",\n       \"properties\": {\n        \"name\": \"u\"\n       }\n      }\n     },\n     \"type\": \"sunt non dolor\",\n     \"id\": \"aliquip ad laborum\"\n    },\n    {\n     \"properties\": {\n      \"basemap\": \"<integer>\"\n     },\n     \"geometry\": {\n      \"geometries\": [\n       {\n        \"type\": \"et aute\",\n        \"crs\": {\n         \"type\": \"veniam sunt ut laboris\",\n         \"properties\": {\n          \"name\": \"dolore sed aute ullamco\"\n         }\n        }\n       },\n       {\n        \"type\": \"culpa ea\",\n        \"crs\": {\n         \"type\": \"Excepteur aliqua\",\n         \"properties\": {\n          \"name\": \"labor\"\n         }\n        }\n       }\n      ],\n      \"type\": \"ullamco dolor\",\n      \"crs\": {\n       \"type\": \"ut venia\",\n       \"properties\": {\n        \"name\": \"ex qui ut\"\n       }\n      }\n     },\n     \"type\": \"pariatur mollit\",\n     \"id\": \"fugiat\"\n    }\n   ],\n   \"properties\": \"ut enim\"\n  },\n  \"paymentMethodIds\": [\n   -75318912,\n   59113938\n  ],\n  \"entityId\": \"sit irure mollit nostrud magna\",\n  \"entityType\": 3,\n  \"name\": \"ex\",\n  \"eTag\": \"enim dolor\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "decc797e-0b7a-4749-993e-82e9235ab3e7",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingEntityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "009dc2dd-d8c9-40a9-b224-f06851f174a5",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingEntityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2246224e-61b0-4de9-8547-4ee09c13e49c",
+          "name": "Not Found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingEntityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"dolore consequat\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1fc63bda-7b18-4e91-8d20-2329ed8debf8",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingEntityById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "03af1887-e191-483d-b990-147438427a64",
+      "name": "Fetch a parking quote by id",
+      "request": {
+        "name": "Fetch a parking quote by id",
+        "description": {
+          "content": "Searches for a parking result with the supplied ID. Result indicates whether parking is allowed at the location.\r\nIf parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchParkingQuoteById"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"entityId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "25c24246-380e-49b3-b75b-e35639774670",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuoteById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"entityId\": \"officia amet m\",\n  \"entityType\": 2,\n  \"quotes\": [\n   {\n    \"cost\": -82376654.89840595,\n    \"currency\": \"ut tempor\",\n    \"minCost\": -86830128.1386977,\n    \"minStayUntil\": \"exercit\",\n    \"canExtendUntil\": \"deserunt dolore non\",\n    \"pricedUntil\": \"in do ullamco\",\n    \"noReturnUntil\": \"quis sed\",\n    \"isFreeParking\": false,\n    \"paymentMethodIds\": [\n     79336915,\n     -1648313\n    ],\n    \"permittedContext\": {\n     \"vehicleTypeId\": \"<integer>\",\n     \"activityTypeId\": \"<integer>\",\n     \"fuelTypeId\": \"<integer>\",\n     \"permits\": [\n      {\n       \"permitTypeId\": \"<integer>\"\n      },\n      {\n       \"permitTypeId\": \"<integer>\"\n      }\n     ]\n    },\n    \"rulesApplyUntil\": \"sit\",\n    \"surcharge\": {\n     \"value\": 80243208.25174421,\n     \"valueType\": 2,\n     \"criteria\": {\n      \"vehicleOperatorContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"maxVehicleManufactureYear\": 6645083\n     }\n    }\n   },\n   {\n    \"cost\": 39327009.74908441,\n    \"currency\": \"velit dolor est esse\",\n    \"minCost\": -66297763.241944715,\n    \"minStayUntil\": \"ut qui esse aliqua\",\n    \"canExtendUntil\": \"aute\",\n    \"pricedUntil\": \"dolore Ut\",\n    \"noReturnUntil\": \"occaecat nulla\",\n    \"isFreeParking\": true,\n    \"paymentMethodIds\": [\n     -3025238,\n     76789342\n    ],\n    \"permittedContext\": {\n     \"vehicleTypeId\": \"<integer>\",\n     \"activityTypeId\": \"<integer>\",\n     \"fuelTypeId\": \"<integer>\",\n     \"permits\": [\n      {\n       \"permitTypeId\": \"<integer>\"\n      },\n      {\n       \"permitTypeId\": \"<integer>\"\n      }\n     ]\n    },\n    \"rulesApplyUntil\": \"fugiat\",\n    \"surcharge\": {\n     \"value\": 25252454.18731141,\n     \"valueType\": 2,\n     \"criteria\": {\n      \"vehicleOperatorContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"maxVehicleManufactureYear\": 98966440\n     }\n    }\n   }\n  ],\n  \"distance\": 53124994.66723013,\n  \"parkingAllowed\": 1,\n  \"noParkingReason\": {\n   \"reasonType\": 3,\n   \"requiredContexts\": [\n    {\n     \"vehicleTypeId\": \"<integer>\",\n     \"activityTypeId\": \"<integer>\",\n     \"fuelTypeId\": \"<integer>\",\n     \"permits\": [\n      {\n       \"permitTypeId\": \"<integer>\"\n      },\n      {\n       \"permitTypeId\": \"<integer>\"\n      }\n     ]\n    },\n    {\n     \"vehicleTypeId\": \"<integer>\",\n     \"activityTypeId\": \"<integer>\",\n     \"fuelTypeId\": \"<integer>\",\n     \"permits\": [\n      {\n       \"permitTypeId\": \"<integer>\"\n      },\n      {\n       \"permitTypeId\": \"<integer>\"\n      }\n     ]\n    }\n   ],\n   \"specialRestrictions\": [\n    75868864,\n    46206131\n   ]\n  },\n  \"entityETag\": \"nisi sed magna pariatur\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "96a6499f-69ba-4570-b1cf-fc2b5796204b",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuoteById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "56283725-3ebc-4e56-a799-b3c7b5367285",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuoteById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "0d1a8088-de24-4329-bfc5-a7a6607e18df",
+          "name": "Not Found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuoteById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"dolore consequat\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7028d9bd-4043-479c-94d1-1c9b0afa52b3",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuoteById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "401099bc-c2bf-445a-80fc-14dc7c7e6dad",
+      "name": "Fetch parking quotes by ids",
+      "request": {
+        "name": "Fetch parking quotes by ids",
+        "description": {
+          "content": "Searches for a parking result with the supplied IDs. Result indicates whether parking is allowed at the location.\r\nIf parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchParkingQuotesByIds"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "1f4a260c-0fea-4aad-bb90-853f5c961d73",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuotesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"et Ut labore\",\n   \"entityType\": 4,\n   \"quotes\": [\n    {\n     \"cost\": -66962782.52679284,\n     \"currency\": \"quis est i\",\n     \"minCost\": -58703151.48573431,\n     \"minStayUntil\": \"culpa mollit deserunt\",\n     \"canExtendUntil\": \"sint ullamco ipsum vol\",\n     \"pricedUntil\": \"laboris ipsum\",\n     \"noReturnUntil\": \"mollit commodo ullamco culpa dolore\",\n     \"isFreeParking\": false,\n     \"paymentMethodIds\": [\n      -20217351,\n      92826575\n     ],\n     \"permittedContext\": {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     },\n     \"rulesApplyUntil\": \"nulla labore amet in\",\n     \"surcharge\": {\n      \"value\": 962396.9778193682,\n      \"valueType\": 2,\n      \"criteria\": {\n       \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       \"maxVehicleManufactureYear\": 89216317\n      }\n     }\n    },\n    {\n     \"cost\": -11491559.593901888,\n     \"currency\": \"elit ad nisi\",\n     \"minCost\": -93236646.4943271,\n     \"minStayUntil\": \"anim magna elit amet fugiat\",\n     \"canExtendUntil\": \"adipisicing\",\n     \"pricedUntil\": \"esse\",\n     \"noReturnUntil\": \"anim\",\n     \"isFreeParking\": false,\n     \"paymentMethodIds\": [\n      7874318,\n      -82913872\n     ],\n     \"permittedContext\": {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     },\n     \"rulesApplyUntil\": \"irure officia adipisicing\",\n     \"surcharge\": {\n      \"value\": -78600897.09982625,\n      \"valueType\": 1,\n      \"criteria\": {\n       \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       \"maxVehicleManufactureYear\": 25732637\n      }\n     }\n    }\n   ],\n   \"distance\": -48583433.10325068,\n   \"parkingAllowed\": 3,\n   \"noParkingReason\": {\n    \"reasonType\": 1,\n    \"requiredContexts\": [\n     {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     },\n     {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     }\n    ],\n    \"specialRestrictions\": [\n     -50851815,\n     39119592\n    ]\n   },\n   \"entityETag\": \"in\"\n  },\n  {\n   \"entityId\": \"amet irure\",\n   \"entityType\": 2,\n   \"quotes\": [\n    {\n     \"cost\": 99932799.57104209,\n     \"currency\": \"sit veniam nisi minim anim\",\n     \"minCost\": -71457421.5439236,\n     \"minStayUntil\": \"in tempor aliquip do ut\",\n     \"canExtendUntil\": \"non\",\n     \"pricedUntil\": \"proident enim cillum nostrud\",\n     \"noReturnUntil\": \"nisi dolor eiusmod\",\n     \"isFreeParking\": false,\n     \"paymentMethodIds\": [\n      81962259,\n      11347495\n     ],\n     \"permittedContext\": {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     },\n     \"rulesApplyUntil\": \"Duis incididunt fugiat aliquip\",\n     \"surcharge\": {\n      \"value\": -46285195.70108609,\n      \"valueType\": 1,\n      \"criteria\": {\n       \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       \"maxVehicleManufactureYear\": -48788288\n      }\n     }\n    },\n    {\n     \"cost\": 39621364.22560078,\n     \"currency\": \"mollit commodo ullamco do\",\n     \"minCost\": -35571082.641356,\n     \"minStayUntil\": \"do\",\n     \"canExtendUntil\": \"consectetur sit est\",\n     \"pricedUntil\": \"irure Duis e\",\n     \"noReturnUntil\": \"dolore est mollit ut Duis\",\n     \"isFreeParking\": false,\n     \"paymentMethodIds\": [\n      57803902,\n      83698809\n     ],\n     \"permittedContext\": {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     },\n     \"rulesApplyUntil\": \"in nulla do\",\n     \"surcharge\": {\n      \"value\": 97054878.97231007,\n      \"valueType\": 2,\n      \"criteria\": {\n       \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       \"maxVehicleManufactureYear\": 87638180\n      }\n     }\n    }\n   ],\n   \"distance\": -17365619.29543279,\n   \"parkingAllowed\": 2,\n   \"noParkingReason\": {\n    \"reasonType\": 2,\n    \"requiredContexts\": [\n     {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     },\n     {\n      \"vehicleTypeId\": \"<integer>\",\n      \"activityTypeId\": \"<integer>\",\n      \"fuelTypeId\": \"<integer>\",\n      \"permits\": [\n       {\n        \"permitTypeId\": \"<integer>\"\n       },\n       {\n        \"permitTypeId\": \"<integer>\"\n       }\n      ]\n     }\n    ],\n    \"specialRestrictions\": [\n     5241425,\n     -51760803\n    ]\n   },\n   \"entityETag\": \"tempor in\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d864cc9a-ecfe-49dc-9293-e49a22f530a3",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuotesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "cce31447-788a-41c3-b5d9-2c023e47d970",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuotesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "6e0067d1-16e6-4ccb-bf19-fa900856ffbc",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchParkingQuotesByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\",\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f92d9447-89e3-4d1c-b3f1-4ae4e6267f13",
+      "name": "Fetch payment providers by parking entity ID",
+      "request": {
+        "name": "Fetch payment providers by parking entity ID",
+        "description": {
+          "content": "Returns payment providers for the given parking entity ID",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchPaymentProvidersByParkingEntityId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"entityId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "f28c196d-22d2-4eef-9e70-8dfeffb79104",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentProvidersByParkingEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"result\": {\n  \"paymentProviders\": [\n   {\n    \"name\": \"sed\",\n    \"cardPaymentsExternalUrl\": \"aliqua Excepteur velit sint consectetur\",\n    \"paymentsTelephone\": \"esse dolor adipisicing\"\n   },\n   {\n    \"name\": \"dolor minim\",\n    \"cardPaymentsExternalUrl\": \"eu exercitation aliquip\",\n    \"paymentsTelephone\": \"in aliqua in fugiat\"\n   }\n  ]\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5f36ff8b-adb8-41fd-81bd-2e029b059f53",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentProvidersByParkingEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "de1ce4ef-ba00-46bc-b228-d0a91a24a8cb",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentProvidersByParkingEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "64c8db04-d2eb-40aa-af8c-00f2fbe4ae8a",
+          "name": "Not Found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentProvidersByParkingEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"dolore consequat\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "28429630-5002-47e0-9a9a-7756eb8263d5",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentProvidersByParkingEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "13d715ef-819b-4e16-b77d-20e661d91ad9",
+      "name": "Fetch a zone By ID",
+      "request": {
+        "name": "Fetch a zone By ID",
+        "description": {
+          "content": "Returns a specific zone by its ID",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchZoneById"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "3e221cad-04ca-4669-818e-855bffc71b77",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchZoneById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"result\": {\n  \"geometry\": {\n   \"geometries\": [\n    {\n     \"type\": \"proident ad in nisi\",\n     \"crs\": {\n      \"type\": \"elit consequat\",\n      \"properties\": {\n       \"name\": \"cillum aliquip\"\n      }\n     }\n    },\n    {\n     \"type\": \"cillum pariatur sed qui proident\",\n     \"crs\": {\n      \"type\": \"Ut est veniam dolor\",\n      \"properties\": {\n       \"name\": \"aliquip labore eu proident\"\n      }\n     }\n    }\n   ],\n   \"type\": \"quis velit\",\n   \"crs\": {\n    \"type\": \"ad laborum\",\n    \"properties\": {\n     \"name\": \"anim sed adipisicing consequat ut\"\n    }\n   }\n  },\n  \"notes\": [\n   {\n    \"message\": \"elit eu consectet\"\n   },\n   {\n    \"message\": \"adipisicing fugiat\"\n   }\n  ],\n  \"authorityId\": \"esse\",\n  \"zoneType\": 2,\n  \"entityType\": 2,\n  \"entityId\": \"aute eu\",\n  \"name\": \"in qui sit commodo\",\n  \"eTag\": \"reprehenderit Ut \"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "37d6e3be-7b5b-4f34-ad5b-afeb21a0af27",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchZoneById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "54a49d4c-f4b1-4aa6-b10d-e8712da7a9e6",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchZoneById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2f895416-7133-4e5f-b428-29304b4271d6",
+          "name": "Not Found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchZoneById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"dolore consequat\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c29f9653-3a48-4aec-90fd-f67c91f613ad",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchZoneById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c903e3e5-7b31-4e90-98fa-dd421468096d",
+      "name": "Find Authority Ids by viewport",
+      "request": {
+        "name": "Find Authority Ids by viewport",
+        "description": {
+          "content": "Returns the Ids of authorities that are at least partially within the specified GeoJson viewport.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "findAuthorityIdsByViewport"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"deserunt reprehenderit in irure\",\n            \"properties\": {\n                \"name\": \"in occaecat do non\"\n            }\n        }\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "2ff02eff-8428-48bb-880f-16a8cf9e6a8b",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findAuthorityIdsByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"irure\",\n            \"properties\": {\n                \"name\": \"deserunt sed id veniam\"\n            }\n        }\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"zones\": [\n   {\n    \"entityId\": \"\",\n    \"entityETag\": \"est culpa Lorem anim\",\n    \"defaults\": [\n     {\n      \"onStreetParkingTypeId\": -25291057,\n      \"parkingAllowed\": 1,\n      \"isFreeParking\": false,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     },\n     {\n      \"onStreetParkingTypeId\": -81242144,\n      \"parkingAllowed\": 3,\n      \"isFreeParking\": true,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     }\n    ]\n   },\n   {\n    \"entityId\": \"voluptate non\",\n    \"entityETag\": \"nisi aliqua enim\",\n    \"defaults\": [\n     {\n      \"onStreetParkingTypeId\": 86923654,\n      \"parkingAllowed\": 3,\n      \"isFreeParking\": true,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     },\n     {\n      \"onStreetParkingTypeId\": -307910,\n      \"parkingAllowed\": 1,\n      \"isFreeParking\": false,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     }\n    ]\n   }\n  ]\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0a715b7e-f4fd-4149-adb7-3723b87f9005",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findAuthorityIdsByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"irure\",\n            \"properties\": {\n                \"name\": \"deserunt sed id veniam\"\n            }\n        }\n    }\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"sunt fugiat\",\n \"errors\": [\n  {\n   \"property\": \"dolore cupidatat dolor occaecat\",\n   \"code\": \"ut incididunt Duis\",\n   \"message\": \"cupidatat qui ad ipsum minim\"\n  },\n  {\n   \"property\": \"exercitation ullamco\",\n   \"code\": \"quis\",\n   \"message\": \"dolore veniam aliquip\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "928162c4-da35-4b96-b34a-85241d7cb707",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findAuthorityIdsByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"irure\",\n            \"properties\": {\n                \"name\": \"deserunt sed id veniam\"\n            }\n        }\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b6211c47-8278-46dd-be30-3e1365836411",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findAuthorityIdsByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"irure\",\n            \"properties\": {\n                \"name\": \"deserunt sed id veniam\"\n            }\n        }\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "3f2c7f0e-120e-41f5-a380-bc5bf654bdc4",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findAuthorityIdsByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"irure\",\n            \"properties\": {\n                \"name\": \"deserunt sed id veniam\"\n            }\n        }\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e42be28e-9754-4513-8e05-89c0deebc4da",
+      "name": "Find parking quotes by centre and viewport size",
+      "request": {
+        "name": "Find parking quotes by centre and viewport size",
+        "description": {
+          "content": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "findParkingQuotesByCentreAndViewportSize"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            4\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "6c9ffc91-12f1-4ca1-9e6d-009a95ed06ad",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByCentreAndViewportSize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            2\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"parking\": [\n   {\n    \"entityId\": \"proident velit\",\n    \"entityType\": 3,\n    \"quotes\": [\n     {\n      \"cost\": 81345355.42192975,\n      \"currency\": \"ad nostrud\",\n      \"minCost\": 18534596.17390448,\n      \"minStayUntil\": \"Ut laborum\",\n      \"canExtendUntil\": \"ad exercitation fugiat deserunt\",\n      \"pricedUntil\": \"exercitation ullamco cupidatat minim\",\n      \"noReturnUntil\": \"elit dolore am\",\n      \"isFreeParking\": true,\n      \"paymentMethodIds\": [\n       63715421,\n       20098178\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"in\",\n      \"surcharge\": {\n       \"value\": -46573267.78319031,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": 77943464\n       }\n      }\n     },\n     {\n      \"cost\": 63934734.128123075,\n      \"currency\": \"in dolor deserunt\",\n      \"minCost\": -27327801.83584173,\n      \"minStayUntil\": \"proident id eu Excepteur\",\n      \"canExtendUntil\": \"labo\",\n      \"pricedUntil\": \"nisi Duis cupidatat laboris\",\n      \"noReturnUntil\": \"cupidatat\",\n      \"isFreeParking\": false,\n      \"paymentMethodIds\": [\n       67221646,\n       40058263\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"dolo\",\n      \"surcharge\": {\n       \"value\": 4041904.563104421,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": 77537878\n       }\n      }\n     }\n    ],\n    \"distance\": -97576740.78668055,\n    \"parkingAllowed\": 3,\n    \"noParkingReason\": {\n     \"reasonType\": 2,\n     \"requiredContexts\": [\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      }\n     ],\n     \"specialRestrictions\": [\n      98928102,\n      27614566\n     ]\n    },\n    \"entityETag\": \"sit cupidatat dolore\"\n   },\n   {\n    \"entityId\": \"magna cupidatat laboris Duis\",\n    \"entityType\": 2,\n    \"quotes\": [\n     {\n      \"cost\": 56125192.94855183,\n      \"currency\": \"ipsum commodo voluptate laborum cupidatat\",\n      \"minCost\": -16762748.067539006,\n      \"minStayUntil\": \"dolor commodo ut sint\",\n      \"canExtendUntil\": \"adipisicing voluptate dolor\",\n      \"pricedUntil\": \"officia\",\n      \"noReturnUntil\": \"tempor nostrud aliqua\",\n      \"isFreeParking\": true,\n      \"paymentMethodIds\": [\n       11328736,\n       -20119247\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"anim magna velit sint\",\n      \"surcharge\": {\n       \"value\": 25722622.417118087,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": 16405262\n       }\n      }\n     },\n     {\n      \"cost\": -45374919.55294865,\n      \"currency\": \"Duis sed anim nostrud deserunt\",\n      \"minCost\": -47518679.32193878,\n      \"minStayUntil\": \"Duis\",\n      \"canExtendUntil\": \"labore ea veniam eu dolore\",\n      \"pricedUntil\": \"laboris labore incididunt reprehenderit\",\n      \"noReturnUntil\": \"dolor in reprehenderit\",\n      \"isFreeParking\": false,\n      \"paymentMethodIds\": [\n       68226924,\n       -46037507\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"eiusmod velit\",\n      \"surcharge\": {\n       \"value\": 57862004.93550849,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": -67423066\n       }\n      }\n     }\n    ],\n    \"distance\": -88851161.53513293,\n    \"parkingAllowed\": 2,\n    \"noParkingReason\": {\n     \"reasonType\": 3,\n     \"requiredContexts\": [\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      }\n     ],\n     \"specialRestrictions\": [\n      -99814867,\n      74378984\n     ]\n    },\n    \"entityETag\": \"dolore sit et Lorem ullamco\"\n   }\n  ],\n  \"generalOnstreetPolicy\": 4\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a1f17d38-d3f6-439f-8512-aa4e0c1063ea",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByCentreAndViewportSize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            2\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"sunt fugiat\",\n \"errors\": [\n  {\n   \"property\": \"dolore cupidatat dolor occaecat\",\n   \"code\": \"ut incididunt Duis\",\n   \"message\": \"cupidatat qui ad ipsum minim\"\n  },\n  {\n   \"property\": \"exercitation ullamco\",\n   \"code\": \"quis\",\n   \"message\": \"dolore veniam aliquip\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "b4612962-abd9-42cd-83aa-08924ce0fefc",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByCentreAndViewportSize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            2\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "5e81b7b7-0869-4a14-ba99-9d474612a5ff",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByCentreAndViewportSize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            2\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8f44e907-cdac-4e46-a70c-2053eac3ad0b",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByCentreAndViewportSize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            2\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cc4bd199-76c4-46f7-b6a5-95090abaa0d0",
+      "name": "Find Parking quotes by viewport",
+      "request": {
+        "name": "Find Parking quotes by viewport",
+        "description": {
+          "content": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "findParkingQuotesByViewport"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"ad Excepteur minim labore\",\n            \"properties\": {\n                \"name\": \"aute\"\n            }\n        }\n    },\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            3,\n            2\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "ce41f327-4eb0-4c7e-9523-15b58a8de780",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"quis laborum \",\n            \"properties\": {\n                \"name\": \"cillum Lorem aute\"\n            }\n        }\n    },\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            4,\n            1\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"parking\": [\n   {\n    \"entityId\": \"proident velit\",\n    \"entityType\": 3,\n    \"quotes\": [\n     {\n      \"cost\": 81345355.42192975,\n      \"currency\": \"ad nostrud\",\n      \"minCost\": 18534596.17390448,\n      \"minStayUntil\": \"Ut laborum\",\n      \"canExtendUntil\": \"ad exercitation fugiat deserunt\",\n      \"pricedUntil\": \"exercitation ullamco cupidatat minim\",\n      \"noReturnUntil\": \"elit dolore am\",\n      \"isFreeParking\": true,\n      \"paymentMethodIds\": [\n       63715421,\n       20098178\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"in\",\n      \"surcharge\": {\n       \"value\": -46573267.78319031,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": 77943464\n       }\n      }\n     },\n     {\n      \"cost\": 63934734.128123075,\n      \"currency\": \"in dolor deserunt\",\n      \"minCost\": -27327801.83584173,\n      \"minStayUntil\": \"proident id eu Excepteur\",\n      \"canExtendUntil\": \"labo\",\n      \"pricedUntil\": \"nisi Duis cupidatat laboris\",\n      \"noReturnUntil\": \"cupidatat\",\n      \"isFreeParking\": false,\n      \"paymentMethodIds\": [\n       67221646,\n       40058263\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"dolo\",\n      \"surcharge\": {\n       \"value\": 4041904.563104421,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": 77537878\n       }\n      }\n     }\n    ],\n    \"distance\": -97576740.78668055,\n    \"parkingAllowed\": 3,\n    \"noParkingReason\": {\n     \"reasonType\": 2,\n     \"requiredContexts\": [\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      }\n     ],\n     \"specialRestrictions\": [\n      98928102,\n      27614566\n     ]\n    },\n    \"entityETag\": \"sit cupidatat dolore\"\n   },\n   {\n    \"entityId\": \"magna cupidatat laboris Duis\",\n    \"entityType\": 2,\n    \"quotes\": [\n     {\n      \"cost\": 56125192.94855183,\n      \"currency\": \"ipsum commodo voluptate laborum cupidatat\",\n      \"minCost\": -16762748.067539006,\n      \"minStayUntil\": \"dolor commodo ut sint\",\n      \"canExtendUntil\": \"adipisicing voluptate dolor\",\n      \"pricedUntil\": \"officia\",\n      \"noReturnUntil\": \"tempor nostrud aliqua\",\n      \"isFreeParking\": true,\n      \"paymentMethodIds\": [\n       11328736,\n       -20119247\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"anim magna velit sint\",\n      \"surcharge\": {\n       \"value\": 25722622.417118087,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": 16405262\n       }\n      }\n     },\n     {\n      \"cost\": -45374919.55294865,\n      \"currency\": \"Duis sed anim nostrud deserunt\",\n      \"minCost\": -47518679.32193878,\n      \"minStayUntil\": \"Duis\",\n      \"canExtendUntil\": \"labore ea veniam eu dolore\",\n      \"pricedUntil\": \"laboris labore incididunt reprehenderit\",\n      \"noReturnUntil\": \"dolor in reprehenderit\",\n      \"isFreeParking\": false,\n      \"paymentMethodIds\": [\n       68226924,\n       -46037507\n      ],\n      \"permittedContext\": {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      \"rulesApplyUntil\": \"eiusmod velit\",\n      \"surcharge\": {\n       \"value\": 57862004.93550849,\n       \"valueType\": 1,\n       \"criteria\": {\n        \"vehicleOperatorContext\": {\n         \"vehicleTypeId\": \"<integer>\",\n         \"activityTypeId\": \"<integer>\",\n         \"fuelTypeId\": \"<integer>\",\n         \"permits\": [\n          {\n           \"permitTypeId\": \"<integer>\"\n          },\n          {\n           \"permitTypeId\": \"<integer>\"\n          }\n         ]\n        },\n        \"maxVehicleManufactureYear\": -67423066\n       }\n      }\n     }\n    ],\n    \"distance\": -88851161.53513293,\n    \"parkingAllowed\": 2,\n    \"noParkingReason\": {\n     \"reasonType\": 3,\n     \"requiredContexts\": [\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      },\n      {\n       \"vehicleTypeId\": \"<integer>\",\n       \"activityTypeId\": \"<integer>\",\n       \"fuelTypeId\": \"<integer>\",\n       \"permits\": [\n        {\n         \"permitTypeId\": \"<integer>\"\n        },\n        {\n         \"permitTypeId\": \"<integer>\"\n        }\n       ]\n      }\n     ],\n     \"specialRestrictions\": [\n      -99814867,\n      74378984\n     ]\n    },\n    \"entityETag\": \"dolore sit et Lorem ullamco\"\n   }\n  ],\n  \"generalOnstreetPolicy\": 4\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c939ee8f-ff68-4d7d-afbe-927af9409436",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"quis laborum \",\n            \"properties\": {\n                \"name\": \"cillum Lorem aute\"\n            }\n        }\n    },\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            4,\n            1\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"sunt fugiat\",\n \"errors\": [\n  {\n   \"property\": \"dolore cupidatat dolor occaecat\",\n   \"code\": \"ut incididunt Duis\",\n   \"message\": \"cupidatat qui ad ipsum minim\"\n  },\n  {\n   \"property\": \"exercitation ullamco\",\n   \"code\": \"quis\",\n   \"message\": \"dolore veniam aliquip\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "74ca0d0c-c417-4799-ab68-961dc90271f3",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"quis laborum \",\n            \"properties\": {\n                \"name\": \"cillum Lorem aute\"\n            }\n        }\n    },\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            4,\n            1\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e76a7ec8-4e23-44b6-8a3d-c3302fe8a802",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"quis laborum \",\n            \"properties\": {\n                \"name\": \"cillum Lorem aute\"\n            }\n        }\n    },\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            4,\n            1\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "a39b6ee3-5423-485c-afd5-ade163ea96ce",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findParkingQuotesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"quis laborum \",\n            \"properties\": {\n                \"name\": \"cillum Lorem aute\"\n            }\n        }\n    },\n    \"filters\": {\n        \"excludeEntityTypes\": [\n            4,\n            1\n        ],\n        \"excludePaidParking\": \"<boolean>\",\n        \"excludeFreeParking\": \"<boolean>\",\n        \"excludeNoParking\": \"<boolean>\",\n        \"excludeTruncatedParking\": \"<boolean>\",\n        \"excludeCostGreaterThan\": \"<float>\"\n    },\n    \"distanceCalculationLocation\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8e57e7dd-feb2-486e-bd60-15ba469d037c",
+      "name": "Find Zone Default Rules by Viewport",
+      "request": {
+        "name": "Find Zone Default Rules by Viewport",
+        "description": {
+          "content": "Returns default rules for parking entities for zones that are at least partially within the specified GeoJson viewport.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "findZoneDefaultRulesByViewport"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"eu \",\n            \"properties\": {\n                \"name\": \"adipisicing non laborum nulla ut\"\n            }\n        }\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    },\n    \"onStreetParkingTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "875ddb38-01a8-4d78-b8f1-b3ea56dea9b9",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findZoneDefaultRulesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"voluptate elit proident\",\n            \"properties\": {\n                \"name\": \"sint nostrud do\"\n            }\n        }\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    },\n    \"onStreetParkingTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"zones\": [\n   {\n    \"entityId\": \"\",\n    \"entityETag\": \"est culpa Lorem anim\",\n    \"defaults\": [\n     {\n      \"onStreetParkingTypeId\": -25291057,\n      \"parkingAllowed\": 1,\n      \"isFreeParking\": false,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     },\n     {\n      \"onStreetParkingTypeId\": -81242144,\n      \"parkingAllowed\": 3,\n      \"isFreeParking\": true,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     }\n    ]\n   },\n   {\n    \"entityId\": \"voluptate non\",\n    \"entityETag\": \"nisi aliqua enim\",\n    \"defaults\": [\n     {\n      \"onStreetParkingTypeId\": 86923654,\n      \"parkingAllowed\": 3,\n      \"isFreeParking\": true,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     },\n     {\n      \"onStreetParkingTypeId\": -307910,\n      \"parkingAllowed\": 1,\n      \"isFreeParking\": false,\n      \"permittedContexts\": [\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       },\n       {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n         {\n          \"permitTypeId\": \"<integer>\"\n         },\n         {\n          \"permitTypeId\": \"<integer>\"\n         }\n        ]\n       }\n      ]\n     }\n    ]\n   }\n  ]\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c4f72c12-c1da-4986-b7e0-d0258a05a019",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findZoneDefaultRulesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"voluptate elit proident\",\n            \"properties\": {\n                \"name\": \"sint nostrud do\"\n            }\n        }\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    },\n    \"onStreetParkingTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"sunt fugiat\",\n \"errors\": [\n  {\n   \"property\": \"dolore cupidatat dolor occaecat\",\n   \"code\": \"ut incididunt Duis\",\n   \"message\": \"cupidatat qui ad ipsum minim\"\n  },\n  {\n   \"property\": \"exercitation ullamco\",\n   \"code\": \"quis\",\n   \"message\": \"dolore veniam aliquip\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "54dd7b6e-96f2-440c-a07a-891c54da8613",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findZoneDefaultRulesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"voluptate elit proident\",\n            \"properties\": {\n                \"name\": \"sint nostrud do\"\n            }\n        }\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    },\n    \"onStreetParkingTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "707e5f8a-fe52-4e1b-9cf5-29b0f825789c",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findZoneDefaultRulesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"voluptate elit proident\",\n            \"properties\": {\n                \"name\": \"sint nostrud do\"\n            }\n        }\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    },\n    \"onStreetParkingTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2a274016-ae5e-4d44-bb3b-f1e8e7a91fca",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findZoneDefaultRulesByViewport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"endTime\": \"<dateTime>\",\n    \"startTime\": \"<dateTime>\",\n    \"viewport\": {\n        \"coordinates\": [\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ],\n            [\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ],\n                [\n                    \"<double>\",\n                    \"<double>\"\n                ]\n            ]\n        ],\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"voluptate elit proident\",\n            \"properties\": {\n                \"name\": \"sint nostrud do\"\n            }\n        }\n    },\n    \"vehicleOperatorContext\": {\n        \"vehicleTypeId\": \"<integer>\",\n        \"activityTypeId\": \"<integer>\",\n        \"fuelTypeId\": \"<integer>\",\n        \"permits\": [\n            {\n                \"permitTypeId\": \"<integer>\"\n            },\n            {\n                \"permitTypeId\": \"<integer>\"\n            }\n        ]\n    },\n    \"onStreetParkingTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n    ]\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "10c7f17f-e34d-4582-a969-5fecda7e1b47",
+      "name": "Monitor",
+      "request": {
+        "name": "Monitor",
+        "description": {
+          "content": "Returns information on the health of the Explorer API service",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "monitor"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "980dda06-a28e-4cbe-9ab5-b8ecd6bea98e",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "15bb00a0-900c-4d4c-9759-71441274be2f",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "87a2bdcd-3cee-4ad0-b3e2-33c733d476b7",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fe0630f9-8124-4cd1-8704-bd0b06a2bad3",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "type": "string",
+      "value": "https://api.appyway.com/v1/explorer"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "type": "string",
+        "value": "{{API-KEY-LIVE}}"
+      },
+      {
+        "key": "key",
+        "type": "string",
+        "value": "API-KEY"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "60a83fe1-3090-4f63-818f-c4321f4d1eee",
+    "name": "Explorer API (v1.0|LIVE|Public)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

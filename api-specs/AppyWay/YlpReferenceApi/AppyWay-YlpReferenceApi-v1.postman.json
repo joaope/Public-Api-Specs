@@ -1,0 +1,3115 @@
+{
+  "item": [
+    {
+      "id": "a114f24b-6277-49dc-8668-a4da3ac9ae37",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all activity types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "activityType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a3d3c374-2324-4875-84df-6096a69aab3e",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "activityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ab4c0084-1d99-4475-afd8-4f2daa0633ce",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "activityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "678003d0-d0d5-4aaf-acfd-75258ee07435",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "activityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b88a220a-a2ba-4397-bb23-f9aaa862534e",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "activityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1dc4352c-b302-4596-9558-33bbcd5b64ba",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all reference data",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "all",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6d146367-c4b7-42ad-8b1d-e4c16de5cfbe",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "all",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"ActivityTypes\": [\n  {\n   \"Id\": 30372496,\n   \"Name\": \"dolor esse\",\n   \"Description\": \"ad nisi aute\"\n  },\n  {\n   \"Id\": 26765010,\n   \"Name\": \"dolor et\",\n   \"Description\": \"ut aliquip sunt ullamco\"\n  }\n ],\n \"AuthorityTypes\": [\n  {\n   \"Id\": -83932251,\n   \"Name\": \"non\",\n   \"Description\": \"pariatur consectetur in exercitation\",\n   \"CanHaveRestrictions\": false,\n   \"CanHaveShape\": true\n  },\n  {\n   \"Id\": -33882260,\n   \"Name\": \"in dolore laboris\",\n   \"Description\": \"et magna\",\n   \"CanHaveRestrictions\": true,\n   \"CanHaveShape\": true\n  }\n ],\n \"BaseMaps\": [\n  {\n   \"Id\": -34070320,\n   \"Name\": \"est sunt consequat ad\",\n   \"Description\": \"fugiat ad minim enim\",\n   \"AvailableInCountries\": [\n    \"ut\",\n    \"consectetur dolore in sit amet\"\n   ]\n  },\n  {\n   \"Id\": -75725292,\n   \"Name\": \"laboris nostrud dolore eiusmod\",\n   \"Description\": \"non cillum eiusmod cupidatat in\",\n   \"AvailableInCountries\": [\n    \"dolor\",\n    \"cupidatat irure veniam\"\n   ]\n  }\n ],\n \"Countries\": [\n  {\n   \"Id\": \"exercitation officia\",\n   \"Name\": \"et\",\n   \"SpecialDays\": [\n    {\n     \"Id\": \"amet\",\n     \"Name\": \"ipsum est in\",\n     \"IsHoliday\": true,\n     \"Dates\": [\n      \"2020-01-20T00:00:00\",\n      \"2020-01-20T00:00:00\"\n     ]\n    },\n    {\n     \"Id\": \"velit\",\n     \"Name\": \"do sint non\",\n     \"IsHoliday\": false,\n     \"Dates\": [\n      \"2020-01-20T00:00:00\",\n      \"2020-01-20T00:00:00\"\n     ]\n    }\n   ],\n   \"Bounds\": [\n    [\n     30460219.199014068,\n     63390536.13016209\n    ],\n    [\n     -84845497.0002309,\n     -91482344.11009218\n    ]\n   ],\n   \"DefaultBaseMapId\": -33690016,\n   \"EntitlementTypes\": [\n    59839751,\n    -52085479\n   ],\n   \"RestrictionTypes\": [\n    99187205,\n    -51329353\n   ]\n  },\n  {\n   \"Id\": \"voluptate dolor\",\n   \"Name\": \"in eu ad dolore\",\n   \"SpecialDays\": [\n    {\n     \"Id\": \"qui ipsum veniam\",\n     \"Name\": \"ad ullamco amet\",\n     \"IsHoliday\": true,\n     \"Dates\": [\n      \"2020-01-20T00:00:00\",\n      \"2020-01-20T00:00:00\"\n     ]\n    },\n    {\n     \"Id\": \"est\",\n     \"Name\": \"deserunt dolore Lorem exercitation\",\n     \"IsHoliday\": true,\n     \"Dates\": [\n      \"2020-01-20T00:00:00\",\n      \"2020-01-20T00:00:00\"\n     ]\n    }\n   ],\n   \"Bounds\": [\n    [\n     -40349619.186901055,\n     -56085074.05881284\n    ],\n    [\n     -63680176.780770384,\n     -32263848.265452027\n    ]\n   ],\n   \"DefaultBaseMapId\": -97763406,\n   \"EntitlementTypes\": [\n    40800166,\n    48203247\n   ],\n   \"RestrictionTypes\": [\n    -39613695,\n    -61765738\n   ]\n  }\n ],\n \"EntitlementTypes\": [\n  {\n   \"Id\": -95627974,\n   \"Name\": \"est ut elit\",\n   \"Description\": \"voluptate fugiat in velit\",\n   \"Code\": \"ut enim esse \",\n   \"RestrictionTypeIds\": [\n    -56110647,\n    -49150662\n   ],\n   \"ApplicableExemptionTypeIds\": [\n    -54637663,\n    -60731564\n   ],\n   \"HasTariff\": false\n  },\n  {\n   \"Id\": 8538487,\n   \"Name\": \"laborum sit\",\n   \"Description\": \"elit ex\",\n   \"Code\": \"est minim culpa\",\n   \"RestrictionTypeIds\": [\n    -63876830,\n    -37024580\n   ],\n   \"ApplicableExemptionTypeIds\": [\n    -64751279,\n    56509885\n   ],\n   \"HasTariff\": false\n  }\n ],\n \"ExceptionTypes\": [\n  {\n   \"Id\": -29397079,\n   \"Name\": \"elit ullamco in laborum\",\n   \"Description\": \"in minim nisi\"\n  },\n  {\n   \"Id\": 91236361,\n   \"Name\": \"dolore Duis\",\n   \"Description\": \"eiusmod irure id\"\n  }\n ],\n \"ExemptionTimeTypes\": [\n  {\n   \"Id\": -86217847,\n   \"Name\": \"nis\",\n   \"Description\": \"mollit\"\n  },\n  {\n   \"Id\": -16314301,\n   \"Name\": \"officia\",\n   \"Description\": \"pariatur irure tempor labore Lorem\"\n  }\n ],\n \"ExemptionTypes\": [\n  {\n   \"Id\": 89505465,\n   \"Name\": \"in sit in\",\n   \"Description\": \"Lorem qui mollit aliquip\"\n  },\n  {\n   \"Id\": 68690675,\n   \"Name\": \"aliquip deserunt non\",\n   \"Description\": \"reprehenderit\"\n  }\n ],\n \"FacilityTypes\": [\n  {\n   \"Id\": -98554016,\n   \"Name\": \"laboris cupidatat\",\n   \"Description\": \"do in esse reprehenderit\"\n  },\n  {\n   \"Id\": -46408805,\n   \"Name\": \"labore exercitation laboris nostrud\",\n   \"Description\": \"sunt in\"\n  }\n ],\n \"FuelTypes\": [\n  {\n   \"Id\": 98156262,\n   \"Name\": \"do ex exercitation et\",\n   \"Description\": \"esse\"\n  },\n  {\n   \"Id\": 71501009,\n   \"Name\": \"sint sunt\",\n   \"Description\": \"sint exercitation ullamco est\"\n  }\n ],\n \"NoteVisibilityTypes\": [\n  {\n   \"Id\": -41983893,\n   \"Name\": \"dolor cillum\",\n   \"Description\": \"adipisicing occaecat dolore velit Ut\"\n  },\n  {\n   \"Id\": -40240375,\n   \"Name\": \"incididunt mollit\",\n   \"Description\": \"labore\"\n  }\n ],\n \"OnStreetParkingTypes\": [\n  {\n   \"Id\": 36154076,\n   \"Name\": \"cillum tempor id culpa\",\n   \"Description\": \"laborum\"\n  },\n  {\n   \"Id\": -32688402,\n   \"Name\": \"laboris anim irure\",\n   \"Description\": \"qui consequat\"\n  }\n ],\n \"PaymentMethods\": [\n  {\n   \"Id\": 37918387,\n   \"Name\": \"anim incididunt\",\n   \"Description\": \"ut exercitation est non\"\n  },\n  {\n   \"Id\": 57543901,\n   \"Name\": \"et proident occaecat ut Lorem\",\n   \"Description\": \"velit\"\n  }\n ],\n \"PermitTypes\": [\n  {\n   \"Id\": 89873463,\n   \"Name\": \"officia fugiat\",\n   \"Description\": \"do Lorem et\"\n  },\n  {\n   \"Id\": 73623289,\n   \"Name\": \"deserunt dolor voluptate\",\n   \"Description\": \"aliqua incididunt\"\n  }\n ],\n \"Regions\": [\n  {\n   \"Id\": \"dolor minim id cupidatat\",\n   \"CountryId\": \"consectetur sint ut irure dolore\",\n   \"Name\": \"dolore ad culpa\",\n   \"Venues\": [\n    {\n     \"Id\": \"consequat l\",\n     \"Name\": \"culpa laboris\",\n     \"EventsMustSupplyHours\": true,\n     \"Events\": [\n      {\n       \"Name\": \"ut laborum\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      },\n      {\n       \"Name\": \"et do minim\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      }\n     ]\n    },\n    {\n     \"Id\": \"sint ut velit eu\",\n     \"Name\": \"nisi ut mollit sint\",\n     \"EventsMustSupplyHours\": true,\n     \"Events\": [\n      {\n       \"Name\": \"adipisicing sed\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      },\n      {\n       \"Name\": \"Lorem Duis\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      }\n     ]\n    }\n   ]\n  },\n  {\n   \"Id\": \"voluptate aliquip\",\n   \"CountryId\": \"ad occaecat dolore\",\n   \"Name\": \"ea\",\n   \"Venues\": [\n    {\n     \"Id\": \"minim dolor in\",\n     \"Name\": \"cupidatat\",\n     \"EventsMustSupplyHours\": false,\n     \"Events\": [\n      {\n       \"Name\": \"cillum eu Lorem est aute\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      },\n      {\n       \"Name\": \"minim ipsum quis\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      }\n     ]\n    },\n    {\n     \"Id\": \"et Lorem quis\",\n     \"Name\": \"dolore incididunt cupidatat\",\n     \"EventsMustSupplyHours\": false,\n     \"Events\": [\n      {\n       \"Name\": \"nisi cul\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      },\n      {\n       \"Name\": \"ut\",\n       \"Date\": \"2020-01-20T00:00:00\",\n       \"Start\": \"00:00:00\",\n       \"End\": \"00:00:00\"\n      }\n     ]\n    }\n   ]\n  }\n ],\n \"RestrictionTypes\": [\n  {\n   \"Id\": 3856671,\n   \"Name\": \"commodo irure\",\n   \"Description\": \"quis minim ad aliquip\",\n   \"Code\": \"nulla esse ut officia\",\n   \"CanHaveTariff\": true,\n   \"DefaultWidth\": -58502438.492501654\n  },\n  {\n   \"Id\": 93937613,\n   \"Name\": \"nostrud labore\",\n   \"Description\": \"ea Excepteur veniam\",\n   \"Code\": \"sint fugiat in minim\",\n   \"CanHaveTariff\": false,\n   \"DefaultWidth\": -29325165.83331935\n  }\n ],\n \"SpecialRestrictions\": [\n  {\n   \"Id\": 47372993,\n   \"Name\": \"irure consectetur Excepteur\",\n   \"Description\": \"cillum do laboris\"\n  },\n  {\n   \"Id\": 42475215,\n   \"Name\": \"ipsum laborum\",\n   \"Description\": \"tempor reprehenderit\"\n  }\n ],\n \"VehicleTypes\": [\n  {\n   \"Id\": -94061141,\n   \"Name\": \"sint minim aliqua est ut\",\n   \"Description\": \"culpa incid\"\n  },\n  {\n   \"Id\": 19463828,\n   \"Name\": \"anim i\",\n   \"Description\": \"ipsum eiusmod sed dol\"\n  }\n ],\n \"ZoneTypes\": [\n  {\n   \"Id\": -32484101,\n   \"Name\": \"aliquip dolore eu consectetur\",\n   \"Description\": \"Lorem adipisicing cupidatat\",\n   \"CanHaveRestrictions\": true,\n   \"CanHaveShape\": true\n  },\n  {\n   \"Id\": -30411568,\n   \"Name\": \"eu\",\n   \"Description\": \"amet tempor dolor proident culpa\",\n   \"CanHaveRestrictions\": false,\n   \"CanHaveShape\": true\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6639b2b2-aa16-490b-979e-ac9f92d5a772",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "all",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "785454f8-5429-417e-a248-663ea0376737",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "all",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "f19b3d0d-8fa4-4e16-9d25-0b3eaab60b02",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "all",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3cac06a6-ea7d-4916-9731-d262362a18bf",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all authority types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "authorityType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "44f0bc6f-7f36-4834-9562-f83318342c16",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "authorityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -18575100,\n  \"Name\": \"tempor mollit\",\n  \"Description\": \"exercita\",\n  \"CanHaveRestrictions\": false,\n  \"CanHaveShape\": false\n },\n {\n  \"Id\": 84615677,\n  \"Name\": \"est elit deserunt\",\n  \"Description\": \"aute cillum voluptate sit\",\n  \"CanHaveRestrictions\": true,\n  \"CanHaveShape\": false\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c1278ec5-8632-4222-8f31-b4537dbf1d18",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "authorityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "5bde2f20-5b06-4736-9c63-545b8a287af4",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "authorityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "78b04438-35f6-48e3-8d0b-40cf3ae24c0a",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "authorityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bd2bba8a-41f4-4562-8149-bcc2012058a8",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all base maps",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "baseMap",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "cd68b2b7-8e39-4b28-b3a0-d73344b7a6f0",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "baseMap",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": 32853029,\n  \"Name\": \"in Lorem laborum\",\n  \"Description\": \"sunt Ut culpa\",\n  \"AvailableInCountries\": [\n   \"minim ad enim\",\n   \"irure quis exercitation\"\n  ]\n },\n {\n  \"Id\": 10578925,\n  \"Name\": \"reprehenderit consequat in\",\n  \"Description\": \"ipsum\",\n  \"AvailableInCountries\": [\n   \"anim nostrud\",\n   \"mini\"\n  ]\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "944c2562-8a6b-471d-a009-7f1e68333c92",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "baseMap",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "961f7819-9584-4fa7-9af3-1f5ca7a685e8",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "baseMap",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "48531c40-a6d1-486c-a26b-e538d21e338a",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "baseMap",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9700a9fc-c30d-4750-911a-08a18c3a7665",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all countries",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "country",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "78437fd9-93e8-40f1-945e-0d3d3a78bf38",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "country",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": \"nisi sed\",\n  \"Name\": \"irure dolor\",\n  \"SpecialDays\": [\n   {\n    \"Id\": \"ut\",\n    \"Name\": \"ullamco cillum ipsum\",\n    \"IsHoliday\": false,\n    \"Dates\": [\n     \"2020-01-20T00:00:00\",\n     \"2020-01-20T00:00:00\"\n    ]\n   },\n   {\n    \"Id\": \"cupidatat in culpa nulla\",\n    \"Name\": \"aliqua culpa\",\n    \"IsHoliday\": true,\n    \"Dates\": [\n     \"2020-01-20T00:00:00\",\n     \"2020-01-20T00:00:00\"\n    ]\n   }\n  ],\n  \"Bounds\": [\n   [\n    -75936209.39686039,\n    54242235.5912613\n   ],\n   [\n    -6759869.818853885,\n    9309711.683744922\n   ]\n  ],\n  \"DefaultBaseMapId\": 91981431,\n  \"EntitlementTypes\": [\n   62829779,\n   -70327612\n  ],\n  \"RestrictionTypes\": [\n   -6874282,\n   41863057\n  ]\n },\n {\n  \"Id\": \"aute cill\",\n  \"Name\": \"veniam elit sit\",\n  \"SpecialDays\": [\n   {\n    \"Id\": \"sunt dolor et tempor\",\n    \"Name\": \"cupidatat fugiat proident\",\n    \"IsHoliday\": false,\n    \"Dates\": [\n     \"2020-01-20T00:00:00\",\n     \"2020-01-20T00:00:00\"\n    ]\n   },\n   {\n    \"Id\": \"dolore\",\n    \"Name\": \"ea minim consectetur anim\",\n    \"IsHoliday\": false,\n    \"Dates\": [\n     \"2020-01-20T00:00:00\",\n     \"2020-01-20T00:00:00\"\n    ]\n   }\n  ],\n  \"Bounds\": [\n   [\n    -90879640.53294004,\n    -93870800.56358217\n   ],\n   [\n    -42892654.09262128,\n    47309313.14754531\n   ]\n  ],\n  \"DefaultBaseMapId\": -31755560,\n  \"EntitlementTypes\": [\n   -46856187,\n   78645773\n  ],\n  \"RestrictionTypes\": [\n   -83874363,\n   -92175683\n  ]\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d1203a34-04c7-451d-bc10-84b0cc7ceed4",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "country",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "45ec85cb-68d1-4a99-97d7-3e6535d0c6fb",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "country",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "0f143a52-03cb-4ede-bcce-6c1f5a3ccfe6",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "country",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "73bec06a-1466-4a18-b4a6-56664ebbb698",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all entitlement types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "entitlementType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "1d3c02ea-5c0e-4286-b83f-df2e28d45956",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "entitlementType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": 98600800,\n  \"Name\": \"nostrud\",\n  \"Description\": \"irure tempor dolor Ut nisi\",\n  \"Code\": \"officia laborum sed\",\n  \"RestrictionTypeIds\": [\n   -47261700,\n   -2018897\n  ],\n  \"ApplicableExemptionTypeIds\": [\n   20109175,\n   74681696\n  ],\n  \"HasTariff\": true\n },\n {\n  \"Id\": 97198167,\n  \"Name\": \"voluptate tempor in ullamco sit\",\n  \"Description\": \"irure consequat ut sunt qui\",\n  \"Code\": \"sint dolor ullamco voluptate\",\n  \"RestrictionTypeIds\": [\n   82695121,\n   54902645\n  ],\n  \"ApplicableExemptionTypeIds\": [\n   8109394,\n   -26830542\n  ],\n  \"HasTariff\": false\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "4067e83f-5bf7-4842-85a7-c719d7529b91",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "entitlementType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "37736ed0-8b35-4f30-867f-9fe199b0e637",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "entitlementType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c604d4cb-c0c4-4f04-9bce-791e9f750716",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "entitlementType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "92540ffc-914e-416c-97aa-cb4a52d8832b",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all exception types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "exceptionType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "c04675cd-8276-4897-aa3c-3367e29d22c7",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exceptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c46298ec-9421-4e23-a243-c8a9aa80fd0e",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exceptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7fe76d27-8b8a-4dfb-afab-cde30376bb88",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exceptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "34fd334a-8a48-4099-bdfe-2ef10722bf35",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exceptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "daa5025f-15c0-4fbd-a2c9-6daa22131cec",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all exemption time types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "exemptionTimeType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "c11c00df-97b0-40d3-814a-2672f7e0e520",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionTimeType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "61095a48-c240-489c-89e2-74d2273cbc92",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionTimeType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "f34677e8-72ef-4005-a505-fdbb58f7b0dc",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionTimeType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8932e407-c0f9-457f-aff5-401879d18e5c",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionTimeType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3db9b1f6-0ea6-4ce6-b788-50ab618f4d7c",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all exemption types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "exemptionType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "126f99c8-d757-42f3-93f9-9a94143a8ecf",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "e1bab43a-88c0-4056-be86-d4376879eacd",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4c743f22-f24f-4733-9309-6d3cfb1c1819",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "d3ee2c9b-2a30-48bd-aeb9-ddcedc906d51",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "exemptionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bcc3f12c-39cf-47e2-bde2-5eca8357981d",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all facility types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "facilityType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "8883ec8e-b8c5-424c-9020-772a6e047757",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "facilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a1031f27-b757-4c72-8000-e613ad4547a5",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "facilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "d4189908-1f68-4534-a117-6f80690c890d",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "facilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fd43aebd-45ac-4436-921b-d22a216180fd",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "facilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "48acc14a-9db7-4a5e-b9fb-2c52f6689484",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all fuel types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fuelType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7ed40ed4-4f3b-47f4-b99f-fa5cfc17e1d6",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fuelType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "68086c0e-563d-485a-a3f1-7cf13950fa4d",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fuelType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "1c4301d9-16e9-4203-accf-1dcb81a6d608",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fuelType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "101f4330-326c-4715-a68a-5a78437305f3",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fuelType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8c9aeda4-ac42-4422-9b61-7b697b089288",
+      "name": "/monitor - GET",
+      "request": {
+        "name": "/monitor - GET",
+        "description": {},
+        "url": {
+          "path": [
+            "monitor"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e4caeb52-f368-4155-9585-5bb463421ed9",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e5b2c3ea-d624-4e14-9d6d-692a377e5e20",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e5ee9c6b-5a92-433a-9f1f-1ade785701e4",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b50ece55-f9dc-4d04-8b01-5820225cd0ed",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "monitor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f7518b8a-e128-4ccc-87e2-c9645d9cfd2c",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all note visibility types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "noteVisibilityType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4618c080-9dba-4d68-b79e-7f09af4f4dc2",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "noteVisibilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d416667c-1224-4440-aa93-ade99b452201",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "noteVisibilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "67298cb6-8bb0-4be4-bf78-f35160989ff4",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "noteVisibilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "3650ac28-fef3-401d-9581-eecf5455aee1",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "noteVisibilityType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "96824d9c-0165-4d61-a67c-c598fa80b910",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all on street parking types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "onStreetParkingType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a30c5af5-d237-495a-bede-71152318d043",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "onStreetParkingType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0e66bdee-a154-46e3-b928-e46947221808",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "onStreetParkingType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2fb70956-0399-4fc5-8c15-d037b93a91b2",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "onStreetParkingType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "33e6987a-01bd-47cf-96ca-f3ce68900056",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "onStreetParkingType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a23b995f-e96e-4e35-af4c-41a1e45828b3",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all payment methods",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paymentMethod",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7e793b6c-5e30-4768-b5e1-237995655a68",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paymentMethod",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "e3166ccc-4efd-4da0-95ac-21550f753e48",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paymentMethod",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "6f931e26-5635-4cd0-914b-b44bf6fc52fd",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paymentMethod",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "31a19325-5b96-494f-bb9a-9b3718e54e4c",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paymentMethod",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7aad1131-8006-4919-b3e8-46164559ae96",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all permit types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "permitType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "ab8445e0-b934-40b1-ab60-ad37993bfe1f",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "permitType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "37d42300-a439-4409-9041-abbc5783e4ba",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "permitType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "a736e4bb-1ccf-4dbc-ac3a-d58c761b7bda",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "permitType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "52c0bc77-a73e-4aff-a07b-6e5f4e54316a",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "permitType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f22d5d15-75d8-48cd-bf61-cef8550e61e6",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all regions",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "region",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "abdec312-7c04-459b-9f67-0069f3ca435d",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "region",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": \"laborum\",\n  \"CountryId\": \"irure labore\",\n  \"Name\": \"culpa nisi eiusmod velit\",\n  \"Venues\": [\n   {\n    \"Id\": \"labo\",\n    \"Name\": \"ut\",\n    \"EventsMustSupplyHours\": true,\n    \"Events\": [\n     {\n      \"Name\": \"do\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     },\n     {\n      \"Name\": \"laboris exercitation non aute\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     }\n    ]\n   },\n   {\n    \"Id\": \"consectetur mollit dolor aliqua\",\n    \"Name\": \"ex eu nostrud\",\n    \"EventsMustSupplyHours\": true,\n    \"Events\": [\n     {\n      \"Name\": \"fugiat magna proident ea\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     },\n     {\n      \"Name\": \"ut velit est irure incididunt\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     }\n    ]\n   }\n  ]\n },\n {\n  \"Id\": \"adipisicing\",\n  \"CountryId\": \"tempor ea\",\n  \"Name\": \"enim\",\n  \"Venues\": [\n   {\n    \"Id\": \"mollit in sunt\",\n    \"Name\": \"laboris\",\n    \"EventsMustSupplyHours\": false,\n    \"Events\": [\n     {\n      \"Name\": \"magna\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     },\n     {\n      \"Name\": \"laboris in\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     }\n    ]\n   },\n   {\n    \"Id\": \"laborum\",\n    \"Name\": \"ea\",\n    \"EventsMustSupplyHours\": true,\n    \"Events\": [\n     {\n      \"Name\": \"voluptate dolore sunt officia\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     },\n     {\n      \"Name\": \"sed adipisicing voluptate eu\",\n      \"Date\": \"2020-01-20T00:00:00\",\n      \"Start\": \"00:00:00\",\n      \"End\": \"00:00:00\"\n     }\n    ]\n   }\n  ]\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8eafd127-f5bb-416d-98da-e8d7f4cf93c8",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "region",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "688a429d-297d-46ee-bf1a-dd18ddcacff6",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "region",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "610484bc-8a79-4d23-8af2-c221a2af6fcb",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "region",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ab99408c-3450-4971-b15a-154c6abde64a",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all restriction types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "restrictionType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a8b149e9-77de-4bb9-af76-49744aef9aec",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "restrictionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": 27415622,\n  \"Name\": \"laborum Lorem in\",\n  \"Description\": \"deserunt nostrud\",\n  \"Code\": \"laborum reprehenderit aliqua exercitation\",\n  \"CanHaveTariff\": true,\n  \"DefaultWidth\": 70706132.54765487\n },\n {\n  \"Id\": 74923308,\n  \"Name\": \"labore dolore veniam et\",\n  \"Description\": \"ullamco veniam\",\n  \"Code\": \"cill\",\n  \"CanHaveTariff\": false,\n  \"DefaultWidth\": 91601941.864542\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2df8e3db-96bf-4bb9-a895-abcb99e2a9f8",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "restrictionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "3115a509-546c-4b52-a039-1c5e138d84a3",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "restrictionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "73696388-bb41-463f-b383-ac62de832015",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "restrictionType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9c4c6f68-481f-45c7-90e1-d79334830080",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all special restrictions",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "specialRestriction",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "461539a7-ebad-4e2f-8f3a-40c60a6f64d7",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "specialRestriction",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7751af7a-0f63-4db1-8027-b6f668da5ce5",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "specialRestriction",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c241225c-89ea-46a9-bab7-074c73f4395d",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "specialRestriction",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "9103766f-ef97-4bb9-8748-625a5c27fe45",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "specialRestriction",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f1884c38-fcbf-4b00-b6e0-c993db259f80",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all vehicle types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "vehicleType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "77af2d6b-ce67-43f9-848e-c3926c0334db",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "vehicleType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -47018265,\n  \"Name\": \"dolore ad\",\n  \"Description\": \"nostrud et tempor veniam\"\n },\n {\n  \"Id\": 73122771,\n  \"Name\": \"incididunt veniam deserunt\",\n  \"Description\": \"cupidatat ullamco proident dolor\"\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "66fa6505-a714-4b98-8d8f-c8bbf1bf7169",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "vehicleType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2fde2c92-fc64-42a3-80ec-aea61ffa6010",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "vehicleType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "47124115-99cf-4371-a6d9-8d3b59bdefe4",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "vehicleType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "23f7df46-b6b0-4c67-81bc-766799d0b257",
+      "name": "List",
+      "request": {
+        "name": "List",
+        "description": {
+          "content": "Gets all zone types",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "zoneType",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0d3e5695-b935-4f7a-ae23-e97e7c7475ef",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zoneType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n {\n  \"Id\": -18575100,\n  \"Name\": \"tempor mollit\",\n  \"Description\": \"exercita\",\n  \"CanHaveRestrictions\": false,\n  \"CanHaveShape\": false\n },\n {\n  \"Id\": 84615677,\n  \"Name\": \"est elit deserunt\",\n  \"Description\": \"aute cillum voluptate sit\",\n  \"CanHaveRestrictions\": true,\n  \"CanHaveShape\": false\n }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2272076a-734e-4804-800f-c2c989b3d062",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zoneType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "025e16f9-b45e-415a-8eaf-b6f42848f0ff",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zoneType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "11f46a97-ea6d-422a-bf37-714188b45987",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "zoneType",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "type": "string",
+      "value": "https://api.appyway.com/v1/reference"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "type": "string",
+        "value": "{{API-KEY-LIVE}}"
+      },
+      {
+        "key": "key",
+        "type": "string",
+        "value": "API-KEY"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b7dfbf0e-0f97-4ff2-aceb-423134b3c9b4",
+    "name": "Reference (v1.0|LIVE|Public)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
