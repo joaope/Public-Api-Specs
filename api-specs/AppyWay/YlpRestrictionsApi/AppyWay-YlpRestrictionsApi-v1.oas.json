@@ -1,0 +1,767 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Restrictions API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.appyway.com/v1/restrictions"
+    }
+  ],
+  "paths": {
+    "/fetchAuthorityBySlug": {
+      "post": {
+        "tags": [
+          "Query"
+        ],
+        "summary": "/fetchAuthorityBySlug - POST",
+        "operationId": "post-fetchauthoritybyslug",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorityBySlugQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorityBySlugQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorityBySlugQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityResponseOkResponse"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not Modified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotModifiedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchLatestMadeOrderByOspId": {
+      "post": {
+        "tags": [
+          "Query"
+        ],
+        "summary": "/fetchLatestMadeOrderByOspId - POST",
+        "operationId": "post-fetchlatestmadeorderbyospid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LatestOrderForOspQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LatestOrderForOspQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LatestOrderForOspQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "304": {
+            "description": "Not Modified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotModifiedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthorityBySlugQuery": {
+        "type": "object",
+        "properties": {
+          "authoritySlug": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Feature": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeatureCollection": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Feature"
+            },
+            "nullable": true
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": false,
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CrsProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Crs": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "properties": {
+            "$ref": "#/components/schemas/CrsProperties"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Polygon": {
+        "type": "object",
+        "properties": {
+          "coordinates": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            },
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "crs": {
+            "$ref": "#/components/schemas/Crs"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocalTime": {
+        "type": "object",
+        "properties": {
+          "hour": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clockHourOfHalfDay": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "minute": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "second": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "millisecond": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "tickOfSecond": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "tickOfDay": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "nanosecondOfSecond": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "nanosecondOfDay": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Hours": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "$ref": "#/components/schemas/LocalTime"
+          },
+          "end": {
+            "$ref": "#/components/schemas/LocalTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MonthAndDay": {
+        "type": "object",
+        "properties": {
+          "month": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "day": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuleTime": {
+        "type": "object",
+        "properties": {
+          "months": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "weekNumbers": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "hours": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Hours"
+            },
+            "nullable": true
+          },
+          "firstDate": {
+            "$ref": "#/components/schemas/MonthAndDay"
+          },
+          "lastDate": {
+            "$ref": "#/components/schemas/MonthAndDay"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Rule": {
+        "type": "object",
+        "properties": {
+          "ruleTime": {
+            "$ref": "#/components/schemas/RuleTime"
+          },
+          "parkingEntitlementTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "maxStay": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "minStay": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noReturn": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "noReturnUntil": {
+            "$ref": "#/components/schemas/LocalTime"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperatingHours": {
+        "type": "object",
+        "properties": {
+          "standardDays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            },
+            "nullable": true
+          },
+          "eventDays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperatingHoursSet": {
+        "type": "object",
+        "properties": {
+          "operatingHours": {
+            "$ref": "#/components/schemas/OperatingHours"
+          },
+          "setId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TariffDetailSurcharge": {
+        "type": "object",
+        "properties": {
+          "surchargeType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "ruleType": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TariffDetail": {
+        "type": "object",
+        "properties": {
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "surcharge": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "surchargeDetail": {
+            "$ref": "#/components/schemas/TariffDetailSurcharge"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "minimumPriceIncrement": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "singlePaymentCanCrossMidnight": {
+            "type": "boolean"
+          },
+          "from": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "upTo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TariffForTimesAndDates": {
+        "type": "object",
+        "properties": {
+          "parkingEntitlementTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffDetail"
+            },
+            "nullable": true
+          },
+          "timeFrom": {
+            "$ref": "#/components/schemas/LocalTime"
+          },
+          "timeTo": {
+            "$ref": "#/components/schemas/LocalTime"
+          },
+          "firstDate": {
+            "$ref": "#/components/schemas/MonthAndDay"
+          },
+          "lastDate": {
+            "$ref": "#/components/schemas/MonthAndDay"
+          },
+          "months": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "timeType": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TariffSet": {
+        "type": "object",
+        "properties": {
+          "tariffs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffForTimesAndDates"
+            },
+            "nullable": true
+          },
+          "setId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetCollection": {
+        "type": "object",
+        "properties": {
+          "operatingHoursSets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OperatingHoursSet"
+            },
+            "nullable": true
+          },
+          "tariffSets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TariffSet"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Authority": {
+        "type": "object",
+        "properties": {
+          "authorityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "shape": {
+            "$ref": "#/components/schemas/Polygon"
+          },
+          "sets": {
+            "$ref": "#/components/schemas/SetCollection"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthorityResponse": {
+        "type": "object",
+        "properties": {
+          "osps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FeatureCollection"
+            },
+            "nullable": true
+          },
+          "zones": {
+            "$ref": "#/components/schemas/FeatureCollection"
+          },
+          "authority": {
+            "$ref": "#/components/schemas/Authority"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthorityResponseOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/AuthorityResponse"
+          },
+          "eTag": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UnauthorizedResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotModifiedResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LatestOrderForOspQuery": {
+        "type": "object",
+        "properties": {
+          "ospId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "name": "API-KEY",
+        "in": "header",
+        "type": "apiKey"
+      },
+      "oAuth2": {
+        "flows": {
+          "authorizationCode": {
+            "scopes": {},
+            "authorizationUrl": "https://auth.appyway.com/authorize",
+            "tokenUrl": "https://auth.appyway.com/oauth/token"
+          }
+        },
+        "type": "oauth2"
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Too many requests"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized"
+      },
+      "Forbidden": {
+        "description": "Forbidden"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "oAuth2": []
+    }
+  ]
+}
