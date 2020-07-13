@@ -283,7 +283,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ParkingEntitySearchResultListOkResponse"
+                  "$ref": "#/components/schemas/ParkingQuotesResponseOkResponse"
                 }
               }
             }
@@ -1590,6 +1590,17 @@
         "additionalProperties": false,
         "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
       },
+      "GeneralOnStreetPolicyType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "description": "The different policies that may apply to sections of the kerb within a given area where no specific data is present.\n\n*Restricted (1) - Unspecified sections of kerb are restricted (no parking) for everyone.\r\n*LikelyRestricted (2) - Unspecified sections of kerb are likely to be restricted (no parking) for everyone.\r\n*LikelyUnrestricted (3) - Unspecified sections of kerb are likely to be unrestricted (free parking)\r\n*Unknown (4) - We cannot say with confidence whether or not unspecified kerb sections are restricted.\r\n",
+        "format": "int32"
+      },
       "SurchargeValueType": {
         "enum": [
           1,
@@ -1791,20 +1802,22 @@
         "additionalProperties": false,
         "description": "Represents a single result returned from a search for Parking Entities."
       },
-      "GeneralOnStreetPolicyType": {
-        "enum": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "type": "integer",
-        "description": "The different policies that may apply to sections of the kerb within a given area where no specific data is present.\n\n*Restricted (1) - Unspecified sections of kerb are restricted (no parking) for everyone.\r\n*LikelyRestricted (2) - Unspecified sections of kerb are likely to be restricted (no parking) for everyone.\r\n*LikelyUnrestricted (3) - Unspecified sections of kerb are likely to be unrestricted (free parking)\r\n*Unknown (4) - We cannot say with confidence whether or not unspecified kerb sections are restricted.\r\n",
-        "format": "int32"
-      },
       "ParkingSearchResponse": {
         "type": "object",
         "properties": {
+          "generalOnstreetPolicy": {
+            "$ref": "#/components/schemas/GeneralOnStreetPolicyType"
+          },
+          "requestedStartTime": {
+            "type": "string",
+            "description": "This is the query start time after it has been normalized. This is what was used for the quote calculations.",
+            "format": "date-time"
+          },
+          "requestedDuration": {
+            "type": "string",
+            "description": "This is the query end time after it has been normalized. This is what was used for the quote calculations.",
+            "example": "3.17:25:30.5000000"
+          },
           "parking": {
             "type": "array",
             "items": {
@@ -1812,9 +1825,6 @@
             },
             "description": "List of Parking Entities returned by the response",
             "nullable": true
-          },
-          "generalOnstreetPolicy": {
-            "$ref": "#/components/schemas/GeneralOnStreetPolicyType"
           }
         },
         "additionalProperties": false,
@@ -1953,7 +1963,31 @@
         },
         "additionalProperties": false
       },
-      "ParkingEntitySearchResultListOkResponse": {
+      "ParkingQuotesResponse": {
+        "type": "object",
+        "properties": {
+          "requestedStartTime": {
+            "type": "string",
+            "description": "This is the query start time after it has been normalized. This is what was used for the quote calculations.",
+            "format": "date-time"
+          },
+          "requestedDuration": {
+            "type": "string",
+            "description": "This is the query end time after it has been normalized. This is what was used for the quote calculations.",
+            "example": "3.17:25:30.5000000"
+          },
+          "parking": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingEntitySearchResult"
+            },
+            "description": "List of Parking Entities returned by the response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingQuotesResponseOkResponse": {
         "type": "object",
         "properties": {
           "success": {
@@ -1962,12 +1996,7 @@
             "readOnly": true
           },
           "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingEntitySearchResult"
-            },
-            "description": "Payload of the response",
-            "nullable": true
+            "$ref": "#/components/schemas/ParkingQuotesResponse"
           }
         },
         "additionalProperties": false,
