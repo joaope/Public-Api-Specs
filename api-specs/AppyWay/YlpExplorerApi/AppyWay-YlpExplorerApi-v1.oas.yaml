@@ -369,6 +369,45 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /findSuggestionsByViewport:
+    post:
+      tags:
+      - Suggestions
+      summary: Find suggestions by Viewport
+      description: |-
+        Returns information about areas not covered by parking entities. The results are indicative of the probability whether you can or cannot park in that area.
+        Attention must be paid to the on street signage
+      operationId: post-findsuggestionsbyviewport
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindSuggestionsByViewportQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FindSuggestionsByViewportQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FindSuggestionsByViewportQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeometrySuggestionFeatureCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /findZoneDefaultRulesByViewport:
     post:
       tags:
@@ -732,7 +771,7 @@ components:
       - 2
       - 3
       - 4
-      - 4
+      - 5
       type: integer
       format: int32
     GeometryType:
@@ -1512,6 +1551,72 @@ components:
           readOnly: true
         result:
           $ref: '#/components/schemas/ParkingQuotesResponse'
+      additionalProperties: false
+      description: A successful response
+    FindSuggestionsByViewportQuery:
+      type: object
+      properties:
+        viewport:
+          $ref: '#/components/schemas/Polygon'
+        basemap:
+          $ref: '#/components/schemas/BasemapTranslation'
+      additionalProperties: false
+    SuggestionType:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      format: int32
+    Suggestion:
+      type: object
+      properties:
+        suggestionType:
+          $ref: '#/components/schemas/SuggestionType'
+        baseMapTranslation:
+          $ref: '#/components/schemas/BasemapTranslation'
+      additionalProperties: false
+      description: Indicates likelihood of available parking in the designated area on a basemap
+    GeometrySuggestionFeature:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/Suggestion'
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        type:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GeometrySuggestionFeatureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeometrySuggestionFeature'
+          nullable: true
+        properties:
+          type: object
+          additionalProperties: false
+          nullable: true
+      additionalProperties: false
+    GeometrySuggestionFeatureCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/GeometrySuggestionFeatureCollection'
       additionalProperties: false
       description: A successful response
     FetchZoneByIdQuery:
