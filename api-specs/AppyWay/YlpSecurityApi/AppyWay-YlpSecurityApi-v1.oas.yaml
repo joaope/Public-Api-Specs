@@ -1477,6 +1477,43 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /user/resetPassword:
+    post:
+      tags:
+      - User
+      summary: Request password reset
+      description: Request password reset
+      operationId: post-user-resetpassword
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetRequest'
+      responses:
+        "200":
+          description: Password reset requested
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PasswordReset'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordReset'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PasswordReset'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /webhooks/auth0:
     post:
       tags:
@@ -1870,6 +1907,25 @@ components:
       properties:
         user:
           $ref: '#/components/schemas/User'
+        passwordResetLink:
+          type: string
+          nullable: true
+      additionalProperties: false
+    PasswordResetRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+          nullable: true
+        createAsSignup:
+          type: boolean
+        redirectUrl:
+          type: string
+          nullable: true
+      additionalProperties: false
+    PasswordReset:
+      type: object
+      properties:
         passwordResetLink:
           type: string
           nullable: true
