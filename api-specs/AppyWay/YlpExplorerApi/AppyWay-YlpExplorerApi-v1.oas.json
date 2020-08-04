@@ -480,6 +480,126 @@
         }
       }
     },
+    "/findParkingEntitiesByCentreAndViewportSize": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "Find parking entities by centre and viewport size",
+        "description": "This query creates a square viewport with the centre at ViewportCentre and side length of ViewportSize.\r\nIt then returns a list of all the parking entities within the bounds of that polygon, along with their distance from the DistanceCalculationLocation if supplied,\r\nor the viewport centre if not. Entities are ordered by this distance.",
+        "operationId": "post-findparkingentitiesbycentreandviewportsize",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingEntitiesByCentreAndViewportSizeQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingEntitiesByCentreAndViewportSizeQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingEntitiesByCentreAndViewportSizeQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindParkingEntitiesByViewportResponseOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findParkingEntitiesByViewport": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "Find Parking entities by viewport",
+        "description": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of all the parking entities within the bounds of that polygon, along with their distance from the DistanceCalculationLocation if supplied,\r\nor the viewport centre if not. Entities are ordered by this distance.",
+        "operationId": "post-findparkingentitiesbyviewport",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingEntitiesByViewportQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingEntitiesByViewportQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingEntitiesByViewportQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FindParkingEntitiesByViewportResponseOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/findParkingQuotesByCentreAndViewportSize": {
       "post": {
         "tags": [
@@ -1519,6 +1639,138 @@
         "additionalProperties": false,
         "description": "Models a latitude and longitude"
       },
+      "FindParkingEntitiesByViewportFilters": {
+        "type": "object",
+        "properties": {
+          "excludeEntityTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MapEntityType"
+            },
+            "description": "If supplied, entities that have the given Map Entity types will be excluded from the response. Passing Zone or Authority\r\nentity types will result in a Bad Request response.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Filters that a caller can apply to limit the results returned when searching for parking entities by viewport"
+      },
+      "FindParkingEntitiesByCentreAndViewportSizeQuery": {
+        "required": [
+          "viewportCenter",
+          "viewportSize"
+        ],
+        "type": "object",
+        "properties": {
+          "viewportCenter": {
+            "$ref": "#/components/schemas/LatLng"
+          },
+          "viewportSize": {
+            "maximum": 750,
+            "exclusiveMaximum": true,
+            "minLength": 1,
+            "type": "integer",
+            "description": "Length of one side of the square viewport in meters. Required.",
+            "format": "int32"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/FindParkingEntitiesByViewportFilters"
+          },
+          "distanceCalculationLocation": {
+            "$ref": "#/components/schemas/LatLng"
+          },
+          "geometryPreference": {
+            "$ref": "#/components/schemas/GeometryPreference"
+          },
+          "onStreetParkingTypes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "If supplied, only on street parking entities that have the given On Street Parking types will be included in the response. If null,\r\nall types will be returned.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+      },
+      "FindParkingEntitiesByViewportResult": {
+        "type": "object",
+        "properties": {
+          "entity": {
+            "$ref": "#/components/schemas/ParkingEntity"
+          },
+          "distance": {
+            "type": "number",
+            "description": "How far away the parking entity is, in meters. Distances are relative to the DistanceCalculationLocation if supplied in the query, otherwise they are relative to the centre of the viewport.",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Models a single result from a Search Parking Entities by Viewport call"
+      },
+      "FindParkingEntitiesByViewportResponse": {
+        "type": "object",
+        "properties": {
+          "entities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FindParkingEntitiesByViewportResult"
+            },
+            "description": "List of results from the entity search.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response from calls that search for Parking Entities by viewport"
+      },
+      "FindParkingEntitiesByViewportResponseOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FindParkingEntitiesByViewportResponse"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "FindParkingEntitiesByViewportQuery": {
+        "required": [
+          "viewport"
+        ],
+        "type": "object",
+        "properties": {
+          "viewport": {
+            "$ref": "#/components/schemas/Polygon"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/FindParkingEntitiesByViewportFilters"
+          },
+          "distanceCalculationLocation": {
+            "$ref": "#/components/schemas/LatLng"
+          },
+          "geometryPreference": {
+            "$ref": "#/components/schemas/GeometryPreference"
+          },
+          "onStreetParkingTypes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "If supplied, only on street parking entities that have the given On Street Parking types will be included in the response. If null,\r\nall types will be returned.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+      },
       "FindParkingQuotesByViewportFilters": {
         "type": "object",
         "properties": {
@@ -1648,7 +1900,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+        "description": "Request for searching for Parking Quotes for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
       },
       "GeneralOnStreetPolicyType": {
         "enum": [
@@ -1939,7 +2191,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+        "description": "Request for searching for Parking Quotes for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
       },
       "FetchParkingQuoteByIdQuery": {
         "required": [
