@@ -1170,6 +1170,12 @@
             },
             "description": "List of defaults for this zone",
             "nullable": true
+          },
+          "distance": {
+            "type": "number",
+            "description": "How far away the zone is, in meters. Distances are relative to the DistanceCalculationLocation if supplied in the query, otherwise they are relative to the centre of the viewport.\r\nIf the DistanceCalculationLocation / viewport centre is inside the zone, this value will be zero. Otherwise it will be the direct distance to the nearest point on the zone boundary.",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -1185,6 +1191,9 @@
             },
             "description": "List of search results returned in this response",
             "nullable": true
+          },
+          "zoneContainingLocation": {
+            "$ref": "#/components/schemas/ZoneSearchResult"
           }
         },
         "additionalProperties": false,
@@ -2463,6 +2472,9 @@
             },
             "description": "On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types\r\nin the zone for which they are defined.",
             "nullable": true
+          },
+          "distanceCalculationLocation": {
+            "$ref": "#/components/schemas/LatLng"
           }
         },
         "additionalProperties": false,
