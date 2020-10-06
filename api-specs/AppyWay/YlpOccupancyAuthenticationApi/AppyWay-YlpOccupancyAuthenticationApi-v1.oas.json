@@ -1,0 +1,915 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Occupancy Authentication API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.appyway.com/v1/occupancy-authentication"
+    }
+  ],
+  "paths": {
+    "/commands/ChangeRegistrationDetails": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/commands/ChangeRegistrationDetails - POST",
+        "operationId": "post-commands-changeregistrationdetails",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeRegistrationDetailsCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeRegistrationDetailsCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeRegistrationDetailsCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/commands/DeleteRegistration": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/commands/DeleteRegistration - POST",
+        "operationId": "post-commands-deleteregistration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistrationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistrationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistrationCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/commands/EndRegistration": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/commands/EndRegistration - POST",
+        "operationId": "post-commands-endregistration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndRegistrationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndRegistrationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndRegistrationCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/commands/RegisterAutomaticOccupancy": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/commands/RegisterAutomaticOccupancy - POST",
+        "operationId": "post-commands-registerautomaticoccupancy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterAutomaticOccupancyCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterAutomaticOccupancyCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterAutomaticOccupancyCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/commands/RegisterManualOccupancy": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/commands/RegisterManualOccupancy - POST",
+        "operationId": "post-commands-registermanualoccupancy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterManualOccupancyCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterManualOccupancyCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterManualOccupancyCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/monitor": {
+      "get": {
+        "tags": [
+          "Monitor"
+        ],
+        "summary": "/monitor - GET",
+        "operationId": "get-monitor",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/queries/GetActiveRegistrations": {
+      "get": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/queries/GetActiveRegistrations - GET",
+        "operationId": "get-queries-getactiveregistrations",
+        "parameters": [
+          {
+            "name": "ParkingAssetId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetActiveRegistrationsGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetActiveRegistrationsGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetActiveRegistrationsGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/queries/GetParkingAssetFloors": {
+      "get": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/queries/GetParkingAssetFloors - GET",
+        "operationId": "get-queries-getparkingassetfloors",
+        "parameters": [
+          {
+            "name": "ParkingAssetId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/queries/GetParkingAssetHeaders": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/queries/GetParkingAssetHeaders - POST",
+        "operationId": "post-queries-getparkingassetheaders",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParkingAssetHeadersQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParkingAssetHeadersQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetParkingAssetHeadersQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetParkingAssetHeadersPost200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetParkingAssetHeadersPost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetParkingAssetHeadersPost200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/queries/GetRecentlyOccupiedBays": {
+      "get": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/queries/GetRecentlyOccupiedBays - GET",
+        "operationId": "get-queries-getrecentlyoccupiedbays",
+        "parameters": [
+          {
+            "name": "ParkingAssetId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetRecentlyOccupiedBaysGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetRecentlyOccupiedBaysGet200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueriesGetRecentlyOccupiedBaysGet200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/queries/GetRegistration": {
+      "get": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/queries/GetRegistration - GET",
+        "operationId": "get-queries-getregistration",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRegistrationQueryResultItem"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRegistrationQueryResultItem"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRegistrationQueryResultItem"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RegisterAutomaticOccupancyCommand": {
+        "type": "object",
+        "properties": {
+          "occupancySessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "visitedName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterManualOccupancyCommand": {
+        "type": "object",
+        "properties": {
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true
+          },
+          "bayId": {
+            "type": "string",
+            "nullable": true
+          },
+          "startUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "visitedName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeRegistrationDetailsCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "startUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "visitedName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteRegistrationCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EndRegistrationCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "override": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetRegistrationQueryResultItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true
+          },
+          "bayId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdOnUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "visitedName": {
+            "type": "string",
+            "nullable": true
+          },
+          "occupancySessionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetActiveRegistrationsQueryResultItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true
+          },
+          "bayId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdOnUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "visitedName": {
+            "type": "string",
+            "nullable": true
+          },
+          "occupancySessionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetParkingAssetHeadersQuery": {
+        "type": "object",
+        "properties": {
+          "parkingAssetIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetParkingAssetHeadersQueryResultItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingAssetBay": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "bayType": {
+            "type": "string",
+            "nullable": true
+          },
+          "ordinal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gracePeriod": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingAssetFloor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "ordinal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingAssetBay"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetParkingAssetFloorsQueryResult": {
+        "type": "object",
+        "properties": {
+          "floors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingAssetFloor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetRecentlyOccupiedBaysQueryResultItem": {
+        "type": "object",
+        "properties": {
+          "bayId": {
+            "type": "string",
+            "nullable": true
+          },
+          "occupancySessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "occupancyStartTimeUtc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "QueriesGetActiveRegistrationsGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItem"
+        }
+      },
+      "QueriesGetActiveRegistrationsGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItem"
+        }
+      },
+      "QueriesGetActiveRegistrationsGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItem"
+        }
+      },
+      "QueriesGetParkingAssetHeadersPost200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItem"
+        }
+      },
+      "QueriesGetParkingAssetHeadersPost200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItem"
+        }
+      },
+      "QueriesGetParkingAssetHeadersPost200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItem"
+        }
+      },
+      "QueriesGetRecentlyOccupiedBaysGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem"
+        }
+      },
+      "QueriesGetRecentlyOccupiedBaysGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem"
+        }
+      },
+      "QueriesGetRecentlyOccupiedBaysGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem"
+        }
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "name": "API-KEY",
+        "in": "header",
+        "type": "apiKey"
+      },
+      "oAuth2": {
+        "flows": {
+          "authorizationCode": {
+            "scopes": {},
+            "authorizationUrl": "https://auth.appyway.com/authorize",
+            "tokenUrl": "https://auth.appyway.com/oauth/token"
+          }
+        },
+        "type": "oauth2"
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Too many requests"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized"
+      },
+      "Forbidden": {
+        "description": "Forbidden"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "oAuth2": []
+    }
+  ]
+}
