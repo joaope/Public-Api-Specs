@@ -1671,7 +1671,22 @@
         "type": "object",
         "properties": {
           "viewportCenter": {
-            "$ref": "#/components/schemas/LatLng"
+            "minLength": 1,
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Centre point for the query. Required."
           },
           "viewportSize": {
             "maximum": 750,
@@ -1685,7 +1700,21 @@
             "$ref": "#/components/schemas/FindParkingEntitiesByViewportFilters"
           },
           "distanceCalculationLocation": {
-            "$ref": "#/components/schemas/LatLng"
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Custom location within the viewport from which to calculate distances for returned entities. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order entities by distance from a given point that is not the centre of your requested viewport."
           },
           "geometryPreference": {
             "$ref": "#/components/schemas/GeometryPreference"
@@ -1762,7 +1791,21 @@
             "$ref": "#/components/schemas/FindParkingEntitiesByViewportFilters"
           },
           "distanceCalculationLocation": {
-            "$ref": "#/components/schemas/LatLng"
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Custom location within the viewport from which to calculate distances for returned entities. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order entities by distance from a given point that is not the centre of your requested viewport."
           },
           "geometryPreference": {
             "$ref": "#/components/schemas/GeometryPreference"
@@ -1876,7 +1919,22 @@
         "type": "object",
         "properties": {
           "viewportCenter": {
-            "$ref": "#/components/schemas/LatLng"
+            "minLength": 1,
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Centre point for the query. Required."
           },
           "viewportSize": {
             "maximum": 750,
@@ -1902,7 +1960,21 @@
             "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
           },
           "distanceCalculationLocation": {
-            "$ref": "#/components/schemas/LatLng"
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport."
           },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
@@ -2193,7 +2265,21 @@
             "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
           },
           "distanceCalculationLocation": {
-            "$ref": "#/components/schemas/LatLng"
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport."
           },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
@@ -2474,7 +2560,21 @@
             "nullable": true
           },
           "distanceCalculationLocation": {
-            "$ref": "#/components/schemas/LatLng"
+            "type": "object",
+            "properties": {
+              "lat": {
+                "type": "number",
+                "description": "Latitude",
+                "format": "double"
+              },
+              "lng": {
+                "type": "number",
+                "description": "Longitude",
+                "format": "double"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport."
           }
         },
         "additionalProperties": false,
