@@ -88,7 +88,7 @@ paths:
       tags:
       - Monitor
       summary: Monitor
-      description: Returns information on the health of the Explorer API service
+      description: Returns information on the health of the Restrictions API service
       operationId: get-monitor
       responses:
         "200":
@@ -106,11 +106,140 @@ components:
       properties:
         authoritySlug:
           type: string
+          description: Slug (human-readable identifier) for the authority for which to fetch data
           nullable: true
       additionalProperties: false
-    Feature:
+    LinkedEntitlementSet:
       type: object
       properties:
+        parkingEntitlementTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: The entitlement ID's to which this set applies.
+          nullable: true
+        setId:
+          type: string
+          description: Unique identifier of the applicable set. The set can be found in the Ylp.Restrictions.Contracts.Model.Authority
+          nullable: true
+      additionalProperties: false
+    LinkedSet:
+      type: object
+      properties:
+        setId:
+          type: string
+          description: Unique identifier of the applicable set. The set can be found in the Ylp.Restrictions.Contracts.Model.Authority
+          nullable: true
+      additionalProperties: false
+    SetRestrictionDetail:
+      type: object
+      properties:
+        restrictionTypeId:
+          type: integer
+          description: Type of the bay or line this restriction applies to
+          format: int32
+        locationNumber:
+          type: string
+          description: Used in conjunction with the payment provider on the authority to determine how the charge the user
+          nullable: true
+        operatingHoursSet:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedEntitlementSet'
+          description: Indicates the hours of operation when the restriction is in effect.
+          nullable: true
+        exemptionsSet:
+          type: object
+          properties:
+            setId:
+              type: string
+              description: Unique identifier of the applicable set. The set can be found in the Ylp.Restrictions.Contracts.Model.Authority
+              nullable: true
+          additionalProperties: false
+          description: Exclusions on all days that apply to specific people
+        exceptionsSet:
+          type: object
+          properties:
+            setId:
+              type: string
+              description: Unique identifier of the applicable set. The set can be found in the Ylp.Restrictions.Contracts.Model.Authority
+              nullable: true
+          additionalProperties: false
+          description: Exclusions on bank or named holidays that apply to everyone
+        tariffsSet:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedEntitlementSet'
+          description: Indicates the applicable tariffs in the case of restrictions that can have a tariff
+          nullable: true
+      additionalProperties: false
+    LatLng:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+      additionalProperties: false
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+          description: Street for the address
+          nullable: true
+        postcode:
+          type: string
+          description: Post code for the address
+          nullable: true
+        city:
+          type: string
+          description: City for the address
+          nullable: true
+        country:
+          type: string
+          description: Country for the address
+          nullable: true
+      additionalProperties: false
+      description: Models an address
+    OspPublicFeatureProperties:
+      type: object
+      properties:
+        onStreetParkingId:
+          type: string
+          description: Unique identifier of the OSP
+          nullable: true
+        authorityId:
+          type: string
+          description: Unique identifier of the authority this OSP belongs to
+          nullable: true
+        zoneId:
+          type: string
+          description: Unique identifier of the zone this OSP belongs to
+          nullable: true
+        restrictionTypeDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetRestrictionDetail'
+          description: Information about which set of restrictions apply to this OSP
+          nullable: true
+        venueId:
+          type: string
+          description: The venue to which this OSP is linked to. This determines when an OSP should follow the event day restriction instead of standard operating hours
+          nullable: true
+        centroid:
+          $ref: '#/components/schemas/LatLng'
+        address:
+          $ref: '#/components/schemas/Address'
+      additionalProperties: false
+    OspPublicFeaturePropertiesFeature:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/OspPublicFeatureProperties'
         type:
           type: string
           nullable: true
@@ -118,22 +247,105 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    FeatureCollection:
+      description: A Geo-Json feature; an object that can be plotted on a map by a GeoJson compatible client.
+    OspPublicFeaturePropertiesFeatureCollection:
       type: object
       properties:
         type:
           type: string
+          description: Type of this collection
           nullable: true
         features:
           type: array
           items:
-            $ref: '#/components/schemas/Feature'
+            $ref: '#/components/schemas/OspPublicFeaturePropertiesFeature'
+          description: The features in the collection
           nullable: true
         properties:
           type: object
           additionalProperties: false
+          description: Collection-level metadata properties
           nullable: true
       additionalProperties: false
+      description: |-
+        A GeoJson feature collection, containing a collection of objects that can be plotted on a map by a GeoJson compatible client. AppyWay data
+        is included as metadata on the features.
+    ZoneType:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 7
+      - 8
+      - 9
+      - 10
+      type: integer
+      format: int32
+    ZonePublicFeatureProperties:
+      type: object
+      properties:
+        zoneId:
+          type: string
+          description: Unique identifier of the zone
+          nullable: true
+        authorityId:
+          type: string
+          description: Unique identifier of the authority this zone belongs to
+          nullable: true
+        name:
+          type: string
+          description: Name of the zone
+          nullable: true
+        restrictionTypeDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetRestrictionDetail'
+          description: Default restrictions that apply in this zone
+          nullable: true
+        type:
+          $ref: '#/components/schemas/ZoneType'
+        venueId:
+          type: string
+          description: VenueID to which this zone is associated. This will influence when event day operating hours are in effect
+          nullable: true
+      additionalProperties: false
+    ZonePublicFeaturePropertiesFeature:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/ZonePublicFeatureProperties'
+        type:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties: false
+      description: A Geo-Json feature; an object that can be plotted on a map by a GeoJson compatible client.
+    ZonePublicFeaturePropertiesFeatureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of this collection
+          nullable: true
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZonePublicFeaturePropertiesFeature'
+          description: The features in the collection
+          nullable: true
+        properties:
+          type: object
+          additionalProperties: false
+          description: Collection-level metadata properties
+          nullable: true
+      additionalProperties: false
+      description: |-
+        A GeoJson feature collection, containing a collection of objects that can be plotted on a map by a GeoJson compatible client. AppyWay data
+        is included as metadata on the features.
     CrsProperties:
       type: object
       properties:
@@ -215,16 +427,20 @@ components:
         end:
           $ref: '#/components/schemas/LocalTime'
       additionalProperties: false
+      description: A time window during a day
     MonthAndDay:
       type: object
       properties:
         month:
           type: integer
+          description: The month of the year, from 1-12
           format: int32
         day:
           type: integer
+          description: The day of the month, from 1-31
           format: int32
       additionalProperties: false
+      description: Models a month and a day
     RuleTime:
       type: object
       properties:
@@ -233,23 +449,27 @@ components:
           items:
             type: integer
             format: int32
+          description: Months of the year during which this rule applies
           nullable: true
         days:
           type: array
           items:
             type: integer
             format: int32
+          description: Applicable Days
           nullable: true
         weekNumbers:
           type: array
           items:
             type: integer
             format: int32
+          description: Week number to apply Days
           nullable: true
         hours:
           type: array
           items:
             $ref: '#/components/schemas/Hours'
+          description: Set of hours during which this rule applies.
           nullable: true
         firstDate:
           $ref: '#/components/schemas/MonthAndDay'
@@ -266,22 +486,29 @@ components:
           items:
             type: integer
             format: int32
+          description: "Determines which entitlement types a driver must hold in order to be able to park during the period defined by this rule.\r\n            \r\nAn entitlement type is something or some aspect of a driver's situation that entitles them to park. For example, a Pay and Display ticket\r\nentitles a driver to park in certain locations. Other examples would be a disabled blue badge, or the fact that a user is driving a motorcycle."
           nullable: true
         maxStay:
           type: integer
+          description: Maximum stay duration in minutes.
           format: int32
           nullable: true
         minStay:
           type: integer
+          description: Minimum stay duration in minutes.
           format: int32
           nullable: true
         noReturn:
           type: integer
+          description: No return duration in minutes.
           format: int32
           nullable: true
         noReturnUntil:
           $ref: '#/components/schemas/LocalTime'
       additionalProperties: false
+      description: |-
+        A Rule defines a set of entitlement types, the times that drivers holding those entitlement types may park and the rules for that window
+        including the maximum stay and no return periods.
     OperatingHours:
       type: object
       properties:
@@ -289,11 +516,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Rule'
+          description: List of Ylp.Restrictions.Contracts.Model.Rule applicable on normal days
           nullable: true
         eventDays:
           type: array
           items:
             $ref: '#/components/schemas/Rule'
+          description: List of Ylp.Restrictions.Contracts.Model.Rule applicable on event days in an associated venue
           nullable: true
       additionalProperties: false
     OperatingHoursSet:
@@ -303,23 +532,29 @@ components:
           $ref: '#/components/schemas/OperatingHours'
         setId:
           type: string
+          description: Unique identifier for this set
           nullable: true
         name:
           type: string
+          description: Human-readable name for the set
           nullable: true
       additionalProperties: false
+      description: Defines a set of operating hours that may be applied to on-street parking lines or bays
     TariffDetailSurcharge:
       type: object
       properties:
         surchargeType:
           type: integer
+          description: Required property that determines how surcharge is calculated
           format: int32
         value:
           type: integer
+          description: The amount of the surcharge. If SurchargeType is 0 (flat), this will be a monetary amount in pence. If it is 1 (percentage), this will be a percentage.
           format: int32
           nullable: true
         notes:
           type: string
+          description: Additional of Surcharge including Rules
           nullable: true
         ruleType:
           type: integer
@@ -331,31 +566,49 @@ components:
       properties:
         price:
           type: integer
+          description: |-
+            The price in pence charged for parking for the indicated
+            Ylp.Restrictions.Contracts.Model.TariffDetail.Duration.
           format: int32
-        surcharge:
-          type: integer
-          format: int32
-          nullable: true
         surchargeDetail:
           $ref: '#/components/schemas/TariffDetailSurcharge'
         duration:
           type: integer
+          description: |-
+            The duration in minutes for which you can park if you pay
+            Ylp.Restrictions.Contracts.Model.TariffDetail.Price. Null if there is a fixed charge regardless
+            of duration.
           format: int32
           nullable: true
         minimumPriceIncrement:
           type: integer
+          description: |-
+            The smallest unit by which the price can increment. If null, then
+            the minimum increment will be the same as Ylp.Restrictions.Contracts.Model.TariffDetail.Price.
           format: int32
           nullable: true
         singlePaymentCanCrossMidnight:
           type: boolean
+          description: |-
+            Indicates whether a payment of one minimum increment is allowed
+            to cross over midnight.
         from:
           type: integer
+          description: |-
+            The offset in minutes into a parking session from which this rate
+            applies.
           format: int32
         upTo:
           type: integer
+          description: |-
+            Set on variable rate tariffs to indicate the maximum stay length
+            for which this entry applies.
           format: int32
           nullable: true
       additionalProperties: false
+      description: |-
+        One entry in the tariff details in a
+        Ylp.Restrictions.Contracts.Model.TariffForTimesAndDates.
     TariffForTimesAndDates:
       type: object
       properties:
@@ -364,11 +617,15 @@ components:
           items:
             type: integer
             format: int32
+          description: The payment types for which these tariff details apply.
           nullable: true
         details:
           type: array
           items:
             $ref: '#/components/schemas/TariffDetail'
+          description: |-
+            The details of the tariff that applies for the entitlement types
+            and dates indicated by this entry.
           nullable: true
         timeFrom:
           $ref: '#/components/schemas/LocalTime'
@@ -383,18 +640,26 @@ components:
           items:
             type: integer
             format: int32
+          description: The months of the year on which these details apply.
           nullable: true
         days:
           type: array
           items:
             type: integer
             format: int32
+          description: |-
+            The days of the week (1 = Mon, 7 = Sun) on which these details
+            apply.
           nullable: true
         timeType:
           type: integer
+          description: Indicates the Type of Tariff
           format: int32
           nullable: true
       additionalProperties: false
+      description: |-
+        Contains tariff details applicable to a particular set of dates and
+        times, and for a particular set of entitlement types.
     TariffSet:
       type: object
       properties:
@@ -402,14 +667,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TariffForTimesAndDates'
+          description: The tariffs for the set
           nullable: true
         setId:
           type: string
+          description: Unique identifier for this set
           nullable: true
         name:
           type: string
+          description: Human-readable name for the set
           nullable: true
       additionalProperties: false
+      description: Defines a set of tariffs that may be applied to on-street parking bays or lines
     SetCollection:
       type: object
       properties:
@@ -417,21 +686,31 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OperatingHoursSet'
+          description: Sets of operating hours in this collection
           nullable: true
         tariffSets:
           type: array
           items:
             $ref: '#/components/schemas/TariffSet'
+          description: Sets of tariffs in this collection
           nullable: true
       additionalProperties: false
+      description: |-
+        Defines a collection of sets.
+
+        A Set may represent a collection of operating hours or tariffs which are defined at the authority level. These sets may then be applied
+        to on-street parking lines/bays within the authority. More than one set may be associated with a particular OSP, and the same set
+        may be applied to multiple OSPs in the authority. This saves having to define the rules for each individual OSP.
     Authority:
       type: object
       properties:
         authorityId:
           type: string
+          description: Unique identifier for the authority
           nullable: true
         name:
           type: string
+          description: Name of the authority
           nullable: true
         shape:
           $ref: '#/components/schemas/Polygon'
@@ -444,66 +723,83 @@ components:
         osps:
           type: array
           items:
-            $ref: '#/components/schemas/FeatureCollection'
+            $ref: '#/components/schemas/OspPublicFeaturePropertiesFeatureCollection'
+          description: "On-street parking bays or lines that are located in the authority.\r\n            \r\nThe OSPs are exposed in a list of GeoJson feature collections, allowing them to be easily plotted on a map by compatible clients. Each\r\nFeatureCollection contains the OSPs for a different zone.\r\n            \r\nSee https://tools.ietf.org/html/rfc7946#section-3.3"
           nullable: true
         zones:
-          $ref: '#/components/schemas/FeatureCollection'
+          $ref: '#/components/schemas/ZonePublicFeaturePropertiesFeatureCollection'
         authority:
           $ref: '#/components/schemas/Authority'
       additionalProperties: false
+      description: Response object containing on-street parking restrictions for an authority
     AuthorityResponseOkResponse:
       type: object
       properties:
         success:
           type: boolean
+          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/AuthorityResponse'
         eTag:
           type: string
+          description: ETag for the response
           nullable: true
       additionalProperties: false
+      description: A successful response
     Error:
       type: object
       properties:
         property:
           type: string
+          description: The property that caused the problem
           nullable: true
         code:
           type: string
+          description: Machine-readable code representing the type of error
           nullable: true
         message:
           type: string
+          description: Human-readable message for the error
           nullable: true
       additionalProperties: false
+      description: Represents a validation error
     BadRequestResponse:
       type: object
       properties:
         success:
           type: boolean
+          description: Whether the request was successful
           readOnly: true
+          example: false
         message:
           type: string
+          description: Human-readable message for this response
           nullable: true
         errors:
           type: array
           items:
             $ref: '#/components/schemas/Error'
+          description: Collection of validation errors caused by the request
           nullable: true
       additionalProperties: false
+      description: A response indicating the request was invalid
     UnauthorizedResponse:
       type: object
       properties:
         success:
           type: boolean
+          description: Whether the response was successful
           readOnly: true
         message:
           type: string
+          description: Human-readable message for this response
           nullable: true
         errors:
           type: array
           items:
             $ref: '#/components/schemas/Error'
+          description: Payload of the response
           nullable: true
       additionalProperties: false
     NotModifiedResponse:
@@ -511,11 +807,15 @@ components:
       properties:
         success:
           type: boolean
+          description: Whether the request was successful
           readOnly: true
+          example: false
         message:
           type: string
+          description: Human-readable message for this response
           nullable: true
       additionalProperties: false
+      description: A response indicating the requested resource was not found
     LatestOrderForOspQuery:
       type: object
       properties:
