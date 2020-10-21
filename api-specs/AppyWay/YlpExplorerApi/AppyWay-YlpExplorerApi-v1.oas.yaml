@@ -722,26 +722,7 @@ components:
       type: object
       properties:
         viewport:
-          minLength: 1
-          type: object
-          properties:
-            coordinates:
-              type: array
-              items:
-                type: array
-                items:
-                  type: array
-                  items:
-                    type: number
-                    format: double
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            crs:
-              $ref: '#/components/schemas/Crs'
-          additionalProperties: false
-          description: Viewport for the query, expressed as a GeoJson polygon. Required.
+          $ref: '#/components/schemas/Polygon'
       additionalProperties: false
       description: A request to search for zone default information by viewport
     ZoneDefaultApplicableTime:
@@ -1289,26 +1270,7 @@ components:
       type: object
       properties:
         viewport:
-          minLength: 1
-          type: object
-          properties:
-            coordinates:
-              type: array
-              items:
-                type: array
-                items:
-                  type: array
-                  items:
-                    type: number
-                    format: double
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            crs:
-              $ref: '#/components/schemas/Crs'
-          additionalProperties: false
-          description: Viewport for the query, expressed as a GeoJson polygon. Required.
+          $ref: '#/components/schemas/Polygon'
         filters:
           $ref: '#/components/schemas/FindParkingEntitiesByViewportFilters'
         distanceCalculationLocation:
@@ -1338,7 +1300,9 @@ components:
             all types will be returned.
           nullable: true
       additionalProperties: false
-      description: Request for searching for Parking Entities for a given viewport. The viewport is supplied as a GeoJson polygon.
+      description: |-
+        Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of
+        the centre point and the length of one side.
     FindParkingQuotesByViewportFilters:
       type: object
       properties:
@@ -1723,26 +1687,7 @@ components:
       type: object
       properties:
         viewport:
-          minLength: 1
-          type: object
-          properties:
-            coordinates:
-              type: array
-              items:
-                type: array
-                items:
-                  type: array
-                  items:
-                    type: number
-                    format: double
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            crs:
-              $ref: '#/components/schemas/Crs'
-          additionalProperties: false
-          description: Viewport for the query, expressed as a GeoJson polygon. Required.
+          $ref: '#/components/schemas/Polygon'
         startTime:
           minLength: 1
           type: string
@@ -1777,7 +1722,9 @@ components:
         vehicleOperatorContext:
           $ref: '#/components/schemas/VehicleOperatorContext'
       additionalProperties: false
-      description: Request for searching for Parking Quotes for a given viewport.  The viewport is supplied as a GeoJson polygon.
+      description: |-
+        Request for searching for Parking Quotes for a square viewport. The viewport is defined by the latitude and longitude of
+        the centre point and the length of one side.
     FetchParkingQuoteByIdQuery:
       required:
       - endTime
@@ -1882,24 +1829,7 @@ components:
       type: object
       properties:
         viewport:
-          type: object
-          properties:
-            coordinates:
-              type: array
-              items:
-                type: array
-                items:
-                  type: array
-                  items:
-                    type: number
-                    format: double
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            crs:
-              $ref: '#/components/schemas/Crs'
-          additionalProperties: false
+          $ref: '#/components/schemas/Polygon'
         basemap:
           $ref: '#/components/schemas/BasemapTranslation'
       additionalProperties: false
@@ -1988,26 +1918,7 @@ components:
       type: object
       properties:
         viewport:
-          minLength: 1
-          type: object
-          properties:
-            coordinates:
-              type: array
-              items:
-                type: array
-                items:
-                  type: array
-                  items:
-                    type: number
-                    format: double
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            crs:
-              $ref: '#/components/schemas/Crs'
-          additionalProperties: false
-          description: Viewport for the query, expressed as a GeoJson polygon. Required.
+          $ref: '#/components/schemas/Polygon'
         startTime:
           minLength: 1
           type: string
