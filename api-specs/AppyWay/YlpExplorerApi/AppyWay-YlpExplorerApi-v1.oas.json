@@ -1094,7 +1094,33 @@
         "type": "object",
         "properties": {
           "viewport": {
-            "$ref": "#/components/schemas/Polygon"
+            "minLength": 1,
+            "type": "object",
+            "properties": {
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "nullable": true
+              },
+              "type": {
+                "type": "string",
+                "nullable": true
+              },
+              "crs": {
+                "$ref": "#/components/schemas/Crs"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Viewport for the query, expressed as a GeoJson polygon. Required."
           }
         },
         "additionalProperties": false,
@@ -1785,7 +1811,33 @@
         "type": "object",
         "properties": {
           "viewport": {
-            "$ref": "#/components/schemas/Polygon"
+            "minLength": 1,
+            "type": "object",
+            "properties": {
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "nullable": true
+              },
+              "type": {
+                "type": "string",
+                "nullable": true
+              },
+              "crs": {
+                "$ref": "#/components/schemas/Crs"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Viewport for the query, expressed as a GeoJson polygon. Required."
           },
           "filters": {
             "$ref": "#/components/schemas/FindParkingEntitiesByViewportFilters"
@@ -1821,7 +1873,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for searching for Parking Entities for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+        "description": "Request for searching for Parking Entities for a given viewport. The viewport is supplied as a GeoJson polygon."
       },
       "FindParkingQuotesByViewportFilters": {
         "type": "object",
@@ -2247,7 +2299,33 @@
         "type": "object",
         "properties": {
           "viewport": {
-            "$ref": "#/components/schemas/Polygon"
+            "minLength": 1,
+            "type": "object",
+            "properties": {
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "nullable": true
+              },
+              "type": {
+                "type": "string",
+                "nullable": true
+              },
+              "crs": {
+                "$ref": "#/components/schemas/Crs"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Viewport for the query, expressed as a GeoJson polygon. Required."
           },
           "startTime": {
             "minLength": 1,
@@ -2286,7 +2364,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for searching for Parking Quotes for a square viewport. The viewport is defined by the latitude and longitude of\r\nthe centre point and the length of one side."
+        "description": "Request for searching for Parking Quotes for a given viewport.  The viewport is supplied as a GeoJson polygon."
       },
       "FetchParkingQuoteByIdQuery": {
         "required": [
@@ -2413,7 +2491,31 @@
         "type": "object",
         "properties": {
           "viewport": {
-            "$ref": "#/components/schemas/Polygon"
+            "type": "object",
+            "properties": {
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "nullable": true
+              },
+              "type": {
+                "type": "string",
+                "nullable": true
+              },
+              "crs": {
+                "$ref": "#/components/schemas/Crs"
+              }
+            },
+            "additionalProperties": false
           },
           "basemap": {
             "$ref": "#/components/schemas/BasemapTranslation"
@@ -2536,7 +2638,33 @@
         "type": "object",
         "properties": {
           "viewport": {
-            "$ref": "#/components/schemas/Polygon"
+            "minLength": 1,
+            "type": "object",
+            "properties": {
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                },
+                "nullable": true
+              },
+              "type": {
+                "type": "string",
+                "nullable": true
+              },
+              "crs": {
+                "$ref": "#/components/schemas/Crs"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Viewport for the query, expressed as a GeoJson polygon. Required."
           },
           "startTime": {
             "minLength": 1,
