@@ -139,7 +139,8 @@ paths:
     get:
       tags:
       - Monitor
-      summary: /monitor - GET
+      summary: Monitor
+      description: Returns information on the health of the OccupancyAuthentication API service
       operationId: get-monitor
       responses:
         "200":
@@ -151,29 +152,29 @@ paths:
         "429":
           $ref: '#/components/responses/TooManyRequests'
   /queries/GetActiveRegistrations:
-    get:
+    post:
       tags:
       - Queries
-      summary: /queries/GetActiveRegistrations - GET
-      operationId: get-queries-getactiveregistrations
-      parameters:
-      - name: ParkingAssetId
-        in: query
-        schema:
-          type: string
+      summary: /queries/GetActiveRegistrations - POST
+      operationId: post-queries-getactiveregistrations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetActiveRegistrationsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetActiveRegistrationsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetActiveRegistrationsQuery'
       responses:
         "200":
           description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/QueriesGetActiveRegistrationsGet200TextPlainResponse'
             application/json:
               schema:
-                $ref: '#/components/schemas/QueriesGetActiveRegistrationsGet200ApplicationJsonResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/QueriesGetActiveRegistrationsGet200TextJsonResponse'
+                $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItemIReadOnlyCollectionResponse'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -181,29 +182,29 @@ paths:
         "429":
           $ref: '#/components/responses/TooManyRequests'
   /queries/GetParkingAssetFloors:
-    get:
+    post:
       tags:
       - Queries
-      summary: /queries/GetParkingAssetFloors - GET
-      operationId: get-queries-getparkingassetfloors
-      parameters:
-      - name: ParkingAssetId
-        in: query
-        schema:
-          type: string
+      summary: /queries/GetParkingAssetFloors - POST
+      operationId: post-queries-getparkingassetfloors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetParkingAssetFloorsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetParkingAssetFloorsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetParkingAssetFloorsQuery'
       responses:
         "200":
           description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
             application/json:
               schema:
-                $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
+                $ref: '#/components/schemas/GetParkingAssetFloorsQueryResultResponse'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -231,15 +232,9 @@ paths:
         "200":
           description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/QueriesGetParkingAssetHeadersPost200TextPlainResponse'
             application/json:
               schema:
-                $ref: '#/components/schemas/QueriesGetParkingAssetHeadersPost200ApplicationJsonResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/QueriesGetParkingAssetHeadersPost200TextJsonResponse'
+                $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionResponse'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -247,29 +242,29 @@ paths:
         "429":
           $ref: '#/components/responses/TooManyRequests'
   /queries/GetRecentlyOccupiedBays:
-    get:
+    post:
       tags:
       - Queries
-      summary: /queries/GetRecentlyOccupiedBays - GET
-      operationId: get-queries-getrecentlyoccupiedbays
-      parameters:
-      - name: ParkingAssetId
-        in: query
-        schema:
-          type: string
+      summary: /queries/GetRecentlyOccupiedBays - POST
+      operationId: post-queries-getrecentlyoccupiedbays
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRecentlyOccupiedBaysQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetRecentlyOccupiedBaysQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetRecentlyOccupiedBaysQuery'
       responses:
         "200":
           description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/QueriesGetRecentlyOccupiedBaysGet200TextPlainResponse'
             application/json:
               schema:
-                $ref: '#/components/schemas/QueriesGetRecentlyOccupiedBaysGet200ApplicationJsonResponse'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/QueriesGetRecentlyOccupiedBaysGet200TextJsonResponse'
+                $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionResponse'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -277,29 +272,29 @@ paths:
         "429":
           $ref: '#/components/responses/TooManyRequests'
   /queries/GetRegistration:
-    get:
+    post:
       tags:
       - Queries
-      summary: /queries/GetRegistration - GET
-      operationId: get-queries-getregistration
-      parameters:
-      - name: Id
-        in: query
-        schema:
-          type: string
+      summary: /queries/GetRegistration - POST
+      operationId: post-queries-getregistration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRegistrationQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetRegistrationQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetRegistrationQuery'
       responses:
         "200":
           description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/GetRegistrationQueryResultItem'
             application/json:
               schema:
-                $ref: '#/components/schemas/GetRegistrationQueryResultItem'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/GetRegistrationQueryResultItem'
+                $ref: '#/components/schemas/GetRegistrationQueryResultItemResponse'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -392,6 +387,16 @@ components:
         override:
           type: boolean
       additionalProperties: false
+    GetRegistrationQuery:
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          minLength: 1
+          type: string
+          nullable: true
+      additionalProperties: false
     GetRegistrationQueryResultItem:
       type: object
       properties:
@@ -424,6 +429,48 @@ components:
           type: string
           nullable: true
         occupancySessionId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetRegistrationQueryResultItemResponse:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/GetRegistrationQueryResultItem'
+        success:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+        stackTrace:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetActiveRegistrationsQuery:
+      required:
+      - parkingAssetId
+      type: object
+      properties:
+        parkingAssetId:
+          minLength: 1
           type: string
           nullable: true
       additionalProperties: false
@@ -462,10 +509,35 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    GetActiveRegistrationsQueryResultItemIReadOnlyCollectionResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItem'
+          nullable: true
+        success:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+        stackTrace:
+          type: string
+          nullable: true
+      additionalProperties: false
     GetParkingAssetHeadersQuery:
+      required:
+      - parkingAssetIds
       type: object
       properties:
         parkingAssetIds:
+          minLength: 1
           type: array
           items:
             type: string
@@ -478,6 +550,38 @@ components:
           type: string
           nullable: true
         name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItem'
+          nullable: true
+        success:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+        stackTrace:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetParkingAssetFloorsQuery:
+      required:
+      - parkingAssetId
+      type: object
+      properties:
+        parkingAssetId:
+          minLength: 1
           type: string
           nullable: true
       additionalProperties: false
@@ -528,6 +632,35 @@ components:
             $ref: '#/components/schemas/ParkingAssetFloor'
           nullable: true
       additionalProperties: false
+    GetParkingAssetFloorsQueryResultResponse:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
+        success:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+        stackTrace:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetRecentlyOccupiedBaysQuery:
+      required:
+      - parkingAssetId
+      type: object
+      properties:
+        parkingAssetId:
+          minLength: 1
+          type: string
+          nullable: true
+      additionalProperties: false
     GetRecentlyOccupiedBaysQueryResultItem:
       type: object
       properties:
@@ -541,42 +674,28 @@ components:
           type: string
           format: date-time
       additionalProperties: false
-    QueriesGetActiveRegistrationsGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItem'
-    QueriesGetActiveRegistrationsGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItem'
-    QueriesGetActiveRegistrationsGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItem'
-    QueriesGetParkingAssetHeadersPost200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItem'
-    QueriesGetParkingAssetHeadersPost200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItem'
-    QueriesGetParkingAssetHeadersPost200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItem'
-    QueriesGetRecentlyOccupiedBaysGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
-    QueriesGetRecentlyOccupiedBaysGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
-    QueriesGetRecentlyOccupiedBaysGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
+    GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
+          nullable: true
+        success:
+          type: boolean
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+        stackTrace:
+          type: string
+          nullable: true
+      additionalProperties: false
   securitySchemes:
     apiKey:
       name: API-KEY
