@@ -109,6 +109,39 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /country/get/{countryId}:
+    get:
+      tags:
+      - Country
+      summary: Get
+      description: Gets a country by id
+      operationId: get-country-get-countryid
+      parameters:
+      - name: countryId
+        in: path
+        description: Format - uuid.
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Country'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /country/list:
     get:
       tags:
@@ -336,6 +369,32 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /movingRestrictionType/list:
+    get:
+      tags:
+      - MovingRestrictionType
+      summary: List
+      description: Gets all moving restriction types
+      operationId: get-movingrestrictiontype-list
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/MovingRestrictionTypeListGet200TextPlainResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MovingRestrictionTypeListGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/MovingRestrictionTypeListGet200TextJsonResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /noteVisibilityType/list:
     get:
       tags:
@@ -434,6 +493,39 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/PermitTypeListGet200TextJsonResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /region/get/{regionId}:
+    get:
+      tags:
+      - Region
+      summary: Get
+      description: Gets a region by id
+      operationId: get-region-get-regionid
+      parameters:
+      - name: regionId
+        in: path
+        description: Format - uuid.
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Region'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Region'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -931,6 +1023,46 @@ components:
           type: number
           format: double
       additionalProperties: false
+    MovingRestrictionTypeOption:
+      type: object
+      properties:
+        MovingRestrictionTypeId:
+          type: integer
+          format: int32
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Value:
+          type: integer
+          format: int32
+      additionalProperties: false
+    MovingRestrictionType:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Description:
+          type: string
+          nullable: true
+        Property:
+          type: string
+          nullable: true
+        Unit:
+          type: string
+          nullable: true
+        Options:
+          type: array
+          items:
+            $ref: '#/components/schemas/MovingRestrictionTypeOption'
+          nullable: true
+      additionalProperties: false
     SpecialRestriction:
       type: object
       properties:
@@ -1056,6 +1188,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestrictionType'
+          nullable: true
+        MovingRestrictionTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/MovingRestrictionType'
           nullable: true
         SpecialRestrictions:
           type: array
@@ -1193,6 +1330,18 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/FuelType'
+    MovingRestrictionTypeListGet200TextPlainResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/MovingRestrictionType'
+    MovingRestrictionTypeListGet200ApplicationJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/MovingRestrictionType'
+    MovingRestrictionTypeListGet200TextJsonResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/MovingRestrictionType'
     NoteVisibilityTypeListGet200TextPlainResponse:
       type: array
       items:
