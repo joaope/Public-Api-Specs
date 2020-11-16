@@ -1,0 +1,2277 @@
+{
+  "item": [
+    {
+      "id": "149f52a2-f501-4ae0-a0f6-c0266d1e7331",
+      "name": "feedback",
+      "item": [
+        {
+          "id": "c1cf2c47-6188-40fe-b8be-1fc9691a87fc",
+          "name": "/feedback/reply/{feedbackId} - POST",
+          "request": {
+            "name": "/feedback/reply/{feedbackId} - POST",
+            "description": {},
+            "url": {
+              "path": [
+                "feedback",
+                "reply",
+                ":feedbackId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "(Required) Format - uuid.",
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "feedbackId"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"<string>\",\n    \"message\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "c849cb35-b82b-4c93-a372-44262c622563",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "reply",
+                    ":feedbackId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "type": "any",
+                      "key": "feedbackId"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"<string>\",\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"deserunt fugiat\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e996b6c4-587d-4983-b0f4-1bc47f95a98f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "reply",
+                    ":feedbackId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "type": "any",
+                      "key": "feedbackId"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"<string>\",\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9b628068-82ce-4e56-8fff-85f754dd1958",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "reply",
+                    ":feedbackId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "type": "any",
+                      "key": "feedbackId"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"<string>\",\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a5c1633a-3910-4a56-95e1-d99b9192f2ad",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "reply",
+                    ":feedbackId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "type": "any",
+                      "key": "feedbackId"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"<string>\",\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "fc96d747-52b1-45fa-80b1-2daa94eccc67",
+          "name": "/feedback/submit - POST",
+          "request": {
+            "name": "/feedback/submit - POST",
+            "description": {},
+            "url": {
+              "path": [
+                "feedback",
+                "submit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orderId\": \"<uuid>\",\n    \"orderSupport\": \"<integer>\",\n    \"feedbackCategory\": \"<integer>\",\n    \"responderType\": \"<integer>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"addressLine1\": \"<string>\",\n    \"addressLine2\": \"<string>\",\n    \"addressCity\": \"<string>\",\n    \"addressPostCode\": \"<string>\",\n    \"addressCountry\": \"<string>\",\n    \"feedbackText\": \"<string>\",\n    \"honeypot\": \"<string>\",\n    \"ellapsedSeconds\": \"<integer>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "86da73b2-8feb-4fc4-a803-16c2fef19c2c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"orderId\": \"<uuid>\",\n    \"orderSupport\": \"<integer>\",\n    \"feedbackCategory\": \"<integer>\",\n    \"responderType\": \"<integer>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"addressLine1\": \"<string>\",\n    \"addressLine2\": \"<string>\",\n    \"addressCity\": \"<string>\",\n    \"addressPostCode\": \"<string>\",\n    \"addressCountry\": \"<string>\",\n    \"feedbackText\": \"<string>\",\n    \"honeypot\": \"<string>\",\n    \"ellapsedSeconds\": \"<integer>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"deserunt fugiat\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f83c5387-f598-410a-9ae0-f2a4bbf6d062",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"orderId\": \"<uuid>\",\n    \"orderSupport\": \"<integer>\",\n    \"feedbackCategory\": \"<integer>\",\n    \"responderType\": \"<integer>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"addressLine1\": \"<string>\",\n    \"addressLine2\": \"<string>\",\n    \"addressCity\": \"<string>\",\n    \"addressPostCode\": \"<string>\",\n    \"addressCountry\": \"<string>\",\n    \"feedbackText\": \"<string>\",\n    \"honeypot\": \"<string>\",\n    \"ellapsedSeconds\": \"<integer>\"\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6c452bb-0fa2-4cc4-8b70-c0595b45a001",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"orderId\": \"<uuid>\",\n    \"orderSupport\": \"<integer>\",\n    \"feedbackCategory\": \"<integer>\",\n    \"responderType\": \"<integer>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"addressLine1\": \"<string>\",\n    \"addressLine2\": \"<string>\",\n    \"addressCity\": \"<string>\",\n    \"addressPostCode\": \"<string>\",\n    \"addressCountry\": \"<string>\",\n    \"feedbackText\": \"<string>\",\n    \"honeypot\": \"<string>\",\n    \"ellapsedSeconds\": \"<integer>\"\n}"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "57b88786-ab22-4408-b16f-7068fc1e82f2",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feedback",
+                    "submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"orderId\": \"<uuid>\",\n    \"orderSupport\": \"<integer>\",\n    \"feedbackCategory\": \"<integer>\",\n    \"responderType\": \"<integer>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"addressLine1\": \"<string>\",\n    \"addressLine2\": \"<string>\",\n    \"addressCity\": \"<string>\",\n    \"addressPostCode\": \"<string>\",\n    \"addressCountry\": \"<string>\",\n    \"feedbackText\": \"<string>\",\n    \"honeypot\": \"<string>\",\n    \"ellapsedSeconds\": \"<integer>\"\n}"
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fc15073d-bb7e-4817-97af-c373fc688744",
+      "name": "/manage/clearExpiredOrders - GET",
+      "request": {
+        "name": "/manage/clearExpiredOrders - GET",
+        "description": {},
+        "url": {
+          "path": [
+            "manage",
+            "clearExpiredOrders"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "49d8d589-2dda-432f-a7f3-ef094bbc5040",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "manage",
+                "clearExpiredOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "9ba58734-5a4f-4c1a-9356-443e9ebf1185",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "manage",
+                "clearExpiredOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "a70b4ea5-61e7-4ea6-8482-8ac61dcbc4fe",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "manage",
+                "clearExpiredOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b26e8586-32c9-4a4c-89c1-7fe289b1acf8",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "manage",
+                "clearExpiredOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "031eee5a-86bc-437c-a711-07b7ac3a14da",
+      "name": "report",
+      "item": [
+        {
+          "id": "5aeeafc5-f3a8-4972-81a4-bd3deb53541f",
+          "name": "/report/fetchActiveOrderResponseTotalsByAuthority - GET",
+          "request": {
+            "name": "/report/fetchActiveOrderResponseTotalsByAuthority - GET",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "fetchActiveOrderResponseTotalsByAuthority"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a03fb858-e91a-4d91-8fa7-213aa70932f2",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchActiveOrderResponseTotalsByAuthority"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"totalActiveConsultations\": -40568607,\n \"totalReadThreads\": 10134139,\n \"totalUnreadThreads\": 55110285,\n \"totalRespondedThreads\": -89264720\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73ca4003-db00-4d80-952b-24df2bd63626",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchActiveOrderResponseTotalsByAuthority"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ee982ae-367e-47ad-9697-128c90b55656",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchActiveOrderResponseTotalsByAuthority"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c266867-f0f2-475d-82f5-daf5e8c8332e",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchActiveOrderResponseTotalsByAuthority"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "4ad9bb86-e683-46d3-8132-7d737c39fe81",
+          "name": "/report/fetchConsultationDetailsByAuthorityAndOrder - GET",
+          "request": {
+            "name": "/report/fetchConsultationDetailsByAuthorityAndOrder - GET",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "fetchConsultationDetailsByAuthorityAndOrder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "orderId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2cb15c3-94e7-4aa9-8119-2d2efdb7f0c6",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationDetailsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"orderId\": \"magna\",\n \"orderName\": \"aliquip mollit\",\n \"orderReason\": \"reprehenderit sint in\",\n \"proposedDate\": \"voluptate amet\",\n \"consultationEndDate\": \"proident sint Lorem velit\",\n \"orderFeedbackStatus\": 0,\n \"orderState\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "62060182-8948-4bb0-96cb-98759c9afcb9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationDetailsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2792925f-d000-4a8c-9a4e-0839595e2a41",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationDetailsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4d8d4a93-25ef-48ff-821e-80664c025aa5",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationDetailsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "300cbb1b-c624-4431-bde3-ff281612bc0a",
+          "name": "/report/fetchConsultationsByAuthorityId - GET",
+          "request": {
+            "name": "/report/fetchConsultationsByAuthorityId - GET",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "fetchConsultationsByAuthorityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "",
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - int32.",
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "description": "Format - int32.",
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1578e263-721b-4863-b11d-ad07b50903c4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationsByAuthorityId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"orderStatusCounts\": [\n  {\n   \"status\": 0,\n   \"count\": 53233972\n  },\n  {\n   \"status\": 0,\n   \"count\": 49450614\n  }\n ],\n \"orderFeedbackSummaries\": [\n  {\n   \"orderId\": \"et occaecat incididunt\",\n   \"orderName\": \"nulla officia exercitation\",\n   \"orderReason\": \"esse deserunt ea\",\n   \"activationDate\": \"ullamco sit aliquip non\",\n   \"consultationEndDate\": \"mollit ut aliqua sint \",\n   \"orderFeedbackStatus\": 1,\n   \"orderState\": 6,\n   \"feedbackScores\": [\n    {\n     \"score\": 54121365,\n     \"count\": -50585521\n    },\n    {\n     \"score\": 51600338,\n     \"count\": 43758243\n    }\n   ],\n   \"feedbackCount\": 39029494\n  },\n  {\n   \"orderId\": \"cupidatat ul\",\n   \"orderName\": \"sed amet lab\",\n   \"orderReason\": \"amet nisi esse\",\n   \"activationDate\": \"mollit deserunt\",\n   \"consultationEndDate\": \"Lorem ipsum cupi\",\n   \"orderFeedbackStatus\": 0,\n   \"orderState\": 7,\n   \"feedbackScores\": [\n    {\n     \"score\": -65332147,\n     \"count\": 21726791\n    },\n    {\n     \"score\": 73012492,\n     \"count\": -41217664\n    }\n   ],\n   \"feedbackCount\": 84355775\n  }\n ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "372c03ed-90a1-4134-955f-63203d577482",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationsByAuthorityId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8032c783-09ec-45a7-87c9-1fa6b098c111",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationsByAuthorityId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec0a6de2-1f73-4463-9d85-3d574b244727",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchConsultationsByAuthorityId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "6c9fc58a-85d5-4b00-bf83-80026ad9afac",
+          "name": "/report/fetchFeedbackByAuthorityAndOrder - GET",
+          "request": {
+            "name": "/report/fetchFeedbackByAuthorityAndOrder - GET",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "fetchFeedbackByAuthorityAndOrder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "orderId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "",
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - int32.",
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "description": "Format - int32.",
+                  "key": "take",
+                  "value": "10"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44311532-6f8e-4791-ba2d-93aa346833ef",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"orderResponseSummary\": [\n  {\n   \"orderId\": \"laborum sed\",\n   \"feedbackId\": \"sed proident elit labore et\",\n   \"firstName\": \"laboris consectetur dolor fugiat est\",\n   \"lastName\": \"id ut\",\n   \"responderType\": \"<integer>\",\n   \"orderSupport\": \"<integer>\",\n   \"feedbackCategory\": \"<integer>\",\n   \"feedbackText\": \"deserunt veniam in in\",\n   \"originalFeedbackDate\": \"dolore laboris\",\n   \"latestFeedbackDate\": \"eiusmod proident\",\n   \"threadState\": 4,\n   \"feedbackStatus\": 2\n  },\n  {\n   \"orderId\": \"ut\",\n   \"feedbackId\": \"fugiat Ut cillum\",\n   \"firstName\": \"ut Ut\",\n   \"lastName\": \"dolore et enim\",\n   \"responderType\": \"<integer>\",\n   \"orderSupport\": \"<integer>\",\n   \"feedbackCategory\": \"<integer>\",\n   \"feedbackText\": \"veniam amet laboris aliquip\",\n   \"originalFeedbackDate\": \"ullamco proident exercitation esse\",\n   \"latestFeedbackDate\": \"est labore magna\",\n   \"threadState\": 4,\n   \"feedbackStatus\": 2\n  }\n ],\n \"orderResponseStatusCounts\": [\n  {\n   \"status\": 2,\n   \"count\": -64728218\n  },\n  {\n   \"status\": 2,\n   \"count\": 27565660\n  }\n ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d62f702a-1dd2-45a3-b0da-99d2409d6ff6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "301b47b3-e095-4203-8142-ba64e2d4eacb",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94c635ea-0e5b-4452-abae-ff7b554c5874",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "take",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "0cb8888f-b07d-4c61-8e0c-cb5f3dc22228",
+          "name": "/report/fetchFeedbackHistory - GET",
+          "request": {
+            "name": "/report/fetchFeedbackHistory - GET",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "fetchFeedbackHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "orderId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "feedbackId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f7f8ad2-7cd3-4e19-a896-fd83c93bbaca",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"feedbackId\": \"amet ut laboris velit aute\",\n \"orderId\": \"deserunt m\",\n \"firstName\": \"culpa\",\n \"lastName\": \"in\",\n \"email\": \"quis incididunt in exercitation\",\n \"addressLine1\": \"velit fugiat\",\n \"addressLine2\": \"consectetur culpa inc\",\n \"addressCity\": \"fugiat ex\",\n \"addressPostCode\": \"d\",\n \"addressCountry\": \"ut ullamco in proident\",\n \"feedbackText\": \"minim nisi laborum\",\n \"responderType\": \"<integer>\",\n \"orderSupport\": \"<integer>\",\n \"feedbackCategory\": \"<integer>\",\n \"threadStatus\": 4,\n \"createdDate\": \"aute dolor\",\n \"thread\": [\n  {\n   \"firstName\": \"veniam tempor reprehenderit magna aliquip\",\n   \"lastName\": \"elit\",\n   \"email\": \"Lorem sit enim aliqua incididunt\",\n   \"message\": \"anim pariatur\",\n   \"role\": \"esse commodo non sunt aute\",\n   \"messageDate\": \"in occaecat veniam tempor\"\n  },\n  {\n   \"firstName\": \"sint ipsum non\",\n   \"lastName\": \"nostrud\",\n   \"email\": \"qui aliquip sed\",\n   \"message\": \"dolor eiusmod\",\n   \"role\": \"est culpa Ut eiusmod\",\n   \"messageDate\": \"reprehenderit dolore eu\"\n  }\n ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b280405-c0cb-4634-8ca6-04fd52fa0ab2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb872faf-fb1e-4041-ae36-aa08b06fd5c2",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2fc03910-a629-437b-ad04-f584be877b07",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "c0476dc9-31d7-461d-a9ee-6edc2db88e6d",
+          "name": "/report/fetchFeedbackTotalsByAuthorityAndOrder - GET",
+          "request": {
+            "name": "/report/fetchFeedbackTotalsByAuthorityAndOrder - GET",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "fetchFeedbackTotalsByAuthorityAndOrder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "orderId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0ec0b8d-fcd6-4fd7-a6d1-d4fc602e13db",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackTotalsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"feedbackRatings\": [\n  {\n   \"score\": -8314374,\n   \"count\": 30321610\n  },\n  {\n   \"score\": -26577566,\n   \"count\": 96657926\n  }\n ],\n \"feedbackCount\": 51905221\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4429c73f-502d-46e1-bb40-d8c40fc0c75a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackTotalsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9beeff7e-b0b7-4dc7-bf72-f4030e97709b",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackTotalsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40f62476-b66e-498d-8854-fb430fc0ff01",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "fetchFeedbackTotalsByAuthorityAndOrder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "ceaa15ca-29c0-4215-8468-4de6166e2935",
+          "name": "/report/replyToFeedback - POST",
+          "request": {
+            "name": "/report/replyToFeedback - POST",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "replyToFeedback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "orderId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "feedbackId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "c195a460-06c0-475a-92f4-3c0c3da8c11e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "replyToFeedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"deserunt fugiat\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd871be1-e4c5-486f-8e0a-ea4c26cada37",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "replyToFeedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "47679948-7196-4561-9a52-c6a1cc865cb2",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "replyToFeedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61eecec1-9410-4e60-9618-28a5e6a49224",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "replyToFeedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"message\": \"<string>\"\n}"
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "11be3d48-0ae3-4984-b05d-32e29c3d26f0",
+          "name": "/report/setThreadState - POST",
+          "request": {
+            "name": "/report/setThreadState - POST",
+            "description": {},
+            "url": {
+              "path": [
+                "report",
+                "setThreadState"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "orderId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Format - uuid.",
+                  "key": "feedbackId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"from\": 3,\n    \"to\": 3\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "296f8c8b-f2ee-4a55-b4b1-5ee24500a9f4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "setThreadState"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"from\": 1,\n    \"to\": 4\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "true",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c9b6fea2-b61a-426d-955f-cc5e6741af96",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "setThreadState"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"from\": 1,\n    \"to\": 4\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "227c7de6-e1b5-4a6c-88ed-dc33d24f519e",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "setThreadState"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"from\": 1,\n    \"to\": 4\n}"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7daa2abc-c130-4789-b0b1-bce665d466af",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "report",
+                    "setThreadState"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "feedbackId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"from\": 1,\n    \"to\": 4\n}"
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "type": "string",
+      "value": "https://api.appyway.com/v1/traffic-engagement"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "type": "string",
+        "value": "{{API-KEY-LIVE}}"
+      },
+      {
+        "key": "key",
+        "type": "string",
+        "value": "API-KEY"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9c3c8157-db7c-4ab6-86fe-bb50e1f77ebc",
+    "name": "Engagement (v1.0|LIVE|Public)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

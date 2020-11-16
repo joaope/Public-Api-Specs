@@ -1,0 +1,1339 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Engagement",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.appyway.com/v1/traffic-engagement"
+    }
+  ],
+  "paths": {
+    "/feedback/reply/{feedbackId}": {
+      "post": {
+        "tags": [
+          "EngagementFeedback"
+        ],
+        "summary": "/feedback/reply/{feedbackId} - POST",
+        "operationId": "post-feedback-reply-feedbackid",
+        "parameters": [
+          {
+            "name": "feedbackId",
+            "in": "path",
+            "description": "Format - uuid.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicFeedbackReply"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicFeedbackReply"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublicFeedbackReply"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackReply-feedbackId-Post200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackReply-feedbackId-Post200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackReply-feedbackId-Post200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/feedback/submit": {
+      "post": {
+        "tags": [
+          "EngagementFeedback"
+        ],
+        "summary": "/feedback/submit - POST",
+        "operationId": "post-feedback-submit",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Feedback"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackSubmitPost200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackSubmitPost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackSubmitPost200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/manage/clearExpiredOrders": {
+      "get": {
+        "tags": [
+          "FeedbackManagement"
+        ],
+        "summary": "/manage/clearExpiredOrders - GET",
+        "operationId": "get-manage-clearexpiredorders",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/fetchActiveOrderResponseTotalsByAuthority": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchActiveOrderResponseTotalsByAuthority - GET",
+        "operationId": "get-report-fetchactiveorderresponsetotalsbyauthority",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityFeedbackSummary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityFeedbackSummary"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityFeedbackSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/fetchConsultationDetailsByAuthorityAndOrder": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchConsultationDetailsByAuthorityAndOrder - GET",
+        "operationId": "get-report-fetchconsultationdetailsbyauthorityandorder",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSummary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSummary"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/fetchConsultationsByAuthorityId": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchConsultationsByAuthorityId - GET",
+        "operationId": "get-report-fetchconsultationsbyauthorityid",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Format - int32.",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Format - int32.",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackSummaryWithCounts"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackSummaryWithCounts"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackSummaryWithCounts"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/fetchFeedbackByAuthorityAndOrder": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchFeedbackByAuthorityAndOrder - GET",
+        "operationId": "get-report-fetchfeedbackbyauthorityandorder",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Format - int32.",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "description": "Format - int32.",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackThreadWithCounts"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackThreadWithCounts"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackThreadWithCounts"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/fetchFeedbackHistory": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchFeedbackHistory - GET",
+        "operationId": "get-report-fetchfeedbackhistory",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feedbackId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackThread"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackThread"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderFeedbackThread"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/fetchFeedbackTotalsByAuthorityAndOrder": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchFeedbackTotalsByAuthorityAndOrder - GET",
+        "operationId": "get-report-fetchfeedbacktotalsbyauthorityandorder",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackRating"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackRating"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedbackRating"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/replyToFeedback": {
+      "post": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/replyToFeedback - POST",
+        "operationId": "post-report-replytofeedback",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feedbackId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CouncilFeedbackReply"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CouncilFeedbackReply"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CouncilFeedbackReply"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportReplyToFeedbackPost200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportReplyToFeedbackPost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportReplyToFeedbackPost200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/report/setThreadState": {
+      "post": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/setThreadState - POST",
+        "operationId": "post-report-setthreadstate",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feedbackId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeThreadStateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeThreadStateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeThreadStateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportSetThreadStatePost200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportSetThreadStatePost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportSetThreadStatePost200TextJsonResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OrderSupport": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FeedbackCategory": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ResponderType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Feedback": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderSupport": {
+            "$ref": "#/components/schemas/OrderSupport"
+          },
+          "feedbackCategory": {
+            "$ref": "#/components/schemas/FeedbackCategory"
+          },
+          "responderType": {
+            "$ref": "#/components/schemas/ResponderType"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressCity": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressPostCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "feedbackText": {
+            "type": "string",
+            "nullable": true
+          },
+          "honeypot": {
+            "type": "string",
+            "nullable": true
+          },
+          "ellapsedSeconds": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicFeedbackReply": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderFeedbackStatus": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "OrderStatusCounts": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/OrderFeedbackStatus"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StaticOrderState": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Rating": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderFeedbackSummary": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "activationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "consultationEndDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "orderFeedbackStatus": {
+            "$ref": "#/components/schemas/OrderFeedbackStatus"
+          },
+          "orderState": {
+            "$ref": "#/components/schemas/StaticOrderState"
+          },
+          "feedbackScores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rating"
+            },
+            "nullable": true
+          },
+          "feedbackCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderFeedbackSummaryWithCounts": {
+        "type": "object",
+        "properties": {
+          "orderStatusCounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderStatusCounts"
+            },
+            "nullable": true
+          },
+          "orderFeedbackSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderFeedbackSummary"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderSummary": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "proposedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "consultationEndDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "orderFeedbackStatus": {
+            "$ref": "#/components/schemas/OrderFeedbackStatus"
+          },
+          "orderState": {
+            "$ref": "#/components/schemas/StaticOrderState"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeedbackStatus": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ThreadStatus": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FeedbackInfo": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "feedbackId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "responderType": {
+            "$ref": "#/components/schemas/ResponderType"
+          },
+          "orderSupport": {
+            "$ref": "#/components/schemas/OrderSupport"
+          },
+          "feedbackCategory": {
+            "$ref": "#/components/schemas/FeedbackCategory"
+          },
+          "feedbackText": {
+            "type": "string",
+            "nullable": true
+          },
+          "originalFeedbackDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "latestFeedbackDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "threadState": {
+            "$ref": "#/components/schemas/ThreadStatus"
+          },
+          "feedbackStatus": {
+            "$ref": "#/components/schemas/FeedbackStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeedbackStatusCounts": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/FeedbackStatus"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderFeedbackThreadWithCounts": {
+        "type": "object",
+        "properties": {
+          "orderResponseSummary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FeedbackInfo"
+            },
+            "nullable": true
+          },
+          "orderResponseStatusCounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FeedbackStatusCounts"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeedbackRating": {
+        "type": "object",
+        "properties": {
+          "feedbackRatings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rating"
+            },
+            "nullable": true
+          },
+          "feedbackCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthorityFeedbackSummary": {
+        "type": "object",
+        "properties": {
+          "totalActiveConsultations": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalReadThreads": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalUnreadThreads": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalRespondedThreads": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderFeedbackThreadItem": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "messageDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderFeedbackThread": {
+        "type": "object",
+        "properties": {
+          "feedbackId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressCity": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressPostCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "feedbackText": {
+            "type": "string",
+            "nullable": true
+          },
+          "responderType": {
+            "$ref": "#/components/schemas/ResponderType"
+          },
+          "orderSupport": {
+            "$ref": "#/components/schemas/OrderSupport"
+          },
+          "feedbackCategory": {
+            "$ref": "#/components/schemas/FeedbackCategory"
+          },
+          "threadStatus": {
+            "$ref": "#/components/schemas/ThreadStatus"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "thread": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderFeedbackThreadItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CouncilFeedbackReply": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeThreadStateRequest": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "$ref": "#/components/schemas/ThreadStatus"
+          },
+          "to": {
+            "$ref": "#/components/schemas/ThreadStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeedbackReply-feedbackId-Post200TextPlainResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "FeedbackReply-feedbackId-Post200ApplicationJsonResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "FeedbackReply-feedbackId-Post200TextJsonResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "FeedbackSubmitPost200TextPlainResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "FeedbackSubmitPost200ApplicationJsonResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "FeedbackSubmitPost200TextJsonResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "ReportReplyToFeedbackPost200TextPlainResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "ReportReplyToFeedbackPost200ApplicationJsonResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "ReportReplyToFeedbackPost200TextJsonResponse": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "ReportSetThreadStatePost200TextPlainResponse": {
+        "type": "boolean"
+      },
+      "ReportSetThreadStatePost200ApplicationJsonResponse": {
+        "type": "boolean"
+      },
+      "ReportSetThreadStatePost200TextJsonResponse": {
+        "type": "boolean"
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "name": "API-KEY",
+        "in": "header",
+        "type": "apiKey"
+      },
+      "oAuth2": {
+        "flows": {
+          "authorizationCode": {
+            "scopes": {},
+            "authorizationUrl": "https://auth.appyway.com/authorize",
+            "tokenUrl": "https://auth.appyway.com/oauth/token"
+          }
+        },
+        "type": "oauth2"
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Too many requests"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized"
+      },
+      "Forbidden": {
+        "description": "Forbidden"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "oAuth2": []
+    }
+  ]
+}
