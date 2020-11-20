@@ -21,11 +21,11 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /queries/GetAvailabilityPredictionByIds:
+  /queries/getAvailabilityPredictionByIds:
     post:
       tags:
       - Queries
-      summary: /queries/GetAvailabilityPredictionByIds - POST
+      summary: /queries/getAvailabilityPredictionByIds - POST
       operationId: post-queries-getavailabilitypredictionbyids
       requestBody:
         content:
@@ -38,6 +38,42 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/GetAvailabilityPredictionByIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingPredictionIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/getDailyAvailabilityPredictionsById:
+    post:
+      tags:
+      - Queries
+      summary: /queries/getDailyAvailabilityPredictionsById - POST
+      operationId: post-queries-getdailyavailabilitypredictionsbyid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetDailyAvailabilityPredictionsByIdQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetDailyAvailabilityPredictionsByIdQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetDailyAvailabilityPredictionsByIdQuery'
       responses:
         "200":
           description: Success
@@ -142,6 +178,16 @@ components:
         stackTrace:
           type: string
           nullable: true
+      additionalProperties: false
+    GetDailyAvailabilityPredictionsByIdQuery:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        dateTime:
+          type: string
+          format: date-time
       additionalProperties: false
   securitySchemes:
     apiKey:
