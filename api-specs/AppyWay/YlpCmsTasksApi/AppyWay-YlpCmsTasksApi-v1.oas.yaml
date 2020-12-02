@@ -1,0 +1,2160 @@
+openapi: 3.0.1
+info:
+  title: CMS Tasks
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/v1/traffic-tasks
+paths:
+  /index/carpark:
+    get:
+      tags:
+      - Index
+      summary: Index_GetCarparkIndexes
+      operationId: Index_GetCarparkIndexes
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexCarparkGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexCarparkGet200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/IndexCarparkGet200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/IndexCarparkGet200TextXmlResponse'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /index/onstreet:
+    get:
+      tags:
+      - Index
+      summary: Index_GetOnstreetIndexes
+      operationId: Index_GetOnstreetIndexes
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexOnstreetGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexOnstreetGet200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/IndexOnstreetGet200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/IndexOnstreetGet200TextXmlResponse'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /index/prefixes:
+    get:
+      tags:
+      - Index
+      summary: Index_GetIndexPrefixes
+      operationId: Index_GetIndexPrefixes
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexPrefixesGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexPrefixesGet200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/IndexPrefixesGet200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/IndexPrefixesGet200TextXmlResponse'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /tasks/add-kerbedge:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_AddKerbEdge
+      operationId: Tasks_AddKerbEdge
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksAdd-kerbedgePost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksAdd-kerbedgePost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksAdd-kerbedgePost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksAdd-kerbedgePost200TextXmlResponse'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /tasks/apply-order:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ApplyOrder
+      operationId: Tasks_ApplyOrder
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplyOrderToMaster'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplyOrderToMaster'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ApplyOrderToMaster'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/ApplyOrderToMaster'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+                OrderId:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksApply-orderPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksApply-orderPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksApply-orderPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksApply-orderPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/build-carpark-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_BuildCarparkIndex
+      operationId: Tasks_BuildCarparkIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildCarparkIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BuildCarparkIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BuildCarparkIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/BuildCarparkIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                Prefix:
+                  type: string
+                From:
+                  type: string
+                To:
+                  type: string
+                User:
+                  type: string
+                Partitions:
+                  type: array
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-carpark-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-carpark-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-carpark-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-carpark-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/build-onstreet-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_BuildOnStreetIndex
+      operationId: Tasks_BuildOnStreetIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildOnStreetIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BuildOnStreetIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BuildOnStreetIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/BuildOnStreetIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                Prefix:
+                  type: string
+                From:
+                  type: string
+                To:
+                  type: string
+                User:
+                  type: string
+                AuthorityIds:
+                  type: array
+                ZoneIds:
+                  type: array
+                OrderId:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-onstreet-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-onstreet-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-onstreet-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksBuild-onstreet-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/calculate-coverage:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_CalculateCoverage
+      operationId: Tasks_CalculateCoverage
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculateCoverage'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CalculateCoverage'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CalculateCoverage'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/CalculateCoverage'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+                Date:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksCalculate-coveragePost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksCalculate-coveragePost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksCalculate-coveragePost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksCalculate-coveragePost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/cancel/{taskId}:
+    get:
+      tags:
+      - Tasks
+      summary: Tasks_CancelTask
+      operationId: Tasks_CancelTask
+      parameters:
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksCancel-taskId-Get200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksCancel-taskId-Get200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksCancel-taskId-Get200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksCancel-taskId-Get200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/convert-to-basemap:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ConvertToBaseMap
+      operationId: Tasks_ConvertToBaseMap
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvertToBaseMap'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ConvertToBaseMap'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ConvertToBaseMap'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/ConvertToBaseMap'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                AuthorityIds:
+                  type: array
+                User:
+                  type: string
+                Branch:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksConvert-to-basemapPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksConvert-to-basemapPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksConvert-to-basemapPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksConvert-to-basemapPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/current:
+    get:
+      tags:
+      - Tasks
+      summary: Tasks_GetCurrentTasks
+      operationId: Tasks_GetCurrentTasks
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksCurrentGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksCurrentGet200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksCurrentGet200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksCurrentGet200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/delete-carpark-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_DeleteCarparkIndex
+      operationId: Tasks_DeleteCarparkIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteCarparkIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteCarparkIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeleteCarparkIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DeleteCarparkIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                Prefix:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-carpark-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-carpark-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-carpark-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-carpark-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/delete-onstreet-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_DeleteOnstreetIndex
+      operationId: Tasks_DeleteOnstreetIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteOnstreetIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeleteOnstreetIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeleteOnstreetIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DeleteOnstreetIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                Prefix:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-onstreet-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-onstreet-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-onstreet-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDelete-onstreet-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/deploy-carpark-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_DeployCarparkIndex
+      operationId: Tasks_DeployCarparkIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeployCarparkIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeployCarparkIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeployCarparkIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DeployCarparkIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                Prefix:
+                  type: string
+                User:
+                  type: string
+                Target:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-carpark-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-carpark-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-carpark-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-carpark-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/deploy-onstreet-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_DeployOnstreetIndex
+      operationId: Tasks_DeployOnstreetIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeployOnstreetIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DeployOnstreetIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeployOnstreetIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DeployOnstreetIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                Prefix:
+                  type: string
+                User:
+                  type: string
+                Target:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-onstreet-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-onstreet-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-onstreet-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksDeploy-onstreet-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/execute-carpark-import:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ExecuteCarparkImport
+      operationId: Tasks_ExecuteCarparkImport
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteCarparkImport'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteCarparkImport'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ExecuteCarparkImport'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/ExecuteCarparkImport'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-carpark-importPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-carpark-importPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-carpark-importPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-carpark-importPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/execute-standard-import:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ExecuteStandardImport
+      operationId: Tasks_ExecuteStandardImport
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-standard-importPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-standard-importPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-standard-importPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksExecute-standard-importPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/history:
+    get:
+      tags:
+      - Tasks
+      summary: Tasks_GetHistory
+      operationId: Tasks_GetHistory
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksHistoryGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksHistoryGet200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksHistoryGet200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksHistoryGet200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/history/{taskId}:
+    get:
+      tags:
+      - Tasks
+      summary: Tasks_GetHistoryDetail
+      operationId: Tasks_GetHistoryDetail
+      parameters:
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: continuationToken
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksHistory-taskId-Get200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksHistory-taskId-Get200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksHistory-taskId-Get200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksHistory-taskId-Get200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/import-elgin-suspensions:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ImportElginSuspensions
+      operationId: Tasks_ImportElginSuspensions
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImportElginSuspensions'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ImportElginSuspensions'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ImportElginSuspensions'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/ImportElginSuspensions'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksImport-elgin-suspensionsPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksImport-elgin-suspensionsPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksImport-elgin-suspensionsPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksImport-elgin-suspensionsPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/make-orders:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_MakeOrders
+      operationId: Tasks_MakeOrders
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksMake-ordersPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksMake-ordersPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksMake-ordersPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksMake-ordersPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/mark-experimental-change-sets-as-made:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_MarkExperimentlChangeSetsAsMade
+      operationId: Tasks_MarkExperimentlChangeSetsAsMade
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarkExperimentalChangeSetsAsMade'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MarkExperimentalChangeSetsAsMade'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/MarkExperimentalChangeSetsAsMade'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/MarkExperimentalChangeSetsAsMade'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+                OrderId:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksMark-experimental-change-sets-as-madePost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksMark-experimental-change-sets-as-madePost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksMark-experimental-change-sets-as-madePost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksMark-experimental-change-sets-as-madePost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/prepare-files:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_PrepareFiles
+      operationId: Tasks_PrepareFiles
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrepareFiles'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PrepareFiles'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PrepareFiles'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/PrepareFiles'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksPrepare-filesPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksPrepare-filesPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksPrepare-filesPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksPrepare-filesPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/propose-orders:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ProposeOrders
+      operationId: Tasks_ProposeOrders
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksPropose-ordersPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksPropose-ordersPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksPropose-ordersPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksPropose-ordersPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/rebuild-search-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_RebuildSearchIndex
+      operationId: Tasks_RebuildSearchIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RebuildSearchIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RebuildSearchIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/RebuildSearchIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/RebuildSearchIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksRebuild-search-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksRebuild-search-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksRebuild-search-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksRebuild-search-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/redeploy-master:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_RedeployMaster
+      operationId: Tasks_RedeployMaster
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildAndDeployMasterIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BuildAndDeployMasterIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BuildAndDeployMasterIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/BuildAndDeployMasterIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksRedeploy-masterPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksRedeploy-masterPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksRedeploy-masterPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksRedeploy-masterPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/test-onstreet-index:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_TestOnStreetIndex
+      operationId: Tasks_TestOnStreetIndex
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TestOnStreetIndex'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TestOnStreetIndex'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TestOnStreetIndex'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/TestOnStreetIndex'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                IndexName:
+                  type: string
+                User:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksTest-onstreet-indexPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksTest-onstreet-indexPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksTest-onstreet-indexPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksTest-onstreet-indexPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/validate-order:
+    post:
+      tags:
+      - Tasks
+      summary: Tasks_ValidateOrder
+      operationId: Tasks_ValidateOrder
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidateOrder'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ValidateOrder'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ValidateOrder'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/ValidateOrder'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Name:
+                  type: string
+                User:
+                  type: string
+                OrderId:
+                  type: string
+                ValidationState:
+                  enum:
+                  - "0"
+                  - "1"
+                  - "2"
+                  type: integer
+                ValidationReason:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TasksValidate-orderPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TasksValidate-orderPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TasksValidate-orderPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TasksValidate-orderPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /test/operating-hours:
+    post:
+      tags:
+      - Test
+      summary: Test_TestOperatingHours
+      operationId: Test_TestOperatingHours
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OperatingHoursTest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OperatingHoursTest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/OperatingHoursTest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/OperatingHoursTest'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                OrderType:
+                  type: string
+                OperatingHours:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestOperating-hoursPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TestOperating-hoursPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TestOperating-hoursPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TestOperating-hoursPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /testsets:
+    get:
+      tags:
+      - TestSet
+      summary: TestSet_GetTestSets
+      operationId: TestSet_GetTestSets
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestsetsGet200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TestsetsGet200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TestsetsGet200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TestsetsGet200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+    post:
+      tags:
+      - TestSet
+      summary: TestSet_SaveTest
+      operationId: TestSet_SaveTest
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TestSet'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TestSet'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TestSet'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/TestSet'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Id:
+                  type: string
+                Name:
+                  type: string
+                Tests:
+                  type: array
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestsetsPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TestsetsPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TestsetsPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TestsetsPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /testsets/{id}:
+    get:
+      tags:
+      - TestSet
+      summary: TestSet_GetTestSet
+      operationId: TestSet_GetTestSet
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Get200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Get200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Get200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Get200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+    delete:
+      tags:
+      - TestSet
+      summary: TestSet_DeleteTestSet
+      operationId: TestSet_DeleteTestSet
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Delete200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Delete200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Delete200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Testsets-id-Delete200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /testsets/try:
+    post:
+      tags:
+      - TestSet
+      summary: TestSet_Try
+      operationId: TestSet_Try
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TestSetController_TestRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TestSetController_TestRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TestSetController_TestRequest'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/TestSetController_TestRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                Expression:
+                  type: string
+                IndexName:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestsetsTryPost200ApplicationJsonResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TestsetsTryPost200TextJsonResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TestsetsTryPost200ApplicationXmlResponse'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TestsetsTryPost200TextXmlResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    BuildAndDeployMasterIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+    RebuildSearchIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+    BuildOnStreetIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        Prefix:
+          type: string
+        From:
+          type: string
+          format: date-time
+        To:
+          type: string
+          format: date-time
+        User:
+          type: string
+        AuthorityIds:
+          type: array
+          items:
+            type: string
+        ZoneIds:
+          type: array
+          items:
+            type: string
+        OrderId:
+          type: string
+    DeleteOnstreetIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        Prefix:
+          type: string
+        User:
+          type: string
+    DeployOnstreetIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        Prefix:
+          type: string
+        User:
+          type: string
+        Target:
+          type: string
+    TestOnStreetIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        IndexName:
+          type: string
+        User:
+          type: string
+    BuildCarparkIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        Prefix:
+          type: string
+        From:
+          type: string
+          format: date-time
+        To:
+          type: string
+          format: date-time
+        User:
+          type: string
+        Partitions:
+          type: array
+          items:
+            type: string
+    DeleteCarparkIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        Prefix:
+          type: string
+        User:
+          type: string
+    DeployCarparkIndex:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        Prefix:
+          type: string
+        User:
+          type: string
+        Target:
+          type: string
+    MarkExperimentalChangeSetsAsMade:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+        OrderId:
+          type: string
+    ApplyOrderToMaster:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+        OrderId:
+          type: string
+    ConvertToBaseMap:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        AuthorityIds:
+          type: array
+          items:
+            type: string
+        User:
+          type: string
+        Branch:
+          type: string
+          readOnly: true
+    PrepareFiles:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+    CalculateCoverage:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+        Date:
+          type: string
+          format: date-time
+    ExecuteCarparkImport:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+    ValidateOrder:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+        OrderId:
+          type: string
+        ValidationState:
+          enum:
+          - 0
+          - 1
+          - 2
+          type: integer
+          format: int32
+        ValidationReason:
+          type: string
+    ImportElginSuspensions:
+      type: object
+      properties:
+        Name:
+          type: string
+          readOnly: true
+        User:
+          type: string
+    OperatingHoursTest:
+      type: object
+      properties:
+        OrderType:
+          type: string
+        OperatingHours:
+          type: string
+    TestSet:
+      type: object
+      properties:
+        Id:
+          type: string
+        Name:
+          type: string
+        Tests:
+          type: array
+          items:
+            $ref: '#/components/schemas/Test'
+    Test:
+      type: object
+      properties:
+        Expression:
+          type: string
+    TestSetController_TestRequest:
+      type: object
+      properties:
+        Expression:
+          type: string
+        IndexName:
+          type: string
+    IndexCarparkGet200ApplicationJsonResponse:
+      type: object
+    IndexCarparkGet200TextJsonResponse:
+      type: object
+    IndexCarparkGet200ApplicationXmlResponse:
+      type: object
+    IndexCarparkGet200TextXmlResponse:
+      type: object
+    IndexOnstreetGet200ApplicationJsonResponse:
+      type: object
+    IndexOnstreetGet200TextJsonResponse:
+      type: object
+    IndexOnstreetGet200ApplicationXmlResponse:
+      type: object
+    IndexOnstreetGet200TextXmlResponse:
+      type: object
+    IndexPrefixesGet200ApplicationJsonResponse:
+      type: object
+    IndexPrefixesGet200TextJsonResponse:
+      type: object
+    IndexPrefixesGet200ApplicationXmlResponse:
+      type: object
+    IndexPrefixesGet200TextXmlResponse:
+      type: object
+    TasksAdd-kerbedgePost200ApplicationJsonResponse:
+      type: object
+    TasksAdd-kerbedgePost200TextJsonResponse:
+      type: object
+    TasksAdd-kerbedgePost200ApplicationXmlResponse:
+      type: object
+    TasksAdd-kerbedgePost200TextXmlResponse:
+      type: object
+    TasksApply-orderPost200ApplicationJsonResponse:
+      type: object
+    TasksApply-orderPost200TextJsonResponse:
+      type: object
+    TasksApply-orderPost200ApplicationXmlResponse:
+      type: object
+    TasksApply-orderPost200TextXmlResponse:
+      type: object
+    TasksBuild-carpark-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksBuild-carpark-indexPost200TextJsonResponse:
+      type: object
+    TasksBuild-carpark-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksBuild-carpark-indexPost200TextXmlResponse:
+      type: object
+    TasksBuild-onstreet-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksBuild-onstreet-indexPost200TextJsonResponse:
+      type: object
+    TasksBuild-onstreet-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksBuild-onstreet-indexPost200TextXmlResponse:
+      type: object
+    TasksCalculate-coveragePost200ApplicationJsonResponse:
+      type: object
+    TasksCalculate-coveragePost200TextJsonResponse:
+      type: object
+    TasksCalculate-coveragePost200ApplicationXmlResponse:
+      type: object
+    TasksCalculate-coveragePost200TextXmlResponse:
+      type: object
+    TasksCancel-taskId-Get200ApplicationJsonResponse:
+      type: object
+    TasksCancel-taskId-Get200TextJsonResponse:
+      type: object
+    TasksCancel-taskId-Get200ApplicationXmlResponse:
+      type: object
+    TasksCancel-taskId-Get200TextXmlResponse:
+      type: object
+    TasksConvert-to-basemapPost200ApplicationJsonResponse:
+      type: object
+    TasksConvert-to-basemapPost200TextJsonResponse:
+      type: object
+    TasksConvert-to-basemapPost200ApplicationXmlResponse:
+      type: object
+    TasksConvert-to-basemapPost200TextXmlResponse:
+      type: object
+    TasksCurrentGet200ApplicationJsonResponse:
+      type: object
+    TasksCurrentGet200TextJsonResponse:
+      type: object
+    TasksCurrentGet200ApplicationXmlResponse:
+      type: object
+    TasksCurrentGet200TextXmlResponse:
+      type: object
+    TasksDelete-carpark-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksDelete-carpark-indexPost200TextJsonResponse:
+      type: object
+    TasksDelete-carpark-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksDelete-carpark-indexPost200TextXmlResponse:
+      type: object
+    TasksDelete-onstreet-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksDelete-onstreet-indexPost200TextJsonResponse:
+      type: object
+    TasksDelete-onstreet-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksDelete-onstreet-indexPost200TextXmlResponse:
+      type: object
+    TasksDeploy-carpark-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksDeploy-carpark-indexPost200TextJsonResponse:
+      type: object
+    TasksDeploy-carpark-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksDeploy-carpark-indexPost200TextXmlResponse:
+      type: object
+    TasksDeploy-onstreet-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksDeploy-onstreet-indexPost200TextJsonResponse:
+      type: object
+    TasksDeploy-onstreet-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksDeploy-onstreet-indexPost200TextXmlResponse:
+      type: object
+    TasksExecute-carpark-importPost200ApplicationJsonResponse:
+      type: object
+    TasksExecute-carpark-importPost200TextJsonResponse:
+      type: object
+    TasksExecute-carpark-importPost200ApplicationXmlResponse:
+      type: object
+    TasksExecute-carpark-importPost200TextXmlResponse:
+      type: object
+    TasksExecute-standard-importPost200ApplicationJsonResponse:
+      type: object
+    TasksExecute-standard-importPost200TextJsonResponse:
+      type: object
+    TasksExecute-standard-importPost200ApplicationXmlResponse:
+      type: object
+    TasksExecute-standard-importPost200TextXmlResponse:
+      type: object
+    TasksHistoryGet200ApplicationJsonResponse:
+      type: object
+    TasksHistoryGet200TextJsonResponse:
+      type: object
+    TasksHistoryGet200ApplicationXmlResponse:
+      type: object
+    TasksHistoryGet200TextXmlResponse:
+      type: object
+    TasksHistory-taskId-Get200ApplicationJsonResponse:
+      type: object
+    TasksHistory-taskId-Get200TextJsonResponse:
+      type: object
+    TasksHistory-taskId-Get200ApplicationXmlResponse:
+      type: object
+    TasksHistory-taskId-Get200TextXmlResponse:
+      type: object
+    TasksImport-elgin-suspensionsPost200ApplicationJsonResponse:
+      type: object
+    TasksImport-elgin-suspensionsPost200TextJsonResponse:
+      type: object
+    TasksImport-elgin-suspensionsPost200ApplicationXmlResponse:
+      type: object
+    TasksImport-elgin-suspensionsPost200TextXmlResponse:
+      type: object
+    TasksMake-ordersPost200ApplicationJsonResponse:
+      type: object
+    TasksMake-ordersPost200TextJsonResponse:
+      type: object
+    TasksMake-ordersPost200ApplicationXmlResponse:
+      type: object
+    TasksMake-ordersPost200TextXmlResponse:
+      type: object
+    TasksMark-experimental-change-sets-as-madePost200ApplicationJsonResponse:
+      type: object
+    TasksMark-experimental-change-sets-as-madePost200TextJsonResponse:
+      type: object
+    TasksMark-experimental-change-sets-as-madePost200ApplicationXmlResponse:
+      type: object
+    TasksMark-experimental-change-sets-as-madePost200TextXmlResponse:
+      type: object
+    TasksPrepare-filesPost200ApplicationJsonResponse:
+      type: object
+    TasksPrepare-filesPost200TextJsonResponse:
+      type: object
+    TasksPrepare-filesPost200ApplicationXmlResponse:
+      type: object
+    TasksPrepare-filesPost200TextXmlResponse:
+      type: object
+    TasksPropose-ordersPost200ApplicationJsonResponse:
+      type: object
+    TasksPropose-ordersPost200TextJsonResponse:
+      type: object
+    TasksPropose-ordersPost200ApplicationXmlResponse:
+      type: object
+    TasksPropose-ordersPost200TextXmlResponse:
+      type: object
+    TasksRebuild-search-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksRebuild-search-indexPost200TextJsonResponse:
+      type: object
+    TasksRebuild-search-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksRebuild-search-indexPost200TextXmlResponse:
+      type: object
+    TasksRedeploy-masterPost200ApplicationJsonResponse:
+      type: object
+    TasksRedeploy-masterPost200TextJsonResponse:
+      type: object
+    TasksRedeploy-masterPost200ApplicationXmlResponse:
+      type: object
+    TasksRedeploy-masterPost200TextXmlResponse:
+      type: object
+    TasksTest-onstreet-indexPost200ApplicationJsonResponse:
+      type: object
+    TasksTest-onstreet-indexPost200TextJsonResponse:
+      type: object
+    TasksTest-onstreet-indexPost200ApplicationXmlResponse:
+      type: object
+    TasksTest-onstreet-indexPost200TextXmlResponse:
+      type: object
+    TasksValidate-orderPost200ApplicationJsonResponse:
+      type: object
+    TasksValidate-orderPost200TextJsonResponse:
+      type: object
+    TasksValidate-orderPost200ApplicationXmlResponse:
+      type: object
+    TasksValidate-orderPost200TextXmlResponse:
+      type: object
+    TestOperating-hoursPost200ApplicationJsonResponse:
+      type: object
+    TestOperating-hoursPost200TextJsonResponse:
+      type: object
+    TestOperating-hoursPost200ApplicationXmlResponse:
+      type: object
+    TestOperating-hoursPost200TextXmlResponse:
+      type: object
+    TestsetsGet200ApplicationJsonResponse:
+      type: object
+    TestsetsGet200TextJsonResponse:
+      type: object
+    TestsetsGet200ApplicationXmlResponse:
+      type: object
+    TestsetsGet200TextXmlResponse:
+      type: object
+    TestsetsPost200ApplicationJsonResponse:
+      type: object
+    TestsetsPost200TextJsonResponse:
+      type: object
+    TestsetsPost200ApplicationXmlResponse:
+      type: object
+    TestsetsPost200TextXmlResponse:
+      type: object
+    Testsets-id-Get200ApplicationJsonResponse:
+      type: object
+    Testsets-id-Get200TextJsonResponse:
+      type: object
+    Testsets-id-Get200ApplicationXmlResponse:
+      type: object
+    Testsets-id-Get200TextXmlResponse:
+      type: object
+    Testsets-id-Delete200ApplicationJsonResponse:
+      type: object
+    Testsets-id-Delete200TextJsonResponse:
+      type: object
+    Testsets-id-Delete200ApplicationXmlResponse:
+      type: object
+    Testsets-id-Delete200TextXmlResponse:
+      type: object
+    TestsetsTryPost200ApplicationJsonResponse:
+      type: object
+    TestsetsTryPost200TextJsonResponse:
+      type: object
+    TestsetsTryPost200ApplicationXmlResponse:
+      type: object
+    TestsetsTryPost200TextXmlResponse:
+      type: object
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+
