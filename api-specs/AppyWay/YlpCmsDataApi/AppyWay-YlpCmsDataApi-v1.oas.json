@@ -2273,6 +2273,9 @@
                   "validationReason": {
                     "type": "string"
                   },
+                  "lastModified": {
+                    "type": "string"
+                  },
                   "tiles": {
                     "type": "array"
                   },
@@ -2463,6 +2466,94 @@
         ],
         "summary": "MovingOrdersQuery_GetOrderById",
         "operationId": "MovingOrdersQuery_GetOrderById",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrder_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrder_"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrder_"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrder_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/movingOrders/query/getSparseOrderById": {
+      "get": {
+        "tags": [
+          "MovingOrdersQuery"
+        ],
+        "summary": "MovingOrdersQuery_GetSparseOrderById",
+        "operationId": "MovingOrdersQuery_GetSparseOrderById",
         "parameters": [
           {
             "name": "orderId",
@@ -2802,6 +2893,9 @@
                   },
                   "restrictionTypeIds": {
                     "type": "array"
+                  },
+                  "bays": {
+                    "type": "integer"
                   }
                 }
               }
@@ -2908,22 +3002,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result_FeatureCollection_"
+                  "$ref": "#/components/schemas/Result_OrderGraphSnapshot_"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result_FeatureCollection_"
+                  "$ref": "#/components/schemas/Result_OrderGraphSnapshot_"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result_FeatureCollection_"
+                  "$ref": "#/components/schemas/Result_OrderGraphSnapshot_"
                 }
               },
               "text/xml": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result_FeatureCollection_"
+                  "$ref": "#/components/schemas/Result_OrderGraphSnapshot_"
                 }
               }
             }
@@ -3795,6 +3889,101 @@
         }
       }
     },
+    "/orders/manage/validate": {
+      "get": {
+        "tags": [
+          "OrdersManage"
+        ],
+        "summary": "OrdersManage_ValidateOrder",
+        "operationId": "OrdersManage_ValidateOrder",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
     "/orders/query/getByAuthorityStateAndType": {
       "get": {
         "tags": [
@@ -4109,6 +4298,93 @@
             "name": "maxDate",
             "in": "query",
             "description": "Format - date-time (as date-time in RFC3339).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_Order_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_Order_"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_Order_"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_Order_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/orders/query/getSparseOrderById": {
+      "get": {
+        "tags": [
+          "OrdersQuery"
+        ],
+        "summary": "OrdersQuery_GetSparseOrderById",
+        "operationId": "OrdersQuery_GetSparseOrderById",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "query",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -5887,6 +6163,11 @@
           "validationReason": {
             "type": "string"
           },
+          "lastModified": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
           "tiles": {
             "type": "array",
             "items": {
@@ -6294,6 +6575,10 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          "bays": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
@@ -6644,6 +6929,24 @@
           }
         }
       },
+      "OrderGraphSnapshot": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fullSnapshotName": {
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
       "FeatureCollection": {
         "type": "object",
         "properties": {
@@ -6739,6 +7042,11 @@
           },
           "validationReason": {
             "type": "string"
+          },
+          "lastModified": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
           },
           "tiles": {
             "type": "array",
@@ -6995,6 +7303,11 @@
           },
           "validationReason": {
             "type": "string"
+          },
+          "lastModified": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
           },
           "tiles": {
             "type": "array",
@@ -7690,6 +8003,18 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "Result_OrderGraphSnapshot_": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/OrderGraphSnapshot"
           }
         }
       },
