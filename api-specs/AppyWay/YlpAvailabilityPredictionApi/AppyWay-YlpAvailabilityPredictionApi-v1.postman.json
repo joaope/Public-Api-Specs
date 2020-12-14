@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "2279a939-8a06-4ef2-8c91-1e4de63fa5da",
+      "id": "2b8b267b-b57f-468f-a5db-8cf00c3472bd",
       "name": "Monitor",
       "request": {
         "name": "Monitor",
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "80386e7e-661a-4c30-a60e-1a091fc8830e",
+          "id": "3f1579be-45f3-406c-8026-34e3e95a3b3b",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "2af89c36-1595-4b24-962c-1f5f10b4884a",
+          "id": "6a6dd18a-6e6e-4430-a5ce-3d28d9ecc259",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -82,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "cc831427-0b67-4692-acf8-5c9a1eeb3462",
+          "id": "6e53a6af-5a80-4fad-9c8c-c89eb34b9911",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ab0e87a9-32ab-4c45-ade8-85eba3ff2658",
+          "id": "6644cabe-82b9-47fb-b3b7-f54c87325c98",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -143,19 +143,22 @@
       "event": []
     },
     {
-      "id": "f53d633a-e1bc-41da-9770-8b7dcfc39c3d",
+      "id": "4117c99e-8ee8-42eb-a4c5-809b45e388e1",
       "name": "queries",
       "item": [
         {
-          "id": "a6d5cee3-46bf-42c7-bd1f-5026c316cc76",
-          "name": "/queries/getAvailabilityPredictionByIds - POST",
+          "id": "cba51f40-6211-4c59-a805-6f060c10c1d7",
+          "name": "Fetch availability prediction by entity Ids",
           "request": {
-            "name": "/queries/getAvailabilityPredictionByIds - POST",
-            "description": {},
+            "name": "Fetch availability prediction by entity Ids",
+            "description": {
+              "content": "Returns the predictions for the list of given entity Ids and date.",
+              "type": "text/plain"
+            },
             "url": {
               "path": [
                 "queries",
-                "getAvailabilityPredictionByIds"
+                "fetchAvailabilityPredictionByEntityIds"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -178,13 +181,13 @@
           },
           "response": [
             {
-              "id": "9052aaf7-3124-4f1c-818c-78ffadd43cc8",
+              "id": "1f350fe0-ad35-4546-ba94-66b54a4594f9",
               "name": "Success",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getAvailabilityPredictionByIds"
+                    "fetchAvailabilityPredictionByEntityIds"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -206,18 +209,18 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"result\": [\n  {\n   \"parkingAssetId\": \"sunt adipisicing nisi laboris\",\n   \"occupancyRatio\": 93599654.11282748,\n   \"confidence\": 63556670.386856765\n  },\n  {\n   \"parkingAssetId\": \"voluptate dolore do deserunt officia\",\n   \"occupancyRatio\": -81492316.75250536,\n   \"confidence\": 69314146.0700165\n  }\n ],\n \"success\": false,\n \"message\": \"exercitation mollit\",\n \"errors\": [\n  {\n   \"property\": \"aute enim et\",\n   \"code\": \"est\",\n   \"message\": \"labore occaecat voluptate\"\n  },\n  {\n   \"property\": \"adipisicing ullamco ut consequat\",\n   \"code\": \"consequat tempor sunt\",\n   \"message\": \"velit\"\n  }\n ],\n \"stackTrace\": \"Lorem fugiat\"\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"amet in \",\n   \"occupancyRatio\": -53502982.862739004,\n   \"confidence\": -25740247.657449096\n  },\n  {\n   \"entityId\": \"reprehenderit fugiat dolor cupidatat\",\n   \"occupancyRatio\": 56040126.77552101,\n   \"confidence\": -91378568.50931701\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "feb87569-beb0-41ac-9c78-cdc0d0fdf0a5",
+              "id": "8d265b17-bb95-43b9-89c1-a268b688fbcf",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getAvailabilityPredictionByIds"
+                    "fetchAvailabilityPredictionByEntityIds"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -239,18 +242,18 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"message\": \"dolore Excepteur\",\n \"errors\": [\n  {\n   \"property\": \"sunt pariatur quis\",\n   \"code\": \"\",\n   \"message\": \"proident tempor aliqua laboris\"\n  },\n  {\n   \"property\": \"in ad elit\",\n   \"code\": \"laborum nulla mollit veniam\",\n   \"message\": \"est proident Lorem\"\n  }\n ],\n \"stackTrace\": \"cil\"\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"veniam laboris adipisicing culpa\",\n \"errors\": [\n  {\n   \"property\": \"aliquip commodo\",\n   \"code\": \"laborum in Excepteur enim\",\n   \"message\": \"non ullamco\"\n  },\n  {\n   \"property\": \"ad amet quis sit\",\n   \"code\": \"mollit quis\",\n   \"message\": \"aute inci\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "75f37bc5-20d2-415f-9134-298544288982",
+              "id": "886d1e47-2e93-4247-81f6-1ca60e671403",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getAvailabilityPredictionByIds"
+                    "fetchAvailabilityPredictionByEntityIds"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -277,13 +280,13 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "0d16ad56-d25c-4fcd-bd79-e81316037d3c",
+              "id": "7837c48a-6c30-41ea-a0b5-f0bc8d34ace4",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getAvailabilityPredictionByIds"
+                    "fetchAvailabilityPredictionByEntityIds"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -310,13 +313,13 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "b4e739ac-2d27-4bc3-88c9-aba53e72b381",
+              "id": "5039a5e8-3def-4207-999e-e2d5482236e6",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getAvailabilityPredictionByIds"
+                    "fetchAvailabilityPredictionByEntityIds"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -346,15 +349,18 @@
           "event": []
         },
         {
-          "id": "8b2baf27-a8bf-45ca-bc08-fd9807105a6d",
-          "name": "/queries/getDailyAvailabilityPredictionsById - POST",
+          "id": "0e12e89c-f400-4751-899d-b35b89c0a79a",
+          "name": "Fetch daily availability predictions by entity id",
           "request": {
-            "name": "/queries/getDailyAvailabilityPredictionsById - POST",
-            "description": {},
+            "name": "Fetch daily availability predictions by entity id",
+            "description": {
+              "content": "Returns the local hourly predictions for the given date and entity id.",
+              "type": "text/plain"
+            },
             "url": {
               "path": [
                 "queries",
-                "getDailyAvailabilityPredictionsById"
+                "fetchDailyAvailabilityPredictionsByEntityId"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -372,18 +378,18 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+              "raw": "{\n    \"dateTime\": \"<dateTime>\",\n    \"id\": \"<string>\"\n}"
             }
           },
           "response": [
             {
-              "id": "1cd0b89e-8d70-4176-b598-e4f6f2e96139",
+              "id": "2dd818b2-89ca-49b4-be42-3a76ec56cb15",
               "name": "Success",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getDailyAvailabilityPredictionsById"
+                    "fetchDailyAvailabilityPredictionsByEntityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -394,7 +400,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"dateTime\": \"<dateTime>\",\n    \"id\": \"<string>\"\n}"
                 }
               },
               "status": "OK",
@@ -405,18 +411,18 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"result\": [\n  {\n   \"parkingAssetId\": \"occaecat consectetur enim\",\n   \"occupancyRatio\": -37843303.087481536,\n   \"confidence\": 84084044.09726211\n  },\n  {\n   \"parkingAssetId\": \"enim cillum est i\",\n   \"occupancyRatio\": -17521109.79414989,\n   \"confidence\": -74490190.84670204\n  }\n ],\n \"success\": false,\n \"message\": \"magna occaecat proident non\",\n \"errors\": [\n  {\n   \"property\": \"sed\",\n   \"code\": \"irure\",\n   \"message\": \"in nulla magna veniam\"\n  },\n  {\n   \"property\": \"eiusmod labore velit\",\n   \"code\": \"incididunt cupidatat ad\",\n   \"message\": \"enim irure dolor\"\n  }\n ],\n \"stackTrace\": \"ut quis\"\n}",
+              "body": "{\n \"success\": false,\n \"result\": \"consectetur et\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b14a978c-13e9-49e2-9f54-ee6a1bf62c44",
+              "id": "bae818eb-3544-43dd-ab95-5b1bbf7d1d19",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getDailyAvailabilityPredictionsById"
+                    "fetchDailyAvailabilityPredictionsByEntityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -427,7 +433,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"dateTime\": \"<dateTime>\",\n    \"id\": \"<string>\"\n}"
                 }
               },
               "status": "Bad Request",
@@ -438,18 +444,18 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"message\": \"culpa dolor\",\n \"errors\": [\n  {\n   \"property\": \"aliqua occaecat sed\",\n   \"code\": \"eiusmod laboris elit\",\n   \"message\": \"reprehenderit\"\n  },\n  {\n   \"property\": \"commodo mollit\",\n   \"code\": \"aliqua incididunt\",\n   \"message\": \"velit aliqua mollit\"\n  }\n ],\n \"stackTrace\": \"aliquip adipisicing nostrud cillum cupidatat\"\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"aute est pariatur\",\n \"errors\": [\n  {\n   \"property\": \"sit eiusmod ipsum deserunt\",\n   \"code\": \"est quis\",\n   \"message\": \"sunt id adipisicing quis sint\"\n  },\n  {\n   \"property\": \"commodo sint\",\n   \"code\": \"dolor fugiat do Duis minim\",\n   \"message\": \"tempor aliquip magna reprehenderit\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "2c02bab2-f28a-4296-a00a-f51d7e3c1ec8",
+              "id": "51816ad8-75aa-47ef-9a1f-25051f60c2c8",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getDailyAvailabilityPredictionsById"
+                    "fetchDailyAvailabilityPredictionsByEntityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -460,7 +466,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"dateTime\": \"<dateTime>\",\n    \"id\": \"<string>\"\n}"
                 }
               },
               "status": "Unauthorized",
@@ -476,13 +482,13 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "43bd3eff-f885-4397-983c-a54d2b9515d1",
+              "id": "2ef848df-c5ff-4c86-978d-2f150c560fe4",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getDailyAvailabilityPredictionsById"
+                    "fetchDailyAvailabilityPredictionsByEntityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -493,7 +499,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"dateTime\": \"<dateTime>\",\n    \"id\": \"<string>\"\n}"
                 }
               },
               "status": "Forbidden",
@@ -509,13 +515,13 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "3794b173-0c06-4ca4-86ba-9ea17b655f12",
+              "id": "389ba53e-127a-4b13-8e72-c215cd41123a",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
                   "path": [
                     "queries",
-                    "getDailyAvailabilityPredictionsById"
+                    "fetchDailyAvailabilityPredictionsByEntityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -526,7 +532,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"dateTime\": \"<dateTime>\",\n    \"id\": \"<string>\"\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -572,7 +578,7 @@
     ]
   },
   "info": {
-    "_postman_id": "25416ced-dfc3-442c-abc5-b6405ce04586",
+    "_postman_id": "893ff880-10a5-46b5-9e2e-c904b09e3d7b",
     "name": "Availability Prediction API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

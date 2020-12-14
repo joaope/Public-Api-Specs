@@ -34,28 +34,29 @@
         }
       }
     },
-    "/queries/getAvailabilityPredictionByIds": {
+    "/queries/fetchAvailabilityPredictionByEntityIds": {
       "post": {
         "tags": [
-          "Queries"
+          "Availability"
         ],
-        "summary": "/queries/getAvailabilityPredictionByIds - POST",
-        "operationId": "post-queries-getavailabilitypredictionbyids",
+        "summary": "Fetch availability prediction by entity Ids",
+        "description": "Returns the predictions for the list of given entity Ids and date.",
+        "operationId": "post-queries-fetchavailabilitypredictionbyentityids",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetAvailabilityPredictionByIdsQuery"
+                "$ref": "#/components/schemas/FetchAvailabilityPredictionByEntityIdsQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetAvailabilityPredictionByIdsQuery"
+                "$ref": "#/components/schemas/FetchAvailabilityPredictionByEntityIdsQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetAvailabilityPredictionByIdsQuery"
+                "$ref": "#/components/schemas/FetchAvailabilityPredictionByEntityIdsQuery"
               }
             }
           }
@@ -93,28 +94,29 @@
         }
       }
     },
-    "/queries/getDailyAvailabilityPredictionsById": {
+    "/queries/fetchDailyAvailabilityPredictionsByEntityId": {
       "post": {
         "tags": [
-          "Queries"
+          "Availability"
         ],
-        "summary": "/queries/getDailyAvailabilityPredictionsById - POST",
-        "operationId": "post-queries-getdailyavailabilitypredictionsbyid",
+        "summary": "Fetch daily availability predictions by entity id",
+        "description": "Returns the local hourly predictions for the given date and entity id.",
+        "operationId": "post-queries-fetchdailyavailabilitypredictionsbyentityid",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetDailyAvailabilityPredictionsByIdQuery"
+                "$ref": "#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetDailyAvailabilityPredictionsByIdQuery"
+                "$ref": "#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetDailyAvailabilityPredictionsByIdQuery"
+                "$ref": "#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQuery"
               }
             }
           }
@@ -125,7 +127,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ParkingPredictionIReadOnlyCollectionOkResponse"
+                  "$ref": "#/components/schemas/Int32ParkingPredictionIDictionaryOkResponse"
                 }
               }
             }
@@ -155,7 +157,7 @@
   },
   "components": {
     "schemas": {
-      "GetAvailabilityPredictionByIdsQuery": {
+      "FetchAvailabilityPredictionByEntityIdsQuery": {
         "required": [
           "dateTime",
           "ids"
@@ -181,7 +183,7 @@
       "ParkingPrediction": {
         "type": "object",
         "properties": {
-          "parkingAssetId": {
+          "entityId": {
             "type": "string",
             "nullable": true
           },
@@ -197,6 +199,26 @@
           }
         },
         "additionalProperties": false
+      },
+      "ParkingPredictionIReadOnlyCollectionOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingPrediction"
+            },
+            "description": "Payload of the response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
       },
       "Error": {
         "type": "object",
@@ -216,45 +238,18 @@
         },
         "additionalProperties": false
       },
-      "ParkingPredictionIReadOnlyCollectionOkResponse": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingPrediction"
-            },
-            "nullable": true
-          },
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Error"
-            },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "BadRequestResponse": {
         "type": "object",
         "properties": {
           "success": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the request was successful",
+            "readOnly": true,
+            "example": false
           },
           "message": {
             "type": "string",
+            "description": "Human-readable message for this response",
             "nullable": true
           },
           "errors": {
@@ -262,28 +257,52 @@
             "items": {
               "$ref": "#/components/schemas/Error"
             },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
+            "description": "Collection of validation errors caused by the request",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A response indicating the request was invalid"
       },
-      "GetDailyAvailabilityPredictionsByIdQuery": {
+      "FetchDailyAvailabilityPredictionsByEntityIdQuery": {
+        "required": [
+          "dateTime",
+          "id"
+        ],
         "type": "object",
         "properties": {
           "id": {
+            "minLength": 1,
             "type": "string",
             "nullable": true
           },
           "dateTime": {
+            "minLength": 1,
             "type": "string",
             "format": "date-time"
           }
         },
         "additionalProperties": false
+      },
+      "Int32ParkingPredictionIDictionaryOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ParkingPrediction"
+            },
+            "description": "Payload of the response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
       }
     },
     "securitySchemes": {

@@ -25,7 +25,8 @@ paths:
     post:
       tags:
       - Availability
-      summary: /queries/fetchAvailabilityByEntityIds - POST
+      summary: Fetch realtime availability by entity Ids
+      description: Returns the availability for the list of given entity Ids.
       operationId: post-queries-fetchavailabilitybyentityids
       requestBody:
         content:
@@ -45,6 +46,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchCurrentDayHourlyOccupancyHistoryByEntityId:
+    post:
+      tags:
+      - Availability
+      summary: Fetch current day hourly occupancy history by entity id
+      description: Returns the current day hourly occupancy history as an occupancy ratio (between 0 and 1) for the given entity id.
+      operationId: post-queries-fetchcurrentdayhourlyoccupancyhistorybyentityid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Int32DoubleIDictionaryOkResponse'
         "400":
           description: Bad Request
           content:
@@ -94,6 +132,21 @@ components:
           format: int32
           nullable: true
       additionalProperties: false
+    ParkingAvailabilityIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingAvailability'
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
     Error:
       type: object
       properties:
@@ -107,45 +160,52 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    ParkingAvailabilityIReadOnlyCollectionOkResponse:
-      type: object
-      properties:
-        result:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParkingAvailability'
-          nullable: true
-        success:
-          type: boolean
-        message:
-          type: string
-          nullable: true
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Error'
-          nullable: true
-        stackTrace:
-          type: string
-          nullable: true
-      additionalProperties: false
     BadRequestResponse:
       type: object
       properties:
         success:
           type: boolean
+          description: Whether the request was successful
+          readOnly: true
+          example: false
         message:
           type: string
+          description: Human-readable message for this response
           nullable: true
         errors:
           type: array
           items:
             $ref: '#/components/schemas/Error'
+          description: Collection of validation errors caused by the request
           nullable: true
-        stackTrace:
+      additionalProperties: false
+      description: A response indicating the request was invalid
+    FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery:
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          minLength: 1
           type: string
           nullable: true
       additionalProperties: false
+    Int32DoubleIDictionaryOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
   securitySchemes:
     apiKey:
       name: API-KEY
