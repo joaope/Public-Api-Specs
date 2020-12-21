@@ -10,12 +10,12 @@
     }
   ],
   "paths": {
-    "/commands/ChangeRegistrationDetails": {
+    "/commands/changeRegistrationDetails": {
       "post": {
         "tags": [
-          "Commands"
+          "Occupancy"
         ],
-        "summary": "/commands/ChangeRegistrationDetails - POST",
+        "summary": "/commands/changeRegistrationDetails - POST",
         "operationId": "post-commands-changeregistrationdetails",
         "requestBody": {
           "content": {
@@ -52,12 +52,12 @@
         }
       }
     },
-    "/commands/DeleteRegistration": {
+    "/commands/deleteRegistration": {
       "post": {
         "tags": [
-          "Commands"
+          "Occupancy"
         ],
-        "summary": "/commands/DeleteRegistration - POST",
+        "summary": "/commands/deleteRegistration - POST",
         "operationId": "post-commands-deleteregistration",
         "requestBody": {
           "content": {
@@ -94,12 +94,12 @@
         }
       }
     },
-    "/commands/EndRegistration": {
+    "/commands/endRegistration": {
       "post": {
         "tags": [
-          "Commands"
+          "Occupancy"
         ],
-        "summary": "/commands/EndRegistration - POST",
+        "summary": "/commands/endRegistration - POST",
         "operationId": "post-commands-endregistration",
         "requestBody": {
           "content": {
@@ -136,12 +136,12 @@
         }
       }
     },
-    "/commands/RegisterAutomaticOccupancy": {
+    "/commands/registerAutomaticOccupancy": {
       "post": {
         "tags": [
           "Commands"
         ],
-        "summary": "/commands/RegisterAutomaticOccupancy - POST",
+        "summary": "/commands/registerAutomaticOccupancy - POST",
         "operationId": "post-commands-registerautomaticoccupancy",
         "requestBody": {
           "content": {
@@ -178,12 +178,12 @@
         }
       }
     },
-    "/commands/RegisterManualOccupancy": {
+    "/commands/registerManualOccupancy": {
       "post": {
         "tags": [
-          "Commands"
+          "Occupancy"
         ],
-        "summary": "/commands/RegisterManualOccupancy - POST",
+        "summary": "/commands/registerManualOccupancy - POST",
         "operationId": "post-commands-registermanualoccupancy",
         "requestBody": {
           "content": {
@@ -244,12 +244,12 @@
         }
       }
     },
-    "/queries/GetActiveRegistrations": {
+    "/queries/getActiveRegistrations": {
       "post": {
         "tags": [
-          "Queries"
+          "Occupancy"
         ],
-        "summary": "/queries/GetActiveRegistrations - POST",
+        "summary": "/queries/getActiveRegistrations - POST",
         "operationId": "post-queries-getactiveregistrations",
         "requestBody": {
           "content": {
@@ -276,7 +276,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItemIReadOnlyCollectionResponse"
+                  "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItemIReadOnlyCollectionOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
                 }
               }
             }
@@ -293,12 +303,12 @@
         }
       }
     },
-    "/queries/GetParkingAssetFloors": {
+    "/queries/getParkingAssetFloors": {
       "post": {
         "tags": [
-          "Queries"
+          "Occupancy"
         ],
-        "summary": "/queries/GetParkingAssetFloors - POST",
+        "summary": "/queries/getParkingAssetFloors - POST",
         "operationId": "post-queries-getparkingassetfloors",
         "requestBody": {
           "content": {
@@ -325,7 +335,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResultResponse"
+                  "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResultOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
                 }
               }
             }
@@ -342,12 +362,12 @@
         }
       }
     },
-    "/queries/GetParkingAssetHeaders": {
+    "/queries/getParkingAssetHeaders": {
       "post": {
         "tags": [
-          "Queries"
+          "Occupancy"
         ],
-        "summary": "/queries/GetParkingAssetHeaders - POST",
+        "summary": "/queries/getParkingAssetHeaders - POST",
         "operationId": "post-queries-getparkingassetheaders",
         "requestBody": {
           "content": {
@@ -374,7 +394,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionResponse"
+                  "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
                 }
               }
             }
@@ -391,12 +421,12 @@
         }
       }
     },
-    "/queries/GetRecentlyOccupiedBays": {
+    "/queries/getRecentlyOccupiedBays": {
       "post": {
         "tags": [
-          "Queries"
+          "Occupancy"
         ],
-        "summary": "/queries/GetRecentlyOccupiedBays - POST",
+        "summary": "/queries/getRecentlyOccupiedBays - POST",
         "operationId": "post-queries-getrecentlyoccupiedbays",
         "requestBody": {
           "content": {
@@ -423,7 +453,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionResponse"
+                  "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
                 }
               }
             }
@@ -440,12 +480,12 @@
         }
       }
     },
-    "/queries/GetRegistration": {
+    "/queries/getRegistration": {
       "post": {
         "tags": [
-          "Queries"
+          "Occupancy"
         ],
-        "summary": "/queries/GetRegistration - POST",
+        "summary": "/queries/getRegistration - POST",
         "operationId": "post-queries-getregistration",
         "requestBody": {
           "content": {
@@ -472,7 +512,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetRegistrationQueryResultItemResponse"
+                  "$ref": "#/components/schemas/GetRegistrationQueryResultItemOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
                 }
               }
             }
@@ -668,6 +718,21 @@
         },
         "additionalProperties": false
       },
+      "GetRegistrationQueryResultItemOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/GetRegistrationQueryResultItem"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
       "Error": {
         "type": "object",
         "properties": {
@@ -686,17 +751,18 @@
         },
         "additionalProperties": false
       },
-      "GetRegistrationQueryResultItemResponse": {
+      "BadRequestResponse": {
         "type": "object",
         "properties": {
-          "result": {
-            "$ref": "#/components/schemas/GetRegistrationQueryResultItem"
-          },
           "success": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the request was successful",
+            "readOnly": true,
+            "example": false
           },
           "message": {
             "type": "string",
+            "description": "Human-readable message for this response",
             "nullable": true
           },
           "errors": {
@@ -704,14 +770,12 @@
             "items": {
               "$ref": "#/components/schemas/Error"
             },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
+            "description": "Collection of validation errors caused by the request",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A response indicating the request was invalid"
       },
       "GetActiveRegistrationsQuery": {
         "required": [
@@ -774,36 +838,25 @@
         },
         "additionalProperties": false
       },
-      "GetActiveRegistrationsQueryResultItemIReadOnlyCollectionResponse": {
+      "GetActiveRegistrationsQueryResultItemIReadOnlyCollectionOkResponse": {
         "type": "object",
         "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
           "result": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItem"
             },
-            "nullable": true
-          },
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Error"
-            },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
+            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A successful response"
       },
       "GetParkingAssetHeadersQuery": {
         "required": [
@@ -836,36 +889,25 @@
         },
         "additionalProperties": false
       },
-      "GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionResponse": {
+      "GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionOkResponse": {
         "type": "object",
         "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
           "result": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItem"
             },
-            "nullable": true
-          },
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Error"
-            },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
+            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A successful response"
       },
       "GetParkingAssetFloorsQuery": {
         "required": [
@@ -946,32 +988,20 @@
         },
         "additionalProperties": false
       },
-      "GetParkingAssetFloorsQueryResultResponse": {
+      "GetParkingAssetFloorsQueryResultOkResponse": {
         "type": "object",
         "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
           "result": {
             "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResult"
-          },
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Error"
-            },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
-            "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A successful response"
       },
       "GetRecentlyOccupiedBaysQuery": {
         "required": [
@@ -1005,36 +1035,25 @@
         },
         "additionalProperties": false
       },
-      "GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionResponse": {
+      "GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionOkResponse": {
         "type": "object",
         "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
           "result": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem"
             },
-            "nullable": true
-          },
-          "success": {
-            "type": "boolean"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Error"
-            },
-            "nullable": true
-          },
-          "stackTrace": {
-            "type": "string",
+            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "A successful response"
       }
     },
     "securitySchemes": {
