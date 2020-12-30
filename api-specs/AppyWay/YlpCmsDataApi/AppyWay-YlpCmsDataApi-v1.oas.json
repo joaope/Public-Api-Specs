@@ -5040,6 +5040,17 @@
           "osLicenceText": {
             "type": "string"
           },
+          "osKey": {
+            "type": "string"
+          },
+          "osVersion": {
+            "enum": [
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
           "authorityId": {
             "type": "string"
           },
@@ -5103,6 +5114,17 @@
           },
           "isPubliclyViewable": {
             "type": "boolean"
+          },
+          "osKey": {
+            "type": "string"
+          },
+          "osVersion": {
+            "enum": [
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
