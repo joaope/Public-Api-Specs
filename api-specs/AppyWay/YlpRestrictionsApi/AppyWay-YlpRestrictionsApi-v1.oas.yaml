@@ -109,6 +109,31 @@ components:
           description: Slug (human-readable identifier) for the authority for which to fetch data
           nullable: true
       additionalProperties: false
+    CrsProperties:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Crs:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        properties:
+          $ref: '#/components/schemas/CrsProperties'
+      additionalProperties: false
+    Geometry:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        crs:
+          $ref: '#/components/schemas/Crs'
+      additionalProperties: false
     LinkedEntitlementSet:
       type: object
       properties:
@@ -238,14 +263,16 @@ components:
     OspPublicFeaturePropertiesFeature:
       type: object
       properties:
-        properties:
-          $ref: '#/components/schemas/OspPublicFeatureProperties'
-        type:
-          type: string
-          nullable: true
         id:
           type: string
           nullable: true
+        type:
+          type: string
+          nullable: true
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        properties:
+          $ref: '#/components/schemas/OspPublicFeatureProperties'
       additionalProperties: false
       description: A Geo-Json feature; an object that can be plotted on a map by a GeoJson compatible client.
     OspPublicFeaturePropertiesFeatureCollection:
@@ -314,14 +341,16 @@ components:
     ZonePublicFeaturePropertiesFeature:
       type: object
       properties:
-        properties:
-          $ref: '#/components/schemas/ZonePublicFeatureProperties'
-        type:
-          type: string
-          nullable: true
         id:
           type: string
           nullable: true
+        type:
+          type: string
+          nullable: true
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        properties:
+          $ref: '#/components/schemas/ZonePublicFeatureProperties'
       additionalProperties: false
       description: A Geo-Json feature; an object that can be plotted on a map by a GeoJson compatible client.
     ZonePublicFeaturePropertiesFeatureCollection:
@@ -346,22 +375,6 @@ components:
       description: |-
         A GeoJson feature collection, containing a collection of objects that can be plotted on a map by a GeoJson compatible client. AppyWay data
         is included as metadata on the features.
-    CrsProperties:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-      additionalProperties: false
-    Crs:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        properties:
-          $ref: '#/components/schemas/CrsProperties'
-      additionalProperties: false
     Polygon:
       type: object
       properties:

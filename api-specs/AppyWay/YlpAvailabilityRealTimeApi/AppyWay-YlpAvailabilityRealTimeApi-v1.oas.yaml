@@ -58,6 +58,45 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchAvailabilityByGroupAndEntityIds:
+    post:
+      tags:
+      - Availability
+      summary: Fetch realtime availability aggregated groups by keys formed by the group id and entity id
+      description: |-
+        Returns the availability for the list of given keys formed by group id and entity id.
+        If the group is not provided, it will return the availability for the entity.
+      operationId: post-queries-fetchavailabilitybygroupandentityids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityByGroupAndEntityIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityByGroupAndEntityIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityByGroupAndEntityIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingAvailabilityGroupIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /queries/fetchCurrentDayHourlyOccupancyHistoryByEntityId:
     post:
       tags:
@@ -202,6 +241,64 @@ components:
           additionalProperties:
             type: number
             format: double
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
+    AvailabilityGroupKey:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        groupId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchAvailabilityByGroupAndEntityIdsQuery:
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            $ref: '#/components/schemas/AvailabilityGroupKey'
+          nullable: true
+        ? type: array
+          items:
+            $ref: '#/components/schemas/AvailabilityGroupKey'
+          nullable: true
+        : 
+      additionalProperties: false
+    ParkingAvailabilityGroup:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/EntityType'
+        groupId:
+          type: string
+          nullable: true
+        totalSpaces:
+          type: integer
+          format: int32
+        availableSpaces:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    ParkingAvailabilityGroupIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingAvailabilityGroup'
           description: Payload of the response
           nullable: true
       additionalProperties: false
