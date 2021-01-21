@@ -127,67 +127,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ParkingAvailabilityGroupIReadOnlyCollectionOkResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/queries/fetchCurrentDayHourlyOccupancyHistoryByEntityId": {
-      "post": {
-        "tags": [
-          "Availability"
-        ],
-        "summary": "Fetch current day hourly occupancy history by entity id",
-        "description": "Returns the current day hourly occupancy history as an occupancy ratio (between 0 and 1) for the given entity id.",
-        "operationId": "post-queries-fetchcurrentdayhourlyoccupancyhistorybyentityid",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Int32DoubleIDictionaryOkResponse"
+                  "$ref": "#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse"
                 }
               }
             }
@@ -242,6 +182,16 @@
         "type": "integer",
         "format": "int32"
       },
+      "DataSourceType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "ParkingAvailability": {
         "type": "object",
         "properties": {
@@ -251,6 +201,13 @@
           },
           "entityType": {
             "$ref": "#/components/schemas/EntityType"
+          },
+          "dataSourceType": {
+            "$ref": "#/components/schemas/DataSourceType"
+          },
+          "groupId": {
+            "type": "string",
+            "nullable": true
           },
           "totalSpaces": {
             "type": "integer",
@@ -328,41 +285,6 @@
         "additionalProperties": false,
         "description": "A response indicating the request was invalid"
       },
-      "FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "minLength": 1,
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Int32DoubleIDictionaryOkResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the response was successful",
-            "readOnly": true
-          },
-          "result": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "number",
-              "format": "double"
-            },
-            "description": "Payload of the response",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A successful response"
-      },
       "AvailabilityGroupKey": {
         "type": "object",
         "properties": {
@@ -390,52 +312,6 @@
           "(Collection)": null
         },
         "additionalProperties": false
-      },
-      "ParkingAvailabilityGroup": {
-        "type": "object",
-        "properties": {
-          "entityId": {
-            "type": "string",
-            "nullable": true
-          },
-          "entityType": {
-            "$ref": "#/components/schemas/EntityType"
-          },
-          "groupId": {
-            "type": "string",
-            "nullable": true
-          },
-          "totalSpaces": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "availableSpaces": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ParkingAvailabilityGroupIReadOnlyCollectionOkResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the response was successful",
-            "readOnly": true
-          },
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingAvailabilityGroup"
-            },
-            "description": "Payload of the response",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A successful response"
       }
     },
     "securitySchemes": {
