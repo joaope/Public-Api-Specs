@@ -767,6 +767,10 @@ components:
         Id:
           type: string
           nullable: true
+        Guid:
+          type: string
+          format: uuid
+          readOnly: true
         Name:
           type: string
           nullable: true
@@ -990,6 +994,10 @@ components:
         Id:
           type: string
           nullable: true
+        Guid:
+          type: string
+          format: uuid
+          readOnly: true
         CountryId:
           type: string
           nullable: true
