@@ -1,0 +1,142 @@
+openapi: 3.0.1
+info:
+  title: Kaios Acl API
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/v1/integration-kaios
+paths:
+  /commands/setOnStreetAvailability:
+    post:
+      tags:
+      - Commands
+      summary: Set OnStreet Bay Availability by Id
+      description: If the request is valid, it will be accepted for processing
+      operationId: post-commands-setonstreetavailability
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetOnStreetAvailabilityCommand'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SetOnStreetAvailabilityCommand'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SetOnStreetAvailabilityCommand'
+      responses:
+        "202":
+          description: Success
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /ping:
+    get:
+      tags:
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the Availability Occupancy API service
+      operationId: get-ping
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    SetOnStreetAvailabilityCommand:
+      required:
+      - bayId
+      - timeStamp
+      type: object
+      properties:
+        bayId:
+          minLength: 1
+          type: string
+          description: OnStreet BayId
+          nullable: true
+        timeStamp:
+          minLength: 1
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        numCarsParked:
+          minimum: 0
+          type: integer
+          description: Bay Cars Parked
+          format: int32
+      additionalProperties: false
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          description: The property that caused the problem
+          nullable: true
+        code:
+          type: string
+          description: Machine-readable code representing the type of error
+          nullable: true
+        message:
+          type: string
+          description: Human-readable message for the error
+          nullable: true
+      additionalProperties: false
+      description: Represents a validation error
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the request was successful
+          readOnly: true
+          example: false
+        message:
+          type: string
+          description: Human-readable message for this response
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          description: Collection of validation errors caused by the request
+          nullable: true
+      additionalProperties: false
+      description: A response indicating the request was invalid
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+
