@@ -130,6 +130,66 @@
         }
       }
     },
+    "/fetchOperatingHoursById": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "Fetch operating hours by id",
+        "description": "Searches for operating hours with the supplied ID.",
+        "operationId": "post-fetchoperatinghoursbyid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOperatingHoursByIdQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOperatingHoursByIdQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOperatingHoursByIdQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingEntityOperatingHoursResultOkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/fetchParkingEntityById": {
       "post": {
         "tags": [
@@ -1010,7 +1070,7 @@
           },
           "entityId": {
             "type": "string",
-            "description": "Unique identifer for this entity",
+            "description": "Unique identifier for this entity",
             "nullable": true
           },
           "name": {
@@ -1126,6 +1186,32 @@
         "additionalProperties": false,
         "description": "A request to search for zone default information by viewport"
       },
+      "OnStreetParkingType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          -1
+        ],
+        "type": "integer",
+        "description": "Indicates the type of on an OnStreet bay.\n\n*StandardBay (1) - Standard bay (paid or free)\r\n*DisabledBay (2) - A bay requiring a disabled badge / permit during restricted hours\r\n*MotorcycleBay (3) - Designated motorcycle bay\r\n*ElectricBay (4) - A bay designated for electric vehicles only\r\n*CarClubBay (5) - A bay designated for Car Club members only during restricted hours\r\n*CoachBay (6) - A bay with space for a coach\r\n*LoadingBay (7) - A bay that allows Loading Only during restricted hours\r\n*TaxiBay (8) - Taxi bay\r\n*ResidentBay (9) - A bay designated for resident permit holders during restricted hours\r\n*SpecialBay (10) - A bay with special restrictions, e.g. RNLI, High Court or Ambulance bays\r\n*SingleYellowLine (11) - Single yellow line\r\n*DoubleYellowLine (12) - Double yellow line\r\n*SingleRedLine (13) - Single red line\r\n*DoubleRedLine (14) - Double red line\r\n*SingleYellowKerbMark (15) - Single yellow kerb marks\r\n*DoubleYellowKerbMark (16) - Double yellow kerb marks\r\n*KeepClearLine (17) - Keep Clear lines\r\n*DroppedKerbDriveway (18) - A dropped kerb driveway\r\n*None (-1) - Standard bay (paid or free)\r\n",
+        "format": "int32"
+      },
       "ZoneDefaultApplicableTime": {
         "type": "object",
         "properties": {
@@ -1153,10 +1239,7 @@
         "type": "object",
         "properties": {
           "onStreetParkingTypeId": {
-            "type": "integer",
-            "description": "Type of on street parking (standard bays, single yellow lines etc) to which these defaults apply",
-            "format": "int32",
-            "nullable": true
+            "$ref": "#/components/schemas/OnStreetParkingType"
           },
           "specialRestrictionTypeId": {
             "type": "integer",
@@ -1294,7 +1377,8 @@
           2,
           3,
           4,
-          5
+          5,
+          6
         ],
         "type": "integer",
         "format": "int32"
@@ -1424,6 +1508,180 @@
         },
         "additionalProperties": false
       },
+      "CarparkOperator": {
+        "type": "object",
+        "properties": {
+          "telephone": {
+            "type": "string",
+            "description": "Operator phone number",
+            "nullable": true
+          },
+          "website": {
+            "type": "string",
+            "description": "Operator website",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Provider name",
+            "nullable": true
+          },
+          "cardPaymentsExternalUrl": {
+            "type": "string",
+            "description": "URL for taking payments (if online payments are supported)",
+            "nullable": true
+          },
+          "paymentsTelephone": {
+            "type": "string",
+            "description": "Phone number for taking payments (if pay-by-phone is supported)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of the operator for a car park, including telephone numbers and URLs for phone and online payments (if applicable)"
+      },
+      "Carpark": {
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/CarparkOperator"
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/MapEntityType"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "locationCode": {
+            "type": "string",
+            "description": "A unique code for each parking entity assigned by a payment provider and is their identifier for payment purposes",
+            "nullable": true
+          },
+          "totalCapacity": {
+            "type": "integer",
+            "description": "How many vehicles can be parked at the parking entity. May be approximate (in the case of unmarked bays)",
+            "format": "int32",
+            "nullable": true
+          },
+          "zoneId": {
+            "type": "string",
+            "description": "ID of the zone in which the parking entity resides",
+            "nullable": true
+          },
+          "authorityId": {
+            "type": "string",
+            "description": "ID of the authority in which the parking entity resides",
+            "nullable": true
+          },
+          "features": {
+            "$ref": "#/components/schemas/GeometryCollectionFeatureInfoFeatureCollection"
+          },
+          "paymentMethodIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Payment methods supported at this onstreet location.",
+            "nullable": true
+          },
+          "entityId": {
+            "type": "string",
+            "description": "Unique identifier for this entity",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "User-readable name for this entity",
+            "nullable": true
+          },
+          "eTag": {
+            "type": "string",
+            "description": "ETag for the entity. The ETag is specific to each version of this entity and changes whenever the entity data changes. Clients can\r\nsend the eTags of cached entities to the server when requesting data and the server can return only entities for which the current ETag does\r\nnot match the requested tag - i.e. just those entities that have changed.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Models an off-street parking facility (car park) including surface and multi-storey car parks."
+      },
+      "OnStreetParking": {
+        "type": "object",
+        "properties": {
+          "onStreetParkingTypeIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnStreetParkingType"
+            },
+            "description": "The types of road markings represented by this entity. This property is only present for On Street Parking entities.",
+            "nullable": true
+          },
+          "facilityTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Any special facilities available at this onstreet location, e.g. charging points for EVs. This property is only present for On Street Parking entities.",
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/MapEntityType"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "locationCode": {
+            "type": "string",
+            "description": "A unique code for each parking entity assigned by a payment provider and is their identifier for payment purposes",
+            "nullable": true
+          },
+          "totalCapacity": {
+            "type": "integer",
+            "description": "How many vehicles can be parked at the parking entity. May be approximate (in the case of unmarked bays)",
+            "format": "int32",
+            "nullable": true
+          },
+          "zoneId": {
+            "type": "string",
+            "description": "ID of the zone in which the parking entity resides",
+            "nullable": true
+          },
+          "authorityId": {
+            "type": "string",
+            "description": "ID of the authority in which the parking entity resides",
+            "nullable": true
+          },
+          "features": {
+            "$ref": "#/components/schemas/GeometryCollectionFeatureInfoFeatureCollection"
+          },
+          "paymentMethodIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Payment methods supported at this onstreet location.",
+            "nullable": true
+          },
+          "entityId": {
+            "type": "string",
+            "description": "Unique identifier for this entity",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "User-readable name for this entity",
+            "nullable": true
+          },
+          "eTag": {
+            "type": "string",
+            "description": "ETag for the entity. The ETag is specific to each version of this entity and changes whenever the entity data changes. Clients can\r\nsend the eTags of cached entities to the server when requesting data and the server can return only entities for which the current ETag does\r\nnot match the requested tag - i.e. just those entities that have changed.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Models an on-street bay"
+      },
       "ParkingEntity": {
         "type": "object",
         "properties": {
@@ -1465,7 +1723,7 @@
           },
           "entityId": {
             "type": "string",
-            "description": "Unique identifer for this entity",
+            "description": "Unique identifier for this entity",
             "nullable": true
           },
           "entityType": {
@@ -1479,6 +1737,26 @@
           "eTag": {
             "type": "string",
             "description": "ETag for the entity. The ETag is specific to each version of this entity and changes whenever the entity data changes. Clients can\r\nsend the eTags of cached entities to the server when requesting data and the server can return only entities for which the current ETag does\r\nnot match the requested tag - i.e. just those entities that have changed.",
+            "nullable": true
+          },
+          "operator": {
+            "$ref": "#/components/schemas/CarparkOperator"
+          },
+          "onStreetParkingTypeIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnStreetParkingType"
+            },
+            "description": "The types of road markings represented by this entity. This property is only present for On Street Parking entities.",
+            "nullable": true
+          },
+          "facilityTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Any special facilities available at this onstreet location, e.g. charging points for EVs. This property is only present for On Street Parking entities.",
             "nullable": true
           }
         },
@@ -1528,7 +1806,7 @@
           },
           "entityId": {
             "type": "string",
-            "description": "Unique identifer for this entity",
+            "description": "Unique identifier for this entity",
             "nullable": true
           },
           "name": {
@@ -1748,8 +2026,7 @@
           "onStreetParkingTypes": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/OnStreetParkingType"
             },
             "description": "If supplied, only on street parking entities that have the given On Street Parking types will be included in the response. If null,\r\nall types will be returned.",
             "nullable": true
@@ -1865,8 +2142,7 @@
           "onStreetParkingTypes": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/OnStreetParkingType"
             },
             "description": "If supplied, only on street parking entities that have the given On Street Parking types will be included in the response. If null,\r\nall types will be returned.",
             "nullable": true
@@ -2129,6 +2405,18 @@
           "noReturnUntil": {
             "type": "string",
             "description": "The 'no return until', i.e. the time after parking during which the user is not allowed to return to the bay.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "freeUntil": {
+            "type": "string",
+            "description": "If it is free to park in the bay at the start of the requested time window, this returns the maximum time up to which\r\nthe user can park for free. If the bay is paid parking from the start of the window, FreeUntil will be null.\r\n            \r\nIf the bay is free 24/7, this value will be 7 days from start time, which is the maximum session length supported by the Appyway API.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "becomesFreeAt": {
+            "type": "string",
+            "description": "If the user has to pay to park at the start of the requested time window, this returns the first time at which\r\nthe user can park for free. If the bay is free parking from the start of the window OR free parking is never available in the bay, BecomesFreeAt will be null.",
             "format": "date-time",
             "nullable": true
           },
@@ -2413,6 +2701,109 @@
         "additionalProperties": false,
         "description": "A successful response"
       },
+      "FetchOperatingHoursByIdQuery": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "description": "Identifier of the Parking Entity to fetch",
+            "nullable": true
+          },
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
+          },
+          "date": {
+            "type": "string",
+            "description": "The date for which to retrieve the operating hours",
+            "example": "2020-01-20T00:00:00"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeRange": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "ISO-8601 time pattern, extended as required to accommodate nanoseconds.",
+            "example": "00:00:00"
+          },
+          "end": {
+            "type": "string",
+            "description": "ISO-8601 time pattern, extended as required to accommodate nanoseconds.",
+            "example": "00:00:00"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperatingHours": {
+        "type": "object",
+        "properties": {
+          "paymentMethodIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Payment method(s) for which these operating hours are valid",
+            "nullable": true
+          },
+          "permittedContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
+          },
+          "openPeriods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeRange"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contextualized operating hours for an entity"
+      },
+      "ParkingEntityOperatingHoursResult": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "description": "Identifier of the parking entity",
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/MapEntityType"
+          },
+          "entityETag": {
+            "type": "string",
+            "description": "The Etag of the current latest version of the Parking Entity referred to by this result. This allows\r\nclients to determine if they have the latest version of the parking entity in their local cache and only\r\nrequest the entity if it is missing.",
+            "nullable": true
+          },
+          "operatingHours": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OperatingHours"
+            },
+            "description": "List of operating hours for this parking entity. If the context of the search means that there are multiple operating hours returned,\r\none list of operating hours will be generated for each payment methods, bay types and vehicle operator\r\ncontext for which they are valid.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingEntityOperatingHoursResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ParkingEntityOperatingHoursResult"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
       "FetchParkingQuotesByIdsQuery": {
         "required": [
           "endTime",
@@ -2681,8 +3072,7 @@
           "onStreetParkingTypeIds": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/OnStreetParkingType"
             },
             "description": "On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types\r\nin the zone for which they are defined.",
             "nullable": true
