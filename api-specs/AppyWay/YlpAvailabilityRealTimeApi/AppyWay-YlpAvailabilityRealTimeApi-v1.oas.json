@@ -10,14 +10,14 @@
     }
   ],
   "paths": {
-    "/monitor": {
+    "/ping": {
       "get": {
         "tags": [
-          "Monitor"
+          "Status"
         ],
-        "summary": "Monitor",
-        "description": "Returns information on the health of the Availability Prediction API service",
-        "operationId": "get-monitor",
+        "summary": "Ping",
+        "description": "Returns Status (pong) of the Availability Occupancy API service",
+        "operationId": "get-ping",
         "responses": {
           "200": {
             "description": "Success"
@@ -187,7 +187,7 @@
           0,
           1,
           2,
-          3
+          4
         ],
         "type": "integer",
         "format": "int32"
