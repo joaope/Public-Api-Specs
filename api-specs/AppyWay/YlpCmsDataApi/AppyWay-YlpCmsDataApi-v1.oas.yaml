@@ -3929,7 +3929,7 @@ components:
         tiles:
           type: array
           items:
-            $ref: '#/components/schemas/Tile'
+            $ref: '#/components/schemas/BoundingBox'
         FeedbackState:
           enum:
           - 0
@@ -3982,13 +3982,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MovingOrderDocument'
-    Tile:
-      type: object
-      properties:
-        topLeft:
-          $ref: '#/components/schemas/LatLng'
-        bottomRight:
-          $ref: '#/components/schemas/LatLng'
     MovingOrderDocument:
       type: object
       properties:
@@ -4020,7 +4013,7 @@ components:
         tiles:
           type: array
           items:
-            $ref: '#/components/schemas/Tile'
+            $ref: '#/components/schemas/BoundingBox'
         customMotivationPageHtml:
           type: string
         reason:
@@ -4587,7 +4580,7 @@ components:
         tiles:
           type: array
           items:
-            $ref: '#/components/schemas/Tile'
+            $ref: '#/components/schemas/BoundingBox'
         FeedbackState:
           enum:
           - 0
@@ -4691,7 +4684,7 @@ components:
         tiles:
           type: array
           items:
-            $ref: '#/components/schemas/Tile'
+            $ref: '#/components/schemas/BoundingBox'
         customMotivationPageHtml:
           type: string
         reason:
@@ -4782,7 +4775,7 @@ components:
         tiles:
           type: array
           items:
-            $ref: '#/components/schemas/Tile'
+            $ref: '#/components/schemas/BoundingBox'
         FeedbackState:
           enum:
           - 0
