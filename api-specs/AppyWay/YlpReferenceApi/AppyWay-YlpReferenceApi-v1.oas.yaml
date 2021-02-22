@@ -803,6 +803,16 @@ components:
             format: int32
           nullable: true
       additionalProperties: false
+    RestrictionTypeLegalName:
+      type: object
+      properties:
+        RestrictionTypeId:
+          type: integer
+          format: int32
+        LegalName:
+          type: string
+          nullable: true
+      additionalProperties: false
     EntitlementType:
       type: object
       properties:
@@ -832,6 +842,11 @@ components:
           nullable: true
         HasTariff:
           type: boolean
+        RestrictionTypeLegalNames:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestrictionTypeLegalName'
+          nullable: true
       additionalProperties: false
     ExceptionType:
       type: object
@@ -1032,6 +1047,9 @@ components:
           format: double
         IsTroItem:
           type: boolean
+        LegalName:
+          type: string
+          nullable: true
       additionalProperties: false
     MovingRestrictionTypeOption:
       type: object

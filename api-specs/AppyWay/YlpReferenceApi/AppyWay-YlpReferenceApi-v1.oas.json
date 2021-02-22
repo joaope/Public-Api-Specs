@@ -1247,6 +1247,20 @@
         },
         "additionalProperties": false
       },
+      "RestrictionTypeLegalName": {
+        "type": "object",
+        "properties": {
+          "RestrictionTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "LegalName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "EntitlementType": {
         "type": "object",
         "properties": {
@@ -1284,6 +1298,13 @@
           },
           "HasTariff": {
             "type": "boolean"
+          },
+          "RestrictionTypeLegalNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RestrictionTypeLegalName"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1559,6 +1580,10 @@
           },
           "IsTroItem": {
             "type": "boolean"
+          },
+          "LegalName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
