@@ -1477,6 +1477,55 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /user/bulk:
+    post:
+      tags:
+      - User
+      summary: Creates new users in bulk
+      description: Creates new users in bulk
+      operationId: post-user-bulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkNewUserRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BulkNewUserRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BulkNewUserRequest'
+      responses:
+        "200":
+          description: Returns the information of collection of created users
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BulkNewUserResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkNewUserResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BulkNewUserResponse'
+        "400":
+          description: If the request has any errors
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /user/resetPassword:
     post:
       tags:
@@ -1910,6 +1959,73 @@ components:
         passwordResetLink:
           type: string
           nullable: true
+      additionalProperties: false
+    BulkNewUserRequest:
+      required:
+      - csvData
+      - organisation
+      - redirect
+      type: object
+      properties:
+        csvData:
+          minLength: 1
+          type: string
+          nullable: true
+        organisation:
+          minLength: 1
+          type: string
+          nullable: true
+        redirect:
+          minLength: 1
+          type: string
+          nullable: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermissionAssignment'
+          nullable: true
+        groups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
+          nullable: true
+      additionalProperties: false
+    UnsuccessfulInvitation:
+      type: object
+      properties:
+        email:
+          type: string
+          nullable: true
+        firstName:
+          type: string
+          description: First name
+          nullable: true
+        lastName:
+          type: string
+          description: Last name
+          nullable: true
+        error:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BulkNewUserResponse:
+      type: object
+      properties:
+        unsuccessfulInvitations:
+          type: array
+          items:
+            $ref: '#/components/schemas/UnsuccessfulInvitation'
+          nullable: true
+        successfulInvitationsAsCsvData:
+          type: string
+          nullable: true
+        hasErrors:
+          type: boolean
       additionalProperties: false
     PasswordResetRequest:
       type: object
