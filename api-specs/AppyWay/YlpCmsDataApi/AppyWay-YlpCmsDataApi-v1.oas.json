@@ -2286,6 +2286,9 @@
                       "2"
                     ],
                     "type": "integer"
+                  },
+                  "customMotivationPageHtml": {
+                    "type": "string"
                   }
                 }
               }
@@ -2506,6 +2509,215 @@
               "text/xml": {
                 "schema": {
                   "$ref": "#/components/schemas/Result_MovingOrder_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/movingOrders/query/getByQuery": {
+      "post": {
+        "tags": [
+          "MovingOrdersQuery"
+        ],
+        "summary": "MovingOrdersQuery_GetAllOrdersByQuery",
+        "operationId": "MovingOrdersQuery_GetAllOrdersByQuery",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovingOrderQueryArgs"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MovingOrderQueryArgs"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/MovingOrderQueryArgs"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/MovingOrderQueryArgs"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "AuthorityId": {
+                    "type": "string"
+                  },
+                  "OrderType": {
+                    "enum": [
+                      "0",
+                      "1"
+                    ],
+                    "type": "integer"
+                  },
+                  "States": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrderArray_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrderArray_"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrderArray_"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_MovingOrderArray_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/movingOrders/query/getLatestDocumentsByOrder/{orderId}": {
+      "get": {
+        "tags": [
+          "MovingOrdersQuery"
+        ],
+        "summary": "MovingOrdersQuery_GetLatestDocumentsByOrder",
+        "operationId": "MovingOrdersQuery_GetLatestDocumentsByOrder",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_MovingOrderDocument_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_MovingOrderDocument_"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_MovingOrderDocument_"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_MovingOrderDocument_"
                 }
               }
             }
@@ -4190,6 +4402,131 @@
         }
       }
     },
+    "/orders/query/getByQuery": {
+      "post": {
+        "tags": [
+          "OrdersQuery"
+        ],
+        "summary": "OrdersQuery_GetAllOrdersByQuery",
+        "operationId": "OrdersQuery_GetAllOrdersByQuery",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderQueryArgs"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderQueryArgs"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderQueryArgs"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderQueryArgs"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "AuthorityId": {
+                    "type": "string"
+                  },
+                  "OrderType": {
+                    "enum": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4"
+                    ],
+                    "type": "integer"
+                  },
+                  "States": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_OrderArray_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_OrderArray_"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_OrderArray_"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_OrderArray_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
     "/orders/query/getChangeSet": {
       "get": {
         "tags": [
@@ -4237,6 +4574,93 @@
               "text/xml": {
                 "schema": {
                   "$ref": "#/components/schemas/Result_FullChangeSet_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResult"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/orders/query/getLatestDocumentsByOrder/{orderId}": {
+      "get": {
+        "tags": [
+          "OrdersQuery"
+        ],
+        "summary": "OrdersQuery_GetLatestDocumentsByOrder",
+        "operationId": "OrdersQuery_GetLatestDocumentsByOrder",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_StaticOrderDocument_"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_StaticOrderDocument_"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_StaticOrderDocument_"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result_List_StaticOrderDocument_"
                 }
               }
             }
@@ -6205,6 +6629,9 @@
             "type": "integer",
             "format": "int32",
             "readOnly": true
+          },
+          "customMotivationPageHtml": {
+            "type": "string"
           }
         }
       },
@@ -6267,19 +6694,28 @@
       "MovingOrderDocument": {
         "type": "object",
         "properties": {
-          "DocumentId": {
+          "documentId": {
             "type": "string",
             "format": "uuid",
             "example": "00000000-0000-0000-0000-000000000000"
           },
-          "StateChangeId": {
+          "stateChangeId": {
             "type": "string",
             "format": "uuid",
             "example": "00000000-0000-0000-0000-000000000000"
           },
-          "CreationDate": {
+          "creationDate": {
             "type": "string",
             "format": "date-time"
+          },
+          "documentState": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
@@ -6335,6 +6771,40 @@
             "type": "string",
             "format": "uuid",
             "example": "00000000-0000-0000-0000-000000000000"
+          }
+        }
+      },
+      "MovingOrderQueryArgs": {
+        "type": "object",
+        "properties": {
+          "AuthorityId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "00000000-0000-0000-0000-000000000000"
+          },
+          "OrderType": {
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
+          "States": {
+            "type": "array",
+            "items": {
+              "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ],
+              "type": "integer",
+              "format": "int32"
+            }
           }
         }
       },
@@ -7114,6 +7584,9 @@
             "type": "integer",
             "format": "int32",
             "readOnly": true
+          },
+          "customMotivationPageHtml": {
+            "type": "string"
           }
         }
       },
@@ -7174,24 +7647,33 @@
       "StaticOrderDocument": {
         "type": "object",
         "properties": {
-          "DocumentId": {
+          "documentId": {
             "type": "string",
             "format": "uuid",
             "example": "00000000-0000-0000-0000-000000000000"
           },
-          "StateChangeId": {
+          "stateChangeId": {
             "type": "string",
             "format": "uuid",
             "example": "00000000-0000-0000-0000-000000000000"
           },
-          "CreationDate": {
+          "creationDate": {
             "type": "string",
             "format": "date-time"
           },
-          "Type": {
+          "type": {
             "enum": [
               0,
               1
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
+          "documentState": {
+            "enum": [
+              0,
+              1,
+              2
             ],
             "type": "integer",
             "format": "int32"
@@ -7273,6 +7755,42 @@
             "type": "string",
             "format": "uuid",
             "example": "00000000-0000-0000-0000-000000000000"
+          }
+        }
+      },
+      "OrderQueryArgs": {
+        "type": "object",
+        "properties": {
+          "AuthorityId": {
+            "type": "string"
+          },
+          "OrderType": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
+          "States": {
+            "type": "array",
+            "items": {
+              "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "type": "integer",
+              "format": "int32"
+            }
           }
         }
       },
@@ -7375,6 +7893,9 @@
             "type": "integer",
             "format": "int32",
             "readOnly": true
+          },
+          "customMotivationPageHtml": {
+            "type": "string"
           }
         }
       },
@@ -7786,6 +8307,21 @@
           }
         }
       },
+      "Result_List_MovingOrderDocument_": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MovingOrderDocument"
+            }
+          }
+        }
+      },
       "Feature_Geometry_Osp_": {
         "type": "object",
         "properties": {
@@ -8129,6 +8665,21 @@
           },
           "data": {
             "$ref": "#/components/schemas/FullChangeSet"
+          }
+        }
+      },
+      "Result_List_StaticOrderDocument_": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StaticOrderDocument"
+            }
           }
         }
       },
