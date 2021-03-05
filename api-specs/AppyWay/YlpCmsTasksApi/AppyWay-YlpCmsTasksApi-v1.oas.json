@@ -780,6 +780,102 @@
         }
       }
     },
+    "/tasks/create-initial-order": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Tasks_CreateInitialOrder",
+        "operationId": "Tasks_CreateInitialOrder",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "AuthorityId": {
+                    "type": "string"
+                  },
+                  "OrderName": {
+                    "type": "string"
+                  },
+                  "User": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200TextJsonResponse"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200ApplicationXmlResponse"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200TextXmlResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/tasks/current": {
       "get": {
         "tags": [
@@ -1340,6 +1436,192 @@
               "text/xml": {
                 "schema": {
                   "$ref": "#/components/schemas/TasksExecute-standard-importPost200TextXmlResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/tasks/generate-moving-order-docs": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Tasks_GenerateMovingOrderDocuments",
+        "operationId": "Tasks_GenerateMovingOrderDocuments",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "User": {
+                    "type": "string"
+                  },
+                  "OrderId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200TextJsonResponse"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200ApplicationXmlResponse"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200TextXmlResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/tasks/generate-order-docs": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Tasks_GenerateOrderDocuments",
+        "operationId": "Tasks_GenerateOrderDocuments",
+        "parameters": [
+          {
+            "name": "API-KEY",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOrderDocuments"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOrderDocuments"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOrderDocuments"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOrderDocuments"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "User": {
+                    "type": "string"
+                  },
+                  "OrderId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200ApplicationJsonResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200TextJsonResponse"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200ApplicationXmlResponse"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200TextXmlResponse"
                 }
               }
             }
@@ -2952,6 +3234,58 @@
           }
         }
       },
+      "CreateInitialOrderForAuthority": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "AuthorityId": {
+            "type": "string"
+          },
+          "OrderName": {
+            "type": "string"
+          },
+          "User": {
+            "type": "string"
+          }
+        }
+      },
+      "GenerateOrderDocuments": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "User": {
+            "type": "string"
+          },
+          "OrderId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "00000000-0000-0000-0000-000000000000"
+          }
+        }
+      },
+      "GenerateMovingOrderDocuments": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "User": {
+            "type": "string"
+          },
+          "OrderId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "00000000-0000-0000-0000-000000000000"
+          }
+        }
+      },
       "ValidateOrder": {
         "type": "object",
         "properties": {
@@ -3158,6 +3492,18 @@
       "TasksConvert-to-basemapPost200TextXmlResponse": {
         "type": "object"
       },
+      "TasksCreate-initial-orderPost200ApplicationJsonResponse": {
+        "type": "object"
+      },
+      "TasksCreate-initial-orderPost200TextJsonResponse": {
+        "type": "object"
+      },
+      "TasksCreate-initial-orderPost200ApplicationXmlResponse": {
+        "type": "object"
+      },
+      "TasksCreate-initial-orderPost200TextXmlResponse": {
+        "type": "object"
+      },
       "TasksCurrentGet200ApplicationJsonResponse": {
         "type": "object"
       },
@@ -3240,6 +3586,30 @@
         "type": "object"
       },
       "TasksExecute-standard-importPost200TextXmlResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-moving-order-docsPost200ApplicationJsonResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-moving-order-docsPost200TextJsonResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-moving-order-docsPost200ApplicationXmlResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-moving-order-docsPost200TextXmlResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-order-docsPost200ApplicationJsonResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-order-docsPost200TextJsonResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-order-docsPost200ApplicationXmlResponse": {
+        "type": "object"
+      },
+      "TasksGenerate-order-docsPost200TextXmlResponse": {
         "type": "object"
       },
       "TasksHistoryGet200ApplicationJsonResponse": {
