@@ -1120,6 +1120,8 @@ paths:
                   type: string
                 activationDate:
                   type: string
+                consultationStartDate:
+                  type: string
                 consultationEndDate:
                   type: string
                 proposalDate:
@@ -1377,6 +1379,8 @@ paths:
                   - "6"
                   type: integer
                 activationDate:
+                  type: string
+                consultationStartDate:
                   type: string
                 consultationEndDate:
                   type: string
@@ -2240,6 +2244,8 @@ paths:
                 summary:
                   type: string
                 activationDate:
+                  type: string
+                consultationStartDate:
                   type: string
                 consultationEndDate:
                   type: string
@@ -3350,16 +3356,8 @@ components:
           $ref: '#/components/schemas/BoundingBox'
         privacyPolicyUrl:
           type: string
-        osLicenceText:
-          type: string
-        osKey:
-          type: string
-        osVersion:
-          enum:
-          - 1
-          - 2
-          type: integer
-          format: int32
+        ordnanceSurvey:
+          $ref: '#/components/schemas/OrdnanceSurvey'
         authorityId:
           type: string
         authoritySlugs:
@@ -3384,6 +3382,13 @@ components:
           $ref: '#/components/schemas/LatLng'
         bottomRight:
           $ref: '#/components/schemas/LatLng'
+    OrdnanceSurvey:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        license:
+          type: string
     AuthorityBaseData:
       type: object
       properties:
@@ -3403,14 +3408,8 @@ components:
             type: string
         isPubliclyViewable:
           type: boolean
-        osKey:
-          type: string
-        osVersion:
-          enum:
-          - 1
-          - 2
-          type: integer
-          format: int32
+        ordnanceSurvey:
+          $ref: '#/components/schemas/OrdnanceSurvey'
     AuthorityInfo:
       type: object
       properties:
@@ -4157,6 +4156,9 @@ components:
         activationDate:
           type: string
           format: date-time
+        consultationStartDate:
+          type: string
+          format: date-time
         consultationEndDate:
           type: string
           format: date-time
@@ -4289,6 +4291,9 @@ components:
         summary:
           type: string
         activationDate:
+          type: string
+          format: date-time
+        consultationStartDate:
           type: string
           format: date-time
         consultationEndDate:
@@ -4840,11 +4845,15 @@ components:
         activationDate:
           type: string
           format: date-time
+        consultationStartDate:
+          type: string
+          format: date-time
         consultationEndDate:
           type: string
           format: date-time
         proposalDate:
           type: string
+          description: The date this order is scheduled to be proposed.
           format: date-time
         summary:
           type: string
@@ -4997,6 +5006,9 @@ components:
         activationDate:
           type: string
           format: date-time
+        consultationStartDate:
+          type: string
+          format: date-time
         consultationEndDate:
           type: string
           format: date-time
@@ -5076,11 +5088,15 @@ components:
         activationDate:
           type: string
           format: date-time
+        consultationStartDate:
+          type: string
+          format: date-time
         consultationEndDate:
           type: string
           format: date-time
         proposalDate:
           type: string
+          description: The date this order is scheduled to be proposed.
           format: date-time
         summary:
           type: string

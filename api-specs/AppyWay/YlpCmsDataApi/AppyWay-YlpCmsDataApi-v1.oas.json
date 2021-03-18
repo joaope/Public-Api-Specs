@@ -1831,6 +1831,9 @@
                   "activationDate": {
                     "type": "string"
                   },
+                  "consultationStartDate": {
+                    "type": "string"
+                  },
                   "consultationEndDate": {
                     "type": "string"
                   },
@@ -2245,6 +2248,9 @@
                     "type": "integer"
                   },
                   "activationDate": {
+                    "type": "string"
+                  },
+                  "consultationStartDate": {
                     "type": "string"
                   },
                   "consultationEndDate": {
@@ -3649,6 +3655,9 @@
                     "type": "string"
                   },
                   "activationDate": {
+                    "type": "string"
+                  },
+                  "consultationStartDate": {
                     "type": "string"
                   },
                   "consultationEndDate": {
@@ -5461,19 +5470,8 @@
           "privacyPolicyUrl": {
             "type": "string"
           },
-          "osLicenceText": {
-            "type": "string"
-          },
-          "osKey": {
-            "type": "string"
-          },
-          "osVersion": {
-            "enum": [
-              1,
-              2
-            ],
-            "type": "integer",
-            "format": "int32"
+          "ordnanceSurvey": {
+            "$ref": "#/components/schemas/OrdnanceSurvey"
           },
           "authorityId": {
             "type": "string"
@@ -5513,6 +5511,17 @@
           }
         }
       },
+      "OrdnanceSurvey": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          }
+        }
+      },
       "AuthorityBaseData": {
         "type": "object",
         "properties": {
@@ -5539,16 +5548,8 @@
           "isPubliclyViewable": {
             "type": "boolean"
           },
-          "osKey": {
-            "type": "string"
-          },
-          "osVersion": {
-            "enum": [
-              1,
-              2
-            ],
-            "type": "integer",
-            "format": "int32"
+          "ordnanceSurvey": {
+            "$ref": "#/components/schemas/OrdnanceSurvey"
           }
         }
       },
@@ -6575,6 +6576,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "consultationStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "consultationEndDate": {
             "type": "string",
             "format": "date-time"
@@ -6751,6 +6756,10 @@
             "type": "string"
           },
           "activationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "consultationStartDate": {
             "type": "string",
             "format": "date-time"
           },
@@ -7526,12 +7535,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "consultationStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "consultationEndDate": {
             "type": "string",
             "format": "date-time"
           },
           "proposalDate": {
             "type": "string",
+            "description": "The date this order is scheduled to be proposed.",
             "format": "date-time"
           },
           "summary": {
@@ -7738,6 +7752,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "consultationStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "consultationEndDate": {
             "type": "string",
             "format": "date-time"
@@ -7841,12 +7859,17 @@
             "type": "string",
             "format": "date-time"
           },
+          "consultationStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
           "consultationEndDate": {
             "type": "string",
             "format": "date-time"
           },
           "proposalDate": {
             "type": "string",
+            "description": "The date this order is scheduled to be proposed.",
             "format": "date-time"
           },
           "summary": {
