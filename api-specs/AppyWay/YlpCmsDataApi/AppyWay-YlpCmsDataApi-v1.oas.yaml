@@ -330,16 +330,74 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
             text/json:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
             text/xml:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
+        "400":
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /authorities/getFullBySlug:
+    get:
+      tags:
+      - Authorities
+      summary: Authorities_GetFullAuthorityBySlug
+      operationId: Authorities_GetFullAuthorityBySlug
+      parameters:
+      - name: slug
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: maxDate
+        in: query
+        description: Format - date-time (as date-time in RFC3339).
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Result_AuthoritySnapshotInfoDoc_'
         "400":
           description: BadRequest
           content:
@@ -388,16 +446,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_PublicAuthoritySnapshotInfoDoc_'
             text/json:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_PublicAuthoritySnapshotInfoDoc_'
             application/xml:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_PublicAuthoritySnapshotInfoDoc_'
             text/xml:
               schema:
-                $ref: '#/components/schemas/Result_AuthoritySnapshotInfo_'
+                $ref: '#/components/schemas/Result_PublicAuthoritySnapshotInfoDoc_'
         "400":
           description: BadRequest
           content:
@@ -3323,15 +3381,17 @@ paths:
           $ref: '#/components/responses/Forbidden'
 components:
   schemas:
-    AuthoritySnapshotInfo:
+    PublicAuthoritySnapshotInfoDoc:
       type: object
       properties:
         authorityUrl:
-          type: string
+          $ref: '#/components/schemas/AuthorityPublicCmsBlob'
         zonesUrl:
-          type: string
+          $ref: '#/components/schemas/FeatureCollection_Polygon_ZonePublicFeatureProperties_'
         ospsUrl:
-          type: string
+          type: array
+          items:
+            $ref: '#/components/schemas/FeatureCollection_Geometry_OspPublicFeatureProperties_'
         date:
           type: string
           format: date-time
@@ -3339,6 +3399,406 @@ components:
           type: string
           format: uuid
           example: 00000000-0000-0000-0000-000000000000
+    AuthorityPublicCmsBlob:
+      type: object
+      properties:
+        authorityId:
+          type: string
+        name:
+          type: string
+        shape:
+          $ref: '#/components/schemas/Polygon'
+        sets:
+          $ref: '#/components/schemas/PublicSetCollection'
+        ordnanceSurvey:
+          $ref: '#/components/schemas/OrdnanceSurvey'
+    Polygon:
+      type: object
+      properties:
+        coordinates:
+          type: array
+          items:
+            type: array
+            items:
+              type: array
+              items:
+                type: number
+                format: double
+        type:
+          type: string
+        crs:
+          $ref: '#/components/schemas/Crs'
+    PublicSetCollection:
+      type: object
+      properties:
+        operatingHoursSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperatingHoursSet'
+        tariffSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/TariffSet'
+    OrdnanceSurvey:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        license:
+          type: string
+    Crs:
+      type: object
+      properties:
+        type:
+          type: string
+        properties:
+          $ref: '#/components/schemas/CrsProperties'
+    OperatingHoursSet:
+      type: object
+      properties:
+        operatingHours:
+          $ref: '#/components/schemas/OperatingHoursCms'
+        setId:
+          type: string
+        name:
+          type: string
+        FormattedName:
+          type: string
+          readOnly: true
+    TariffSet:
+      type: object
+      properties:
+        tariffs:
+          type: array
+          items:
+            $ref: '#/components/schemas/TariffForTimesAndDatesCms'
+        setId:
+          type: string
+        name:
+          type: string
+        FormattedName:
+          type: string
+          readOnly: true
+    ZonePublicFeatureProperties:
+      type: object
+      properties:
+        zoneId:
+          type: string
+          description: GUID of the zone
+        authorityId:
+          type: string
+          description: GUID of the authority this zone belongs to
+        name:
+          type: string
+          description: Name of the zone
+        restrictionTypeDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetRestrictionDetail'
+          description: Default restrictions that apply in this zone
+        type:
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 7
+          - 8
+          - 9
+          - 10
+          type: integer
+          description: Type of the zone See {Ylp.Cms.IndexModel.OnStreet.ZoneType}
+          format: int32
+        venueId:
+          type: string
+          description: VenueID to which this zone is associated. This will influence when event day operating hours are in effect
+    OspPublicFeatureProperties:
+      type: object
+      properties:
+        onStreetParkingId:
+          type: string
+          description: GUID of the OSP
+        authorityId:
+          type: string
+          description: GUID of the authority this OSP belongs to
+        zoneId:
+          type: string
+          description: GUID of the zone this OSP belongs to
+        restrictionTypeDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetRestrictionDetail'
+          description: Information about which set of restrictions apply to this OSP
+        venueId:
+          type: string
+          description: The venue to which this OSP is linked to. This determines when an OSP should follow the event day restriction instead of standard operating hours
+        centroid:
+          $ref: '#/components/schemas/LatLng'
+    Geometry:
+      type: object
+      properties:
+        type:
+          type: string
+        crs:
+          $ref: '#/components/schemas/Crs'
+    CrsProperties:
+      type: object
+      properties:
+        name:
+          type: string
+    OperatingHoursCms:
+      type: object
+      properties:
+        standardDays:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleCms'
+          description: List of {Ylp.Cms.BlobEntities.RuleCms} applicable on normal days
+        eventDays:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleCms'
+          description: List of {Ylp.Cms.BlobEntities.RuleCms} applicable on event days in an associated venue
+    TariffForTimesAndDatesCms:
+      type: object
+      properties:
+        parkingEntitlementTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: The payment types for which these tariff details apply.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/TariffDetailCms'
+          description: |-
+            The details of the tariff that applies for the entitlement types
+            and dates indicated by this entry.
+        timeFrom:
+          type: object
+          description: |-
+            For tariffs that vary by time of day, this indicates the
+            (inclusive) start time from which these particular tariff details
+            apply.
+        timeTo:
+          type: object
+          description: |-
+            For tariffs that vary by time of day, this indicates the
+            (exclusive) end time to which these particular tariff details
+            apply.
+        firstDate:
+          $ref: '#/components/schemas/MonthAndDayCms'
+        lastDate:
+          $ref: '#/components/schemas/MonthAndDayCms'
+        months:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: The months of the year on which these details apply.
+        days:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: |-
+            The days of the week (1 = Mon, 7 = Sun) on which these details
+            apply.
+        timeType:
+          type: integer
+          description: Indicates the Type of Tariff
+          format: int32
+      description: |-
+        Contains tariff details applicable to a particular set of dates and
+        times, and for a particular set of entitlement types.
+    SetRestrictionDetail:
+      type: object
+      properties:
+        restrictionTypeId:
+          type: integer
+          description: Type of the bay this restriction applies to. See the reference API for more information
+          format: int32
+        locationNumber:
+          type: string
+          description: Used in conjunction with the payment provider on the authority to determine how the charge the user
+        operatingHoursSet:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedEntitlementSet'
+          description: Indicates the hours of operation when the restriction is in effect.
+        exemptionsSet:
+          $ref: '#/components/schemas/LinkedSet'
+        exceptionsSet:
+          $ref: '#/components/schemas/LinkedSet'
+        tariffsSet:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedEntitlementSet'
+          description: Indicates the applicable tariffs in the case of restrictions that can have a tariff
+    LatLng:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+    RuleCms:
+      type: object
+      properties:
+        ruleTime:
+          $ref: '#/components/schemas/RuleTimeCms'
+        parkingEntitlementTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Determines who this rule applies to. See the reference API for more information
+        maxStay:
+          type: integer
+          description: Maximum stay duration in minutes.
+          format: int32
+        minStay:
+          type: integer
+          description: Minimum stay duration in minutes.
+          format: int32
+        noReturn:
+          type: integer
+          description: No return duration in minutes.
+          format: int32
+        noReturnUntil:
+          type: object
+          description: No return duration in minutes.
+    TariffDetailCms:
+      type: object
+      properties:
+        price:
+          type: integer
+          description: |-
+            The price in pence charged for parking for the indicated
+            {Ylp.Cms.BlobEntities.TariffDetailCms.Duration}.
+          format: int32
+        surcharge:
+          type: integer
+          description: No longer Used - Needs to be Removed
+          format: int32
+        surchargeDetail:
+          $ref: '#/components/schemas/TariffDetailSurchargeCms'
+        duration:
+          type: integer
+          description: |-
+            The duration in minutes for which you can park if you pay
+            {Ylp.Cms.BlobEntities.TariffDetailCms.Price}. Null if there is a fixed charge regardless
+            of duration.
+          format: int32
+        minimumPriceIncrement:
+          type: integer
+          description: |-
+            The smallest unit by which the price can increment. If null, then
+            the minimum increment will be the same as {Ylp.Cms.BlobEntities.TariffDetailCms.Price}.
+          format: int32
+        singlePaymentCanCrossMidnight:
+          type: boolean
+          description: |-
+            Indicates whether a payment of one minimum increment is allowed
+            to cross over midnight.
+        from:
+          type: integer
+          description: |-
+            The offset in minutes into a parking session from which this rate
+            applies.
+          format: int32
+        upTo:
+          type: integer
+          description: |-
+            Set on variable rate tariffs to indicate the maximum stay length
+            for which this entry applies.
+          format: int32
+      description: |-
+        One entry in the tariff details in a
+        {Ylp.Cms.BlobEntities.TariffForTimesAndDatesCms}.
+    MonthAndDayCms:
+      type: object
+      properties:
+        month:
+          type: integer
+          format: int32
+        day:
+          type: integer
+          format: int32
+    LinkedEntitlementSet:
+      type: object
+      properties:
+        parkingEntitlementTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: The entitlement ID's to which this set applies. See the reference API for more information
+        setId:
+          type: string
+          description: GUID of the applicable set. The set can be found in the {Ylp.Cms.BlobEntities.Authority}
+    LinkedSet:
+      type: object
+      properties:
+        setId:
+          type: string
+          description: GUID of the applicable set. The set can be found in the {Ylp.Cms.BlobEntities.Authority}
+    RuleTimeCms:
+      type: object
+      properties:
+        months:
+          type: array
+          items:
+            type: integer
+            format: int32
+        days:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Applicable Days
+        weekNumbers:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Week number to apply Days
+        hours:
+          type: array
+          items:
+            $ref: '#/components/schemas/HoursCms'
+        firstDate:
+          $ref: '#/components/schemas/MonthAndDayCms'
+        lastDate:
+          $ref: '#/components/schemas/MonthAndDayCms'
+    TariffDetailSurchargeCms:
+      type: object
+      properties:
+        surchargeType:
+          type: integer
+          description: Required property that determines how surcharge is calculated
+          format: int32
+        value:
+          type: integer
+          description: ""
+          format: int32
+        notes:
+          type: string
+          description: Additional of Surcharge including Rules
+        ruleType:
+          type: integer
+          format: int32
+    HoursCms:
+      type: object
+      properties:
+        start:
+          type: object
+        end:
+          type: object
     ErrorResult:
       type: object
       properties:
@@ -3347,6 +3807,349 @@ components:
           readOnly: true
         error:
           type: string
+    AuthoritySnapshotInfoDoc:
+      type: object
+      properties:
+        authorityUrl:
+          $ref: '#/components/schemas/AuthorityCmsBlob'
+        zonesUrl:
+          $ref: '#/components/schemas/FeatureCollection_Polygon_Zone_'
+        ospsUrl:
+          $ref: '#/components/schemas/FeatureCollection_Geometry_Osp_'
+        date:
+          type: string
+          format: date-time
+        dataUpdateId:
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+    AuthorityCmsBlob:
+      type: object
+      properties:
+        authorityId:
+          type: string
+        authoritySlugs:
+          type: array
+          items:
+            type: string
+        regionId:
+          type: string
+        countryid:
+          type: string
+        fallbackZoneId:
+          type: string
+        type:
+          type: integer
+          format: int32
+        name:
+          type: string
+        shape:
+          $ref: '#/components/schemas/Polygon'
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoteCms'
+        recognizedParkingEntitlementTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+        paymentProvider:
+          $ref: '#/components/schemas/PaymentProviderCms'
+        hasFreeParkingOutsideZone:
+          type: boolean
+        isPubliclyViewable:
+          type: boolean
+        sets:
+          $ref: '#/components/schemas/SetCollection'
+        timeZoneId:
+          type: string
+        ordnanceSurvey:
+          $ref: '#/components/schemas/OrdnanceSurvey'
+        privacyPolicyUrl:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    NoteCms:
+      type: object
+      properties:
+        noteVisibilityTypeId:
+          type: integer
+          description: See the reference API for more information on types of visibilities for notes
+          format: int32
+        appliesToRestrictionTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+        priority:
+          type: integer
+          format: int32
+        title:
+          type: string
+        message:
+          type: string
+        url:
+          type: string
+        telephone:
+          type: string
+    PaymentProviderCms:
+      type: object
+      properties:
+        name:
+          type: string
+        paymentUrl:
+          type: string
+        telephone:
+          type: string
+        cashlessMerchantId:
+          type: string
+    SetCollection:
+      type: object
+      properties:
+        operatingHoursSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperatingHoursSet'
+        exemptionsSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExemptionsSet'
+        exceptionsSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExceptionsSet'
+        tariffSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/TariffSet'
+    ExemptionsSet:
+      type: object
+      properties:
+        exemptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExemptionCms'
+        setId:
+          type: string
+        name:
+          type: string
+        FormattedName:
+          type: string
+          readOnly: true
+    ExceptionsSet:
+      type: object
+      properties:
+        exceptions:
+          $ref: '#/components/schemas/ExceptionsCms'
+        setId:
+          type: string
+        name:
+          type: string
+        FormattedName:
+          type: string
+          readOnly: true
+    Zone:
+      type: object
+      properties:
+        zoneId:
+          type: string
+          description: GUID of the zone
+        authorityId:
+          type: string
+          description: GUID of the authority this zone belongs to
+        parentZoneId:
+          type: string
+          description: GUID of the zone in which this zone is contained (can be null)
+        type:
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 7
+          - 8
+          - 9
+          - 10
+          type: integer
+          description: Type of the zone. See the reference API for more information
+          format: int32
+        name:
+          type: string
+          description: Name of the zone
+        restrictionTypeDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetRestrictionDetail'
+          description: Default restrictions that apply in this zone
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoteCms'
+          description: Free text notes applicable to this zone
+        venueId:
+          type: string
+          description: VenueID to which this zone is associated. This will influence when event day operating hours are in effect
+        sourceTag:
+          type: string
+          description: Internal tracking code
+        tags:
+          type: array
+          items:
+            type: string
+    Osp:
+      type: object
+      properties:
+        onStreetParkingId:
+          type: string
+          description: GUID of the OSP
+        zoneId:
+          type: string
+          description: GUID of the zone this OSP belongs to
+        authorityId:
+          type: string
+          description: GUID of the authority this OSP belongs to
+        address:
+          $ref: '#/components/schemas/AddressCms'
+        length:
+          type: number
+          description: Length in meters of the OSP. Can be null
+          format: double
+        bays:
+          type: integer
+          description: Number of bays that are in this OSP
+          format: int32
+        restrictionTypeDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/SetRestrictionDetail'
+          description: Information about which set of restrictions apply to this OSP
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoteCms'
+          description: List of free text information about this OSP
+        electricPoint:
+          $ref: '#/components/schemas/ElectricPointCms'
+        venueId:
+          type: string
+          description: The venue to which this OSP is linked to. This determines when an OSP should follow the event day restriction instead of standard operating hours
+        sourceTag:
+          type: string
+          description: Internal tracking ID
+        sensorIds:
+          type: array
+          items:
+            type: string
+          description: List of sensors that are linked to the OSP (obsolete)
+        metaData:
+          type: object
+          additionalProperties:
+            type: string
+          description: Internal tracking ID
+        centroid:
+          $ref: '#/components/schemas/LatLng'
+        tags:
+          type: array
+          items:
+            type: string
+        linkedOspIds:
+          type: array
+          items:
+            type: string
+          description: |-
+            IDs of any OSPs that are 'linked' to this one. When calculating parking availability and cost, the restrictions of any linked OSPs should
+            be taken into account as well as the restrictions of this OSP. Used for scenarios where multiple OSPs apply to the same section of kerb.
+    ExemptionCms:
+      type: object
+      properties:
+        exemptionTypeId:
+          type: integer
+          description: The type of the exemption. See the reference API for more information
+          format: int32
+        parkingEntitlementTypeId:
+          type: integer
+          description: The entitlement one must have to be eligible for this exemption. See the reference API for more information
+          format: int32
+        exemptionTimeTypeId:
+          type: integer
+          description: Time when the exemption is applicable. See the reference API for more information
+          format: int32
+        exemptionApplies:
+          type: boolean
+          description: Whether the exemption is in effect (this can be used to override a different exemption)
+        maxStay:
+          type: integer
+          description: The maximum stay duration when eligible for this exemption
+          format: int32
+        noReturn:
+          type: integer
+          description: The time before you can return to the same place after having reached the max stay duration
+          format: int32
+    ExceptionsCms:
+      type: object
+      properties:
+        allHolidaysRestrictionExceptionTypeId:
+          type: integer
+          description: The exception type that applies on every public holiday
+          format: int32
+        daySpecificRestrictionExceptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DaySpecificRestrictionExceptionCms'
+          description: A list of {Ylp.Cms.BlobEntities.DaySpecificRestrictionExceptionCms} for specific days
+    AddressCms:
+      type: object
+      properties:
+        street:
+          type: string
+        postcode:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+    ElectricPointCms:
+      type: object
+      properties:
+        manufacturer:
+          type: string
+        manufacturerContactNumber:
+          type: string
+        chargeFee:
+          type: string
+        website:
+          type: string
+        connections:
+          type: array
+          items:
+            $ref: '#/components/schemas/ElectricConnectionCms'
+    DaySpecificRestrictionExceptionCms:
+      type: object
+      properties:
+        publicHolidayOrNamedDayId:
+          type: string
+          description: Reference to the applicable day defined on the {Ylp.Reference.Model.Country}
+        restrictionExceptionTypeId:
+          type: integer
+          description: Type of exception that applies. See the reference API for more information
+          format: int32
+    ElectricConnectionCms:
+      type: object
+      properties:
+        type:
+          type: integer
+          format: int32
+        name:
+          type: string
+        description:
+          type: string
+        quantity:
+          type: integer
+          format: int32
     AuthorityDetail:
       type: object
       properties:
@@ -3366,15 +4169,6 @@ components:
             type: string
         name:
           type: string
-    LatLng:
-      type: object
-      properties:
-        latitude:
-          type: number
-          format: double
-        longitude:
-          type: number
-          format: double
     BoundingBox:
       type: object
       properties:
@@ -3382,13 +4176,6 @@ components:
           $ref: '#/components/schemas/LatLng'
         bottomRight:
           $ref: '#/components/schemas/LatLng'
-    OrdnanceSurvey:
-      type: object
-      properties:
-        apiKey:
-          type: string
-        license:
-          type: string
     AuthorityBaseData:
       type: object
       properties:
@@ -3600,34 +4387,6 @@ components:
           $ref: '#/components/schemas/AddressCms'
         line:
           $ref: '#/components/schemas/Geometry'
-    RuleTimeCms:
-      type: object
-      properties:
-        months:
-          type: array
-          items:
-            type: integer
-            format: int32
-        days:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: Applicable Days
-        weekNumbers:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: Week number to apply Days
-        hours:
-          type: array
-          items:
-            $ref: '#/components/schemas/HoursCms'
-        firstDate:
-          $ref: '#/components/schemas/MonthAndDayCms'
-        lastDate:
-          $ref: '#/components/schemas/MonthAndDayCms'
     CarParkTimesOfOperationCms:
       type: object
       properties:
@@ -3667,29 +4426,6 @@ components:
           format: date-time
         description:
           type: string
-    NoteCms:
-      type: object
-      properties:
-        noteVisibilityTypeId:
-          type: integer
-          description: See {!:BundleCmsBlob.NoteVisibilityTypes} for more information on types of visibilities for notes
-          format: int32
-        appliesToRestrictionTypeIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-        priority:
-          type: integer
-          format: int32
-        title:
-          type: string
-        message:
-          type: string
-        url:
-          type: string
-        telephone:
-          type: string
     SmartCarparkFloorCms:
       type: object
       properties:
@@ -3720,93 +4456,6 @@ components:
           type: array
           items:
             type: string
-    Geometry:
-      type: object
-      properties:
-        type:
-          type: string
-        crs:
-          $ref: '#/components/schemas/Crs'
-    AddressCms:
-      type: object
-      properties:
-        street:
-          type: string
-        postcode:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-    HoursCms:
-      type: object
-      properties:
-        start:
-          type: object
-        end:
-          type: object
-    MonthAndDayCms:
-      type: object
-      properties:
-        month:
-          type: integer
-          format: int32
-        day:
-          type: integer
-          format: int32
-    TariffForTimesAndDatesCms:
-      type: object
-      properties:
-        parkingEntitlementTypeIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: The payment types for which these tariff details apply.
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/TariffDetailCms'
-          description: |-
-            The details of the tariff that applies for the entitlement types
-            and dates indicated by this entry.
-        timeFrom:
-          type: object
-          description: |-
-            For tariffs that vary by time of day, this indicates the
-            (inclusive) start time from which these particular tariff details
-            apply.
-        timeTo:
-          type: object
-          description: |-
-            For tariffs that vary by time of day, this indicates the
-            (exclusive) end time to which these particular tariff details
-            apply.
-        firstDate:
-          $ref: '#/components/schemas/MonthAndDayCms'
-        lastDate:
-          $ref: '#/components/schemas/MonthAndDayCms'
-        months:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: The months of the year on which these details apply.
-        days:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: |-
-            The days of the week (1 = Mon, 7 = Sun) on which these details
-            apply.
-        timeType:
-          type: integer
-          description: Indicates the Type of Tariff
-          format: int32
-      description: |-
-        Contains tariff details applicable to a particular set of dates and
-        times, and for a particular set of entitlement types.
     SmartCarparkBayCountCms:
       type: object
       properties:
@@ -3837,83 +4486,6 @@ components:
         name:
           type: string
         bayFloorOrder:
-          type: integer
-          format: int32
-    Crs:
-      type: object
-      properties:
-        type:
-          type: string
-        properties:
-          $ref: '#/components/schemas/CrsProperties'
-    TariffDetailCms:
-      type: object
-      properties:
-        price:
-          type: integer
-          description: |-
-            The price in pence charged for parking for the indicated
-            {Ylp.Cms.BlobEntities.TariffDetailCms.Duration}.
-          format: int32
-        surcharge:
-          type: integer
-          description: No longer Used - Needs to be Removed
-          format: int32
-        surchargeDetail:
-          $ref: '#/components/schemas/TariffDetailSurchargeCms'
-        duration:
-          type: integer
-          description: |-
-            The duration in minutes for which you can park if you pay
-            {Ylp.Cms.BlobEntities.TariffDetailCms.Price}. Null if there is a fixed charge regardless
-            of duration.
-          format: int32
-        minimumPriceIncrement:
-          type: integer
-          description: |-
-            The smallest unit by which the price can increment. If null, then
-            the minimum increment will be the same as {Ylp.Cms.BlobEntities.TariffDetailCms.Price}.
-          format: int32
-        singlePaymentCanCrossMidnight:
-          type: boolean
-          description: |-
-            Indicates whether a payment of one minimum increment is allowed
-            to cross over midnight.
-        from:
-          type: integer
-          description: |-
-            The offset in minutes into a parking session from which this rate
-            applies.
-          format: int32
-        upTo:
-          type: integer
-          description: |-
-            Set on variable rate tariffs to indicate the maximum stay length
-            for which this entry applies.
-          format: int32
-      description: |-
-        One entry in the tariff details in a
-        {Ylp.Cms.BlobEntities.TariffForTimesAndDatesCms}.
-    CrsProperties:
-      type: object
-      properties:
-        name:
-          type: string
-    TariffDetailSurchargeCms:
-      type: object
-      properties:
-        surchargeType:
-          type: integer
-          description: Required property that determines how surcharge is calculated
-          format: int32
-        value:
-          type: integer
-          description: ""
-          format: int32
-        notes:
-          type: string
-          description: Additional of Surcharge including Rules
-        ruleType:
           type: integer
           format: int32
     CarParkInfo:
@@ -4345,139 +4917,6 @@ components:
           type: string
         feature:
           $ref: '#/components/schemas/Feature_Geometry_Osp_'
-    Osp:
-      type: object
-      properties:
-        onStreetParkingId:
-          type: string
-          description: GUID of the OSP
-        zoneId:
-          type: string
-          description: GUID of the zone this OSP belongs to
-        authorityId:
-          type: string
-          description: GUID of the authority this OSP belongs to
-        address:
-          $ref: '#/components/schemas/AddressCms'
-        length:
-          type: number
-          description: Length in meters of the OSP. Can be null
-          format: double
-        bays:
-          type: integer
-          description: Number of bays that are in this OSP
-          format: int32
-        restrictionTypeDetails:
-          type: array
-          items:
-            $ref: '#/components/schemas/SetRestrictionDetail'
-          description: Information about which set of restrictions apply to this OSP
-        notes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NoteCms'
-          description: List of free text information about this OSP
-        electricPoint:
-          $ref: '#/components/schemas/ElectricPointCms'
-        venueId:
-          type: string
-          description: The venue to which this OSP is linked to. This determines when an OSP should follow the event day restriction instead of standard operating hours
-        sourceTag:
-          type: string
-          description: Internal tracking ID
-        sensorIds:
-          type: array
-          items:
-            type: string
-          description: List of sensors that are linked to the OSP (obsolete)
-        metaData:
-          type: object
-          additionalProperties:
-            type: string
-          description: Internal tracking ID
-        centroid:
-          $ref: '#/components/schemas/LatLng'
-        tags:
-          type: array
-          items:
-            type: string
-        linkedOspIds:
-          type: array
-          items:
-            type: string
-          description: |-
-            IDs of any OSPs that are 'linked' to this one. When calculating parking availability and cost, the restrictions of any linked OSPs should
-            be taken into account as well as the restrictions of this OSP. Used for scenarios where multiple OSPs apply to the same section of kerb.
-    SetRestrictionDetail:
-      type: object
-      properties:
-        restrictionTypeId:
-          type: integer
-          description: Type of the bay this restriction applies to {!:BundleCmsBlob.RestrictionTypes}
-          format: int32
-        locationNumber:
-          type: string
-          description: Used in conjunction with the payment provider on the authority to determine how the charge the user
-        operatingHoursSet:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedEntitlementSet'
-          description: Indicates the hours of operation when the restriction is in effect.
-        exemptionsSet:
-          $ref: '#/components/schemas/LinkedSet'
-        exceptionsSet:
-          $ref: '#/components/schemas/LinkedSet'
-        tariffsSet:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkedEntitlementSet'
-          description: Indicates the applicable tariffs in the case of restrictions that can have a tariff
-    ElectricPointCms:
-      type: object
-      properties:
-        manufacturer:
-          type: string
-        manufacturerContactNumber:
-          type: string
-        chargeFee:
-          type: string
-        website:
-          type: string
-        connections:
-          type: array
-          items:
-            $ref: '#/components/schemas/ElectricConnectionCms'
-    LinkedEntitlementSet:
-      type: object
-      properties:
-        parkingEntitlementTypeIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          description: The entitlement ID's to which this set applies. See {!:BundleCmsBlob.ParkingEntitlementTypes}
-        setId:
-          type: string
-          description: GUID of the applicable set. The set can be found in the {Ylp.Cms.BlobEntities.Authority}
-    LinkedSet:
-      type: object
-      properties:
-        setId:
-          type: string
-          description: GUID of the applicable set. The set can be found in the {Ylp.Cms.BlobEntities.Authority}
-    ElectricConnectionCms:
-      type: object
-      properties:
-        type:
-          type: integer
-          format: int32
-        name:
-          type: string
-        description:
-          type: string
-        quantity:
-          type: integer
-          format: int32
     Addition:
       type: object
       properties:
@@ -5242,14 +5681,114 @@ components:
           type: string
           description: Last date when the suspension is active (inclusive)
           format: date-time
-    Result_AuthoritySnapshotInfo_:
+    Result_PublicAuthoritySnapshotInfoDoc_:
       type: object
       properties:
         success:
           type: boolean
           readOnly: true
         data:
-          $ref: '#/components/schemas/AuthoritySnapshotInfo'
+          $ref: '#/components/schemas/PublicAuthoritySnapshotInfoDoc'
+    FeatureCollection_Polygon_ZonePublicFeatureProperties_:
+      type: object
+      properties:
+        type:
+          type: string
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/Feature_Polygon_ZonePublicFeatureProperties_'
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+        properties:
+          type: object
+    FeatureCollection_Geometry_OspPublicFeatureProperties_:
+      type: object
+      properties:
+        type:
+          type: string
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/Feature_Geometry_OspPublicFeatureProperties_'
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+        properties:
+          type: object
+    Feature_Polygon_ZonePublicFeatureProperties_:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/ZonePublicFeatureProperties'
+        geometry:
+          $ref: '#/components/schemas/Polygon'
+        type:
+          type: string
+        id:
+          type: string
+    Feature_Geometry_OspPublicFeatureProperties_:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/OspPublicFeatureProperties'
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        type:
+          type: string
+        id:
+          type: string
+    Result_AuthoritySnapshotInfoDoc_:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        data:
+          $ref: '#/components/schemas/AuthoritySnapshotInfoDoc'
+    FeatureCollection_Polygon_Zone_:
+      type: object
+      properties:
+        type:
+          type: string
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/Feature_Polygon_Zone_'
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+        properties:
+          type: object
+    FeatureCollection_Geometry_Osp_:
+      type: object
+      properties:
+        type:
+          type: string
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/Feature_Geometry_Osp_'
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+        properties:
+          type: object
+    Feature_Polygon_Zone_:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/Zone'
+        geometry:
+          $ref: '#/components/schemas/Polygon'
+        type:
+          type: string
+        id:
+          type: string
+    Feature_Geometry_Osp_:
+      type: object
+      properties:
+        properties:
+          $ref: '#/components/schemas/Osp'
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        type:
+          type: string
+        id:
+          type: string
     Result_AuthorityDetail_:
       type: object
       properties:
@@ -5419,17 +5958,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MovingOrderDocument'
-    Feature_Geometry_Osp_:
-      type: object
-      properties:
-        properties:
-          $ref: '#/components/schemas/Osp'
-        geometry:
-          $ref: '#/components/schemas/Geometry'
-        type:
-          type: string
-        id:
-          type: string
     Result_Addition_:
       type: object
       properties:
