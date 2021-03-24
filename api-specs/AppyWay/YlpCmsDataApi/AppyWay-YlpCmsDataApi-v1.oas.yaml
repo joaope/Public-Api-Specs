@@ -10,6 +10,7 @@ paths:
       tags:
       - Authorities
       summary: Authorities_Get
+      description: Gets the basic authority information for all authorities that you are entitled to access
       operationId: Authorities_Get
       parameters:
       - name: API-KEY
@@ -58,6 +59,7 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetAllAuthoritiesWithMovingOrder
+      description: Gets the basic authority information and their moving orders for all authorities
       operationId: Authorities_GetAllAuthoritiesWithMovingOrder
       parameters:
       - name: API-KEY
@@ -106,6 +108,7 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetAuthoritiesWithOrders
+      description: Gets the basic authority information and their orders for all authorities
       operationId: Authorities_GetAuthoritiesWithOrders
       parameters:
       - name: API-KEY
@@ -154,6 +157,7 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetAllAuthoritiesWithStaticOrders
+      description: Gets the basic authority information and their static orders for all authorities
       operationId: Authorities_GetAllAuthoritiesWithStaticOrders
       parameters:
       - name: API-KEY
@@ -202,10 +206,12 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetAuthorityById
+      description: Gets the basic authority information
       operationId: Authorities_GetAuthorityById
       parameters:
       - name: authorityId
         in: query
+        description: ID of the authority
         required: true
         schema:
           type: string
@@ -255,10 +261,12 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetAuthorityBySlug
+      description: Gets the basic authority information
       operationId: Authorities_GetAuthorityBySlug
       parameters:
       - name: slug
         in: query
+        description: Name of the authority
         required: true
         schema:
           type: string
@@ -308,16 +316,20 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetFull
+      description: |-
+        Gets an object which has the location of the documents containing the restrictions of an authority.<br />
+                    The documentation provided here shows the model you will find at these locations. The initial object contains only the URL's. You will have to fetch the documents from these URL's
       operationId: Authorities_GetFull
       parameters:
       - name: authorityId
         in: query
+        description: The ID of the authority. You can find this by making a request to the getAll endpoint
         required: true
         schema:
           type: string
       - name: maxDate
         in: query
-        description: Format - date-time (as date-time in RFC3339).
+        description: Format - date-time (as date-time in RFC3339). The date at which you wish to view the restrictions
         schema:
           type: string
       - name: API-KEY
@@ -366,16 +378,20 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetFullAuthorityBySlug
+      description: |-
+        Gets an object which has the location of the documents containing the full restrictions of an authority.<br />
+                   The documentation provided here shows the model you will find at these locations. /// The initial object contains only the URL's. You will have to fetch the documents from these URL's
       operationId: Authorities_GetFullAuthorityBySlug
       parameters:
       - name: slug
         in: query
+        description: The name of the authority. You can find this by making a request to the getAll endpoint
         required: true
         schema:
           type: string
       - name: maxDate
         in: query
-        description: Format - date-time (as date-time in RFC3339).
+        description: Format - date-time (as date-time in RFC3339). The date at which you wish to view the restrictions
         schema:
           type: string
       - name: API-KEY
@@ -424,16 +440,21 @@ paths:
       tags:
       - Authorities
       summary: Authorities_GetPublicAuthorityBySlug
+      description: |-
+        Gets an object which has the location of the documents containing the public restrictions of an authority.<br />
+                   The documentation provided here shows the model you will find at these locations. The initial object contains only the URL's. You will have to fetch the documents from these URL's.<br />
+                   This endpoint returns only public information. To fetch the full information, use the getFullBySlug or getFullById endpoints
       operationId: Authorities_GetPublicAuthorityBySlug
       parameters:
       - name: slug
         in: query
+        description: The name of the authority. You can find this by making a request to the getAll endpoint
         required: true
         schema:
           type: string
       - name: maxDate
         in: query
-        description: Format - date-time (as date-time in RFC3339).
+        description: Format - date-time (as date-time in RFC3339). The date at which you wish to view the restrictions
         schema:
           type: string
       - name: API-KEY
@@ -3392,11 +3413,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FeatureCollection_Geometry_OspPublicFeatureProperties_'
+          description: Provides the URL where you can fetch the OSPs as a list of FeatureCollections by Zone ID
         date:
           type: string
+          description: The last time this authority was updated
           format: date-time
         dataUpdateId:
           type: string
+          description: ID of the last update
           format: uuid
           example: 00000000-0000-0000-0000-000000000000
     AuthorityPublicCmsBlob:
@@ -3818,9 +3842,11 @@ components:
           $ref: '#/components/schemas/FeatureCollection_Geometry_Osp_'
         date:
           type: string
+          description: The last time this authority was updated
           format: date-time
         dataUpdateId:
           type: string
+          description: ID of the last update
           format: uuid
           example: 00000000-0000-0000-0000-000000000000
     AuthorityCmsBlob:
