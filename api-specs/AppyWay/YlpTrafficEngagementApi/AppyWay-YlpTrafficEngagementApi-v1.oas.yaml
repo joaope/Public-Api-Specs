@@ -180,8 +180,13 @@ paths:
           type: string
       - name: status
         in: query
+        description: Format - int32.
         schema:
-          type: string
+          enum:
+          - 0
+          - 1
+          - 2
+          type: integer
       - name: skip
         in: query
         description: Format - int32.
@@ -232,8 +237,12 @@ paths:
           type: string
       - name: status
         in: query
+        description: Format - int32.
         schema:
-          type: string
+          enum:
+          - 1
+          - 2
+          type: integer
       - name: skip
         in: query
         description: Format - int32.

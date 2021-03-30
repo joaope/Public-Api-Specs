@@ -289,8 +289,14 @@
           {
             "name": "status",
             "in": "query",
+            "description": "Format - int32.",
             "schema": {
-              "type": "string"
+              "enum": [
+                0,
+                1,
+                2
+              ],
+              "type": "integer"
             }
           },
           {
@@ -372,8 +378,13 @@
           {
             "name": "status",
             "in": "query",
+            "description": "Format - int32.",
             "schema": {
-              "type": "string"
+              "enum": [
+                1,
+                2
+              ],
+              "type": "integer"
             }
           },
           {
