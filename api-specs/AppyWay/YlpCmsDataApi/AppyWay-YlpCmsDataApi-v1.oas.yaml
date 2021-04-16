@@ -2105,6 +2105,8 @@ paths:
           enum:
           - 0
           - 1
+          - 2
+          - 3
           type: integer
       - name: API-KEY
         in: header
@@ -5419,6 +5421,8 @@ components:
           enum:
           - 0
           - 1
+          - 2
+          - 3
           type: integer
           format: int32
         documentState:
@@ -5724,7 +5728,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Feature_Polygon_ZonePublicFeatureProperties_'
-          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties
         properties:
           type: object
     FeatureCollection_Geometry_OspPublicFeatureProperties_:
@@ -5736,7 +5740,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Feature_Geometry_OspPublicFeatureProperties_'
-          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties
         properties:
           type: object
     Feature_Polygon_ZonePublicFeatureProperties_:
@@ -5778,7 +5782,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Feature_Polygon_Zone_'
-          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties
         properties:
           type: object
     FeatureCollection_Geometry_Osp_:
@@ -5790,7 +5794,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Feature_Geometry_Osp_'
-          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}
+          description: List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties
         properties:
           type: object
     Feature_Polygon_Zone_:

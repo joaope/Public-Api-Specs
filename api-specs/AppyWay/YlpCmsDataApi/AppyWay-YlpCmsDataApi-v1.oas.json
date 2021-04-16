@@ -3410,7 +3410,9 @@
             "schema": {
               "enum": [
                 0,
-                1
+                1,
+                2,
+                3
               ],
               "type": "integer"
             }
@@ -8335,7 +8337,9 @@
           "type": {
             "enum": [
               0,
-              1
+              1,
+              2,
+              3
             ],
             "type": "integer",
             "format": "int32"
@@ -8761,7 +8765,7 @@
             "items": {
               "$ref": "#/components/schemas/Feature_Polygon_ZonePublicFeatureProperties_"
             },
-            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}"
+            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties"
           },
           "properties": {
             "type": "object"
@@ -8779,7 +8783,7 @@
             "items": {
               "$ref": "#/components/schemas/Feature_Geometry_OspPublicFeatureProperties_"
             },
-            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}"
+            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties"
           },
           "properties": {
             "type": "object"
@@ -8843,7 +8847,7 @@
             "items": {
               "$ref": "#/components/schemas/Feature_Polygon_Zone_"
             },
-            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}"
+            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties"
           },
           "properties": {
             "type": "object"
@@ -8861,7 +8865,7 @@
             "items": {
               "$ref": "#/components/schemas/Feature_Geometry_Osp_"
             },
-            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties of type {!:TProperties}"
+            "description": "List of spatially bound items with a geometry of type {Ylp.Cms.IndexModel.GeoJson.Geometry} and properties"
           },
           "properties": {
             "type": "object"
