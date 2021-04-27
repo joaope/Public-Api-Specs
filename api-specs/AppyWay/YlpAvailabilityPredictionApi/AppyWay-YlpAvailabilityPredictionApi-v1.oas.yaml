@@ -5,13 +5,13 @@ info:
 servers:
 - url: https://api.appyway.com/v1/availability-prediction
 paths:
-  /monitor:
+  /ping:
     get:
       tags:
-      - Monitor
-      summary: Monitor
-      description: Returns information on the health of the Availability Prediction API service
-      operationId: get-monitor
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the Availability Occupancy API service
+      operationId: get-ping
       responses:
         "200":
           description: Success
@@ -45,7 +45,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ParkingPredictionIReadOnlyCollectionOkResponse'
+                $ref: '#/components/schemas/HourlyPredictionIReadOnlyCollectionOkResponse'
         "400":
           description: Bad Request
           content:
@@ -82,7 +82,44 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Int32ParkingPredictionIDictionaryOkResponse'
+                $ref: '#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQueryResultOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchWeeklyAvailabilityPredictionsByEntityId:
+    post:
+      tags:
+      - Availability
+      summary: Fetch weekly availability predictions by entity id
+      description: Returns the local hourly predictions for the given date and entity id.
+      operationId: post-queries-fetchweeklyavailabilitypredictionsbyentityid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchWeeklyAvailabilityPredictionsByEntityIdQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchWeeklyAvailabilityPredictionsByEntityIdQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchWeeklyAvailabilityPredictionsByEntityIdQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeeklyPredictionsOkResponse'
         "400":
           description: Bad Request
           content:
@@ -122,7 +159,7 @@ components:
       - 4
       type: integer
       format: int32
-    ParkingPrediction:
+    HourlyPrediction:
       type: object
       properties:
         entityId:
@@ -130,16 +167,16 @@ components:
           nullable: true
         occupancyRatio:
           type: number
-          format: double
+          format: float
           nullable: true
         confidence:
           type: number
-          format: double
+          format: float
           nullable: true
         sourceTypes:
           $ref: '#/components/schemas/DataSourceType'
       additionalProperties: false
-    ParkingPredictionIReadOnlyCollectionOkResponse:
+    HourlyPredictionIReadOnlyCollectionOkResponse:
       type: object
       properties:
         success:
@@ -149,7 +186,7 @@ components:
         result:
           type: array
           items:
-            $ref: '#/components/schemas/ParkingPrediction'
+            $ref: '#/components/schemas/HourlyPrediction'
           description: Payload of the response
           nullable: true
       additionalProperties: false
@@ -202,7 +239,22 @@ components:
           type: string
           format: date-time
       additionalProperties: false
-    Int32ParkingPredictionIDictionaryOkResponse:
+    FetchDailyAvailabilityPredictionsByEntityIdQueryResult:
+      type: object
+      properties:
+        globalConfidence:
+          type: number
+          format: float
+          nullable: true
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+        hourlyPredictions:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/HourlyPrediction'
+          nullable: true
+      additionalProperties: false
+    FetchDailyAvailabilityPredictionsByEntityIdQueryResultOkResponse:
       type: object
       properties:
         success:
@@ -210,11 +262,90 @@ components:
           description: Whether the response was successful
           readOnly: true
         result:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/ParkingPrediction'
-          description: Payload of the response
+          $ref: '#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQueryResult'
+      additionalProperties: false
+      description: A successful response
+    FetchWeeklyAvailabilityPredictionsByEntityIdQuery:
+      required:
+      - dateTime
+      - id
+      type: object
+      properties:
+        id:
+          minLength: 1
+          type: string
           nullable: true
+        dateTime:
+          minLength: 1
+          type: string
+          format: date-time
+      additionalProperties: false
+    Prediction:
+      type: object
+      properties:
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+        occupancyRatio:
+          type: number
+          format: float
+        confidence:
+          type: number
+          format: float
+      additionalProperties: false
+    DailyPredictions:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+        confidence:
+          type: number
+          format: float
+          nullable: true
+        perHour:
+          type: array
+          items:
+            $ref: '#/components/schemas/Prediction'
+          nullable: true
+      additionalProperties: false
+    WeeklyPredictions:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+        perDayOfWeek:
+          type: object
+          properties:
+            Sunday:
+              $ref: '#/components/schemas/DailyPredictions'
+            Monday:
+              $ref: '#/components/schemas/DailyPredictions'
+            Tuesday:
+              $ref: '#/components/schemas/DailyPredictions'
+            Wednesday:
+              $ref: '#/components/schemas/DailyPredictions'
+            Thursday:
+              $ref: '#/components/schemas/DailyPredictions'
+            Friday:
+              $ref: '#/components/schemas/DailyPredictions'
+            Saturday:
+              $ref: '#/components/schemas/DailyPredictions'
+          nullable: true
+      additionalProperties: false
+    WeeklyPredictionsOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/WeeklyPredictions'
       additionalProperties: false
       description: A successful response
   securitySchemes:
