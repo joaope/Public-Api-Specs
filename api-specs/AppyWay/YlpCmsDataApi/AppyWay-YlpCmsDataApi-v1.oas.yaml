@@ -2028,6 +2028,242 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
+  /orders/documents/delete:
+    post:
+      tags:
+      - OrderDocuments
+      summary: OrderDocuments_DeleteOrderDocumentById
+      operationId: OrderDocuments_DeleteOrderDocumentById
+      parameters:
+      - name: orderId
+        in: query
+        description: Format - uuid.
+        required: true
+        schema:
+          type: string
+      - name: documentId
+        in: query
+        description: Format - uuid.
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Result'
+        "400":
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /orders/documents/list:
+    get:
+      tags:
+      - OrderDocuments
+      summary: OrderDocuments_GetOrderDocumentsByStateChangeId
+      operationId: OrderDocuments_GetOrderDocumentsByStateChangeId
+      parameters:
+      - name: orderId
+        in: query
+        description: Format - uuid.
+        required: true
+        schema:
+          type: string
+      - name: stateChangeId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result_IEnumerable_StaticOrderDocument_'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Result_IEnumerable_StaticOrderDocument_'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Result_IEnumerable_StaticOrderDocument_'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Result_IEnumerable_StaticOrderDocument_'
+        "400":
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /orders/documents/update:
+    post:
+      tags:
+      - OrderDocuments
+      summary: OrderDocuments_PatchOrderDocuments
+      operationId: OrderDocuments_PatchOrderDocuments
+      parameters:
+      - name: orderId
+        in: query
+        description: Format - uuid.
+        required: true
+        schema:
+          type: string
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrdersDocumentsUpdatePostRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OrdersDocumentsUpdatePostRequest-1'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/OrdersDocumentsUpdatePostRequest-2'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/OrdersDocumentsUpdatePostRequest-3'
+          application/x-www-form-urlencoded: {}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Result'
+        "400":
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /orders/documents/upload:
+    post:
+      tags:
+      - OrderDocuments
+      summary: OrderDocuments_CreateNewOrderDocuments
+      operationId: OrderDocuments_CreateNewOrderDocuments
+      parameters:
+      - name: API-KEY
+        in: header
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/Result'
+        "400":
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ErrorResult'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
   /orders/export/graph:
     get:
       tags:
@@ -4936,6 +5172,60 @@ components:
             - 6
             type: integer
             format: int32
+    OrderDocumentPatch:
+      type: object
+      properties:
+        DocumentId:
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        FileName:
+          type: string
+        DocumentType:
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          type: integer
+          format: int32
+    StaticOrderDocument:
+      type: object
+      properties:
+        documentId:
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        orderId:
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        stateChangeId:
+          type: string
+          format: uuid
+          example: 00000000-0000-0000-0000-000000000000
+        creationDate:
+          type: string
+          format: date-time
+        type:
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          type: integer
+          format: int32
+        documentState:
+          enum:
+          - 0
+          - 1
+          - 2
+          type: integer
+          format: int32
+        fileName:
+          type: string
+        isSystemGenerated:
+          type: boolean
     CreateAdditionFromFeature:
       type: object
       properties:
@@ -5403,35 +5693,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/StaticOrderDocument'
-    StaticOrderDocument:
-      type: object
-      properties:
-        documentId:
-          type: string
-          format: uuid
-          example: 00000000-0000-0000-0000-000000000000
-        stateChangeId:
-          type: string
-          format: uuid
-          example: 00000000-0000-0000-0000-000000000000
-        creationDate:
-          type: string
-          format: date-time
-        type:
-          enum:
-          - 0
-          - 1
-          - 2
-          - 3
-          type: integer
-          format: int32
-        documentState:
-          enum:
-          - 0
-          - 1
-          - 2
-          type: integer
-          format: int32
     UpdateOrderParameters:
       type: object
       properties:
@@ -5988,6 +6249,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MovingOrderDocument'
+    Result_IEnumerable_StaticOrderDocument_:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/StaticOrderDocument'
     Result_Addition_:
       type: object
       properties:
@@ -6232,6 +6503,22 @@ components:
           readOnly: true
         data:
           $ref: '#/components/schemas/SuspensionRequest-xml-1'
+    OrdersDocumentsUpdatePostRequest:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrderDocumentPatch'
+    OrdersDocumentsUpdatePostRequest-1:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrderDocumentPatch'
+    OrdersDocumentsUpdatePostRequest-2:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrderDocumentPatch'
+    OrdersDocumentsUpdatePostRequest-3:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrderDocumentPatch'
     DeleteOrderRequestRequest-json:
       type: object
       properties:
