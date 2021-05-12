@@ -15,51 +15,20 @@
         "tags": [
           "Index"
         ],
-        "summary": "Index_GetCarparkIndexes",
-        "operationId": "Index_GetCarparkIndexes",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/index/carpark - GET",
+        "operationId": "get-index-carpark",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexCarparkGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexCarparkGet200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexCarparkGet200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexCarparkGet200TextXmlResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -69,51 +38,20 @@
         "tags": [
           "Index"
         ],
-        "summary": "Index_GetOnstreetIndexes",
-        "operationId": "Index_GetOnstreetIndexes",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/index/onstreet - GET",
+        "operationId": "get-index-onstreet",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexOnstreetGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexOnstreetGet200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexOnstreetGet200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexOnstreetGet200TextXmlResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -123,51 +61,62 @@
         "tags": [
           "Index"
         ],
-        "summary": "Index_GetIndexPrefixes",
-        "operationId": "Index_GetIndexPrefixes",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/index/prefixes - GET",
+        "operationId": "get-index-prefixes",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexPrefixesGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexPrefixesGet200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexPrefixesGet200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/IndexPrefixesGet200TextXmlResponse"
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/tasks/add-centerlines": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/add-centerlines - POST",
+        "operationId": "post-tasks-add-centerlines",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "authorityId": {
+                    "type": "string"
+                  },
+                  "authorityName": {
+                    "type": "string"
+                  },
+                  "files": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -177,51 +126,39 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_AddKerbEdge",
-        "operationId": "Tasks_AddKerbEdge",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksAdd-kerbedgePost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksAdd-kerbedgePost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksAdd-kerbedgePost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksAdd-kerbedgePost200TextXmlResponse"
+        "summary": "/tasks/add-kerbedge - POST",
+        "operationId": "post-tasks-add-kerbedge",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "authorityId": {
+                    "type": "string"
+                  },
+                  "authorityName": {
+                    "type": "string"
+                  },
+                  "files": {
+                    "type": "array"
+                  }
                 }
               }
             }
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -231,19 +168,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ApplyOrder",
-        "operationId": "Tasks_ApplyOrder",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/apply-order - POST",
+        "operationId": "post-tasks-apply-order",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyOrderToMaster"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApplyOrderToMaster"
@@ -254,58 +187,16 @@
                 "$ref": "#/components/schemas/ApplyOrderToMaster"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ApplyOrderToMaster"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/ApplyOrderToMaster"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "OrderId": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksApply-orderPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksApply-orderPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksApply-orderPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksApply-orderPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -324,19 +215,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_BuildCarparkIndex",
-        "operationId": "Tasks_BuildCarparkIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/build-carpark-index - POST",
+        "operationId": "post-tasks-build-carpark-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuildCarparkIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BuildCarparkIndex"
@@ -347,67 +234,16 @@
                 "$ref": "#/components/schemas/BuildCarparkIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BuildCarparkIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/BuildCarparkIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Prefix": {
-                    "type": "string"
-                  },
-                  "From": {
-                    "type": "string"
-                  },
-                  "To": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "Partitions": {
-                    "type": "array"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-carpark-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-carpark-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-carpark-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-carpark-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -426,19 +262,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_BuildOnStreetIndex",
-        "operationId": "Tasks_BuildOnStreetIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/build-onstreet-index - POST",
+        "operationId": "post-tasks-build-onstreet-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuildOnStreetIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BuildOnStreetIndex"
@@ -449,73 +281,16 @@
                 "$ref": "#/components/schemas/BuildOnStreetIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BuildOnStreetIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/BuildOnStreetIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Prefix": {
-                    "type": "string"
-                  },
-                  "From": {
-                    "type": "string"
-                  },
-                  "To": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "AuthorityIds": {
-                    "type": "array"
-                  },
-                  "ZoneIds": {
-                    "type": "array"
-                  },
-                  "OrderId": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-onstreet-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-onstreet-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-onstreet-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksBuild-onstreet-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -534,19 +309,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_CalculateCoverage",
-        "operationId": "Tasks_CalculateCoverage",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/calculate-coverage - POST",
+        "operationId": "post-tasks-calculate-coverage",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculateCoverage"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CalculateCoverage"
@@ -557,58 +328,16 @@
                 "$ref": "#/components/schemas/CalculateCoverage"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/CalculateCoverage"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/CalculateCoverage"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "Date": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCalculate-coveragePost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCalculate-coveragePost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCalculate-coveragePost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCalculate-coveragePost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -627,8 +356,8 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_CancelTask",
-        "operationId": "Tasks_CancelTask",
+        "summary": "/tasks/cancel/{taskId} - GET",
+        "operationId": "get-tasks-cancel-taskid",
         "parameters": [
           {
             "name": "taskId",
@@ -637,40 +366,58 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCancel-taskId-Get200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCancel-taskId-Get200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCancel-taskId-Get200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCancel-taskId-Get200TextXmlResponse"
-                }
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/tasks/clear-test-orders": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/clear-test-orders - POST",
+        "operationId": "post-tasks-clear-test-orders",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClearTestOrders"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClearTestOrders"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClearTestOrders"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClearTestOrders"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -689,19 +436,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ConvertToBaseMap",
-        "operationId": "Tasks_ConvertToBaseMap",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/convert-to-basemap - POST",
+        "operationId": "post-tasks-convert-to-basemap",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConvertToBaseMap"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConvertToBaseMap"
@@ -712,61 +455,16 @@
                 "$ref": "#/components/schemas/ConvertToBaseMap"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ConvertToBaseMap"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/ConvertToBaseMap"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "AuthorityIds": {
-                    "type": "array"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "Branch": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksConvert-to-basemapPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksConvert-to-basemapPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksConvert-to-basemapPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksConvert-to-basemapPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -785,19 +483,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_CreateInitialOrder",
-        "operationId": "Tasks_CreateInitialOrder",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/create-initial-order - POST",
+        "operationId": "post-tasks-create-initial-order",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
@@ -808,61 +502,16 @@
                 "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateInitialOrderForAuthority"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "AuthorityId": {
-                    "type": "string"
-                  },
-                  "OrderName": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCreate-initial-orderPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -881,42 +530,11 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_GetCurrentTasks",
-        "operationId": "Tasks_GetCurrentTasks",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/current - GET",
+        "operationId": "get-tasks-current",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCurrentGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCurrentGet200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCurrentGet200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksCurrentGet200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -935,19 +553,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_DeleteCarparkIndex",
-        "operationId": "Tasks_DeleteCarparkIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/delete-carpark-index - POST",
+        "operationId": "post-tasks-delete-carpark-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteCarparkIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DeleteCarparkIndex"
@@ -958,58 +572,16 @@
                 "$ref": "#/components/schemas/DeleteCarparkIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/DeleteCarparkIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/DeleteCarparkIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Prefix": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-carpark-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-carpark-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-carpark-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-carpark-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1028,19 +600,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_DeleteOnstreetIndex",
-        "operationId": "Tasks_DeleteOnstreetIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/delete-onstreet-index - POST",
+        "operationId": "post-tasks-delete-onstreet-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteOnstreetIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DeleteOnstreetIndex"
@@ -1051,58 +619,16 @@
                 "$ref": "#/components/schemas/DeleteOnstreetIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/DeleteOnstreetIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/DeleteOnstreetIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Prefix": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-onstreet-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-onstreet-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-onstreet-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDelete-onstreet-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1121,19 +647,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_DeployCarparkIndex",
-        "operationId": "Tasks_DeployCarparkIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/deploy-carpark-index - POST",
+        "operationId": "post-tasks-deploy-carpark-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeployCarparkIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DeployCarparkIndex"
@@ -1144,61 +666,16 @@
                 "$ref": "#/components/schemas/DeployCarparkIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/DeployCarparkIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/DeployCarparkIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Prefix": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "Target": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-carpark-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-carpark-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-carpark-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-carpark-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1217,19 +694,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_DeployOnstreetIndex",
-        "operationId": "Tasks_DeployOnstreetIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/deploy-onstreet-index - POST",
+        "operationId": "post-tasks-deploy-onstreet-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeployOnstreetIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DeployOnstreetIndex"
@@ -1240,61 +713,16 @@
                 "$ref": "#/components/schemas/DeployOnstreetIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/DeployOnstreetIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/DeployOnstreetIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Prefix": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "Target": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-onstreet-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-onstreet-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-onstreet-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksDeploy-onstreet-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1313,19 +741,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ExecuteCarparkImport",
-        "operationId": "Tasks_ExecuteCarparkImport",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/execute-carpark-import - POST",
+        "operationId": "post-tasks-execute-carpark-import",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExecuteCarparkImport"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ExecuteCarparkImport"
@@ -1336,55 +760,16 @@
                 "$ref": "#/components/schemas/ExecuteCarparkImport"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ExecuteCarparkImport"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/ExecuteCarparkImport"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-carpark-importPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-carpark-importPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-carpark-importPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-carpark-importPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1403,42 +788,33 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ExecuteStandardImport",
-        "operationId": "Tasks_ExecuteStandardImport",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-standard-importPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-standard-importPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-standard-importPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksExecute-standard-importPost200TextXmlResponse"
+        "summary": "/tasks/execute-standard-import - POST",
+        "operationId": "post-tasks-execute-standard-import",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "OrderId": {
+                    "type": "string"
+                  },
+                  "AuthorityId": {
+                    "type": "string"
+                  },
+                  "AuthorityName": {
+                    "type": "string"
+                  },
+                  "Files": {
+                    "type": "array"
+                  }
                 }
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1457,19 +833,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_GenerateMovingOrderDocuments",
-        "operationId": "Tasks_GenerateMovingOrderDocuments",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/generate-moving-order-docs - POST",
+        "operationId": "post-tasks-generate-moving-order-docs",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
@@ -1480,58 +852,16 @@
                 "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/GenerateMovingOrderDocuments"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "OrderId": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-moving-order-docsPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1550,19 +880,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_GenerateOrderDocuments",
-        "operationId": "Tasks_GenerateOrderDocuments",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/generate-order-docs - POST",
+        "operationId": "post-tasks-generate-order-docs",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateOrderDocuments"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/GenerateOrderDocuments"
@@ -1573,58 +899,16 @@
                 "$ref": "#/components/schemas/GenerateOrderDocuments"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/GenerateOrderDocuments"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/GenerateOrderDocuments"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "OrderId": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksGenerate-order-docsPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1643,42 +927,11 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_GetHistory",
-        "operationId": "Tasks_GetHistory",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/history - GET",
+        "operationId": "get-tasks-history",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistoryGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistoryGet200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistoryGet200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistoryGet200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1697,8 +950,8 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_GetHistoryDetail",
-        "operationId": "Tasks_GetHistoryDetail",
+        "summary": "/tasks/history/{taskId} - GET",
+        "operationId": "get-tasks-history-taskid",
         "parameters": [
           {
             "name": "taskId",
@@ -1711,14 +964,6 @@
           {
             "name": "continuationToken",
             "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -1726,29 +971,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistory-taskId-Get200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistory-taskId-Get200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistory-taskId-Get200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksHistory-taskId-Get200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1767,19 +990,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ImportElginSuspensions",
-        "operationId": "Tasks_ImportElginSuspensions",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/import-elgin-suspensions - POST",
+        "operationId": "post-tasks-import-elgin-suspensions",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportElginSuspensions"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ImportElginSuspensions"
@@ -1790,55 +1009,16 @@
                 "$ref": "#/components/schemas/ImportElginSuspensions"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ImportElginSuspensions"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/ImportElginSuspensions"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksImport-elgin-suspensionsPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksImport-elgin-suspensionsPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksImport-elgin-suspensionsPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksImport-elgin-suspensionsPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1857,42 +1037,11 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_MakeOrders",
-        "operationId": "Tasks_MakeOrders",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/make-orders - POST",
+        "operationId": "post-tasks-make-orders",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMake-ordersPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMake-ordersPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMake-ordersPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMake-ordersPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1911,19 +1060,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_MarkExperimentlChangeSetsAsMade",
-        "operationId": "Tasks_MarkExperimentlChangeSetsAsMade",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/mark-experimental-change-sets-as-made - POST",
+        "operationId": "post-tasks-mark-experimental-change-sets-as-made",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
@@ -1934,58 +1079,16 @@
                 "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "OrderId": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMark-experimental-change-sets-as-madePost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMark-experimental-change-sets-as-madePost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMark-experimental-change-sets-as-madePost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksMark-experimental-change-sets-as-madePost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2004,19 +1107,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_PrepareFiles",
-        "operationId": "Tasks_PrepareFiles",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/prepare-files - POST",
+        "operationId": "post-tasks-prepare-files",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrepareFiles"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PrepareFiles"
@@ -2027,55 +1126,16 @@
                 "$ref": "#/components/schemas/PrepareFiles"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/PrepareFiles"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/PrepareFiles"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPrepare-filesPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPrepare-filesPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPrepare-filesPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPrepare-filesPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2094,42 +1154,11 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ProposeOrders",
-        "operationId": "Tasks_ProposeOrders",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/propose-orders - POST",
+        "operationId": "post-tasks-propose-orders",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPropose-ordersPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPropose-ordersPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPropose-ordersPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksPropose-ordersPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2148,19 +1177,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_RebuildSearchIndex",
-        "operationId": "Tasks_RebuildSearchIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/rebuild-search-index - POST",
+        "operationId": "post-tasks-rebuild-search-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RebuildSearchIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RebuildSearchIndex"
@@ -2171,55 +1196,16 @@
                 "$ref": "#/components/schemas/RebuildSearchIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/RebuildSearchIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/RebuildSearchIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRebuild-search-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRebuild-search-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRebuild-search-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRebuild-search-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2238,19 +1224,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_RedeployMaster",
-        "operationId": "Tasks_RedeployMaster",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/redeploy-master - POST",
+        "operationId": "post-tasks-redeploy-master",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuildAndDeployMasterIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BuildAndDeployMasterIndex"
@@ -2261,55 +1243,16 @@
                 "$ref": "#/components/schemas/BuildAndDeployMasterIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BuildAndDeployMasterIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/BuildAndDeployMasterIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRedeploy-masterPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRedeploy-masterPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRedeploy-masterPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksRedeploy-masterPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2328,19 +1271,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_TestOnStreetIndex",
-        "operationId": "Tasks_TestOnStreetIndex",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/test-onstreet-index - POST",
+        "operationId": "post-tasks-test-onstreet-index",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestOnStreetIndex"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TestOnStreetIndex"
@@ -2351,58 +1290,16 @@
                 "$ref": "#/components/schemas/TestOnStreetIndex"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestOnStreetIndex"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/TestOnStreetIndex"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "IndexName": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksTest-onstreet-indexPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksTest-onstreet-indexPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksTest-onstreet-indexPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksTest-onstreet-indexPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2421,19 +1318,15 @@
         "tags": [
           "Tasks"
         ],
-        "summary": "Tasks_ValidateOrder",
-        "operationId": "Tasks_ValidateOrder",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/tasks/validate-order - POST",
+        "operationId": "post-tasks-validate-order",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ValidateOrder"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ValidateOrder"
@@ -2444,69 +1337,16 @@
                 "$ref": "#/components/schemas/ValidateOrder"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ValidateOrder"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidateOrder"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Name": {
-                    "type": "string"
-                  },
-                  "User": {
-                    "type": "string"
-                  },
-                  "OrderId": {
-                    "type": "string"
-                  },
-                  "ValidationState": {
-                    "enum": [
-                      "0",
-                      "1",
-                      "2"
-                    ],
-                    "type": "integer"
-                  },
-                  "ValidationReason": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksValidate-orderPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksValidate-orderPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksValidate-orderPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TasksValidate-orderPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2525,19 +1365,15 @@
         "tags": [
           "Test"
         ],
-        "summary": "Test_TestOperatingHours",
-        "operationId": "Test_TestOperatingHours",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/test/operating-hours - POST",
+        "operationId": "post-test-operating-hours",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperatingHoursTest"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/OperatingHoursTest"
@@ -2548,55 +1384,16 @@
                 "$ref": "#/components/schemas/OperatingHoursTest"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/OperatingHoursTest"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/OperatingHoursTest"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "OrderType": {
-                    "type": "string"
-                  },
-                  "OperatingHours": {
-                    "type": "string"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestOperating-hoursPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestOperating-hoursPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestOperating-hoursPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestOperating-hoursPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2615,42 +1412,11 @@
         "tags": [
           "TestSet"
         ],
-        "summary": "TestSet_GetTestSets",
-        "operationId": "TestSet_GetTestSets",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/testsets - GET",
+        "operationId": "get-testsets",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsGet200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsGet200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsGet200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsGet200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2667,19 +1433,15 @@
         "tags": [
           "TestSet"
         ],
-        "summary": "TestSet_SaveTest",
-        "operationId": "TestSet_SaveTest",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/testsets - POST",
+        "operationId": "post-testsets",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestSet"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TestSet"
@@ -2690,58 +1452,16 @@
                 "$ref": "#/components/schemas/TestSet"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestSet"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/TestSet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Id": {
-                    "type": "string"
-                  },
-                  "Name": {
-                    "type": "string"
-                  },
-                  "Tests": {
-                    "type": "array"
-                  }
-                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2760,8 +1480,8 @@
         "tags": [
           "TestSet"
         ],
-        "summary": "TestSet_GetTestSet",
-        "operationId": "TestSet_GetTestSet",
+        "summary": "/testsets/{id} - GET",
+        "operationId": "get-testsets-id",
         "parameters": [
           {
             "name": "id",
@@ -2770,40 +1490,11 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Get200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Get200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Get200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Get200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2820,8 +1511,8 @@
         "tags": [
           "TestSet"
         ],
-        "summary": "TestSet_DeleteTestSet",
-        "operationId": "TestSet_DeleteTestSet",
+        "summary": "/testsets/{id} - DELETE",
+        "operationId": "delete-testsets-id",
         "parameters": [
           {
             "name": "id",
@@ -2830,40 +1521,11 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Delete200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Delete200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Delete200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Testsets-id-Delete200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2882,78 +1544,35 @@
         "tags": [
           "TestSet"
         ],
-        "summary": "TestSet_Try",
-        "operationId": "TestSet_Try",
-        "parameters": [
-          {
-            "name": "API-KEY",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "/testsets/try - POST",
+        "operationId": "post-testsets-try",
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestRequest"
+              }
+            },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TestSetController_TestRequest"
+                "$ref": "#/components/schemas/TestRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TestSetController_TestRequest"
+                "$ref": "#/components/schemas/TestRequest"
               }
             },
-            "application/xml": {
+            "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TestSetController_TestRequest"
-              }
-            },
-            "text/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/TestSetController_TestRequest"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "Expression": {
-                    "type": "string"
-                  },
-                  "IndexName": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/TestRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsTryPost200ApplicationJsonResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsTryPost200TextJsonResponse"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsTryPost200ApplicationXmlResponse"
-                }
-              },
-              "text/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/TestsetsTryPost200TextXmlResponse"
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -2973,848 +1592,513 @@
       "BuildAndDeployMasterIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "RebuildSearchIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "BuildOnStreetIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "Prefix": {
-            "type": "string"
+          "prefix": {
+            "type": "string",
+            "nullable": true
           },
-          "From": {
+          "from": {
             "type": "string",
             "format": "date-time"
           },
-          "To": {
+          "to": {
             "type": "string",
             "format": "date-time"
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "AuthorityIds": {
+          "authorityIds": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "nullable": true
           },
-          "ZoneIds": {
+          "zoneIds": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "nullable": true
           },
-          "OrderId": {
-            "type": "string"
+          "orderId": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "DeleteOnstreetIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "Prefix": {
-            "type": "string"
+          "prefix": {
+            "type": "string",
+            "nullable": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "DeployOnstreetIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "Prefix": {
-            "type": "string"
+          "prefix": {
+            "type": "string",
+            "nullable": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "Target": {
-            "type": "string"
+          "target": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "TestOnStreetIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "IndexName": {
-            "type": "string"
+          "indexName": {
+            "type": "string",
+            "nullable": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "BuildCarparkIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "Prefix": {
-            "type": "string"
+          "prefix": {
+            "type": "string",
+            "nullable": true
           },
-          "From": {
+          "from": {
             "type": "string",
             "format": "date-time"
           },
-          "To": {
+          "to": {
             "type": "string",
             "format": "date-time"
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "Partitions": {
+          "partitions": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "DeleteCarparkIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "Prefix": {
-            "type": "string"
+          "prefix": {
+            "type": "string",
+            "nullable": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "DeployCarparkIndex": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "Prefix": {
-            "type": "string"
+          "prefix": {
+            "type": "string",
+            "nullable": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "Target": {
-            "type": "string"
+          "target": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "MarkExperimentalChangeSetsAsMade": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "OrderId": {
-            "type": "string"
+          "orderId": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ApplyOrderToMaster": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "OrderId": {
-            "type": "string"
+          "orderId": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ConvertToBaseMap": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "AuthorityIds": {
+          "authorityIds": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "nullable": true
           },
-          "User": {
-            "type": "string"
-          },
-          "Branch": {
+          "user": {
             "type": "string",
+            "nullable": true
+          },
+          "branch": {
+            "type": "string",
+            "nullable": true,
             "readOnly": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "PrepareFiles": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CalculateCoverage": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "Date": {
+          "date": {
             "type": "string",
             "format": "date-time"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ExecuteCarparkImport": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "CreateInitialOrderForAuthority": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "AuthorityId": {
-            "type": "string"
+          "authorityId": {
+            "type": "string",
+            "nullable": true
           },
-          "OrderName": {
-            "type": "string"
+          "orderName": {
+            "type": "string",
+            "nullable": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "GenerateOrderDocuments": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
-          },
-          "OrderId": {
+          "user": {
             "type": "string",
-            "format": "uuid",
-            "example": "00000000-0000-0000-0000-000000000000"
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "GenerateMovingOrderDocuments": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
-          },
-          "OrderId": {
+          "user": {
             "type": "string",
-            "format": "uuid",
-            "example": "00000000-0000-0000-0000-000000000000"
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "OrderValidationState": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "ValidateOrder": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           },
-          "OrderId": {
-            "type": "string"
+          "orderId": {
+            "type": "string",
+            "nullable": true
           },
-          "ValidationState": {
-            "enum": [
-              0,
-              1,
-              2
-            ],
-            "type": "integer",
-            "format": "int32"
+          "validationState": {
+            "$ref": "#/components/schemas/OrderValidationState"
           },
-          "ValidationReason": {
-            "type": "string"
+          "validationReason": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "ClearTestOrders": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "ImportElginSuspensions": {
         "type": "object",
         "properties": {
-          "Name": {
+          "name": {
             "type": "string",
+            "nullable": true,
             "readOnly": true
           },
-          "User": {
-            "type": "string"
+          "user": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
       "OperatingHoursTest": {
         "type": "object",
         "properties": {
-          "OrderType": {
-            "type": "string"
+          "orderType": {
+            "type": "string",
+            "nullable": true
           },
-          "OperatingHours": {
-            "type": "string"
+          "operatingHours": {
+            "type": "string",
+            "nullable": true
           }
-        }
-      },
-      "TestSet": {
-        "type": "object",
-        "properties": {
-          "Id": {
-            "type": "string"
-          },
-          "Name": {
-            "type": "string"
-          },
-          "Tests": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Test"
-            }
-          }
-        }
+        },
+        "additionalProperties": false
       },
       "Test": {
         "type": "object",
         "properties": {
-          "Expression": {
-            "type": "string"
+          "expression": {
+            "type": "string",
+            "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       },
-      "TestSetController_TestRequest": {
+      "TestSet": {
         "type": "object",
         "properties": {
-          "Expression": {
-            "type": "string"
+          "id": {
+            "type": "string",
+            "nullable": true
           },
-          "IndexName": {
-            "type": "string"
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Test"
+            },
+            "nullable": true
           }
-        }
-      },
-      "IndexCarparkGet200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "IndexCarparkGet200TextJsonResponse": {
-        "type": "object"
-      },
-      "IndexCarparkGet200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "IndexCarparkGet200TextXmlResponse": {
-        "type": "object"
-      },
-      "IndexOnstreetGet200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "IndexOnstreetGet200TextJsonResponse": {
-        "type": "object"
-      },
-      "IndexOnstreetGet200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "IndexOnstreetGet200TextXmlResponse": {
-        "type": "object"
-      },
-      "IndexPrefixesGet200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "IndexPrefixesGet200TextJsonResponse": {
-        "type": "object"
-      },
-      "IndexPrefixesGet200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "IndexPrefixesGet200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksAdd-kerbedgePost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksAdd-kerbedgePost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksAdd-kerbedgePost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksAdd-kerbedgePost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksApply-orderPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksApply-orderPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksApply-orderPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksApply-orderPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksBuild-carpark-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksBuild-carpark-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksBuild-carpark-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksBuild-carpark-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksBuild-onstreet-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksBuild-onstreet-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksBuild-onstreet-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksBuild-onstreet-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksCalculate-coveragePost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksCalculate-coveragePost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksCalculate-coveragePost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksCalculate-coveragePost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksCancel-taskId-Get200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksCancel-taskId-Get200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksCancel-taskId-Get200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksCancel-taskId-Get200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksConvert-to-basemapPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksConvert-to-basemapPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksConvert-to-basemapPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksConvert-to-basemapPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksCreate-initial-orderPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksCreate-initial-orderPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksCreate-initial-orderPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksCreate-initial-orderPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksCurrentGet200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksCurrentGet200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksCurrentGet200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksCurrentGet200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksDelete-carpark-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksDelete-carpark-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksDelete-carpark-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksDelete-carpark-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksDelete-onstreet-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksDelete-onstreet-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksDelete-onstreet-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksDelete-onstreet-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-carpark-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-carpark-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-carpark-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-carpark-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-onstreet-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-onstreet-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-onstreet-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksDeploy-onstreet-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksExecute-carpark-importPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksExecute-carpark-importPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksExecute-carpark-importPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksExecute-carpark-importPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksExecute-standard-importPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksExecute-standard-importPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksExecute-standard-importPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksExecute-standard-importPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-moving-order-docsPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-moving-order-docsPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-moving-order-docsPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-moving-order-docsPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-order-docsPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-order-docsPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-order-docsPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksGenerate-order-docsPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksHistoryGet200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksHistoryGet200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksHistoryGet200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksHistoryGet200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksHistory-taskId-Get200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksHistory-taskId-Get200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksHistory-taskId-Get200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksHistory-taskId-Get200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksImport-elgin-suspensionsPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksImport-elgin-suspensionsPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksImport-elgin-suspensionsPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksImport-elgin-suspensionsPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksMake-ordersPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksMake-ordersPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksMake-ordersPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksMake-ordersPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksMark-experimental-change-sets-as-madePost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksMark-experimental-change-sets-as-madePost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksMark-experimental-change-sets-as-madePost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksMark-experimental-change-sets-as-madePost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksPrepare-filesPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksPrepare-filesPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksPrepare-filesPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksPrepare-filesPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksPropose-ordersPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksPropose-ordersPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksPropose-ordersPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksPropose-ordersPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksRebuild-search-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksRebuild-search-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksRebuild-search-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksRebuild-search-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksRedeploy-masterPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksRedeploy-masterPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksRedeploy-masterPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksRedeploy-masterPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksTest-onstreet-indexPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksTest-onstreet-indexPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksTest-onstreet-indexPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksTest-onstreet-indexPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TasksValidate-orderPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TasksValidate-orderPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TasksValidate-orderPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TasksValidate-orderPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TestOperating-hoursPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TestOperating-hoursPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TestOperating-hoursPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TestOperating-hoursPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "TestsetsGet200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TestsetsGet200TextJsonResponse": {
-        "type": "object"
-      },
-      "TestsetsGet200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TestsetsGet200TextXmlResponse": {
-        "type": "object"
-      },
-      "TestsetsPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TestsetsPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TestsetsPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TestsetsPost200TextXmlResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Get200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Get200TextJsonResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Get200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Get200TextXmlResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Delete200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Delete200TextJsonResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Delete200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "Testsets-id-Delete200TextXmlResponse": {
-        "type": "object"
-      },
-      "TestsetsTryPost200ApplicationJsonResponse": {
-        "type": "object"
-      },
-      "TestsetsTryPost200TextJsonResponse": {
-        "type": "object"
-      },
-      "TestsetsTryPost200ApplicationXmlResponse": {
-        "type": "object"
-      },
-      "TestsetsTryPost200TextXmlResponse": {
-        "type": "object"
+        },
+        "additionalProperties": false
+      },
+      "TestRequest": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "nullable": true
+          },
+          "indexName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
