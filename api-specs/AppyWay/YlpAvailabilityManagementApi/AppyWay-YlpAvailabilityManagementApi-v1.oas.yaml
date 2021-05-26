@@ -324,13 +324,40 @@ components:
         sourceTypes:
           $ref: '#/components/schemas/DataSourceType'
       additionalProperties: false
+    DailyOccupancyForSourceType:
+      type: object
+      properties:
+        dataSourceType:
+          $ref: '#/components/schemas/DataSourceType'
+        hourlyOccupancy:
+          type: array
+          items:
+            type: number
+            format: float
+          nullable: true
+      additionalProperties: false
+    DailyOccupancyHistoryForPrediction:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        entityId:
+          type: string
+          nullable: true
+        occupancyBySourceType:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyOccupancyForSourceType'
+          nullable: true
+      additionalProperties: false
     ParkingDailyAvailabilitySummary:
       type: object
       properties:
         entityId:
           type: string
           nullable: true
-        parkingAvailability:
+        currentAvailability:
           type: array
           items:
             $ref: '#/components/schemas/ParkingAvailability'
@@ -339,6 +366,11 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/HourlyPrediction'
+          nullable: true
+        occupancyHistoryForPrediction:
+          type: array
+          items:
+            $ref: '#/components/schemas/DailyOccupancyHistoryForPrediction'
           nullable: true
       additionalProperties: false
     ParkingDailyAvailabilitySummaryOkResponse:

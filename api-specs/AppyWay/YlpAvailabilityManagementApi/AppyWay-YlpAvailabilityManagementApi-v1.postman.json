@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "9ced6756-9a39-4c20-8ff3-a351d5376ff7",
+      "id": "ee715b31-fd53-4748-8971-a4a0e01301fe",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "ce34dda1-06de-4356-a5a0-4135239ca912",
+          "id": "b9332430-d77d-4ddd-8a03-019d37e1b060",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "aa130379-39f1-4923-ac47-5835bb1033c0",
+          "id": "5c7d941c-67d4-454a-b60a-c36394e251ef",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -82,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "9c3b4cab-d624-4d24-93a6-4e1df4e79377",
+          "id": "04da5d6d-62c2-4334-b8e6-0399f3b3b34a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8b79cba5-5bce-4bd3-8c23-017414d67828",
+          "id": "1d6913a8-e38f-46a5-bded-7542d2ae4a58",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -143,11 +143,11 @@
       "event": []
     },
     {
-      "id": "e2336074-e79b-4c3f-a431-7c36542090c3",
+      "id": "dc6d7813-062d-4aad-82c0-a505dec09813",
       "name": "queries",
       "item": [
         {
-          "id": "98f83d5b-99a9-4337-b0cd-4343873efe57",
+          "id": "6af0460c-0634-4c89-b2d6-6bedab71aa4f",
           "name": "Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id",
           "request": {
             "name": "Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id",
@@ -181,7 +181,7 @@
           },
           "response": [
             {
-              "id": "78fc06ab-e14b-49ec-bc9a-63a0b1cbc512",
+              "id": "e58dbd65-0907-4d3e-8fbf-0557ce1aef70",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -209,12 +209,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": {\n  \"entityId\": \"l\",\n  \"parkingAvailability\": [\n   {\n    \"entityId\": \"ullamco veniam proident\",\n    \"entityType\": 3,\n    \"dataSourceType\": 1,\n    \"groupId\": \"reprehenderit ex incididunt\",\n    \"totalSpaces\": -26656555,\n    \"availableSpaces\": 70427567\n   },\n   {\n    \"entityId\": \"Duis ipsum officia laboris\",\n    \"entityType\": 6,\n    \"dataSourceType\": 1,\n    \"groupId\": \"officia commodo\",\n    \"totalSpaces\": 64510221,\n    \"availableSpaces\": -67927048\n   }\n  ],\n  \"hourlyPredictions\": \"deserunt aliquip tempor\"\n }\n}",
+              "body": "{\n \"success\": true,\n \"result\": {\n  \"entityId\": \"elit aliqua\",\n  \"currentAvailability\": [\n   {\n    \"entityId\": \"ipsum al\",\n    \"entityType\": 1,\n    \"dataSourceType\": 4,\n    \"groupId\": \"laborum in esse\",\n    \"totalSpaces\": 35969293,\n    \"availableSpaces\": -61289841\n   },\n   {\n    \"entityId\": \"eiusmod id et ea in\",\n    \"entityType\": 5,\n    \"dataSourceType\": 2,\n    \"groupId\": \"Lorem est eiusmod\",\n    \"totalSpaces\": -39462638,\n    \"availableSpaces\": -66295960\n   }\n  ],\n  \"hourlyPredictions\": \"dolor proident eiusmod\",\n  \"occupancyHistoryForPrediction\": [\n   {\n    \"date\": \"labore magna ullamco\",\n    \"entityId\": \"minim ipsum nisi laborum veniam\",\n    \"occupancyBySourceType\": [\n     {\n      \"dataSourceType\": 1,\n      \"hourlyOccupancy\": [\n       7459357.711255744,\n       -92890233.23489895\n      ]\n     },\n     {\n      \"dataSourceType\": 0,\n      \"hourlyOccupancy\": [\n       60890886.88669345,\n       6326732.846683487\n      ]\n     }\n    ]\n   },\n   {\n    \"date\": \"Duis dolor dolore non nostrud\",\n    \"entityId\": \"nisi laborum proident id\",\n    \"occupancyBySourceType\": [\n     {\n      \"dataSourceType\": 0,\n      \"hourlyOccupancy\": [\n       75260239.48387048,\n       64469314.86711466\n      ]\n     },\n     {\n      \"dataSourceType\": 2,\n      \"hourlyOccupancy\": [\n       89566374.35322851,\n       -65056431.39434048\n      ]\n     }\n    ]\n   }\n  ]\n }\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "10f3e107-1dcc-4045-ba73-cbb3f682f2dc",
+              "id": "7ec47e4b-2714-40a2-86e2-dda10b9c15ad",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -242,12 +242,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"mollit adipisicing\",\n \"errors\": [\n  {\n   \"property\": \"nisi laborum ullamco eiusmod\",\n   \"code\": \"Lorem adipisicing\",\n   \"message\": \"ad id Lorem ex\"\n  },\n  {\n   \"property\": \"irure ut\",\n   \"code\": \"ut ea officia\",\n   \"message\": \"nisi commodo nulla est\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"minim vo\",\n \"errors\": [\n  {\n   \"property\": \"consectetur officia sint in anim\",\n   \"code\": \"dolore\",\n   \"message\": \"occaecat in\"\n  },\n  {\n   \"property\": \"velit Excepteur aute do veniam\",\n   \"code\": \"dolor Duis\",\n   \"message\": \"Excepteur et laboris \"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "71d86d4c-0efa-4ef7-b387-a2fb45dc33d5",
+              "id": "23b1db9b-5741-4d7d-8c08-2316a63462a6",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -280,7 +280,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "965eadc2-dfcf-42bd-98e7-3b162d16a337",
+              "id": "cfa3c76e-45b2-4d04-a2b3-68883685bc81",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -313,7 +313,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a160a432-54b4-4f40-90ee-6339326ec25c",
+              "id": "ec025a62-9372-45ae-a970-730c802e89e9",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -349,7 +349,7 @@
           "event": []
         },
         {
-          "id": "6f98496d-635c-4524-99b5-4ad37812480f",
+          "id": "e6ad1bc0-087e-4c20-b9c6-0381ab661a2e",
           "name": "/queries/fetchParkingEntitiesByAuthorityIds - POST",
           "request": {
             "name": "/queries/fetchParkingEntitiesByAuthorityIds - POST",
@@ -380,7 +380,7 @@
           },
           "response": [
             {
-              "id": "17739df1-91ed-4fb7-bee0-991247cefb5d",
+              "id": "cd07980a-3f7b-4bc8-a228-7a8cf722212a",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -408,12 +408,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"result\": [\n  {\n   \"entityParentId\": \"laboris elit consequat\",\n   \"entityId\": \"nulla sit eiusmod\",\n   \"name\": \"adipisicing irure\",\n   \"ownerId\": \"ex consequat fugiat aliquip\",\n   \"entityType\": 4,\n   \"location\": \"est nostrud commodo aute laboris\"\n  },\n  {\n   \"entityParentId\": \"consequa\",\n   \"entityId\": \"laboris qui\",\n   \"name\": \"reprehende\",\n   \"ownerId\": \"voluptate dolor nostrud mollit\",\n   \"entityType\": 1,\n   \"location\": \"in velit proident voluptate commodo\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"result\": [\n  {\n   \"entityParentId\": \"laborum adipisicing\",\n   \"entityId\": \"id Excepteur minim magna in\",\n   \"name\": \"esse cupidatat commodo adipisicing\",\n   \"ownerId\": \"eiusmod consectetur\",\n   \"entityType\": 6,\n   \"location\": \"in cillum sint elit\"\n  },\n  {\n   \"entityParentId\": \"esse\",\n   \"entityId\": \"minim l\",\n   \"name\": \"dolore\",\n   \"ownerId\": \"esse ipsum nostrud dolor\",\n   \"entityType\": 5,\n   \"location\": \"in qui\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "d512fce1-3400-4879-acc5-42c4cc52f353",
+              "id": "bc68af0e-b828-4a13-9159-9c2c2a2a78f4",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -441,12 +441,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"non mollit eu\",\n \"errors\": [\n  {\n   \"property\": \"do ex\",\n   \"code\": \"aute ea culpa id\",\n   \"message\": \"sint dolore magna et\"\n  },\n  {\n   \"property\": \"dolor adipisicing mollit Duis et\",\n   \"code\": \"Excepteur eiusmod\",\n   \"message\": \"quis irure repr\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"commodo deserunt incididunt Excepteur esse\",\n \"errors\": [\n  {\n   \"property\": \"dolor in\",\n   \"code\": \"velit\",\n   \"message\": \"est Excepteur\"\n  },\n  {\n   \"property\": \"cupidatat irure eiusmod aute\",\n   \"code\": \"id laboris elit Lorem voluptate\",\n   \"message\": \"amet adipisicing officia et voluptate\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "cb3db2de-7c51-4dfe-88b8-9f2da95825c4",
+              "id": "30ac0e4b-426d-45d6-8cdb-54f6cc0dec4d",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -479,7 +479,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "632e805b-4bc8-4efb-8597-7cb91944dba2",
+              "id": "062e4b93-919b-4580-bfcc-05c3cb8431e3",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -512,7 +512,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "93a21bc4-6fec-4983-8238-0aa4e8e25574",
+              "id": "e33c1d12-b5d8-4a41-bcc8-521c15b0e8e2",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -548,7 +548,7 @@
           "event": []
         },
         {
-          "id": "952e94cb-31b3-48d5-9972-1964ff720607",
+          "id": "d425664c-7f9c-45e8-a846-1890a8ef8f68",
           "name": "/queries/fetchParkingOwnersEntitiesByIds - POST",
           "request": {
             "name": "/queries/fetchParkingOwnersEntitiesByIds - POST",
@@ -579,7 +579,7 @@
           },
           "response": [
             {
-              "id": "2a225c9c-527b-4f4b-a8ec-1d63d5c00dd9",
+              "id": "36dda903-7d74-4559-8588-e0e54f88d3ea",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -607,12 +607,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"result\": [\n  {\n   \"id\": \"ea occaecat officia non\",\n   \"name\": \"Lorem id\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"sit aliquip sint aliqua do\",\n     \"entityId\": \"ullamco esse mollit non\",\n     \"name\": \"velit Excepteur Lorem aliquip\",\n     \"ownerId\": \"elit esse qui magna\",\n     \"entityType\": 3,\n     \"location\": \"cillum do laboris\"\n    },\n    {\n     \"entityParentId\": \"elit ea\",\n     \"entityId\": \"Duis laboris voluptate non\",\n     \"name\": \"in\",\n     \"ownerId\": \"id eu velit\",\n     \"entityType\": 3,\n     \"location\": \"amet magna\"\n    }\n   ]\n  },\n  {\n   \"id\": \"incididunt ut\",\n   \"name\": \"et tempor veniam\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"quis consectetur\",\n     \"entityId\": \"ex ea\",\n     \"name\": \"laborum\",\n     \"ownerId\": \"ut reprehenderit occaecat\",\n     \"entityType\": 6,\n     \"location\": \"aliqua quis Excepteur\"\n    },\n    {\n     \"entityParentId\": \"ut Lorem\",\n     \"entityId\": \"consectetur\",\n     \"name\": \"dolore\",\n     \"ownerId\": \"ea proident pariatur\",\n     \"entityType\": 2,\n     \"location\": \"in eu Excepteur dolore\"\n    }\n   ]\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"id\": \"occaecat dolor do\",\n   \"name\": \"id enim incididunt\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"in magna\",\n     \"entityId\": \"nisi in Ut\",\n     \"name\": \"fugiat\",\n     \"ownerId\": \"do\",\n     \"entityType\": 4,\n     \"location\": \"\"\n    },\n    {\n     \"entityParentId\": \"Excepteur sit dolor qui sunt\",\n     \"entityId\": \"eu elit qui\",\n     \"name\": \"ipsum exercitation\",\n     \"ownerId\": \"adipisicing Excepteur fugiat ex\",\n     \"entityType\": 6,\n     \"location\": \"do ullamco\"\n    }\n   ]\n  },\n  {\n   \"id\": \"exercitation commodo dolor qui\",\n   \"name\": \"exercitation ad cupidatat do\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"et in mollit reprehenderit\",\n     \"entityId\": \"sit\",\n     \"name\": \"ad\",\n     \"ownerId\": \"esse amet culpa voluptate\",\n     \"entityType\": 2,\n     \"location\": \"in\"\n    },\n    {\n     \"entityParentId\": \"qui Excepteur sed in ipsum\",\n     \"entityId\": \"in in\",\n     \"name\": \"tempor Lorem irure\",\n     \"ownerId\": \"qu\",\n     \"entityType\": 3,\n     \"location\": \"et laborum\"\n    }\n   ]\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "5543e18c-e139-4f84-8d7c-672392857a7c",
+              "id": "b00c44ef-a857-4b5b-b3a7-8c552ad045ea",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -640,12 +640,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"non mollit eu\",\n \"errors\": [\n  {\n   \"property\": \"do ex\",\n   \"code\": \"aute ea culpa id\",\n   \"message\": \"sint dolore magna et\"\n  },\n  {\n   \"property\": \"dolor adipisicing mollit Duis et\",\n   \"code\": \"Excepteur eiusmod\",\n   \"message\": \"quis irure repr\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"commodo deserunt incididunt Excepteur esse\",\n \"errors\": [\n  {\n   \"property\": \"dolor in\",\n   \"code\": \"velit\",\n   \"message\": \"est Excepteur\"\n  },\n  {\n   \"property\": \"cupidatat irure eiusmod aute\",\n   \"code\": \"id laboris elit Lorem voluptate\",\n   \"message\": \"amet adipisicing officia et voluptate\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b384a997-e281-45aa-bcbb-19228c67b3f3",
+              "id": "b3d00ab2-7cf0-4140-b689-01c494a03cc2",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -678,7 +678,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4a963586-8925-40d7-9e13-998bb830aeb3",
+              "id": "26c03682-22ac-4800-97a5-1c823f9b8fb8",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -711,7 +711,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "72aaadd8-3188-4be6-8884-799734a195c2",
+              "id": "cbe0cc0a-b476-48ca-a3aa-a2c1eaf38288",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -774,7 +774,7 @@
     ]
   },
   "info": {
-    "_postman_id": "e0fc2815-0717-4abe-997b-5cf3377d7097",
+    "_postman_id": "cdb78ddc-c06b-433f-b506-25a4a16a4473",
     "name": "Availability Management API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
