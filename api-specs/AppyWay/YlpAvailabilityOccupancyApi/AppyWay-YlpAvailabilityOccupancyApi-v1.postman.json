@@ -1,0 +1,546 @@
+{
+  "item": [
+    {
+      "id": "44b32538-df72-40bd-af3a-0321b03ce4be",
+      "name": "/commands/recordOccupancy - POST",
+      "request": {
+        "name": "/commands/recordOccupancy - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "commands",
+            "recordOccupancy"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"receivedOn\": \"<dateTime>\",\n    \"source\": \"<string>\",\n    \"entityId\": \"<string>\",\n    \"entityType\": \"<integer>\",\n    \"dataSourceType\": \"<integer>\",\n    \"timestampUtc\": \"<dateTime>\",\n    \"vacantSpaces\": \"<integer>\",\n    \"occupiedSpaces\": \"<integer>\",\n    \"groupId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "f247ff35-5e5e-4585-b09c-b1db892e694c",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "commands",
+                "recordOccupancy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receivedOn\": \"<dateTime>\",\n    \"source\": \"<string>\",\n    \"entityId\": \"<string>\",\n    \"entityType\": \"<integer>\",\n    \"dataSourceType\": \"<integer>\",\n    \"timestampUtc\": \"<dateTime>\",\n    \"vacantSpaces\": \"<integer>\",\n    \"occupiedSpaces\": \"<integer>\",\n    \"groupId\": \"<string>\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4e145292-2ce6-42e6-ad31-de731d83deaf",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "commands",
+                "recordOccupancy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receivedOn\": \"<dateTime>\",\n    \"source\": \"<string>\",\n    \"entityId\": \"<string>\",\n    \"entityType\": \"<integer>\",\n    \"dataSourceType\": \"<integer>\",\n    \"timestampUtc\": \"<dateTime>\",\n    \"vacantSpaces\": \"<integer>\",\n    \"occupiedSpaces\": \"<integer>\",\n    \"groupId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "076b4e85-d869-4c7a-ad1d-33b2387820b2",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "commands",
+                "recordOccupancy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receivedOn\": \"<dateTime>\",\n    \"source\": \"<string>\",\n    \"entityId\": \"<string>\",\n    \"entityType\": \"<integer>\",\n    \"dataSourceType\": \"<integer>\",\n    \"timestampUtc\": \"<dateTime>\",\n    \"vacantSpaces\": \"<integer>\",\n    \"occupiedSpaces\": \"<integer>\",\n    \"groupId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4d4bcda8-f03c-4932-9434-020245bec31a",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "commands",
+                "recordOccupancy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"receivedOn\": \"<dateTime>\",\n    \"source\": \"<string>\",\n    \"entityId\": \"<string>\",\n    \"entityType\": \"<integer>\",\n    \"dataSourceType\": \"<integer>\",\n    \"timestampUtc\": \"<dateTime>\",\n    \"vacantSpaces\": \"<integer>\",\n    \"occupiedSpaces\": \"<integer>\",\n    \"groupId\": \"<string>\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d4d59098-68eb-47dd-b32f-7a2a88cf9a7f",
+      "name": "Ping",
+      "request": {
+        "name": "Ping",
+        "description": {
+          "content": "Returns Status (pong) of the Availability Occupancy API service",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "ping"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "2973f8f1-50aa-43fe-a782-b04209d7613f",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7badf198-33d5-445a-b326-65b647b17735",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "ea98fa97-216b-4b39-83fb-4c8cea0f34cb",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "de0b56f8-55c0-4397-8b12-43af653eb82a",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dbc2f1e1-6e1b-45fd-98dc-aa771e8a63df",
+      "name": "Fetch current day hourly occupancy history by entity id",
+      "request": {
+        "name": "Fetch current day hourly occupancy history by entity id",
+        "description": {
+          "content": "Returns the current day hourly occupancy history as an occupancy ratio (between 0 and 1) for the given entity id.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "queries",
+            "fetchCurrentDayHourlyOccupancyHistoryByEntityId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "37f15393-3f3d-451c-9cf4-c9c14e798f66",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "queries",
+                "fetchCurrentDayHourlyOccupancyHistoryByEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": \"dolore pariatur anim eius\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "eb4cd9d7-92f6-4170-9433-10e1316bb84e",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "queries",
+                "fetchCurrentDayHourlyOccupancyHistoryByEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": false,\n \"message\": \"ex tempor\",\n \"errors\": [\n  {\n   \"property\": \"dolor proident officia\",\n   \"code\": \"id exercitation\",\n   \"message\": \"veniam tempor amet laboris exercitation\"\n  },\n  {\n   \"property\": \"occaecat dolore\",\n   \"code\": \"sunt do\",\n   \"message\": \"no\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "fe319c25-3bea-4b27-a2ec-67fcd1f4eaab",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "queries",
+                "fetchCurrentDayHourlyOccupancyHistoryByEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4ef40623-7440-4aaf-84d6-137099a4c3bf",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "queries",
+                "fetchCurrentDayHourlyOccupancyHistoryByEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "815ec61f-63c3-45f1-842e-57e726e5e90e",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "queries",
+                "fetchCurrentDayHourlyOccupancyHistoryByEntityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"<string>\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "type": "string",
+      "value": "https://api.appyway.com/v1/availability-occupancy"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "type": "string",
+        "value": "{{API-KEY-LIVE}}"
+      },
+      {
+        "key": "key",
+        "type": "string",
+        "value": "API-KEY"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "10cd5111-577a-479e-b16c-7124b6c2f788",
+    "name": "Availability Occupancy API (v1.0|LIVE|Public)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

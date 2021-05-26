@@ -1,0 +1,377 @@
+openapi: 3.0.1
+info:
+  title: Availability Management API
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/v1/availability-management
+paths:
+  /ping:
+    get:
+      tags:
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the Availability Occupancy API service
+      operationId: get-ping
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchDailyAvailabilitySummaryByEntityId:
+    post:
+      tags:
+      - Availability
+      summary: Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id
+      description: Returns the daily availability general summary (realtime, daily occupancy and daily predictions) by entity Id
+      operationId: post-queries-fetchdailyavailabilitysummarybyentityid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchDailyAvailabilitySummaryByEntityIdQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchDailyAvailabilitySummaryByEntityIdQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchDailyAvailabilitySummaryByEntityIdQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingDailyAvailabilitySummaryOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchParkingEntitiesByAuthorityIds:
+    post:
+      tags:
+      - Availability
+      summary: /queries/fetchParkingEntitiesByAuthorityIds - POST
+      operationId: post-queries-fetchparkingentitiesbyauthorityids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchParkingEntitiesByAuthorityIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchParkingEntitiesByAuthorityIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchParkingEntitiesByAuthorityIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingEntityIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchParkingOwnersEntitiesByIds:
+    post:
+      tags:
+      - Availability
+      summary: /queries/fetchParkingOwnersEntitiesByIds - POST
+      operationId: post-queries-fetchparkingownersentitiesbyids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchParkingOwnersEntitiesByIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchParkingOwnersEntitiesByIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchParkingOwnersEntitiesByIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchParkingOwnerEntitiesByIdsQueryResultItemIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    FetchParkingOwnersEntitiesByIdsQuery:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          minLength: 1
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    EntityType:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    ParkingEntity:
+      type: object
+      properties:
+        entityParentId:
+          type: string
+          nullable: true
+        entityId:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        ownerId:
+          type: string
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/EntityType'
+        location:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchParkingOwnerEntitiesByIdsQueryResultItem:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        parkingEntities:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingEntity'
+          nullable: true
+      additionalProperties: false
+    FetchParkingOwnerEntitiesByIdsQueryResultItemIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/FetchParkingOwnerEntitiesByIdsQueryResultItem'
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the request was successful
+          readOnly: true
+          example: false
+        message:
+          type: string
+          description: Human-readable message for this response
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          description: Collection of validation errors caused by the request
+          nullable: true
+      additionalProperties: false
+      description: A response indicating the request was invalid
+    FetchParkingEntitiesByAuthorityIdsQuery:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          minLength: 1
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    ParkingEntityIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingEntity'
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
+    FetchDailyAvailabilitySummaryByEntityIdQuery:
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          minLength: 1
+          type: string
+          nullable: true
+        dateTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    DataSourceType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 4
+      type: integer
+      format: int32
+    ParkingAvailability:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/EntityType'
+        dataSourceType:
+          $ref: '#/components/schemas/DataSourceType'
+        groupId:
+          type: string
+          nullable: true
+        totalSpaces:
+          type: integer
+          format: int32
+        availableSpaces:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    HourlyPrediction:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        occupancyRatio:
+          type: number
+          format: float
+          nullable: true
+        confidence:
+          type: number
+          format: float
+          nullable: true
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+      additionalProperties: false
+    ParkingDailyAvailabilitySummary:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        parkingAvailability:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingAvailability'
+          nullable: true
+        hourlyPredictions:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/HourlyPrediction'
+          nullable: true
+      additionalProperties: false
+    ParkingDailyAvailabilitySummaryOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/ParkingDailyAvailabilitySummary'
+      additionalProperties: false
+      description: A successful response
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+

@@ -190,6 +190,56 @@
         }
       }
     },
+    "/fetchOperatingHoursByIds": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "Fetch operating hours by ids",
+        "description": "Searches for operating hours with the supplied IDs.",
+        "operationId": "post-fetchoperatinghoursbyids",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOperatingHoursByIdsQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOperatingHoursByIdsQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOperatingHoursByIdsQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingEntityOperatingHoursResultOkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/fetchParkingEntityById": {
       "post": {
         "tags": [
@@ -2720,9 +2770,12 @@
         },
         "additionalProperties": false
       },
-      "TimeRange": {
+      "OpenPeriod": {
         "type": "object",
         "properties": {
+          "isFree": {
+            "type": "boolean"
+          },
           "start": {
             "type": "string",
             "description": "ISO-8601 time pattern, extended as required to accommodate nanoseconds.",
@@ -2754,7 +2807,7 @@
           "openPeriods": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TimeRange"
+              "$ref": "#/components/schemas/OpenPeriod"
             },
             "nullable": true
           }
@@ -2803,6 +2856,28 @@
         },
         "additionalProperties": false,
         "description": "A successful response"
+      },
+      "FetchOperatingHoursByIdsQuery": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of Ids of entities to fetch",
+            "nullable": true
+          },
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
+          },
+          "date": {
+            "type": "string",
+            "description": "The date for which to retrieve the operating hours",
+            "example": "2020-01-20T00:00:00"
+          }
+        },
+        "additionalProperties": false
       },
       "FetchParkingQuotesByIdsQuery": {
         "required": [
