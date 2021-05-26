@@ -97,6 +97,121 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchAvailabilityForAllSourceTypesByEntityIds:
+    post:
+      tags:
+      - Availability
+      summary: Fetch realtime availability for all available data source types (sensor, camera, barrier, etc) by entity Ids
+      description: Returns the availability for all available source types and the list of given entity Ids.
+      operationId: post-queries-fetchavailabilityforallsourcetypesbyentityids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityForAllSourceTypesByEntityIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityForAllSourceTypesByEntityIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityForAllSourceTypesByEntityIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchAvailabilityForAllSourceTypesByGroupAndEntityIds:
+    post:
+      tags:
+      - Availability
+      summary: Fetch realtime availability aggregated groups for all available data source types (sensor, camera, barrier, etc) by keys formed by the group id and entity id
+      description: |-
+        Returns the availability for all available source types and the list of given keys formed by group id and entity id.
+        If the group is not provided, it will return the availability for the entity.
+      operationId: post-queries-fetchavailabilityforallsourcetypesbygroupandentityids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /queries/fetchH3AvailabilityByCentreAndViewportSize:
+    post:
+      tags:
+      - Availability
+      summary: Fetch realtime availability aggregated groups by keys formed by the group id and entity id
+      description: |-
+        Returns the availability for the list of given keys formed by group id and entity id.
+        If the group is not provided, it will return the availability for the entity.
+      operationId: post-queries-fetchh3availabilitybycentreandviewportsize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchH3AvailabilityByCentreAndViewportSizeQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchH3AvailabilityByCentreAndViewportSizeQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchH3AvailabilityByCentreAndViewportSizeQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/H3AvailabilityIReadOnlyCollectionOkResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
     FetchAvailabilityByEntityIdsQuery:
@@ -219,6 +334,79 @@ components:
           nullable: true
         : 
       additionalProperties: false
+    FetchAvailabilityForAllSourceTypesByEntityIdsQuery:
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery:
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            $ref: '#/components/schemas/AvailabilityGroupKey'
+          nullable: true
+        ? type: array
+          items:
+            $ref: '#/components/schemas/AvailabilityGroupKey'
+          nullable: true
+        : 
+      additionalProperties: false
+    LatLng:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lng:
+          type: number
+          format: double
+      additionalProperties: false
+    FetchH3AvailabilityByCentreAndViewportSizeQuery:
+      type: object
+      properties:
+        viewportCenter:
+          $ref: '#/components/schemas/LatLng'
+        viewportSize:
+          type: integer
+          format: int32
+        h3Resolution:
+          type: integer
+          format: int32
+      additionalProperties: false
+    H3Availability:
+      type: object
+      properties:
+        h3Index:
+          type: string
+          nullable: true
+        availabilityRatio:
+          type: number
+          format: float
+        normalizedRatio:
+          type: number
+          format: float
+      additionalProperties: false
+    H3AvailabilityIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/H3Availability'
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
   securitySchemes:
     apiKey:
       name: API-KEY

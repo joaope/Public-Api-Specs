@@ -154,6 +154,66 @@
         }
       }
     },
+    "/queries/fetchDailyOccupancyHistoryForPredictionByEntityId": {
+      "post": {
+        "tags": [
+          "Availability"
+        ],
+        "summary": "Fetch daily availability history used for prediction by entity id",
+        "description": "Returns the daily availability history used to predict a given date and entity id.",
+        "operationId": "post-queries-fetchdailyoccupancyhistoryforpredictionbyentityid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQueryResultItemOkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/queries/fetchWeeklyAvailabilityPredictionsByEntityId": {
       "post": {
         "tags": [
@@ -388,6 +448,87 @@
           },
           "result": {
             "$ref": "#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQueryResult"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "FetchDailyOccupancyHistoryForPredictionByEntityIdQuery": {
+        "required": [
+          "dateTime",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "nullable": true
+          },
+          "dateTime": {
+            "minLength": 1,
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DailyOccupancyForSourceType": {
+        "type": "object",
+        "properties": {
+          "dataSourceType": {
+            "$ref": "#/components/schemas/DataSourceType"
+          },
+          "hourlyOccupancy": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchDailyOccupancyHistoryForPredictionByEntityIdQueryResultItem": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupId": {
+            "type": "string",
+            "nullable": true
+          },
+          "localDayOfWeek": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "occupancyBySourceType": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DailyOccupancyForSourceType"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchDailyOccupancyHistoryForPredictionByEntityIdQueryResultItemOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQueryResultItem"
           }
         },
         "additionalProperties": false,
