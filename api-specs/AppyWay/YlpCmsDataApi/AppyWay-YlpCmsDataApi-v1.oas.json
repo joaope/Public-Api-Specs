@@ -1769,6 +1769,106 @@
         "operationId": "post-orders-documents-delete",
         "parameters": [
           {
+            "name": "documentId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/orders/documents/download": {
+      "get": {
+        "tags": [
+          "OrderDocuments"
+        ],
+        "summary": "/orders/documents/download - GET",
+        "operationId": "get-orders-documents-download",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StaticOrderDocumentResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StaticOrderDocumentResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StaticOrderDocumentResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/orders/documents/generatePlaceholders": {
+      "post": {
+        "tags": [
+          "OrderDocuments"
+        ],
+        "summary": "/orders/documents/generatePlaceholders - POST",
+        "operationId": "post-orders-documents-generateplaceholders",
+        "parameters": [
+          {
             "name": "orderId",
             "in": "query",
             "description": "Format - uuid.",
@@ -1777,11 +1877,10 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "generateWrittenOrder",
             "in": "query",
-            "description": "Format - uuid.",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           }
         ],
@@ -1883,16 +1982,6 @@
         ],
         "summary": "/orders/documents/update - POST",
         "operationId": "post-orders-documents-update",
-        "parameters": [
-          {
-            "name": "orderId",
-            "in": "query",
-            "description": "Format - uuid.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json-patch+json": {
@@ -1982,17 +2071,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result"
+                  "$ref": "#/components/schemas/GuidIEnumerableResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result"
+                  "$ref": "#/components/schemas/GuidIEnumerableResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Result"
+                  "$ref": "#/components/schemas/GuidIEnumerableResult"
                 }
               }
             }
@@ -4591,9 +4680,6 @@
             "type": "string",
             "nullable": true
           },
-          "ordnanceSurvey": {
-            "$ref": "#/components/schemas/OrdnanceSurvey"
-          },
           "authorityId": {
             "type": "string",
             "nullable": true
@@ -4608,6 +4694,9 @@
           "name": {
             "type": "string",
             "nullable": true
+          },
+          "ordnanceSurvey": {
+            "$ref": "#/components/schemas/OrdnanceSurvey"
           }
         },
         "additionalProperties": false
@@ -4718,6 +4807,9 @@
           "name": {
             "type": "string",
             "nullable": true
+          },
+          "ordnanceSurvey": {
+            "$ref": "#/components/schemas/OrdnanceSurvey"
           }
         },
         "additionalProperties": false
@@ -6003,6 +6095,24 @@
         },
         "additionalProperties": false
       },
+      "GuidIEnumerableResult": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DocumentType": {
         "enum": [
           0,
@@ -6012,23 +6122,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "OrderDocumentPatch": {
-        "type": "object",
-        "properties": {
-          "documentId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "fileName": {
-            "type": "string",
-            "nullable": true
-          },
-          "documentType": {
-            "$ref": "#/components/schemas/DocumentType"
-          }
-        },
-        "additionalProperties": false
       },
       "StaticOrderDocument": {
         "type": "object",
@@ -6062,6 +6155,36 @@
           },
           "isSystemGenerated": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StaticOrderDocumentResult": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/StaticOrderDocument"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrderDocumentPatch": {
+        "type": "object",
+        "properties": {
+          "documentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentType": {
+            "$ref": "#/components/schemas/DocumentType"
           }
         },
         "additionalProperties": false

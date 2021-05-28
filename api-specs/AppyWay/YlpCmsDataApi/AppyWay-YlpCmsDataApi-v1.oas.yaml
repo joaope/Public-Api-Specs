@@ -1090,16 +1090,77 @@ paths:
       summary: /orders/documents/delete - POST
       operationId: post-orders-documents-delete
       parameters:
-      - name: orderId
-        in: query
-        description: Format - uuid.
-        schema:
-          type: string
       - name: documentId
         in: query
         description: Format - uuid.
         schema:
           type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Result'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /orders/documents/download:
+    get:
+      tags:
+      - OrderDocuments
+      summary: /orders/documents/download - GET
+      operationId: get-orders-documents-download
+      parameters:
+      - name: documentId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StaticOrderDocumentResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StaticOrderDocumentResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StaticOrderDocumentResult'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /orders/documents/generatePlaceholders:
+    post:
+      tags:
+      - OrderDocuments
+      summary: /orders/documents/generatePlaceholders - POST
+      operationId: post-orders-documents-generateplaceholders
+      parameters:
+      - name: orderId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      - name: generateWrittenOrder
+        in: query
+        schema:
+          type: boolean
       responses:
         "200":
           description: Success
@@ -1161,12 +1222,6 @@ paths:
       - OrderDocuments
       summary: /orders/documents/update - POST
       operationId: post-orders-documents-update
-      parameters:
-      - name: orderId
-        in: query
-        description: Format - uuid.
-        schema:
-          type: string
       requestBody:
         content:
           application/json-patch+json:
@@ -1223,13 +1278,13 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/Result'
+                $ref: '#/components/schemas/GuidIEnumerableResult'
             application/json:
               schema:
-                $ref: '#/components/schemas/Result'
+                $ref: '#/components/schemas/GuidIEnumerableResult'
             text/json:
               schema:
-                $ref: '#/components/schemas/Result'
+                $ref: '#/components/schemas/GuidIEnumerableResult'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -2974,8 +3029,6 @@ components:
         privacyPolicyUrl:
           type: string
           nullable: true
-        ordnanceSurvey:
-          $ref: '#/components/schemas/OrdnanceSurvey'
         authorityId:
           type: string
           nullable: true
@@ -2987,6 +3040,8 @@ components:
         name:
           type: string
           nullable: true
+        ordnanceSurvey:
+          $ref: '#/components/schemas/OrdnanceSurvey'
       additionalProperties: false
     AuthorityDetailResult:
       type: object
@@ -3066,6 +3121,8 @@ components:
         name:
           type: string
           nullable: true
+        ordnanceSurvey:
+          $ref: '#/components/schemas/OrdnanceSurvey'
       additionalProperties: false
     AuthorityInfoArrayResult:
       type: object
@@ -4007,6 +4064,19 @@ components:
             $ref: '#/components/schemas/MovingOrderDocument'
           nullable: true
       additionalProperties: false
+    GuidIEnumerableResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        data:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      additionalProperties: false
     DocumentType:
       enum:
       - 0
@@ -4015,18 +4085,6 @@ components:
       - 3
       type: integer
       format: int32
-    OrderDocumentPatch:
-      type: object
-      properties:
-        documentId:
-          type: string
-          format: uuid
-        fileName:
-          type: string
-          nullable: true
-        documentType:
-          $ref: '#/components/schemas/DocumentType'
-      additionalProperties: false
     StaticOrderDocument:
       type: object
       properties:
@@ -4052,6 +4110,27 @@ components:
           nullable: true
         isSystemGenerated:
           type: boolean
+      additionalProperties: false
+    StaticOrderDocumentResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        data:
+          $ref: '#/components/schemas/StaticOrderDocument'
+      additionalProperties: false
+    OrderDocumentPatch:
+      type: object
+      properties:
+        documentId:
+          type: string
+          format: uuid
+        fileName:
+          type: string
+          nullable: true
+        documentType:
+          $ref: '#/components/schemas/DocumentType'
       additionalProperties: false
     StaticOrderDocumentIEnumerableResult:
       type: object
