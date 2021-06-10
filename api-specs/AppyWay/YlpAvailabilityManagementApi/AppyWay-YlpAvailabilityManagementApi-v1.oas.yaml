@@ -33,12 +33,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchDailyAvailabilitySummaryByEntityIdQuery'
+            example:
+              id: string
+              dateTime: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchDailyAvailabilitySummaryByEntityIdQuery'
+            example:
+              id: string
+              dateTime: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchDailyAvailabilitySummaryByEntityIdQuery'
+            example:
+              id: string
+              dateTime: string
       responses:
         "200":
           description: Success
@@ -46,12 +55,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParkingDailyAvailabilitySummaryOkResponse'
+              example:
+                success: true
+                result:
+                  entityId: string
+                  currentAvailability:
+                  - entityId: string
+                    entityType: 1
+                    dataSourceType: 0
+                    groupId: string
+                    totalSpaces: 0
+                    availableSpaces: 0
+                  hourlyPredictions: {}
+                  occupancyHistoryForPrediction:
+                  - date: string
+                    entityId: string
+                    occupancyBySourceType:
+                    - dataSourceType: 0
+                      hourlyOccupancy:
+                      - 0
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -69,12 +104,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchParkingEntitiesByAuthorityIdsQuery'
+            example:
+              ids:
+              - string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchParkingEntitiesByAuthorityIdsQuery'
+            example:
+              ids:
+              - string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchParkingEntitiesByAuthorityIdsQuery'
+            example:
+              ids:
+              - string
       responses:
         "200":
           description: Success
@@ -82,12 +126,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ParkingEntityIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - entityParentId: string
+                  entityId: string
+                  name: string
+                  ownerId: string
+                  entityType: 1
+                  location: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -105,12 +165,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchParkingOwnersEntitiesByIdsQuery'
+            example:
+              ids:
+              - string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchParkingOwnersEntitiesByIdsQuery'
+            example:
+              ids:
+              - string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchParkingOwnersEntitiesByIdsQuery'
+            example:
+              ids:
+              - string
       responses:
         "200":
           description: Success
@@ -118,12 +187,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FetchParkingOwnerEntitiesByIdsQueryResultItemIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - id: string
+                  name: string
+                  parkingEntities:
+                  - entityParentId: string
+                    entityId: string
+                    name: string
+                    ownerId: string
+                    entityType: 1
+                    location: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":

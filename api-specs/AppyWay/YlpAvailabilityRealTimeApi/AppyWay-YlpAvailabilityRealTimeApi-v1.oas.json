@@ -47,16 +47,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityByEntityIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityByEntityIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityByEntityIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
               }
             }
           }
@@ -68,6 +83,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "entityId": "string",
+                      "entityType": 1,
+                      "dataSourceType": 0,
+                      "groupId": "string",
+                      "totalSpaces": 0,
+                      "availableSpaces": 0
+                    }
+                  ]
                 }
               }
             }
@@ -78,6 +106,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -107,16 +146,43 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityByGroupAndEntityIdsQuery"
+              },
+              "example": {
+                "keys": [
+                  {
+                    "entityId": "string",
+                    "groupId": "string"
+                  }
+                ],
+                "(Collection)": null
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityByGroupAndEntityIdsQuery"
+              },
+              "example": {
+                "keys": [
+                  {
+                    "entityId": "string",
+                    "groupId": "string"
+                  }
+                ],
+                "(Collection)": null
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityByGroupAndEntityIdsQuery"
+              },
+              "example": {
+                "keys": [
+                  {
+                    "entityId": "string",
+                    "groupId": "string"
+                  }
+                ],
+                "(Collection)": null
               }
             }
           }
@@ -128,6 +194,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "entityId": "string",
+                      "entityType": 1,
+                      "dataSourceType": 0,
+                      "groupId": "string",
+                      "totalSpaces": 0,
+                      "availableSpaces": 0
+                    }
+                  ]
                 }
               }
             }
@@ -138,6 +217,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -167,16 +257,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityForAllSourceTypesByEntityIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityForAllSourceTypesByEntityIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityForAllSourceTypesByEntityIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
               }
             }
           }
@@ -188,6 +293,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "entityId": "string",
+                      "entityType": 1,
+                      "dataSourceType": 0,
+                      "groupId": "string",
+                      "totalSpaces": 0,
+                      "availableSpaces": 0
+                    }
+                  ]
                 }
               }
             }
@@ -198,6 +316,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -227,16 +356,43 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery"
+              },
+              "example": {
+                "keys": [
+                  {
+                    "entityId": "string",
+                    "groupId": "string"
+                  }
+                ],
+                "(Collection)": null
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery"
+              },
+              "example": {
+                "keys": [
+                  {
+                    "entityId": "string",
+                    "groupId": "string"
+                  }
+                ],
+                "(Collection)": null
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAvailabilityForAllSourceTypesByGroupAndEntityIdsQuery"
+              },
+              "example": {
+                "keys": [
+                  {
+                    "entityId": "string",
+                    "groupId": "string"
+                  }
+                ],
+                "(Collection)": null
               }
             }
           }
@@ -248,6 +404,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingAvailabilityIReadOnlyCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "entityId": "string",
+                      "entityType": 1,
+                      "dataSourceType": 0,
+                      "groupId": "string",
+                      "totalSpaces": 0,
+                      "availableSpaces": 0
+                    }
+                  ]
                 }
               }
             }
@@ -258,6 +427,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -287,16 +467,40 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchH3AvailabilityByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "viewportSize": 0,
+                "h3Resolution": 0
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchH3AvailabilityByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "viewportSize": 0,
+                "h3Resolution": 0
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchH3AvailabilityByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "viewportSize": 0,
+                "h3Resolution": 0
               }
             }
           }
@@ -308,6 +512,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/H3AvailabilityIReadOnlyCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "h3Index": "string",
+                      "availabilityRatio": 0,
+                      "normalizedRatio": 0
+                    }
+                  ]
                 }
               }
             }
@@ -318,6 +532,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }

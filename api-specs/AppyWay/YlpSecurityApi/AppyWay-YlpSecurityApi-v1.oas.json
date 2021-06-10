@@ -30,12 +30,84 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApiKeyGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "organisation": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "string",
+                    "cacheId": "string",
+                    "blocked": true,
+                    "id": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApiKeyGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "organisation": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "string",
+                    "cacheId": "string",
+                    "blocked": true,
+                    "id": "string"
+                  }
+                ]
               }
             }
           },
@@ -63,16 +135,118 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiKey"
+              },
+              "example": {
+                "organisation": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "name": "string",
+                "cacheId": "string",
+                "blocked": true,
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiKey"
+              },
+              "example": {
+                "organisation": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "name": "string",
+                "cacheId": "string",
+                "blocked": true,
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiKey"
+              },
+              "example": {
+                "organisation": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "name": "string",
+                "cacheId": "string",
+                "blocked": true,
+                "id": "string"
               }
             }
           }
@@ -89,11 +263,85 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CreatedApiKey"
+                },
+                "example": {
+                  "apiKey": {
+                    "organisation": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "string",
+                    "cacheId": "string",
+                    "blocked": true,
+                    "id": "string"
+                  },
+                  "key": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CreatedApiKey"
+                },
+                "example": {
+                  "apiKey": {
+                    "organisation": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "string",
+                    "cacheId": "string",
+                    "blocked": true,
+                    "id": "string"
+                  },
+                  "key": "string"
                 }
               }
             }
@@ -109,11 +357,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -142,16 +404,118 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiKey"
+              },
+              "example": {
+                "organisation": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "name": "string",
+                "cacheId": "string",
+                "blocked": true,
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiKey"
+              },
+              "example": {
+                "organisation": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "name": "string",
+                "cacheId": "string",
+                "blocked": true,
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiKey"
+              },
+              "example": {
+                "organisation": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "name": "string",
+                "cacheId": "string",
+                "blocked": true,
+                "id": "string"
               }
             }
           }
@@ -168,11 +532,85 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CreatedApiKey"
+                },
+                "example": {
+                  "apiKey": {
+                    "organisation": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "string",
+                    "cacheId": "string",
+                    "blocked": true,
+                    "id": "string"
+                  },
+                  "key": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CreatedApiKey"
+                },
+                "example": {
+                  "apiKey": {
+                    "organisation": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "string",
+                    "cacheId": "string",
+                    "blocked": true,
+                    "id": "string"
+                  },
+                  "key": "string"
                 }
               }
             }
@@ -188,11 +626,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -214,11 +666,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -241,16 +707,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             }
           }
@@ -270,11 +745,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -296,11 +785,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -325,16 +828,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             }
           }
@@ -354,11 +866,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -380,11 +906,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -409,16 +949,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ApiIdentifier"
+              },
+              "example": {
+                "cacheId": "string"
               }
             }
           }
@@ -438,11 +987,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -464,11 +1027,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -499,12 +1076,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApplicationGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "id": "string",
+                    "name": "string",
+                    "description": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApplicationGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "id": "string",
+                    "name": "string",
+                    "description": "string"
+                  }
+                ]
               }
             }
           },
@@ -532,16 +1123,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Application"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Application"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Application"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string"
               }
             }
           }
@@ -558,11 +1164,21 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Application"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Application"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string"
                 }
               }
             }
@@ -578,11 +1194,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -611,16 +1241,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Application"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Application"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Application"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string"
               }
             }
           }
@@ -637,11 +1282,21 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Application"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Application"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string"
                 }
               }
             }
@@ -657,11 +1312,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -712,11 +1381,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -738,11 +1421,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -773,12 +1470,60 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GroupGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "organisationId": "string",
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "childGroups": [
+                      "string"
+                    ]
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GroupGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "id": "string",
+                    "name": "string",
+                    "description": "string",
+                    "organisationId": "string",
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "childGroups": [
+                      "string"
+                    ]
+                  }
+                ]
               }
             }
           },
@@ -806,16 +1551,82 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Group"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string",
+                "organisationId": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "childGroups": [
+                  "string"
+                ]
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Group"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string",
+                "organisationId": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "childGroups": [
+                  "string"
+                ]
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Group"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string",
+                "organisationId": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "childGroups": [
+                  "string"
+                ]
               }
             }
           }
@@ -832,11 +1643,55 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Group"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string",
+                  "organisationId": "string",
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "childGroups": [
+                    "string"
+                  ]
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Group"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string",
+                  "organisationId": "string",
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "childGroups": [
+                    "string"
+                  ]
                 }
               }
             }
@@ -852,11 +1707,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -885,16 +1754,82 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Group"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string",
+                "organisationId": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "childGroups": [
+                  "string"
+                ]
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Group"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string",
+                "organisationId": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "childGroups": [
+                  "string"
+                ]
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Group"
+              },
+              "example": {
+                "id": "string",
+                "name": "string",
+                "description": "string",
+                "organisationId": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "childGroups": [
+                  "string"
+                ]
               }
             }
           }
@@ -911,11 +1846,55 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Group"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string",
+                  "organisationId": "string",
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "childGroups": [
+                    "string"
+                  ]
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Group"
+                },
+                "example": {
+                  "id": "string",
+                  "name": "string",
+                  "description": "string",
+                  "organisationId": "string",
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "childGroups": [
+                    "string"
+                  ]
                 }
               }
             }
@@ -931,11 +1910,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -986,11 +1979,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1012,11 +2019,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1041,16 +2062,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              "example": {
+                "code": "string",
+                "name": "string",
+                "internalNotes": "string",
+                "description": "string",
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              "example": {
+                "code": "string",
+                "name": "string",
+                "internalNotes": "string",
+                "description": "string",
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              "example": {
+                "code": "string",
+                "name": "string",
+                "internalNotes": "string",
+                "description": "string",
+                "id": "string"
               }
             }
           }
@@ -1067,11 +2109,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Organisation"
+                },
+                "example": {
+                  "code": "string",
+                  "name": "string",
+                  "internalNotes": "string",
+                  "description": "string",
+                  "id": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Organisation"
+                },
+                "example": {
+                  "code": "string",
+                  "name": "string",
+                  "internalNotes": "string",
+                  "description": "string",
+                  "id": "string"
                 }
               }
             }
@@ -1087,11 +2143,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1120,16 +2190,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              "example": {
+                "code": "string",
+                "name": "string",
+                "internalNotes": "string",
+                "description": "string",
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              "example": {
+                "code": "string",
+                "name": "string",
+                "internalNotes": "string",
+                "description": "string",
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              "example": {
+                "code": "string",
+                "name": "string",
+                "internalNotes": "string",
+                "description": "string",
+                "id": "string"
               }
             }
           }
@@ -1149,11 +2240,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1188,12 +2293,30 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OrganisationGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "code": "string",
+                    "name": "string",
+                    "internalNotes": "string",
+                    "description": "string",
+                    "id": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OrganisationGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "code": "string",
+                    "name": "string",
+                    "internalNotes": "string",
+                    "description": "string",
+                    "id": "string"
+                  }
+                ]
               }
             }
           },
@@ -1243,11 +2366,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1284,12 +2421,30 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PermissionGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "name": "string",
+                    "description": "string",
+                    "applicationId": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PermissionGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "name": "string",
+                    "description": "string",
+                    "applicationId": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ]
               }
             }
           },
@@ -1317,16 +2472,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Permission"
+              },
+              "example": {
+                "name": "string",
+                "description": "string",
+                "applicationId": "string",
+                "resourceTypeId": "string",
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Permission"
+              },
+              "example": {
+                "name": "string",
+                "description": "string",
+                "applicationId": "string",
+                "resourceTypeId": "string",
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Permission"
+              },
+              "example": {
+                "name": "string",
+                "description": "string",
+                "applicationId": "string",
+                "resourceTypeId": "string",
+                "id": "string"
               }
             }
           }
@@ -1343,11 +2519,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Permission"
+                },
+                "example": {
+                  "name": "string",
+                  "description": "string",
+                  "applicationId": "string",
+                  "resourceTypeId": "string",
+                  "id": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Permission"
+                },
+                "example": {
+                  "name": "string",
+                  "description": "string",
+                  "applicationId": "string",
+                  "resourceTypeId": "string",
+                  "id": "string"
                 }
               }
             }
@@ -1363,11 +2553,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1396,16 +2600,37 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Permission"
+              },
+              "example": {
+                "name": "string",
+                "description": "string",
+                "applicationId": "string",
+                "resourceTypeId": "string",
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Permission"
+              },
+              "example": {
+                "name": "string",
+                "description": "string",
+                "applicationId": "string",
+                "resourceTypeId": "string",
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Permission"
+              },
+              "example": {
+                "name": "string",
+                "description": "string",
+                "applicationId": "string",
+                "resourceTypeId": "string",
+                "id": "string"
               }
             }
           }
@@ -1422,11 +2647,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Permission"
+                },
+                "example": {
+                  "name": "string",
+                  "description": "string",
+                  "applicationId": "string",
+                  "resourceTypeId": "string",
+                  "id": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Permission"
+                },
+                "example": {
+                  "name": "string",
+                  "description": "string",
+                  "applicationId": "string",
+                  "resourceTypeId": "string",
+                  "id": "string"
                 }
               }
             }
@@ -1442,11 +2681,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1497,11 +2750,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1523,11 +2790,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1561,11 +2842,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1602,12 +2897,40 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceTypeGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "name": "string",
+                    "resources": [
+                      {
+                        "value": "string",
+                        "name": "string",
+                        "resourceTypeId": "string",
+                        "id": "string"
+                      }
+                    ],
+                    "id": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceTypeGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "name": "string",
+                    "resources": [
+                      {
+                        "value": "string",
+                        "name": "string",
+                        "resourceTypeId": "string",
+                        "id": "string"
+                      }
+                    ],
+                    "id": "string"
+                  }
+                ]
               }
             }
           },
@@ -1635,16 +2958,52 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceType"
+              },
+              "example": {
+                "name": "string",
+                "resources": [
+                  {
+                    "value": "string",
+                    "name": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ],
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceType"
+              },
+              "example": {
+                "name": "string",
+                "resources": [
+                  {
+                    "value": "string",
+                    "name": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ],
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceType"
+              },
+              "example": {
+                "name": "string",
+                "resources": [
+                  {
+                    "value": "string",
+                    "name": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ],
+                "id": "string"
               }
             }
           }
@@ -1661,11 +3020,35 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceType"
+                },
+                "example": {
+                  "name": "string",
+                  "resources": [
+                    {
+                      "value": "string",
+                      "name": "string",
+                      "resourceTypeId": "string",
+                      "id": "string"
+                    }
+                  ],
+                  "id": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceType"
+                },
+                "example": {
+                  "name": "string",
+                  "resources": [
+                    {
+                      "value": "string",
+                      "name": "string",
+                      "resourceTypeId": "string",
+                      "id": "string"
+                    }
+                  ],
+                  "id": "string"
                 }
               }
             }
@@ -1681,11 +3064,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1714,16 +3111,52 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceType"
+              },
+              "example": {
+                "name": "string",
+                "resources": [
+                  {
+                    "value": "string",
+                    "name": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ],
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceType"
+              },
+              "example": {
+                "name": "string",
+                "resources": [
+                  {
+                    "value": "string",
+                    "name": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ],
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ResourceType"
+              },
+              "example": {
+                "name": "string",
+                "resources": [
+                  {
+                    "value": "string",
+                    "name": "string",
+                    "resourceTypeId": "string",
+                    "id": "string"
+                  }
+                ],
+                "id": "string"
               }
             }
           }
@@ -1740,11 +3173,35 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceType"
+                },
+                "example": {
+                  "name": "string",
+                  "resources": [
+                    {
+                      "value": "string",
+                      "name": "string",
+                      "resourceTypeId": "string",
+                      "id": "string"
+                    }
+                  ],
+                  "id": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResourceType"
+                },
+                "example": {
+                  "name": "string",
+                  "resources": [
+                    {
+                      "value": "string",
+                      "name": "string",
+                      "resourceTypeId": "string",
+                      "id": "string"
+                    }
+                  ],
+                  "id": "string"
                 }
               }
             }
@@ -1760,11 +3217,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1815,11 +3286,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1841,11 +3326,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1876,12 +3375,36 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RoleGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "name": "string",
+                    "permissions": [
+                      "string"
+                    ],
+                    "applicationId": "string",
+                    "isBuiltIn": true,
+                    "id": "string",
+                    "description": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RoleGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "name": "string",
+                    "permissions": [
+                      "string"
+                    ],
+                    "applicationId": "string",
+                    "isBuiltIn": true,
+                    "id": "string",
+                    "description": "string"
+                  }
+                ]
               }
             }
           },
@@ -1909,16 +3432,46 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Role"
+              },
+              "example": {
+                "name": "string",
+                "permissions": [
+                  "string"
+                ],
+                "applicationId": "string",
+                "isBuiltIn": true,
+                "id": "string",
+                "description": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Role"
+              },
+              "example": {
+                "name": "string",
+                "permissions": [
+                  "string"
+                ],
+                "applicationId": "string",
+                "isBuiltIn": true,
+                "id": "string",
+                "description": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Role"
+              },
+              "example": {
+                "name": "string",
+                "permissions": [
+                  "string"
+                ],
+                "applicationId": "string",
+                "isBuiltIn": true,
+                "id": "string",
+                "description": "string"
               }
             }
           }
@@ -1935,11 +3488,31 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Role"
+                },
+                "example": {
+                  "name": "string",
+                  "permissions": [
+                    "string"
+                  ],
+                  "applicationId": "string",
+                  "isBuiltIn": true,
+                  "id": "string",
+                  "description": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Role"
+                },
+                "example": {
+                  "name": "string",
+                  "permissions": [
+                    "string"
+                  ],
+                  "applicationId": "string",
+                  "isBuiltIn": true,
+                  "id": "string",
+                  "description": "string"
                 }
               }
             }
@@ -1955,11 +3528,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -1988,16 +3575,46 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Role"
+              },
+              "example": {
+                "name": "string",
+                "permissions": [
+                  "string"
+                ],
+                "applicationId": "string",
+                "isBuiltIn": true,
+                "id": "string",
+                "description": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Role"
+              },
+              "example": {
+                "name": "string",
+                "permissions": [
+                  "string"
+                ],
+                "applicationId": "string",
+                "isBuiltIn": true,
+                "id": "string",
+                "description": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Role"
+              },
+              "example": {
+                "name": "string",
+                "permissions": [
+                  "string"
+                ],
+                "applicationId": "string",
+                "isBuiltIn": true,
+                "id": "string",
+                "description": "string"
               }
             }
           }
@@ -2014,11 +3631,31 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Role"
+                },
+                "example": {
+                  "name": "string",
+                  "permissions": [
+                    "string"
+                  ],
+                  "applicationId": "string",
+                  "isBuiltIn": true,
+                  "id": "string",
+                  "description": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Role"
+                },
+                "example": {
+                  "name": "string",
+                  "permissions": [
+                    "string"
+                  ],
+                  "applicationId": "string",
+                  "isBuiltIn": true,
+                  "id": "string",
+                  "description": "string"
                 }
               }
             }
@@ -2034,11 +3671,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2089,11 +3740,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2115,11 +3780,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2144,16 +3823,136 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NewUserRequest"
+              },
+              "example": {
+                "redirect": "string",
+                "user": {
+                  "lastName": "string",
+                  "organisation": "string",
+                  "email": "string",
+                  "firstName": "string",
+                  "permissions": [
+                    {
+                      "permissionId": "string",
+                      "resourceTypeId": "string",
+                      "resourceId": "string"
+                    }
+                  ],
+                  "groups": [
+                    "string"
+                  ],
+                  "lastLogin": "string",
+                  "managedGroups": [
+                    "string"
+                  ],
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "isAuth0User": true,
+                  "picture": "string",
+                  "blocked": true,
+                  "id": "string"
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/NewUserRequest"
+              },
+              "example": {
+                "redirect": "string",
+                "user": {
+                  "lastName": "string",
+                  "organisation": "string",
+                  "email": "string",
+                  "firstName": "string",
+                  "permissions": [
+                    {
+                      "permissionId": "string",
+                      "resourceTypeId": "string",
+                      "resourceId": "string"
+                    }
+                  ],
+                  "groups": [
+                    "string"
+                  ],
+                  "lastLogin": "string",
+                  "managedGroups": [
+                    "string"
+                  ],
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "isAuth0User": true,
+                  "picture": "string",
+                  "blocked": true,
+                  "id": "string"
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/NewUserRequest"
+              },
+              "example": {
+                "redirect": "string",
+                "user": {
+                  "lastName": "string",
+                  "organisation": "string",
+                  "email": "string",
+                  "firstName": "string",
+                  "permissions": [
+                    {
+                      "permissionId": "string",
+                      "resourceTypeId": "string",
+                      "resourceId": "string"
+                    }
+                  ],
+                  "groups": [
+                    "string"
+                  ],
+                  "lastLogin": "string",
+                  "managedGroups": [
+                    "string"
+                  ],
+                  "roles": [
+                    {
+                      "roleId": "string",
+                      "resourceAssignments": [
+                        {
+                          "resourceTypeId": "string",
+                          "resourceIds": [
+                            "string"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "isAuth0User": true,
+                  "picture": "string",
+                  "blocked": true,
+                  "id": "string"
+                }
               }
             }
           }
@@ -2170,11 +3969,91 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CreatedUser"
+                },
+                "example": {
+                  "user": {
+                    "lastName": "string",
+                    "organisation": "string",
+                    "email": "string",
+                    "firstName": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "isAuth0User": true,
+                    "picture": "string",
+                    "blocked": true,
+                    "id": "string"
+                  },
+                  "passwordResetLink": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CreatedUser"
+                },
+                "example": {
+                  "user": {
+                    "lastName": "string",
+                    "organisation": "string",
+                    "email": "string",
+                    "firstName": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "isAuth0User": true,
+                    "picture": "string",
+                    "blocked": true,
+                    "id": "string"
+                  },
+                  "passwordResetLink": "string"
                 }
               }
             }
@@ -2190,11 +4069,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2223,16 +4116,127 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "lastName": "string",
+                "organisation": "string",
+                "email": "string",
+                "firstName": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isAuth0User": true,
+                "picture": "string",
+                "blocked": true,
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "lastName": "string",
+                "organisation": "string",
+                "email": "string",
+                "firstName": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isAuth0User": true,
+                "picture": "string",
+                "blocked": true,
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/User"
+              },
+              "example": {
+                "lastName": "string",
+                "organisation": "string",
+                "email": "string",
+                "firstName": "string",
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "lastLogin": "string",
+                "managedGroups": [
+                  "string"
+                ],
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isAuth0User": true,
+                "picture": "string",
+                "blocked": true,
+                "id": "string"
               }
             }
           }
@@ -2252,11 +4256,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2291,12 +4309,90 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserGet200ApplicationJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "lastName": "string",
+                    "organisation": "string",
+                    "email": "string",
+                    "firstName": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "isAuth0User": true,
+                    "picture": "string",
+                    "blocked": true,
+                    "id": "string"
+                  }
+                ]
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserGet200TextJsonResponse"
-                }
+                },
+                "example": [
+                  {
+                    "lastName": "string",
+                    "organisation": "string",
+                    "email": "string",
+                    "firstName": "string",
+                    "permissions": [
+                      {
+                        "permissionId": "string",
+                        "resourceTypeId": "string",
+                        "resourceId": "string"
+                      }
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "lastLogin": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "isAuth0User": true,
+                    "picture": "string",
+                    "blocked": true,
+                    "id": "string"
+                  }
+                ]
               }
             }
           },
@@ -2346,11 +4442,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2380,16 +4490,100 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BulkNewUserRequest"
+              },
+              "example": {
+                "redirect": "string",
+                "organisation": "string",
+                "csvData": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ]
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/BulkNewUserRequest"
+              },
+              "example": {
+                "redirect": "string",
+                "organisation": "string",
+                "csvData": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ]
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/BulkNewUserRequest"
+              },
+              "example": {
+                "redirect": "string",
+                "organisation": "string",
+                "csvData": "string",
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ]
               }
             }
           }
@@ -2406,11 +4600,35 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BulkNewUserResponse"
+                },
+                "example": {
+                  "unsuccessfulInvitations": [
+                    {
+                      "email": "string",
+                      "firstName": "string",
+                      "lastName": "string",
+                      "error": "string"
+                    }
+                  ],
+                  "successfulInvitationsAsCsvData": "string",
+                  "hasErrors": true
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BulkNewUserResponse"
+                },
+                "example": {
+                  "unsuccessfulInvitations": [
+                    {
+                      "email": "string",
+                      "firstName": "string",
+                      "lastName": "string",
+                      "error": "string"
+                    }
+                  ],
+                  "successfulInvitationsAsCsvData": "string",
+                  "hasErrors": true
                 }
               }
             }
@@ -2426,11 +4644,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2461,16 +4693,112 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Login"
+              },
+              "example": {
+                "id": "string",
+                "organisation": "string",
+                "blocked": true,
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "managedGroups": [
+                  "string"
+                ],
+                "lastLogin": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Login"
+              },
+              "example": {
+                "id": "string",
+                "organisation": "string",
+                "blocked": true,
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "managedGroups": [
+                  "string"
+                ],
+                "lastLogin": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Login"
+              },
+              "example": {
+                "id": "string",
+                "organisation": "string",
+                "blocked": true,
+                "roles": [
+                  {
+                    "roleId": "string",
+                    "resourceAssignments": [
+                      {
+                        "resourceTypeId": "string",
+                        "resourceIds": [
+                          "string"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "permissions": [
+                  {
+                    "permissionId": "string",
+                    "resourceTypeId": "string",
+                    "resourceId": "string"
+                  }
+                ],
+                "groups": [
+                  "string"
+                ],
+                "managedGroups": [
+                  "string"
+                ],
+                "lastLogin": "string"
               }
             }
           }
@@ -2490,11 +4818,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "string",
+                  "title": "string",
+                  "status": 0,
+                  "detail": "string",
+                  "instance": "string"
                 }
               }
             }
@@ -2524,16 +4866,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PasswordResetRequest"
+              },
+              "example": {
+                "userId": "string",
+                "createAsSignup": true,
+                "redirectUrl": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/PasswordResetRequest"
+              },
+              "example": {
+                "userId": "string",
+                "createAsSignup": true,
+                "redirectUrl": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/PasswordResetRequest"
+              },
+              "example": {
+                "userId": "string",
+                "createAsSignup": true,
+                "redirectUrl": "string"
               }
             }
           }
@@ -2550,11 +4907,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PasswordReset"
+                },
+                "example": {
+                  "passwordResetLink": "string"
                 }
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PasswordReset"
+                },
+                "example": {
+                  "passwordResetLink": "string"
                 }
               }
             }
@@ -2583,16 +4946,73 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Message"
+              },
+              "example": {
+                "date": "string",
+                "type": "string",
+                "description": "string",
+                "connection": "string",
+                "connection_id": "string",
+                "client_id": "string",
+                "client_name": "string",
+                "ip": "string",
+                "hostname": "string",
+                "user_id": "string",
+                "user_name": "string",
+                "strategy": "string",
+                "StrategyType": "string",
+                "log_id": "string",
+                "_id": "string",
+                "isMobile": true,
+                "user_agent": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/Message"
+              },
+              "example": {
+                "date": "string",
+                "type": "string",
+                "description": "string",
+                "connection": "string",
+                "connection_id": "string",
+                "client_id": "string",
+                "client_name": "string",
+                "ip": "string",
+                "hostname": "string",
+                "user_id": "string",
+                "user_name": "string",
+                "strategy": "string",
+                "StrategyType": "string",
+                "log_id": "string",
+                "_id": "string",
+                "isMobile": true,
+                "user_agent": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/Message"
+              },
+              "example": {
+                "date": "string",
+                "type": "string",
+                "description": "string",
+                "connection": "string",
+                "connection_id": "string",
+                "client_id": "string",
+                "client_name": "string",
+                "ip": "string",
+                "hostname": "string",
+                "user_id": "string",
+                "user_name": "string",
+                "strategy": "string",
+                "StrategyType": "string",
+                "log_id": "string",
+                "_id": "string",
+                "isMobile": true,
+                "user_agent": "string"
               }
             }
           }

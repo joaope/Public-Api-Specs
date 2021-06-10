@@ -22,9 +22,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ActivityTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ActivityTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -48,9 +56,271 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/All'
+              example:
+                ActivityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                AuthorityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  CanHaveRestrictions: true
+                  CanHaveShape: true
+                BaseMaps:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  AvailableInCountries:
+                  - string
+                Countries:
+                - Id: string
+                  Guid: string
+                  Name: string
+                  SpecialDays:
+                  - Id: string
+                    Name: string
+                    IsHoliday: true
+                    Dates:
+                    - 2020-01-20T00:00:00.0000000+00:00
+                  Bounds:
+                  - - 0
+                  DefaultBaseMapId: 0
+                  EntitlementTypes:
+                  - 0
+                  RestrictionTypes:
+                  - 0
+                EntitlementTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  Code: string
+                  RestrictionTypeIds:
+                  - 0
+                  ApplicableExemptionTypeIds:
+                  - 0
+                  HasTariff: true
+                  RestrictionTypeLegalNames:
+                  - RestrictionTypeId: 0
+                    LegalName: string
+                ExceptionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                ExemptionTimeTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                ExemptionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                FacilityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                FuelTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                NoteVisibilityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                OnStreetParkingTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                PaymentMethods:
+                - Id: 0
+                  Name: string
+                  Description: string
+                PermitTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                Regions:
+                - Id: string
+                  Guid: string
+                  CountryId: string
+                  Name: string
+                  Venues:
+                  - Id: string
+                    Name: string
+                    EventsMustSupplyHours: true
+                    Events:
+                    - Name: string
+                      Date: 2020-01-20T00:00:00.0000000+00:00
+                      Start: 2021-06-10T00:00:00.0000000+00:00
+                      End: 2021-06-10T00:00:00.0000000+00:00
+                RestrictionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  Code: string
+                  CanHaveTariff: true
+                  DefaultWidth: 0
+                  IsTroItem: true
+                  LegalName: string
+                MovingRestrictionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  Property: string
+                  Unit: string
+                  Options:
+                  - MovingRestrictionTypeId: 0
+                    Id: 0
+                    Name: string
+                    Value: 0
+                SpecialRestrictions:
+                - Id: 0
+                  Name: string
+                  Description: string
+                VehicleTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                ZoneTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  CanHaveRestrictions: true
+                  CanHaveShape: true
             text/json:
               schema:
                 $ref: '#/components/schemas/All'
+              example:
+                ActivityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                AuthorityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  CanHaveRestrictions: true
+                  CanHaveShape: true
+                BaseMaps:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  AvailableInCountries:
+                  - string
+                Countries:
+                - Id: string
+                  Guid: string
+                  Name: string
+                  SpecialDays:
+                  - Id: string
+                    Name: string
+                    IsHoliday: true
+                    Dates:
+                    - 2020-01-20T00:00:00.0000000+00:00
+                  Bounds:
+                  - - 0
+                  DefaultBaseMapId: 0
+                  EntitlementTypes:
+                  - 0
+                  RestrictionTypes:
+                  - 0
+                EntitlementTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  Code: string
+                  RestrictionTypeIds:
+                  - 0
+                  ApplicableExemptionTypeIds:
+                  - 0
+                  HasTariff: true
+                  RestrictionTypeLegalNames:
+                  - RestrictionTypeId: 0
+                    LegalName: string
+                ExceptionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                ExemptionTimeTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                ExemptionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                FacilityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                FuelTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                NoteVisibilityTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                OnStreetParkingTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                PaymentMethods:
+                - Id: 0
+                  Name: string
+                  Description: string
+                PermitTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                Regions:
+                - Id: string
+                  Guid: string
+                  CountryId: string
+                  Name: string
+                  Venues:
+                  - Id: string
+                    Name: string
+                    EventsMustSupplyHours: true
+                    Events:
+                    - Name: string
+                      Date: 2020-01-20T00:00:00.0000000+00:00
+                      Start: 2021-06-10T00:00:00.0000000+00:00
+                      End: 2021-06-10T00:00:00.0000000+00:00
+                RestrictionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  Code: string
+                  CanHaveTariff: true
+                  DefaultWidth: 0
+                  IsTroItem: true
+                  LegalName: string
+                MovingRestrictionTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  Property: string
+                  Unit: string
+                  Options:
+                  - MovingRestrictionTypeId: 0
+                    Id: 0
+                    Name: string
+                    Value: 0
+                SpecialRestrictions:
+                - Id: 0
+                  Name: string
+                  Description: string
+                VehicleTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                ZoneTypes:
+                - Id: 0
+                  Name: string
+                  Description: string
+                  CanHaveRestrictions: true
+                  CanHaveShape: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -74,9 +344,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuthorityTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                CanHaveRestrictions: true
+                CanHaveShape: true
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                CanHaveRestrictions: true
+                CanHaveShape: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -100,9 +382,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BaseMapListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                AvailableInCountries:
+                - string
             text/json:
               schema:
                 $ref: '#/components/schemas/BaseMapListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                AvailableInCountries:
+                - string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -133,9 +427,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Country'
+              example:
+                Id: string
+                Guid: string
+                Name: string
+                SpecialDays:
+                - Id: string
+                  Name: string
+                  IsHoliday: true
+                  Dates:
+                  - 2020-01-20T00:00:00.0000000+00:00
+                Bounds:
+                - - 0
+                DefaultBaseMapId: 0
+                EntitlementTypes:
+                - 0
+                RestrictionTypes:
+                - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/Country'
+              example:
+                Id: string
+                Guid: string
+                Name: string
+                SpecialDays:
+                - Id: string
+                  Name: string
+                  IsHoliday: true
+                  Dates:
+                  - 2020-01-20T00:00:00.0000000+00:00
+                Bounds:
+                - - 0
+                DefaultBaseMapId: 0
+                EntitlementTypes:
+                - 0
+                RestrictionTypes:
+                - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -159,9 +487,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CountryListGet200ApplicationJsonResponse'
+              example:
+              - Id: string
+                Guid: string
+                Name: string
+                SpecialDays:
+                - Id: string
+                  Name: string
+                  IsHoliday: true
+                  Dates:
+                  - 2020-01-20T00:00:00.0000000+00:00
+                Bounds:
+                - - 0
+                DefaultBaseMapId: 0
+                EntitlementTypes:
+                - 0
+                RestrictionTypes:
+                - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/CountryListGet200TextJsonResponse'
+              example:
+              - Id: string
+                Guid: string
+                Name: string
+                SpecialDays:
+                - Id: string
+                  Name: string
+                  IsHoliday: true
+                  Dates:
+                  - 2020-01-20T00:00:00.0000000+00:00
+                Bounds:
+                - - 0
+                DefaultBaseMapId: 0
+                EntitlementTypes:
+                - 0
+                RestrictionTypes:
+                - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -180,15 +542,83 @@ paths:
           application/json-patch+json:
             schema:
               $ref: '#/components/schemas/Country'
+            example:
+              Id: string
+              Guid: string
+              Name: string
+              SpecialDays:
+              - Id: string
+                Name: string
+                IsHoliday: true
+                Dates:
+                - 2020-01-20T00:00:00.0000000+00:00
+              Bounds:
+              - - 0
+              DefaultBaseMapId: 0
+              EntitlementTypes:
+              - 0
+              RestrictionTypes:
+              - 0
           application/json:
             schema:
               $ref: '#/components/schemas/Country'
+            example:
+              Id: string
+              Guid: string
+              Name: string
+              SpecialDays:
+              - Id: string
+                Name: string
+                IsHoliday: true
+                Dates:
+                - 2020-01-20T00:00:00.0000000+00:00
+              Bounds:
+              - - 0
+              DefaultBaseMapId: 0
+              EntitlementTypes:
+              - 0
+              RestrictionTypes:
+              - 0
           text/json:
             schema:
               $ref: '#/components/schemas/Country'
+            example:
+              Id: string
+              Guid: string
+              Name: string
+              SpecialDays:
+              - Id: string
+                Name: string
+                IsHoliday: true
+                Dates:
+                - 2020-01-20T00:00:00.0000000+00:00
+              Bounds:
+              - - 0
+              DefaultBaseMapId: 0
+              EntitlementTypes:
+              - 0
+              RestrictionTypes:
+              - 0
           application/*+json:
             schema:
               $ref: '#/components/schemas/Country'
+            example:
+              Id: string
+              Guid: string
+              Name: string
+              SpecialDays:
+              - Id: string
+                Name: string
+                IsHoliday: true
+                Dates:
+                - 2020-01-20T00:00:00.0000000+00:00
+              Bounds:
+              - - 0
+              DefaultBaseMapId: 0
+              EntitlementTypes:
+              - 0
+              RestrictionTypes:
+              - 0
       responses:
         "200":
           description: Success
@@ -215,9 +645,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EntitlementTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                Code: string
+                RestrictionTypeIds:
+                - 0
+                ApplicableExemptionTypeIds:
+                - 0
+                HasTariff: true
+                RestrictionTypeLegalNames:
+                - RestrictionTypeId: 0
+                  LegalName: string
             text/json:
               schema:
                 $ref: '#/components/schemas/EntitlementTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                Code: string
+                RestrictionTypeIds:
+                - 0
+                ApplicableExemptionTypeIds:
+                - 0
+                HasTariff: true
+                RestrictionTypeLegalNames:
+                - RestrictionTypeId: 0
+                  LegalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -241,9 +697,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExceptionTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ExceptionTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -267,9 +731,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExemptionTimeTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -293,9 +765,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExemptionTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ExemptionTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -319,9 +799,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FacilityTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/FacilityTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -345,9 +833,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FuelTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/FuelTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -386,9 +882,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MovingRestrictionTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                Property: string
+                Unit: string
+                Options:
+                - MovingRestrictionTypeId: 0
+                  Id: 0
+                  Name: string
+                  Value: 0
             text/json:
               schema:
                 $ref: '#/components/schemas/MovingRestrictionTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                Property: string
+                Unit: string
+                Options:
+                - MovingRestrictionTypeId: 0
+                  Id: 0
+                  Name: string
+                  Value: 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -412,9 +930,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NoteVisibilityTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -438,9 +964,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OnStreetParkingTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -464,9 +998,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PaymentMethodListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/PaymentMethodListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -490,9 +1032,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PermitTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/PermitTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -523,9 +1073,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Region'
+              example:
+                Id: string
+                Guid: string
+                CountryId: string
+                Name: string
+                Venues:
+                - Id: string
+                  Name: string
+                  EventsMustSupplyHours: true
+                  Events:
+                  - Name: string
+                    Date: 2020-01-20T00:00:00.0000000+00:00
+                    Start: 2021-06-10T00:00:00.0000000+00:00
+                    End: 2021-06-10T00:00:00.0000000+00:00
             text/json:
               schema:
                 $ref: '#/components/schemas/Region'
+              example:
+                Id: string
+                Guid: string
+                CountryId: string
+                Name: string
+                Venues:
+                - Id: string
+                  Name: string
+                  EventsMustSupplyHours: true
+                  Events:
+                  - Name: string
+                    Date: 2020-01-20T00:00:00.0000000+00:00
+                    Start: 2021-06-10T00:00:00.0000000+00:00
+                    End: 2021-06-10T00:00:00.0000000+00:00
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -549,9 +1127,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RegionListGet200ApplicationJsonResponse'
+              example:
+              - Id: string
+                Guid: string
+                CountryId: string
+                Name: string
+                Venues:
+                - Id: string
+                  Name: string
+                  EventsMustSupplyHours: true
+                  Events:
+                  - Name: string
+                    Date: 2020-01-20T00:00:00.0000000+00:00
+                    Start: 2021-06-10T00:00:00.0000000+00:00
+                    End: 2021-06-10T00:00:00.0000000+00:00
             text/json:
               schema:
                 $ref: '#/components/schemas/RegionListGet200TextJsonResponse'
+              example:
+              - Id: string
+                Guid: string
+                CountryId: string
+                Name: string
+                Venues:
+                - Id: string
+                  Name: string
+                  EventsMustSupplyHours: true
+                  Events:
+                  - Name: string
+                    Date: 2020-01-20T00:00:00.0000000+00:00
+                    Start: 2021-06-10T00:00:00.0000000+00:00
+                    End: 2021-06-10T00:00:00.0000000+00:00
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -570,15 +1176,71 @@ paths:
           application/json-patch+json:
             schema:
               $ref: '#/components/schemas/Region'
+            example:
+              Id: string
+              Guid: string
+              CountryId: string
+              Name: string
+              Venues:
+              - Id: string
+                Name: string
+                EventsMustSupplyHours: true
+                Events:
+                - Name: string
+                  Date: 2020-01-20T00:00:00.0000000+00:00
+                  Start: 2021-06-10T00:00:00.0000000+00:00
+                  End: 2021-06-10T00:00:00.0000000+00:00
           application/json:
             schema:
               $ref: '#/components/schemas/Region'
+            example:
+              Id: string
+              Guid: string
+              CountryId: string
+              Name: string
+              Venues:
+              - Id: string
+                Name: string
+                EventsMustSupplyHours: true
+                Events:
+                - Name: string
+                  Date: 2020-01-20T00:00:00.0000000+00:00
+                  Start: 2021-06-10T00:00:00.0000000+00:00
+                  End: 2021-06-10T00:00:00.0000000+00:00
           text/json:
             schema:
               $ref: '#/components/schemas/Region'
+            example:
+              Id: string
+              Guid: string
+              CountryId: string
+              Name: string
+              Venues:
+              - Id: string
+                Name: string
+                EventsMustSupplyHours: true
+                Events:
+                - Name: string
+                  Date: 2020-01-20T00:00:00.0000000+00:00
+                  Start: 2021-06-10T00:00:00.0000000+00:00
+                  End: 2021-06-10T00:00:00.0000000+00:00
           application/*+json:
             schema:
               $ref: '#/components/schemas/Region'
+            example:
+              Id: string
+              Guid: string
+              CountryId: string
+              Name: string
+              Venues:
+              - Id: string
+                Name: string
+                EventsMustSupplyHours: true
+                Events:
+                - Name: string
+                  Date: 2020-01-20T00:00:00.0000000+00:00
+                  Start: 2021-06-10T00:00:00.0000000+00:00
+                  End: 2021-06-10T00:00:00.0000000+00:00
       responses:
         "200":
           description: Success
@@ -605,9 +1267,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictionTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                Code: string
+                CanHaveTariff: true
+                DefaultWidth: 0
+                IsTroItem: true
+                LegalName: string
             text/json:
               schema:
                 $ref: '#/components/schemas/RestrictionTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                Code: string
+                CanHaveTariff: true
+                DefaultWidth: 0
+                IsTroItem: true
+                LegalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -631,9 +1311,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialRestrictionListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/SpecialRestrictionListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -657,9 +1345,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VehicleTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/VehicleTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -683,9 +1379,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ZoneTypeListGet200ApplicationJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                CanHaveRestrictions: true
+                CanHaveShape: true
             text/json:
               schema:
                 $ref: '#/components/schemas/ZoneTypeListGet200TextJsonResponse'
+              example:
+              - Id: 0
+                Name: string
+                Description: string
+                CanHaveRestrictions: true
+                CanHaveShape: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":

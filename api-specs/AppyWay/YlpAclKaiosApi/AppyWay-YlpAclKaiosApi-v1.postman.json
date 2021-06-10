@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "e86d645d-b538-43f6-8442-5d994f487684",
+      "id": "06be2f92-7eb4-41b2-8f6e-5a38821ec04b",
       "name": "Set OnStreet Bay Availability by Id",
       "request": {
         "name": "Set OnStreet Bay Availability by Id",
@@ -35,7 +35,7 @@
       },
       "response": [
         {
-          "id": "8d1d205e-28be-49ff-8aed-af6af5613138",
+          "id": "ed2c5295-97c6-4793-b6d1-5f298ddcade9",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -52,7 +52,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
+              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
             }
           },
           "status": "Accepted",
@@ -68,7 +68,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e75158e5-550e-4e2b-8e55-2a448dc770ff",
+          "id": "d38d46ce-4f4a-4fbf-8fee-4b4b4879d9cf",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -85,7 +85,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
+              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
             }
           },
           "status": "Bad Request",
@@ -96,12 +96,12 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n \"success\": false,\n \"message\": \"irure fugiat in\",\n \"errors\": [\n  {\n   \"property\": \"amet labore sed\",\n   \"code\": \"dolore off\",\n   \"message\": \"aliqua tempor cupidatat sit elit\"\n  },\n  {\n   \"property\": \"quis aute\",\n   \"code\": \"anim adipisicing\",\n   \"message\": \"dolor\"\n  }\n ]\n}",
+          "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
           "cookie": [],
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "0a6fb546-d889-4776-a1cc-61de6f37e782",
+          "id": "f0259806-ce32-4080-8afe-d4f9c4469139",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -118,7 +118,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
+              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
             }
           },
           "status": "Unauthorized",
@@ -134,7 +134,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4f8d9363-6af8-436e-9812-1891fa5aa4d8",
+          "id": "ea6b21ac-8111-4c8c-9c4b-25012944b53c",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -151,7 +151,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
+              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
             }
           },
           "status": "Forbidden",
@@ -167,7 +167,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "3df6e440-f3b4-4c1f-bbca-18ad57f090c6",
+          "id": "b5fa3bd7-a61b-4fd3-9dd2-868af1dd44f0",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -184,7 +184,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
+              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
             }
           },
           "status": "Too Many Requests",
@@ -203,7 +203,7 @@
       "event": []
     },
     {
-      "id": "d3f8dce5-565d-4aa6-b77e-feda4909a695",
+      "id": "b6379b47-6afe-4c50-a489-cac2c4e660b0",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -226,7 +226,7 @@
       },
       "response": [
         {
-          "id": "20df7596-2006-47c6-b041-decbbfc8e95d",
+          "id": "8f737270-d407-4c0e-918a-465657294829",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -255,7 +255,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "d9b1ab8b-9f60-4922-affc-039a2889201e",
+          "id": "1829541f-9d67-42a1-a04b-f814f25a66d1",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -284,7 +284,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "1f0c807f-1f87-4da2-afb1-f3ff8b501f89",
+          "id": "ce8f6aff-7451-4357-9a7e-2e112dd09922",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -313,7 +313,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "c2fad20e-e6f8-4e7e-b6c6-1caff7e55606",
+          "id": "b3fcc1c6-6996-43cf-9d8e-05060515c361",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -369,7 +369,7 @@
     ]
   },
   "info": {
-    "_postman_id": "52949ad6-b145-4120-9deb-fc9954bee0cb",
+    "_postman_id": "00b17530-be6a-4dbb-b970-16bd6fe63f49",
     "name": "Kaios Acl API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "d9a9554d-007b-4a0b-8c6b-de964a138cd6",
+      "id": "02f24918-7a10-407b-a4e3-d44ac581d009",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "b9c6a4a8-636e-4d28-8389-055fd6177afc",
+          "id": "ec6df0b2-39de-4a44-9d9d-e4002a8ab9ed",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a13a0f96-b41b-4aa3-a884-474edf9855d3",
+          "id": "15a918fe-e18d-4764-b267-fb2479c78f38",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -82,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "71d43096-4fda-48c4-a9ba-86b15d6fb692",
+          "id": "f153809e-aef8-4618-aed2-3fd69ac7d303",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a17e410b-7bba-4e60-b929-fcf99cb4a977",
+          "id": "0c3bf012-9107-4591-80b6-197fdde1cfae",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -143,11 +143,11 @@
       "event": []
     },
     {
-      "id": "05e53237-447f-4544-b5c3-cc83d80f7995",
+      "id": "9d0994e3-e1f3-43fc-8cf4-1f0581854f99",
       "name": "queries",
       "item": [
         {
-          "id": "9f73e1e2-e43b-44dc-ac51-12e35098fd79",
+          "id": "5aace40d-9e15-4152-8a57-f33491e194aa",
           "name": "Fetch realtime availability by entity Ids",
           "request": {
             "name": "Fetch realtime availability by entity Ids",
@@ -181,7 +181,7 @@
           },
           "response": [
             {
-              "id": "bf61129a-6a3d-450c-aee1-9dde3c0f9a56",
+              "id": "e78d822d-b799-4a3f-a844-5712a93cf857",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -198,7 +198,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -209,12 +209,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"result\": [\n  {\n   \"entityId\": \"do\",\n   \"entityType\": 5,\n   \"dataSourceType\": 1,\n   \"groupId\": \"sit dolor eu\",\n   \"totalSpaces\": -62996753,\n   \"availableSpaces\": 96657833\n  },\n  {\n   \"entityId\": \"qui consectetur exercitation\",\n   \"entityType\": 5,\n   \"dataSourceType\": 1,\n   \"groupId\": \"consequat officia amet est\",\n   \"totalSpaces\": -20819703,\n   \"availableSpaces\": -14886648\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"string\",\n   \"entityType\": 1,\n   \"dataSourceType\": 0,\n   \"groupId\": \"string\",\n   \"totalSpaces\": 0,\n   \"availableSpaces\": 0\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "a57b8ab5-206d-4beb-83ee-d0c963f43461",
+              "id": "52de33ef-f5cf-4805-85e5-156ebdc6b8d2",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -231,7 +231,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -242,12 +242,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"irure\",\n \"errors\": [\n  {\n   \"property\": \"deserunt est\",\n   \"code\": \"mollit elit\",\n   \"message\": \"sit consequat nostrud dolore\"\n  },\n  {\n   \"property\": \"aute laborum fugiat\",\n   \"code\": \"ut\",\n   \"message\": \"dolor dolore eiusmod dolore\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "f8b6bd7b-88ad-4d07-867b-bfbde1d66fe1",
+              "id": "ce5a16d8-6124-44ce-9f40-bb1758a2a649",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -264,7 +264,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -280,7 +280,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "3a1eca9e-9fd5-402d-85be-e2af1d40227a",
+              "id": "e421521b-9520-4ee7-9df9-2663cdab5435",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -297,7 +297,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -313,7 +313,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "c85c2fcd-135b-416a-b1ac-4465880f0cfa",
+              "id": "89ca1ca7-4a63-4142-9e40-253690e4fb96",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -330,7 +330,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -349,7 +349,7 @@
           "event": []
         },
         {
-          "id": "55221e6f-f597-48e8-87a7-28ec47baa23d",
+          "id": "6d416599-9a54-4d29-a40f-40a6813ebe9e",
           "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
           "request": {
             "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
@@ -383,7 +383,7 @@
           },
           "response": [
             {
-              "id": "e6bb2fd9-c6f3-4f08-b0db-33c71b4fc841",
+              "id": "424910a9-7ab2-465d-a9c5-7309d405b0ea",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -400,7 +400,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "OK",
@@ -411,12 +411,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"Excepteur\",\n   \"entityType\": 5,\n   \"dataSourceType\": 1,\n   \"groupId\": \"dolore amet dolor\",\n   \"totalSpaces\": 84557871,\n   \"availableSpaces\": 10058850\n  },\n  {\n   \"entityId\": \"irure aliqua ut\",\n   \"entityType\": 5,\n   \"dataSourceType\": 0,\n   \"groupId\": \"Lorem velit \",\n   \"totalSpaces\": -95983813,\n   \"availableSpaces\": -56665984\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"string\",\n   \"entityType\": 1,\n   \"dataSourceType\": 0,\n   \"groupId\": \"string\",\n   \"totalSpaces\": 0,\n   \"availableSpaces\": 0\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "fd87fb49-b209-4937-9f5d-92a2e21262e7",
+              "id": "b1c54211-46ef-4e91-bd73-2a86231c2a93",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -433,7 +433,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Bad Request",
@@ -444,12 +444,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"do minim adipisicing\",\n \"errors\": [\n  {\n   \"property\": \"ut sunt eu anim\",\n   \"code\": \"elit qui quis\",\n   \"message\": \"Lorem enim nulla voluptate\"\n  },\n  {\n   \"property\": \"elit pariatur nostrud\",\n   \"code\": \"cupidatat proident est eu\",\n   \"message\": \"s\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "325f6b67-b324-48a3-8b76-9bdf87c5d918",
+              "id": "a1f8dfa4-8893-44d6-9baf-abca6d1ad508",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -466,7 +466,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Unauthorized",
@@ -482,7 +482,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "2c199b9f-e8ef-4df3-ac18-a793a7d50da5",
+              "id": "ecc46233-35d4-470a-af34-dce85247658d",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -499,7 +499,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Forbidden",
@@ -515,7 +515,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "42422fcd-3f6e-4248-967d-29b38ec021df",
+              "id": "5959dcd7-dd21-4c69-b50c-7b8dbe353023",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -532,7 +532,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -551,7 +551,7 @@
           "event": []
         },
         {
-          "id": "92035f25-a922-46c3-8b29-f46476fc684e",
+          "id": "db9554a5-5c26-436c-8fd2-232dba7323eb",
           "name": "Fetch realtime availability for all available data source types (sensor, camera, barrier, etc) by entity Ids",
           "request": {
             "name": "Fetch realtime availability for all available data source types (sensor, camera, barrier, etc) by entity Ids",
@@ -585,7 +585,7 @@
           },
           "response": [
             {
-              "id": "13a9515e-9736-4580-837b-55ff0b63067c",
+              "id": "5cf0fa27-4f51-47b5-baf6-68b4b0775ae5",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -602,7 +602,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -613,12 +613,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"Excepteur\",\n   \"entityType\": 5,\n   \"dataSourceType\": 1,\n   \"groupId\": \"dolore amet dolor\",\n   \"totalSpaces\": 84557871,\n   \"availableSpaces\": 10058850\n  },\n  {\n   \"entityId\": \"irure aliqua ut\",\n   \"entityType\": 5,\n   \"dataSourceType\": 0,\n   \"groupId\": \"Lorem velit \",\n   \"totalSpaces\": -95983813,\n   \"availableSpaces\": -56665984\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"string\",\n   \"entityType\": 1,\n   \"dataSourceType\": 0,\n   \"groupId\": \"string\",\n   \"totalSpaces\": 0,\n   \"availableSpaces\": 0\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "6cc2db03-ea2f-453b-9a65-775c0416129b",
+              "id": "b031dcd4-6f2a-416e-b670-fbead8642730",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -635,7 +635,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -646,12 +646,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"do minim adipisicing\",\n \"errors\": [\n  {\n   \"property\": \"ut sunt eu anim\",\n   \"code\": \"elit qui quis\",\n   \"message\": \"Lorem enim nulla voluptate\"\n  },\n  {\n   \"property\": \"elit pariatur nostrud\",\n   \"code\": \"cupidatat proident est eu\",\n   \"message\": \"s\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "580bfad4-6403-474d-b8bd-43535dc9e48e",
+              "id": "d244b55a-aa22-4898-b0c1-0fa4c2c23e06",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -668,7 +668,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -684,7 +684,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "bbd63ea0-7b74-4bd8-af35-7d59b3342ad6",
+              "id": "07350139-9731-430f-97db-fed82a6e1c19",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -701,7 +701,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -717,7 +717,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "e5a91806-57e3-4add-b01f-1c6d63bba99b",
+              "id": "a7965248-7cfb-4c20-a890-ed0159ac6c72",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -734,7 +734,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -753,7 +753,7 @@
           "event": []
         },
         {
-          "id": "6eaeeb12-8702-4ff6-8d12-5d120e66c554",
+          "id": "ded394c0-4b88-4703-b769-c1045ade6606",
           "name": "Fetch realtime availability aggregated groups for all available data source types (sensor, camera, barrier, etc) by keys formed by the group id and entity id",
           "request": {
             "name": "Fetch realtime availability aggregated groups for all available data source types (sensor, camera, barrier, etc) by keys formed by the group id and entity id",
@@ -787,7 +787,7 @@
           },
           "response": [
             {
-              "id": "96aefeb4-bc53-4a86-a4ff-c42f21543094",
+              "id": "389f2cb0-6652-403c-bf01-0ec7041451b2",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -804,7 +804,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "OK",
@@ -815,12 +815,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"Excepteur\",\n   \"entityType\": 5,\n   \"dataSourceType\": 1,\n   \"groupId\": \"dolore amet dolor\",\n   \"totalSpaces\": 84557871,\n   \"availableSpaces\": 10058850\n  },\n  {\n   \"entityId\": \"irure aliqua ut\",\n   \"entityType\": 5,\n   \"dataSourceType\": 0,\n   \"groupId\": \"Lorem velit \",\n   \"totalSpaces\": -95983813,\n   \"availableSpaces\": -56665984\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityId\": \"string\",\n   \"entityType\": 1,\n   \"dataSourceType\": 0,\n   \"groupId\": \"string\",\n   \"totalSpaces\": 0,\n   \"availableSpaces\": 0\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "72c19ef4-bb17-41c8-abb1-e45b29824bcb",
+              "id": "55f18f73-76c8-4ca5-b660-9be98e986cac",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -837,7 +837,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Bad Request",
@@ -848,12 +848,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"do minim adipisicing\",\n \"errors\": [\n  {\n   \"property\": \"ut sunt eu anim\",\n   \"code\": \"elit qui quis\",\n   \"message\": \"Lorem enim nulla voluptate\"\n  },\n  {\n   \"property\": \"elit pariatur nostrud\",\n   \"code\": \"cupidatat proident est eu\",\n   \"message\": \"s\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "2a342596-8c03-4411-9a9c-025289e88356",
+              "id": "38bb8f61-66dd-46fa-bd9f-32fa6a565b9d",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -870,7 +870,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Unauthorized",
@@ -886,7 +886,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "0ad6906d-5f4a-4855-8690-55cdcfa0541a",
+              "id": "d0203109-d974-4d98-9b41-46755f046cf0",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -903,7 +903,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Forbidden",
@@ -919,7 +919,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "fa4e8aaa-6df4-4a06-9d61-f0f4a6bcba0d",
+              "id": "970afc2c-5cc4-4750-994f-ca8b25b4f9b6",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -936,7 +936,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        },\n        {\n            \"entityId\": \"<string>\",\n            \"groupId\": \"<string>\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"keys\": [\n        {\n            \"entityId\": \"string\",\n            \"groupId\": \"string\"\n        }\n    ],\n    \"(Collection)\": null\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -955,7 +955,7 @@
           "event": []
         },
         {
-          "id": "bd111f54-f802-4c0c-b839-36c0a5f55f8e",
+          "id": "7dda543b-bcef-4dd6-afbc-f1e1c6c13b69",
           "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
           "request": {
             "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
@@ -989,7 +989,7 @@
           },
           "response": [
             {
-              "id": "13066869-fc1d-4660-bdd7-686898b86890",
+              "id": "dc9ea5b1-938d-4211-9071-0b12f84830fe",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -1006,7 +1006,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"h3Resolution\": \"<integer>\"\n}"
+                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": 0,\n        \"lng\": 0\n    },\n    \"viewportSize\": 0,\n    \"h3Resolution\": 0\n}"
                 }
               },
               "status": "OK",
@@ -1017,12 +1017,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"h3Index\": \"occaecat tempor\",\n   \"availabilityRatio\": 56276023.60738629,\n   \"normalizedRatio\": -32663389.909468293\n  },\n  {\n   \"h3Index\": \"consectetur veniam aliquip cillum ex\",\n   \"availabilityRatio\": 76014714.02887833,\n   \"normalizedRatio\": -34132206.29490938\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"h3Index\": \"string\",\n   \"availabilityRatio\": 0,\n   \"normalizedRatio\": 0\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "d88c0f20-e73d-4218-8571-e018863e23d1",
+              "id": "fc8302cb-051b-44cc-b62d-3659a6a6adc5",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -1039,7 +1039,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"h3Resolution\": \"<integer>\"\n}"
+                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": 0,\n        \"lng\": 0\n    },\n    \"viewportSize\": 0,\n    \"h3Resolution\": 0\n}"
                 }
               },
               "status": "Bad Request",
@@ -1050,12 +1050,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"do minim adipisicing\",\n \"errors\": [\n  {\n   \"property\": \"ut sunt eu anim\",\n   \"code\": \"elit qui quis\",\n   \"message\": \"Lorem enim nulla voluptate\"\n  },\n  {\n   \"property\": \"elit pariatur nostrud\",\n   \"code\": \"cupidatat proident est eu\",\n   \"message\": \"s\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "f11326a8-f883-4043-8f0a-14ed301580c9",
+              "id": "b1644f70-a70a-4e1c-9e12-0e67ca33da9d",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1072,7 +1072,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"h3Resolution\": \"<integer>\"\n}"
+                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": 0,\n        \"lng\": 0\n    },\n    \"viewportSize\": 0,\n    \"h3Resolution\": 0\n}"
                 }
               },
               "status": "Unauthorized",
@@ -1088,7 +1088,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "c5d0a534-9537-44aa-a56d-ac2d9669c118",
+              "id": "498826de-7851-4aba-97b6-c2c4796d5df2",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1105,7 +1105,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"h3Resolution\": \"<integer>\"\n}"
+                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": 0,\n        \"lng\": 0\n    },\n    \"viewportSize\": 0,\n    \"h3Resolution\": 0\n}"
                 }
               },
               "status": "Forbidden",
@@ -1121,7 +1121,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "047b013a-406c-48f4-b1c0-f4759de05b98",
+              "id": "fa0241f8-7238-46c8-b48f-7898500efd3b",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1138,7 +1138,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": \"<double>\",\n        \"lng\": \"<double>\"\n    },\n    \"viewportSize\": \"<integer>\",\n    \"h3Resolution\": \"<integer>\"\n}"
+                  "raw": "{\n    \"viewportCenter\": {\n        \"lat\": 0,\n        \"lng\": 0\n    },\n    \"viewportSize\": 0,\n    \"h3Resolution\": 0\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -1184,7 +1184,7 @@
     ]
   },
   "info": {
-    "_postman_id": "c815e7db-b73b-4e48-8c8c-29a35062334c",
+    "_postman_id": "d912c109-27b4-4a7d-a745-7bd73bf0a885",
     "name": "Availability RealTime API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

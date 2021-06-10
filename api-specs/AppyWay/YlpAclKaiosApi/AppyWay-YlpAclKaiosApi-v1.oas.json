@@ -23,16 +23,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SetOnStreetAvailabilityCommand"
+              },
+              "example": {
+                "timeStamp": "string",
+                "bayId": "string",
+                "numCarsParked": 0
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/SetOnStreetAvailabilityCommand"
+              },
+              "example": {
+                "timeStamp": "string",
+                "bayId": "string",
+                "numCarsParked": 0
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/SetOnStreetAvailabilityCommand"
+              },
+              "example": {
+                "timeStamp": "string",
+                "bayId": "string",
+                "numCarsParked": 0
               }
             }
           }
@@ -47,6 +62,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -90,56 +116,6 @@
   },
   "components": {
     "schemas": {
-      "SetOnStreetAvailabilityCommand": {
-        "required": [
-          "bayId",
-          "timeStamp"
-        ],
-        "type": "object",
-        "properties": {
-          "bayId": {
-            "minLength": 1,
-            "type": "string",
-            "description": "OnStreet BayId",
-            "nullable": true
-          },
-          "timeStamp": {
-            "minLength": 1,
-            "type": "string",
-            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
-            "format": "date-time"
-          },
-          "numCarsParked": {
-            "minimum": 0,
-            "type": "integer",
-            "description": "Bay Cars Parked",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Error": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "type": "string",
-            "description": "The property that caused the problem",
-            "nullable": true
-          },
-          "code": {
-            "type": "string",
-            "description": "Machine-readable code representing the type of error",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "description": "Human-readable message for the error",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a validation error"
-      },
       "BadRequestResponse": {
         "type": "object",
         "properties": {
@@ -165,6 +141,55 @@
         },
         "additionalProperties": false,
         "description": "A response indicating the request was invalid"
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "string",
+            "description": "The property that caused the problem",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "description": "Machine-readable code representing the type of error",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message for the error",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a validation error"
+      },
+      "SetOnStreetAvailabilityCommand": {
+        "required": [
+          "bayId",
+          "timeStamp"
+        ],
+        "type": "object",
+        "properties": {
+          "bayId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "OnStreet BayId"
+          },
+          "timeStamp": {
+            "minLength": 1,
+            "type": "string",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "numCarsParked": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Bay Cars Parked",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {

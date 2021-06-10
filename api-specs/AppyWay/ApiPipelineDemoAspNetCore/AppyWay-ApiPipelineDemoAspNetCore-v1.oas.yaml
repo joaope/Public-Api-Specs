@@ -19,6 +19,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OrdersGet200ApplicationJsonResponse'
+              example:
+              - customer: string
+                id: 0
+                effectiveDate: string
+                createdDate: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":
@@ -37,12 +42,27 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Order'
+            example:
+              customer: string
+              id: 0
+              effectiveDate: string
+              createdDate: string
           text/json:
             schema:
               $ref: '#/components/schemas/Order'
+            example:
+              customer: string
+              id: 0
+              effectiveDate: string
+              createdDate: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/Order'
+            example:
+              customer: string
+              id: 0
+              effectiveDate: string
+              createdDate: string
       responses:
         "201":
           description: The order was successfully placed.
@@ -50,12 +70,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order'
+              example:
+                customer: string
+                id: 0
+                effectiveDate: string
+                createdDate: string
         "400":
           description: The order is invalid.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+              example:
+                type: string
+                title: string
+                status: 0
+                detail: string
+                instance: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":
@@ -83,18 +114,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order'
+              example:
+                customer: string
+                id: 0
+                effectiveDate: string
+                createdDate: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+              example:
+                type: string
+                title: string
+                status: 0
+                detail: string
+                instance: string
         "404":
           description: The order does not exist.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+              example:
+                type: string
+                title: string
+                status: 0
+                detail: string
+                instance: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":
@@ -115,6 +163,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PeopleGet200ApplicationJsonResponse'
+              example:
+              - lastName: string
+                firstName: string
+                email: string
+                id: 0
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":
@@ -142,12 +195,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Person'
+              example:
+                lastName: string
+                firstName: string
+                email: string
+                id: 0
         "404":
           description: The person does not exist.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+              example:
+                type: string
+                title: string
+                status: 0
+                detail: string
+                instance: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":

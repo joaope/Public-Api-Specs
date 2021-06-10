@@ -16,12 +16,42 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RecordOccupancyCommand'
+            example:
+              receivedOn: string
+              source: string
+              entityId: string
+              entityType: 1
+              dataSourceType: 0
+              timestampUtc: string
+              vacantSpaces: 0
+              occupiedSpaces: 0
+              groupId: string
           text/json:
             schema:
               $ref: '#/components/schemas/RecordOccupancyCommand'
+            example:
+              receivedOn: string
+              source: string
+              entityId: string
+              entityType: 1
+              dataSourceType: 0
+              timestampUtc: string
+              vacantSpaces: 0
+              occupiedSpaces: 0
+              groupId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/RecordOccupancyCommand'
+            example:
+              receivedOn: string
+              source: string
+              entityId: string
+              entityType: 1
+              dataSourceType: 0
+              timestampUtc: string
+              vacantSpaces: 0
+              occupiedSpaces: 0
+              groupId: string
       responses:
         "200":
           description: Success
@@ -59,12 +89,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery'
+            example:
+              id: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery'
+            example:
+              id: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchCurrentDayHourlyOccupancyHistoryByEntityIdQuery'
+            example:
+              id: string
       responses:
         "200":
           description: Success
@@ -72,12 +108,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Int32DoubleIDictionaryOkResponse'
+              example:
+                success: true
+                result: {}
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":

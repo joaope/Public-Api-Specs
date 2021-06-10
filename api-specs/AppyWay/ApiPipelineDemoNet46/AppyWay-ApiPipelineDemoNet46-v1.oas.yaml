@@ -25,9 +25,11 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
             text/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":
@@ -46,15 +48,27 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Order'
+            example:
+              Customer: string
+              Id: 0
+              EffectiveDate: string
+              CreatedDate: string
           text/json:
             schema:
               $ref: '#/components/schemas/Order'
+            example:
+              Customer: string
+              Id: 0
+              EffectiveDate: string
+              CreatedDate: string
           application/xml:
             schema:
               $ref: '#/components/schemas/Order'
+            example: <Order> <Customer>string</Customer> <Id>0</Id> <EffectiveDate>string</EffectiveDate> <CreatedDate>string</CreatedDate> </Order>
           text/xml:
             schema:
               $ref: '#/components/schemas/Order'
+            example: <Order> <Customer>string</Customer> <Id>0</Id> <EffectiveDate>string</EffectiveDate> <CreatedDate>string</CreatedDate> </Order>
           application/x-www-form-urlencoded:
             schema:
               properties:
@@ -79,9 +93,11 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
             text/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
         "400":
           description: The order is invalid.
         "429":
@@ -117,9 +133,11 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
             text/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
         "404":
           description: The order does not exist.
         "429":
@@ -148,9 +166,11 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
             text/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
         "429":
           $ref: '#/components/responses/TooManyRequests'
         "401":
@@ -184,9 +204,11 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
             text/xml:
               schema:
                 $ref: '#/components/schemas/Object'
+              example: <Object />
         "404":
           description: The person does not exist.
         "429":

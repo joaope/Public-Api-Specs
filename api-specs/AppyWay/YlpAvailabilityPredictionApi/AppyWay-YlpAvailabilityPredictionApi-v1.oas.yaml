@@ -33,12 +33,24 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchAvailabilityPredictionByEntityIdsQuery'
+            example:
+              dateTime: string
+              ids:
+              - string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchAvailabilityPredictionByEntityIdsQuery'
+            example:
+              dateTime: string
+              ids:
+              - string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchAvailabilityPredictionByEntityIdsQuery'
+            example:
+              dateTime: string
+              ids:
+              - string
       responses:
         "200":
           description: Success
@@ -46,12 +58,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HourlyPredictionIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - entityId: string
+                  occupancyRatio: 0
+                  confidence: 0
+                  sourceTypes: 0
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -70,12 +96,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
       responses:
         "200":
           description: Success
@@ -83,12 +118,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FetchDailyAvailabilityPredictionsByEntityIdQueryResultOkResponse'
+              example:
+                success: true
+                result:
+                  globalConfidence: 0
+                  sourceTypes: 0
+                  hourlyPredictions: {}
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -107,12 +155,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
       responses:
         "200":
           description: Success
@@ -120,12 +177,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FetchDailyOccupancyHistoryForPredictionByEntityIdQueryResultItemOkResponse'
+              example:
+                success: true
+                result:
+                  date: string
+                  entityId: string
+                  groupId: string
+                  localDayOfWeek: 0
+                  occupancyBySourceType:
+                  - dataSourceType: 0
+                    hourlyOccupancy:
+                    - 0
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -144,12 +219,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FetchWeeklyAvailabilityPredictionsByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchWeeklyAvailabilityPredictionsByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchWeeklyAvailabilityPredictionsByEntityIdQuery'
+            example:
+              dateTime: string
+              id: string
       responses:
         "200":
           description: Success
@@ -157,12 +241,81 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WeeklyPredictionsOkResponse'
+              example:
+                success: true
+                result:
+                  entityId: string
+                  sourceTypes: 0
+                  perDayOfWeek:
+                    Sunday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
+                    Monday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
+                    Tuesday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
+                    Wednesday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
+                    Thursday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
+                    Friday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
+                    Saturday:
+                      entityId: string
+                      sourceTypes: 0
+                      confidence: 0
+                      perHour:
+                      - sourceTypes: 0
+                        occupancyRatio: 0
+                        confidence: 0
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":

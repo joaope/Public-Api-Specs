@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "dae41086-8a44-4d7e-9839-eff76d8c21f0",
+      "id": "af6a2d52-ff7b-4258-b5db-fbb29a286881",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "8a4b9b60-3a08-4621-a651-9f1c3e79881b",
+          "id": "b3e016eb-686c-4094-b9d8-628a01ace75c",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "35ed292a-973d-4d8e-aa59-09dc882a1360",
+          "id": "0d9567e7-8d0c-43b7-93a7-c05cc46503a8",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -82,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "0f69d787-94e0-4922-9293-3d5bc849c51d",
+          "id": "d04e3320-9777-4d8e-92f6-f8e1eecbb9b8",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "cceada5b-c72d-4a3c-bf2f-95c6034e0079",
+          "id": "6bcce885-a744-47ec-9337-1f0a0e941843",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -143,11 +143,11 @@
       "event": []
     },
     {
-      "id": "3ef17c7b-57ba-4c0d-a0e6-14fbd983455c",
+      "id": "5c025ee7-bc8c-43a0-ab68-60422e32cec9",
       "name": "queries",
       "item": [
         {
-          "id": "5160b42b-252a-4c1d-b59e-1242ebe30364",
+          "id": "e3c9850d-4dcc-475b-91dc-e4e2b983db98",
           "name": "Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id",
           "request": {
             "name": "Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id",
@@ -181,7 +181,7 @@
           },
           "response": [
             {
-              "id": "a75f70fc-0484-4595-be63-7ebd115d65b6",
+              "id": "6a93a2ee-9034-44f9-b7b5-aa8b5364b38b",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -198,7 +198,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
                 }
               },
               "status": "OK",
@@ -209,12 +209,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": {\n  \"entityId\": \"sed\",\n  \"currentAvailability\": [\n   {\n    \"entityId\": \"ex aute\",\n    \"entityType\": 5,\n    \"dataSourceType\": 2,\n    \"groupId\": \"pariatur aliqua ex\",\n    \"totalSpaces\": 55911727,\n    \"availableSpaces\": 86904801\n   },\n   {\n    \"entityId\": \"sunt do\",\n    \"entityType\": 3,\n    \"dataSourceType\": 4,\n    \"groupId\": \"magna velit consequa\",\n    \"totalSpaces\": -40933328,\n    \"availableSpaces\": -58225527\n   }\n  ],\n  \"hourlyPredictions\": \"sint ex\",\n  \"occupancyHistoryForPrediction\": [\n   {\n    \"date\": \"eu velit nulla ea est\",\n    \"entityId\": \"aute Duis exercitation minim est\",\n    \"occupancyBySourceType\": [\n     {\n      \"dataSourceType\": 4,\n      \"hourlyOccupancy\": [\n       39493267.47732124,\n       -40562186.79072954\n      ]\n     },\n     {\n      \"dataSourceType\": 1,\n      \"hourlyOccupancy\": [\n       15196821.941575184,\n       34593912.27126858\n      ]\n     }\n    ]\n   },\n   {\n    \"date\": \"ullamco\",\n    \"entityId\": \"in veniam occaecat irure\",\n    \"occupancyBySourceType\": [\n     {\n      \"dataSourceType\": 0,\n      \"hourlyOccupancy\": [\n       -72861571.1255122,\n       15526060.744228423\n      ]\n     },\n     {\n      \"dataSourceType\": 2,\n      \"hourlyOccupancy\": [\n       32337382.2665952,\n       -88014904.45288107\n      ]\n     }\n    ]\n   }\n  ]\n }\n}",
+              "body": "{\n \"success\": true,\n \"result\": {\n  \"entityId\": \"string\",\n  \"currentAvailability\": [\n   {\n    \"entityId\": \"string\",\n    \"entityType\": 1,\n    \"dataSourceType\": 0,\n    \"groupId\": \"string\",\n    \"totalSpaces\": 0,\n    \"availableSpaces\": 0\n   }\n  ],\n  \"hourlyPredictions\": {},\n  \"occupancyHistoryForPrediction\": [\n   {\n    \"date\": \"string\",\n    \"entityId\": \"string\",\n    \"occupancyBySourceType\": [\n     {\n      \"dataSourceType\": 0,\n      \"hourlyOccupancy\": [\n       0\n      ]\n     }\n    ]\n   }\n  ]\n }\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "f7feb810-6b66-45f4-9ef1-6981e0151a0f",
+              "id": "c47185fc-3786-442a-ab1c-80ceb0e2a227",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -231,7 +231,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
                 }
               },
               "status": "Bad Request",
@@ -242,12 +242,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"ut proident adipisicing aliq\",\n \"errors\": [\n  {\n   \"property\": \"inc\",\n   \"code\": \"magna ut\",\n   \"message\": \"mollit pariatur laborum dolore\"\n  },\n  {\n   \"property\": \"adipisicing\",\n   \"code\": \"nostrud ullamco Duis\",\n   \"message\": \"aliqua elit ipsum do et\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "9c1ea8f5-ec10-4bce-befb-f1ffab988cba",
+              "id": "e8ee3632-3fe8-4c3c-9488-784777e1742b",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -264,7 +264,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
                 }
               },
               "status": "Unauthorized",
@@ -280,7 +280,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "80c9ed6c-7051-492f-bf8f-9070b530561e",
+              "id": "11767df6-6c49-4451-b0c2-fb73f3a64b99",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -297,7 +297,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
                 }
               },
               "status": "Forbidden",
@@ -313,7 +313,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "da031855-f9ae-41a0-88c7-a076104bb01a",
+              "id": "d50f088d-2513-4748-aa23-ca4f37aacc9f",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -330,7 +330,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -349,7 +349,7 @@
           "event": []
         },
         {
-          "id": "d0ab288a-4c5b-4859-a640-65c071c0ab48",
+          "id": "222a8b1a-35e5-43ed-b584-ec87a53fd417",
           "name": "/queries/fetchParkingEntitiesByAuthorityIds - POST",
           "request": {
             "name": "/queries/fetchParkingEntitiesByAuthorityIds - POST",
@@ -380,7 +380,7 @@
           },
           "response": [
             {
-              "id": "4e99a8fc-9bf5-47d7-9cb6-d7585514bccf",
+              "id": "bfab0e5e-e93b-4a32-bfdd-93067bc6d542",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -397,7 +397,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -408,12 +408,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"result\": [\n  {\n   \"entityParentId\": \"occaecat proident nostrud\",\n   \"entityId\": \"voluptate exercitation\",\n   \"name\": \"amet consequat id\",\n   \"ownerId\": \"nisi id est deserunt tempor\",\n   \"entityType\": 2,\n   \"location\": \"dolore sed laborum eu\"\n  },\n  {\n   \"entityParentId\": \"in oc\",\n   \"entityId\": \"consequat ea labore aliquip\",\n   \"name\": \"qui in\",\n   \"ownerId\": \"quis deserun\",\n   \"entityType\": 3,\n   \"location\": \"ad laboris cillu\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityParentId\": \"string\",\n   \"entityId\": \"string\",\n   \"name\": \"string\",\n   \"ownerId\": \"string\",\n   \"entityType\": 1,\n   \"location\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "25100775-5cd9-4a1f-bbb4-923c07963891",
+              "id": "8c0a8562-a7be-45d0-a202-154203dcb47e",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -430,7 +430,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -441,12 +441,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"dolore quis\",\n \"errors\": [\n  {\n   \"property\": \"voluptate fugiat cil\",\n   \"code\": \"voluptate occaecat minim quis\",\n   \"message\": \"non id\"\n  },\n  {\n   \"property\": \"amet cillum ullamco magna enim\",\n   \"code\": \"aute officia cillum est enim\",\n   \"message\": \"ipsum\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "4b448c41-8d98-43f1-890a-ab91e497b339",
+              "id": "5b79ce59-7d88-4f63-9184-6cfe881ab2ed",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -463,7 +463,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -479,7 +479,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6a533000-e2f6-4851-9ca2-bba27d882218",
+              "id": "a2d927b0-014b-4908-a258-043e212ff72d",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -496,7 +496,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -512,7 +512,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "b6aeb19c-7b53-4d7a-b310-623e88739093",
+              "id": "0881c239-4431-4d51-8425-93b36ea9e265",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -529,7 +529,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -548,7 +548,7 @@
           "event": []
         },
         {
-          "id": "58f64ae7-40a2-432f-a425-ecf5f63de8af",
+          "id": "9f7ea500-29c8-4c39-9acf-6661aec62500",
           "name": "/queries/fetchParkingOwnersEntitiesByIds - POST",
           "request": {
             "name": "/queries/fetchParkingOwnersEntitiesByIds - POST",
@@ -579,7 +579,7 @@
           },
           "response": [
             {
-              "id": "4500fbf7-d9b9-400c-bc49-a1283c927333",
+              "id": "9421ce6d-4be0-4b49-a035-548e51575cee",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -596,7 +596,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -607,12 +607,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"result\": [\n  {\n   \"id\": \"officia esse labore Lorem\",\n   \"name\": \"voluptate ulla\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"ut in commodo ut\",\n     \"entityId\": \"Ut do \",\n     \"name\": \"cupidatat\",\n     \"ownerId\": \"aliquip cillum eiusmod\",\n     \"entityType\": 5,\n     \"location\": \"commodo officia\"\n    },\n    {\n     \"entityParentId\": \"dolor nisi sint s\",\n     \"entityId\": \"laborum\",\n     \"name\": \"aliquip eu dolore\",\n     \"ownerId\": \"deserunt officia quis cupidatat mollit\",\n     \"entityType\": 5,\n     \"location\": \"fugiat in\"\n    }\n   ]\n  },\n  {\n   \"id\": \"irure\",\n   \"name\": \"ut in dolore\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"eiusmod i\",\n     \"entityId\": \"cupidatat amet dolore ad\",\n     \"name\": \"est fugiat non dolor\",\n     \"ownerId\": \"aliquip sint consectetur in deserunt\",\n     \"entityType\": 3,\n     \"location\": \"veniam \"\n    },\n    {\n     \"entityParentId\": \"nulla esse nostrud commodo cillum\",\n     \"entityId\": \"non \",\n     \"name\": \"dolor anim\",\n     \"ownerId\": \"deserunt\",\n     \"entityType\": 5,\n     \"location\": \"sit laboris est in\"\n    }\n   ]\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"id\": \"string\",\n   \"name\": \"string\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"string\",\n     \"entityId\": \"string\",\n     \"name\": \"string\",\n     \"ownerId\": \"string\",\n     \"entityType\": 1,\n     \"location\": \"string\"\n    }\n   ]\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "5ab91f67-6f09-4e40-8b9c-395daa544eab",
+              "id": "2762247c-ccb5-405b-aa84-6e64e6391211",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -629,7 +629,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -640,12 +640,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"dolore quis\",\n \"errors\": [\n  {\n   \"property\": \"voluptate fugiat cil\",\n   \"code\": \"voluptate occaecat minim quis\",\n   \"message\": \"non id\"\n  },\n  {\n   \"property\": \"amet cillum ullamco magna enim\",\n   \"code\": \"aute officia cillum est enim\",\n   \"message\": \"ipsum\"\n  }\n ]\n}",
+              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "d9c2618a-da01-45e0-b16f-b6f25ef47731",
+              "id": "ef5562e8-999c-43b2-9896-0bea99f653f0",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -662,7 +662,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -678,7 +678,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "93165078-f588-48bd-a09f-bf18158d26d6",
+              "id": "84a842eb-7cd4-49ae-a7b6-76f6b4186a09",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -695,7 +695,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -711,7 +711,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d7f10ffd-29f1-44af-980d-076163143e13",
+              "id": "e4d6cbfe-2f35-4738-a310-11276485a836",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -728,7 +728,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -774,7 +774,7 @@
     ]
   },
   "info": {
-    "_postman_id": "6d7e9ec0-cf3b-4034-95aa-77e14e7cc109",
+    "_postman_id": "df831f54-e8ec-4dfe-ad8f-ab0483003bea",
     "name": "Availability Management API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

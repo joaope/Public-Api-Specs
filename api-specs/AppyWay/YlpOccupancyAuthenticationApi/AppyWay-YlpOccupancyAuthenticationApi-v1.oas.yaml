@@ -16,12 +16,33 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ChangeRegistrationDetailsCommand'
+            example:
+              id: string
+              startUtc: string
+              endUtc: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
           text/json:
             schema:
               $ref: '#/components/schemas/ChangeRegistrationDetailsCommand'
+            example:
+              id: string
+              startUtc: string
+              endUtc: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/ChangeRegistrationDetailsCommand'
+            example:
+              id: string
+              startUtc: string
+              endUtc: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
       responses:
         "202":
           description: Success
@@ -42,12 +63,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DeleteRegistrationCommand'
+            example:
+              id: string
           text/json:
             schema:
               $ref: '#/components/schemas/DeleteRegistrationCommand'
+            example:
+              id: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/DeleteRegistrationCommand'
+            example:
+              id: string
       responses:
         "202":
           description: Success
@@ -68,12 +95,24 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EndRegistrationCommand'
+            example:
+              id: string
+              endUtc: string
+              override: true
           text/json:
             schema:
               $ref: '#/components/schemas/EndRegistrationCommand'
+            example:
+              id: string
+              endUtc: string
+              override: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/EndRegistrationCommand'
+            example:
+              id: string
+              endUtc: string
+              override: true
       responses:
         "202":
           description: Success
@@ -94,12 +133,27 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RegisterAutomaticOccupancyCommand'
+            example:
+              occupancySessionId: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
           text/json:
             schema:
               $ref: '#/components/schemas/RegisterAutomaticOccupancyCommand'
+            example:
+              occupancySessionId: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/RegisterAutomaticOccupancyCommand'
+            example:
+              occupancySessionId: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
       responses:
         "202":
           description: Success
@@ -120,12 +174,36 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RegisterManualOccupancyCommand'
+            example:
+              parkingAssetId: string
+              bayId: string
+              startUtc: string
+              endUtc: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
           text/json:
             schema:
               $ref: '#/components/schemas/RegisterManualOccupancyCommand'
+            example:
+              parkingAssetId: string
+              bayId: string
+              startUtc: string
+              endUtc: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/RegisterManualOccupancyCommand'
+            example:
+              parkingAssetId: string
+              bayId: string
+              startUtc: string
+              endUtc: string
+              vehicleRegistrationMark: string
+              fullName: string
+              visitedName: string
       responses:
         "202":
           description: Success
@@ -162,12 +240,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GetActiveRegistrationsQuery'
+            example:
+              parkingAssetId: string
           text/json:
             schema:
               $ref: '#/components/schemas/GetActiveRegistrationsQuery'
+            example:
+              parkingAssetId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/GetActiveRegistrationsQuery'
+            example:
+              parkingAssetId: string
       responses:
         "200":
           description: Success
@@ -175,12 +259,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItemIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - id: string
+                  parkingAssetId: string
+                  bayId: string
+                  createdOnUtc: string
+                  startUtc: string
+                  endUtc: string
+                  vehicleRegistrationMark: string
+                  fullName: string
+                  visitedName: string
+                  occupancySessionId: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -198,12 +302,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GetParkingAssetFloorsQuery'
+            example:
+              parkingAssetId: string
           text/json:
             schema:
               $ref: '#/components/schemas/GetParkingAssetFloorsQuery'
+            example:
+              parkingAssetId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/GetParkingAssetFloorsQuery'
+            example:
+              parkingAssetId: string
       responses:
         "200":
           description: Success
@@ -211,12 +321,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetParkingAssetFloorsQueryResultOkResponse'
+              example:
+                success: true
+                result:
+                  floors:
+                  - id: string
+                    name: string
+                    ordinal: 0
+                    bays:
+                    - id: string
+                      name: string
+                      bayType: string
+                      ordinal: 0
+                      gracePeriod: 0
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -234,12 +364,21 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GetParkingAssetHeadersQuery'
+            example:
+              parkingAssetIds:
+              - string
           text/json:
             schema:
               $ref: '#/components/schemas/GetParkingAssetHeadersQuery'
+            example:
+              parkingAssetIds:
+              - string
           application/*+json:
             schema:
               $ref: '#/components/schemas/GetParkingAssetHeadersQuery'
+            example:
+              parkingAssetIds:
+              - string
       responses:
         "200":
           description: Success
@@ -247,12 +386,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItemIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - id: string
+                  name: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -270,12 +421,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GetRecentlyOccupiedBaysQuery'
+            example:
+              parkingAssetId: string
           text/json:
             schema:
               $ref: '#/components/schemas/GetRecentlyOccupiedBaysQuery'
+            example:
+              parkingAssetId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/GetRecentlyOccupiedBaysQuery'
+            example:
+              parkingAssetId: string
       responses:
         "200":
           description: Success
@@ -283,12 +440,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - bayId: string
+                  occupancySessionId: string
+                  occupancyStartTimeUtc: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -306,12 +476,18 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GetRegistrationQuery'
+            example:
+              id: string
           text/json:
             schema:
               $ref: '#/components/schemas/GetRegistrationQuery'
+            example:
+              id: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/GetRegistrationQuery'
+            example:
+              id: string
       responses:
         "200":
           description: Success
@@ -319,12 +495,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetRegistrationQueryResultItemOkResponse'
+              example:
+                success: true
+                result:
+                  id: string
+                  parkingAssetId: string
+                  bayId: string
+                  createdOnUtc: string
+                  startUtc: string
+                  endUtc: string
+                  vehicleRegistrationMark: string
+                  fullName: string
+                  visitedName: string
+                  occupancySessionId: string
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":

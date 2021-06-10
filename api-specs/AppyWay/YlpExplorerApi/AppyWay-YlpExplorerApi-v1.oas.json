@@ -23,16 +23,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAuthorityByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAuthorityByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchAuthorityByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             }
           }
@@ -44,6 +53,48 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AuthorityOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "notes": [
+                      {
+                        "message": "string"
+                      }
+                    ],
+                    "paymentProviders": [
+                      {
+                        "name": "string",
+                        "cardPaymentsExternalUrl": "string",
+                        "paymentsTelephone": "string"
+                      }
+                    ],
+                    "entityType": 1,
+                    "geometry": {
+                      "geometries": [
+                        {
+                          "type": "string",
+                          "crs": {
+                            "type": "string",
+                            "properties": {
+                              "name": "string"
+                            }
+                          }
+                        }
+                      ],
+                      "type": "string",
+                      "crs": {
+                        "type": "string",
+                        "properties": {
+                          "name": "string"
+                        }
+                      }
+                    },
+                    "hasFreeParkingOutsideZone": true,
+                    "entityId": "string",
+                    "name": "string",
+                    "eTag": "string"
+                  }
                 }
               }
             }
@@ -60,6 +111,10 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string"
                 }
               }
             }
@@ -83,16 +138,49 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchEntitiesByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ],
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchEntitiesByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ],
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchEntitiesByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ],
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                }
               }
             }
           }
@@ -104,6 +192,154 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MapEntitiesResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "parkingEntities": [
+                      {
+                        "address": {
+                          "street": "string",
+                          "city": "string",
+                          "country": "string",
+                          "postcode": "string"
+                        },
+                        "locationCode": "string",
+                        "totalCapacity": 0,
+                        "zoneId": "string",
+                        "authorityId": "string",
+                        "features": {
+                          "type": "string",
+                          "features": [
+                            {
+                              "properties": {
+                                "basemap": 1
+                              },
+                              "geometry": {
+                                "geometries": [
+                                  {
+                                    "type": "string",
+                                    "crs": {
+                                      "type": "string",
+                                      "properties": {
+                                        "name": "string"
+                                      }
+                                    }
+                                  }
+                                ],
+                                "type": "string",
+                                "crs": {
+                                  "type": "string",
+                                  "properties": {
+                                    "name": "string"
+                                  }
+                                }
+                              },
+                              "type": "string",
+                              "id": "string"
+                            }
+                          ],
+                          "properties": {}
+                        },
+                        "paymentMethodIds": [
+                          0
+                        ],
+                        "entityId": "string",
+                        "entityType": 1,
+                        "name": "string",
+                        "eTag": "string",
+                        "operator": {
+                          "telephone": "string",
+                          "website": "string",
+                          "name": "string",
+                          "cardPaymentsExternalUrl": "string",
+                          "paymentsTelephone": "string"
+                        },
+                        "onStreetParkingTypeIds": [
+                          1
+                        ],
+                        "facilityTypeIds": [
+                          0
+                        ]
+                      }
+                    ],
+                    "zones": [
+                      {
+                        "geometry": {
+                          "geometries": [
+                            {
+                              "type": "string",
+                              "crs": {
+                                "type": "string",
+                                "properties": {
+                                  "name": "string"
+                                }
+                              }
+                            }
+                          ],
+                          "type": "string",
+                          "crs": {
+                            "type": "string",
+                            "properties": {
+                              "name": "string"
+                            }
+                          }
+                        },
+                        "notes": [
+                          {
+                            "message": "string"
+                          }
+                        ],
+                        "authorityId": "string",
+                        "zoneType": 1,
+                        "entityType": 1,
+                        "entityId": "string",
+                        "name": "string",
+                        "eTag": "string"
+                      }
+                    ],
+                    "authorities": [
+                      {
+                        "notes": [
+                          {
+                            "message": "string"
+                          }
+                        ],
+                        "paymentProviders": [
+                          {
+                            "name": "string",
+                            "cardPaymentsExternalUrl": "string",
+                            "paymentsTelephone": "string"
+                          }
+                        ],
+                        "entityType": 1,
+                        "geometry": {
+                          "geometries": [
+                            {
+                              "type": "string",
+                              "crs": {
+                                "type": "string",
+                                "properties": {
+                                  "name": "string"
+                                }
+                              }
+                            }
+                          ],
+                          "type": "string",
+                          "crs": {
+                            "type": "string",
+                            "properties": {
+                              "name": "string"
+                            }
+                          }
+                        },
+                        "hasFreeParkingOutsideZone": true,
+                        "entityId": "string",
+                        "name": "string",
+                        "eTag": "string"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -114,6 +350,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -143,16 +390,58 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchOperatingHoursByIdQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "date": "2020-01-20T00:00:00+00:00"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchOperatingHoursByIdQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "date": "2020-01-20T00:00:00+00:00"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchOperatingHoursByIdQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "date": "2020-01-20T00:00:00+00:00"
               }
             }
           }
@@ -164,6 +453,38 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingEntityOperatingHoursResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entityId": "string",
+                    "entityType": 1,
+                    "entityETag": "string",
+                    "operatingHours": [
+                      {
+                        "paymentMethodIds": [
+                          0
+                        ],
+                        "permittedContext": {
+                          "vehicleTypeId": 0,
+                          "activityTypeId": 0,
+                          "fuelTypeId": 0,
+                          "permits": [
+                            {
+                              "permitTypeId": 0
+                            }
+                          ]
+                        },
+                        "openPeriods": [
+                          {
+                            "isFree": true,
+                            "start": "2021-06-10T00:00:00+00:00",
+                            "end": "2021-06-10T00:00:00+00:00"
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -180,6 +501,10 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string"
                 }
               }
             }
@@ -203,16 +528,64 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchOperatingHoursByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ],
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "date": "2020-01-20T00:00:00+00:00"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchOperatingHoursByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ],
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "date": "2020-01-20T00:00:00+00:00"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchOperatingHoursByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ],
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "date": "2020-01-20T00:00:00+00:00"
               }
             }
           }
@@ -224,6 +597,38 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingEntityOperatingHoursResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entityId": "string",
+                    "entityType": 1,
+                    "entityETag": "string",
+                    "operatingHours": [
+                      {
+                        "paymentMethodIds": [
+                          0
+                        ],
+                        "permittedContext": {
+                          "vehicleTypeId": 0,
+                          "activityTypeId": 0,
+                          "fuelTypeId": 0,
+                          "permits": [
+                            {
+                              "permitTypeId": 0
+                            }
+                          ]
+                        },
+                        "openPeriods": [
+                          {
+                            "isFree": true,
+                            "start": "2021-06-10T00:00:00+00:00",
+                            "end": "2021-06-10T00:00:00+00:00"
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -253,16 +658,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingEntityByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingEntityByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingEntityByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             }
           }
@@ -274,6 +688,74 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingEntityOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "address": {
+                      "street": "string",
+                      "city": "string",
+                      "country": "string",
+                      "postcode": "string"
+                    },
+                    "locationCode": "string",
+                    "totalCapacity": 0,
+                    "zoneId": "string",
+                    "authorityId": "string",
+                    "features": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "properties": {
+                            "basemap": 1
+                          },
+                          "geometry": {
+                            "geometries": [
+                              {
+                                "type": "string",
+                                "crs": {
+                                  "type": "string",
+                                  "properties": {
+                                    "name": "string"
+                                  }
+                                }
+                              }
+                            ],
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            }
+                          },
+                          "type": "string",
+                          "id": "string"
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "paymentMethodIds": [
+                      0
+                    ],
+                    "entityId": "string",
+                    "entityType": 1,
+                    "name": "string",
+                    "eTag": "string",
+                    "operator": {
+                      "telephone": "string",
+                      "website": "string",
+                      "name": "string",
+                      "cardPaymentsExternalUrl": "string",
+                      "paymentsTelephone": "string"
+                    },
+                    "onStreetParkingTypeIds": [
+                      1
+                    ],
+                    "facilityTypeIds": [
+                      0
+                    ]
+                  }
                 }
               }
             }
@@ -290,6 +772,10 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string"
                 }
               }
             }
@@ -313,16 +799,61 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                }
               }
             }
           }
@@ -334,6 +865,79 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingEntitySearchResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entityId": "string",
+                    "entityType": 1,
+                    "quotes": [
+                      {
+                        "cost": 0,
+                        "currency": "string",
+                        "minCost": 0,
+                        "minStayUntil": "string",
+                        "canExtendUntil": "string",
+                        "pricedUntil": "string",
+                        "noReturnUntil": "string",
+                        "freeUntil": "string",
+                        "becomesFreeAt": "string",
+                        "isFreeParking": true,
+                        "paymentMethodIds": [
+                          0
+                        ],
+                        "permittedContext": {
+                          "vehicleTypeId": 0,
+                          "activityTypeId": 0,
+                          "fuelTypeId": 0,
+                          "permits": [
+                            {
+                              "permitTypeId": 0
+                            }
+                          ]
+                        },
+                        "rulesApplyUntil": "string",
+                        "surcharge": {
+                          "value": 0,
+                          "valueType": 1,
+                          "criteria": {
+                            "vehicleOperatorContext": {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            },
+                            "maxVehicleManufactureYear": 0
+                          }
+                        }
+                      }
+                    ],
+                    "distance": 0,
+                    "parkingAllowed": 1,
+                    "noParkingReason": {
+                      "reasonType": 1,
+                      "requiredContexts": [
+                        {
+                          "vehicleTypeId": 0,
+                          "activityTypeId": 0,
+                          "fuelTypeId": 0,
+                          "permits": [
+                            {
+                              "permitTypeId": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "specialRestrictions": [
+                        0
+                      ]
+                    },
+                    "entityETag": "string"
+                  }
                 }
               }
             }
@@ -350,6 +954,10 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string"
                 }
               }
             }
@@ -373,16 +981,67 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "ids": [
+                  "string"
+                ],
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "ids": [
+                  "string"
+                ],
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "ids": [
+                  "string"
+                ],
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                }
               }
             }
           }
@@ -394,6 +1053,85 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingQuotesResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "requestedStartTime": "string",
+                    "requestedDuration": "3.17:25:30.5000000",
+                    "parking": [
+                      {
+                        "entityId": "string",
+                        "entityType": 1,
+                        "quotes": [
+                          {
+                            "cost": 0,
+                            "currency": "string",
+                            "minCost": 0,
+                            "minStayUntil": "string",
+                            "canExtendUntil": "string",
+                            "pricedUntil": "string",
+                            "noReturnUntil": "string",
+                            "freeUntil": "string",
+                            "becomesFreeAt": "string",
+                            "isFreeParking": true,
+                            "paymentMethodIds": [
+                              0
+                            ],
+                            "permittedContext": {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            },
+                            "rulesApplyUntil": "string",
+                            "surcharge": {
+                              "value": 0,
+                              "valueType": 1,
+                              "criteria": {
+                                "vehicleOperatorContext": {
+                                  "vehicleTypeId": 0,
+                                  "activityTypeId": 0,
+                                  "fuelTypeId": 0,
+                                  "permits": [
+                                    {
+                                      "permitTypeId": 0
+                                    }
+                                  ]
+                                },
+                                "maxVehicleManufactureYear": 0
+                              }
+                            }
+                          }
+                        ],
+                        "distance": 0,
+                        "parkingAllowed": 1,
+                        "noParkingReason": {
+                          "reasonType": 1,
+                          "requiredContexts": [
+                            {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            }
+                          ],
+                          "specialRestrictions": [
+                            0
+                          ]
+                        },
+                        "entityETag": "string"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -423,16 +1161,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchPaymentProvidersByParkingEntityIdQuery"
+              },
+              "example": {
+                "entityId": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchPaymentProvidersByParkingEntityIdQuery"
+              },
+              "example": {
+                "entityId": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchPaymentProvidersByParkingEntityIdQuery"
+              },
+              "example": {
+                "entityId": "string"
               }
             }
           }
@@ -444,6 +1191,18 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PaymentProvidersResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "paymentProviders": [
+                      {
+                        "name": "string",
+                        "cardPaymentsExternalUrl": "string",
+                        "paymentsTelephone": "string"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -460,6 +1219,10 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string"
                 }
               }
             }
@@ -483,16 +1246,25 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchZoneByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchZoneByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FetchZoneByIdQuery"
+              },
+              "example": {
+                "id": "string"
               }
             }
           }
@@ -504,6 +1276,42 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ZoneOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "geometry": {
+                      "geometries": [
+                        {
+                          "type": "string",
+                          "crs": {
+                            "type": "string",
+                            "properties": {
+                              "name": "string"
+                            }
+                          }
+                        }
+                      ],
+                      "type": "string",
+                      "crs": {
+                        "type": "string",
+                        "properties": {
+                          "name": "string"
+                        }
+                      }
+                    },
+                    "notes": [
+                      {
+                        "message": "string"
+                      }
+                    ],
+                    "authorityId": "string",
+                    "zoneType": 1,
+                    "entityType": 1,
+                    "entityId": "string",
+                    "name": "string",
+                    "eTag": "string"
+                  }
                 }
               }
             }
@@ -520,6 +1328,10 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string"
                 }
               }
             }
@@ -543,16 +1355,70 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindAuthorityIdsByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindAuthorityIdsByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindAuthorityIdsByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                }
               }
             }
           }
@@ -564,6 +1430,49 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ZoneSearchResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "zones": [
+                      {
+                        "entityId": "string",
+                        "entityETag": "string",
+                        "defaults": [
+                          {
+                            "onStreetParkingTypeId": 1,
+                            "specialRestrictionTypeId": 0,
+                            "applicableTimes": [
+                              {
+                                "startTime": "string",
+                                "endTime": "string",
+                                "maxStay": 0
+                              }
+                            ]
+                          }
+                        ],
+                        "distance": 0
+                      }
+                    ],
+                    "zoneContainingLocation": {
+                      "entityId": "string",
+                      "entityETag": "string",
+                      "defaults": [
+                        {
+                          "onStreetParkingTypeId": 1,
+                          "specialRestrictionTypeId": 0,
+                          "applicableTimes": [
+                            {
+                              "startTime": "string",
+                              "endTime": "string",
+                              "maxStay": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "distance": 0
+                    }
+                  }
                 }
               }
             }
@@ -574,6 +1483,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -603,16 +1523,91 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingEntitiesByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "viewportSize": 0,
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                },
+                "onStreetParkingTypes": [
+                  1
+                ],
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingEntitiesByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "viewportSize": 0,
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                },
+                "onStreetParkingTypes": [
+                  1
+                ],
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingEntitiesByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "viewportSize": 0,
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                },
+                "onStreetParkingTypes": [
+                  1
+                ],
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                }
               }
             }
           }
@@ -624,6 +1619,81 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/FindParkingEntitiesByViewportResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entities": [
+                      {
+                        "entity": {
+                          "address": {
+                            "street": "string",
+                            "city": "string",
+                            "country": "string",
+                            "postcode": "string"
+                          },
+                          "locationCode": "string",
+                          "totalCapacity": 0,
+                          "zoneId": "string",
+                          "authorityId": "string",
+                          "features": {
+                            "type": "string",
+                            "features": [
+                              {
+                                "properties": {
+                                  "basemap": 1
+                                },
+                                "geometry": {
+                                  "geometries": [
+                                    {
+                                      "type": "string",
+                                      "crs": {
+                                        "type": "string",
+                                        "properties": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "type": "string",
+                                  "crs": {
+                                    "type": "string",
+                                    "properties": {
+                                      "name": "string"
+                                    }
+                                  }
+                                },
+                                "type": "string",
+                                "id": "string"
+                              }
+                            ],
+                            "properties": {}
+                          },
+                          "paymentMethodIds": [
+                            0
+                          ],
+                          "entityId": "string",
+                          "entityType": 1,
+                          "name": "string",
+                          "eTag": "string",
+                          "operator": {
+                            "telephone": "string",
+                            "website": "string",
+                            "name": "string",
+                            "cardPaymentsExternalUrl": "string",
+                            "paymentsTelephone": "string"
+                          },
+                          "onStreetParkingTypeIds": [
+                            1
+                          ],
+                          "facilityTypeIds": [
+                            0
+                          ]
+                        },
+                        "distance": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -634,6 +1704,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -663,16 +1744,124 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingEntitiesByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                },
+                "onStreetParkingTypes": [
+                  1
+                ],
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingEntitiesByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                },
+                "onStreetParkingTypes": [
+                  1
+                ],
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingEntitiesByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "geometryPreference": {
+                  "basemap": 1,
+                  "geometryTypes": [
+                    1
+                  ]
+                },
+                "onStreetParkingTypes": [
+                  1
+                ],
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                }
               }
             }
           }
@@ -684,6 +1873,81 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/FindParkingEntitiesByViewportResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entities": [
+                      {
+                        "entity": {
+                          "address": {
+                            "street": "string",
+                            "city": "string",
+                            "country": "string",
+                            "postcode": "string"
+                          },
+                          "locationCode": "string",
+                          "totalCapacity": 0,
+                          "zoneId": "string",
+                          "authorityId": "string",
+                          "features": {
+                            "type": "string",
+                            "features": [
+                              {
+                                "properties": {
+                                  "basemap": 1
+                                },
+                                "geometry": {
+                                  "geometries": [
+                                    {
+                                      "type": "string",
+                                      "crs": {
+                                        "type": "string",
+                                        "properties": {
+                                          "name": "string"
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "type": "string",
+                                  "crs": {
+                                    "type": "string",
+                                    "properties": {
+                                      "name": "string"
+                                    }
+                                  }
+                                },
+                                "type": "string",
+                                "id": "string"
+                              }
+                            ],
+                            "properties": {}
+                          },
+                          "paymentMethodIds": [
+                            0
+                          ],
+                          "entityId": "string",
+                          "entityType": 1,
+                          "name": "string",
+                          "eTag": "string",
+                          "operator": {
+                            "telephone": "string",
+                            "website": "string",
+                            "name": "string",
+                            "cardPaymentsExternalUrl": "string",
+                            "paymentsTelephone": "string"
+                          },
+                          "onStreetParkingTypeIds": [
+                            1
+                          ],
+                          "facilityTypeIds": [
+                            0
+                          ]
+                        },
+                        "distance": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -694,6 +1958,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -723,16 +1998,115 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingQuotesByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "startTime": "string",
+                "endTime": "string",
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "viewportSize": 0,
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingQuotesByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "startTime": "string",
+                "endTime": "string",
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "viewportSize": 0,
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingQuotesByCentreAndViewportSizeQuery"
+              },
+              "example": {
+                "startTime": "string",
+                "endTime": "string",
+                "viewportCenter": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "viewportSize": 0,
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                }
               }
             }
           }
@@ -744,6 +2118,86 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingSearchResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "generalOnstreetPolicy": 1,
+                    "requestedStartTime": "string",
+                    "requestedDuration": "3.17:25:30.5000000",
+                    "parking": [
+                      {
+                        "entityId": "string",
+                        "entityType": 1,
+                        "quotes": [
+                          {
+                            "cost": 0,
+                            "currency": "string",
+                            "minCost": 0,
+                            "minStayUntil": "string",
+                            "canExtendUntil": "string",
+                            "pricedUntil": "string",
+                            "noReturnUntil": "string",
+                            "freeUntil": "string",
+                            "becomesFreeAt": "string",
+                            "isFreeParking": true,
+                            "paymentMethodIds": [
+                              0
+                            ],
+                            "permittedContext": {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            },
+                            "rulesApplyUntil": "string",
+                            "surcharge": {
+                              "value": 0,
+                              "valueType": 1,
+                              "criteria": {
+                                "vehicleOperatorContext": {
+                                  "vehicleTypeId": 0,
+                                  "activityTypeId": 0,
+                                  "fuelTypeId": 0,
+                                  "permits": [
+                                    {
+                                      "permitTypeId": 0
+                                    }
+                                  ]
+                                },
+                                "maxVehicleManufactureYear": 0
+                              }
+                            }
+                          }
+                        ],
+                        "distance": 0,
+                        "parkingAllowed": 1,
+                        "noParkingReason": {
+                          "reasonType": 1,
+                          "requiredContexts": [
+                            {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            }
+                          ],
+                          "specialRestrictions": [
+                            0
+                          ]
+                        },
+                        "entityETag": "string"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -754,6 +2208,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -783,16 +2248,148 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingQuotesByViewportQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                }
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingQuotesByViewportQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                }
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindParkingQuotesByViewportQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                }
               }
             }
           }
@@ -804,6 +2401,86 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParkingSearchResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "generalOnstreetPolicy": 1,
+                    "requestedStartTime": "string",
+                    "requestedDuration": "3.17:25:30.5000000",
+                    "parking": [
+                      {
+                        "entityId": "string",
+                        "entityType": 1,
+                        "quotes": [
+                          {
+                            "cost": 0,
+                            "currency": "string",
+                            "minCost": 0,
+                            "minStayUntil": "string",
+                            "canExtendUntil": "string",
+                            "pricedUntil": "string",
+                            "noReturnUntil": "string",
+                            "freeUntil": "string",
+                            "becomesFreeAt": "string",
+                            "isFreeParking": true,
+                            "paymentMethodIds": [
+                              0
+                            ],
+                            "permittedContext": {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            },
+                            "rulesApplyUntil": "string",
+                            "surcharge": {
+                              "value": 0,
+                              "valueType": 1,
+                              "criteria": {
+                                "vehicleOperatorContext": {
+                                  "vehicleTypeId": 0,
+                                  "activityTypeId": 0,
+                                  "fuelTypeId": 0,
+                                  "permits": [
+                                    {
+                                      "permitTypeId": 0
+                                    }
+                                  ]
+                                },
+                                "maxVehicleManufactureYear": 0
+                              }
+                            }
+                          }
+                        ],
+                        "distance": 0,
+                        "parkingAllowed": 1,
+                        "noParkingReason": {
+                          "reasonType": 1,
+                          "requiredContexts": [
+                            {
+                              "vehicleTypeId": 0,
+                              "activityTypeId": 0,
+                              "fuelTypeId": 0,
+                              "permits": [
+                                {
+                                  "permitTypeId": 0
+                                }
+                              ]
+                            }
+                          ],
+                          "specialRestrictions": [
+                            0
+                          ]
+                        },
+                        "entityETag": "string"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -814,6 +2491,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -843,16 +2531,73 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindSuggestionsByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "basemap": 1
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindSuggestionsByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "basemap": 1
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindSuggestionsByViewportQuery"
+              },
+              "example": {
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "basemap": 1
               }
             }
           }
@@ -864,6 +2609,32 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GeometrySuggestionFeatureCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "type": "string",
+                    "features": [
+                      {
+                        "properties": {
+                          "suggestionType": 1,
+                          "baseMapTranslation": 1
+                        },
+                        "geometry": {
+                          "type": "string",
+                          "crs": {
+                            "type": "string",
+                            "properties": {
+                              "name": "string"
+                            }
+                          }
+                        },
+                        "type": "string",
+                        "id": "string"
+                      }
+                    ],
+                    "properties": {}
+                  }
                 }
               }
             }
@@ -874,6 +2645,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -903,16 +2685,97 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "onStreetParkingTypeIds": [
+                  1
+                ]
               }
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "onStreetParkingTypeIds": [
+                  1
+                ]
               }
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
+              },
+              "example": {
+                "endTime": "string",
+                "startTime": "string",
+                "viewport": {
+                  "coordinates": [
+                    [
+                      [
+                        0
+                      ]
+                    ]
+                  ],
+                  "type": "string",
+                  "crs": {
+                    "type": "string",
+                    "properties": {
+                      "name": "string"
+                    }
+                  }
+                },
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
+                },
+                "onStreetParkingTypeIds": [
+                  1
+                ]
               }
             }
           }
@@ -924,6 +2787,49 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ZoneSearchResponseOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "zones": [
+                      {
+                        "entityId": "string",
+                        "entityETag": "string",
+                        "defaults": [
+                          {
+                            "onStreetParkingTypeId": 1,
+                            "specialRestrictionTypeId": 0,
+                            "applicableTimes": [
+                              {
+                                "startTime": "string",
+                                "endTime": "string",
+                                "maxStay": 0
+                              }
+                            ]
+                          }
+                        ],
+                        "distance": 0
+                      }
+                    ],
+                    "zoneContainingLocation": {
+                      "entityId": "string",
+                      "entityETag": "string",
+                      "defaults": [
+                        {
+                          "onStreetParkingTypeId": 1,
+                          "specialRestrictionTypeId": 0,
+                          "applicableTimes": [
+                            {
+                              "startTime": "string",
+                              "endTime": "string",
+                              "maxStay": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "distance": 0
+                    }
+                  }
                 }
               }
             }
@@ -934,6 +2840,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
                 }
               }
             }
