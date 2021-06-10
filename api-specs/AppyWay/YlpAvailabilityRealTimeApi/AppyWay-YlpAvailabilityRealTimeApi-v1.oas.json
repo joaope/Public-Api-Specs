@@ -562,102 +562,14 @@
   },
   "components": {
     "schemas": {
-      "FetchAvailabilityByEntityIdsQuery": {
-        "type": "object",
-        "properties": {
-          "ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EntityType": {
-        "enum": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "DataSourceType": {
-        "enum": [
-          0,
-          1,
-          2,
-          4
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "ParkingAvailability": {
+      "AvailabilityGroupKey": {
         "type": "object",
         "properties": {
           "entityId": {
             "type": "string",
             "nullable": true
           },
-          "entityType": {
-            "$ref": "#/components/schemas/EntityType"
-          },
-          "dataSourceType": {
-            "$ref": "#/components/schemas/DataSourceType"
-          },
           "groupId": {
-            "type": "string",
-            "nullable": true
-          },
-          "totalSpaces": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "availableSpaces": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ParkingAvailabilityIReadOnlyCollectionOkResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the response was successful",
-            "readOnly": true
-          },
-          "result": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ParkingAvailability"
-            },
-            "description": "Payload of the response",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "A successful response"
-      },
-      "Error": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "type": "string",
-            "nullable": true
-          },
-          "code": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
             "type": "string",
             "nullable": true
           }
@@ -690,15 +602,54 @@
         "additionalProperties": false,
         "description": "A response indicating the request was invalid"
       },
-      "AvailabilityGroupKey": {
+      "DataSourceType": {
+        "enum": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EntityType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Error": {
         "type": "object",
         "properties": {
-          "entityId": {
+          "property": {
             "type": "string",
             "nullable": true
           },
-          "groupId": {
+          "code": {
             "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchAvailabilityByEntityIdsQuery": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           }
         },
@@ -742,20 +693,6 @@
             "nullable": true
           },
           "(Collection)": null
-        },
-        "additionalProperties": false
-      },
-      "LatLng": {
-        "type": "object",
-        "properties": {
-          "lat": {
-            "type": "number",
-            "format": "double"
-          },
-          "lng": {
-            "type": "number",
-            "format": "double"
-          }
         },
         "additionalProperties": false
       },
@@ -806,6 +743,69 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/H3Availability"
+            },
+            "description": "Payload of the response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
+      },
+      "LatLng": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "lng": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingAvailability": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/EntityType"
+          },
+          "dataSourceType": {
+            "$ref": "#/components/schemas/DataSourceType"
+          },
+          "groupId": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalSpaces": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "availableSpaces": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingAvailabilityIReadOnlyCollectionOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingAvailability"
             },
             "description": "Payload of the response",
             "nullable": true

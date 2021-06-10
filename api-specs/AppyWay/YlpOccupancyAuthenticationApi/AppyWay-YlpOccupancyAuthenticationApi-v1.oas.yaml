@@ -529,48 +529,26 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
-    RegisterAutomaticOccupancyCommand:
+    BadRequestResponse:
       type: object
       properties:
-        occupancySessionId:
+        success:
+          type: boolean
+          description: Whether the request was successful
+          readOnly: true
+          example: false
+        message:
           type: string
+          description: Human-readable message for this response
           nullable: true
-        vehicleRegistrationMark:
-          type: string
-          nullable: true
-        fullName:
-          type: string
-          nullable: true
-        visitedName:
-          type: string
-          nullable: true
-      additionalProperties: false
-    RegisterManualOccupancyCommand:
-      type: object
-      properties:
-        parkingAssetId:
-          type: string
-          nullable: true
-        bayId:
-          type: string
-          nullable: true
-        startUtc:
-          type: string
-          format: date-time
-        endUtc:
-          type: string
-          format: date-time
-          nullable: true
-        vehicleRegistrationMark:
-          type: string
-          nullable: true
-        fullName:
-          type: string
-          nullable: true
-        visitedName:
-          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          description: Collection of validation errors caused by the request
           nullable: true
       additionalProperties: false
+      description: A response indicating the request was invalid
     ChangeRegistrationDetailsCommand:
       type: object
       properties:
@@ -613,62 +591,6 @@ components:
         override:
           type: boolean
       additionalProperties: false
-    GetRegistrationQuery:
-      required:
-      - id
-      type: object
-      properties:
-        id:
-          minLength: 1
-          type: string
-          nullable: true
-      additionalProperties: false
-    GetRegistrationQueryResultItem:
-      type: object
-      properties:
-        id:
-          type: string
-          nullable: true
-        parkingAssetId:
-          type: string
-          nullable: true
-        bayId:
-          type: string
-          nullable: true
-        createdOnUtc:
-          type: string
-          format: date-time
-        startUtc:
-          type: string
-          format: date-time
-        endUtc:
-          type: string
-          format: date-time
-          nullable: true
-        vehicleRegistrationMark:
-          type: string
-          nullable: true
-        fullName:
-          type: string
-          nullable: true
-        visitedName:
-          type: string
-          nullable: true
-        occupancySessionId:
-          type: string
-          nullable: true
-      additionalProperties: false
-    GetRegistrationQueryResultItemOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the response was successful
-          readOnly: true
-        result:
-          $ref: '#/components/schemas/GetRegistrationQueryResultItem'
-      additionalProperties: false
-      description: A successful response
     Error:
       type: object
       properties:
@@ -682,26 +604,6 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    BadRequestResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the request was successful
-          readOnly: true
-          example: false
-        message:
-          type: string
-          description: Human-readable message for this response
-          nullable: true
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Error'
-          description: Collection of validation errors caused by the request
-          nullable: true
-      additionalProperties: false
-      description: A response indicating the request was invalid
     GetActiveRegistrationsQuery:
       required:
       - parkingAssetId
@@ -710,7 +612,6 @@ components:
         parkingAssetId:
           minLength: 1
           type: string
-          nullable: true
       additionalProperties: false
     GetActiveRegistrationsQueryResultItem:
       type: object
@@ -762,6 +663,35 @@ components:
           nullable: true
       additionalProperties: false
       description: A successful response
+    GetParkingAssetFloorsQuery:
+      required:
+      - parkingAssetId
+      type: object
+      properties:
+        parkingAssetId:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    GetParkingAssetFloorsQueryResult:
+      type: object
+      properties:
+        floors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingAssetFloor'
+          nullable: true
+      additionalProperties: false
+    GetParkingAssetFloorsQueryResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
+      additionalProperties: false
+      description: A successful response
     GetParkingAssetHeadersQuery:
       required:
       - parkingAssetIds
@@ -772,7 +702,6 @@ components:
           type: array
           items:
             type: string
-          nullable: true
       additionalProperties: false
     GetParkingAssetHeadersQueryResultItem:
       type: object
@@ -799,7 +728,7 @@ components:
           nullable: true
       additionalProperties: false
       description: A successful response
-    GetParkingAssetFloorsQuery:
+    GetRecentlyOccupiedBaysQuery:
       required:
       - parkingAssetId
       type: object
@@ -807,8 +736,90 @@ components:
         parkingAssetId:
           minLength: 1
           type: string
+      additionalProperties: false
+    GetRecentlyOccupiedBaysQueryResultItem:
+      type: object
+      properties:
+        bayId:
+          type: string
+          nullable: true
+        occupancySessionId:
+          type: string
+          nullable: true
+        occupancyStartTimeUtc:
+          type: string
+          format: date-time
+      additionalProperties: false
+    GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
+          description: Payload of the response
           nullable: true
       additionalProperties: false
+      description: A successful response
+    GetRegistrationQuery:
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    GetRegistrationQueryResultItem:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        parkingAssetId:
+          type: string
+          nullable: true
+        bayId:
+          type: string
+          nullable: true
+        createdOnUtc:
+          type: string
+          format: date-time
+        startUtc:
+          type: string
+          format: date-time
+        endUtc:
+          type: string
+          format: date-time
+          nullable: true
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+        fullName:
+          type: string
+          nullable: true
+        visitedName:
+          type: string
+          nullable: true
+        occupancySessionId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GetRegistrationQueryResultItemOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/GetRegistrationQueryResultItem'
+      additionalProperties: false
+      description: A successful response
     ParkingAssetBay:
       type: object
       properties:
@@ -847,64 +858,48 @@ components:
             $ref: '#/components/schemas/ParkingAssetBay'
           nullable: true
       additionalProperties: false
-    GetParkingAssetFloorsQueryResult:
+    RegisterAutomaticOccupancyCommand:
       type: object
       properties:
-        floors:
-          type: array
-          items:
-            $ref: '#/components/schemas/ParkingAssetFloor'
-          nullable: true
-      additionalProperties: false
-    GetParkingAssetFloorsQueryResultOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the response was successful
-          readOnly: true
-        result:
-          $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
-      additionalProperties: false
-      description: A successful response
-    GetRecentlyOccupiedBaysQuery:
-      required:
-      - parkingAssetId
-      type: object
-      properties:
-        parkingAssetId:
-          minLength: 1
-          type: string
-          nullable: true
-      additionalProperties: false
-    GetRecentlyOccupiedBaysQueryResultItem:
-      type: object
-      properties:
-        bayId:
-          type: string
-          nullable: true
         occupancySessionId:
           type: string
           nullable: true
-        occupancyStartTimeUtc:
+        vehicleRegistrationMark:
           type: string
-          format: date-time
-      additionalProperties: false
-    GetRecentlyOccupiedBaysQueryResultItemIReadOnlyCollectionOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the response was successful
-          readOnly: true
-        result:
-          type: array
-          items:
-            $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
-          description: Payload of the response
+          nullable: true
+        fullName:
+          type: string
+          nullable: true
+        visitedName:
+          type: string
           nullable: true
       additionalProperties: false
-      description: A successful response
+    RegisterManualOccupancyCommand:
+      type: object
+      properties:
+        parkingAssetId:
+          type: string
+          nullable: true
+        bayId:
+          type: string
+          nullable: true
+        startUtc:
+          type: string
+          format: date-time
+        endUtc:
+          type: string
+          format: date-time
+          nullable: true
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+        fullName:
+          type: string
+          nullable: true
+        visitedName:
+          type: string
+          nullable: true
+      additionalProperties: false
   securitySchemes:
     apiKey:
       name: API-KEY
