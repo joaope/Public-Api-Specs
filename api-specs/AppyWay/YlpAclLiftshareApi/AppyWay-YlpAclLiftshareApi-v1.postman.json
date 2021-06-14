@@ -1,18 +1,18 @@
 {
   "item": [
     {
-      "id": "ee2c378d-e898-4225-809a-176265e60ca6",
-      "name": "Set OnStreet Bay Availability by Id",
+      "id": "e3773341-b623-4840-a67e-e8d80d805b26",
+      "name": "Starts an authenticated carpool parking session",
       "request": {
-        "name": "Set OnStreet Bay Availability by Id",
+        "name": "Starts an authenticated carpool parking session",
         "description": {
-          "content": "If the request is valid, it will be accepted for processing",
+          "content": "Starts an authenticated carpool parking session",
           "type": "text/plain"
         },
         "url": {
           "path": [
             "commands",
-            "setOnStreetAvailability"
+            "beginCarpoolSession"
           ],
           "host": [
             "{{baseUrl}}"
@@ -30,18 +30,18 @@
         "auth": null,
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
+          "raw": "{\n    \"authenticatedTripId\": \"<string>\",\n    \"parkingAssetId\": \"<string>\",\n    \"sessionStartTime\": \"<dateTime>\",\n    \"vehicleRegistrationMark\": \"<string>\"\n}"
         }
       },
       "response": [
         {
-          "id": "15fe895d-fdaa-488a-9de7-a6abb284032a",
+          "id": "5b32e7bb-4b4e-4eb5-8954-164180b98333",
           "name": "Success",
           "originalRequest": {
             "url": {
               "path": [
                 "commands",
-                "setOnStreetAvailability"
+                "beginCarpoolSession"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -52,29 +52,29 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
+              "raw": "{\n    \"vehicleRegistrationMark\": \"string\",\n    \"sessionStartTime\": \"string\",\n    \"parkingAssetId\": \"string\",\n    \"authenticatedTripId\": \"string\"\n}"
             }
           },
-          "status": "Accepted",
-          "code": 202,
+          "status": "OK",
+          "code": 200,
           "header": [
             {
               "key": "Content-Type",
-              "value": "text/plain"
+              "value": "application/json"
             }
           ],
-          "body": "",
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"authenticatedTripId\": \"string\",\n  \"sessionEndTime\": \"string\"\n }\n}",
           "cookie": [],
-          "_postman_previewlanguage": "text"
+          "_postman_previewlanguage": "json"
         },
         {
-          "id": "0bbb3188-113a-4c04-9cd2-e3a359786968",
+          "id": "96ca4088-a69e-4d0f-8fd4-18d2042c1cf4",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
               "path": [
                 "commands",
-                "setOnStreetAvailability"
+                "beginCarpoolSession"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -85,7 +85,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
+              "raw": "{\n    \"vehicleRegistrationMark\": \"string\",\n    \"sessionStartTime\": \"string\",\n    \"parkingAssetId\": \"string\",\n    \"authenticatedTripId\": \"string\"\n}"
             }
           },
           "status": "Bad Request",
@@ -101,13 +101,13 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "600f54b1-8212-41f1-be5d-fc5e6eb6bea6",
+          "id": "6fc915c3-2bb3-4bdf-b0c3-0e484a6e3dce",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
               "path": [
                 "commands",
-                "setOnStreetAvailability"
+                "beginCarpoolSession"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -118,7 +118,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
+              "raw": "{\n    \"vehicleRegistrationMark\": \"string\",\n    \"sessionStartTime\": \"string\",\n    \"parkingAssetId\": \"string\",\n    \"authenticatedTripId\": \"string\"\n}"
             }
           },
           "status": "Unauthorized",
@@ -134,13 +134,13 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b0a3b93d-c0fb-4003-b050-4cf91690636f",
+          "id": "b0e62144-f67c-4209-a4a6-027311111cdd",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
               "path": [
                 "commands",
-                "setOnStreetAvailability"
+                "beginCarpoolSession"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -151,7 +151,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
+              "raw": "{\n    \"vehicleRegistrationMark\": \"string\",\n    \"sessionStartTime\": \"string\",\n    \"parkingAssetId\": \"string\",\n    \"authenticatedTripId\": \"string\"\n}"
             }
           },
           "status": "Forbidden",
@@ -167,13 +167,13 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "172ec7c0-b783-4c8a-99f0-7238260d92bd",
+          "id": "f50df120-fdf6-4691-b586-2ca1fd42cf6a",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
               "path": [
                 "commands",
-                "setOnStreetAvailability"
+                "beginCarpoolSession"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -184,7 +184,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
+              "raw": "{\n    \"vehicleRegistrationMark\": \"string\",\n    \"sessionStartTime\": \"string\",\n    \"parkingAssetId\": \"string\",\n    \"authenticatedTripId\": \"string\"\n}"
             }
           },
           "status": "Too Many Requests",
@@ -203,7 +203,7 @@
       "event": []
     },
     {
-      "id": "bb31fb64-f389-4f77-8bfe-7ead47856755",
+      "id": "9d8b4afa-d77e-4175-ab41-bb65d92d4cfd",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -226,7 +226,7 @@
       },
       "response": [
         {
-          "id": "320ad6d9-a630-4292-8ac2-de26e263ab73",
+          "id": "ef692814-d7f6-4722-bdc9-20ac4f25cf56",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -255,7 +255,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8c349d81-3e11-43ef-b0e0-5ecfc92ccc51",
+          "id": "8139743f-aba5-4675-bd8f-c2779c829a34",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -284,7 +284,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7ca1bac7-839a-4ee6-a933-105ce0ed5c6f",
+          "id": "6290e69d-3997-4a14-9f6f-b2953da4dc71",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -313,7 +313,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "31c7d3ce-b0aa-41a2-8f04-d91750d9cd51",
+          "id": "e57be0e9-4817-408b-82a8-60a5c75bf89f",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -350,7 +350,7 @@
     {
       "id": "baseUrl",
       "type": "string",
-      "value": "https://api.appyway.com/v1/integration-kaios"
+      "value": "https://api.appyway.com/v1/integration-liftshare"
     }
   ],
   "auth": {
@@ -369,8 +369,8 @@
     ]
   },
   "info": {
-    "_postman_id": "7a2ec710-bfab-41ae-b4b6-a4b7e3c12e6b",
-    "name": "Kaios Acl API (v1.0|LIVE|Public)",
+    "_postman_id": "9ef3fdd5-9b65-4653-a883-91f2ecf33faa",
+    "name": "Liftshare Acl API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
       "content": "",
