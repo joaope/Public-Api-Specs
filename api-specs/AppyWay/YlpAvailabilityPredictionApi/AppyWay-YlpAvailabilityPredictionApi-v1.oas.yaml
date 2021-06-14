@@ -246,63 +246,7 @@ paths:
                 result:
                   entityId: string
                   sourceTypes: 0
-                  perDayOfWeek:
-                    Sunday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
-                    Monday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
-                    Tuesday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
-                    Wednesday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
-                    Thursday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
-                    Friday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
-                    Saturday:
-                      entityId: string
-                      sourceTypes: 0
-                      confidence: 0
-                      perHour:
-                      - sourceTypes: 0
-                        occupancyRatio: 0
-                        confidence: 0
+                  perDayOfWeek: {}
         "400":
           description: Bad Request
           content:
@@ -324,76 +268,6 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
-    FetchAvailabilityPredictionByEntityIdsQuery:
-      required:
-      - dateTime
-      - ids
-      type: object
-      properties:
-        ids:
-          minLength: 1
-          type: array
-          items:
-            type: string
-          nullable: true
-        dateTime:
-          minLength: 1
-          type: string
-          format: date-time
-      additionalProperties: false
-    DataSourceType:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 4
-      type: integer
-      format: int32
-    HourlyPrediction:
-      type: object
-      properties:
-        entityId:
-          type: string
-          nullable: true
-        occupancyRatio:
-          type: number
-          format: float
-          nullable: true
-        confidence:
-          type: number
-          format: float
-          nullable: true
-        sourceTypes:
-          $ref: '#/components/schemas/DataSourceType'
-      additionalProperties: false
-    HourlyPredictionIReadOnlyCollectionOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          description: Whether the response was successful
-          readOnly: true
-        result:
-          type: array
-          items:
-            $ref: '#/components/schemas/HourlyPrediction'
-          description: Payload of the response
-          nullable: true
-      additionalProperties: false
-      description: A successful response
-    Error:
-      type: object
-      properties:
-        property:
-          type: string
-          nullable: true
-        code:
-          type: string
-          nullable: true
-        message:
-          type: string
-          nullable: true
-      additionalProperties: false
     BadRequestResponse:
       type: object
       properties:
@@ -414,6 +288,73 @@ components:
           nullable: true
       additionalProperties: false
       description: A response indicating the request was invalid
+    DailyOccupancyForSourceType:
+      type: object
+      properties:
+        dataSourceType:
+          $ref: '#/components/schemas/DataSourceType'
+        hourlyOccupancy:
+          type: array
+          items:
+            type: number
+            format: float
+          nullable: true
+      additionalProperties: false
+    DailyPredictions:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+        confidence:
+          type: number
+          format: float
+          nullable: true
+        perHour:
+          type: array
+          items:
+            $ref: '#/components/schemas/Prediction'
+          nullable: true
+      additionalProperties: false
+    DataSourceType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 4
+      type: integer
+      format: int32
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchAvailabilityPredictionByEntityIdsQuery:
+      required:
+      - dateTime
+      - ids
+      type: object
+      properties:
+        ids:
+          minLength: 1
+          type: array
+          items:
+            type: string
+        dateTime:
+          minLength: 1
+          type: string
+          format: date-time
+      additionalProperties: false
     FetchDailyAvailabilityPredictionsByEntityIdQuery:
       required:
       - dateTime
@@ -423,7 +364,6 @@ components:
         id:
           minLength: 1
           type: string
-          nullable: true
         dateTime:
           minLength: 1
           type: string
@@ -464,23 +404,10 @@ components:
         id:
           minLength: 1
           type: string
-          nullable: true
         dateTime:
           minLength: 1
           type: string
           format: date-time
-      additionalProperties: false
-    DailyOccupancyForSourceType:
-      type: object
-      properties:
-        dataSourceType:
-          $ref: '#/components/schemas/DataSourceType'
-        hourlyOccupancy:
-          type: array
-          items:
-            type: number
-            format: float
-          nullable: true
       additionalProperties: false
     FetchDailyOccupancyHistoryForPredictionByEntityIdQueryResultItem:
       type: object
@@ -523,12 +450,43 @@ components:
         id:
           minLength: 1
           type: string
-          nullable: true
         dateTime:
           minLength: 1
           type: string
           format: date-time
       additionalProperties: false
+    HourlyPrediction:
+      type: object
+      properties:
+        entityId:
+          type: string
+          nullable: true
+        occupancyRatio:
+          type: number
+          format: float
+          nullable: true
+        confidence:
+          type: number
+          format: float
+          nullable: true
+        sourceTypes:
+          $ref: '#/components/schemas/DataSourceType'
+      additionalProperties: false
+    HourlyPredictionIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/HourlyPrediction'
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
     Prediction:
       type: object
       properties:
@@ -541,24 +499,6 @@ components:
           type: number
           format: float
       additionalProperties: false
-    DailyPredictions:
-      type: object
-      properties:
-        entityId:
-          type: string
-          nullable: true
-        sourceTypes:
-          $ref: '#/components/schemas/DataSourceType'
-        confidence:
-          type: number
-          format: float
-          nullable: true
-        perHour:
-          type: array
-          items:
-            $ref: '#/components/schemas/Prediction'
-          nullable: true
-      additionalProperties: false
     WeeklyPredictions:
       type: object
       properties:
@@ -569,21 +509,8 @@ components:
           $ref: '#/components/schemas/DataSourceType'
         perDayOfWeek:
           type: object
-          properties:
-            Sunday:
-              $ref: '#/components/schemas/DailyPredictions'
-            Monday:
-              $ref: '#/components/schemas/DailyPredictions'
-            Tuesday:
-              $ref: '#/components/schemas/DailyPredictions'
-            Wednesday:
-              $ref: '#/components/schemas/DailyPredictions'
-            Thursday:
-              $ref: '#/components/schemas/DailyPredictions'
-            Friday:
-              $ref: '#/components/schemas/DailyPredictions'
-            Saturday:
-              $ref: '#/components/schemas/DailyPredictions'
+          additionalProperties:
+            $ref: '#/components/schemas/DailyPredictions'
           nullable: true
       additionalProperties: false
     WeeklyPredictionsOkResponse:
