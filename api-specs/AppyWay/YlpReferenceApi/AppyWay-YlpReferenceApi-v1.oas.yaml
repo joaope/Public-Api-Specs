@@ -23,16 +23,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ActivityTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ActivityTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -57,270 +57,270 @@ paths:
               schema:
                 $ref: '#/components/schemas/All'
               example:
-                ActivityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                AuthorityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  CanHaveRestrictions: true
-                  CanHaveShape: true
-                BaseMaps:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  AvailableInCountries:
+                activityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                authorityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  canHaveRestrictions: true
+                  canHaveShape: true
+                baseMaps:
+                - id: 0
+                  name: string
+                  description: string
+                  availableInCountries:
                   - string
-                Countries:
-                - Id: string
-                  Guid: string
-                  Name: string
-                  SpecialDays:
-                  - Id: string
-                    Name: string
-                    IsHoliday: true
-                    Dates:
+                countries:
+                - id: string
+                  guid: string
+                  name: string
+                  specialDays:
+                  - id: string
+                    name: string
+                    isHoliday: true
+                    dates:
                     - 2020-01-20T00:00:00.0000000+00:00
-                  Bounds:
+                  bounds:
                   - - 0
-                  DefaultBaseMapId: 0
-                  EntitlementTypes:
+                  defaultBaseMapId: 0
+                  entitlementTypes:
                   - 0
-                  RestrictionTypes:
+                  restrictionTypes:
                   - 0
-                EntitlementTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  Code: string
-                  RestrictionTypeIds:
+                entitlementTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  code: string
+                  restrictionTypeIds:
                   - 0
-                  ApplicableExemptionTypeIds:
+                  applicableExemptionTypeIds:
                   - 0
-                  HasTariff: true
-                  RestrictionTypeLegalNames:
-                  - RestrictionTypeId: 0
-                    LegalName: string
-                ExceptionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                ExemptionTimeTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                ExemptionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                FacilityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                FuelTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                NoteVisibilityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                OnStreetParkingTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                PaymentMethods:
-                - Id: 0
-                  Name: string
-                  Description: string
-                PermitTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                Regions:
-                - Id: string
-                  Guid: string
-                  CountryId: string
-                  Name: string
-                  Venues:
-                  - Id: string
-                    Name: string
-                    EventsMustSupplyHours: true
-                    Events:
-                    - Name: string
-                      Date: 2020-01-20T00:00:00.0000000+00:00
-                      Start: 2021-06-14T00:00:00.0000000+00:00
-                      End: 2021-06-14T00:00:00.0000000+00:00
-                RestrictionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  Code: string
-                  CanHaveTariff: true
-                  DefaultWidth: 0
-                  IsTroItem: true
-                  LegalName: string
-                MovingRestrictionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  Property: string
-                  Unit: string
-                  Options:
-                  - MovingRestrictionTypeId: 0
-                    Id: 0
-                    Name: string
-                    Value: 0
-                SpecialRestrictions:
-                - Id: 0
-                  Name: string
-                  Description: string
-                VehicleTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                ZoneTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  CanHaveRestrictions: true
-                  CanHaveShape: true
+                  hasTariff: true
+                  restrictionTypeLegalNames:
+                  - restrictionTypeId: 0
+                    legalName: string
+                exceptionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                exemptionTimeTypes:
+                - id: 0
+                  name: string
+                  description: string
+                exemptionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                facilityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                fuelTypes:
+                - id: 0
+                  name: string
+                  description: string
+                noteVisibilityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                onStreetParkingTypes:
+                - id: 0
+                  name: string
+                  description: string
+                paymentMethods:
+                - id: 0
+                  name: string
+                  description: string
+                permitTypes:
+                - id: 0
+                  name: string
+                  description: string
+                regions:
+                - id: string
+                  guid: string
+                  countryId: string
+                  name: string
+                  venues:
+                  - id: string
+                    name: string
+                    eventsMustSupplyHours: true
+                    events:
+                    - name: string
+                      date: 2020-01-20T00:00:00.0000000+00:00
+                      start: 2021-06-14T00:00:00.0000000+00:00
+                      end: 2021-06-14T00:00:00.0000000+00:00
+                restrictionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  code: string
+                  canHaveTariff: true
+                  defaultWidth: 0
+                  isTroItem: true
+                  legalName: string
+                movingRestrictionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  property: string
+                  unit: string
+                  options:
+                  - movingRestrictionTypeId: 0
+                    id: 0
+                    name: string
+                    value: 0
+                specialRestrictions:
+                - id: 0
+                  name: string
+                  description: string
+                vehicleTypes:
+                - id: 0
+                  name: string
+                  description: string
+                zoneTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  canHaveRestrictions: true
+                  canHaveShape: true
             text/json:
               schema:
                 $ref: '#/components/schemas/All'
               example:
-                ActivityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                AuthorityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  CanHaveRestrictions: true
-                  CanHaveShape: true
-                BaseMaps:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  AvailableInCountries:
+                activityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                authorityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  canHaveRestrictions: true
+                  canHaveShape: true
+                baseMaps:
+                - id: 0
+                  name: string
+                  description: string
+                  availableInCountries:
                   - string
-                Countries:
-                - Id: string
-                  Guid: string
-                  Name: string
-                  SpecialDays:
-                  - Id: string
-                    Name: string
-                    IsHoliday: true
-                    Dates:
+                countries:
+                - id: string
+                  guid: string
+                  name: string
+                  specialDays:
+                  - id: string
+                    name: string
+                    isHoliday: true
+                    dates:
                     - 2020-01-20T00:00:00.0000000+00:00
-                  Bounds:
+                  bounds:
                   - - 0
-                  DefaultBaseMapId: 0
-                  EntitlementTypes:
+                  defaultBaseMapId: 0
+                  entitlementTypes:
                   - 0
-                  RestrictionTypes:
+                  restrictionTypes:
                   - 0
-                EntitlementTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  Code: string
-                  RestrictionTypeIds:
+                entitlementTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  code: string
+                  restrictionTypeIds:
                   - 0
-                  ApplicableExemptionTypeIds:
+                  applicableExemptionTypeIds:
                   - 0
-                  HasTariff: true
-                  RestrictionTypeLegalNames:
-                  - RestrictionTypeId: 0
-                    LegalName: string
-                ExceptionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                ExemptionTimeTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                ExemptionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                FacilityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                FuelTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                NoteVisibilityTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                OnStreetParkingTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                PaymentMethods:
-                - Id: 0
-                  Name: string
-                  Description: string
-                PermitTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                Regions:
-                - Id: string
-                  Guid: string
-                  CountryId: string
-                  Name: string
-                  Venues:
-                  - Id: string
-                    Name: string
-                    EventsMustSupplyHours: true
-                    Events:
-                    - Name: string
-                      Date: 2020-01-20T00:00:00.0000000+00:00
-                      Start: 2021-06-14T00:00:00.0000000+00:00
-                      End: 2021-06-14T00:00:00.0000000+00:00
-                RestrictionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  Code: string
-                  CanHaveTariff: true
-                  DefaultWidth: 0
-                  IsTroItem: true
-                  LegalName: string
-                MovingRestrictionTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  Property: string
-                  Unit: string
-                  Options:
-                  - MovingRestrictionTypeId: 0
-                    Id: 0
-                    Name: string
-                    Value: 0
-                SpecialRestrictions:
-                - Id: 0
-                  Name: string
-                  Description: string
-                VehicleTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                ZoneTypes:
-                - Id: 0
-                  Name: string
-                  Description: string
-                  CanHaveRestrictions: true
-                  CanHaveShape: true
+                  hasTariff: true
+                  restrictionTypeLegalNames:
+                  - restrictionTypeId: 0
+                    legalName: string
+                exceptionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                exemptionTimeTypes:
+                - id: 0
+                  name: string
+                  description: string
+                exemptionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                facilityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                fuelTypes:
+                - id: 0
+                  name: string
+                  description: string
+                noteVisibilityTypes:
+                - id: 0
+                  name: string
+                  description: string
+                onStreetParkingTypes:
+                - id: 0
+                  name: string
+                  description: string
+                paymentMethods:
+                - id: 0
+                  name: string
+                  description: string
+                permitTypes:
+                - id: 0
+                  name: string
+                  description: string
+                regions:
+                - id: string
+                  guid: string
+                  countryId: string
+                  name: string
+                  venues:
+                  - id: string
+                    name: string
+                    eventsMustSupplyHours: true
+                    events:
+                    - name: string
+                      date: 2020-01-20T00:00:00.0000000+00:00
+                      start: 2021-06-14T00:00:00.0000000+00:00
+                      end: 2021-06-14T00:00:00.0000000+00:00
+                restrictionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  code: string
+                  canHaveTariff: true
+                  defaultWidth: 0
+                  isTroItem: true
+                  legalName: string
+                movingRestrictionTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  property: string
+                  unit: string
+                  options:
+                  - movingRestrictionTypeId: 0
+                    id: 0
+                    name: string
+                    value: 0
+                specialRestrictions:
+                - id: 0
+                  name: string
+                  description: string
+                vehicleTypes:
+                - id: 0
+                  name: string
+                  description: string
+                zoneTypes:
+                - id: 0
+                  name: string
+                  description: string
+                  canHaveRestrictions: true
+                  canHaveShape: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -345,20 +345,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorityTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                CanHaveRestrictions: true
-                CanHaveShape: true
+              - id: 0
+                name: string
+                description: string
+                canHaveRestrictions: true
+                canHaveShape: true
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                CanHaveRestrictions: true
-                CanHaveShape: true
+              - id: 0
+                name: string
+                description: string
+                canHaveRestrictions: true
+                canHaveShape: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -383,19 +383,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/BaseMapListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                AvailableInCountries:
+              - id: 0
+                name: string
+                description: string
+                availableInCountries:
                 - string
             text/json:
               schema:
                 $ref: '#/components/schemas/BaseMapListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                AvailableInCountries:
+              - id: 0
+                name: string
+                description: string
+                availableInCountries:
                 - string
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -428,41 +428,41 @@ paths:
               schema:
                 $ref: '#/components/schemas/Country'
               example:
-                Id: string
-                Guid: string
-                Name: string
-                SpecialDays:
-                - Id: string
-                  Name: string
-                  IsHoliday: true
-                  Dates:
+                id: string
+                guid: string
+                name: string
+                specialDays:
+                - id: string
+                  name: string
+                  isHoliday: true
+                  dates:
                   - 2020-01-20T00:00:00.0000000+00:00
-                Bounds:
+                bounds:
                 - - 0
-                DefaultBaseMapId: 0
-                EntitlementTypes:
+                defaultBaseMapId: 0
+                entitlementTypes:
                 - 0
-                RestrictionTypes:
+                restrictionTypes:
                 - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/Country'
               example:
-                Id: string
-                Guid: string
-                Name: string
-                SpecialDays:
-                - Id: string
-                  Name: string
-                  IsHoliday: true
-                  Dates:
+                id: string
+                guid: string
+                name: string
+                specialDays:
+                - id: string
+                  name: string
+                  isHoliday: true
+                  dates:
                   - 2020-01-20T00:00:00.0000000+00:00
-                Bounds:
+                bounds:
                 - - 0
-                DefaultBaseMapId: 0
-                EntitlementTypes:
+                defaultBaseMapId: 0
+                entitlementTypes:
                 - 0
-                RestrictionTypes:
+                restrictionTypes:
                 - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -488,41 +488,41 @@ paths:
               schema:
                 $ref: '#/components/schemas/CountryListGet200ApplicationJsonResponse'
               example:
-              - Id: string
-                Guid: string
-                Name: string
-                SpecialDays:
-                - Id: string
-                  Name: string
-                  IsHoliday: true
-                  Dates:
+              - id: string
+                guid: string
+                name: string
+                specialDays:
+                - id: string
+                  name: string
+                  isHoliday: true
+                  dates:
                   - 2020-01-20T00:00:00.0000000+00:00
-                Bounds:
+                bounds:
                 - - 0
-                DefaultBaseMapId: 0
-                EntitlementTypes:
+                defaultBaseMapId: 0
+                entitlementTypes:
                 - 0
-                RestrictionTypes:
+                restrictionTypes:
                 - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/CountryListGet200TextJsonResponse'
               example:
-              - Id: string
-                Guid: string
-                Name: string
-                SpecialDays:
-                - Id: string
-                  Name: string
-                  IsHoliday: true
-                  Dates:
+              - id: string
+                guid: string
+                name: string
+                specialDays:
+                - id: string
+                  name: string
+                  isHoliday: true
+                  dates:
                   - 2020-01-20T00:00:00.0000000+00:00
-                Bounds:
+                bounds:
                 - - 0
-                DefaultBaseMapId: 0
-                EntitlementTypes:
+                defaultBaseMapId: 0
+                entitlementTypes:
                 - 0
-                RestrictionTypes:
+                restrictionTypes:
                 - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -543,81 +543,81 @@ paths:
             schema:
               $ref: '#/components/schemas/Country'
             example:
-              Id: string
-              Guid: string
-              Name: string
-              SpecialDays:
-              - Id: string
-                Name: string
-                IsHoliday: true
-                Dates:
+              id: string
+              guid: string
+              name: string
+              specialDays:
+              - id: string
+                name: string
+                isHoliday: true
+                dates:
                 - 2020-01-20T00:00:00.0000000+00:00
-              Bounds:
+              bounds:
               - - 0
-              DefaultBaseMapId: 0
-              EntitlementTypes:
+              defaultBaseMapId: 0
+              entitlementTypes:
               - 0
-              RestrictionTypes:
+              restrictionTypes:
               - 0
           application/json:
             schema:
               $ref: '#/components/schemas/Country'
             example:
-              Id: string
-              Guid: string
-              Name: string
-              SpecialDays:
-              - Id: string
-                Name: string
-                IsHoliday: true
-                Dates:
+              id: string
+              guid: string
+              name: string
+              specialDays:
+              - id: string
+                name: string
+                isHoliday: true
+                dates:
                 - 2020-01-20T00:00:00.0000000+00:00
-              Bounds:
+              bounds:
               - - 0
-              DefaultBaseMapId: 0
-              EntitlementTypes:
+              defaultBaseMapId: 0
+              entitlementTypes:
               - 0
-              RestrictionTypes:
+              restrictionTypes:
               - 0
           text/json:
             schema:
               $ref: '#/components/schemas/Country'
             example:
-              Id: string
-              Guid: string
-              Name: string
-              SpecialDays:
-              - Id: string
-                Name: string
-                IsHoliday: true
-                Dates:
+              id: string
+              guid: string
+              name: string
+              specialDays:
+              - id: string
+                name: string
+                isHoliday: true
+                dates:
                 - 2020-01-20T00:00:00.0000000+00:00
-              Bounds:
+              bounds:
               - - 0
-              DefaultBaseMapId: 0
-              EntitlementTypes:
+              defaultBaseMapId: 0
+              entitlementTypes:
               - 0
-              RestrictionTypes:
+              restrictionTypes:
               - 0
           application/*+json:
             schema:
               $ref: '#/components/schemas/Country'
             example:
-              Id: string
-              Guid: string
-              Name: string
-              SpecialDays:
-              - Id: string
-                Name: string
-                IsHoliday: true
-                Dates:
+              id: string
+              guid: string
+              name: string
+              specialDays:
+              - id: string
+                name: string
+                isHoliday: true
+                dates:
                 - 2020-01-20T00:00:00.0000000+00:00
-              Bounds:
+              bounds:
               - - 0
-              DefaultBaseMapId: 0
-              EntitlementTypes:
+              defaultBaseMapId: 0
+              entitlementTypes:
               - 0
-              RestrictionTypes:
+              restrictionTypes:
               - 0
       responses:
         "200":
@@ -646,34 +646,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/EntitlementTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                Code: string
-                RestrictionTypeIds:
+              - id: 0
+                name: string
+                description: string
+                code: string
+                restrictionTypeIds:
                 - 0
-                ApplicableExemptionTypeIds:
+                applicableExemptionTypeIds:
                 - 0
-                HasTariff: true
-                RestrictionTypeLegalNames:
-                - RestrictionTypeId: 0
-                  LegalName: string
+                hasTariff: true
+                restrictionTypeLegalNames:
+                - restrictionTypeId: 0
+                  legalName: string
             text/json:
               schema:
                 $ref: '#/components/schemas/EntitlementTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                Code: string
-                RestrictionTypeIds:
+              - id: 0
+                name: string
+                description: string
+                code: string
+                restrictionTypeIds:
                 - 0
-                ApplicableExemptionTypeIds:
+                applicableExemptionTypeIds:
                 - 0
-                HasTariff: true
-                RestrictionTypeLegalNames:
-                - RestrictionTypeId: 0
-                  LegalName: string
+                hasTariff: true
+                restrictionTypeLegalNames:
+                - restrictionTypeId: 0
+                  legalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -698,16 +698,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExceptionTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ExceptionTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -732,16 +732,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExemptionTimeTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -766,16 +766,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExemptionTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/ExemptionTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -800,16 +800,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/FacilityTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/FacilityTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -834,16 +834,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/FuelTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/FuelTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -883,30 +883,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/MovingRestrictionTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                Property: string
-                Unit: string
-                Options:
-                - MovingRestrictionTypeId: 0
-                  Id: 0
-                  Name: string
-                  Value: 0
+              - id: 0
+                name: string
+                description: string
+                property: string
+                unit: string
+                options:
+                - movingRestrictionTypeId: 0
+                  id: 0
+                  name: string
+                  value: 0
             text/json:
               schema:
                 $ref: '#/components/schemas/MovingRestrictionTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                Property: string
-                Unit: string
-                Options:
-                - MovingRestrictionTypeId: 0
-                  Id: 0
-                  Name: string
-                  Value: 0
+              - id: 0
+                name: string
+                description: string
+                property: string
+                unit: string
+                options:
+                - movingRestrictionTypeId: 0
+                  id: 0
+                  name: string
+                  value: 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -931,16 +931,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/NoteVisibilityTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -965,16 +965,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/OnStreetParkingTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -999,16 +999,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaymentMethodListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/PaymentMethodListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1033,16 +1033,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/PermitTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/PermitTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1074,36 +1074,36 @@ paths:
               schema:
                 $ref: '#/components/schemas/Region'
               example:
-                Id: string
-                Guid: string
-                CountryId: string
-                Name: string
-                Venues:
-                - Id: string
-                  Name: string
-                  EventsMustSupplyHours: true
-                  Events:
-                  - Name: string
-                    Date: 2020-01-20T00:00:00.0000000+00:00
-                    Start: 2021-06-14T00:00:00.0000000+00:00
-                    End: 2021-06-14T00:00:00.0000000+00:00
+                id: string
+                guid: string
+                countryId: string
+                name: string
+                venues:
+                - id: string
+                  name: string
+                  eventsMustSupplyHours: true
+                  events:
+                  - name: string
+                    date: 2020-01-20T00:00:00.0000000+00:00
+                    start: 2021-06-14T00:00:00.0000000+00:00
+                    end: 2021-06-14T00:00:00.0000000+00:00
             text/json:
               schema:
                 $ref: '#/components/schemas/Region'
               example:
-                Id: string
-                Guid: string
-                CountryId: string
-                Name: string
-                Venues:
-                - Id: string
-                  Name: string
-                  EventsMustSupplyHours: true
-                  Events:
-                  - Name: string
-                    Date: 2020-01-20T00:00:00.0000000+00:00
-                    Start: 2021-06-14T00:00:00.0000000+00:00
-                    End: 2021-06-14T00:00:00.0000000+00:00
+                id: string
+                guid: string
+                countryId: string
+                name: string
+                venues:
+                - id: string
+                  name: string
+                  eventsMustSupplyHours: true
+                  events:
+                  - name: string
+                    date: 2020-01-20T00:00:00.0000000+00:00
+                    start: 2021-06-14T00:00:00.0000000+00:00
+                    end: 2021-06-14T00:00:00.0000000+00:00
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1128,36 +1128,36 @@ paths:
               schema:
                 $ref: '#/components/schemas/RegionListGet200ApplicationJsonResponse'
               example:
-              - Id: string
-                Guid: string
-                CountryId: string
-                Name: string
-                Venues:
-                - Id: string
-                  Name: string
-                  EventsMustSupplyHours: true
-                  Events:
-                  - Name: string
-                    Date: 2020-01-20T00:00:00.0000000+00:00
-                    Start: 2021-06-14T00:00:00.0000000+00:00
-                    End: 2021-06-14T00:00:00.0000000+00:00
+              - id: string
+                guid: string
+                countryId: string
+                name: string
+                venues:
+                - id: string
+                  name: string
+                  eventsMustSupplyHours: true
+                  events:
+                  - name: string
+                    date: 2020-01-20T00:00:00.0000000+00:00
+                    start: 2021-06-14T00:00:00.0000000+00:00
+                    end: 2021-06-14T00:00:00.0000000+00:00
             text/json:
               schema:
                 $ref: '#/components/schemas/RegionListGet200TextJsonResponse'
               example:
-              - Id: string
-                Guid: string
-                CountryId: string
-                Name: string
-                Venues:
-                - Id: string
-                  Name: string
-                  EventsMustSupplyHours: true
-                  Events:
-                  - Name: string
-                    Date: 2020-01-20T00:00:00.0000000+00:00
-                    Start: 2021-06-14T00:00:00.0000000+00:00
-                    End: 2021-06-14T00:00:00.0000000+00:00
+              - id: string
+                guid: string
+                countryId: string
+                name: string
+                venues:
+                - id: string
+                  name: string
+                  eventsMustSupplyHours: true
+                  events:
+                  - name: string
+                    date: 2020-01-20T00:00:00.0000000+00:00
+                    start: 2021-06-14T00:00:00.0000000+00:00
+                    end: 2021-06-14T00:00:00.0000000+00:00
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1177,70 +1177,70 @@ paths:
             schema:
               $ref: '#/components/schemas/Region'
             example:
-              Id: string
-              Guid: string
-              CountryId: string
-              Name: string
-              Venues:
-              - Id: string
-                Name: string
-                EventsMustSupplyHours: true
-                Events:
-                - Name: string
-                  Date: 2020-01-20T00:00:00.0000000+00:00
-                  Start: 2021-06-14T00:00:00.0000000+00:00
-                  End: 2021-06-14T00:00:00.0000000+00:00
+              id: string
+              guid: string
+              countryId: string
+              name: string
+              venues:
+              - id: string
+                name: string
+                eventsMustSupplyHours: true
+                events:
+                - name: string
+                  date: 2020-01-20T00:00:00.0000000+00:00
+                  start: 2021-06-14T00:00:00.0000000+00:00
+                  end: 2021-06-14T00:00:00.0000000+00:00
           application/json:
             schema:
               $ref: '#/components/schemas/Region'
             example:
-              Id: string
-              Guid: string
-              CountryId: string
-              Name: string
-              Venues:
-              - Id: string
-                Name: string
-                EventsMustSupplyHours: true
-                Events:
-                - Name: string
-                  Date: 2020-01-20T00:00:00.0000000+00:00
-                  Start: 2021-06-14T00:00:00.0000000+00:00
-                  End: 2021-06-14T00:00:00.0000000+00:00
+              id: string
+              guid: string
+              countryId: string
+              name: string
+              venues:
+              - id: string
+                name: string
+                eventsMustSupplyHours: true
+                events:
+                - name: string
+                  date: 2020-01-20T00:00:00.0000000+00:00
+                  start: 2021-06-14T00:00:00.0000000+00:00
+                  end: 2021-06-14T00:00:00.0000000+00:00
           text/json:
             schema:
               $ref: '#/components/schemas/Region'
             example:
-              Id: string
-              Guid: string
-              CountryId: string
-              Name: string
-              Venues:
-              - Id: string
-                Name: string
-                EventsMustSupplyHours: true
-                Events:
-                - Name: string
-                  Date: 2020-01-20T00:00:00.0000000+00:00
-                  Start: 2021-06-14T00:00:00.0000000+00:00
-                  End: 2021-06-14T00:00:00.0000000+00:00
+              id: string
+              guid: string
+              countryId: string
+              name: string
+              venues:
+              - id: string
+                name: string
+                eventsMustSupplyHours: true
+                events:
+                - name: string
+                  date: 2020-01-20T00:00:00.0000000+00:00
+                  start: 2021-06-14T00:00:00.0000000+00:00
+                  end: 2021-06-14T00:00:00.0000000+00:00
           application/*+json:
             schema:
               $ref: '#/components/schemas/Region'
             example:
-              Id: string
-              Guid: string
-              CountryId: string
-              Name: string
-              Venues:
-              - Id: string
-                Name: string
-                EventsMustSupplyHours: true
-                Events:
-                - Name: string
-                  Date: 2020-01-20T00:00:00.0000000+00:00
-                  Start: 2021-06-14T00:00:00.0000000+00:00
-                  End: 2021-06-14T00:00:00.0000000+00:00
+              id: string
+              guid: string
+              countryId: string
+              name: string
+              venues:
+              - id: string
+                name: string
+                eventsMustSupplyHours: true
+                events:
+                - name: string
+                  date: 2020-01-20T00:00:00.0000000+00:00
+                  start: 2021-06-14T00:00:00.0000000+00:00
+                  end: 2021-06-14T00:00:00.0000000+00:00
       responses:
         "200":
           description: Success
@@ -1268,26 +1268,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/RestrictionTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                Code: string
-                CanHaveTariff: true
-                DefaultWidth: 0
-                IsTroItem: true
-                LegalName: string
+              - id: 0
+                name: string
+                description: string
+                code: string
+                canHaveTariff: true
+                defaultWidth: 0
+                isTroItem: true
+                legalName: string
             text/json:
               schema:
                 $ref: '#/components/schemas/RestrictionTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                Code: string
-                CanHaveTariff: true
-                DefaultWidth: 0
-                IsTroItem: true
-                LegalName: string
+              - id: 0
+                name: string
+                description: string
+                code: string
+                canHaveTariff: true
+                defaultWidth: 0
+                isTroItem: true
+                legalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1312,16 +1312,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/SpecialRestrictionListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/SpecialRestrictionListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1346,16 +1346,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/VehicleTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
             text/json:
               schema:
                 $ref: '#/components/schemas/VehicleTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
+              - id: 0
+                name: string
+                description: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1380,20 +1380,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/ZoneTypeListGet200ApplicationJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                CanHaveRestrictions: true
-                CanHaveShape: true
+              - id: 0
+                name: string
+                description: string
+                canHaveRestrictions: true
+                canHaveShape: true
             text/json:
               schema:
                 $ref: '#/components/schemas/ZoneTypeListGet200TextJsonResponse'
               example:
-              - Id: 0
-                Name: string
-                Description: string
-                CanHaveRestrictions: true
-                CanHaveShape: true
+              - id: 0
+                name: string
+                description: string
+                canHaveRestrictions: true
+                canHaveShape: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1405,89 +1405,174 @@ components:
     ActivityType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
+          nullable: true
+      additionalProperties: false
+    All:
+      type: object
+      properties:
+        activityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActivityType'
+          nullable: true
+        authorityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuthorityType'
+          nullable: true
+        baseMaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseMap'
+          nullable: true
+        countries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Country'
+          nullable: true
+        entitlementTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntitlementType'
+          nullable: true
+        exceptionTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExceptionType'
+          nullable: true
+        exemptionTimeTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExemptionTimeType'
+          nullable: true
+        exemptionTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExemptionType'
+          nullable: true
+        facilityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FacilityType'
+          nullable: true
+        fuelTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FuelType'
+          nullable: true
+        noteVisibilityTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoteVisibilityType'
+          nullable: true
+        onStreetParkingTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/OnStreetParkingType'
+          nullable: true
+        paymentMethods:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentMethod'
+          nullable: true
+        permitTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermitType'
+          nullable: true
+        regions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+          nullable: true
+        restrictionTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestrictionType'
+          nullable: true
+        movingRestrictionTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/MovingRestrictionType'
+          nullable: true
+        specialRestrictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpecialRestriction'
+          nullable: true
+        vehicleTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleType'
+          nullable: true
+        zoneTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ZoneType'
           nullable: true
       additionalProperties: false
     AuthorityType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
-        CanHaveRestrictions:
+        canHaveRestrictions:
           type: boolean
-        CanHaveShape:
+        canHaveShape:
           type: boolean
       additionalProperties: false
     BaseMap:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
-        AvailableInCountries:
+        availableInCountries:
           type: array
           items:
             type: string
-          nullable: true
-      additionalProperties: false
-    SpecialDay:
-      type: object
-      properties:
-        Id:
-          type: string
-          nullable: true
-        Name:
-          type: string
-          nullable: true
-        IsHoliday:
-          type: boolean
-        Dates:
-          type: array
-          items:
-            type: string
-            description: ISO-8601 date pattern
-            example: 2020-01-20T00:00:00.0000000
           nullable: true
       additionalProperties: false
     Country:
       type: object
       properties:
-        Id:
+        id:
           type: string
           nullable: true
-        Guid:
+        guid:
           type: string
           format: uuid
           readOnly: true
-        Name:
+        name:
           type: string
           nullable: true
-        SpecialDays:
+        specialDays:
           type: array
           items:
             $ref: '#/components/schemas/SpecialDay'
           nullable: true
-        Bounds:
+        bounds:
           type: array
           items:
             type: array
@@ -1495,239 +1580,252 @@ components:
               type: number
               format: double
           nullable: true
-        DefaultBaseMapId:
+        defaultBaseMapId:
           type: integer
           format: int32
-        EntitlementTypes:
+        entitlementTypes:
           type: array
           items:
             type: integer
             format: int32
           nullable: true
-        RestrictionTypes:
+        restrictionTypes:
           type: array
           items:
             type: integer
             format: int32
-          nullable: true
-      additionalProperties: false
-    RestrictionTypeLegalName:
-      type: object
-      properties:
-        RestrictionTypeId:
-          type: integer
-          format: int32
-        LegalName:
-          type: string
           nullable: true
       additionalProperties: false
     EntitlementType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
-        Code:
+        code:
           type: string
           nullable: true
-        RestrictionTypeIds:
+        restrictionTypeIds:
           type: array
           items:
             type: integer
             format: int32
           nullable: true
-        ApplicableExemptionTypeIds:
+        applicableExemptionTypeIds:
           type: array
           items:
             type: integer
             format: int32
           nullable: true
-        HasTariff:
+        hasTariff:
           type: boolean
-        RestrictionTypeLegalNames:
+        restrictionTypeLegalNames:
           type: array
           items:
             $ref: '#/components/schemas/RestrictionTypeLegalName'
           nullable: true
       additionalProperties: false
+    Event:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        date:
+          type: string
+          description: ISO-8601 date pattern
+          example: 2020-01-20T00:00:00.0000000
+        start:
+          type: string
+          description: ISO-8601 time pattern, extended as required to accommodate nanoseconds.
+          nullable: true
+          example: 00:00:00
+        end:
+          type: string
+          description: ISO-8601 time pattern, extended as required to accommodate nanoseconds.
+          nullable: true
+          example: 00:00:00
+      additionalProperties: false
     ExceptionType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     ExemptionTimeType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     ExemptionType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     FacilityType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     FuelType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
+      additionalProperties: false
+    MovingRestrictionType:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        property:
+          type: string
+          nullable: true
+        unit:
+          type: string
+          nullable: true
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/MovingRestrictionTypeOption'
+          nullable: true
+      additionalProperties: false
+    MovingRestrictionTypeOption:
+      type: object
+      properties:
+        movingRestrictionTypeId:
+          type: integer
+          format: int32
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        value:
+          type: integer
+          format: int32
       additionalProperties: false
     NoteVisibilityType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     OnStreetParkingType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     PaymentMethod:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     PermitType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
-          nullable: true
-      additionalProperties: false
-    Event:
-      type: object
-      properties:
-        Name:
-          type: string
-          nullable: true
-        Date:
-          type: string
-          description: ISO-8601 date pattern
-          example: 2020-01-20T00:00:00.0000000
-        Start:
-          type: string
-          description: ISO-8601 time pattern, extended as required to accommodate nanoseconds.
-          nullable: true
-          example: 00:00:00
-        End:
-          type: string
-          description: ISO-8601 time pattern, extended as required to accommodate nanoseconds.
-          nullable: true
-          example: 00:00:00
-      additionalProperties: false
-    Venue:
-      type: object
-      properties:
-        Id:
-          type: string
-          nullable: true
-        Name:
-          type: string
-          nullable: true
-        EventsMustSupplyHours:
-          type: boolean
-        Events:
-          type: array
-          items:
-            $ref: '#/components/schemas/Event'
           nullable: true
       additionalProperties: false
     Region:
       type: object
       properties:
-        Id:
+        id:
           type: string
           nullable: true
-        Guid:
+        guid:
           type: string
           format: uuid
           readOnly: true
-        CountryId:
+        countryId:
           type: string
           nullable: true
-        Name:
+        name:
           type: string
           nullable: true
-        Venues:
+        venues:
           type: array
           items:
             $ref: '#/components/schemas/Venue'
@@ -1736,215 +1834,117 @@ components:
     RestrictionType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
-        Code:
+        code:
           type: string
           nullable: true
-        CanHaveTariff:
+        canHaveTariff:
           type: boolean
-        DefaultWidth:
+        defaultWidth:
           type: number
           format: double
-        IsTroItem:
+        isTroItem:
           type: boolean
-        LegalName:
+        legalName:
           type: string
           nullable: true
       additionalProperties: false
-    MovingRestrictionTypeOption:
+    RestrictionTypeLegalName:
       type: object
       properties:
-        MovingRestrictionTypeId:
+        restrictionTypeId:
           type: integer
           format: int32
-        Id:
-          type: integer
-          format: int32
-        Name:
+        legalName:
           type: string
           nullable: true
-        Value:
-          type: integer
-          format: int32
       additionalProperties: false
-    MovingRestrictionType:
+    SpecialDay:
       type: object
       properties:
-        Id:
-          type: integer
-          format: int32
-        Name:
+        id:
           type: string
           nullable: true
-        Description:
+        name:
           type: string
           nullable: true
-        Property:
-          type: string
-          nullable: true
-        Unit:
-          type: string
-          nullable: true
-        Options:
+        isHoliday:
+          type: boolean
+        dates:
           type: array
           items:
-            $ref: '#/components/schemas/MovingRestrictionTypeOption'
+            type: string
+            description: ISO-8601 date pattern
+            example: 2020-01-20T00:00:00.0000000
           nullable: true
       additionalProperties: false
     SpecialRestriction:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
       additionalProperties: false
     VehicleType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
+          nullable: true
+      additionalProperties: false
+    Venue:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        eventsMustSupplyHours:
+          type: boolean
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
           nullable: true
       additionalProperties: false
     ZoneType:
       type: object
       properties:
-        Id:
+        id:
           type: integer
           format: int32
-        Name:
+        name:
           type: string
           nullable: true
-        Description:
+        description:
           type: string
           nullable: true
-        CanHaveRestrictions:
+        canHaveRestrictions:
           type: boolean
-        CanHaveShape:
+        canHaveShape:
           type: boolean
-      additionalProperties: false
-    All:
-      type: object
-      properties:
-        ActivityTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActivityType'
-          nullable: true
-        AuthorityTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/AuthorityType'
-          nullable: true
-        BaseMaps:
-          type: array
-          items:
-            $ref: '#/components/schemas/BaseMap'
-          nullable: true
-        Countries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Country'
-          nullable: true
-        EntitlementTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntitlementType'
-          nullable: true
-        ExceptionTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExceptionType'
-          nullable: true
-        ExemptionTimeTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExemptionTimeType'
-          nullable: true
-        ExemptionTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExemptionType'
-          nullable: true
-        FacilityTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FacilityType'
-          nullable: true
-        FuelTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FuelType'
-          nullable: true
-        NoteVisibilityTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NoteVisibilityType'
-          nullable: true
-        OnStreetParkingTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/OnStreetParkingType'
-          nullable: true
-        PaymentMethods:
-          type: array
-          items:
-            $ref: '#/components/schemas/PaymentMethod'
-          nullable: true
-        PermitTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermitType'
-          nullable: true
-        Regions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Region'
-          nullable: true
-        RestrictionTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/RestrictionType'
-          nullable: true
-        MovingRestrictionTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/MovingRestrictionType'
-          nullable: true
-        SpecialRestrictions:
-          type: array
-          items:
-            $ref: '#/components/schemas/SpecialRestriction'
-          nullable: true
-        VehicleTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/VehicleType'
-          nullable: true
-        ZoneTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ZoneType'
-          nullable: true
       additionalProperties: false
     ActivityTypeListGet200TextPlainResponse:
       type: array
