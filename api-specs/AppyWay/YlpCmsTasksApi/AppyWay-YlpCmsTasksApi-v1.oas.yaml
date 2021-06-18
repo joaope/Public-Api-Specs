@@ -822,6 +822,7 @@ paths:
               name: string
               user: string
               orderId: string
+              force: true
           application/json:
             schema:
               $ref: '#/components/schemas/GenerateOrderDocuments'
@@ -829,6 +830,7 @@ paths:
               name: string
               user: string
               orderId: string
+              force: true
           text/json:
             schema:
               $ref: '#/components/schemas/GenerateOrderDocuments'
@@ -836,6 +838,7 @@ paths:
               name: string
               user: string
               orderId: string
+              force: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/GenerateOrderDocuments'
@@ -843,6 +846,7 @@ paths:
               name: string
               user: string
               orderId: string
+              force: true
       responses:
         "200":
           description: Success
@@ -1687,6 +1691,8 @@ components:
         orderId:
           type: string
           format: uuid
+        force:
+          type: boolean
       additionalProperties: false
     GenerateMovingOrderDocuments:
       type: object

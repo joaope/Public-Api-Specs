@@ -1223,7 +1223,8 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "orderId": "string"
+                "orderId": "string",
+                "force": true
               }
             },
             "application/json": {
@@ -1233,7 +1234,8 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "orderId": "string"
+                "orderId": "string",
+                "force": true
               }
             },
             "text/json": {
@@ -1243,7 +1245,8 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "orderId": "string"
+                "orderId": "string",
+                "force": true
               }
             },
             "application/*+json": {
@@ -1253,7 +1256,8 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "orderId": "string"
+                "orderId": "string",
+                "force": true
               }
             }
           }
@@ -2505,6 +2509,9 @@
           "orderId": {
             "type": "string",
             "format": "uuid"
+          },
+          "force": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
