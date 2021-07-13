@@ -16,47 +16,21 @@ paths:
         "200":
           description: A list of API Keys
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ApiKeyGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiKeyGet200ApplicationJsonResponse'
               example:
               - organisation: string
-                lastLogin: string
                 managedGroups:
                 - string
-                name: string
-                cacheId: string
                 groups:
                 - string
-                blocked: true
-                id: string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ApiKeyGet200TextJsonResponse'
-              example:
-              - organisation: string
                 lastLogin: string
-                managedGroups:
-                - string
-                name: string
                 cacheId: string
-                groups:
-                - string
-                blocked: true
+                name: string
+                appyUserId: string
                 id: string
+                blocked: true
                 permissions:
                 - permissionId: string
                   resourceTypeId: string
@@ -87,15 +61,16 @@ paths:
               $ref: '#/components/schemas/ApiKey'
             example:
               organisation: string
-              lastLogin: string
               managedGroups:
               - string
-              name: string
-              cacheId: string
               groups:
               - string
-              blocked: true
+              lastLogin: string
+              cacheId: string
+              name: string
+              appyUserId: string
               id: string
+              blocked: true
               permissions:
               - permissionId: string
                 resourceTypeId: string
@@ -111,15 +86,16 @@ paths:
               $ref: '#/components/schemas/ApiKey'
             example:
               organisation: string
-              lastLogin: string
               managedGroups:
               - string
-              name: string
-              cacheId: string
               groups:
               - string
-              blocked: true
+              lastLogin: string
+              cacheId: string
+              name: string
+              appyUserId: string
               id: string
+              blocked: true
               permissions:
               - permissionId: string
                 resourceTypeId: string
@@ -135,15 +111,16 @@ paths:
               $ref: '#/components/schemas/ApiKey'
             example:
               organisation: string
-              lastLogin: string
               managedGroups:
               - string
-              name: string
-              cacheId: string
               groups:
               - string
-              blocked: true
+              lastLogin: string
+              cacheId: string
+              name: string
+              appyUserId: string
               id: string
+              blocked: true
               permissions:
               - permissionId: string
                 resourceTypeId: string
@@ -158,50 +135,22 @@ paths:
         "200":
           description: Returns the API Key
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
             application/json:
               schema:
                 $ref: '#/components/schemas/CreatedApiKey'
               example:
                 apiKey:
                   organisation: string
-                  lastLogin: string
                   managedGroups:
                   - string
-                  name: string
-                  cacheId: string
                   groups:
                   - string
-                  blocked: true
-                  id: string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
-                  roles:
-                  - roleId: string
-                    resourceAssignments:
-                    - resourceTypeId: string
-                      resourceIds:
-                      - string
-                key: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-              example:
-                apiKey:
-                  organisation: string
                   lastLogin: string
-                  managedGroups:
-                  - string
-                  name: string
                   cacheId: string
-                  groups:
-                  - string
-                  blocked: true
+                  name: string
+                  appyUserId: string
                   id: string
+                  blocked: true
                   permissions:
                   - permissionId: string
                     resourceTypeId: string
@@ -216,19 +165,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -257,15 +194,16 @@ paths:
               $ref: '#/components/schemas/ApiKey'
             example:
               organisation: string
-              lastLogin: string
               managedGroups:
               - string
-              name: string
-              cacheId: string
               groups:
               - string
-              blocked: true
+              lastLogin: string
+              cacheId: string
+              name: string
+              appyUserId: string
               id: string
+              blocked: true
               permissions:
               - permissionId: string
                 resourceTypeId: string
@@ -281,15 +219,16 @@ paths:
               $ref: '#/components/schemas/ApiKey'
             example:
               organisation: string
-              lastLogin: string
               managedGroups:
               - string
-              name: string
-              cacheId: string
               groups:
               - string
-              blocked: true
+              lastLogin: string
+              cacheId: string
+              name: string
+              appyUserId: string
               id: string
+              blocked: true
               permissions:
               - permissionId: string
                 resourceTypeId: string
@@ -305,15 +244,16 @@ paths:
               $ref: '#/components/schemas/ApiKey'
             example:
               organisation: string
-              lastLogin: string
               managedGroups:
               - string
-              name: string
-              cacheId: string
               groups:
               - string
-              blocked: true
+              lastLogin: string
+              cacheId: string
+              name: string
+              appyUserId: string
               id: string
+              blocked: true
               permissions:
               - permissionId: string
                 resourceTypeId: string
@@ -328,50 +268,22 @@ paths:
         "200":
           description: Update succeeded
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
             application/json:
               schema:
                 $ref: '#/components/schemas/CreatedApiKey'
               example:
                 apiKey:
                   organisation: string
-                  lastLogin: string
                   managedGroups:
                   - string
-                  name: string
-                  cacheId: string
                   groups:
                   - string
-                  blocked: true
-                  id: string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
-                  roles:
-                  - roleId: string
-                    resourceAssignments:
-                    - resourceTypeId: string
-                      resourceIds:
-                      - string
-                key: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CreatedApiKey'
-              example:
-                apiKey:
-                  organisation: string
                   lastLogin: string
-                  managedGroups:
-                  - string
-                  name: string
                   cacheId: string
-                  groups:
-                  - string
-                  blocked: true
+                  name: string
+                  appyUserId: string
                   id: string
+                  blocked: true
                   permissions:
                   - permissionId: string
                     resourceTypeId: string
@@ -386,19 +298,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -414,19 +314,7 @@ paths:
         "404":
           description: Could not find API Key
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -467,19 +355,7 @@ paths:
         "400":
           description: API Key is empty
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -495,19 +371,7 @@ paths:
         "404":
           description: API Key not found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -549,19 +413,7 @@ paths:
         "400":
           description: API Key is empty
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -577,19 +429,7 @@ paths:
         "404":
           description: API Key not found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -631,19 +471,7 @@ paths:
         "400":
           description: API Key is empty
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -659,19 +487,7 @@ paths:
         "404":
           description: API Key not found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -693,19 +509,9 @@ paths:
         "200":
           description: A list of Applications
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ApplicationGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationGet200ApplicationJsonResponse'
-              example:
-              - id: string
-                name: string
-                description: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ApplicationGet200TextJsonResponse'
               example:
               - id: string
                 name: string
@@ -750,17 +556,7 @@ paths:
         "200":
           description: Returns the created application
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Application'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Application'
-              example:
-                id: string
-                name: string
-                description: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Application'
               example:
@@ -770,19 +566,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -831,17 +615,7 @@ paths:
         "200":
           description: ""
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Application'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Application'
-              example:
-                id: string
-                name: string
-                description: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Application'
               example:
@@ -851,19 +625,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -898,19 +660,7 @@ paths:
         "400":
           description: Bad Request
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -926,19 +676,7 @@ paths:
         "404":
           description: Not Found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -960,28 +698,9 @@ paths:
         "200":
           description: A list of groups
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/GroupGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/GroupGet200ApplicationJsonResponse'
-              example:
-              - id: string
-                name: string
-                description: string
-                organisationId: string
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                childGroups:
-                - string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/GroupGet200TextJsonResponse'
               example:
               - id: string
                 name: string
@@ -1062,26 +781,7 @@ paths:
         "200":
           description: Returns the created group
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Group'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Group'
-              example:
-                id: string
-                name: string
-                description: string
-                organisationId: string
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                childGroups:
-                - string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Group'
               example:
@@ -1100,19 +800,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1188,26 +876,7 @@ paths:
         "200":
           description: ""
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Group'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Group'
-              example:
-                id: string
-                name: string
-                description: string
-                organisationId: string
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                childGroups:
-                - string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Group'
               example:
@@ -1226,19 +895,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1273,19 +930,7 @@ paths:
         "400":
           description: Bad Request
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1301,19 +946,7 @@ paths:
         "404":
           description: Not Found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1365,19 +998,7 @@ paths:
         "200":
           description: Returns the organisation
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Organisation'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Organisation'
-              example:
-                code: string
-                name: string
-                internalNotes: string
-                description: string
-                id: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Organisation'
               example:
@@ -1389,19 +1010,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1458,19 +1067,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1495,21 +1092,9 @@ paths:
         "200":
           description: A list of Organisations
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/OrganisationGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/OrganisationGet200ApplicationJsonResponse'
-              example:
-              - code: string
-                name: string
-                internalNotes: string
-                description: string
-                id: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/OrganisationGet200TextJsonResponse'
               example:
               - code: string
                 name: string
@@ -1542,19 +1127,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1580,21 +1153,9 @@ paths:
         "200":
           description: A list of Permissions
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/PermissionGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/PermissionGet200ApplicationJsonResponse'
-              example:
-              - name: string
-                description: string
-                applicationId: string
-                resourceTypeId: string
-                id: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/PermissionGet200TextJsonResponse'
               example:
               - name: string
                 description: string
@@ -1647,19 +1208,7 @@ paths:
         "200":
           description: Returns the created permission
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Permission'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Permission'
-              example:
-                name: string
-                description: string
-                applicationId: string
-                resourceTypeId: string
-                id: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Permission'
               example:
@@ -1671,19 +1220,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1738,19 +1275,7 @@ paths:
         "200":
           description: ""
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Permission'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Permission'
-              example:
-                name: string
-                description: string
-                applicationId: string
-                resourceTypeId: string
-                id: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Permission'
               example:
@@ -1762,19 +1287,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1809,19 +1322,7 @@ paths:
         "400":
           description: Bad Request
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1837,19 +1338,7 @@ paths:
         "404":
           description: Not Found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1873,19 +1362,7 @@ paths:
         "400":
           description: Bad Request
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -1911,23 +1388,9 @@ paths:
         "200":
           description: A list of resource types
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceTypeGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/ResourceTypeGet200ApplicationJsonResponse'
-              example:
-              - name: string
-                resources:
-                - value: string
-                  name: string
-                  resourceTypeId: string
-                  id: string
-                id: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ResourceTypeGet200TextJsonResponse'
               example:
               - name: string
                 resources:
@@ -1988,21 +1451,7 @@ paths:
         "200":
           description: Returns the created resource type
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-              example:
-                name: string
-                resources:
-                - value: string
-                  name: string
-                  resourceTypeId: string
-                  id: string
-                id: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ResourceType'
               example:
@@ -2016,19 +1465,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2089,21 +1526,7 @@ paths:
         "200":
           description: ""
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceType'
-              example:
-                name: string
-                resources:
-                - value: string
-                  name: string
-                  resourceTypeId: string
-                  id: string
-                id: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ResourceType'
               example:
@@ -2117,19 +1540,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2164,19 +1575,7 @@ paths:
         "400":
           description: Bad Request
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2192,19 +1591,7 @@ paths:
         "404":
           description: Not Found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2226,23 +1613,9 @@ paths:
         "200":
           description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/RoleGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/RoleGet200ApplicationJsonResponse'
-              example:
-              - name: string
-                permissions:
-                - string
-                applicationId: string
-                isBuiltIn: true
-                id: string
-                description: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/RoleGet200TextJsonResponse'
               example:
               - name: string
                 permissions:
@@ -2303,21 +1676,7 @@ paths:
         "200":
           description: Returns the created role
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Role'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Role'
-              example:
-                name: string
-                permissions:
-                - string
-                applicationId: string
-                isBuiltIn: true
-                id: string
-                description: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Role'
               example:
@@ -2331,19 +1690,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2404,21 +1751,7 @@ paths:
         "200":
           description: ""
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Role'
             application/json:
-              schema:
-                $ref: '#/components/schemas/Role'
-              example:
-                name: string
-                permissions:
-                - string
-                applicationId: string
-                isBuiltIn: true
-                id: string
-                description: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/Role'
               example:
@@ -2432,19 +1765,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2479,19 +1800,7 @@ paths:
         "400":
           description: Bad Request
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2507,19 +1816,7 @@ paths:
         "404":
           description: Not Found
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2546,168 +1843,128 @@ paths:
             example:
               redirect: string
               user:
-                firstName: string
                 email: string
-                lastName: string
+                firstName: string
                 organisation: string
+                lastName: string
                 lastLogin: string
                 picture: string
                 isAuth0User: true
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                blocked: true
-                id: string
                 managedGroups:
                 - string
+                blocked: true
+                appyUserId: string
+                id: string
                 groups:
                 - string
                 permissions:
                 - permissionId: string
                   resourceTypeId: string
                   resourceId: string
+                roles:
+                - roleId: string
+                  resourceAssignments:
+                  - resourceTypeId: string
+                    resourceIds:
+                    - string
           text/json:
             schema:
               $ref: '#/components/schemas/NewUserRequest'
             example:
               redirect: string
               user:
-                firstName: string
                 email: string
-                lastName: string
+                firstName: string
                 organisation: string
+                lastName: string
                 lastLogin: string
                 picture: string
                 isAuth0User: true
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                blocked: true
-                id: string
                 managedGroups:
                 - string
+                blocked: true
+                appyUserId: string
+                id: string
                 groups:
                 - string
                 permissions:
                 - permissionId: string
                   resourceTypeId: string
                   resourceId: string
+                roles:
+                - roleId: string
+                  resourceAssignments:
+                  - resourceTypeId: string
+                    resourceIds:
+                    - string
           application/*+json:
             schema:
               $ref: '#/components/schemas/NewUserRequest'
             example:
               redirect: string
               user:
-                firstName: string
                 email: string
-                lastName: string
+                firstName: string
                 organisation: string
+                lastName: string
                 lastLogin: string
                 picture: string
                 isAuth0User: true
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                blocked: true
-                id: string
                 managedGroups:
                 - string
+                blocked: true
+                appyUserId: string
+                id: string
                 groups:
                 - string
                 permissions:
                 - permissionId: string
                   resourceTypeId: string
                   resourceId: string
+                roles:
+                - roleId: string
+                  resourceAssignments:
+                  - resourceTypeId: string
+                    resourceIds:
+                    - string
       responses:
         "200":
           description: Returns the user and the password reset link
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CreatedUser'
             application/json:
               schema:
                 $ref: '#/components/schemas/CreatedUser'
               example:
                 user:
-                  firstName: string
                   email: string
-                  lastName: string
+                  firstName: string
                   organisation: string
+                  lastName: string
                   lastLogin: string
                   picture: string
                   isAuth0User: true
-                  roles:
-                  - roleId: string
-                    resourceAssignments:
-                    - resourceTypeId: string
-                      resourceIds:
-                      - string
-                  blocked: true
-                  id: string
                   managedGroups:
                   - string
+                  blocked: true
+                  appyUserId: string
+                  id: string
                   groups:
                   - string
                   permissions:
                   - permissionId: string
                     resourceTypeId: string
                     resourceId: string
-                passwordResetLink: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CreatedUser'
-              example:
-                user:
-                  firstName: string
-                  email: string
-                  lastName: string
-                  organisation: string
-                  lastLogin: string
-                  picture: string
-                  isAuth0User: true
                   roles:
                   - roleId: string
                     resourceAssignments:
                     - resourceTypeId: string
                       resourceIds:
                       - string
-                  blocked: true
-                  id: string
-                  managedGroups:
-                  - string
-                  groups:
-                  - string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
                 passwordResetLink: string
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2735,102 +1992,93 @@ paths:
             schema:
               $ref: '#/components/schemas/User'
             example:
-              firstName: string
               email: string
-              lastName: string
+              firstName: string
               organisation: string
+              lastName: string
               lastLogin: string
               picture: string
               isAuth0User: true
-              roles:
-              - roleId: string
-                resourceAssignments:
-                - resourceTypeId: string
-                  resourceIds:
-                  - string
-              blocked: true
-              id: string
               managedGroups:
               - string
+              blocked: true
+              appyUserId: string
+              id: string
               groups:
               - string
               permissions:
               - permissionId: string
                 resourceTypeId: string
                 resourceId: string
+              roles:
+              - roleId: string
+                resourceAssignments:
+                - resourceTypeId: string
+                  resourceIds:
+                  - string
           text/json:
             schema:
               $ref: '#/components/schemas/User'
             example:
-              firstName: string
               email: string
-              lastName: string
+              firstName: string
               organisation: string
+              lastName: string
               lastLogin: string
               picture: string
               isAuth0User: true
-              roles:
-              - roleId: string
-                resourceAssignments:
-                - resourceTypeId: string
-                  resourceIds:
-                  - string
-              blocked: true
-              id: string
               managedGroups:
               - string
+              blocked: true
+              appyUserId: string
+              id: string
               groups:
               - string
               permissions:
               - permissionId: string
                 resourceTypeId: string
                 resourceId: string
+              roles:
+              - roleId: string
+                resourceAssignments:
+                - resourceTypeId: string
+                  resourceIds:
+                  - string
           application/*+json:
             schema:
               $ref: '#/components/schemas/User'
             example:
-              firstName: string
               email: string
-              lastName: string
+              firstName: string
               organisation: string
+              lastName: string
               lastLogin: string
               picture: string
               isAuth0User: true
-              roles:
-              - roleId: string
-                resourceAssignments:
-                - resourceTypeId: string
-                  resourceIds:
-                  - string
-              blocked: true
-              id: string
               managedGroups:
               - string
+              blocked: true
+              appyUserId: string
+              id: string
               groups:
               - string
               permissions:
               - permissionId: string
                 resourceTypeId: string
                 resourceId: string
+              roles:
+              - roleId: string
+                resourceAssignments:
+                - resourceTypeId: string
+                  resourceIds:
+                  - string
       responses:
         "200":
           description: Update is correct
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -2855,63 +2103,34 @@ paths:
         "200":
           description: A list of Users
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/UserGet200TextPlainResponse'
             application/json:
               schema:
                 $ref: '#/components/schemas/UserGet200ApplicationJsonResponse'
               example:
-              - firstName: string
-                email: string
-                lastName: string
+              - email: string
+                firstName: string
                 organisation: string
+                lastName: string
                 lastLogin: string
                 picture: string
                 isAuth0User: true
-                roles:
-                - roleId: string
-                  resourceAssignments:
-                  - resourceTypeId: string
-                    resourceIds:
-                    - string
-                blocked: true
-                id: string
                 managedGroups:
                 - string
+                blocked: true
+                appyUserId: string
+                id: string
                 groups:
                 - string
                 permissions:
                 - permissionId: string
                   resourceTypeId: string
                   resourceId: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/UserGet200TextJsonResponse'
-              example:
-              - firstName: string
-                email: string
-                lastName: string
-                organisation: string
-                lastLogin: string
-                picture: string
-                isAuth0User: true
                 roles:
                 - roleId: string
                   resourceAssignments:
                   - resourceTypeId: string
                     resourceIds:
                     - string
-                blocked: true
-                id: string
-                managedGroups:
-                - string
-                groups:
-                - string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -2938,9 +2157,6 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
@@ -2950,15 +2166,64 @@ paths:
                 status: 0
                 detail: string
                 instance: string
-            text/json:
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /user/addGroupsToUser:
+    post:
+      tags:
+      - User
+      summary: Add groups to user Id
+      description: Add groups to user Id
+      operationId: post-user-addgroupstouser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddGroupsToUserCommand'
+            example:
+              groupIds:
+              - string
+              userId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddGroupsToUserCommand'
+            example:
+              groupIds:
+              - string
+              userId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddGroupsToUserCommand'
+            example:
+              groupIds:
+              - string
+              userId: string
+      responses:
+        "200":
+          description: Update is correct
+          content:
+            application/json:
               schema:
-                $ref: '#/components/schemas/ProblemDetails'
+                $ref: '#/components/schemas/OkResponse'
               example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
+                success: true
+        "400":
+          description: If the request has any errors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -3035,21 +2300,7 @@ paths:
         "200":
           description: Returns the information of collection of created users
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/BulkNewUserResponse'
             application/json:
-              schema:
-                $ref: '#/components/schemas/BulkNewUserResponse'
-              example:
-                unsuccessfulInvitations:
-                - email: string
-                  firstName: string
-                  lastName: string
-                  error: string
-                successfulInvitationsAsCsvData: string
-                hasErrors: true
-            text/json:
               schema:
                 $ref: '#/components/schemas/BulkNewUserResponse'
               example:
@@ -3063,9 +2314,6 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
@@ -3075,15 +2323,66 @@ paths:
                 status: 0
                 detail: string
                 instance: string
-            text/json:
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /user/fetchUserByAppyUserId:
+    post:
+      tags:
+      - User
+      summary: Fetch user by appy user id
+      description: Fetch user by appy user id
+      operationId: post-user-fetchuserbyappyuserid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchUserByAppyUserIdQuery'
+            example:
+              appyUserId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchUserByAppyUserIdQuery'
+            example:
+              appyUserId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchUserByAppyUserIdQuery'
+            example:
+              appyUserId: string
+      responses:
+        "200":
+          description: Update is correct
+          content:
+            application/json:
               schema:
-                $ref: '#/components/schemas/ProblemDetails'
+                $ref: '#/components/schemas/FetchUserByAppyUserIdQueryResultOkResponse'
               example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
+                success: true
+                result:
+                  userId: string
+                  appyUserId: string
+                  email: string
+                  firstName: string
+                  lastName: string
+                  organisation: string
+                  lastLogin: string
+        "400":
+          description: If the request has any errors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -3105,6 +2404,7 @@ paths:
               $ref: '#/components/schemas/Login'
             example:
               id: string
+              appyUserId: string
               organisation: string
               blocked: true
               roles:
@@ -3127,6 +2427,7 @@ paths:
               $ref: '#/components/schemas/Login'
             example:
               id: string
+              appyUserId: string
               organisation: string
               blocked: true
               roles:
@@ -3149,6 +2450,7 @@ paths:
               $ref: '#/components/schemas/Login'
             example:
               id: string
+              appyUserId: string
               organisation: string
               blocked: true
               roles:
@@ -3172,19 +2474,7 @@ paths:
         "400":
           description: If the request has any errors
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example:
@@ -3233,15 +2523,7 @@ paths:
         "200":
           description: Password reset requested
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/PasswordReset'
             application/json:
-              schema:
-                $ref: '#/components/schemas/PasswordReset'
-              example:
-                passwordResetLink: string
-            text/json:
               schema:
                 $ref: '#/components/schemas/PasswordReset'
               example:
@@ -3334,6 +2616,21 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
+    AddGroupsToUserCommand:
+      required:
+      - groupIds
+      - userId
+      type: object
+      properties:
+        userId:
+          minLength: 1
+          type: string
+        groupIds:
+          minLength: 1
+          type: array
+          items:
+            type: string
+      additionalProperties: false
     ApiIdentifier:
       required:
       - cacheId
@@ -3353,6 +2650,9 @@ components:
           type: string
           description: Organisation this belongs to.
         id:
+          type: string
+          nullable: true
+        appyUserId:
           type: string
           nullable: true
         blocked:
@@ -3383,13 +2683,13 @@ components:
           type: string
           format: date-time
           nullable: true
-        cacheId:
-          type: string
-          description: The identifier to be used when performing operations on the API Key
-          nullable: true
         name:
           type: string
           description: Display name of the API Key
+          nullable: true
+        cacheId:
+          type: string
+          description: The identifier to be used when performing operations on the API Key
           nullable: true
       additionalProperties: false
     Application:
@@ -3403,6 +2703,21 @@ components:
           nullable: true
         description:
           type: string
+          nullable: true
+      additionalProperties: false
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
           nullable: true
       additionalProperties: false
     BulkNewUserRequest:
@@ -3470,6 +2785,70 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchUserByAppyUserIdQuery:
+      required:
+      - appyUserId
+      type: object
+      properties:
+        appyUserId:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    FetchUserByAppyUserIdQueryResult:
+      type: object
+      properties:
+        userId:
+          type: string
+          description: User Id
+          nullable: true
+        appyUserId:
+          type: string
+          description: Appy User Id
+          nullable: true
+        email:
+          type: string
+          description: Email
+          nullable: true
+        firstName:
+          type: string
+          description: First name
+          nullable: true
+        lastName:
+          type: string
+          description: Last name
+          nullable: true
+        organisation:
+          type: string
+          description: Organisation this belongs to.
+          nullable: true
+        lastLogin:
+          type: string
+          description: Currently blocked from logging in
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    FetchUserByAppyUserIdQueryResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/FetchUserByAppyUserIdQueryResult'
+      additionalProperties: false
     Group:
       type: object
       properties:
@@ -3500,6 +2879,9 @@ components:
       type: object
       properties:
         id:
+          type: string
+          nullable: true
+        appyUserId:
           type: string
           nullable: true
         organisation:
@@ -3601,6 +2983,13 @@ components:
           minLength: 1
           type: string
           description: URL the user should be redirected to after his first login
+      additionalProperties: false
+    OkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
       additionalProperties: false
     Organisation:
       required:
@@ -3809,43 +3198,42 @@ components:
       - organisation
       type: object
       properties:
-        lastName:
-          minLength: 1
-          type: string
-          description: Last name
         organisation:
           minLength: 1
           type: string
           description: Organisation this belongs to.
-        firstName:
+        lastName:
           minLength: 1
           type: string
-          description: First name
+          description: Last name
         email:
           minLength: 1
           type: string
           format: email
-        managedGroups:
-          type: array
-          items:
-            type: string
-          nullable: true
+        firstName:
+          minLength: 1
+          type: string
+          description: First name
         id:
           type: string
           nullable: true
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
+        appyUserId:
+          type: string
           nullable: true
         groups:
           type: array
           items:
             type: string
           nullable: true
-        blocked:
-          type: boolean
-          description: Currently blocked from logging in
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
+          nullable: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PermissionAssignment'
           nullable: true
         picture:
           type: string
@@ -3854,107 +3242,47 @@ components:
           type: string
           format: date-time
           nullable: true
-        roles:
-          type: array
-          items:
-            $ref: '#/components/schemas/RoleAssignment'
-          nullable: true
         isAuth0User:
           type: boolean
+        blocked:
+          type: boolean
+          description: Currently blocked from logging in
+          nullable: true
+        managedGroups:
+          type: array
+          items:
+            type: string
+          nullable: true
       additionalProperties: false
-    ApiKeyGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ApiKey'
     ApiKeyGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/ApiKey'
-    ApiKeyGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ApiKey'
-    ApplicationGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Application'
     ApplicationGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/Application'
-    ApplicationGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Application'
-    GroupGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Group'
     GroupGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/Group'
-    GroupGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Group'
-    OrganisationGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Organisation'
     OrganisationGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/Organisation'
-    OrganisationGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Organisation'
-    PermissionGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Permission'
     PermissionGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/Permission'
-    PermissionGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Permission'
-    ResourceTypeGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceType'
     ResourceTypeGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/ResourceType'
-    ResourceTypeGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceType'
-    RoleGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Role'
     RoleGet200ApplicationJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/Role'
-    RoleGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Role'
-    UserGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/User'
     UserGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/User'
-    UserGet200TextJsonResponse:
       type: array
       items:
         $ref: '#/components/schemas/User'

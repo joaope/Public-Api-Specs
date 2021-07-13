@@ -1,11 +1,11 @@
 {
   "item": [
     {
-      "id": "34296cfc-1814-4220-9ddd-ef547b3f81f6",
+      "id": "b66de5b7-df0c-4f86-867c-13c4336745b0",
       "name": "api Key",
       "item": [
         {
-          "id": "f3f9a9a3-c993-4c85-a17f-2634f1692c6f",
+          "id": "31cff8b4-bf41-41f2-9995-43bf67749e15",
           "name": "All API Keys",
           "request": {
             "name": "All API Keys",
@@ -28,7 +28,7 @@
           },
           "response": [
             {
-              "id": "8efbf41e-10ad-4061-818b-7d8fd9a67182",
+              "id": "9d7223d2-37aa-4de3-8757-ce5a252e513e",
               "name": "A list of API Keys",
               "originalRequest": {
                 "url": {
@@ -52,12 +52,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "[\n {\n  \"organisation\": \"string\",\n  \"lastLogin\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"name\": \"string\",\n  \"cacheId\": \"string\",\n  \"groups\": [\n   \"string\"\n  ],\n  \"blocked\": true,\n  \"id\": \"string\",\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n }\n]",
+              "body": "[\n {\n  \"organisation\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"groups\": [\n   \"string\"\n  ],\n  \"lastLogin\": \"string\",\n  \"cacheId\": \"string\",\n  \"name\": \"string\",\n  \"appyUserId\": \"string\",\n  \"id\": \"string\",\n  \"blocked\": true,\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "c9baf730-8f82-44ab-b30d-1c2ed387d214",
+              "id": "62ae9e74-e51e-42b2-a9bf-b0baf5c7d4fd",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -86,7 +86,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "507f3357-dbb9-4945-86f4-e114ff5f84be",
+              "id": "387c158b-f240-436f-b28b-33825d9196c6",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -115,7 +115,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "2acccd3f-3534-492c-a65e-f3698ebca063",
+              "id": "6165e634-f495-4c6f-bbd3-d51f94828f65",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -147,7 +147,7 @@
           "event": []
         },
         {
-          "id": "a774aa04-d299-4673-89fc-cdf244f724f4",
+          "id": "c939b3e2-912f-4d91-9ca6-2d782a393baa",
           "name": "Create API Key",
           "request": {
             "name": "Create API Key",
@@ -175,12 +175,12 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"organisation\": \"<string>\",\n    \"id\": \"<string>\",\n    \"blocked\": \"<boolean>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"lastLogin\": \"<dateTime>\",\n    \"cacheId\": \"<string>\",\n    \"name\": \"<string>\"\n}"
+              "raw": "{\n    \"organisation\": \"<string>\",\n    \"id\": \"<string>\",\n    \"appyUserId\": \"<string>\",\n    \"blocked\": \"<boolean>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"lastLogin\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"cacheId\": \"<string>\"\n}"
             }
           },
           "response": [
             {
-              "id": "ba84242d-3131-44bd-98a3-24ccc5f23ca8",
+              "id": "7c6241ab-55c5-43f1-b842-4cf14058e67c",
               "name": "Returns the API Key",
               "originalRequest": {
                 "url": {
@@ -196,7 +196,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -207,12 +207,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"apiKey\": {\n  \"organisation\": \"string\",\n  \"lastLogin\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"name\": \"string\",\n  \"cacheId\": \"string\",\n  \"groups\": [\n   \"string\"\n  ],\n  \"blocked\": true,\n  \"id\": \"string\",\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n },\n \"key\": \"string\"\n}",
+              "body": "{\n \"apiKey\": {\n  \"organisation\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"groups\": [\n   \"string\"\n  ],\n  \"lastLogin\": \"string\",\n  \"cacheId\": \"string\",\n  \"name\": \"string\",\n  \"appyUserId\": \"string\",\n  \"id\": \"string\",\n  \"blocked\": true,\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n },\n \"key\": \"string\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "59c78ef7-2a3a-499a-bdb2-e4cb5e19c6f0",
+              "id": "9dbe0d51-480b-4873-8db7-189a2d83ecb3",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -228,7 +228,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -244,7 +244,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "bf45805b-64e4-4705-9260-36fe5c3d9f6f",
+              "id": "78460275-c32d-4f89-92f3-d04d6a2985d9",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -260,7 +260,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -276,7 +276,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "737ce726-93ce-4b41-85fb-28dcf1ccba57",
+              "id": "9801c50a-0938-4009-b79a-830d955323bd",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -292,7 +292,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -308,7 +308,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "434c3996-a8cc-4663-b2d3-f0385eb527ea",
+              "id": "9c9409a7-dafa-47dc-b58d-fd565dcac529",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -324,7 +324,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -343,7 +343,7 @@
           "event": []
         },
         {
-          "id": "23f53afb-2417-451b-a2fc-8b740fda39f3",
+          "id": "4a165525-b41c-4ca2-b881-d6b07a9e83ac",
           "name": "Update API Key",
           "request": {
             "name": "Update API Key",
@@ -371,12 +371,12 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"organisation\": \"<string>\",\n    \"id\": \"<string>\",\n    \"blocked\": \"<boolean>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"lastLogin\": \"<dateTime>\",\n    \"cacheId\": \"<string>\",\n    \"name\": \"<string>\"\n}"
+              "raw": "{\n    \"organisation\": \"<string>\",\n    \"id\": \"<string>\",\n    \"appyUserId\": \"<string>\",\n    \"blocked\": \"<boolean>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"lastLogin\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"cacheId\": \"<string>\"\n}"
             }
           },
           "response": [
             {
-              "id": "60d9a3ca-0075-467c-8b0b-185801affc7c",
+              "id": "50ca90b3-eabe-4ae2-bf2a-d8e9dac3b85f",
               "name": "Update succeeded",
               "originalRequest": {
                 "url": {
@@ -392,7 +392,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -403,12 +403,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"apiKey\": {\n  \"organisation\": \"string\",\n  \"lastLogin\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"name\": \"string\",\n  \"cacheId\": \"string\",\n  \"groups\": [\n   \"string\"\n  ],\n  \"blocked\": true,\n  \"id\": \"string\",\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n },\n \"key\": \"string\"\n}",
+              "body": "{\n \"apiKey\": {\n  \"organisation\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"groups\": [\n   \"string\"\n  ],\n  \"lastLogin\": \"string\",\n  \"cacheId\": \"string\",\n  \"name\": \"string\",\n  \"appyUserId\": \"string\",\n  \"id\": \"string\",\n  \"blocked\": true,\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n },\n \"key\": \"string\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b0e3e340-1f7a-480e-b0c9-936682914ec3",
+              "id": "8f4143fb-1278-4490-ae13-6470a151f549",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -424,7 +424,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -440,7 +440,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "d678120c-366d-46cc-87cd-5dd074ba363b",
+              "id": "2fb1b2c6-99a5-48b5-8ba3-780d77e593d8",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -456,7 +456,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -472,7 +472,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "f16219fd-3d2d-411f-91ae-ef69552a6a64",
+              "id": "5215dd88-e4fb-44c5-84e9-d623f842e64d",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -488,7 +488,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -504,7 +504,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "87dc7c8e-dc9e-4523-920c-af0ad30f34f4",
+              "id": "e21b94ab-17ad-4b0b-b537-c56b02ff6141",
               "name": "Could not find API Key",
               "originalRequest": {
                 "url": {
@@ -520,7 +520,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Not Found",
@@ -536,7 +536,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "41be1273-6fb0-48c4-ae35-5bfdceb9c259",
+              "id": "98b407e7-1fed-4e9a-950a-f27d6942f156",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -552,7 +552,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"name\": \"string\",\n    \"cacheId\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"organisation\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\",\n    \"cacheId\": \"string\",\n    \"name\": \"string\",\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"blocked\": true,\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -571,7 +571,7 @@
           "event": []
         },
         {
-          "id": "1cbbb333-0d05-482b-a8f7-1c609beafe11",
+          "id": "a8d3a768-e5ca-4986-a274-b28dd4b783e6",
           "name": "Delete API Key",
           "request": {
             "name": "Delete API Key",
@@ -604,7 +604,7 @@
           },
           "response": [
             {
-              "id": "3d07597f-3e94-47e7-a2cb-41d744a20e79",
+              "id": "b03be66e-70a8-418f-b831-05f40b314301",
               "name": "API Key is deleted",
               "originalRequest": {
                 "url": {
@@ -636,7 +636,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6f7adbf5-3857-4977-85c1-572d46685c35",
+              "id": "cc6f1368-b2f2-47bc-a131-223624d0aadf",
               "name": "API Key is empty",
               "originalRequest": {
                 "url": {
@@ -668,7 +668,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "6f122fa1-b66b-4fd9-9849-81f30e4be10c",
+              "id": "0e1b5930-e3eb-496d-a04a-6204b1bfb142",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -700,7 +700,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "13738454-67ce-42e2-89c1-f807acc8a7d4",
+              "id": "0c04cf24-8494-4699-9c08-a17152a0ca08",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -732,7 +732,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5061a956-8a16-47c4-821f-f7212e2871b1",
+              "id": "8a35db31-8a81-4c4a-9605-80ca41c93455",
               "name": "API Key not found",
               "originalRequest": {
                 "url": {
@@ -764,7 +764,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "81698339-6e28-419a-b53a-2a1f5e610170",
+              "id": "f18289da-9fd5-40b0-bdae-ca4d422d85cb",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -799,7 +799,7 @@
           "event": []
         },
         {
-          "id": "5bf08c8c-c0bb-4a13-981b-0ba683a33aa2",
+          "id": "ba68cd46-3d4f-4b1e-9fba-0f71543c6eef",
           "name": "Blocks API Key",
           "request": {
             "name": "Blocks API Key",
@@ -833,7 +833,7 @@
           },
           "response": [
             {
-              "id": "4ed8576d-0739-49ba-8f74-51fbb0a611b2",
+              "id": "498be083-220c-4778-97d1-eab9df4a3ad9",
               "name": "API Key is blocked",
               "originalRequest": {
                 "url": {
@@ -866,7 +866,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "99a20827-96ad-4242-9085-01bfae037fda",
+              "id": "51811d30-b144-408f-9e63-5cab83909500",
               "name": "API Key is empty",
               "originalRequest": {
                 "url": {
@@ -899,7 +899,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "cc599438-9c1a-4b70-8199-59896bb5e18f",
+              "id": "0b107e63-5889-4dce-b2df-c61bbd7ef2fe",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -932,7 +932,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "c18d5542-5890-4943-963c-3d7e27c5419a",
+              "id": "df17fc56-6411-425c-9fac-9b149b438221",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -965,7 +965,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "c505de68-43e8-4783-b446-d5b22d5416c3",
+              "id": "841039c5-2f14-4604-af52-98535419b407",
               "name": "API Key not found",
               "originalRequest": {
                 "url": {
@@ -998,7 +998,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "3e8432bc-22a5-488c-93d7-5ffe72fd4e9b",
+              "id": "70052a66-5ed3-4a1f-bad6-75e048d4811d",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1034,7 +1034,7 @@
           "event": []
         },
         {
-          "id": "ea52e6b0-b378-46f3-80e1-64f1cffd6577",
+          "id": "b7175568-fc78-4eee-add9-f873caa308a7",
           "name": "Unblock API Key",
           "request": {
             "name": "Unblock API Key",
@@ -1068,7 +1068,7 @@
           },
           "response": [
             {
-              "id": "fbf7be56-5d94-4b4b-ad52-1214829438ec",
+              "id": "a8027792-2521-45f7-9e01-3feacdd151d0",
               "name": "API Key is unblocked",
               "originalRequest": {
                 "url": {
@@ -1101,7 +1101,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "676116d2-243e-47fb-8150-3fd9aeb36019",
+              "id": "4d5602fa-b136-4ae3-be85-0d7b287897eb",
               "name": "API Key is empty",
               "originalRequest": {
                 "url": {
@@ -1134,7 +1134,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "ca495a4c-30d8-433f-af5c-0e04c5b10cc9",
+              "id": "69313453-d038-45ec-9735-7ad7efc97905",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1167,7 +1167,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5b5f522c-45a1-4d4d-bf7b-39952cc11d74",
+              "id": "bd4ceaaf-61ec-45b2-8383-6c8018d2a633",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1200,7 +1200,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "aa6a9550-94a3-4d4c-92b3-e24101741276",
+              "id": "328b9dcf-3897-40cb-b935-058f5a7f0097",
               "name": "API Key not found",
               "originalRequest": {
                 "url": {
@@ -1233,7 +1233,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "71881adb-072d-43ef-8470-c1458d2a80ed",
+              "id": "e42a154d-09d0-4f72-a834-7dc9ad44ed51",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1272,11 +1272,11 @@
       "event": []
     },
     {
-      "id": "3c139291-ec77-4dbe-8f82-175ddd08e7b4",
+      "id": "aaa77222-08fb-4dd2-aec5-aa7cb0f4c443",
       "name": "application",
       "item": [
         {
-          "id": "66141ea9-39f3-4692-9436-8719f54b1e0e",
+          "id": "990e58aa-af1c-4abe-b092-a1959632c96c",
           "name": "All Applications",
           "request": {
             "name": "All Applications",
@@ -1299,7 +1299,7 @@
           },
           "response": [
             {
-              "id": "d06d5db2-ea2a-4a26-bd23-3f15990ae542",
+              "id": "50789ed0-9034-47ce-9ed4-36c18d41fd2a",
               "name": "A list of Applications",
               "originalRequest": {
                 "url": {
@@ -1328,7 +1328,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "c73b92da-8e22-4c42-8842-a5c6ffd96320",
+              "id": "b1bd8400-1a64-417a-ad84-49670f2b195f",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1357,7 +1357,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "f18cc0d2-f6a7-456d-b5e4-9d1118f35f57",
+              "id": "596c3092-45cf-409b-afad-43ccfd999386",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1386,7 +1386,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d0fe20c6-5b98-4a5d-aae2-254cb058cc76",
+              "id": "cadd3930-ebbc-4bea-b61b-db986ad8dc56",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1418,7 +1418,7 @@
           "event": []
         },
         {
-          "id": "d6c78116-e472-44b2-8277-234847f149dc",
+          "id": "9eee3aa1-c7eb-49f4-b117-679d5c201510",
           "name": "Create application",
           "request": {
             "name": "Create application",
@@ -1451,7 +1451,7 @@
           },
           "response": [
             {
-              "id": "5a43e51c-4c53-4039-a985-f0f36f72cddc",
+              "id": "84f4c55c-2f17-46f8-94db-f6db5a7f4eea",
               "name": "Returns the created application",
               "originalRequest": {
                 "url": {
@@ -1483,7 +1483,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "df28b612-ff41-4355-8e04-cc78f26e52cf",
+              "id": "9afb80c1-4894-4005-88b5-a47e699d139c",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -1515,7 +1515,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "72924963-cee3-4815-8cf5-e9fec0968eb6",
+              "id": "c2679f19-a493-47b1-ba49-7e6d3a5e6061",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1547,7 +1547,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "b7cfdf20-a842-42e0-9a45-5e21977c41e3",
+              "id": "8dbf9814-4acf-4580-9f9e-eabda0f88057",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1579,7 +1579,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "efc97ab3-d5c8-42d6-9768-9402cf31b7aa",
+              "id": "8b06aca1-180d-440f-9fb9-caf3b7f1bed5",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1614,7 +1614,7 @@
           "event": []
         },
         {
-          "id": "38106c94-a71e-4bcc-ba41-9b71763e1ee7",
+          "id": "b5d9acb7-f571-4cfb-b1d8-4ec0a714e75a",
           "name": "Update application",
           "request": {
             "name": "Update application",
@@ -1647,7 +1647,7 @@
           },
           "response": [
             {
-              "id": "ec70391c-6f08-4b84-9225-6ed6a99beca8",
+              "id": "f7ab8314-c17b-4b83-ad58-b080a97d9364",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -1678,7 +1678,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b24afa63-cb96-4d94-b43b-50a7bf508124",
+              "id": "519b1e2d-3e49-4bac-82ce-6b31e82e0950",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -1710,7 +1710,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "5cadff26-6634-4e01-a250-8c8ad55f0e08",
+              "id": "85adcc92-5f6e-4f07-97ed-8c37ab968699",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1742,7 +1742,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a380af09-6b5e-4037-a37b-9d483a8e8693",
+              "id": "cf8ebf8d-c802-45c0-8bb4-5f8561907aa2",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1774,7 +1774,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "390f9455-f4a9-4ced-a422-d08ca4dbfee4",
+              "id": "4a1890c7-2b4a-4c1d-bd98-3f9062802e03",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1809,7 +1809,7 @@
           "event": []
         },
         {
-          "id": "4770804d-3e6d-4bec-a553-d754c9893025",
+          "id": "a1d03723-4d91-4016-9f3d-a1329ac184ec",
           "name": "Delete application",
           "request": {
             "name": "Delete application",
@@ -1840,7 +1840,7 @@
           },
           "response": [
             {
-              "id": "122e51e0-4996-4fde-aa11-70d6d786a583",
+              "id": "fa433807-210c-4506-9634-3750ddc0239d",
               "name": "Application is deleted",
               "originalRequest": {
                 "url": {
@@ -1875,7 +1875,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a8eed6b1-f97a-4db0-b3f0-91ce20010db2",
+              "id": "9c841a7e-d30d-48a7-8207-5356639b84a9",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -1910,7 +1910,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "0daaa8a2-abaa-4535-989e-f744abc2dfbe",
+              "id": "5ff10d5e-5c0c-4528-bef8-e2ef7a3e6704",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1945,7 +1945,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5a89aa88-c309-4b62-a564-225ea7e0d434",
+              "id": "15f79b1a-8e1d-4171-881c-c00dcaeaf8e3",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1980,7 +1980,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "664e92ee-b453-4cd4-9508-ca4b3153dab8",
+              "id": "ef15897c-2873-4b1b-b5c0-b01ae08a7725",
               "name": "Not Found",
               "originalRequest": {
                 "url": {
@@ -2015,7 +2015,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "a9072188-cd9e-4f3a-8e8b-b2a76f32a6df",
+              "id": "0bd4150b-be53-4176-b21a-f3f1c5854423",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -2056,11 +2056,11 @@
       "event": []
     },
     {
-      "id": "f1fdfdad-56e0-48de-b4c0-ff4ca67f47ca",
+      "id": "a77ee6b8-f2ee-461f-9cfe-20d2a514da1c",
       "name": "group",
       "item": [
         {
-          "id": "9e7cdf07-6113-4c65-843c-b1bb2898e270",
+          "id": "1b43978e-602d-4e35-b1bd-101a4f89bc48",
           "name": "All groups",
           "request": {
             "name": "All groups",
@@ -2083,7 +2083,7 @@
           },
           "response": [
             {
-              "id": "5f012ea8-0aaf-4134-a91b-16a93ce7612c",
+              "id": "52cdb67b-48e6-457d-baf4-416c0c0f178c",
               "name": "A list of groups",
               "originalRequest": {
                 "url": {
@@ -2112,7 +2112,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "40f343ca-8638-4884-b06f-b347c8680f2d",
+              "id": "7a691e39-4256-41a9-9f20-429cd35c9b29",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -2141,7 +2141,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "e9b74629-459c-4540-b310-0f32c51343b7",
+              "id": "e736e724-f788-444d-94da-2ec213c5972a",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -2170,7 +2170,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "0f4e1e29-d24a-4212-ad76-dbaff8d72a63",
+              "id": "0c0f1e47-10ba-4e39-8278-e0e0979abd8f",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -2202,7 +2202,7 @@
           "event": []
         },
         {
-          "id": "9f0892bf-a962-479e-b9d7-1b5c68027a7d",
+          "id": "b4024218-7326-4cb4-b4ea-2cdbd6e6d90c",
           "name": "Create group",
           "request": {
             "name": "Create group",
@@ -2235,7 +2235,7 @@
           },
           "response": [
             {
-              "id": "d8687ad3-295b-4d71-a77a-e03ce42f63b0",
+              "id": "16918ff6-7292-46f8-86d3-ea26fa8d399a",
               "name": "Returns the created group",
               "originalRequest": {
                 "url": {
@@ -2267,7 +2267,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "d5fb8028-6c62-425f-ba5f-71a53f79dc4f",
+              "id": "3083fca9-8261-4ce2-8f3b-4dcc771aceaf",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -2299,7 +2299,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "5c3146f4-4e25-4118-8d08-3d0d28e8b19f",
+              "id": "28b1465f-218c-4850-81b3-7fb8c6ae71e7",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -2331,7 +2331,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "010a2db6-adf7-4fcc-b773-5e21194754cc",
+              "id": "48040417-317a-49c7-bb9b-77d5adc1dba0",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -2363,7 +2363,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "8381dd3a-88df-4f14-a861-f7879c3cc351",
+              "id": "343b5071-9f60-458b-8b1f-ced962a0def4",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -2398,7 +2398,7 @@
           "event": []
         },
         {
-          "id": "22985d20-b128-4737-84a2-5f94c27c4cb7",
+          "id": "eb110f55-f858-4f38-91fb-76a5a0fba7b5",
           "name": "Update group",
           "request": {
             "name": "Update group",
@@ -2431,7 +2431,7 @@
           },
           "response": [
             {
-              "id": "9ed0df3b-192e-438c-baf3-ea6dc0ab6f0a",
+              "id": "b850d1c3-059f-41a1-8aa3-2f9d3c648b2c",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -2462,7 +2462,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "76685d45-4606-403d-9fb2-9a547e3b268e",
+              "id": "b214d1c1-7f50-4385-9cdb-284d35daee26",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -2494,7 +2494,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "605d28db-4550-4541-b91b-d96792bd5dc5",
+              "id": "5d49abad-1b8d-4dca-bc08-29e3bca95895",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -2526,7 +2526,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "09193c71-c34a-4be1-8b43-fe71afbb8c73",
+              "id": "ea56f083-c350-4d36-a790-1a9da580b17a",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -2558,7 +2558,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "125bb4e4-7906-412b-8d79-2686db0817ff",
+              "id": "89043b46-866b-40c4-9b12-359c1da81433",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -2593,7 +2593,7 @@
           "event": []
         },
         {
-          "id": "1a6f53ed-de64-4354-a7b7-65140db5c73b",
+          "id": "c8d0cd39-b521-412a-a204-b285ad41e918",
           "name": "Delete group",
           "request": {
             "name": "Delete group",
@@ -2624,7 +2624,7 @@
           },
           "response": [
             {
-              "id": "d48a084c-9c31-4808-9c64-021676c2adbb",
+              "id": "736c855b-4cff-479d-8446-57e9db47d3e4",
               "name": "Group is deleted",
               "originalRequest": {
                 "url": {
@@ -2659,7 +2659,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "7f0dec52-72cd-4331-91f1-c4fcf5a77950",
+              "id": "deda6fd8-fe7e-4077-ad45-e44f8eaa0e85",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -2694,7 +2694,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "ded5bf60-c0a2-4978-8cba-cd95f1bdc6b8",
+              "id": "5eaa1424-b5fd-427f-a06e-b2d49d8177f6",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -2729,7 +2729,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4ede9c8f-6d3b-4cf0-9c08-afb90e2e2fcd",
+              "id": "b25f1b84-c86e-4a72-a7a5-86825763372e",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -2764,7 +2764,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "16c41013-9b50-4870-88fe-e1b026edc06d",
+              "id": "a6515925-856a-4662-8ca9-e02cd7763ca2",
               "name": "Not Found",
               "originalRequest": {
                 "url": {
@@ -2799,7 +2799,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "fef2b192-aeb4-4cc8-96df-1e0ba629b2dd",
+              "id": "b9be9a2f-10b6-4095-9807-99baee05ed14",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -2840,11 +2840,11 @@
       "event": []
     },
     {
-      "id": "461ca3b1-89e5-4fd6-b115-6d41e53e2c05",
+      "id": "cd0ae3ed-e71c-45be-a94d-f40db5b09845",
       "name": "organisation",
       "item": [
         {
-          "id": "efe2eef9-04c1-420e-81a4-1ec5c84f7c1e",
+          "id": "3c2ad9f9-4f0a-4330-9b24-1985891019d7",
           "name": "Create new organisation",
           "request": {
             "name": "Create new organisation",
@@ -2877,7 +2877,7 @@
           },
           "response": [
             {
-              "id": "46f534d2-1f71-472e-8740-aecb2fe97141",
+              "id": "e1352634-da93-4933-95d8-f995de04abd7",
               "name": "Returns the organisation",
               "originalRequest": {
                 "url": {
@@ -2909,7 +2909,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "39c79596-da7e-4cb9-81d4-2160b725d669",
+              "id": "1bdd2066-fbd3-420c-89f5-dee319099971",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -2941,7 +2941,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "9420fb02-be11-4fde-9cf3-9b6e60bcdd6d",
+              "id": "1c395032-fbb7-4a34-ad5c-c4c57cb229ed",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -2973,7 +2973,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "36902b23-b84a-44f9-8ef9-401a0614cf5c",
+              "id": "a5543f7f-f715-4353-8947-fa9f1245aff3",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3005,7 +3005,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d5e19c9d-7556-44b1-a2e3-af0d3d6fd4e3",
+              "id": "3ca7edf8-3730-4f1f-9bae-c2934e626ab5",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3040,7 +3040,7 @@
           "event": []
         },
         {
-          "id": "2e9aff13-0292-45d7-9942-ff5ad5f8b947",
+          "id": "8be40807-3771-42eb-bb72-28d09c8edcdc",
           "name": "Update an organisation",
           "request": {
             "name": "Update an organisation",
@@ -3073,7 +3073,7 @@
           },
           "response": [
             {
-              "id": "fcf5deff-d442-4c9c-accc-0b6ae2a48d95",
+              "id": "0d8a97ad-736f-4ad0-80e2-4a12877c8027",
               "name": "Update is correct",
               "originalRequest": {
                 "url": {
@@ -3105,7 +3105,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5105f4c4-2fd9-47e6-b530-b0305190e105",
+              "id": "495769a4-ef38-4b1e-9bde-77670659d57b",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -3137,7 +3137,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "6abd9e1d-c91c-4e42-afbd-3847fcf43d9f",
+              "id": "bcb1023d-bd0c-4821-a796-ea74d7eb82a5",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3169,7 +3169,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "63f58028-95e8-441f-a8f4-c826222fca07",
+              "id": "81195c41-f715-4f54-98e9-01a86514a6ec",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3201,7 +3201,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "755334cd-5510-4f3e-a7cf-30597a338ec9",
+              "id": "5161a9dc-b1be-4800-81c4-6b92d268195c",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3236,7 +3236,7 @@
           "event": []
         },
         {
-          "id": "5d1a76af-3c77-4c3a-aabc-a5e527f7a20e",
+          "id": "6e8c0744-6700-4e06-987d-2a43e0a7822d",
           "name": "All Organisations",
           "request": {
             "name": "All Organisations",
@@ -3259,7 +3259,7 @@
           },
           "response": [
             {
-              "id": "5231cec7-5726-4282-9d33-b3aee0bd1d82",
+              "id": "c2cb4042-be1d-4d79-9857-f1c6d3aff030",
               "name": "A list of Organisations",
               "originalRequest": {
                 "url": {
@@ -3288,7 +3288,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "30bc39fe-637b-43fe-bec6-8a0fb5269730",
+              "id": "3167495d-5caf-42de-946c-24ba37a1da0d",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3317,7 +3317,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6e0ace66-b132-4518-b0cd-a098975f71f5",
+              "id": "2892a7aa-b742-4d51-b6ce-0960a54dda70",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3346,7 +3346,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "f9152b7a-7eb0-4213-b173-a1b054a832fd",
+              "id": "767edb0e-4a1e-468e-b562-42409aced8b4",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3378,7 +3378,7 @@
           "event": []
         },
         {
-          "id": "2a99ed77-3d76-409f-82df-a651e63b16ce",
+          "id": "f574d530-dc04-4acd-968a-aea33ff207aa",
           "name": "Removes an organisation",
           "request": {
             "name": "Removes an organisation",
@@ -3409,7 +3409,7 @@
           },
           "response": [
             {
-              "id": "f7b90b7b-ddd5-436b-924d-41b83f47582b",
+              "id": "5be01988-d3c8-4840-8499-277445164e88",
               "name": "organisation is deleted",
               "originalRequest": {
                 "url": {
@@ -3444,7 +3444,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1ff7f116-3156-4a71-af90-b78d76f60a15",
+              "id": "38fd5f6f-0db7-470e-b994-0f44c33a3746",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -3479,7 +3479,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "282d9e9a-8bec-421d-9df9-ec791fbd7967",
+              "id": "7350ead0-3628-485f-91a4-cc26c2527773",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3514,7 +3514,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "761e8866-494c-4b3d-a247-306e409b0419",
+              "id": "ba672cd4-37cd-4fac-a340-19e0bda12a5e",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3549,7 +3549,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4b835087-c9bc-43d3-a018-fd580f2bd166",
+              "id": "a159868f-51d8-4921-9200-66b94538c389",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3590,11 +3590,11 @@
       "event": []
     },
     {
-      "id": "54c4f7df-385d-4df3-a602-cfb12f8bd17d",
+      "id": "774c2432-4d0f-459e-bfa6-229192c845e8",
       "name": "permission",
       "item": [
         {
-          "id": "dcf9c08d-fc70-4efd-966a-dd4d53485616",
+          "id": "ccaad800-4a1c-4726-95f2-2cec87d8df23",
           "name": "All Permissions",
           "request": {
             "name": "All Permissions",
@@ -3617,7 +3617,7 @@
           },
           "response": [
             {
-              "id": "1aaf39ba-9bdd-4c55-b41d-7c28fb9f08b2",
+              "id": "308f4028-914f-48a9-8016-e39457a7b217",
               "name": "A list of Permissions",
               "originalRequest": {
                 "url": {
@@ -3646,7 +3646,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "7326aded-6c7c-4a6b-bb8b-fa4000dfc35d",
+              "id": "5d098173-9f66-4c31-9493-12203b129817",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3675,7 +3675,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a32b9999-56d9-4e9d-94f8-c7ad6dc186b0",
+              "id": "391583e7-707c-4612-8e6a-d05ed5f32c34",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3704,7 +3704,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "30832c90-0883-48b9-bcc8-1fa578733402",
+              "id": "3f2cee42-f40c-460c-83cf-1d4320371ff2",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3736,7 +3736,7 @@
           "event": []
         },
         {
-          "id": "a4d89737-ae74-42a4-8193-8a9518c6c21f",
+          "id": "fc8824ba-f56a-48f5-85f0-370c05a86351",
           "name": "Create permission",
           "request": {
             "name": "Create permission",
@@ -3769,7 +3769,7 @@
           },
           "response": [
             {
-              "id": "8b2f8e2e-4026-42fd-984c-0ecbbffbc8a6",
+              "id": "3acdaf08-17af-4eb0-b089-53a12d5f55dc",
               "name": "Returns the created permission",
               "originalRequest": {
                 "url": {
@@ -3801,7 +3801,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "3cae1bc0-e194-4124-96a6-3916e7282439",
+              "id": "03a6a524-b1d7-4ada-afcd-e7898d0121cc",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -3833,7 +3833,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "84a27f1f-0424-41dc-ba4c-f521a023622c",
+              "id": "fce96952-c25b-4c4c-93bd-63e88baea8ef",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3865,7 +3865,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "9e937969-c908-4df3-8ea8-e769057a483f",
+              "id": "85ae4e13-da02-4cf4-831c-2a82e81f2d0b",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3897,7 +3897,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "f4b0c471-61af-4f0b-8976-aaf73fb5c4ae",
+              "id": "d18785b7-4402-4c2e-9045-97b27da84982",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3932,7 +3932,7 @@
           "event": []
         },
         {
-          "id": "c906885d-feee-4391-8fc3-bb11a28a9e80",
+          "id": "d177b25f-acfe-428f-bca5-1bb9bd7a592b",
           "name": "Update permission",
           "request": {
             "name": "Update permission",
@@ -3965,7 +3965,7 @@
           },
           "response": [
             {
-              "id": "e6826bff-161d-4d04-a295-33c89d697ab9",
+              "id": "20aa8a6d-65ec-415b-93b2-be45e1d4e8e1",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -3996,7 +3996,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "a5131461-5184-4406-8a33-93f0e5ecbc1b",
+              "id": "0fcc2942-e044-4ed3-927f-5fcec64d65bc",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -4028,7 +4028,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "9a83f112-a56f-414e-aefd-8cf5f4adb0de",
+              "id": "16088acf-102f-423d-a6ab-f4e7de1885c4",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -4060,7 +4060,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1feaf9aa-3f1b-437a-9c83-74b48ce2b9b3",
+              "id": "b3c7b5d1-57ba-4d0a-8c86-43ed715d360f",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -4092,7 +4092,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d4a2bd22-5de9-4fb3-99f0-8ff630fad262",
+              "id": "e5e26d99-2522-4593-ad0c-a969fd1fcda2",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -4127,7 +4127,7 @@
           "event": []
         },
         {
-          "id": "593893ca-4e18-4e9f-9220-e53dc28fac06",
+          "id": "2f06acbb-56d2-4fdb-ad86-98f7bb327f37",
           "name": "Delete permission",
           "request": {
             "name": "Delete permission",
@@ -4158,7 +4158,7 @@
           },
           "response": [
             {
-              "id": "cca4c402-678a-442c-99c8-c82fd8b88a7f",
+              "id": "eb4b1520-8006-4603-8374-ec1663d2d768",
               "name": "Permission is deleted",
               "originalRequest": {
                 "url": {
@@ -4193,7 +4193,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "78018ee6-51a8-499f-9777-e2a29ffa1469",
+              "id": "24632252-01fb-421b-8bcb-a8beab0f0b2b",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -4228,7 +4228,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "cd88e4c6-7251-44c3-85eb-c6184cde2140",
+              "id": "2604e845-6aef-4861-ad3b-d2c17f220224",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -4263,7 +4263,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4fc13306-97d7-4bd9-80b0-b36dfa26c77e",
+              "id": "d3d5c306-419b-4667-8e89-e905155c5656",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -4298,7 +4298,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1f71ffa0-1dbd-4044-a6bd-f7c9b93e0cc5",
+              "id": "3512adf8-6cdb-47df-ac62-e5a70d893906",
               "name": "Not Found",
               "originalRequest": {
                 "url": {
@@ -4333,7 +4333,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "d96804a3-2b46-42bd-a937-2abe8356f51b",
+              "id": "c7485583-a951-40c0-a460-da1109845ea6",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -4371,7 +4371,7 @@
           "event": []
         },
         {
-          "id": "e19367c5-0ea4-4934-9b4f-3e7c21ebf607",
+          "id": "924b71aa-b439-42f9-b1d7-35cb13308d1e",
           "name": "Takes a token without permissions and embeds the permissions in the returned token",
           "request": {
             "name": "Takes a token without permissions and embeds the permissions in the returned token",
@@ -4395,7 +4395,7 @@
           },
           "response": [
             {
-              "id": "6df7e6ca-2661-43c9-9194-df072f831ea8",
+              "id": "baa4237f-8f4d-4147-9308-b9556a9f1653",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -4425,7 +4425,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "2e6ae30d-d5f7-480d-b4e1-dd9806873293",
+              "id": "cd0d3439-edf9-4aa6-8aee-53141780de94",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -4455,7 +4455,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "f32ae253-02e9-4aee-ab8c-9be26e73cb2f",
+              "id": "567d9ac4-ebf7-4850-9d69-184e3e842c33",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -4485,7 +4485,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d992846e-03a8-43b3-80c7-3d3f7f2969a7",
+              "id": "5fdb64ac-d848-4e66-8327-ed1516f3c93e",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -4515,7 +4515,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "f19e9e6f-fea7-4e36-9899-d3742ef19b20",
+              "id": "0643a900-12d3-4b7f-9e7f-b3dc35584197",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -4551,11 +4551,11 @@
       "event": []
     },
     {
-      "id": "2d394d57-0bf8-45bb-8b77-546154c2aadf",
+      "id": "6d416629-b79d-497a-93f7-7a069f06f738",
       "name": "resource Type",
       "item": [
         {
-          "id": "5a2f3f20-3a5c-4ee8-9799-84e49502d74d",
+          "id": "d6c7d0ea-c526-49f0-ad14-d33181436d60",
           "name": "All resource types",
           "request": {
             "name": "All resource types",
@@ -4578,7 +4578,7 @@
           },
           "response": [
             {
-              "id": "e40d5b37-55de-4aa9-8408-4b5e71535dfd",
+              "id": "031b140c-7138-414d-bf05-7bb905bc0b90",
               "name": "A list of resource types",
               "originalRequest": {
                 "url": {
@@ -4607,7 +4607,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "e1ec8a66-0d50-4bd5-8656-6e060ec106b7",
+              "id": "c11d106c-bb87-43ea-834d-37712e5b6051",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -4636,7 +4636,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1d835fd2-a4cc-430b-9584-ec47f8a2a34f",
+              "id": "f12707bf-c348-4bf5-9eca-b8d9a9fb7332",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -4665,7 +4665,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "407fb4ad-f6a7-4292-9ef8-861d60d55ade",
+              "id": "9c8e685f-4ddb-4a28-a77a-1b39ad0c85e8",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -4697,7 +4697,7 @@
           "event": []
         },
         {
-          "id": "6191a98d-bb07-4d9b-a69d-6aab19c49ad0",
+          "id": "530e123b-0d58-4ebf-98db-35d508ea252b",
           "name": "Create resource type",
           "request": {
             "name": "Create resource type",
@@ -4730,7 +4730,7 @@
           },
           "response": [
             {
-              "id": "ea0a1a2c-1b66-49c9-adbb-f2211f234640",
+              "id": "eea166eb-50e5-4e77-92e6-1aca8f521450",
               "name": "Returns the created resource type",
               "originalRequest": {
                 "url": {
@@ -4762,7 +4762,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "9b2b70f5-aaaf-435f-8b31-8c38f241e641",
+              "id": "ed1eaf03-3165-452c-afea-8cd45a7fc99b",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -4794,7 +4794,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "4230e40c-6f64-4233-bcff-d932bf8e65f1",
+              "id": "38c7cc10-550f-4a56-94ce-8ea7d22c9481",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -4826,7 +4826,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "01145067-ff4a-49e0-b7e6-3ad10a3d34d7",
+              "id": "0a0195f5-abff-4af1-98bb-0adbc11dff15",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -4858,7 +4858,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "8213c1ec-9f62-44aa-9f5a-633a97baa78c",
+              "id": "076c477b-9740-4383-b7df-24115a2c667b",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -4893,7 +4893,7 @@
           "event": []
         },
         {
-          "id": "f9812272-6237-45f0-b2e0-c4b700b15b4e",
+          "id": "5e7a2dd3-db79-493d-8ff1-5946a94d59d9",
           "name": "Update resource type",
           "request": {
             "name": "Update resource type",
@@ -4926,7 +4926,7 @@
           },
           "response": [
             {
-              "id": "33d3a735-83c3-4544-bbf0-b0f471db01ee",
+              "id": "fcf98fe2-cd58-4112-b8d7-eef2dfaa2019",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -4957,7 +4957,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "3a2449f8-4958-4972-802b-fb5aec460424",
+              "id": "84c5b295-f65c-443f-a9b2-7bc801d3f5e9",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -4989,7 +4989,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "52bf0d1f-aa03-42c2-b393-4cf4ace7e98f",
+              "id": "62499b82-761e-48dc-8f97-f2ee31001166",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -5021,7 +5021,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "edf4f03e-fea6-45fe-bd99-695dae8a01f0",
+              "id": "0fd953b2-9f61-4d7a-ab2e-f06c2fa90290",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -5053,7 +5053,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a9f7a958-e3e3-4432-8cd4-ebf385145e49",
+              "id": "4458ecb1-05c2-4e43-aba0-e29ac53fa4ef",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -5088,7 +5088,7 @@
           "event": []
         },
         {
-          "id": "31d9bcc9-9ddd-4eec-94d3-baef9698859e",
+          "id": "fd0f0138-b500-4f9c-aeb0-668800cce604",
           "name": "Delete resourcetype",
           "request": {
             "name": "Delete resourcetype",
@@ -5119,7 +5119,7 @@
           },
           "response": [
             {
-              "id": "b0994379-0da8-403b-8d9c-24f9425675c9",
+              "id": "59e7b930-f705-4310-b3b8-a373435bb3be",
               "name": "Resource type is deleted",
               "originalRequest": {
                 "url": {
@@ -5154,7 +5154,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "300995a8-1fe5-4c5b-bca7-c88afb582be1",
+              "id": "51aa11c6-e64d-4334-8a29-77742b227420",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -5189,7 +5189,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "795373c7-9809-4cc9-b33e-e292707d93d3",
+              "id": "f103c762-0cca-4aa5-9209-12ddb4c8499e",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -5224,7 +5224,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "ab364023-d644-4ae7-855c-74fe38c04f13",
+              "id": "1446bf1f-d21a-4a87-9502-3b3ac31660ac",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -5259,7 +5259,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "9126255a-a942-43bd-ba99-b50be68afc52",
+              "id": "bbe46838-9f87-4381-b424-0d3866fd1ddd",
               "name": "Not Found",
               "originalRequest": {
                 "url": {
@@ -5294,7 +5294,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "ad9da04b-6679-49ba-8dd0-ec1cac802155",
+              "id": "675b0aea-6dd3-4bc3-b688-45d599d56a91",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -5335,11 +5335,11 @@
       "event": []
     },
     {
-      "id": "ab26a39d-e7b9-4a81-a2ea-642d8e988bda",
+      "id": "f3e9bf73-ea2f-4f31-bff0-16c7223a53cd",
       "name": "role",
       "item": [
         {
-          "id": "7b8b26b2-c67f-43ab-a5de-c37d467f9894",
+          "id": "be293d31-f795-42e4-8db4-2a2870059679",
           "name": "All roles",
           "request": {
             "name": "All roles",
@@ -5362,7 +5362,7 @@
           },
           "response": [
             {
-              "id": "113f9193-173b-4bf5-aeb0-f3443b0d0f0c",
+              "id": "8ed3e997-2351-4b1c-b0e6-cac33a8fbe1c",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -5391,7 +5391,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "1badc6c0-7bca-4b12-adab-88a1f92091c3",
+              "id": "efac3fcb-ec57-40d5-a1c5-615386c869c2",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -5420,7 +5420,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "0766eea8-32f1-4b2d-8518-71b80609a1f5",
+              "id": "20cf46b0-5da3-4c0c-b38f-754f4017750a",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -5449,7 +5449,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "9b43d857-491d-47e5-9d7e-87454799a9e6",
+              "id": "3f40ad3d-b950-4661-9477-381916b31bdc",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -5481,7 +5481,7 @@
           "event": []
         },
         {
-          "id": "4c10d127-19a5-48bc-b0a5-ad98ef64766b",
+          "id": "703e0105-e760-4ecb-82ca-fa6139ed1c62",
           "name": "Create role",
           "request": {
             "name": "Create role",
@@ -5514,7 +5514,7 @@
           },
           "response": [
             {
-              "id": "a48ca09d-fc5e-4d9b-a01b-01fa8197d1fe",
+              "id": "6a05242b-ff56-4f58-bda5-b9d6cc0c11c1",
               "name": "Returns the created role",
               "originalRequest": {
                 "url": {
@@ -5546,7 +5546,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "c5e26474-e614-452f-a979-051628c67828",
+              "id": "31db84f6-3be4-4b1a-be9f-7810f22e07a0",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -5578,7 +5578,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "40fb4f1b-b848-49fd-8c60-cd6063ff8326",
+              "id": "08c52468-60f3-492e-b0a8-2bec12c34564",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -5610,7 +5610,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "da3415a1-8d2f-4ba8-a5f4-23fc54db1737",
+              "id": "1ae804ae-4fde-4b75-bf5a-98fdf596f60c",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -5642,7 +5642,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "65259095-1040-44c1-b0d5-829d551339c3",
+              "id": "4079238c-fc35-4eb8-a083-c9b2940d312a",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -5677,7 +5677,7 @@
           "event": []
         },
         {
-          "id": "e494d227-1442-40df-b0ab-d0face80cd12",
+          "id": "ab251d48-4203-40c6-b0ed-3dae2b701f8c",
           "name": "Update role",
           "request": {
             "name": "Update role",
@@ -5710,7 +5710,7 @@
           },
           "response": [
             {
-              "id": "b8fa37af-1e4f-474d-9a4b-f8c19b9c23dd",
+              "id": "3a0c45a4-6e17-4161-bd76-defe0fe505f3",
               "originalRequest": {
                 "url": {
                   "path": [
@@ -5741,7 +5741,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "91fac7f8-8cb5-474e-8708-ee4d0966880d",
+              "id": "9799f985-47e4-458e-8e48-0c10da8d8669",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -5773,7 +5773,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "198e7321-e86c-43a7-8136-16166967444c",
+              "id": "4f2f7aa0-2183-4509-a811-d84c2c469481",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -5805,7 +5805,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "e1996a37-e4d3-4462-9f84-2f7d69a22c3e",
+              "id": "476a148d-1520-4304-bc23-d8eac7dc778d",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -5837,7 +5837,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4b74b721-5a40-4656-81ff-eb53d6d4e885",
+              "id": "ea19580a-01aa-4583-b335-4e9803805ea2",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -5872,7 +5872,7 @@
           "event": []
         },
         {
-          "id": "4120bb5d-b9fa-494c-8b50-d157caf8afdc",
+          "id": "870c3223-df75-4999-bad5-5bc2ebd1acc7",
           "name": "Delete role",
           "request": {
             "name": "Delete role",
@@ -5903,7 +5903,7 @@
           },
           "response": [
             {
-              "id": "46afe7b7-3a65-4dd1-8999-46f6ab98fb3c",
+              "id": "f129ec67-514f-4fd4-83b9-7effbde45021",
               "name": "Role is deleted",
               "originalRequest": {
                 "url": {
@@ -5938,7 +5938,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "9140dd78-51bd-4c6c-b31a-ef7af2bf0f3f",
+              "id": "6058d8aa-bba1-4e31-9c24-9d7e5ad278ac",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -5973,7 +5973,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "56f5a0e3-f54f-42d9-a6d7-63f2782a8571",
+              "id": "27587627-c4a1-4d81-85bf-c8ff8a5930a8",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -6008,7 +6008,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "348486cc-e743-4499-b233-b54d14c06768",
+              "id": "4f4bbb28-e42f-4db4-9c5f-20ad2ac476a5",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -6043,7 +6043,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "ad1bb26d-e140-42fc-9d2d-7694d57faeb2",
+              "id": "99b85b98-cffe-4a34-b285-dacf45d9d5ab",
               "name": "Not Found",
               "originalRequest": {
                 "url": {
@@ -6078,7 +6078,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "edd8f8a1-7213-41cc-af8a-c045738428c7",
+              "id": "d8683b28-c837-4a37-9620-840f366915e6",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -6119,11 +6119,11 @@
       "event": []
     },
     {
-      "id": "8fb3451e-7b94-44ff-8da8-d2073eed4f2c",
+      "id": "4b888354-54f1-4639-bbab-e40d31c0c739",
       "name": "user",
       "item": [
         {
-          "id": "84877ee5-85f3-4899-9fa0-ee7f6f6b95df",
+          "id": "e7269b2a-2c8c-41b2-ae10-7bb8201018cc",
           "name": "Create new user",
           "request": {
             "name": "Create new user",
@@ -6151,12 +6151,12 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"redirect\": \"<string>\",\n    \"user\": {\n        \"email\": \"<email>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"organisation\": \"<string>\",\n        \"managedGroups\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"id\": \"<string>\",\n        \"permissions\": [\n            {\n                \"permissionId\": \"<string>\",\n                \"resourceTypeId\": \"<string>\",\n                \"resourceId\": \"<string>\"\n            },\n            {\n                \"permissionId\": \"<string>\",\n                \"resourceTypeId\": \"<string>\",\n                \"resourceId\": \"<string>\"\n            }\n        ],\n        \"groups\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"blocked\": \"<boolean>\",\n        \"picture\": \"<string>\",\n        \"lastLogin\": \"<dateTime>\",\n        \"roles\": [\n            {\n                \"roleId\": \"<string>\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    },\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"roleId\": \"<string>\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    },\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"isAuth0User\": \"<boolean>\"\n    }\n}"
+              "raw": "{\n    \"redirect\": \"<string>\",\n    \"user\": {\n        \"email\": \"<email>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"organisation\": \"<string>\",\n        \"id\": \"<string>\",\n        \"appyUserId\": \"<string>\",\n        \"groups\": [\n            \"<string>\",\n            \"<string>\"\n        ],\n        \"roles\": [\n            {\n                \"roleId\": \"<string>\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    },\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"roleId\": \"<string>\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    },\n                    {\n                        \"resourceTypeId\": \"<string>\",\n                        \"resourceIds\": [\n                            \"<string>\",\n                            \"<string>\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"<string>\",\n                \"resourceTypeId\": \"<string>\",\n                \"resourceId\": \"<string>\"\n            },\n            {\n                \"permissionId\": \"<string>\",\n                \"resourceTypeId\": \"<string>\",\n                \"resourceId\": \"<string>\"\n            }\n        ],\n        \"picture\": \"<string>\",\n        \"lastLogin\": \"<dateTime>\",\n        \"isAuth0User\": \"<boolean>\",\n        \"blocked\": \"<boolean>\",\n        \"managedGroups\": [\n            \"<string>\",\n            \"<string>\"\n        ]\n    }\n}"
             }
           },
           "response": [
             {
-              "id": "65874bfb-5f04-4bf0-b87b-8532c986a4ca",
+              "id": "cf769fde-27d9-4c23-a605-532fd31f54e4",
               "name": "Returns the user and the password reset link",
               "originalRequest": {
                 "url": {
@@ -6172,7 +6172,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"firstName\": \"string\",\n        \"email\": \"string\",\n        \"lastName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"blocked\": true,\n        \"id\": \"string\",\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ]\n    }\n}"
+                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastName\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"blocked\": true,\n        \"appyUserId\": \"string\",\n        \"id\": \"string\",\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
                 }
               },
               "status": "OK",
@@ -6183,12 +6183,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"user\": {\n  \"firstName\": \"string\",\n  \"email\": \"string\",\n  \"lastName\": \"string\",\n  \"organisation\": \"string\",\n  \"lastLogin\": \"string\",\n  \"picture\": \"string\",\n  \"isAuth0User\": true,\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ],\n  \"blocked\": true,\n  \"id\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"groups\": [\n   \"string\"\n  ],\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ]\n },\n \"passwordResetLink\": \"string\"\n}",
+              "body": "{\n \"user\": {\n  \"email\": \"string\",\n  \"firstName\": \"string\",\n  \"organisation\": \"string\",\n  \"lastName\": \"string\",\n  \"lastLogin\": \"string\",\n  \"picture\": \"string\",\n  \"isAuth0User\": true,\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"blocked\": true,\n  \"appyUserId\": \"string\",\n  \"id\": \"string\",\n  \"groups\": [\n   \"string\"\n  ],\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n },\n \"passwordResetLink\": \"string\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "0c290c0d-2e1a-45be-aa34-b4dc15faa525",
+              "id": "2dfbfab2-aa38-42b6-803a-9db27da5830b",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -6204,7 +6204,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"firstName\": \"string\",\n        \"email\": \"string\",\n        \"lastName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"blocked\": true,\n        \"id\": \"string\",\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ]\n    }\n}"
+                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastName\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"blocked\": true,\n        \"appyUserId\": \"string\",\n        \"id\": \"string\",\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
                 }
               },
               "status": "Bad Request",
@@ -6220,7 +6220,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "cdca8b92-abbe-41e4-9ced-15adbff1bba2",
+              "id": "132fcd5a-a4ae-4ef5-a50f-91ce7adec24b",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -6236,7 +6236,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"firstName\": \"string\",\n        \"email\": \"string\",\n        \"lastName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"blocked\": true,\n        \"id\": \"string\",\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ]\n    }\n}"
+                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastName\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"blocked\": true,\n        \"appyUserId\": \"string\",\n        \"id\": \"string\",\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
                 }
               },
               "status": "Unauthorized",
@@ -6252,7 +6252,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "02a8b676-e748-4132-87f8-f9f2e925aea8",
+              "id": "70ad2a5e-7cc7-410c-80b3-2cb7132bb6b0",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -6268,7 +6268,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"firstName\": \"string\",\n        \"email\": \"string\",\n        \"lastName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"blocked\": true,\n        \"id\": \"string\",\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ]\n    }\n}"
+                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastName\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"blocked\": true,\n        \"appyUserId\": \"string\",\n        \"id\": \"string\",\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
                 }
               },
               "status": "Forbidden",
@@ -6284,7 +6284,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "603267f2-0102-4b22-a30d-c4fd463558b1",
+              "id": "d9a8f788-1f90-4e73-9a6a-e1887a17c47a",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -6300,7 +6300,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"firstName\": \"string\",\n        \"email\": \"string\",\n        \"lastName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"blocked\": true,\n        \"id\": \"string\",\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ]\n    }\n}"
+                  "raw": "{\n    \"redirect\": \"string\",\n    \"user\": {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"organisation\": \"string\",\n        \"lastName\": \"string\",\n        \"lastLogin\": \"string\",\n        \"picture\": \"string\",\n        \"isAuth0User\": true,\n        \"managedGroups\": [\n            \"string\"\n        ],\n        \"blocked\": true,\n        \"appyUserId\": \"string\",\n        \"id\": \"string\",\n        \"groups\": [\n            \"string\"\n        ],\n        \"permissions\": [\n            {\n                \"permissionId\": \"string\",\n                \"resourceTypeId\": \"string\",\n                \"resourceId\": \"string\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"roleId\": \"string\",\n                \"resourceAssignments\": [\n                    {\n                        \"resourceTypeId\": \"string\",\n                        \"resourceIds\": [\n                            \"string\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -6319,7 +6319,7 @@
           "event": []
         },
         {
-          "id": "67bc5687-7312-48cb-9fe1-5457721d9b79",
+          "id": "96219e9e-8758-4474-9ccf-392c337f4103",
           "name": "Update a user",
           "request": {
             "name": "Update a user",
@@ -6347,12 +6347,12 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"email\": \"<email>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"organisation\": \"<string>\",\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"id\": \"<string>\",\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"blocked\": \"<boolean>\",\n    \"picture\": \"<string>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"isAuth0User\": \"<boolean>\"\n}"
+              "raw": "{\n    \"email\": \"<email>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"organisation\": \"<string>\",\n    \"id\": \"<string>\",\n    \"appyUserId\": \"<string>\",\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"picture\": \"<string>\",\n    \"lastLogin\": \"<dateTime>\",\n    \"isAuth0User\": \"<boolean>\",\n    \"blocked\": \"<boolean>\",\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
             }
           },
           "response": [
             {
-              "id": "bb638615-ce61-47fc-99b5-3234b3d0c8fb",
+              "id": "a1cfe9c1-feaa-4ceb-947a-ff21c0fea9bf",
               "name": "Update is correct",
               "originalRequest": {
                 "url": {
@@ -6368,7 +6368,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"firstName\": \"string\",\n    \"email\": \"string\",\n    \"lastName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastName\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -6384,7 +6384,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "14254932-740d-454a-aeda-52a8a802d6d4",
+              "id": "dfc24ac3-5f1f-43c8-a8cc-172ab6f8be38",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -6400,7 +6400,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"firstName\": \"string\",\n    \"email\": \"string\",\n    \"lastName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastName\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Bad Request",
@@ -6416,7 +6416,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "442fe153-4386-44d8-a1c0-201af7f2df0d",
+              "id": "eb3e3797-e6f0-4350-89fb-90c0980d8387",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -6432,7 +6432,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"firstName\": \"string\",\n    \"email\": \"string\",\n    \"lastName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastName\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -6448,7 +6448,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6d1f36e3-041f-412f-9a63-ffdaa0e9946a",
+              "id": "86cee532-6974-4675-94ce-7598d5b19721",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -6464,7 +6464,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"firstName\": \"string\",\n    \"email\": \"string\",\n    \"lastName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastName\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -6480,7 +6480,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "e7ec57cf-c34f-4ce7-aff4-44457cd13253",
+              "id": "fb0770fb-eb06-4239-940c-cd794d9c4da7",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -6496,7 +6496,7 @@
                 "method": "PUT",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"firstName\": \"string\",\n    \"email\": \"string\",\n    \"lastName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"blocked\": true,\n    \"id\": \"string\",\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ]\n}"
+                  "raw": "{\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"organisation\": \"string\",\n    \"lastName\": \"string\",\n    \"lastLogin\": \"string\",\n    \"picture\": \"string\",\n    \"isAuth0User\": true,\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"blocked\": true,\n    \"appyUserId\": \"string\",\n    \"id\": \"string\",\n    \"groups\": [\n        \"string\"\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -6515,7 +6515,7 @@
           "event": []
         },
         {
-          "id": "5fa0f29f-523a-43f2-ad44-319a993b7a7a",
+          "id": "3ebcfa4f-a06f-438a-b22f-e20627d6b66d",
           "name": "All Users",
           "request": {
             "name": "All Users",
@@ -6538,7 +6538,7 @@
           },
           "response": [
             {
-              "id": "ce8d29b1-2b0a-4edc-bb6c-be2ce82f6831",
+              "id": "2a8ab702-1b5f-40e0-ad6b-7dcd259b2fe3",
               "name": "A list of Users",
               "originalRequest": {
                 "url": {
@@ -6562,12 +6562,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "[\n {\n  \"firstName\": \"string\",\n  \"email\": \"string\",\n  \"lastName\": \"string\",\n  \"organisation\": \"string\",\n  \"lastLogin\": \"string\",\n  \"picture\": \"string\",\n  \"isAuth0User\": true,\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ],\n  \"blocked\": true,\n  \"id\": \"string\",\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"groups\": [\n   \"string\"\n  ],\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ]\n }\n]",
+              "body": "[\n {\n  \"email\": \"string\",\n  \"firstName\": \"string\",\n  \"organisation\": \"string\",\n  \"lastName\": \"string\",\n  \"lastLogin\": \"string\",\n  \"picture\": \"string\",\n  \"isAuth0User\": true,\n  \"managedGroups\": [\n   \"string\"\n  ],\n  \"blocked\": true,\n  \"appyUserId\": \"string\",\n  \"id\": \"string\",\n  \"groups\": [\n   \"string\"\n  ],\n  \"permissions\": [\n   {\n    \"permissionId\": \"string\",\n    \"resourceTypeId\": \"string\",\n    \"resourceId\": \"string\"\n   }\n  ],\n  \"roles\": [\n   {\n    \"roleId\": \"string\",\n    \"resourceAssignments\": [\n     {\n      \"resourceTypeId\": \"string\",\n      \"resourceIds\": [\n       \"string\"\n      ]\n     }\n    ]\n   }\n  ]\n }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "3a99582e-247a-4b30-9a75-a1862897ce0c",
+              "id": "5c998f03-0db6-414e-a2ae-cadfb169def3",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -6596,7 +6596,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "fca9c4c1-293b-4835-985d-5805843ea9d4",
+              "id": "8e513e22-19b4-40e5-9de6-bc42ee260551",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -6625,7 +6625,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "00f85902-fd74-4b1e-a70d-293d8fd323c5",
+              "id": "a6122d25-334e-40da-b187-39c6df787020",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -6657,7 +6657,7 @@
           "event": []
         },
         {
-          "id": "a21c5445-dbe1-468c-8c8a-b41ed9377028",
+          "id": "062dc151-2088-4c96-916b-87d8b73eb725",
           "name": "Removes a user",
           "request": {
             "name": "Removes a user",
@@ -6688,7 +6688,7 @@
           },
           "response": [
             {
-              "id": "5c6bf51d-4177-4b0c-8474-ea246fe3fd9b",
+              "id": "93ac238e-ded6-450d-9a45-9bf4891a7517",
               "name": "User is deleted",
               "originalRequest": {
                 "url": {
@@ -6723,7 +6723,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "ee41319f-0649-4a8b-af47-f6994229544f",
+              "id": "ad2fbdbb-c322-410f-bc58-20b3d1e02612",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -6758,7 +6758,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "23a9692d-4928-49fd-8279-92b616c1d395",
+              "id": "37b9a8cd-a648-4b2f-9868-915c1fa7d3a2",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -6793,7 +6793,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "7f481d75-b429-46ca-89c9-0a8ba610e5e3",
+              "id": "b6b16fd7-81f9-438e-80b9-2b3c5c82ea13",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -6828,7 +6828,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "f615d4f5-bdb6-438d-8d6d-af9b281294d1",
+              "id": "7afc87c3-0dd8-4b21-9458-d4859bfa82b2",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -6866,7 +6866,209 @@
           "event": []
         },
         {
-          "id": "7f8c5daa-4043-4c3a-8b3e-7a9c0184e1bb",
+          "id": "6398408b-58b9-4ca2-916e-c34ecceaedba",
+          "name": "Add groups to user Id",
+          "request": {
+            "name": "Add groups to user Id",
+            "description": {
+              "content": "Add groups to user Id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "user",
+                "addGroupsToUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"groupIds\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"userId\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "070708b0-378b-4bc4-b6e3-e4dd4a18eb69",
+              "name": "Update is correct",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "addGroupsToUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"groupIds\": [\n        \"string\"\n    ],\n    \"userId\": \"string\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a428c1df-1f7f-4fe5-bc58-12b3a888abfc",
+              "name": "If the request has any errors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "addGroupsToUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"groupIds\": [\n        \"string\"\n    ],\n    \"userId\": \"string\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ea1e0db-7cca-4d1a-bae8-b5060b68c7b5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "addGroupsToUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"groupIds\": [\n        \"string\"\n    ],\n    \"userId\": \"string\"\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eeaf9f37-9d3f-4bdf-ad3d-f78b02abad29",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "addGroupsToUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"groupIds\": [\n        \"string\"\n    ],\n    \"userId\": \"string\"\n}"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76d115c7-e27d-4dbb-8bef-97c82c91eff9",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "addGroupsToUser"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"groupIds\": [\n        \"string\"\n    ],\n    \"userId\": \"string\"\n}"
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "07d365f5-3fef-4c5f-bd84-71984bc7c7e7",
           "name": "Creates new users in bulk",
           "request": {
             "name": "Creates new users in bulk",
@@ -6900,7 +7102,7 @@
           },
           "response": [
             {
-              "id": "64701fb1-8c38-46bc-9f73-c7a919ea3f27",
+              "id": "9d622997-cfb8-435b-9986-ecce26ae8bf0",
               "name": "Returns the information of collection of created users",
               "originalRequest": {
                 "url": {
@@ -6933,7 +7135,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "e17766fd-1cd9-4366-9b1b-3df0e0b8f858",
+              "id": "d5dc4792-60f8-4075-a1ad-54a2e25ab921",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -6966,7 +7168,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "397e19e9-f2cd-4154-a5aa-9b0d96ee5bb6",
+              "id": "809164a5-d29b-4b4c-9c4a-0eeafc364b4f",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -6999,7 +7201,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "802559c0-df2e-4df6-8671-0d257f52c050",
+              "id": "71e69edf-2f73-4c1c-ad72-7d652a576b5b",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -7032,7 +7234,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "527d29f3-78d6-4b78-8931-27662270de92",
+              "id": "8ffc539b-b206-49d1-8b93-17dd5b9fa24a",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -7068,7 +7270,209 @@
           "event": []
         },
         {
-          "id": "05b62613-be01-4362-b774-132cd0c33f9d",
+          "id": "bcd799a7-85e3-4484-aebd-d6dca4557660",
+          "name": "Fetch user by appy user id",
+          "request": {
+            "name": "Fetch user by appy user id",
+            "description": {
+              "content": "Fetch user by appy user id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "user",
+                "fetchUserByAppyUserId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"appyUserId\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "80ad3a93-324e-42e4-a1f6-aa51518ed69e",
+              "name": "Update is correct",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "fetchUserByAppyUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"appyUserId\": \"string\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"success\": true,\n \"result\": {\n  \"userId\": \"string\",\n  \"appyUserId\": \"string\",\n  \"email\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"organisation\": \"string\",\n  \"lastLogin\": \"string\"\n }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19db49e6-6696-4352-ad8c-e53eaaa4d715",
+              "name": "If the request has any errors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "fetchUserByAppyUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"appyUserId\": \"string\"\n}"
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ecf916e-d425-4866-b915-b5f00c370d4d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "fetchUserByAppyUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"appyUserId\": \"string\"\n}"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "20ae3973-315e-4a45-bc2b-06befc2509e5",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "fetchUserByAppyUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"appyUserId\": \"string\"\n}"
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "68b1ffc3-51a9-48d7-90ed-9d1f122798b3",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user",
+                    "fetchUserByAppyUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"appyUserId\": \"string\"\n}"
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "9b768dad-fa6f-476c-b4db-91d4e27a836b",
           "name": "Update a login; allows the Appy-specific data for a user to be created or updated before the corresponding user is created.",
           "request": {
             "name": "Update a login; allows the Appy-specific data for a user to be created or updated before the corresponding user is created.",
@@ -7097,12 +7501,12 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": \"<string>\",\n    \"organisation\": \"<string>\",\n    \"blocked\": \"<boolean>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"lastLogin\": \"<dateTime>\"\n}"
+              "raw": "{\n    \"id\": \"<string>\",\n    \"appyUserId\": \"<string>\",\n    \"organisation\": \"<string>\",\n    \"blocked\": \"<boolean>\",\n    \"roles\": [\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        },\n        {\n            \"roleId\": \"<string>\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                },\n                {\n                    \"resourceTypeId\": \"<string>\",\n                    \"resourceIds\": [\n                        \"<string>\",\n                        \"<string>\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        },\n        {\n            \"permissionId\": \"<string>\",\n            \"resourceTypeId\": \"<string>\",\n            \"resourceId\": \"<string>\"\n        }\n    ],\n    \"groups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"managedGroups\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"lastLogin\": \"<dateTime>\"\n}"
             }
           },
           "response": [
             {
-              "id": "8af20740-e768-4c33-b801-d7a82caebe68",
+              "id": "6b6b362f-9b09-4f93-902a-9602397f0634",
               "name": "Update is correct",
               "originalRequest": {
                 "url": {
@@ -7119,7 +7523,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"appyUserId\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
                 }
               },
               "status": "OK",
@@ -7135,7 +7539,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "7fa09d85-85d8-4aee-8709-18c134f271c0",
+              "id": "17ee292b-8532-4b51-ba54-8b692282ae0c",
               "name": "If the request has any errors",
               "originalRequest": {
                 "url": {
@@ -7152,7 +7556,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"appyUserId\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
                 }
               },
               "status": "Bad Request",
@@ -7168,7 +7572,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b80d25bf-3070-4f74-b723-a80aeee71830",
+              "id": "c45c3c6e-27e3-4a0e-906b-76a978762941",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -7185,7 +7589,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"appyUserId\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
                 }
               },
               "status": "Unauthorized",
@@ -7201,7 +7605,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d265af5b-9854-4572-a812-896ca227e238",
+              "id": "b042a3b4-5c94-498e-a22b-0e1c43b051a9",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -7218,7 +7622,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"appyUserId\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
                 }
               },
               "status": "Forbidden",
@@ -7234,7 +7638,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "979efcf1-2c3b-404f-8651-4cec6c6aa4d3",
+              "id": "1e7642a4-c196-4b55-96a1-2755f6c2a411",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -7251,7 +7655,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"appyUserId\": \"string\",\n    \"organisation\": \"string\",\n    \"blocked\": true,\n    \"roles\": [\n        {\n            \"roleId\": \"string\",\n            \"resourceAssignments\": [\n                {\n                    \"resourceTypeId\": \"string\",\n                    \"resourceIds\": [\n                        \"string\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"permissions\": [\n        {\n            \"permissionId\": \"string\",\n            \"resourceTypeId\": \"string\",\n            \"resourceId\": \"string\"\n        }\n    ],\n    \"groups\": [\n        \"string\"\n    ],\n    \"managedGroups\": [\n        \"string\"\n    ],\n    \"lastLogin\": \"string\"\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -7270,7 +7674,7 @@
           "event": []
         },
         {
-          "id": "18a97b5f-e19c-4fe7-8b09-46f4d28b6a0c",
+          "id": "5564ee3d-69a7-4f19-a91e-21e6866f99de",
           "name": "Request password reset",
           "request": {
             "name": "Request password reset",
@@ -7304,7 +7708,7 @@
           },
           "response": [
             {
-              "id": "9a9cb5ff-4a10-4f07-aab8-edb05480d2f6",
+              "id": "8c2fe5ea-b871-45fc-aa35-823d87515080",
               "name": "Password reset requested",
               "originalRequest": {
                 "url": {
@@ -7337,7 +7741,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "e070ed2f-1d40-468d-9413-007b662a0cfd",
+              "id": "36bf9b71-d065-44cc-831a-dec41fd7cdec",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -7370,7 +7774,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "e1a8094d-ebda-4b22-8daa-1ea29fec0899",
+              "id": "41b741ae-d3a1-44e4-96c1-3e0cb70d96f5",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -7403,7 +7807,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1f105e74-7926-4a01-9dce-8e34e70f68d9",
+              "id": "c51ac7ad-2fc9-4858-a1c1-934ee60e4279",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -7442,7 +7846,7 @@
       "event": []
     },
     {
-      "id": "ebc0cc07-5f3d-4239-bcd8-ea14a112247c",
+      "id": "1e887104-09e1-4152-bcdb-1bdd3b413213",
       "name": "/webhooks/auth0 - POST",
       "request": {
         "name": "/webhooks/auth0 - POST",
@@ -7473,7 +7877,7 @@
       },
       "response": [
         {
-          "id": "9d4c5b71-d662-4c74-b46d-aaadb963491a",
+          "id": "5dc25587-9536-42b5-a653-193934ed1e05",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -7506,7 +7910,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "43407f4e-fd25-47c6-84cc-d1c2a0071691",
+          "id": "894c8f48-4368-43af-8b82-ab28bf5fbfa7",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -7539,7 +7943,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e13ec0dd-020c-4ef3-ac13-1015c561be8c",
+          "id": "462574af-4236-4b7c-a347-f45eeefef702",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -7572,7 +7976,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "0b23b8a0-9045-48f5-9561-70099823b1f2",
+          "id": "6ba8d517-65a4-4b5a-8020-45b96eae83ce",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -7632,7 +8036,7 @@
     ]
   },
   "info": {
-    "_postman_id": "82ea208b-060a-4176-ae14-21e0e35a87c7",
+    "_postman_id": "83edda63-b48d-4dff-9572-25a73d6b7be2",
     "name": "Security (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
