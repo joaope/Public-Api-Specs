@@ -1430,73 +1430,6 @@
         }
       }
     },
-    "/tasks/mark-experimental-change-sets-as-made": {
-      "post": {
-        "tags": [
-          "Tasks"
-        ],
-        "summary": "/tasks/mark-experimental-change-sets-as-made - POST",
-        "operationId": "post-tasks-mark-experimental-change-sets-as-made",
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MarkExperimentalChangeSetsAsMade"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
     "/tasks/prepare-files": {
       "post": {
         "tags": [
@@ -1756,81 +1689,6 @@
                 "name": "string",
                 "indexName": "string",
                 "user": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/tasks/validate-order": {
-      "post": {
-        "tags": [
-          "Tasks"
-        ],
-        "summary": "/tasks/validate-order - POST",
-        "operationId": "post-tasks-validate-order",
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidateOrder"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string",
-                "validationState": 0,
-                "validationReason": "string"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidateOrder"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string",
-                "validationState": 0,
-                "validationReason": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidateOrder"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string",
-                "validationState": 0,
-                "validationReason": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidateOrder"
-              },
-              "example": {
-                "name": "string",
-                "user": "string",
-                "orderId": "string",
-                "validationState": 0,
-                "validationReason": "string"
               }
             }
           }
@@ -2360,25 +2218,6 @@
         },
         "additionalProperties": false
       },
-      "MarkExperimentalChangeSetsAsMade": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderId": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ApplyOrderToMaster": {
         "type": "object",
         "properties": {
@@ -2534,41 +2373,6 @@
           "orderId": {
             "type": "string",
             "format": "uuid"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrderValidationState": {
-        "enum": [
-          0,
-          1,
-          2
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "ValidateOrder": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderId": {
-            "type": "string",
-            "nullable": true
-          },
-          "validationState": {
-            "$ref": "#/components/schemas/OrderValidationState"
-          },
-          "validationReason": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
