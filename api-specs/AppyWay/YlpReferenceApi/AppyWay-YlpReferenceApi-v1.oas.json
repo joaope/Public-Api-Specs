@@ -170,6 +170,21 @@
                       "description": "string"
                     }
                   ],
+                  "movingExceptionTypes": [
+                    {
+                      "id": 0,
+                      "name": "string",
+                      "description": "string",
+                      "applicableRestrictionTypes": [
+                        {
+                          "movingRestrictionTypeId": 0,
+                          "movingRestrictionTypeOptionIds": [
+                            {}
+                          ]
+                        }
+                      ]
+                    }
+                  ],
                   "exemptionTimeTypes": [
                     {
                       "id": 0,
@@ -241,8 +256,8 @@
                             {
                               "name": "string",
                               "date": "2020-01-20T00:00:00+00:00",
-                              "start": "2021-07-25T00:00:00+00:00",
-                              "end": "2021-07-25T00:00:00+00:00"
+                              "start": "2021-07-26T00:00:00+00:00",
+                              "end": "2021-07-26T00:00:00+00:00"
                             }
                           ]
                         }
@@ -391,6 +406,21 @@
                       "description": "string"
                     }
                   ],
+                  "movingExceptionTypes": [
+                    {
+                      "id": 0,
+                      "name": "string",
+                      "description": "string",
+                      "applicableRestrictionTypes": [
+                        {
+                          "movingRestrictionTypeId": 0,
+                          "movingRestrictionTypeOptionIds": [
+                            {}
+                          ]
+                        }
+                      ]
+                    }
+                  ],
                   "exemptionTimeTypes": [
                     {
                       "id": 0,
@@ -462,8 +492,8 @@
                             {
                               "name": "string",
                               "date": "2020-01-20T00:00:00+00:00",
-                              "start": "2021-07-25T00:00:00+00:00",
-                              "end": "2021-07-25T00:00:00+00:00"
+                              "start": "2021-07-26T00:00:00+00:00",
+                              "end": "2021-07-26T00:00:00+00:00"
                             }
                           ]
                         }
@@ -1400,6 +1430,77 @@
         }
       }
     },
+    "/movingExceptionType/list": {
+      "get": {
+        "tags": [
+          "MovingExceptionType"
+        ],
+        "summary": "List",
+        "description": "Gets all moving exception types",
+        "operationId": "get-movingexceptiontype-list",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovingExceptionTypeListGet200TextPlainResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovingExceptionTypeListGet200ApplicationJsonResponse"
+                },
+                "example": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "description": "string",
+                    "applicableRestrictionTypes": [
+                      {
+                        "movingRestrictionTypeId": 0,
+                        "movingRestrictionTypeOptionIds": [
+                          {}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MovingExceptionTypeListGet200TextJsonResponse"
+                },
+                "example": [
+                  {
+                    "id": 0,
+                    "name": "string",
+                    "description": "string",
+                    "applicableRestrictionTypes": [
+                      {
+                        "movingRestrictionTypeId": 0,
+                        "movingRestrictionTypeOptionIds": [
+                          {}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/movingRestrictionType/list": {
       "get": {
         "tags": [
@@ -1741,8 +1842,8 @@
                         {
                           "name": "string",
                           "date": "2020-01-20T00:00:00+00:00",
-                          "start": "2021-07-25T00:00:00+00:00",
-                          "end": "2021-07-25T00:00:00+00:00"
+                          "start": "2021-07-26T00:00:00+00:00",
+                          "end": "2021-07-26T00:00:00+00:00"
                         }
                       ]
                     }
@@ -1767,8 +1868,8 @@
                         {
                           "name": "string",
                           "date": "2020-01-20T00:00:00+00:00",
-                          "start": "2021-07-25T00:00:00+00:00",
-                          "end": "2021-07-25T00:00:00+00:00"
+                          "start": "2021-07-26T00:00:00+00:00",
+                          "end": "2021-07-26T00:00:00+00:00"
                         }
                       ]
                     }
@@ -1825,8 +1926,8 @@
                           {
                             "name": "string",
                             "date": "2020-01-20T00:00:00+00:00",
-                            "start": "2021-07-25T00:00:00+00:00",
-                            "end": "2021-07-25T00:00:00+00:00"
+                            "start": "2021-07-26T00:00:00+00:00",
+                            "end": "2021-07-26T00:00:00+00:00"
                           }
                         ]
                       }
@@ -1853,8 +1954,8 @@
                           {
                             "name": "string",
                             "date": "2020-01-20T00:00:00+00:00",
-                            "start": "2021-07-25T00:00:00+00:00",
-                            "end": "2021-07-25T00:00:00+00:00"
+                            "start": "2021-07-26T00:00:00+00:00",
+                            "end": "2021-07-26T00:00:00+00:00"
                           }
                         ]
                       }
@@ -1904,8 +2005,8 @@
                       {
                         "name": "string",
                         "date": "2020-01-20T00:00:00+00:00",
-                        "start": "2021-07-25T00:00:00+00:00",
-                        "end": "2021-07-25T00:00:00+00:00"
+                        "start": "2021-07-26T00:00:00+00:00",
+                        "end": "2021-07-26T00:00:00+00:00"
                       }
                     ]
                   }
@@ -1930,8 +2031,8 @@
                       {
                         "name": "string",
                         "date": "2020-01-20T00:00:00+00:00",
-                        "start": "2021-07-25T00:00:00+00:00",
-                        "end": "2021-07-25T00:00:00+00:00"
+                        "start": "2021-07-26T00:00:00+00:00",
+                        "end": "2021-07-26T00:00:00+00:00"
                       }
                     ]
                   }
@@ -1956,8 +2057,8 @@
                       {
                         "name": "string",
                         "date": "2020-01-20T00:00:00+00:00",
-                        "start": "2021-07-25T00:00:00+00:00",
-                        "end": "2021-07-25T00:00:00+00:00"
+                        "start": "2021-07-26T00:00:00+00:00",
+                        "end": "2021-07-26T00:00:00+00:00"
                       }
                     ]
                   }
@@ -1982,8 +2083,8 @@
                       {
                         "name": "string",
                         "date": "2020-01-20T00:00:00+00:00",
-                        "start": "2021-07-25T00:00:00+00:00",
-                        "end": "2021-07-25T00:00:00+00:00"
+                        "start": "2021-07-26T00:00:00+00:00",
+                        "end": "2021-07-26T00:00:00+00:00"
                       }
                     ]
                   }
@@ -2308,6 +2409,13 @@
             },
             "nullable": true
           },
+          "movingExceptionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MovingExceptionType"
+            },
+            "nullable": true
+          },
           "exemptionTimeTypes": {
             "type": "array",
             "items": {
@@ -2404,6 +2512,21 @@
             "items": {
               "$ref": "#/components/schemas/ZoneType"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicableRestrictionType": {
+        "type": "object",
+        "properties": {
+          "movingRestrictionTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "movingRestrictionTypeOptionIds": {
+            "type": "array",
+            "items": {},
             "nullable": true
           }
         },
@@ -2675,6 +2798,31 @@
           },
           "description": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MovingExceptionType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "applicableRestrictionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicableRestrictionType"
+            },
             "nullable": true
           }
         },
@@ -3175,6 +3323,24 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/FuelType"
+        }
+      },
+      "MovingExceptionTypeListGet200TextPlainResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MovingExceptionType"
+        }
+      },
+      "MovingExceptionTypeListGet200ApplicationJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MovingExceptionType"
+        }
+      },
+      "MovingExceptionTypeListGet200TextJsonResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MovingExceptionType"
         }
       },
       "MovingRestrictionTypeListGet200TextPlainResponse": {
