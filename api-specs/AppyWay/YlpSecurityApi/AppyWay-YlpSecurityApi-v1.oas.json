@@ -1411,6 +1411,92 @@
         }
       }
     },
+    "/changeUserEmail": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Change user email",
+        "description": "Change user email",
+        "operationId": "post-changeuseremail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUserEmailCommand"
+              },
+              "example": {
+                "email": "string",
+                "id": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUserEmailCommand"
+              },
+              "example": {
+                "email": "string",
+                "id": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUserEmailCommand"
+              },
+              "example": {
+                "email": "string",
+                "id": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/createApiKey": {
       "post": {
         "tags": [
@@ -8228,6 +8314,25 @@
           },
           "result": {
             "$ref": "#/components/schemas/BulkNewUserResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeUserEmailCommand": {
+        "required": [
+          "email",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
           }
         },
         "additionalProperties": false
