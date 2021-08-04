@@ -77,6 +77,61 @@ paths:
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /fetchCapabilitiesByIds:
+    post:
+      tags:
+      - Parking
+      summary: /fetchCapabilitiesByIds - POST
+      operationId: post-fetchcapabilitiesbyids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchCapabilitiesByIdsQuery'
+            example:
+              entityIds:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchCapabilitiesByIdsQuery'
+            example:
+              entityIds:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchCapabilitiesByIdsQuery'
+            example:
+              entityIds:
+              - string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringCapabilityArrayIDictionaryOkResponse'
+              example:
+                success: true
+                result: {}
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: false
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /fetchEntitiesByIds:
     post:
       tags:
@@ -304,8 +359,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-08-02T00:00:00.0000000+00:00
-                      end: 2021-08-02T00:00:00.0000000+00:00
+                    - start: 2021-08-04T00:00:00.0000000+00:00
+                      end: 2021-08-04T00:00:00.0000000+00:00
                       isFree: true
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -393,8 +448,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-08-02T00:00:00.0000000+00:00
-                      end: 2021-08-02T00:00:00.0000000+00:00
+                    - start: 2021-08-04T00:00:00.0000000+00:00
+                      end: 2021-08-04T00:00:00.0000000+00:00
                       isFree: true
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -1954,6 +2009,28 @@ components:
       - 6
       type: integer
       format: int32
+    Capability:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        support:
+          $ref: '#/components/schemas/CapabilitySupport'
+      additionalProperties: false
+    CapabilitySupport:
+      enum:
+      - 0
+      - 1
+      - 2
+      type: integer
+      description: |2+
+
+
+        *NotSupported (0)
+        *Supported (1)
+        *ComingSoon (2)
+      format: int32
     Carpark:
       type: object
       properties:
@@ -2077,6 +2154,15 @@ components:
         id:
           type: string
           description: Identifier of the Authority to fetch
+          nullable: true
+      additionalProperties: false
+    FetchCapabilitiesByIdsQuery:
+      type: object
+      properties:
+        entityIds:
+          type: array
+          items:
+            type: string
           nullable: true
       additionalProperties: false
     FetchEntitiesByIdsQuery:
@@ -3544,6 +3630,23 @@ components:
                 format: double
           nullable: true
       additionalProperties: false
+    StringCapabilityArrayIDictionaryOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether the response was successful
+          readOnly: true
+        result:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/Capability'
+          description: Payload of the response
+          nullable: true
+      additionalProperties: false
+      description: A successful response
     Suggestion:
       type: object
       properties:

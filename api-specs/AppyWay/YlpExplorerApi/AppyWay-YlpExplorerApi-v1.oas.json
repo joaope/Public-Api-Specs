@@ -125,6 +125,95 @@
         }
       }
     },
+    "/fetchCapabilitiesByIds": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "/fetchCapabilitiesByIds - POST",
+        "operationId": "post-fetchcapabilitiesbyids",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCapabilitiesByIdsQuery"
+              },
+              "example": {
+                "entityIds": [
+                  "string"
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCapabilitiesByIdsQuery"
+              },
+              "example": {
+                "entityIds": [
+                  "string"
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCapabilitiesByIdsQuery"
+              },
+              "example": {
+                "entityIds": [
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringCapabilityArrayIDictionaryOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": false,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/fetchEntitiesByIds": {
       "post": {
         "tags": [
@@ -477,8 +566,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-08-02T00:00:00+00:00",
-                            "end": "2021-08-02T00:00:00+00:00",
+                            "start": "2021-08-04T00:00:00+00:00",
+                            "end": "2021-08-04T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -621,8 +710,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-08-02T00:00:00+00:00",
-                            "end": "2021-08-02T00:00:00+00:00",
+                            "start": "2021-08-04T00:00:00+00:00",
+                            "end": "2021-08-04T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -3046,6 +3135,29 @@
         "type": "integer",
         "format": "int32"
       },
+      "Capability": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "support": {
+            "$ref": "#/components/schemas/CapabilitySupport"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CapabilitySupport": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "description": "\n\n*NotSupported (0)\r\n*Supported (1)\r\n*ComingSoon (2)\r\n",
+        "format": "int32"
+      },
       "Carpark": {
         "type": "object",
         "properties": {
@@ -3203,6 +3315,19 @@
           "id": {
             "type": "string",
             "description": "Identifier of the Authority to fetch",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchCapabilitiesByIdsQuery": {
+        "type": "object",
+        "properties": {
+          "entityIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           }
         },
@@ -4822,6 +4947,29 @@
           }
         },
         "additionalProperties": false
+      },
+      "StringCapabilityArrayIDictionaryOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the response was successful",
+            "readOnly": true
+          },
+          "result": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Capability"
+              }
+            },
+            "description": "Payload of the response",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A successful response"
       },
       "Suggestion": {
         "type": "object",
