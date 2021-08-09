@@ -1499,6 +1499,73 @@
         }
       }
     },
+    "/tasks/propose-moving-order": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/propose-moving-order - POST",
+        "operationId": "post-tasks-propose-moving-order",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProposeMovingOrder"
+              },
+              "example": {
+                "name": "string",
+                "orderId": "string",
+                "user": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProposeMovingOrder"
+              },
+              "example": {
+                "name": "string",
+                "orderId": "string",
+                "user": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProposeMovingOrder"
+              },
+              "example": {
+                "name": "string",
+                "orderId": "string",
+                "user": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProposeMovingOrder"
+              },
+              "example": {
+                "name": "string",
+                "orderId": "string",
+                "user": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/tasks/propose-orders": {
       "post": {
         "tags": [
@@ -2332,6 +2399,25 @@
             "nullable": true
           },
           "orderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProposeMovingOrder": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "orderId": {
             "type": "string",
             "nullable": true
           },
