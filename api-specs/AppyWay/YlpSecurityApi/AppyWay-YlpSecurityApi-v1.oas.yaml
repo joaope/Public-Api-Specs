@@ -88,10 +88,6 @@ paths:
                   - resourceTypeId: string
                     resourceIds:
                     - string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
                 groups:
                 - string
                 managedGroups:
@@ -128,10 +124,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -153,10 +145,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -178,10 +166,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -208,10 +192,6 @@ paths:
                     - resourceTypeId: string
                       resourceIds:
                       - string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
                   groups:
                   - string
                   managedGroups:
@@ -261,10 +241,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -286,10 +262,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -311,10 +283,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -341,10 +309,6 @@ paths:
                     - resourceTypeId: string
                       resourceIds:
                       - string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
                   groups:
                   - string
                   managedGroups:
@@ -831,10 +795,6 @@ paths:
                   - string
               groups:
               - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
           text/json:
             schema:
               $ref: '#/components/schemas/BulkNewUserRequest'
@@ -850,10 +810,6 @@ paths:
                   - string
               groups:
               - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/BulkNewUserRequest'
@@ -869,10 +825,6 @@ paths:
                   - string
               groups:
               - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
       responses:
         "200":
           description: Success
@@ -1036,10 +988,6 @@ paths:
                       - resourceTypeId: string
                         resourceIds:
                         - string
-                    permissions:
-                    - permissionId: string
-                      resourceTypeId: string
-                      resourceId: string
                     groups:
                     - string
                     managedGroups:
@@ -1595,10 +1543,6 @@ paths:
                       - resourceTypeId: string
                         resourceIds:
                         - string
-                    permissions:
-                    - permissionId: string
-                      resourceTypeId: string
-                      resourceId: string
                     groups:
                     - string
                     managedGroups:
@@ -2149,10 +2093,6 @@ paths:
                     - resourceTypeId: string
                       resourceIds:
                       - string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
                   groups:
                   - string
                   managedGroups:
@@ -2447,10 +2387,6 @@ paths:
                     - resourceTypeId: string
                       resourceIds:
                       - string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
                   groups:
                   - string
                   managedGroups:
@@ -2484,16 +2420,22 @@ paths:
               $ref: '#/components/schemas/FetchUserByEmailQuery'
             example:
               email: string
+              includeRoles: true
+              includeGroups: true
           text/json:
             schema:
               $ref: '#/components/schemas/FetchUserByEmailQuery'
             example:
               email: string
+              includeRoles: true
+              includeGroups: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchUserByEmailQuery'
             example:
               email: string
+              includeRoles: true
+              includeGroups: true
       responses:
         "200":
           description: Success
@@ -2504,16 +2446,28 @@ paths:
               example:
                 success: true
                 result:
-                  userId: string
+                  id: string
                   appyUserId: string
                   email: string
                   emailVerified: true
                   firstName: string
                   lastName: string
                   organisation: string
+                  picture: string
                   createdOn: string
                   lastLogin: string
+                  blocked: true
                   loginType: string
+                  managedGroups:
+                  - string
+                  groups:
+                  - string
+                  roles:
+                  - roleId: string
+                    resourceAssignments:
+                    - resourceTypeId: string
+                      resourceIds:
+                      - string
         "400":
           description: Bad Request
           content:
@@ -2548,18 +2502,24 @@ paths:
             example:
               appyUserIds:
               - string
+              includeRoles: true
+              includeGroups: true
           text/json:
             schema:
               $ref: '#/components/schemas/FetchUsersByAppyUserIdsQuery'
             example:
               appyUserIds:
               - string
+              includeRoles: true
+              includeGroups: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchUsersByAppyUserIdsQuery'
             example:
               appyUserIds:
               - string
+              includeRoles: true
+              includeGroups: true
       responses:
         "200":
           description: Success
@@ -2570,16 +2530,212 @@ paths:
               example:
                 success: true
                 result:
-                - userId: string
+                - id: string
                   appyUserId: string
                   email: string
                   emailVerified: true
                   firstName: string
                   lastName: string
                   organisation: string
+                  picture: string
                   createdOn: string
                   lastLogin: string
+                  blocked: true
                   loginType: string
+                  managedGroups:
+                  - string
+                  groups:
+                  - string
+                  roles:
+                  - roleId: string
+                    resourceAssignments:
+                    - resourceTypeId: string
+                      resourceIds:
+                      - string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchUsersByIds:
+    post:
+      tags:
+      - User
+      summary: Fetch users by user ids
+      description: Fetch users by user ids
+      operationId: post-fetchusersbyids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchUsersByIdsQuery'
+            example:
+              ids:
+              - string
+              includeRoles: true
+              includeGroups: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchUsersByIdsQuery'
+            example:
+              ids:
+              - string
+              includeRoles: true
+              includeGroups: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchUsersByIdsQuery'
+            example:
+              ids:
+              - string
+              includeRoles: true
+              includeGroups: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResultIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - id: string
+                  appyUserId: string
+                  email: string
+                  emailVerified: true
+                  firstName: string
+                  lastName: string
+                  organisation: string
+                  picture: string
+                  createdOn: string
+                  lastLogin: string
+                  blocked: true
+                  loginType: string
+                  managedGroups:
+                  - string
+                  groups:
+                  - string
+                  roles:
+                  - roleId: string
+                    resourceAssignments:
+                    - resourceTypeId: string
+                      resourceIds:
+                      - string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /findUsersByEmailStartingWith:
+    post:
+      tags:
+      - User
+      summary: Find users by email starting with
+      description: Find users by email starting with
+      operationId: post-findusersbyemailstartingwith
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindUsersByEmailStartingWithQuery'
+            example:
+              email: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FindUsersByEmailStartingWithQuery'
+            example:
+              email: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FindUsersByEmailStartingWithQuery'
+            example:
+              email: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResultPagedResultOkResponse'
+              example:
+                success: true
+                result:
+                  pageResult:
+                  - id: string
+                    appyUserId: string
+                    email: string
+                    emailVerified: true
+                    firstName: string
+                    lastName: string
+                    organisation: string
+                    picture: string
+                    createdOn: string
+                    lastLogin: string
+                    blocked: true
+                    loginType: string
+                    managedGroups:
+                    - string
+                    groups:
+                    - string
+                    roles:
+                    - roleId: string
+                      resourceAssignments:
+                      - resourceTypeId: string
+                        resourceIds:
+                        - string
+                  pagingInfo:
+                    requestedPage: 0
+                    totalCount: 0
         "400":
           description: Bad Request
           content:
@@ -2613,28 +2769,37 @@ paths:
               $ref: '#/components/schemas/FindUsersByNameStartingWithQuery'
             example:
               name: string
+              organisationId: string
               pagingFilter:
                 page: 0
                 perPage: 0
                 includeTotals: true
+              includeGroups: true
+              includeRoles: true
           text/json:
             schema:
               $ref: '#/components/schemas/FindUsersByNameStartingWithQuery'
             example:
               name: string
+              organisationId: string
               pagingFilter:
                 page: 0
                 perPage: 0
                 includeTotals: true
+              includeGroups: true
+              includeRoles: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/FindUsersByNameStartingWithQuery'
             example:
               name: string
+              organisationId: string
               pagingFilter:
                 page: 0
                 perPage: 0
                 includeTotals: true
+              includeGroups: true
+              includeRoles: true
       responses:
         "200":
           description: Success
@@ -2646,16 +2811,28 @@ paths:
                 success: true
                 result:
                   pageResult:
-                  - userId: string
+                  - id: string
                     appyUserId: string
                     email: string
                     emailVerified: true
                     firstName: string
                     lastName: string
                     organisation: string
+                    picture: string
                     createdOn: string
                     lastLogin: string
+                    blocked: true
                     loginType: string
+                    managedGroups:
+                    - string
+                    groups:
+                    - string
+                    roles:
+                    - roleId: string
+                      resourceAssignments:
+                      - resourceTypeId: string
+                        resourceIds:
+                        - string
                   pagingInfo:
                     requestedPage: 0
                     totalCount: 0
@@ -4451,7 +4628,6 @@ paths:
                   - string
               groups:
               - string
-              isAuth0User: true
           text/json:
             schema:
               $ref: '#/components/schemas/UpdateUserCommand'
@@ -4467,7 +4643,6 @@ paths:
                   - string
               groups:
               - string
-              isAuth0User: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/UpdateUserCommand'
@@ -4483,7 +4658,6 @@ paths:
                   - string
               groups:
               - string
-              isAuth0User: true
       responses:
         "200":
           description: Success
@@ -4537,10 +4711,6 @@ paths:
                   - resourceTypeId: string
                     resourceIds:
                     - string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
                 groups:
                 - string
                 managedGroups:
@@ -4570,10 +4740,6 @@ paths:
                   - resourceTypeId: string
                     resourceIds:
                     - string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
                 groups:
                 - string
                 managedGroups:
@@ -4603,10 +4769,6 @@ paths:
                   - resourceTypeId: string
                     resourceIds:
                     - string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
                 groups:
                 - string
                 managedGroups:
@@ -4640,10 +4802,6 @@ paths:
                     - resourceTypeId: string
                       resourceIds:
                       - string
-                  permissions:
-                  - permissionId: string
-                    resourceTypeId: string
-                    resourceId: string
                   groups:
                   - string
                   managedGroups:
@@ -4699,10 +4857,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -4730,10 +4884,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -4761,10 +4911,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -4823,10 +4969,6 @@ paths:
                   - resourceTypeId: string
                     resourceIds:
                     - string
-                permissions:
-                - permissionId: string
-                  resourceTypeId: string
-                  resourceId: string
                 groups:
                 - string
                 managedGroups:
@@ -4905,10 +5047,6 @@ paths:
                   - string
               groups:
               - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
           text/json:
             schema:
               $ref: '#/components/schemas/BulkNewUserRequest'
@@ -4924,10 +5062,6 @@ paths:
                   - string
               groups:
               - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/BulkNewUserRequest'
@@ -4943,10 +5077,6 @@ paths:
                   - string
               groups:
               - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
       responses:
         "200":
           description: Returns the information of collection of created users
@@ -5004,10 +5134,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -5027,10 +5153,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -5050,10 +5172,6 @@ paths:
                 - resourceTypeId: string
                   resourceIds:
                   - string
-              permissions:
-              - permissionId: string
-                resourceTypeId: string
-                resourceId: string
               groups:
               - string
               managedGroups:
@@ -5253,11 +5371,6 @@ components:
           items:
             $ref: '#/components/schemas/RoleAssignment'
           nullable: true
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
-          nullable: true
         groups:
           type: array
           items:
@@ -5367,11 +5480,6 @@ components:
         redirect:
           minLength: 1
           type: string
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
-          nullable: true
         groups:
           type: array
           items:
@@ -5745,6 +5853,10 @@ components:
           minLength: 1
           type: string
           format: email
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
       additionalProperties: false
     FetchUsersByAppyUserIdsQuery:
       required:
@@ -5756,18 +5868,57 @@ components:
           type: array
           items:
             type: string
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
+      additionalProperties: false
+    FetchUsersByIdsQuery:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          minLength: 1
+          type: array
+          items:
+            type: string
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
+      additionalProperties: false
+    FindUsersByEmailStartingWithQuery:
+      type: object
+      properties:
+        email:
+          type: string
+          nullable: true
+        organisationId:
+          type: string
+          nullable: true
+        pagingFilter:
+          $ref: '#/components/schemas/PagingFilter'
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
       additionalProperties: false
     FindUsersByNameStartingWithQuery:
-      required:
-      - name
       type: object
       properties:
         name:
-          maxLength: 128
-          minLength: 1
           type: string
+          nullable: true
+        organisationId:
+          type: string
+          nullable: true
         pagingFilter:
           $ref: '#/components/schemas/PagingFilter'
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
       additionalProperties: false
     Group:
       type: object
@@ -5837,11 +5988,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RoleAssignment'
-          nullable: true
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
           nullable: true
         groups:
           type: array
@@ -6042,19 +6188,6 @@ components:
           type: string
           nullable: true
         applicationId:
-          type: string
-          nullable: true
-      additionalProperties: false
-    PermissionAssignment:
-      type: object
-      properties:
-        permissionId:
-          type: string
-          nullable: true
-        resourceTypeId:
-          type: string
-          nullable: true
-        resourceId:
           type: string
           nullable: true
       additionalProperties: false
@@ -6432,8 +6565,6 @@ components:
         lastName:
           minLength: 1
           type: string
-        isAuth0User:
-          type: boolean
         groups:
           type: array
           items:
@@ -6466,11 +6597,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RoleAssignment'
-          nullable: true
-        permissions:
-          type: array
-          items:
-            $ref: '#/components/schemas/PermissionAssignment'
           nullable: true
         groups:
           type: array
@@ -6525,32 +6651,28 @@ components:
     UserResult:
       type: object
       properties:
-        userId:
+        id:
           type: string
-          description: User Id
           nullable: true
         appyUserId:
           type: string
-          description: Appy User Id
           nullable: true
         email:
           type: string
-          description: Email
           nullable: true
         emailVerified:
           type: boolean
-          description: Email Verified
         firstName:
           type: string
-          description: First name
           nullable: true
         lastName:
           type: string
-          description: Last name
           nullable: true
         organisation:
           type: string
-          description: Organisation this belongs to.
+          nullable: true
+        picture:
+          type: string
           nullable: true
         createdOn:
           type: string
@@ -6558,12 +6680,30 @@ components:
           nullable: true
         lastLogin:
           type: string
-          description: Currently blocked from logging in
           format: date-time
+          nullable: true
+        blocked:
+          type: boolean
+          description: Currently blocked from logging in
           nullable: true
         loginType:
           type: string
           description: Primary Login Type base on Identity Providers
+          nullable: true
+        managedGroups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        groups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
           nullable: true
       additionalProperties: false
     UserResultIReadOnlyCollectionOkResponse:
