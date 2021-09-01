@@ -113,7 +113,7 @@
                   "$ref": "#/components/schemas/NotFoundResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string"
                 }
               }
@@ -189,7 +189,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -441,7 +441,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -492,7 +492,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00+00:00"
+                "date": "2020-01-20T00:00:00+00:00",
+                "includeNotApplicableOperatingHours": true
               }
             },
             "text/json": {
@@ -511,7 +512,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00+00:00"
+                "date": "2020-01-20T00:00:00+00:00",
+                "includeNotApplicableOperatingHours": true
               }
             },
             "application/*+json": {
@@ -530,7 +532,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00+00:00"
+                "date": "2020-01-20T00:00:00+00:00",
+                "includeNotApplicableOperatingHours": true
               }
             }
           }
@@ -566,8 +569,38 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-08-23T00:00:00+00:00",
-                            "end": "2021-08-23T00:00:00+00:00",
+                            "start": "2021-09-01T00:00:00+00:00",
+                            "end": "2021-09-01T00:00:00+00:00",
+                            "isFree": true
+                          }
+                        ]
+                      }
+                    ],
+                    "notApplicableOperatingHours": [
+                      {
+                        "paymentMethodIds": [
+                          0
+                        ],
+                        "requirements": {
+                          "vehicleTypeIds": [
+                            0
+                          ],
+                          "activityTypeIds": [
+                            0
+                          ],
+                          "fuelTypeIds": [
+                            0
+                          ],
+                          "permits": [
+                            {
+                              "permitTypeId": 0
+                            }
+                          ]
+                        },
+                        "openPeriods": [
+                          {
+                            "start": "2021-09-01T00:00:00+00:00",
+                            "end": "2021-09-01T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -592,7 +625,7 @@
                   "$ref": "#/components/schemas/NotFoundResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string"
                 }
               }
@@ -632,7 +665,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00+00:00"
+                "date": "2020-01-20T00:00:00+00:00",
+                "includeNotApplicableOperatingHours": true
               }
             },
             "text/json": {
@@ -653,7 +687,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00+00:00"
+                "date": "2020-01-20T00:00:00+00:00",
+                "includeNotApplicableOperatingHours": true
               }
             },
             "application/*+json": {
@@ -674,7 +709,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00+00:00"
+                "date": "2020-01-20T00:00:00+00:00",
+                "includeNotApplicableOperatingHours": true
               }
             }
           }
@@ -710,8 +746,38 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-08-23T00:00:00+00:00",
-                            "end": "2021-08-23T00:00:00+00:00",
+                            "start": "2021-09-01T00:00:00+00:00",
+                            "end": "2021-09-01T00:00:00+00:00",
+                            "isFree": true
+                          }
+                        ]
+                      }
+                    ],
+                    "notApplicableOperatingHours": [
+                      {
+                        "paymentMethodIds": [
+                          0
+                        ],
+                        "requirements": {
+                          "vehicleTypeIds": [
+                            0
+                          ],
+                          "activityTypeIds": [
+                            0
+                          ],
+                          "fuelTypeIds": [
+                            0
+                          ],
+                          "permits": [
+                            {
+                              "permitTypeId": 0
+                            }
+                          ]
+                        },
+                        "openPeriods": [
+                          {
+                            "start": "2021-09-01T00:00:00+00:00",
+                            "end": "2021-09-01T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -863,7 +929,7 @@
                   "$ref": "#/components/schemas/NotFoundResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string"
                 }
               }
@@ -1007,24 +1073,6 @@
                     ],
                     "distance": 0,
                     "parkingAllowed": 1,
-                    "noParkingReason": {
-                      "reasonType": 1,
-                      "requiredContexts": [
-                        {
-                          "vehicleTypeId": 0,
-                          "activityTypeId": 0,
-                          "fuelTypeId": 0,
-                          "permits": [
-                            {
-                              "permitTypeId": 0
-                            }
-                          ]
-                        }
-                      ],
-                      "specialRestrictions": [
-                        0
-                      ]
-                    },
                     "entityETag": "string"
                   }
                 }
@@ -1045,7 +1093,7 @@
                   "$ref": "#/components/schemas/NotFoundResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string"
                 }
               }
@@ -1199,24 +1247,6 @@
                         ],
                         "distance": 0,
                         "parkingAllowed": 1,
-                        "noParkingReason": {
-                          "reasonType": 1,
-                          "requiredContexts": [
-                            {
-                              "vehicleTypeId": 0,
-                              "activityTypeId": 0,
-                              "fuelTypeId": 0,
-                              "permits": [
-                                {
-                                  "permitTypeId": 0
-                                }
-                              ]
-                            }
-                          ],
-                          "specialRestrictions": [
-                            0
-                          ]
-                        },
                         "entityETag": "string"
                       }
                     ]
@@ -1310,7 +1340,7 @@
                   "$ref": "#/components/schemas/NotFoundResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string"
                 }
               }
@@ -1419,7 +1449,7 @@
                   "$ref": "#/components/schemas/NotFoundResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string"
                 }
               }
@@ -1574,7 +1604,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -1795,7 +1825,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -2049,7 +2079,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -2264,24 +2294,6 @@
                         ],
                         "distance": 0,
                         "parkingAllowed": 1,
-                        "noParkingReason": {
-                          "reasonType": 1,
-                          "requiredContexts": [
-                            {
-                              "vehicleTypeId": 0,
-                              "activityTypeId": 0,
-                              "fuelTypeId": 0,
-                              "permits": [
-                                {
-                                  "permitTypeId": 0
-                                }
-                              ]
-                            }
-                          ],
-                          "specialRestrictions": [
-                            0
-                          ]
-                        },
                         "entityETag": "string"
                       }
                     ],
@@ -2299,7 +2311,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -2547,24 +2559,6 @@
                         ],
                         "distance": 0,
                         "parkingAllowed": 1,
-                        "noParkingReason": {
-                          "reasonType": 1,
-                          "requiredContexts": [
-                            {
-                              "vehicleTypeId": 0,
-                              "activityTypeId": 0,
-                              "fuelTypeId": 0,
-                              "permits": [
-                                {
-                                  "permitTypeId": 0
-                                }
-                              ]
-                            }
-                          ],
-                          "specialRestrictions": [
-                            0
-                          ]
-                        },
                         "entityETag": "string"
                       }
                     ],
@@ -2582,7 +2576,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -2736,7 +2730,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -2931,7 +2925,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -2992,14 +2986,14 @@
           "200": {
             "description": "Success"
           },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -3087,28 +3081,23 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/Authority"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "BadRequestResponse": {
         "type": "object",
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the request was successful",
-            "readOnly": true,
-            "example": false
+            "readOnly": true
           },
           "message": {
             "type": "string",
-            "description": "Human-readable message for this response",
             "nullable": true
           },
           "errors": {
@@ -3116,12 +3105,10 @@
             "items": {
               "$ref": "#/components/schemas/Error"
             },
-            "description": "Collection of validation errors caused by the request",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A response indicating the request was invalid"
+        "additionalProperties": false
       },
       "BasemapTranslation": {
         "enum": [
@@ -3158,7 +3145,7 @@
         "description": "\n\n*NotSupported (0)\r\n*Supported (1)\r\n*ComingSoon (2)\r\n",
         "format": "int32"
       },
-      "Carpark": {
+      "CarPark": {
         "type": "object",
         "properties": {
           "entityId": {
@@ -3213,7 +3200,7 @@
             "nullable": true
           },
           "operator": {
-            "$ref": "#/components/schemas/CarparkOperator"
+            "$ref": "#/components/schemas/CarParkOperator"
           },
           "entityType": {
             "$ref": "#/components/schemas/MapEntityType"
@@ -3222,7 +3209,7 @@
         "additionalProperties": false,
         "description": "Models an off-street parking facility (car park) including surface and multi-storey car parks."
       },
-      "CarparkOperator": {
+      "CarParkOperator": {
         "type": "object",
         "properties": {
           "name": {
@@ -3282,22 +3269,18 @@
         "properties": {
           "property": {
             "type": "string",
-            "description": "The property that caused the problem",
             "nullable": true
           },
           "code": {
             "type": "string",
-            "description": "Machine-readable code representing the type of error",
             "nullable": true
           },
           "message": {
             "type": "string",
-            "description": "Human-readable message for the error",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "Represents a validation error"
+        "additionalProperties": false
       },
       "FeatureInfo": {
         "type": "object",
@@ -3310,12 +3293,15 @@
         "description": "Provides information about the geometry contained in the feature"
       },
       "FetchAuthorityByIdQuery": {
+        "required": [
+          "id"
+        ],
         "type": "object",
         "properties": {
           "id": {
+            "minLength": 1,
             "type": "string",
-            "description": "Identifier of the Authority to fetch",
-            "nullable": true
+            "description": "Identifier of the Authority to fetch"
           }
         },
         "additionalProperties": false
@@ -3366,6 +3352,10 @@
             "type": "string",
             "description": "The date for which to retrieve the operating hours",
             "example": "2020-01-20T00:00:00"
+          },
+          "includeNotApplicableOperatingHours": {
+            "type": "boolean",
+            "description": "Include all operation hours requirements for contexts that do not apply to the driver making the request."
           }
         },
         "additionalProperties": false
@@ -3388,17 +3378,24 @@
             "type": "string",
             "description": "The date for which to retrieve the operating hours",
             "example": "2020-01-20T00:00:00"
+          },
+          "includeNotApplicableOperatingHours": {
+            "type": "boolean",
+            "description": "Include all operation hours requirements for contexts that do not apply to the driver making the request."
           }
         },
         "additionalProperties": false
       },
       "FetchParkingEntityByIdQuery": {
+        "required": [
+          "id"
+        ],
         "type": "object",
         "properties": {
           "id": {
+            "minLength": 1,
             "type": "string",
-            "description": "Identifier of the Parking Entity to fetch",
-            "nullable": true
+            "description": "Identifier of the Parking Entity to fetch"
           }
         },
         "additionalProperties": false
@@ -3479,12 +3476,15 @@
         "additionalProperties": false
       },
       "FetchZoneByIdQuery": {
+        "required": [
+          "id"
+        ],
         "type": "object",
         "properties": {
           "id": {
+            "minLength": 1,
             "type": "string",
-            "description": "Identifier of the Zone to fetch",
-            "nullable": true
+            "description": "Identifier of the Zone to fetch"
           }
         },
         "additionalProperties": false
@@ -3701,15 +3701,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/FindParkingEntitiesByViewportResponse"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "FindParkingEntitiesByViewportResult": {
         "type": "object",
@@ -4179,15 +4177,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/GeometrySuggestionFeatureCollection"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "GeometryType": {
         "enum": [
@@ -4252,15 +4248,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/MapEntitiesResponse"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "MapEntityType": {
         "enum": [
@@ -4271,41 +4265,6 @@
         ],
         "type": "integer",
         "description": "Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.\n\n*OnStreet (1) - An on street parking area\r\n*Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.\r\n*Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.\r\nA zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may\r\ndefine rules parking entities that can be overridden by individual entities.\r\n*Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.\r\n",
-        "format": "int32"
-      },
-      "NoParkingReason": {
-        "type": "object",
-        "properties": {
-          "reasonType": {
-            "$ref": "#/components/schemas/NoParkingReasonType"
-          },
-          "requiredContexts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VehicleOperatorContext"
-            },
-            "nullable": true
-          },
-          "specialRestrictions": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "NoParkingReasonType": {
-        "enum": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "type": "integer",
-        "description": "Reasons that parking is not permitted at a parking entity\n\n*NoParkingAllowed (1) - Parking is never allowed at this location for anybody\r\n*IncorrectVehicleOperatorContext (2) - Parking is allowed during the requested window, but not for the vehicle operator making the request\r\n*SpecialRestrictionsApply (3) - The parking entity is subject to special restrictions that apply during the requested window\r\n*CarParkClosed (4) - A car park that is closed during the requested window\r\n",
         "format": "int32"
       },
       "Note": {
@@ -4325,18 +4284,14 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the request was successful",
-            "readOnly": true,
-            "example": false
+            "readOnly": true
           },
           "message": {
             "type": "string",
-            "description": "Human-readable message for this response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A response indicating the requested resource was not found"
+        "additionalProperties": false
       },
       "OnStreetParking": {
         "type": "object",
@@ -4487,6 +4442,33 @@
         "additionalProperties": false,
         "description": "Contextualized operating hours for an entity"
       },
+      "OperatingHoursRequirements": {
+        "type": "object",
+        "properties": {
+          "paymentMethodIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Payment method(s) for which these operating hours are valid",
+            "nullable": true
+          },
+          "requirements": {
+            "$ref": "#/components/schemas/VehicleOperatorRequirements"
+          },
+          "openPeriods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OpenPeriod"
+            },
+            "description": "Operating hours",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Operating hours requirements for an entity"
+      },
       "ParkingAllowed": {
         "enum": [
           1,
@@ -4555,7 +4537,7 @@
             "nullable": true
           },
           "operator": {
-            "$ref": "#/components/schemas/CarparkOperator"
+            "$ref": "#/components/schemas/CarParkOperator"
           },
           "onStreetParkingTypeIds": {
             "type": "array",
@@ -4583,15 +4565,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ParkingEntity"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ParkingEntityOperatingHoursResult": {
         "type": "object",
@@ -4616,6 +4596,14 @@
             },
             "description": "List of operating hours for this parking entity. If the context of the search means that there are multiple operating hours returned,\r\none list of operating hours will be generated for each payment methods, bay types and vehicle operator\r\ncontext for which they are valid.",
             "nullable": true
+          },
+          "notApplicableOperatingHours": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OperatingHoursRequirements"
+            },
+            "description": "Not applicable operation hours requirements",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4625,15 +4613,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ParkingEntityOperatingHoursResult"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ParkingEntitySearchResult": {
         "type": "object",
@@ -4663,9 +4649,6 @@
           "parkingAllowed": {
             "$ref": "#/components/schemas/ParkingAllowed"
           },
-          "noParkingReason": {
-            "$ref": "#/components/schemas/NoParkingReason"
-          },
           "entityETag": {
             "type": "string",
             "description": "The Etag of the current latest version of the Parking Entity referred to by this result. This allows\r\nclients to determine if they have the latest version of the parking entity in their local cache and only\r\nrequest the entity if it is missing.",
@@ -4680,15 +4663,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ParkingEntitySearchResult"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ParkingQuote": {
         "type": "object",
@@ -4804,15 +4785,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ParkingQuotesResponse"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ParkingSearchResponse": {
         "type": "object",
@@ -4847,15 +4826,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ParkingSearchResponse"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "PaymentProvider": {
         "type": "object",
@@ -4899,15 +4876,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/PaymentProvidersResponse"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "Permit": {
         "type": "object",
@@ -4953,7 +4928,6 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
@@ -4964,12 +4938,10 @@
                 "$ref": "#/components/schemas/Capability"
               }
             },
-            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "Suggestion": {
         "type": "object",
@@ -5070,6 +5042,47 @@
         "additionalProperties": false,
         "description": "A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)\r\nthat affect whether or not they can park and/or the price they pay if they do."
       },
+      "VehicleOperatorRequirements": {
+        "type": "object",
+        "properties": {
+          "vehicleTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Type of vehicles",
+            "nullable": true
+          },
+          "activityTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Activity the operators perform at the kerbside (parking, loading)",
+            "nullable": true
+          },
+          "fuelTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "Fuel types of the vehicles",
+            "nullable": true
+          },
+          "permits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Permit"
+            },
+            "description": "Any permits held by the operator (e.g. blue disabled badge, car club permit)",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Zone": {
         "type": "object",
         "properties": {
@@ -5166,15 +5179,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/Zone"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ZoneSearchResponse": {
         "type": "object",
@@ -5199,15 +5210,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ZoneSearchResponse"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ZoneSearchResult": {
         "type": "object",

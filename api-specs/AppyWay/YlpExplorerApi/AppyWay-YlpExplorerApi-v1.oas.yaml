@@ -73,7 +73,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
               example:
-                success: false
+                success: true
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
@@ -120,7 +120,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -279,7 +279,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -312,6 +312,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000+00:00
+              includeNotApplicableOperatingHours: true
           text/json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
@@ -324,6 +325,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000+00:00
+              includeNotApplicableOperatingHours: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
@@ -336,6 +338,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000+00:00
+              includeNotApplicableOperatingHours: true
       responses:
         "200":
           description: Success
@@ -359,8 +362,24 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-08-23T00:00:00.0000000+00:00
-                      end: 2021-08-23T00:00:00.0000000+00:00
+                    - start: 2021-09-01T00:00:00.0000000+00:00
+                      end: 2021-09-01T00:00:00.0000000+00:00
+                      isFree: true
+                  notApplicableOperatingHours:
+                  - paymentMethodIds:
+                    - 0
+                    requirements:
+                      vehicleTypeIds:
+                      - 0
+                      activityTypeIds:
+                      - 0
+                      fuelTypeIds:
+                      - 0
+                      permits:
+                      - permitTypeId: 0
+                    openPeriods:
+                    - start: 2021-09-01T00:00:00.0000000+00:00
+                      end: 2021-09-01T00:00:00.0000000+00:00
                       isFree: true
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -373,7 +392,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
               example:
-                success: false
+                success: true
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
@@ -399,6 +418,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000+00:00
+              includeNotApplicableOperatingHours: true
           text/json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdsQuery'
@@ -412,6 +432,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000+00:00
+              includeNotApplicableOperatingHours: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdsQuery'
@@ -425,6 +446,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000+00:00
+              includeNotApplicableOperatingHours: true
       responses:
         "200":
           description: Success
@@ -448,8 +470,24 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-08-23T00:00:00.0000000+00:00
-                      end: 2021-08-23T00:00:00.0000000+00:00
+                    - start: 2021-09-01T00:00:00.0000000+00:00
+                      end: 2021-09-01T00:00:00.0000000+00:00
+                      isFree: true
+                  notApplicableOperatingHours:
+                  - paymentMethodIds:
+                    - 0
+                    requirements:
+                      vehicleTypeIds:
+                      - 0
+                      activityTypeIds:
+                      - 0
+                      fuelTypeIds:
+                      - 0
+                      permits:
+                      - permitTypeId: 0
+                    openPeriods:
+                    - start: 2021-09-01T00:00:00.0000000+00:00
+                      end: 2021-09-01T00:00:00.0000000+00:00
                       isFree: true
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -547,7 +585,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
               example:
-                success: false
+                success: true
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
@@ -644,16 +682,6 @@ paths:
                         maxVehicleManufactureYear: 0
                   distance: 0
                   parkingAllowed: 1
-                  noParkingReason:
-                    reasonType: 1
-                    requiredContexts:
-                    - vehicleTypeId: 0
-                      activityTypeId: 0
-                      fuelTypeId: 0
-                      permits:
-                      - permitTypeId: 0
-                    specialRestrictions:
-                    - 0
                   entityETag: string
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -666,7 +694,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
               example:
-                success: false
+                success: true
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
@@ -769,16 +797,6 @@ paths:
                           maxVehicleManufactureYear: 0
                     distance: 0
                     parkingAllowed: 1
-                    noParkingReason:
-                      reasonType: 1
-                      requiredContexts:
-                      - vehicleTypeId: 0
-                        activityTypeId: 0
-                        fuelTypeId: 0
-                        permits:
-                        - permitTypeId: 0
-                      specialRestrictions:
-                      - 0
                     entityETag: string
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -835,7 +853,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
               example:
-                success: false
+                success: true
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
@@ -904,7 +922,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
               example:
-                success: false
+                success: true
                 message: string
         "429":
           $ref: '#/components/responses/TooManyRequests'
@@ -992,7 +1010,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1141,7 +1159,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1302,7 +1320,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1452,16 +1470,6 @@ paths:
                           maxVehicleManufactureYear: 0
                     distance: 0
                     parkingAllowed: 1
-                    noParkingReason:
-                      reasonType: 1
-                      requiredContexts:
-                      - vehicleTypeId: 0
-                        activityTypeId: 0
-                        fuelTypeId: 0
-                        permits:
-                        - permitTypeId: 0
-                      specialRestrictions:
-                      - 0
                     entityETag: string
                   generalOnstreetPolicy: 1
         "400":
@@ -1471,7 +1479,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1633,16 +1641,6 @@ paths:
                           maxVehicleManufactureYear: 0
                     distance: 0
                     parkingAllowed: 1
-                    noParkingReason:
-                      reasonType: 1
-                      requiredContexts:
-                      - vehicleTypeId: 0
-                        activityTypeId: 0
-                        fuelTypeId: 0
-                        permits:
-                        - permitTypeId: 0
-                      specialRestrictions:
-                      - 0
                     entityETag: string
                   generalOnstreetPolicy: 1
         "400":
@@ -1652,7 +1650,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1745,7 +1743,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1862,7 +1860,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -1900,12 +1898,12 @@ paths:
       responses:
         "200":
           description: Success
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
     Address:
@@ -1973,32 +1971,25 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/Authority'
       additionalProperties: false
-      description: A successful response
     BadRequestResponse:
       type: object
       properties:
         success:
           type: boolean
-          description: Whether the request was successful
           readOnly: true
-          example: false
         message:
           type: string
-          description: Human-readable message for this response
           nullable: true
         errors:
           type: array
           items:
             $ref: '#/components/schemas/Error'
-          description: Collection of validation errors caused by the request
           nullable: true
       additionalProperties: false
-      description: A response indicating the request was invalid
     BasemapTranslation:
       enum:
       - 1
@@ -2031,7 +2022,7 @@ components:
         *Supported (1)
         *ComingSoon (2)
       format: int32
-    Carpark:
+    CarPark:
       type: object
       properties:
         entityId:
@@ -2078,12 +2069,12 @@ components:
           description: Payment methods supported at this onstreet location.
           nullable: true
         operator:
-          $ref: '#/components/schemas/CarparkOperator'
+          $ref: '#/components/schemas/CarParkOperator'
         entityType:
           $ref: '#/components/schemas/MapEntityType'
       additionalProperties: false
       description: Models an off-street parking facility (car park) including surface and multi-storey car parks.
-    CarparkOperator:
+    CarParkOperator:
       type: object
       properties:
         name:
@@ -2129,18 +2120,14 @@ components:
       properties:
         property:
           type: string
-          description: The property that caused the problem
           nullable: true
         code:
           type: string
-          description: Machine-readable code representing the type of error
           nullable: true
         message:
           type: string
-          description: Human-readable message for the error
           nullable: true
       additionalProperties: false
-      description: Represents a validation error
     FeatureInfo:
       type: object
       properties:
@@ -2149,12 +2136,14 @@ components:
       additionalProperties: false
       description: Provides information about the geometry contained in the feature
     FetchAuthorityByIdQuery:
+      required:
+      - id
       type: object
       properties:
         id:
+          minLength: 1
           type: string
           description: Identifier of the Authority to fetch
-          nullable: true
       additionalProperties: false
     FetchCapabilitiesByIdsQuery:
       type: object
@@ -2191,6 +2180,9 @@ components:
           type: string
           description: The date for which to retrieve the operating hours
           example: 2020-01-20T00:00:00.0000000
+        includeNotApplicableOperatingHours:
+          type: boolean
+          description: Include all operation hours requirements for contexts that do not apply to the driver making the request.
       additionalProperties: false
     FetchOperatingHoursByIdsQuery:
       type: object
@@ -2207,14 +2199,19 @@ components:
           type: string
           description: The date for which to retrieve the operating hours
           example: 2020-01-20T00:00:00.0000000
+        includeNotApplicableOperatingHours:
+          type: boolean
+          description: Include all operation hours requirements for contexts that do not apply to the driver making the request.
       additionalProperties: false
     FetchParkingEntityByIdQuery:
+      required:
+      - id
       type: object
       properties:
         id:
+          minLength: 1
           type: string
           description: Identifier of the Parking Entity to fetch
-          nullable: true
       additionalProperties: false
     FetchParkingQuoteByIdQuery:
       required:
@@ -2282,12 +2279,14 @@ components:
           nullable: true
       additionalProperties: false
     FetchZoneByIdQuery:
+      required:
+      - id
       type: object
       properties:
         id:
+          minLength: 1
           type: string
           description: Identifier of the Zone to fetch
-          nullable: true
       additionalProperties: false
     FindAuthorityIdsByViewportQuery:
       required:
@@ -2506,12 +2505,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/FindParkingEntitiesByViewportResponse'
       additionalProperties: false
-      description: A successful response
     FindParkingEntitiesByViewportResult:
       type: object
       properties:
@@ -2923,12 +2920,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/GeometrySuggestionFeatureCollection'
       additionalProperties: false
-      description: A successful response
     GeometryType:
       enum:
       - 1
@@ -2983,12 +2978,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/MapEntitiesResponse'
       additionalProperties: false
-      description: A successful response
     MapEntityType:
       enum:
       - 1
@@ -3006,38 +2999,6 @@ components:
         define rules parking entities that can be overridden by individual entities.
         *Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.
       format: int32
-    NoParkingReason:
-      type: object
-      properties:
-        reasonType:
-          $ref: '#/components/schemas/NoParkingReasonType'
-        requiredContexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/VehicleOperatorContext'
-          nullable: true
-        specialRestrictions:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    NoParkingReasonType:
-      enum:
-      - 1
-      - 2
-      - 3
-      - 4
-      type: integer
-      description: |+
-        Reasons that parking is not permitted at a parking entity
-
-        *NoParkingAllowed (1) - Parking is never allowed at this location for anybody
-        *IncorrectVehicleOperatorContext (2) - Parking is allowed during the requested window, but not for the vehicle operator making the request
-        *SpecialRestrictionsApply (3) - The parking entity is subject to special restrictions that apply during the requested window
-        *CarParkClosed (4) - A car park that is closed during the requested window
-      format: int32
     Note:
       type: object
       properties:
@@ -3052,15 +3013,11 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the request was successful
           readOnly: true
-          example: false
         message:
           type: string
-          description: Human-readable message for this response
           nullable: true
       additionalProperties: false
-      description: A response indicating the requested resource was not found
     OnStreetParking:
       type: object
       properties:
@@ -3223,6 +3180,26 @@ components:
           nullable: true
       additionalProperties: false
       description: Contextualized operating hours for an entity
+    OperatingHoursRequirements:
+      type: object
+      properties:
+        paymentMethodIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Payment method(s) for which these operating hours are valid
+          nullable: true
+        requirements:
+          $ref: '#/components/schemas/VehicleOperatorRequirements'
+        openPeriods:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenPeriod'
+          description: Operating hours
+          nullable: true
+      additionalProperties: false
+      description: Operating hours requirements for an entity
     ParkingAllowed:
       enum:
       - 1
@@ -3285,7 +3262,7 @@ components:
           description: Payment methods supported at this onstreet location.
           nullable: true
         operator:
-          $ref: '#/components/schemas/CarparkOperator'
+          $ref: '#/components/schemas/CarParkOperator'
         onStreetParkingTypeIds:
           type: array
           items:
@@ -3327,12 +3304,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/ParkingEntity'
       additionalProperties: false
-      description: A successful response
     ParkingEntityOperatingHoursResult:
       type: object
       properties:
@@ -3358,18 +3333,22 @@ components:
             one list of operating hours will be generated for each payment methods, bay types and vehicle operator
             context for which they are valid.
           nullable: true
+        notApplicableOperatingHours:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperatingHoursRequirements'
+          description: Not applicable operation hours requirements
+          nullable: true
       additionalProperties: false
     ParkingEntityOperatingHoursResultOkResponse:
       type: object
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/ParkingEntityOperatingHoursResult'
       additionalProperties: false
-      description: A successful response
     ParkingEntitySearchResult:
       type: object
       properties:
@@ -3395,8 +3374,6 @@ components:
           nullable: true
         parkingAllowed:
           $ref: '#/components/schemas/ParkingAllowed'
-        noParkingReason:
-          $ref: '#/components/schemas/NoParkingReason'
         entityETag:
           type: string
           description: |-
@@ -3411,12 +3388,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/ParkingEntitySearchResult'
       additionalProperties: false
-      description: A successful response
     ParkingQuote:
       type: object
       properties:
@@ -3525,12 +3500,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/ParkingQuotesResponse'
       additionalProperties: false
-      description: A successful response
     ParkingSearchResponse:
       type: object
       properties:
@@ -3557,12 +3530,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/ParkingSearchResponse'
       additionalProperties: false
-      description: A successful response
     PaymentProvider:
       type: object
       properties:
@@ -3596,12 +3567,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/PaymentProvidersResponse'
       additionalProperties: false
-      description: A successful response
     Permit:
       type: object
       properties:
@@ -3635,7 +3604,6 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           type: object
@@ -3643,10 +3611,8 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Capability'
-          description: Payload of the response
           nullable: true
       additionalProperties: false
-      description: A successful response
     Suggestion:
       type: object
       properties:
@@ -3730,6 +3696,37 @@ components:
       description: |-
         A set of values that pertain to the driver looking to park (their vehicle, permits, intended activity)
         that affect whether or not they can park and/or the price they pay if they do.
+    VehicleOperatorRequirements:
+      type: object
+      properties:
+        vehicleTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Type of vehicles
+          nullable: true
+        activityTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Activity the operators perform at the kerbside (parking, loading)
+          nullable: true
+        fuelTypeIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Fuel types of the vehicles
+          nullable: true
+        permits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permit'
+          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
+          nullable: true
+      additionalProperties: false
     Zone:
       type: object
       properties:
@@ -3810,12 +3807,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/Zone'
       additionalProperties: false
-      description: A successful response
     ZoneSearchResponse:
       type: object
       properties:
@@ -3834,12 +3829,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/ZoneSearchResponse'
       additionalProperties: false
-      description: A successful response
     ZoneSearchResult:
       type: object
       properties:
