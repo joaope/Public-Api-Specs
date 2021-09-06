@@ -482,6 +482,8 @@
               },
               "example": {
                 "entityId": "string",
+                "includeNotApplicableOperatingHours": true,
+                "date": "2020-01-20T00:00:00+00:00",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -491,9 +493,7 @@
                       "permitTypeId": 0
                     }
                   ]
-                },
-                "date": "2020-01-20T00:00:00+00:00",
-                "includeNotApplicableOperatingHours": true
+                }
               }
             },
             "text/json": {
@@ -502,6 +502,8 @@
               },
               "example": {
                 "entityId": "string",
+                "includeNotApplicableOperatingHours": true,
+                "date": "2020-01-20T00:00:00+00:00",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -511,9 +513,7 @@
                       "permitTypeId": 0
                     }
                   ]
-                },
-                "date": "2020-01-20T00:00:00+00:00",
-                "includeNotApplicableOperatingHours": true
+                }
               }
             },
             "application/*+json": {
@@ -522,6 +522,8 @@
               },
               "example": {
                 "entityId": "string",
+                "includeNotApplicableOperatingHours": true,
+                "date": "2020-01-20T00:00:00+00:00",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -531,9 +533,7 @@
                       "permitTypeId": 0
                     }
                   ]
-                },
-                "date": "2020-01-20T00:00:00+00:00",
-                "includeNotApplicableOperatingHours": true
+                }
               }
             }
           }
@@ -1122,9 +1122,6 @@
               "example": {
                 "endTime": "string",
                 "startTime": "string",
-                "ids": [
-                  "string"
-                ],
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1134,7 +1131,10 @@
                       "permitTypeId": 0
                     }
                   ]
-                }
+                },
+                "ids": [
+                  "string"
+                ]
               }
             },
             "text/json": {
@@ -1144,9 +1144,6 @@
               "example": {
                 "endTime": "string",
                 "startTime": "string",
-                "ids": [
-                  "string"
-                ],
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1156,7 +1153,10 @@
                       "permitTypeId": 0
                     }
                   ]
-                }
+                },
+                "ids": [
+                  "string"
+                ]
               }
             },
             "application/*+json": {
@@ -1166,9 +1166,6 @@
               "example": {
                 "endTime": "string",
                 "startTime": "string",
-                "ids": [
-                  "string"
-                ],
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1178,7 +1175,10 @@
                       "permitTypeId": 0
                     }
                   ]
-                }
+                },
+                "ids": [
+                  "string"
+                ]
               }
             }
           }
@@ -3338,12 +3338,15 @@
         "description": "Request allowing a client to fetch a list of entities"
       },
       "FetchOperatingHoursByIdQuery": {
+        "required": [
+          "entityId"
+        ],
         "type": "object",
         "properties": {
           "entityId": {
+            "minLength": 1,
             "type": "string",
-            "description": "Identifier of the Parking Entity to fetch",
-            "nullable": true
+            "description": "Identifier of the Parking Entity to fetch"
           },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
@@ -3434,19 +3437,10 @@
       "FetchParkingQuotesByIdsQuery": {
         "required": [
           "endTime",
-          "ids",
           "startTime"
         ],
         "type": "object",
         "properties": {
-          "ids": {
-            "minLength": 1,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "List of Ids of entities to fetch"
-          },
           "startTime": {
             "minLength": 1,
             "type": "string",
@@ -3459,6 +3453,14 @@
             "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of Ids of entities to fetch",
+            "nullable": true
+          },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
           }
@@ -3466,11 +3468,14 @@
         "additionalProperties": false
       },
       "FetchPaymentProvidersByParkingEntityIdQuery": {
+        "required": [
+          "entityId"
+        ],
         "type": "object",
         "properties": {
           "entityId": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
