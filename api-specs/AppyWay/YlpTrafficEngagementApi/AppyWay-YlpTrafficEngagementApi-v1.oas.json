@@ -509,6 +509,47 @@
         }
       }
     },
+    "/report/fetchCsvFeedbackByAuthorityAndOrder": {
+      "get": {
+        "tags": [
+          "EngagementReport"
+        ],
+        "summary": "/report/fetchCsvFeedbackByAuthorityAndOrder - GET",
+        "operationId": "get-report-fetchcsvfeedbackbyauthorityandorder",
+        "parameters": [
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/report/fetchFeedbackByAuthorityAndOrder": {
       "get": {
         "tags": [
