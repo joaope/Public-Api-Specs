@@ -2079,6 +2079,25 @@
   },
   "components": {
     "schemas": {
+      "ApplyOrderToMaster": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BuildAndDeployMasterIndex": {
         "type": "object",
         "properties": {
@@ -2094,7 +2113,7 @@
         },
         "additionalProperties": false
       },
-      "RebuildSearchIndex": {
+      "BuildCarparkIndex": {
         "type": "object",
         "properties": {
           "name": {
@@ -2102,8 +2121,27 @@
             "nullable": true,
             "readOnly": true
           },
+          "prefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "from": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time"
+          },
           "user": {
             "type": "string",
+            "nullable": true
+          },
+          "partitions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           }
         },
@@ -2154,102 +2192,110 @@
         },
         "additionalProperties": false
       },
-      "DeleteOnstreetIndex": {
+      "CalculateCoverage": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
             "nullable": true,
             "readOnly": true
-          },
-          "prefix": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "DeployOnstreetIndex": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "prefix": {
-            "type": "string",
-            "nullable": true
           },
           "user": {
             "type": "string",
             "nullable": true
           },
-          "target": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "TestOnStreetIndex": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "indexName": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "BuildCarparkIndex": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "prefix": {
-            "type": "string",
-            "nullable": true
-          },
-          "from": {
+          "date": {
             "type": "string",
             "format": "date-time"
-          },
-          "to": {
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClearTestOrders": {
+        "type": "object",
+        "properties": {
+          "name": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true,
+            "readOnly": true
           },
           "user": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConvertToBaseMap": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
           },
-          "partitions": {
+          "authorityIds": {
             "type": "array",
             "items": {
               "type": "string"
             },
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "branch": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateInitialOrderForAuthority": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "authorityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
       "DeleteCarparkIndex": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "prefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteOnstreetIndex": {
         "type": "object",
         "properties": {
           "name": {
@@ -2291,7 +2337,7 @@
         },
         "additionalProperties": false
       },
-      "ApplyOrderToMaster": {
+      "DeployOnstreetIndex": {
         "type": "object",
         "properties": {
           "name": {
@@ -2299,74 +2345,17 @@
             "nullable": true,
             "readOnly": true
           },
-          "user": {
+          "prefix": {
             "type": "string",
-            "nullable": true
-          },
-          "orderId": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ConvertToBaseMap": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "authorityIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
             "nullable": true
           },
           "user": {
             "type": "string",
             "nullable": true
           },
-          "branch": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PrepareFiles": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "user": {
+          "target": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CalculateCoverage": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -2382,70 +2371,6 @@
           "user": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateInitialOrderForAuthority": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "authorityId": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderName": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProposeMovingOrder": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "orderId": {
-            "type": "string",
-            "nullable": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GenerateOrderDocuments": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "user": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "force": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -2469,7 +2394,7 @@
         },
         "additionalProperties": false
       },
-      "ClearTestOrders": {
+      "GenerateOrderDocuments": {
         "type": "object",
         "properties": {
           "name": {
@@ -2480,6 +2405,13 @@
           "user": {
             "type": "string",
             "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "force": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -2513,10 +2445,92 @@
         },
         "additionalProperties": false
       },
+      "PrepareFiles": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProposeMovingOrder": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "orderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RebuildSearchIndex": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Test": {
         "type": "object",
         "properties": {
           "expression": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TestOnStreetIndex": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "indexName": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TestRequest": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string",
+            "nullable": true
+          },
+          "indexName": {
             "type": "string",
             "nullable": true
           }
@@ -2539,20 +2553,6 @@
             "items": {
               "$ref": "#/components/schemas/Test"
             },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "TestRequest": {
-        "type": "object",
-        "properties": {
-          "expression": {
-            "type": "string",
-            "nullable": true
-          },
-          "indexName": {
-            "type": "string",
             "nullable": true
           }
         },
