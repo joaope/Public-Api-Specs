@@ -136,7 +136,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BulkNewUserRequest'
+              $ref: '#/components/schemas/BulkNewUserCommand'
             example:
               redirect: string
               organisation: string
@@ -151,7 +151,7 @@ paths:
               - string
           text/json:
             schema:
-              $ref: '#/components/schemas/BulkNewUserRequest'
+              $ref: '#/components/schemas/BulkNewUserCommand'
             example:
               redirect: string
               organisation: string
@@ -166,7 +166,7 @@ paths:
               - string
           application/*+json:
             schema:
-              $ref: '#/components/schemas/BulkNewUserRequest'
+              $ref: '#/components/schemas/BulkNewUserCommand'
             example:
               redirect: string
               organisation: string
@@ -185,7 +185,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BulkNewUserResponseOkResponse'
+                $ref: '#/components/schemas/BulkNewUserResultOkResponse'
               example:
                 success: true
                 result:
@@ -333,7 +333,6 @@ paths:
                 result:
                   apiKey:
                     id: string
-                    appyUserId: string
                     organisation: string
                     blocked: true
                     roles:
@@ -349,6 +348,8 @@ paths:
                     lastLogin: string
                     cacheId: string
                     name: string
+                    createdOn: string
+                    email: string
                   key: string
         "400":
           description: Bad Request
@@ -888,7 +889,6 @@ paths:
                 result:
                   user:
                     id: string
-                    appyUserId: string
                     organisation: string
                     blocked: true
                     roles:
@@ -902,6 +902,7 @@ paths:
                     managedGroups:
                     - string
                     lastLogin: string
+                    appyUserId: string
                     email: string
                     emailVerified: true
                     firstName: string
@@ -1438,7 +1439,6 @@ paths:
                 success: true
                 result:
                 - id: string
-                  appyUserId: string
                   organisation: string
                   blocked: true
                   roles:
@@ -1454,6 +1454,8 @@ paths:
                   lastLogin: string
                   cacheId: string
                   name: string
+                  createdOn: string
+                  email: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1732,7 +1734,6 @@ paths:
                 success: true
                 result:
                 - id: string
-                  appyUserId: string
                   organisation: string
                   blocked: true
                   roles:
@@ -1746,6 +1747,7 @@ paths:
                   managedGroups:
                   - string
                   lastLogin: string
+                  appyUserId: string
                   email: string
                   emailVerified: true
                   firstName: string
@@ -1754,6 +1756,86 @@ paths:
                   isAuth0User: true
                   createdOn: string
                   loginType: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchApiKeysByIds:
+    post:
+      tags:
+      - ApiKey
+      summary: Fetch users by user ids
+      description: Fetch users by user ids
+      operationId: post-fetchapikeysbyids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchApiKeysByIdsQuery'
+            example:
+              ids:
+              - string
+              includeRoles: true
+              includeGroups: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchApiKeysByIdsQuery'
+            example:
+              ids:
+              - string
+              includeRoles: true
+              includeGroups: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchApiKeysByIdsQuery'
+            example:
+              ids:
+              - string
+              includeRoles: true
+              includeGroups: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKeyResultIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - id: string
+                  cacheId: string
+                  email: string
+                  name: string
+                  organisation: string
+                  createdOn: string
+                  lastLogin: string
+                  blocked: true
+                  managedGroups:
+                  - string
+                  groups:
+                  - string
+                  roles:
+                  - roleId: string
+                    resourceAssignments:
+                    - resourceTypeId: string
+                      resourceIds:
+                      - string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1990,6 +2072,198 @@ paths:
                     - resourceTypeId: string
                       resourceIds:
                       - string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /findApiKeysByNameStartingWith:
+    post:
+      tags:
+      - ApiKey
+      summary: Find api keys by name starting with
+      description: Find api keys by name starting with
+      operationId: post-findapikeysbynamestartingwith
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindApiKeysByNameStartingWithQuery'
+            example:
+              name: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FindApiKeysByNameStartingWithQuery'
+            example:
+              name: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FindApiKeysByNameStartingWithQuery'
+            example:
+              name: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKeyResultPagedResultOkResponse'
+              example:
+                success: true
+                result:
+                  pageResult:
+                  - id: string
+                    cacheId: string
+                    email: string
+                    name: string
+                    organisation: string
+                    createdOn: string
+                    lastLogin: string
+                    blocked: true
+                    managedGroups:
+                    - string
+                    groups:
+                    - string
+                    roles:
+                    - roleId: string
+                      resourceAssignments:
+                      - resourceTypeId: string
+                        resourceIds:
+                        - string
+                  pagingInfo:
+                    requestedPage: 0
+                    totalCount: 0
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /findApiKeysByPrefixStartingWith:
+    post:
+      tags:
+      - ApiKey
+      summary: Find api keys by prefix starting with
+      description: Find api keys by prefix starting with
+      operationId: post-findapikeysbyprefixstartingwith
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindApiKeysByPrefixStartingWithQuery'
+            example:
+              prefix: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FindApiKeysByPrefixStartingWithQuery'
+            example:
+              prefix: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FindApiKeysByPrefixStartingWithQuery'
+            example:
+              prefix: string
+              organisationId: string
+              pagingFilter:
+                page: 0
+                perPage: 0
+                includeTotals: true
+              includeGroups: true
+              includeRoles: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiKeyResultPagedResultOkResponse'
+              example:
+                success: true
+                result:
+                  pageResult:
+                  - id: string
+                    cacheId: string
+                    email: string
+                    name: string
+                    organisation: string
+                    createdOn: string
+                    lastLogin: string
+                    blocked: true
+                    managedGroups:
+                    - string
+                    groups:
+                    - string
+                    roles:
+                    - roleId: string
+                      resourceAssignments:
+                      - resourceTypeId: string
+                        resourceIds:
+                        - string
+                  pagingInfo:
+                    requestedPage: 0
+                    totalCount: 0
         "400":
           description: Bad Request
           content:
@@ -3031,9 +3305,6 @@ components:
         id:
           type: string
           nullable: true
-        appyUserId:
-          type: string
-          nullable: true
         organisation:
           type: string
           description: Organisation this belongs to.
@@ -3069,6 +3340,13 @@ components:
           type: string
           description: Display name of the API Key
           nullable: true
+        createdOn:
+          type: string
+          format: date-time
+          nullable: true
+        email:
+          type: string
+          nullable: true
       additionalProperties: false
     ApiKeyIReadOnlyCollectionOkResponse:
       type: object
@@ -3081,6 +3359,85 @@ components:
           items:
             $ref: '#/components/schemas/ApiKey'
           nullable: true
+      additionalProperties: false
+    ApiKeyResult:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        cacheId:
+          type: string
+          description: The identifier to be used when performing operations on the API Key
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        organisation:
+          type: string
+          nullable: true
+        createdOn:
+          type: string
+          format: date-time
+          nullable: true
+        lastLogin:
+          type: string
+          format: date-time
+          nullable: true
+        blocked:
+          type: boolean
+          description: Currently blocked from logging in
+          nullable: true
+        managedGroups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        groups:
+          type: array
+          items:
+            type: string
+          nullable: true
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignment'
+          nullable: true
+      additionalProperties: false
+    ApiKeyResultIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiKeyResult'
+          nullable: true
+      additionalProperties: false
+    ApiKeyResultPagedResult:
+      type: object
+      properties:
+        pageResult:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiKeyResult'
+          nullable: true
+        pagingInfo:
+          $ref: '#/components/schemas/PagingInfo'
+      additionalProperties: false
+    ApiKeyResultPagedResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/ApiKeyResultPagedResult'
       additionalProperties: false
     Application:
       type: object
@@ -3140,7 +3497,7 @@ components:
           minLength: 1
           type: string
       additionalProperties: false
-    BulkNewUserRequest:
+    BulkNewUserCommand:
       required:
       - csvData
       - organisation
@@ -3167,7 +3524,7 @@ components:
             $ref: '#/components/schemas/RoleAssignment'
           nullable: true
       additionalProperties: false
-    BulkNewUserResponse:
+    BulkNewUserResult:
       type: object
       properties:
         unsuccessfulInvitations:
@@ -3181,14 +3538,14 @@ components:
         hasErrors:
           type: boolean
       additionalProperties: false
-    BulkNewUserResponseOkResponse:
+    BulkNewUserResultOkResponse:
       type: object
       properties:
         success:
           type: boolean
           readOnly: true
         result:
-          $ref: '#/components/schemas/BulkNewUserResponse'
+          $ref: '#/components/schemas/BulkNewUserResult'
       additionalProperties: false
     ChangeUserEmailCommand:
       required:
@@ -3520,6 +3877,21 @@ components:
     FetchAllUsersQuery:
       type: object
       additionalProperties: false
+    FetchApiKeysByIdsQuery:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          minLength: 1
+          type: array
+          items:
+            type: string
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
+      additionalProperties: false
     FetchUserByEmailQuery:
       required:
       - email
@@ -3559,6 +3931,38 @@ components:
           type: array
           items:
             type: string
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
+      additionalProperties: false
+    FindApiKeysByNameStartingWithQuery:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        organisationId:
+          type: string
+          nullable: true
+        pagingFilter:
+          $ref: '#/components/schemas/PagingFilter'
+        includeGroups:
+          type: boolean
+        includeRoles:
+          type: boolean
+      additionalProperties: false
+    FindApiKeysByPrefixStartingWithQuery:
+      type: object
+      properties:
+        prefix:
+          type: string
+          nullable: true
+        organisationId:
+          type: string
+          nullable: true
+        pagingFilter:
+          $ref: '#/components/schemas/PagingFilter'
         includeGroups:
           type: boolean
         includeRoles:
@@ -4192,9 +4596,6 @@ components:
         id:
           type: string
           nullable: true
-        appyUserId:
-          type: string
-          nullable: true
         organisation:
           type: string
           description: Organisation this belongs to.
@@ -4221,6 +4622,9 @@ components:
         lastLogin:
           type: string
           format: date-time
+          nullable: true
+        appyUserId:
+          type: string
           nullable: true
         email:
           type: string
