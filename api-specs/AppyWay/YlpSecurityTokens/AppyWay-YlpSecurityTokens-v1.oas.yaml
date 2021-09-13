@@ -22,6 +22,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
               example: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+              example:
+                type: string
+                title: string
+                status: 0
+                detail: string
+                instance: string
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+              example:
+                type: string
+                title: string
+                status: 0
+                detail: string
+                instance: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":

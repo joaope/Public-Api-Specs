@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "410a06a1-66ad-4061-bf68-ea447b6694b0",
+      "id": "cbb80800-58fa-4899-b24c-01904ebc989b",
       "name": "Takes a token without permissions and embeds the permissions in the returned token",
       "request": {
         "name": "Takes a token without permissions and embeds the permissions in the returned token",
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "16f2f35f-2961-446f-9cd3-a2c94684196a",
+          "id": "bac2d283-396e-480b-8df5-a7b7278d67a8",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "2ca503a2-c98f-477a-b7e2-ebed0451664a",
+          "id": "eb070f86-8f72-44f8-bd71-7efce3f52d21",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -74,15 +74,15 @@
           "header": [
             {
               "key": "Content-Type",
-              "value": "text/plain"
+              "value": "application/json"
             }
           ],
-          "body": "",
+          "body": "{\n \"type\": \"string\",\n \"title\": \"string\",\n \"status\": 0,\n \"detail\": \"string\",\n \"instance\": \"string\"\n}",
           "cookie": [],
-          "_postman_previewlanguage": "text"
+          "_postman_previewlanguage": "json"
         },
         {
-          "id": "dc69f11a-e665-4ad9-a6ba-938cdc56b59b",
+          "id": "4763c599-cd1b-4c3b-916d-c56cdaf756ab",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "1a0a12ab-e256-4ee1-a055-df477c9136d4",
+          "id": "3ffeb02f-0b36-45d8-bc4f-423c64705ceb",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -140,7 +140,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8d2c6fb7-9ff2-4855-bca8-f2ad91f2a04c",
+          "id": "580f8049-24b1-4323-aa74-32342500745f",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -196,7 +196,7 @@
     ]
   },
   "info": {
-    "_postman_id": "62e1b385-2915-487f-b807-b89402ffbb2e",
+    "_postman_id": "192e540b-d4ae-461a-b2d1-6479f62f5601",
     "name": "Tokens (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
