@@ -2496,15 +2496,10 @@ paths:
         "400":
           description: Bad Request
           content:
-            application/json:
+            text/plain:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
-              example:
-                type: string
-                title: string
-                status: 0
-                detail: string
-                instance: string
+              example: 
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
