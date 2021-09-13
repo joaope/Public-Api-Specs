@@ -61,27 +61,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/FeedbackReply-feedbackId-Post200TextPlainResponse"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FeedbackReply-feedbackId-Post200ApplicationJsonResponse"
-                },
-                "example": "string"
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FeedbackReply-feedbackId-Post200TextJsonResponse"
-                },
-                "example": "string"
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -174,27 +154,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/FeedbackSubmitPost200TextPlainResponse"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FeedbackSubmitPost200ApplicationJsonResponse"
-                },
-                "example": "string"
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FeedbackSubmitPost200TextJsonResponse"
-                },
-                "example": "string"
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -321,45 +281,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSummary"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSummary"
-                },
-                "example": {
-                  "orderId": "string",
-                  "orderName": "string",
-                  "orderReason": "string",
-                  "proposedDate": "string",
-                  "consultationStartDate": "string",
-                  "consultationEndDate": "string",
-                  "orderFeedbackStatus": 0,
-                  "orderState": 0
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderSummary"
-                },
-                "example": {
-                  "orderId": "string",
-                  "orderName": "string",
-                  "orderReason": "string",
-                  "proposedDate": "string",
-                  "consultationStartDate": "string",
-                  "consultationEndDate": "string",
-                  "orderFeedbackStatus": 0,
-                  "orderState": 0
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -607,73 +529,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderFeedbackThreadWithCounts"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderFeedbackThreadWithCounts"
-                },
-                "example": {
-                  "orderResponseSummary": [
-                    {
-                      "orderId": "string",
-                      "feedbackId": "string",
-                      "firstName": "string",
-                      "lastName": "string",
-                      "responderType": 1,
-                      "orderSupport": 1,
-                      "feedbackCategory": 1,
-                      "feedbackText": "string",
-                      "originalFeedbackDate": "string",
-                      "latestFeedbackDate": "string",
-                      "threadState": 1,
-                      "feedbackStatus": 1
-                    }
-                  ],
-                  "orderResponseStatusCounts": [
-                    {
-                      "status": 1,
-                      "count": 0
-                    }
-                  ]
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderFeedbackThreadWithCounts"
-                },
-                "example": {
-                  "orderResponseSummary": [
-                    {
-                      "orderId": "string",
-                      "feedbackId": "string",
-                      "firstName": "string",
-                      "lastName": "string",
-                      "responderType": 1,
-                      "orderSupport": 1,
-                      "feedbackCategory": 1,
-                      "feedbackText": "string",
-                      "originalFeedbackDate": "string",
-                      "latestFeedbackDate": "string",
-                      "threadState": 1,
-                      "feedbackStatus": 1
-                    }
-                  ],
-                  "orderResponseStatusCounts": [
-                    {
-                      "status": 1,
-                      "count": 0
-                    }
-                  ]
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -722,81 +578,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderFeedbackThread"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderFeedbackThread"
-                },
-                "example": {
-                  "feedbackId": "string",
-                  "orderId": "string",
-                  "firstName": "string",
-                  "lastName": "string",
-                  "email": "string",
-                  "addressLine1": "string",
-                  "addressLine2": "string",
-                  "addressCity": "string",
-                  "addressPostCode": "string",
-                  "addressCountry": "string",
-                  "feedbackText": "string",
-                  "responderType": 1,
-                  "orderSupport": 1,
-                  "feedbackCategory": 1,
-                  "threadStatus": 1,
-                  "createdDate": "string",
-                  "thread": [
-                    {
-                      "firstName": "string",
-                      "lastName": "string",
-                      "email": "string",
-                      "message": "string",
-                      "role": "string",
-                      "messageDate": "string"
-                    }
-                  ]
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/OrderFeedbackThread"
-                },
-                "example": {
-                  "feedbackId": "string",
-                  "orderId": "string",
-                  "firstName": "string",
-                  "lastName": "string",
-                  "email": "string",
-                  "addressLine1": "string",
-                  "addressLine2": "string",
-                  "addressCity": "string",
-                  "addressPostCode": "string",
-                  "addressCountry": "string",
-                  "feedbackText": "string",
-                  "responderType": 1,
-                  "orderSupport": 1,
-                  "feedbackCategory": 1,
-                  "threadStatus": 1,
-                  "createdDate": "string",
-                  "thread": [
-                    {
-                      "firstName": "string",
-                      "lastName": "string",
-                      "email": "string",
-                      "message": "string",
-                      "role": "string",
-                      "messageDate": "string"
-                    }
-                  ]
-                }
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -950,27 +732,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportReplyToFeedbackPost200TextPlainResponse"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportReplyToFeedbackPost200ApplicationJsonResponse"
-                },
-                "example": "string"
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportReplyToFeedbackPost200TextJsonResponse"
-                },
-                "example": "string"
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1050,27 +812,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportSetThreadStatePost200TextPlainResponse"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportSetThreadStatePost200ApplicationJsonResponse"
-                },
-                "example": "True"
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportSetThreadStatePost200TextJsonResponse"
-                },
-                "example": "True"
-              }
-            }
+            "description": "Success"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -1087,42 +829,49 @@
   },
   "components": {
     "schemas": {
-      "OrderSupport": {
-        "enum": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "type": "integer",
-        "format": "int32"
+      "AuthorityFeedbackSummary": {
+        "type": "object",
+        "properties": {
+          "totalActiveConsultations": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalReadThreads": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalUnreadThreads": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalRespondedThreads": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
-      "FeedbackCategory": {
-        "enum": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "type": "integer",
-        "format": "int32"
+      "ChangeThreadStateRequest": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "$ref": "#/components/schemas/ThreadStatus"
+          },
+          "to": {
+            "$ref": "#/components/schemas/ThreadStatus"
+          }
+        },
+        "additionalProperties": false
       },
-      "ResponderType": {
-        "enum": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "type": "integer",
-        "format": "int32"
+      "CouncilFeedbackReply": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "Feedback": {
         "type": "object",
@@ -1187,19 +936,44 @@
         },
         "additionalProperties": false
       },
-      "PublicFeedbackReply": {
+      "FeedbackCategory": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FeedbackRating": {
         "type": "object",
         "properties": {
-          "email": {
-            "type": "string",
+          "feedbackRatings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rating"
+            },
             "nullable": true
           },
-          "message": {
-            "type": "string",
-            "nullable": true
+          "feedbackCount": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
+      },
+      "FeedbackStatus": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "OrderFeedbackStatus": {
         "enum": [
@@ -1209,47 +983,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "OrderStatusCounts": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/OrderFeedbackStatus"
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "StaticOrderState": {
-        "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "Rating": {
-        "type": "object",
-        "properties": {
-          "score": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
       },
       "OrderFeedbackSummary": {
         "type": "object",
@@ -1321,49 +1054,80 @@
         },
         "additionalProperties": false
       },
-      "OrderSummary": {
+      "OrderStatusCounts": {
         "type": "object",
         "properties": {
-          "orderId": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderName": {
-            "type": "string",
-            "nullable": true
-          },
-          "orderReason": {
-            "type": "string",
-            "nullable": true
-          },
-          "proposedDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "consultationStartDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "consultationEndDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "orderFeedbackStatus": {
+          "status": {
             "$ref": "#/components/schemas/OrderFeedbackStatus"
           },
-          "orderState": {
-            "$ref": "#/components/schemas/StaticOrderState"
+          "count": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
-      "FeedbackStatus": {
+      "OrderSupport": {
         "enum": [
           1,
-          2
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "PublicFeedbackReply": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Rating": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResponderType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "StaticOrderState": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
         ],
         "type": "integer",
         "format": "int32"
@@ -1377,298 +1141,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "FeedbackInfo": {
-        "type": "object",
-        "properties": {
-          "orderId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "feedbackId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "responderType": {
-            "$ref": "#/components/schemas/ResponderType"
-          },
-          "orderSupport": {
-            "$ref": "#/components/schemas/OrderSupport"
-          },
-          "feedbackCategory": {
-            "$ref": "#/components/schemas/FeedbackCategory"
-          },
-          "feedbackText": {
-            "type": "string",
-            "nullable": true
-          },
-          "originalFeedbackDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "latestFeedbackDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "threadState": {
-            "$ref": "#/components/schemas/ThreadStatus"
-          },
-          "feedbackStatus": {
-            "$ref": "#/components/schemas/FeedbackStatus"
-          }
-        },
-        "additionalProperties": false
-      },
-      "FeedbackStatusCounts": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/FeedbackStatus"
-          },
-          "count": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrderFeedbackThreadWithCounts": {
-        "type": "object",
-        "properties": {
-          "orderResponseSummary": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FeedbackInfo"
-            },
-            "nullable": true
-          },
-          "orderResponseStatusCounts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/FeedbackStatusCounts"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "FeedbackRating": {
-        "type": "object",
-        "properties": {
-          "feedbackRatings": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Rating"
-            },
-            "nullable": true
-          },
-          "feedbackCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "AuthorityFeedbackSummary": {
-        "type": "object",
-        "properties": {
-          "totalActiveConsultations": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalReadThreads": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalUnreadThreads": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalRespondedThreads": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrderFeedbackThreadItem": {
-        "type": "object",
-        "properties": {
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "role": {
-            "type": "string",
-            "nullable": true
-          },
-          "messageDate": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "OrderFeedbackThread": {
-        "type": "object",
-        "properties": {
-          "feedbackId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "orderId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressLine1": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressLine2": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressCity": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressPostCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressCountry": {
-            "type": "string",
-            "nullable": true
-          },
-          "feedbackText": {
-            "type": "string",
-            "nullable": true
-          },
-          "responderType": {
-            "$ref": "#/components/schemas/ResponderType"
-          },
-          "orderSupport": {
-            "$ref": "#/components/schemas/OrderSupport"
-          },
-          "feedbackCategory": {
-            "$ref": "#/components/schemas/FeedbackCategory"
-          },
-          "threadStatus": {
-            "$ref": "#/components/schemas/ThreadStatus"
-          },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "thread": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrderFeedbackThreadItem"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "CouncilFeedbackReply": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ChangeThreadStateRequest": {
-        "type": "object",
-        "properties": {
-          "from": {
-            "$ref": "#/components/schemas/ThreadStatus"
-          },
-          "to": {
-            "$ref": "#/components/schemas/ThreadStatus"
-          }
-        },
-        "additionalProperties": false
-      },
-      "FeedbackReply-feedbackId-Post200TextPlainResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "FeedbackReply-feedbackId-Post200ApplicationJsonResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "FeedbackReply-feedbackId-Post200TextJsonResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "FeedbackSubmitPost200TextPlainResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "FeedbackSubmitPost200ApplicationJsonResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "FeedbackSubmitPost200TextJsonResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "ReportReplyToFeedbackPost200TextPlainResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "ReportReplyToFeedbackPost200ApplicationJsonResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "ReportReplyToFeedbackPost200TextJsonResponse": {
-        "type": "string",
-        "format": "uuid"
-      },
-      "ReportSetThreadStatePost200TextPlainResponse": {
-        "type": "boolean"
-      },
-      "ReportSetThreadStatePost200ApplicationJsonResponse": {
-        "type": "boolean"
-      },
-      "ReportSetThreadStatePost200TextJsonResponse": {
-        "type": "boolean"
       }
     },
     "securitySchemes": {
