@@ -552,6 +552,7 @@
                     "entityId": "string",
                     "entityType": 1,
                     "entityETag": "string",
+                    "timeZoneId": "string",
                     "operatingHours": [
                       {
                         "paymentMethodIds": [
@@ -569,8 +570,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-09-13T00:00:00+00:00",
-                            "end": "2021-09-13T00:00:00+00:00",
+                            "start": "2021-09-16T00:00:00+00:00",
+                            "end": "2021-09-16T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -599,8 +600,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-09-13T00:00:00+00:00",
-                            "end": "2021-09-13T00:00:00+00:00",
+                            "start": "2021-09-16T00:00:00+00:00",
+                            "end": "2021-09-16T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -729,6 +730,7 @@
                     "entityId": "string",
                     "entityType": 1,
                     "entityETag": "string",
+                    "timeZoneId": "string",
                     "operatingHours": [
                       {
                         "paymentMethodIds": [
@@ -746,8 +748,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-09-13T00:00:00+00:00",
-                            "end": "2021-09-13T00:00:00+00:00",
+                            "start": "2021-09-16T00:00:00+00:00",
+                            "end": "2021-09-16T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -776,8 +778,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-09-13T00:00:00+00:00",
-                            "end": "2021-09-13T00:00:00+00:00",
+                            "start": "2021-09-16T00:00:00+00:00",
+                            "end": "2021-09-16T00:00:00+00:00",
                             "isFree": true
                           }
                         ]
@@ -968,7 +970,8 @@
                       "permitTypeId": 0
                     }
                   ]
-                }
+                },
+                "duration": "3.17:25:30.5000000"
               }
             },
             "text/json": {
@@ -988,7 +991,8 @@
                       "permitTypeId": 0
                     }
                   ]
-                }
+                },
+                "duration": "3.17:25:30.5000000"
               }
             },
             "application/*+json": {
@@ -1008,7 +1012,8 @@
                       "permitTypeId": 0
                     }
                   ]
-                }
+                },
+                "duration": "3.17:25:30.5000000"
               }
             }
           }
@@ -1120,8 +1125,8 @@
                 "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
+                "endTime": "string",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1132,6 +1137,7 @@
                     }
                   ]
                 },
+                "duration": "3.17:25:30.5000000",
                 "ids": [
                   "string"
                 ]
@@ -1142,8 +1148,8 @@
                 "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
+                "endTime": "string",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1154,6 +1160,7 @@
                     }
                   ]
                 },
+                "duration": "3.17:25:30.5000000",
                 "ids": [
                   "string"
                 ]
@@ -1164,8 +1171,8 @@
                 "$ref": "#/components/schemas/FetchParkingQuotesByIdsQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
+                "endTime": "string",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1176,6 +1183,7 @@
                     }
                   ]
                 },
+                "duration": "3.17:25:30.5000000",
                 "ids": [
                   "string"
                 ]
@@ -1567,6 +1575,12 @@
                                 "endTime": "string",
                                 "maxStay": 0
                               }
+                            ],
+                            "notApplicableTimes": [
+                              {
+                                "startTime": "string",
+                                "endTime": "string"
+                              }
                             ]
                           }
                         ],
@@ -1585,6 +1599,12 @@
                               "startTime": "string",
                               "endTime": "string",
                               "maxStay": 0
+                            }
+                          ],
+                          "notApplicableTimes": [
+                            {
+                              "startTime": "string",
+                              "endTime": "string"
                             }
                           ]
                         }
@@ -2126,10 +2146,6 @@
                 },
                 "startTime": "string",
                 "endTime": "string",
-                "distanceCalculationLocation": {
-                  "lat": 0,
-                  "lng": 0
-                },
                 "filters": {
                   "excludeEntityTypes": [
                     1
@@ -2149,6 +2165,11 @@
                       "permitTypeId": 0
                     }
                   ]
+                },
+                "duration": "3.17:25:30.5000000",
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
                 }
               }
             },
@@ -2164,10 +2185,6 @@
                 },
                 "startTime": "string",
                 "endTime": "string",
-                "distanceCalculationLocation": {
-                  "lat": 0,
-                  "lng": 0
-                },
                 "filters": {
                   "excludeEntityTypes": [
                     1
@@ -2187,6 +2204,11 @@
                       "permitTypeId": 0
                     }
                   ]
+                },
+                "duration": "3.17:25:30.5000000",
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
                 }
               }
             },
@@ -2202,10 +2224,6 @@
                 },
                 "startTime": "string",
                 "endTime": "string",
-                "distanceCalculationLocation": {
-                  "lat": 0,
-                  "lng": 0
-                },
                 "filters": {
                   "excludeEntityTypes": [
                     1
@@ -2225,6 +2243,11 @@
                       "permitTypeId": 0
                     }
                   ]
+                },
+                "duration": "3.17:25:30.5000000",
+                "distanceCalculationLocation": {
+                  "lat": 0,
+                  "lng": 0
                 }
               }
             }
@@ -2369,16 +2392,6 @@
                 },
                 "endTime": "string",
                 "startTime": "string",
-                "filters": {
-                  "excludeEntityTypes": [
-                    1
-                  ],
-                  "excludePaidParking": true,
-                  "excludeFreeParking": true,
-                  "excludeNoParking": true,
-                  "excludeTruncatedParking": true,
-                  "excludeCostGreaterThan": 0
-                },
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -2389,6 +2402,17 @@
                     }
                   ]
                 },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                },
+                "duration": "3.17:25:30.5000000",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2418,16 +2442,6 @@
                 },
                 "endTime": "string",
                 "startTime": "string",
-                "filters": {
-                  "excludeEntityTypes": [
-                    1
-                  ],
-                  "excludePaidParking": true,
-                  "excludeFreeParking": true,
-                  "excludeNoParking": true,
-                  "excludeTruncatedParking": true,
-                  "excludeCostGreaterThan": 0
-                },
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -2438,6 +2452,17 @@
                     }
                   ]
                 },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                },
+                "duration": "3.17:25:30.5000000",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2467,16 +2492,6 @@
                 },
                 "endTime": "string",
                 "startTime": "string",
-                "filters": {
-                  "excludeEntityTypes": [
-                    1
-                  ],
-                  "excludePaidParking": true,
-                  "excludeFreeParking": true,
-                  "excludeNoParking": true,
-                  "excludeTruncatedParking": true,
-                  "excludeCostGreaterThan": 0
-                },
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -2487,6 +2502,17 @@
                     }
                   ]
                 },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                },
+                "duration": "3.17:25:30.5000000",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2712,7 +2738,7 @@
                         },
                         "properties": {
                           "suggestionType": 1,
-                          "baseMapTranslation": 1
+                          "basemapTranslation": 1
                         }
                       }
                     ],
@@ -2788,6 +2814,7 @@
                     ]
                   ]
                 },
+                "includeNotApplicableTimes": true,
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2820,6 +2847,7 @@
                     ]
                   ]
                 },
+                "includeNotApplicableTimes": true,
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2852,6 +2880,7 @@
                     ]
                   ]
                 },
+                "includeNotApplicableTimes": true,
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2888,6 +2917,12 @@
                                 "endTime": "string",
                                 "maxStay": 0
                               }
+                            ],
+                            "notApplicableTimes": [
+                              {
+                                "startTime": "string",
+                                "endTime": "string"
+                              }
                             ]
                           }
                         ],
@@ -2906,6 +2941,12 @@
                               "startTime": "string",
                               "endTime": "string",
                               "maxStay": 0
+                            }
+                          ],
+                          "notApplicableTimes": [
+                            {
+                              "startTime": "string",
+                              "endTime": "string"
                             }
                           ]
                         }
@@ -3353,7 +3394,7 @@
           },
           "date": {
             "type": "string",
-            "description": "The date for which to retrieve the operating hours",
+            "description": "The date for which to retrieve the operating hours provided in local format (eg: YYYY-MM-DD).",
             "example": "2020-01-20T00:00:00"
           },
           "includeNotApplicableOperatingHours": {
@@ -3379,7 +3420,7 @@
           },
           "date": {
             "type": "string",
-            "description": "The date for which to retrieve the operating hours",
+            "description": "The date for which to retrieve the operating hours provided in local format (eg: YYYY-MM-DD).",
             "example": "2020-01-20T00:00:00"
           },
           "includeNotApplicableOperatingHours": {
@@ -3428,6 +3469,12 @@
             "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
+          "duration": {
+            "type": "string",
+            "description": "Requested duration",
+            "readOnly": true,
+            "example": "3.17:25:30.5000000"
+          },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
           }
@@ -3441,16 +3488,16 @@
         ],
         "type": "object",
         "properties": {
-          "startTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
-            "format": "date-time"
-          },
           "endTime": {
             "minLength": 1,
             "type": "string",
             "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "startTime": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
           "ids": {
@@ -3460,6 +3507,12 @@
             },
             "description": "List of Ids of entities to fetch",
             "nullable": true
+          },
+          "duration": {
+            "type": "string",
+            "description": "Requested duration",
+            "readOnly": true,
+            "example": "3.17:25:30.5000000"
           },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
@@ -3777,11 +3830,11 @@
             "additionalProperties": false,
             "description": "Centre point for the query. Required."
           },
-          "vehicleOperatorContext": {
-            "$ref": "#/components/schemas/VehicleOperatorContext"
-          },
-          "filters": {
-            "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
+          "duration": {
+            "type": "string",
+            "description": "Requested duration",
+            "readOnly": true,
+            "example": "3.17:25:30.5000000"
           },
           "distanceCalculationLocation": {
             "type": "object",
@@ -3799,6 +3852,12 @@
             },
             "additionalProperties": false,
             "description": "Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport."
+          },
+          "filters": {
+            "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
+          },
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
           }
         },
         "additionalProperties": false,
@@ -3893,6 +3952,12 @@
             },
             "additionalProperties": false,
             "description": "Viewport for the query, expressed as a GeoJson polygon. Required."
+          },
+          "duration": {
+            "type": "string",
+            "description": "Requested duration",
+            "readOnly": true,
+            "example": "3.17:25:30.5000000"
           },
           "distanceCalculationLocation": {
             "type": "object",
@@ -4030,6 +4095,10 @@
             },
             "additionalProperties": false,
             "description": "Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport."
+          },
+          "includeNotApplicableTimes": {
+            "type": "boolean",
+            "description": "Include all the time windows for which the zone defaults not applies and intersect with the requested period."
           }
         },
         "additionalProperties": false,
@@ -4407,16 +4476,17 @@
         "properties": {
           "start": {
             "type": "string",
-            "description": "ISO-8601 time pattern, extended as required to accommodate nanoseconds.",
+            "description": "The local time of the day that the period starts\r\nReturned in local time format: hh:mm:ss (eg: 19:20:30)",
             "example": "00:00:00"
           },
           "end": {
             "type": "string",
-            "description": "ISO-8601 time pattern, extended as required to accommodate nanoseconds.",
+            "description": "The local time of the day that the period ends\r\nReturned in local time format: hh:mm:ss (eg: 19:20:30)",
             "example": "00:00:00"
           },
           "isFree": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify if it is free for the open period"
           }
         },
         "additionalProperties": false
@@ -4441,6 +4511,7 @@
             "items": {
               "$ref": "#/components/schemas/OpenPeriod"
             },
+            "description": "Open periods",
             "nullable": true
           }
         },
@@ -4592,6 +4663,11 @@
           "entityETag": {
             "type": "string",
             "description": "The Etag of the current latest version of the Parking Entity referred to by this result. This allows\r\nclients to determine if they have the latest version of the parking entity in their local cache and only\r\nrequest the entity if it is missing.",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "string",
+            "description": "Entity Timezone Id in IANA (TZDB) format (eg: Europe/London)",
             "nullable": true
           },
           "operatingHours": {
@@ -4954,7 +5030,7 @@
           "suggestionType": {
             "$ref": "#/components/schemas/SuggestionType"
           },
-          "baseMapTranslation": {
+          "basemapTranslation": {
             "$ref": "#/components/schemas/BasemapTranslation"
           }
         },
@@ -5151,6 +5227,14 @@
             },
             "description": "All the time windows for which this zone default applies which intersect the requested period. \r\nAny window that applies for at least part of the requested period will be returned.",
             "nullable": true
+          },
+          "notApplicableTimes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZoneDefaultNotApplicableTime"
+            },
+            "description": "All the time windows for which this zone default not applies and intersect the requested period.",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -5178,6 +5262,23 @@
         },
         "additionalProperties": false,
         "description": "Represents a window of time during which a zone default applies."
+      },
+      "ZoneDefaultNotApplicableTime": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": "string",
+            "description": "The time and date that the window starts",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "The time and date that the window ends",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a window of time during which a zone default do not applies."
       },
       "ZoneOkResponse": {
         "type": "object",
