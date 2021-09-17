@@ -18,26 +18,29 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginCarpoolSessionCommand'
             example:
-              vehicleRegistrationMark: string
               sessionStartTime: string
-              parkingAssetId: string
+              vehicleRegistrationMark: string
               authenticatedTripId: string
+              entityId: string
+              parkingAssetId: string
           text/json:
             schema:
               $ref: '#/components/schemas/BeginCarpoolSessionCommand'
             example:
-              vehicleRegistrationMark: string
               sessionStartTime: string
-              parkingAssetId: string
+              vehicleRegistrationMark: string
               authenticatedTripId: string
+              entityId: string
+              parkingAssetId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/BeginCarpoolSessionCommand'
             example:
-              vehicleRegistrationMark: string
               sessionStartTime: string
-              parkingAssetId: string
+              vehicleRegistrationMark: string
               authenticatedTripId: string
+              entityId: string
+              parkingAssetId: string
       responses:
         "200":
           description: Success
@@ -105,23 +108,19 @@ components:
     BeginCarpoolSessionCommand:
       required:
       - authenticatedTripId
-      - parkingAssetId
+      - entityId
       - sessionStartTime
       - vehicleRegistrationMark
       type: object
       properties:
-        parkingAssetId:
-          minLength: 1
-          type: string
-          description: The id of the car park the user will be their vehicle in
         authenticatedTripId:
           minLength: 1
           type: string
           description: The Id of the authenticated liftshare trip
-        vehicleRegistrationMark:
+        entityId:
           minLength: 1
           type: string
-          description: The vehicle registration mark being used for the parking session
+          description: The id of the car park the user will be their vehicle in
         sessionStartTime:
           minLength: 1
           type: string
@@ -129,6 +128,15 @@ components:
             The start time of the parking session
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
+        vehicleRegistrationMark:
+          minLength: 1
+          type: string
+          description: The vehicle registration mark being used for the parking session
+        parkingAssetId:
+          type: string
+          description: The id of the car park the user will be their vehicle in
+          nullable: true
+          deprecated: true
       additionalProperties: false
     BeginCarpoolSessionResponse:
       type: object
