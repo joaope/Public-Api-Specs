@@ -18,18 +18,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ActivityTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivityType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/ActivityTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivityType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/ActivityTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ActivityType'
               example:
               - id: 0
                 name: string
@@ -161,8 +167,8 @@ paths:
                     events:
                     - name: string
                       date: 2020-01-20T00:00:00.0000000+00:00
-                      start: 2021-09-20T00:00:00.0000000+00:00
-                      end: 2021-09-20T00:00:00.0000000+00:00
+                      start: 2021-09-27T00:00:00.0000000+00:00
+                      end: 2021-09-27T00:00:00.0000000+00:00
                 restrictionTypes:
                 - id: 0
                   name: string
@@ -303,8 +309,8 @@ paths:
                     events:
                     - name: string
                       date: 2020-01-20T00:00:00.0000000+00:00
-                      start: 2021-09-20T00:00:00.0000000+00:00
-                      end: 2021-09-20T00:00:00.0000000+00:00
+                      start: 2021-09-27T00:00:00.0000000+00:00
+                      end: 2021-09-27T00:00:00.0000000+00:00
                 restrictionTypes:
                 - id: 0
                   name: string
@@ -358,11 +364,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/AuthorityTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuthorityType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthorityTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuthorityType'
               example:
               - id: 0
                 name: string
@@ -371,7 +381,9 @@ paths:
                 canHaveShape: true
             text/json:
               schema:
-                $ref: '#/components/schemas/AuthorityTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuthorityType'
               example:
               - id: 0
                 name: string
@@ -397,11 +409,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/BaseMapListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaseMap'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/BaseMapListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaseMap'
               example:
               - id: 0
                 name: string
@@ -410,7 +426,9 @@ paths:
                 - string
             text/json:
               schema:
-                $ref: '#/components/schemas/BaseMapListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/BaseMap'
               example:
               - id: 0
                 name: string
@@ -504,11 +522,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/CountryListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/CountryListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
               example:
               - id: string
                 guid: string
@@ -528,7 +550,9 @@ paths:
                 - 0
             text/json:
               schema:
-                $ref: '#/components/schemas/CountryListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
               example:
               - id: string
                 guid: string
@@ -663,11 +687,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/EntitlementTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntitlementType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/EntitlementTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntitlementType'
               example:
               - id: 0
                 name: string
@@ -683,7 +711,9 @@ paths:
                   legalName: string
             text/json:
               schema:
-                $ref: '#/components/schemas/EntitlementTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntitlementType'
               example:
               - id: 0
                 name: string
@@ -716,18 +746,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ExceptionTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExceptionType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/ExceptionTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExceptionType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/ExceptionTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExceptionType'
               example:
               - id: 0
                 name: string
@@ -751,18 +787,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ExemptionTimeTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExemptionTimeType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/ExemptionTimeTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExemptionTimeType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/ExemptionTimeTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExemptionTimeType'
               example:
               - id: 0
                 name: string
@@ -786,18 +828,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ExemptionTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExemptionType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/ExemptionTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExemptionType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/ExemptionTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExemptionType'
               example:
               - id: 0
                 name: string
@@ -821,18 +869,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/FacilityTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/FacilityType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/FacilityTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/FacilityType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/FacilityTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/FacilityType'
               example:
               - id: 0
                 name: string
@@ -856,18 +910,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/FuelTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/FuelType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/FuelTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/FuelType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/FuelTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/FuelType'
               example:
               - id: 0
                 name: string
@@ -906,11 +966,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/MovingExceptionTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MovingExceptionType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/MovingExceptionTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MovingExceptionType'
               example:
               - id: 0
                 name: string
@@ -921,7 +985,9 @@ paths:
                   - {}
             text/json:
               schema:
-                $ref: '#/components/schemas/MovingExceptionTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MovingExceptionType'
               example:
               - id: 0
                 name: string
@@ -949,11 +1015,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/MovingRestrictionTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MovingRestrictionType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/MovingRestrictionTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MovingRestrictionType'
               example:
               - id: 0
                 name: string
@@ -967,7 +1037,9 @@ paths:
                   value: 0
             text/json:
               schema:
-                $ref: '#/components/schemas/MovingRestrictionTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/MovingRestrictionType'
               example:
               - id: 0
                 name: string
@@ -998,18 +1070,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/NoteVisibilityTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/NoteVisibilityType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/NoteVisibilityTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/NoteVisibilityType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/NoteVisibilityTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/NoteVisibilityType'
               example:
               - id: 0
                 name: string
@@ -1033,18 +1111,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/OnStreetParkingTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/OnStreetParkingType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/OnStreetParkingTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/OnStreetParkingType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/OnStreetParkingTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/OnStreetParkingType'
               example:
               - id: 0
                 name: string
@@ -1068,18 +1152,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/PaymentMethodListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaymentMethod'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/PaymentMethodListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaymentMethod'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/PaymentMethodListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaymentMethod'
               example:
               - id: 0
                 name: string
@@ -1103,18 +1193,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/PermitTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PermitType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/PermitTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PermitType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/PermitTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PermitType'
               example:
               - id: 0
                 name: string
@@ -1162,8 +1258,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000+00:00
-                    start: 2021-09-20T00:00:00.0000000+00:00
-                    end: 2021-09-20T00:00:00.0000000+00:00
+                    start: 2021-09-27T00:00:00.0000000+00:00
+                    end: 2021-09-27T00:00:00.0000000+00:00
             text/json:
               schema:
                 $ref: '#/components/schemas/Region'
@@ -1179,8 +1275,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000+00:00
-                    start: 2021-09-20T00:00:00.0000000+00:00
-                    end: 2021-09-20T00:00:00.0000000+00:00
+                    start: 2021-09-27T00:00:00.0000000+00:00
+                    end: 2021-09-27T00:00:00.0000000+00:00
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1200,11 +1296,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/RegionListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Region'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/RegionListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Region'
               example:
               - id: string
                 guid: string
@@ -1217,11 +1317,13 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000+00:00
-                    start: 2021-09-20T00:00:00.0000000+00:00
-                    end: 2021-09-20T00:00:00.0000000+00:00
+                    start: 2021-09-27T00:00:00.0000000+00:00
+                    end: 2021-09-27T00:00:00.0000000+00:00
             text/json:
               schema:
-                $ref: '#/components/schemas/RegionListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Region'
               example:
               - id: string
                 guid: string
@@ -1234,8 +1336,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000+00:00
-                    start: 2021-09-20T00:00:00.0000000+00:00
-                    end: 2021-09-20T00:00:00.0000000+00:00
+                    start: 2021-09-27T00:00:00.0000000+00:00
+                    end: 2021-09-27T00:00:00.0000000+00:00
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1266,8 +1368,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000+00:00
-                  start: 2021-09-20T00:00:00.0000000+00:00
-                  end: 2021-09-20T00:00:00.0000000+00:00
+                  start: 2021-09-27T00:00:00.0000000+00:00
+                  end: 2021-09-27T00:00:00.0000000+00:00
           application/json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1283,8 +1385,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000+00:00
-                  start: 2021-09-20T00:00:00.0000000+00:00
-                  end: 2021-09-20T00:00:00.0000000+00:00
+                  start: 2021-09-27T00:00:00.0000000+00:00
+                  end: 2021-09-27T00:00:00.0000000+00:00
           text/json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1300,8 +1402,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000+00:00
-                  start: 2021-09-20T00:00:00.0000000+00:00
-                  end: 2021-09-20T00:00:00.0000000+00:00
+                  start: 2021-09-27T00:00:00.0000000+00:00
+                  end: 2021-09-27T00:00:00.0000000+00:00
           application/*+json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1317,8 +1419,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000+00:00
-                  start: 2021-09-20T00:00:00.0000000+00:00
-                  end: 2021-09-20T00:00:00.0000000+00:00
+                  start: 2021-09-27T00:00:00.0000000+00:00
+                  end: 2021-09-27T00:00:00.0000000+00:00
       responses:
         "200":
           description: Success
@@ -1341,11 +1443,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/RestrictionTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestrictionType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/RestrictionTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestrictionType'
               example:
               - id: 0
                 name: string
@@ -1357,7 +1463,9 @@ paths:
                 legalName: string
             text/json:
               schema:
-                $ref: '#/components/schemas/RestrictionTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestrictionType'
               example:
               - id: 0
                 name: string
@@ -1386,18 +1494,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/SpecialRestrictionListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/SpecialRestriction'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/SpecialRestrictionListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/SpecialRestriction'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/SpecialRestrictionListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/SpecialRestriction'
               example:
               - id: 0
                 name: string
@@ -1421,18 +1535,24 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/VehicleTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/VehicleType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/VehicleTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/VehicleType'
               example:
               - id: 0
                 name: string
                 description: string
             text/json:
               schema:
-                $ref: '#/components/schemas/VehicleTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/VehicleType'
               example:
               - id: 0
                 name: string
@@ -1456,11 +1576,15 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/ZoneTypeListGet200TextPlainResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZoneType'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/ZoneTypeListGet200ApplicationJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZoneType'
               example:
               - id: 0
                 name: string
@@ -1469,7 +1593,9 @@ paths:
                 canHaveShape: true
             text/json:
               schema:
-                $ref: '#/components/schemas/ZoneTypeListGet200TextJsonResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/ZoneType'
               example:
               - id: 0
                 name: string
@@ -2062,258 +2188,6 @@ components:
         canHaveShape:
           type: boolean
       additionalProperties: false
-    ActivityTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ActivityType'
-    ActivityTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ActivityType'
-    ActivityTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ActivityType'
-    AuthorityTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/AuthorityType'
-    AuthorityTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/AuthorityType'
-    AuthorityTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/AuthorityType'
-    BaseMapListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/BaseMap'
-    BaseMapListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/BaseMap'
-    BaseMapListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/BaseMap'
-    CountryListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Country'
-    CountryListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Country'
-    CountryListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Country'
-    EntitlementTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/EntitlementType'
-    EntitlementTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/EntitlementType'
-    EntitlementTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/EntitlementType'
-    ExceptionTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExceptionType'
-    ExceptionTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExceptionType'
-    ExceptionTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExceptionType'
-    ExemptionTimeTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExemptionTimeType'
-    ExemptionTimeTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExemptionTimeType'
-    ExemptionTimeTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExemptionTimeType'
-    ExemptionTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExemptionType'
-    ExemptionTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExemptionType'
-    ExemptionTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ExemptionType'
-    FacilityTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/FacilityType'
-    FacilityTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/FacilityType'
-    FacilityTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/FacilityType'
-    FuelTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/FuelType'
-    FuelTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/FuelType'
-    FuelTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/FuelType'
-    MovingExceptionTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/MovingExceptionType'
-    MovingExceptionTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/MovingExceptionType'
-    MovingExceptionTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/MovingExceptionType'
-    MovingRestrictionTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/MovingRestrictionType'
-    MovingRestrictionTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/MovingRestrictionType'
-    MovingRestrictionTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/MovingRestrictionType'
-    NoteVisibilityTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/NoteVisibilityType'
-    NoteVisibilityTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/NoteVisibilityType'
-    NoteVisibilityTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/NoteVisibilityType'
-    OnStreetParkingTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/OnStreetParkingType'
-    OnStreetParkingTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/OnStreetParkingType'
-    OnStreetParkingTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/OnStreetParkingType'
-    PaymentMethodListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/PaymentMethod'
-    PaymentMethodListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/PaymentMethod'
-    PaymentMethodListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/PaymentMethod'
-    PermitTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/PermitType'
-    PermitTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/PermitType'
-    PermitTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/PermitType'
-    RegionListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Region'
-    RegionListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Region'
-    RegionListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/Region'
-    RestrictionTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/RestrictionType'
-    RestrictionTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/RestrictionType'
-    RestrictionTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/RestrictionType'
-    SpecialRestrictionListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/SpecialRestriction'
-    SpecialRestrictionListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/SpecialRestriction'
-    SpecialRestrictionListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/SpecialRestriction'
-    VehicleTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/VehicleType'
-    VehicleTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/VehicleType'
-    VehicleTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/VehicleType'
-    ZoneTypeListGet200TextPlainResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ZoneType'
-    ZoneTypeListGet200ApplicationJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ZoneType'
-    ZoneTypeListGet200TextJsonResponse:
-      type: array
-      items:
-        $ref: '#/components/schemas/ZoneType'
   securitySchemes:
     apiKey:
       name: API-KEY
