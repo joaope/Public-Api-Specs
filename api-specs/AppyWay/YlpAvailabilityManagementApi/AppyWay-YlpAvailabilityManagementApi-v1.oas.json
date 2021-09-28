@@ -15,21 +15,21 @@
         "tags": [
           "Status"
         ],
-        "summary": "Ping",
-        "description": "Returns Status (pong) of the Availability Occupancy API service",
+        "summary": "Returns \"pong\" show the API is up and running",
+        "description": "Returns \"pong\" show the API is up and running",
         "operationId": "get-ping",
         "responses": {
           "200": {
             "description": "Success"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -123,7 +123,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -221,7 +221,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -325,7 +325,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -358,13 +358,10 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the request was successful",
-            "readOnly": true,
-            "example": false
+            "readOnly": true
           },
           "message": {
             "type": "string",
-            "description": "Human-readable message for this response",
             "nullable": true
           },
           "errors": {
@@ -372,12 +369,10 @@
             "items": {
               "$ref": "#/components/schemas/Error"
             },
-            "description": "Collection of validation errors caused by the request",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A response indicating the request was invalid"
+        "additionalProperties": false
       },
       "DailyOccupancyForSourceType": {
         "type": "object",
@@ -516,7 +511,6 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
@@ -524,12 +518,10 @@
             "items": {
               "$ref": "#/components/schemas/FetchParkingOwnerEntitiesByIdsQueryResultItem"
             },
-            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "FetchParkingOwnersEntitiesByIdsQuery": {
         "required": [
@@ -635,15 +627,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/ParkingDailyAvailabilitySummary"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ParkingEntity": {
         "type": "object",
@@ -679,7 +669,6 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
@@ -687,12 +676,10 @@
             "items": {
               "$ref": "#/components/schemas/ParkingEntity"
             },
-            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
