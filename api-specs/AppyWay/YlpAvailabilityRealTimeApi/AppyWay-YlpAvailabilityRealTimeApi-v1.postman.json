@@ -1,12 +1,12 @@
 {
   "item": [
     {
-      "id": "f1c662dd-56f3-44eb-a4cb-6bdef009d176",
+      "id": "0851b58e-4737-4f47-97de-89879583daf7",
       "name": "Ping",
       "request": {
         "name": "Ping",
         "description": {
-          "content": "Returns Status (pong) of the Availability Occupancy API service",
+          "content": "Returns Status (pong) of the service",
           "type": "text/plain"
         },
         "url": {
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "76d63cf4-78d0-4121-ac70-3e4dcc825519",
+          "id": "9700dedc-2a48-47d1-a3a2-a01cbf3b9c85",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "790a4131-3059-4993-9e1e-5788c7247928",
+          "id": "501e0424-89c0-4b3c-9520-61ee864bbd5b",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -82,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "796e4e4c-1800-42a7-b28e-03d3709b67ed",
+          "id": "70324fb5-19ef-485c-ab3d-1920b6e0c87c",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ce88cae1-bb77-41d7-b557-40c1b47c35ae",
+          "id": "8360640f-42c2-4f05-8809-a3224abb5084",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -143,11 +143,11 @@
       "event": []
     },
     {
-      "id": "d7d30972-1daf-4501-9ed5-8ceae115ce28",
+      "id": "fec41f65-ce48-4244-a688-4df1c55c3959",
       "name": "queries",
       "item": [
         {
-          "id": "c4d542ad-1aa8-4573-bf40-316ef7b2e062",
+          "id": "da928d5e-34bb-428d-8a59-6d7e3995d196",
           "name": "Fetch realtime availability by entity Ids",
           "request": {
             "name": "Fetch realtime availability by entity Ids",
@@ -181,7 +181,7 @@
           },
           "response": [
             {
-              "id": "610199a1-3b22-4e73-bc58-1f61708adbf7",
+              "id": "d5772331-087e-448f-8a9f-ff2af2c65c70",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -214,7 +214,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "a28e947e-e589-41eb-ac5a-dfd5a3c0ed13",
+              "id": "ec6bac2c-ad6a-4eb9-be4f-3e0930782591",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -242,12 +242,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "726780e7-f509-4e93-b32c-d6c08d77f7f4",
+              "id": "0af8e747-5280-4dcb-ad82-1cf0ed9f243c",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -280,7 +280,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6a581fa5-4220-48a1-9cfd-fdc049186d77",
+              "id": "93ce142a-9858-41d1-b7f1-03aefaf277a1",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -313,7 +313,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1ed2b479-60df-4482-8ded-04a32568e72e",
+              "id": "b4dbf38c-30ca-4ffa-816b-d2f8ae296e89",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -349,7 +349,7 @@
           "event": []
         },
         {
-          "id": "0b1dadb1-4ed0-49f1-8e7b-51697d5dd06f",
+          "id": "5fe9d8dc-ffe8-4ca5-bebc-e581da89492b",
           "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
           "request": {
             "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
@@ -383,7 +383,7 @@
           },
           "response": [
             {
-              "id": "e40018db-8e45-42aa-b21f-018efe0ffd2f",
+              "id": "b50b1208-6c41-47f5-8284-8cf789ceb855",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -416,7 +416,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "13576380-2fb0-416d-bdba-569d83e0f4d6",
+              "id": "18bda5de-2c7c-4ca9-b591-37a364c09021",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -444,12 +444,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "91993758-05bf-4e52-80a8-4db789e9d6b1",
+              "id": "cb77f675-c9f6-4e91-bc1f-a2a60791da83",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -482,7 +482,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "d0c8c694-dc41-4735-84b4-1ae6788adb3e",
+              "id": "98ad0a40-f506-46b9-b4b4-bfefc26d0afe",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -515,7 +515,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a74bdb86-6a74-4ab6-bc02-c8aa11200e81",
+              "id": "8d4afc2d-656d-4498-b085-ecfb8511eeef",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -551,7 +551,7 @@
           "event": []
         },
         {
-          "id": "ccdfa31d-ab58-4b05-ac7d-07126bf5963f",
+          "id": "209cc886-2cd1-4a4a-bc6d-cae20612bff1",
           "name": "Fetch realtime availability for all available data source types (sensor, camera, barrier, etc) by entity Ids",
           "request": {
             "name": "Fetch realtime availability for all available data source types (sensor, camera, barrier, etc) by entity Ids",
@@ -585,7 +585,7 @@
           },
           "response": [
             {
-              "id": "06b7090c-0cfc-4ed1-9157-54dc600c60dc",
+              "id": "ffed7029-61fd-429c-8cfd-811aa4e3b8e9",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -618,7 +618,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "b7dae9af-bd46-4f79-9acc-1049bdfda0a8",
+              "id": "89be18ef-6739-4e0c-82b1-1870e484bbe4",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -646,12 +646,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "10540f38-3352-413d-98ca-515d42be8097",
+              "id": "d7ddd99f-88a7-4b4f-87e2-98a16887b32d",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -684,7 +684,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "0d9601df-2c52-42cf-82cf-13cb353b0aeb",
+              "id": "3f1a9b8a-ddad-4b55-a7c1-3d033c062945",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -717,7 +717,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "736804cc-49bd-4190-bf9d-3aa782c2621f",
+              "id": "d605a315-f1d6-47d5-8742-82e39697434d",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -753,7 +753,7 @@
           "event": []
         },
         {
-          "id": "248c9be1-2fdc-441c-961f-0323f08e1e34",
+          "id": "59cb2023-ef87-405f-ad0e-b93e85092081",
           "name": "Fetch realtime availability aggregated groups for all available data source types (sensor, camera, barrier, etc) by keys formed by the group id and entity id",
           "request": {
             "name": "Fetch realtime availability aggregated groups for all available data source types (sensor, camera, barrier, etc) by keys formed by the group id and entity id",
@@ -787,7 +787,7 @@
           },
           "response": [
             {
-              "id": "03f82668-38ba-4f0f-bf1f-4465417a6ff8",
+              "id": "9f66f419-50fa-47fa-898c-718d087fcffc",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -820,7 +820,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "99aec2b1-eda1-4006-a6c6-97a2fe5afb3e",
+              "id": "2fc2df9e-c49a-4ca6-92be-669f8094252b",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -848,12 +848,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "aaa9ce1c-dad2-46ad-8e5b-680d0e20dfc1",
+              "id": "bd24a87f-ba8d-4dda-a377-4ff72b490565",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -886,7 +886,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6cf4f410-e9f4-41bb-bb5c-f01d0c4431a0",
+              "id": "e9a856f0-5236-4b01-a9b8-71bac3843d56",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -919,7 +919,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4fc02194-c2fb-40d1-9a23-80899e8b8572",
+              "id": "ea9c17ef-dd42-45da-b2d4-00a0a30b620f",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -955,7 +955,7 @@
           "event": []
         },
         {
-          "id": "236793e5-ea43-4f6c-9447-c061d71611cd",
+          "id": "f1de6e4e-7827-48bd-8016-c0e9bac4657d",
           "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
           "request": {
             "name": "Fetch realtime availability aggregated groups by keys formed by the group id and entity id",
@@ -989,7 +989,7 @@
           },
           "response": [
             {
-              "id": "dbb125da-1b3f-409d-b3be-ecb8d0e43c10",
+              "id": "56c2faf1-cf20-484a-8595-ecf793dae52f",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -1022,7 +1022,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "de1bca16-35dc-4878-8ae5-80503f4db2e0",
+              "id": "6584d721-a693-4ada-bd92-c50eb83a49e0",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -1050,12 +1050,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "078a564d-c3b5-4b78-b80c-431e49520332",
+              "id": "c6d7efb8-8f88-435d-8fe6-62cae4b6808e",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1088,7 +1088,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "86b0a6ee-c071-4cc1-9bd9-ce88769a7a86",
+              "id": "57557165-214c-4698-9abd-bc1d13ce4a1b",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1121,7 +1121,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "4413d945-e938-41b5-94ee-d16693e88244",
+              "id": "910eb221-a30a-4313-88c4-f520cfb2d8bd",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1184,7 +1184,7 @@
     ]
   },
   "info": {
-    "_postman_id": "cfa58bf7-4da1-4f32-a2d1-bc15cf1bdcc9",
+    "_postman_id": "b8fb993a-c4cf-45ec-a416-8d6083163cbb",
     "name": "Availability RealTime API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
