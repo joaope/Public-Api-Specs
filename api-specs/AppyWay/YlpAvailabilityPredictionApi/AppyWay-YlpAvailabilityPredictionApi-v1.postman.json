@@ -1,12 +1,12 @@
 {
   "item": [
     {
-      "id": "e1ada089-5459-4377-9995-8311ad088a9f",
+      "id": "bb2951ee-6b01-41ed-9b0f-8eda2d7d464d",
       "name": "Ping",
       "request": {
         "name": "Ping",
         "description": {
-          "content": "Returns Status (pong) of the Availability Occupancy API service",
+          "content": "Returns Status (pong) of the service",
           "type": "text/plain"
         },
         "url": {
@@ -24,7 +24,7 @@
       },
       "response": [
         {
-          "id": "0211f9a1-1ebe-4788-a670-be8ae93e4109",
+          "id": "8e233616-9190-47c1-bc01-f4f4aca69272",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a672fe1e-3b35-48dc-b917-bf959a4bf037",
+          "id": "269eac22-ee47-4189-b7c2-cb1738fb2ed5",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -82,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "58bdf039-ba4a-4b21-9e64-024d542ec930",
+          "id": "11e424d4-6d9c-4be8-b7a7-89cb416b9aef",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ddea66fa-6ef4-4f21-a26e-88f9353ecc94",
+          "id": "4e6a838a-12f7-4a38-b748-14a48ed3a302",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -143,11 +143,11 @@
       "event": []
     },
     {
-      "id": "1f849a07-4f5e-4b57-9903-29aeb873d545",
+      "id": "0d205590-9809-4323-8f70-71521635e77f",
       "name": "queries",
       "item": [
         {
-          "id": "ed49d351-6ff7-44c0-8d12-b09cf01ecc5c",
+          "id": "6e5e6a74-9183-40e9-aa8e-8e2c32f6dff1",
           "name": "Fetch availability prediction by entity Ids",
           "request": {
             "name": "Fetch availability prediction by entity Ids",
@@ -181,7 +181,7 @@
           },
           "response": [
             {
-              "id": "423bd1ba-2b21-4790-9929-68486406005b",
+              "id": "976e0d96-6575-44a7-a9e3-45a41ac073c8",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -214,7 +214,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "9356c63c-ae79-485d-84ef-08d8d7655524",
+              "id": "fb78bb91-e32a-4292-a080-203010fac644",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -242,12 +242,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "a7a07695-8937-452c-80f1-cb87e2436340",
+              "id": "9290d341-4310-4e4a-928e-0fe39df25586",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -280,7 +280,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a329f527-47c6-4f48-a0da-862e0cc2b1e1",
+              "id": "c47a4bed-e403-4c18-8472-1b0589b9a567",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -313,7 +313,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "96a7d82a-1462-4a27-9905-162d1fde88d8",
+              "id": "5d76799e-64b7-4853-b213-2cbe522dfcdc",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -349,7 +349,7 @@
           "event": []
         },
         {
-          "id": "ebc2b2a7-bc2d-4d9e-bdc8-d33cb5d4eb71",
+          "id": "8050b0bc-cfe0-4e3d-bed8-52f26716315b",
           "name": "Fetch daily availability predictions by entity id",
           "request": {
             "name": "Fetch daily availability predictions by entity id",
@@ -383,7 +383,7 @@
           },
           "response": [
             {
-              "id": "bcecc858-e191-4632-9a52-8910d1b3f067",
+              "id": "344aa5c4-05e1-4bea-bf2f-3707ad34173a",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -416,7 +416,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "174c4671-9325-4e48-a61a-0bfc8e4b2fdd",
+              "id": "efcf1892-d8b1-4220-9b86-7ad0a19c0f76",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -444,12 +444,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "e632e63d-b8b3-4c9d-9945-5cbb2aace265",
+              "id": "9d1aa564-6386-420e-9a19-a5556f55d46b",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -482,7 +482,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5993e57d-523e-4867-8107-21241c3d8433",
+              "id": "edbb78f8-a592-4c35-9709-45cb663bd21b",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -515,7 +515,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "eae1c920-7290-4fb5-a19f-b7dba568bb6f",
+              "id": "95f8e409-7833-495e-bf25-8ccefbf56041",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -551,7 +551,7 @@
           "event": []
         },
         {
-          "id": "f0036565-2d6a-4927-a3f2-1da93895ccd5",
+          "id": "a19d3401-4f2d-4029-bb82-f9f4e4774e28",
           "name": "Fetch daily availability history used for prediction by entity id",
           "request": {
             "name": "Fetch daily availability history used for prediction by entity id",
@@ -585,7 +585,7 @@
           },
           "response": [
             {
-              "id": "85e2adb5-c75b-43f8-a957-fd23a43782de",
+              "id": "1ce5729d-accf-4135-9523-08018f5443b1",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -618,7 +618,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "81b388b5-4fce-4749-9c66-05d2cea07607",
+              "id": "63786733-1011-414e-89a1-cdaf66b89946",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -646,12 +646,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "772817bf-2a1e-4632-b479-c2a5c657ae6f",
+              "id": "50b0fb2b-d6f0-45c2-898a-b05d4f2016d1",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -684,7 +684,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "9593ce12-95cd-4320-ab2b-94e9f147a331",
+              "id": "bdb83888-e8ba-4c10-acdd-5ae6d8259650",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -717,7 +717,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6c94bb96-a57d-4e82-8260-6ad4116d4866",
+              "id": "1a0bb59e-a5c8-4273-9fcc-aaa854d3c51a",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -753,7 +753,7 @@
           "event": []
         },
         {
-          "id": "10c5772e-3bec-4f54-935d-199b6f09c046",
+          "id": "e1336c29-260a-48cf-a92e-461ec8ebd56d",
           "name": "Fetch weekly availability predictions by entity id",
           "request": {
             "name": "Fetch weekly availability predictions by entity id",
@@ -787,7 +787,7 @@
           },
           "response": [
             {
-              "id": "d2ed3a6c-fa85-4080-a8c5-9128a60024a8",
+              "id": "8bd2ef27-3af7-4391-8e09-cd81b0d77912",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -820,7 +820,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "477e6175-bc67-4ba8-8b46-be31e3f4e743",
+              "id": "d0b7c82c-b2b9-4bb3-95f5-db26b0dcb73f",
               "name": "Bad Request",
               "originalRequest": {
                 "url": {
@@ -848,12 +848,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": false,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "3255de31-44cd-4676-b9e1-972b19c012dc",
+              "id": "e37a2a82-bf2b-449d-8691-6dd59a78b514",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -886,7 +886,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "e6f29d90-ef30-4a25-97f6-0c2f5eac7012",
+              "id": "396e13bb-5628-4c5a-934c-b7346a4a5514",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -919,7 +919,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "3a7c32f8-fd72-4d06-a1f1-4343c940c496",
+              "id": "f736962c-1402-4c8d-85d2-1a90ce00b4fb",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -982,7 +982,7 @@
     ]
   },
   "info": {
-    "_postman_id": "d5844a02-7507-4d40-be18-3649a483511d",
+    "_postman_id": "e6691a7b-b5eb-4821-a893-283801946c65",
     "name": "Availability Prediction API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
