@@ -66,17 +66,17 @@ paths:
       tags:
       - Status
       summary: Ping
-      description: Returns Status (pong) of the Availability Occupancy API service
+      description: Returns Status (pong) of the service
       operationId: get-ping
       responses:
         "200":
           description: Success
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /queries/fetchCurrentDayHourlyOccupancyHistoryByEntityId:
     post:
       tags:
@@ -118,7 +118,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -137,21 +137,16 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the request was successful
           readOnly: true
-          example: false
         message:
           type: string
-          description: Human-readable message for this response
           nullable: true
         errors:
           type: array
           items:
             $ref: '#/components/schemas/Error'
-          description: Collection of validation errors caused by the request
           nullable: true
       additionalProperties: false
-      description: A response indicating the request was invalid
     DataSourceType:
       enum:
       - 0
@@ -195,17 +190,14 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           type: object
           additionalProperties:
             type: number
             format: double
-          description: Payload of the response
           nullable: true
       additionalProperties: false
-      description: A successful response
     RecordOccupancyCommand:
       type: object
       properties:
