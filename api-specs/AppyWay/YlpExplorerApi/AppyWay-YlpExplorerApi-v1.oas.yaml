@@ -1002,38 +1002,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ZoneSearchResponseOkResponse'
+                $ref: '#/components/schemas/AuthoritySearchResponseOkResponse'
               example:
                 success: true
                 result:
-                  zones:
+                  authorities:
                   - entityId: string
                     entityETag: string
-                    defaults:
-                    - onStreetParkingTypeId: 1
-                      specialRestrictionTypeId: 0
-                      applicableTimes:
-                      - startTime: string
-                        endTime: string
-                        maxStay: 0
-                      notApplicableTimes:
-                      - startTime: string
-                        endTime: string
-                    distance: 0
-                  zoneContainingLocation:
-                    entityId: string
-                    entityETag: string
-                    defaults:
-                    - onStreetParkingTypeId: 1
-                      specialRestrictionTypeId: 0
-                      applicableTimes:
-                      - startTime: string
-                        endTime: string
-                        maxStay: 0
-                      notApplicableTimes:
-                      - startTime: string
-                        endTime: string
-                    distance: 0
         "400":
           description: Bad Request
           content:
@@ -2004,6 +1979,41 @@ components:
           readOnly: true
         result:
           $ref: '#/components/schemas/Authority'
+      additionalProperties: false
+    AuthoritySearchResponse:
+      type: object
+      properties:
+        authorities:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuthoritySearchResult'
+          description: List of search results returned in this response
+          nullable: true
+      additionalProperties: false
+      description: Response shape for authority search requests
+    AuthoritySearchResponseOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/AuthoritySearchResponse'
+      additionalProperties: false
+    AuthoritySearchResult:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Entity ID of the authority referred to by this result
+          nullable: true
+        entityETag:
+          type: string
+          description: |-
+            The Etag of the current latest version of the Authority referred to by this result. This allows
+            clients to determine if they have the latest version of the authority in their local cache and only
+            request the entity if it is missing.
+          nullable: true
       additionalProperties: false
     BadRequestResponse:
       type: object
