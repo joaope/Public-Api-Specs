@@ -209,28 +209,28 @@ paths:
         content:
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/ApplyOrderToMaster'
+              $ref: '#/components/schemas/ApplyOrder'
             example:
               name: string
               user: string
               orderId: string
           application/json:
             schema:
-              $ref: '#/components/schemas/ApplyOrderToMaster'
+              $ref: '#/components/schemas/ApplyOrder'
             example:
               name: string
               user: string
               orderId: string
           text/json:
             schema:
-              $ref: '#/components/schemas/ApplyOrderToMaster'
+              $ref: '#/components/schemas/ApplyOrder'
             example:
               name: string
               user: string
               orderId: string
           application/*+json:
             schema:
-              $ref: '#/components/schemas/ApplyOrderToMaster'
+              $ref: '#/components/schemas/ApplyOrder'
             example:
               name: string
               user: string
@@ -1535,7 +1535,7 @@ components:
           format: date-time
           nullable: true
       additionalProperties: false
-    ApplyOrderToMaster:
+    ApplyOrder:
       type: object
       properties:
         name:

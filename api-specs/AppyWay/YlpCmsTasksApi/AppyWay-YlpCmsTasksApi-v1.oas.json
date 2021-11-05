@@ -320,7 +320,7 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyOrderToMaster"
+                "$ref": "#/components/schemas/ApplyOrder"
               },
               "example": {
                 "name": "string",
@@ -330,7 +330,7 @@
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyOrderToMaster"
+                "$ref": "#/components/schemas/ApplyOrder"
               },
               "example": {
                 "name": "string",
@@ -340,7 +340,7 @@
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyOrderToMaster"
+                "$ref": "#/components/schemas/ApplyOrder"
               },
               "example": {
                 "name": "string",
@@ -350,7 +350,7 @@
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyOrderToMaster"
+                "$ref": "#/components/schemas/ApplyOrder"
               },
               "example": {
                 "name": "string",
@@ -2317,7 +2317,7 @@
         },
         "additionalProperties": false
       },
-      "ApplyOrderToMaster": {
+      "ApplyOrder": {
         "type": "object",
         "properties": {
           "name": {
