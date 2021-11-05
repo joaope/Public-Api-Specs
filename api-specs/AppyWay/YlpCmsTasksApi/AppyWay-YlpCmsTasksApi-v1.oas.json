@@ -79,6 +79,63 @@
         }
       }
     },
+    "/tasks/add-authority-logo": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/add-authority-logo - POST",
+        "operationId": "post-tasks-add-authority-logo",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "authorityId": {
+                    "type": "string"
+                  },
+                  "authorityName": {
+                    "type": "string"
+                  },
+                  "ContentType": {
+                    "type": "string"
+                  },
+                  "ContentDisposition": {
+                    "type": "string"
+                  },
+                  "Headers": {
+                    "type": "object"
+                  },
+                  "Length": {
+                    "type": "integer"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/tasks/add-centerlines": {
       "post": {
         "tags": [
@@ -149,6 +206,89 @@
                     "type": "array"
                   }
                 }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/tasks/apply-changesets": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/apply-changesets - POST",
+        "operationId": "post-tasks-apply-changesets",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyChangeSets"
+              },
+              "example": {
+                "name": "string",
+                "user": "string",
+                "orderId": "string",
+                "changeSetIds": [
+                  "string"
+                ],
+                "dateOverride": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyChangeSets"
+              },
+              "example": {
+                "name": "string",
+                "user": "string",
+                "orderId": "string",
+                "changeSetIds": [
+                  "string"
+                ],
+                "dateOverride": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyChangeSets"
+              },
+              "example": {
+                "name": "string",
+                "user": "string",
+                "orderId": "string",
+                "changeSetIds": [
+                  "string"
+                ],
+                "dateOverride": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyChangeSets"
+              },
+              "example": {
+                "name": "string",
+                "user": "string",
+                "orderId": "string",
+                "changeSetIds": [
+                  "string"
+                ],
+                "dateOverride": "string"
               }
             }
           }
@@ -2146,6 +2286,37 @@
   },
   "components": {
     "schemas": {
+      "ApplyChangeSets": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "changeSetIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "dateOverride": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ApplyOrderToMaster": {
         "type": "object",
         "properties": {
