@@ -370,8 +370,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-10T00:00:00.0000000+00:00
-                      end: 2021-11-10T00:00:00.0000000+00:00
+                    - start: 2021-11-12T00:00:00.0000000+00:00
+                      end: 2021-11-12T00:00:00.0000000+00:00
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000+00:00
                   notApplicableOperatingHours:
@@ -387,8 +387,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-10T00:00:00.0000000+00:00
-                      end: 2021-11-10T00:00:00.0000000+00:00
+                    - start: 2021-11-12T00:00:00.0000000+00:00
+                      end: 2021-11-12T00:00:00.0000000+00:00
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000+00:00
         "401":
@@ -487,8 +487,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-10T00:00:00.0000000+00:00
-                      end: 2021-11-10T00:00:00.0000000+00:00
+                    - start: 2021-11-12T00:00:00.0000000+00:00
+                      end: 2021-11-12T00:00:00.0000000+00:00
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000+00:00
                   notApplicableOperatingHours:
@@ -504,8 +504,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-10T00:00:00.0000000+00:00
-                      end: 2021-11-10T00:00:00.0000000+00:00
+                    - start: 2021-11-12T00:00:00.0000000+00:00
+                      end: 2021-11-12T00:00:00.0000000+00:00
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000+00:00
         "401":
@@ -2406,8 +2406,7 @@ components:
       type: object
       properties:
         viewportSize:
-          maximum: 750
-          exclusiveMaximum: true
+          maximum: 1225
           minimum: 0
           exclusiveMinimum: true
           minLength: 1
@@ -2629,8 +2628,7 @@ components:
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
         viewportSize:
-          maximum: 750
-          exclusiveMaximum: true
+          maximum: 1225
           minLength: 1
           type: integer
           description: Length of one side of the square viewport in meters. Required.
