@@ -17,11 +17,11 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/AuthorityBaseDataListResult'
+                $ref: '#/components/schemas/AuthorityListResult'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthorityBaseDataListResult'
+                $ref: '#/components/schemas/AuthorityListResult'
               example:
                 success: true
                 data:
@@ -35,9 +35,41 @@ paths:
                   ordnanceSurvey:
                     apiKey: string
                     license: string
+                  hasFreeParkingOutsideZone: true
+                  timeZoneId: string
+                  privacyPolicyUrl: string
+                  paymentProvider:
+                    name: string
+                    paymentUrl: string
+                    telephone: string
+                    cashlessMerchantId: string
+                  centroid:
+                    latitude: 0
+                    longitude: 0
+                  boundingBox:
+                    topLeft:
+                      latitude: 0
+                      longitude: 0
+                    bottomRight:
+                      latitude: 0
+                      longitude: 0
+                  fallbackZoneId: string
+                  notes:
+                  - noteVisibilityTypeId: 0
+                    appliesToRestrictionTypeIds:
+                    - 0
+                    priority: 0
+                    title: string
+                    message: string
+                    url: string
+                    telephone: string
+                  tags:
+                  - string
+                  authorityType: 0
+                  legalName: string
             text/json:
               schema:
-                $ref: '#/components/schemas/AuthorityBaseDataListResult'
+                $ref: '#/components/schemas/AuthorityListResult'
               example:
                 success: true
                 data:
@@ -51,122 +83,38 @@ paths:
                   ordnanceSurvey:
                     apiKey: string
                     license: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /authorities/getAuthoritiesWithMovingOrders:
-    get:
-      tags:
-      - Authorities
-      summary: /authorities/getAuthoritiesWithMovingOrders - GET
-      operationId: get-authorities-getauthoritieswithmovingorders
-      responses:
-        "200":
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/AuthorityInfoArrayResult'
-              example: 
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthorityInfoArrayResult'
-              example:
-                success: true
-                data:
-                - authorityId: string
-                  authoritySlugs:
+                  hasFreeParkingOutsideZone: true
+                  timeZoneId: string
+                  privacyPolicyUrl: string
+                  paymentProvider:
+                    name: string
+                    paymentUrl: string
+                    telephone: string
+                    cashlessMerchantId: string
+                  centroid:
+                    latitude: 0
+                    longitude: 0
+                  boundingBox:
+                    topLeft:
+                      latitude: 0
+                      longitude: 0
+                    bottomRight:
+                      latitude: 0
+                      longitude: 0
+                  fallbackZoneId: string
+                  notes:
+                  - noteVisibilityTypeId: 0
+                    appliesToRestrictionTypeIds:
+                    - 0
+                    priority: 0
+                    title: string
+                    message: string
+                    url: string
+                    telephone: string
+                  tags:
                   - string
-                  name: string
-                  ordnanceSurvey:
-                    apiKey: string
-                    license: string
-                  made: 0
-                  published: 0
-                  proposal: 0
-                  editingProposal: 0
-                  editingDraft: 0
-                  draft: 0
-            text/json:
-              schema:
-                $ref: '#/components/schemas/AuthorityInfoArrayResult'
-              example:
-                success: true
-                data:
-                - authorityId: string
-                  authoritySlugs:
-                  - string
-                  name: string
-                  ordnanceSurvey:
-                    apiKey: string
-                    license: string
-                  made: 0
-                  published: 0
-                  proposal: 0
-                  editingProposal: 0
-                  editingDraft: 0
-                  draft: 0
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /authorities/getAuthoritiesWithOrders:
-    get:
-      tags:
-      - Authorities
-      summary: /authorities/getAuthoritiesWithOrders - GET
-      operationId: get-authorities-getauthoritieswithorders
-      responses:
-        "200":
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/AuthorityInfoArrayResult'
-              example: 
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthorityInfoArrayResult'
-              example:
-                success: true
-                data:
-                - authorityId: string
-                  authoritySlugs:
-                  - string
-                  name: string
-                  ordnanceSurvey:
-                    apiKey: string
-                    license: string
-                  made: 0
-                  published: 0
-                  proposal: 0
-                  editingProposal: 0
-                  editingDraft: 0
-                  draft: 0
-            text/json:
-              schema:
-                $ref: '#/components/schemas/AuthorityInfoArrayResult'
-              example:
-                success: true
-                data:
-                - authorityId: string
-                  authoritySlugs:
-                  - string
-                  name: string
-                  ordnanceSurvey:
-                    apiKey: string
-                    license: string
-                  made: 0
-                  published: 0
-                  proposal: 0
-                  editingProposal: 0
-                  editingDraft: 0
-                  draft: 0
+                  authorityType: 0
+                  legalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -197,6 +145,7 @@ paths:
                   authoritySlugs:
                   - string
                   name: string
+                  legalName: string
                   ordnanceSurvey:
                     apiKey: string
                     license: string
@@ -216,6 +165,7 @@ paths:
                   authoritySlugs:
                   - string
                   name: string
+                  legalName: string
                   ordnanceSurvey:
                     apiKey: string
                     license: string
@@ -248,21 +198,32 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/AuthorityDetailResult'
+                $ref: '#/components/schemas/AuthorityResult'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthorityDetailResult'
+                $ref: '#/components/schemas/AuthorityResult'
               example:
                 success: true
                 data:
-                  authorityId: string
+                  id: string
+                  name: string
+                  regionId: string
+                  countryId: string
                   authoritySlugs:
                   - string
-                  name: string
+                  isPubliclyViewable: true
                   ordnanceSurvey:
                     apiKey: string
                     license: string
+                  hasFreeParkingOutsideZone: true
+                  timeZoneId: string
+                  privacyPolicyUrl: string
+                  paymentProvider:
+                    name: string
+                    paymentUrl: string
+                    telephone: string
+                    cashlessMerchantId: string
                   centroid:
                     latitude: 0
                     longitude: 0
@@ -273,20 +234,44 @@ paths:
                     bottomRight:
                       latitude: 0
                       longitude: 0
-                  privacyPolicyUrl: string
+                  fallbackZoneId: string
+                  notes:
+                  - noteVisibilityTypeId: 0
+                    appliesToRestrictionTypeIds:
+                    - 0
+                    priority: 0
+                    title: string
+                    message: string
+                    url: string
+                    telephone: string
+                  tags:
+                  - string
+                  authorityType: 0
+                  legalName: string
             text/json:
               schema:
-                $ref: '#/components/schemas/AuthorityDetailResult'
+                $ref: '#/components/schemas/AuthorityResult'
               example:
                 success: true
                 data:
-                  authorityId: string
+                  id: string
+                  name: string
+                  regionId: string
+                  countryId: string
                   authoritySlugs:
                   - string
-                  name: string
+                  isPubliclyViewable: true
                   ordnanceSurvey:
                     apiKey: string
                     license: string
+                  hasFreeParkingOutsideZone: true
+                  timeZoneId: string
+                  privacyPolicyUrl: string
+                  paymentProvider:
+                    name: string
+                    paymentUrl: string
+                    telephone: string
+                    cashlessMerchantId: string
                   centroid:
                     latitude: 0
                     longitude: 0
@@ -297,7 +282,20 @@ paths:
                     bottomRight:
                       latitude: 0
                       longitude: 0
-                  privacyPolicyUrl: string
+                  fallbackZoneId: string
+                  notes:
+                  - noteVisibilityTypeId: 0
+                    appliesToRestrictionTypeIds:
+                    - 0
+                    priority: 0
+                    title: string
+                    message: string
+                    url: string
+                    telephone: string
+                  tags:
+                  - string
+                  authorityType: 0
+                  legalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -321,21 +319,32 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/AuthorityDetailResult'
+                $ref: '#/components/schemas/AuthorityResult'
               example: 
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthorityDetailResult'
+                $ref: '#/components/schemas/AuthorityResult'
               example:
                 success: true
                 data:
-                  authorityId: string
+                  id: string
+                  name: string
+                  regionId: string
+                  countryId: string
                   authoritySlugs:
                   - string
-                  name: string
+                  isPubliclyViewable: true
                   ordnanceSurvey:
                     apiKey: string
                     license: string
+                  hasFreeParkingOutsideZone: true
+                  timeZoneId: string
+                  privacyPolicyUrl: string
+                  paymentProvider:
+                    name: string
+                    paymentUrl: string
+                    telephone: string
+                    cashlessMerchantId: string
                   centroid:
                     latitude: 0
                     longitude: 0
@@ -346,20 +355,44 @@ paths:
                     bottomRight:
                       latitude: 0
                       longitude: 0
-                  privacyPolicyUrl: string
+                  fallbackZoneId: string
+                  notes:
+                  - noteVisibilityTypeId: 0
+                    appliesToRestrictionTypeIds:
+                    - 0
+                    priority: 0
+                    title: string
+                    message: string
+                    url: string
+                    telephone: string
+                  tags:
+                  - string
+                  authorityType: 0
+                  legalName: string
             text/json:
               schema:
-                $ref: '#/components/schemas/AuthorityDetailResult'
+                $ref: '#/components/schemas/AuthorityResult'
               example:
                 success: true
                 data:
-                  authorityId: string
+                  id: string
+                  name: string
+                  regionId: string
+                  countryId: string
                   authoritySlugs:
                   - string
-                  name: string
+                  isPubliclyViewable: true
                   ordnanceSurvey:
                     apiKey: string
                     license: string
+                  hasFreeParkingOutsideZone: true
+                  timeZoneId: string
+                  privacyPolicyUrl: string
+                  paymentProvider:
+                    name: string
+                    paymentUrl: string
+                    telephone: string
+                    cashlessMerchantId: string
                   centroid:
                     latitude: 0
                     longitude: 0
@@ -370,7 +403,20 @@ paths:
                     bottomRight:
                       latitude: 0
                       longitude: 0
-                  privacyPolicyUrl: string
+                  fallbackZoneId: string
+                  notes:
+                  - noteVisibilityTypeId: 0
+                    appliesToRestrictionTypeIds:
+                    - 0
+                    priority: 0
+                    title: string
+                    message: string
+                    url: string
+                    telephone: string
+                  tags:
+                  - string
+                  authorityType: 0
+                  legalName: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -409,7 +455,6 @@ paths:
                 data:
                   authorityUrl:
                     authorityId: string
-                    authorityGuid: string
                     authoritySlugs:
                     - string
                     regionId: string
@@ -434,8 +479,6 @@ paths:
                       message: string
                       url: string
                       telephone: string
-                    recognizedParkingEntitlementTypeIds:
-                    - 0
                     paymentProvider:
                       name: string
                       paymentUrl: string
@@ -555,6 +598,111 @@ paths:
                     privacyPolicyUrl: string
                     tags:
                     - string
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2021-11-17T00:00:00.0000000
+                        timeTo: 2021-11-17T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
                   zonesUrl:
                     type: string
                     features:
@@ -675,7 +823,6 @@ paths:
                 data:
                   authorityUrl:
                     authorityId: string
-                    authorityGuid: string
                     authoritySlugs:
                     - string
                     regionId: string
@@ -700,8 +847,6 @@ paths:
                       message: string
                       url: string
                       telephone: string
-                    recognizedParkingEntitlementTypeIds:
-                    - 0
                     paymentProvider:
                       name: string
                       paymentUrl: string
@@ -821,6 +966,111 @@ paths:
                     privacyPolicyUrl: string
                     tags:
                     - string
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2021-11-17T00:00:00.0000000
+                        timeTo: 2021-11-17T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
                   zonesUrl:
                     type: string
                     features:
@@ -971,7 +1221,6 @@ paths:
                 data:
                   authorityUrl:
                     authorityId: string
-                    authorityGuid: string
                     authoritySlugs:
                     - string
                     regionId: string
@@ -996,8 +1245,6 @@ paths:
                       message: string
                       url: string
                       telephone: string
-                    recognizedParkingEntitlementTypeIds:
-                    - 0
                     paymentProvider:
                       name: string
                       paymentUrl: string
@@ -1117,6 +1364,111 @@ paths:
                     privacyPolicyUrl: string
                     tags:
                     - string
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2021-11-17T00:00:00.0000000
+                        timeTo: 2021-11-17T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
                   zonesUrl:
                     type: string
                     features:
@@ -1237,7 +1589,6 @@ paths:
                 data:
                   authorityUrl:
                     authorityId: string
-                    authorityGuid: string
                     authoritySlugs:
                     - string
                     regionId: string
@@ -1262,8 +1613,6 @@ paths:
                       message: string
                       url: string
                       telephone: string
-                    recognizedParkingEntitlementTypeIds:
-                    - 0
                     paymentProvider:
                       name: string
                       paymentUrl: string
@@ -1383,6 +1732,111 @@ paths:
                     privacyPolicyUrl: string
                     tags:
                     - string
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2021-11-17T00:00:00.0000000
+                        timeTo: 2021-11-17T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
                   zonesUrl:
                     type: string
                     features:
@@ -1533,6 +1987,12 @@ paths:
                 data:
                   authorityUrl:
                     authorityId: string
+                    authoritySlugs:
+                    - string
+                    regionId: string
+                    countryId: string
+                    fallbackZoneId: string
+                    authorityType: 0
                     name: string
                     shape:
                       type: string
@@ -1542,6 +2002,22 @@ paths:
                           name: string
                       coordinates:
                       - - - 0
+                    notes:
+                    - noteVisibilityTypeId: 0
+                      appliesToRestrictionTypeIds:
+                      - 0
+                      priority: 0
+                      title: string
+                      message: string
+                      url: string
+                      telephone: string
+                    paymentProvider:
+                      name: string
+                      paymentUrl: string
+                      telephone: string
+                      cashlessMerchantId: string
+                    hasFreeParkingOutsideZone: true
+                    isPubliclyViewable: true
                     sets:
                       operatingHoursSets:
                       - setId: string
@@ -1594,6 +2070,26 @@ paths:
                             minStay: 0
                             noReturn: 0
                             noReturnUntil: 2021-11-17T00:00:00.0000000
+                      exemptionsSets:
+                      - setId: string
+                        name: string
+                        formattedName: string
+                        exemptions:
+                        - exemptionTypeId: 0
+                          parkingEntitlementTypeId: 0
+                          exemptionTimeTypeId: 0
+                          exemptionApplies: true
+                          maxStay: 0
+                          noReturn: 0
+                      exceptionsSets:
+                      - setId: string
+                        name: string
+                        formattedName: string
+                        exceptions:
+                          allHolidaysRestrictionExceptionTypeId: 0
+                          daySpecificRestrictionExceptions:
+                          - publicHolidayOrNamedDayId: string
+                            restrictionExceptionTypeId: 0
                       tariffSets:
                       - setId: string
                         name: string
@@ -1627,9 +2123,98 @@ paths:
                           days:
                           - 0
                           timeType: 0
+                    timeZoneId: string
                     ordnanceSurvey:
                       apiKey: string
                       license: string
+                    privacyPolicyUrl: string
+                    tags:
+                    - string
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2021-11-17T00:00:00.0000000
+                        timeTo: 2021-11-17T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
                   zonesUrl:
                     type: string
                     features:
@@ -1703,6 +2288,12 @@ paths:
                 data:
                   authorityUrl:
                     authorityId: string
+                    authoritySlugs:
+                    - string
+                    regionId: string
+                    countryId: string
+                    fallbackZoneId: string
+                    authorityType: 0
                     name: string
                     shape:
                       type: string
@@ -1712,6 +2303,22 @@ paths:
                           name: string
                       coordinates:
                       - - - 0
+                    notes:
+                    - noteVisibilityTypeId: 0
+                      appliesToRestrictionTypeIds:
+                      - 0
+                      priority: 0
+                      title: string
+                      message: string
+                      url: string
+                      telephone: string
+                    paymentProvider:
+                      name: string
+                      paymentUrl: string
+                      telephone: string
+                      cashlessMerchantId: string
+                    hasFreeParkingOutsideZone: true
+                    isPubliclyViewable: true
                     sets:
                       operatingHoursSets:
                       - setId: string
@@ -1764,6 +2371,26 @@ paths:
                             minStay: 0
                             noReturn: 0
                             noReturnUntil: 2021-11-17T00:00:00.0000000
+                      exemptionsSets:
+                      - setId: string
+                        name: string
+                        formattedName: string
+                        exemptions:
+                        - exemptionTypeId: 0
+                          parkingEntitlementTypeId: 0
+                          exemptionTimeTypeId: 0
+                          exemptionApplies: true
+                          maxStay: 0
+                          noReturn: 0
+                      exceptionsSets:
+                      - setId: string
+                        name: string
+                        formattedName: string
+                        exceptions:
+                          allHolidaysRestrictionExceptionTypeId: 0
+                          daySpecificRestrictionExceptions:
+                          - publicHolidayOrNamedDayId: string
+                            restrictionExceptionTypeId: 0
                       tariffSets:
                       - setId: string
                         name: string
@@ -1797,9 +2424,98 @@ paths:
                           days:
                           - 0
                           timeType: 0
+                    timeZoneId: string
                     ordnanceSurvey:
                       apiKey: string
                       license: string
+                    privacyPolicyUrl: string
+                    tags:
+                    - string
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2021-11-17T00:00:00.0000000
+                              end: 2021-11-17T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2021-11-17T00:00:00.0000000
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2021-11-17T00:00:00.0000000
+                        timeTo: 2021-11-17T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
                   zonesUrl:
                     type: string
                     features:
@@ -1865,6 +2581,151 @@ paths:
                     properties: {}
                   date: string
                   dataUpdateId: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /authorities/updateAuthorityConfiguration:
+    post:
+      tags:
+      - Authorities
+      summary: /authorities/updateAuthorityConfiguration - POST
+      operationId: post-authorities-updateauthorityconfiguration
+      parameters:
+      - name: authorityId
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuthorityConfiguration'
+            example:
+              authoritySlugs:
+              - string
+              name: string
+              timeZoneId: string
+              isPubliclyViewable: true
+              osApiKey: string
+              tags:
+              - string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthorityConfiguration'
+            example:
+              authoritySlugs:
+              - string
+              name: string
+              timeZoneId: string
+              isPubliclyViewable: true
+              osApiKey: string
+              tags:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuthorityConfiguration'
+            example:
+              authoritySlugs:
+              - string
+              name: string
+              timeZoneId: string
+              isPubliclyViewable: true
+              osApiKey: string
+              tags:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuthorityConfiguration'
+            example:
+              authoritySlugs:
+              - string
+              name: string
+              timeZoneId: string
+              isPubliclyViewable: true
+              osApiKey: string
+              tags:
+              - string
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /authorities/updateAuthoritySettings:
+    post:
+      tags:
+      - Authorities
+      summary: /authorities/updateAuthoritySettings - POST
+      operationId: post-authorities-updateauthoritysettings
+      parameters:
+      - name: authorityId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AuthoritySettings'
+            example:
+              legalName: string
+              hasFreeParkingOutsideZone: true
+              privacyPolicyUrl: string
+              paymentProvider:
+                name: string
+                paymentUrl: string
+                telephone: string
+                cashlessMerchantId: string
+              osLicenseKey: string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthoritySettings'
+            example:
+              legalName: string
+              hasFreeParkingOutsideZone: true
+              privacyPolicyUrl: string
+              paymentProvider:
+                name: string
+                paymentUrl: string
+                telephone: string
+                cashlessMerchantId: string
+              osLicenseKey: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AuthoritySettings'
+            example:
+              legalName: string
+              hasFreeParkingOutsideZone: true
+              privacyPolicyUrl: string
+              paymentProvider:
+                name: string
+                paymentUrl: string
+                telephone: string
+                cashlessMerchantId: string
+              osLicenseKey: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AuthoritySettings'
+            example:
+              legalName: string
+              hasFreeParkingOutsideZone: true
+              privacyPolicyUrl: string
+              paymentProvider:
+                name: string
+                paymentUrl: string
+                telephone: string
+                cashlessMerchantId: string
+              osLicenseKey: string
+      responses:
+        "200":
+          description: Success
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -8635,7 +9496,7 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    AuthorityBaseData:
+    Authority:
       type: object
       properties:
         id:
@@ -8659,17 +9520,39 @@ components:
           type: boolean
         ordnanceSurvey:
           $ref: '#/components/schemas/OrdnanceSurvey'
-      additionalProperties: false
-    AuthorityBaseDataListResult:
-      type: object
-      properties:
-        success:
+        hasFreeParkingOutsideZone:
           type: boolean
-          readOnly: true
-        data:
+          nullable: true
+        timeZoneId:
+          type: string
+          nullable: true
+        privacyPolicyUrl:
+          type: string
+          nullable: true
+        paymentProvider:
+          $ref: '#/components/schemas/PaymentProviderCms'
+        centroid:
+          $ref: '#/components/schemas/LatLng'
+        boundingBox:
+          $ref: '#/components/schemas/BoundingBox'
+        fallbackZoneId:
+          type: string
+          format: uuid
+        notes:
           type: array
           items:
-            $ref: '#/components/schemas/AuthorityBaseData'
+            $ref: '#/components/schemas/NoteCms'
+          nullable: true
+        tags:
+          type: array
+          items:
+            type: string
+          nullable: true
+        authorityType:
+          type: integer
+          format: int32
+        legalName:
+          type: string
           nullable: true
       additionalProperties: false
     AuthorityChangeType:
@@ -8683,10 +9566,6 @@ components:
         authorityId:
           type: string
           nullable: true
-        authorityGuid:
-          type: string
-          format: uuid
-          readOnly: true
         authoritySlugs:
           type: array
           items:
@@ -8714,12 +9593,6 @@ components:
           items:
             $ref: '#/components/schemas/NoteCms'
           nullable: true
-        recognizedParkingEntitlementTypeIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
         paymentProvider:
           $ref: '#/components/schemas/PaymentProviderCms'
         hasFreeParkingOutsideZone:
@@ -8743,12 +9616,9 @@ components:
             type: string
           nullable: true
       additionalProperties: false
-    AuthorityDetail:
+    AuthorityConfiguration:
       type: object
       properties:
-        authorityId:
-          type: string
-          nullable: true
         authoritySlugs:
           type: array
           items:
@@ -8757,24 +9627,19 @@ components:
         name:
           type: string
           nullable: true
-        ordnanceSurvey:
-          $ref: '#/components/schemas/OrdnanceSurvey'
-        centroid:
-          $ref: '#/components/schemas/LatLng'
-        boundingBox:
-          $ref: '#/components/schemas/BoundingBox'
-        privacyPolicyUrl:
+        timeZoneId:
           type: string
           nullable: true
-      additionalProperties: false
-    AuthorityDetailResult:
-      type: object
-      properties:
-        success:
+        isPubliclyViewable:
           type: boolean
-          readOnly: true
-        data:
-          $ref: '#/components/schemas/AuthorityDetail'
+        osApiKey:
+          type: string
+          nullable: true
+        tags:
+          type: array
+          items:
+            type: string
+          nullable: true
       additionalProperties: false
     AuthorityInfo:
       type: object
@@ -8788,6 +9653,9 @@ components:
             type: string
           nullable: true
         name:
+          type: string
+          nullable: true
+        legalName:
           type: string
           nullable: true
         ordnanceSurvey:
@@ -8821,6 +9689,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AuthorityInfo'
+          nullable: true
+      additionalProperties: false
+    AuthorityListResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Authority'
           nullable: true
       additionalProperties: false
     AuthorityModification:
@@ -8871,27 +9751,40 @@ components:
             $ref: '#/components/schemas/AuthorityOrders'
           nullable: true
       additionalProperties: false
-    AuthorityPublicCmsBlob:
+    AuthorityResult:
       type: object
       properties:
-        authorityId:
+        success:
+          type: boolean
+          readOnly: true
+        data:
+          $ref: '#/components/schemas/Authority'
+      additionalProperties: false
+    AuthoritySettings:
+      type: object
+      properties:
+        legalName:
           type: string
           nullable: true
-        name:
+        hasFreeParkingOutsideZone:
+          type: boolean
+          nullable: true
+        privacyPolicyUrl:
           type: string
           nullable: true
-        shape:
-          $ref: '#/components/schemas/Polygon'
-        sets:
-          $ref: '#/components/schemas/PublicSetCollection'
-        ordnanceSurvey:
-          $ref: '#/components/schemas/OrdnanceSurvey'
+        paymentProvider:
+          $ref: '#/components/schemas/PaymentProviderCms'
+        osLicenseKey:
+          type: string
+          nullable: true
       additionalProperties: false
     AuthoritySnapshotInfoDoc:
       type: object
       properties:
         authorityUrl:
           $ref: '#/components/schemas/AuthorityCmsBlob'
+        setsUrl:
+          $ref: '#/components/schemas/SetCollection'
         zonesUrl:
           $ref: '#/components/schemas/PolygonZoneFeatureCollection'
         ospsUrl:
@@ -10776,7 +11669,9 @@ components:
       type: object
       properties:
         authorityUrl:
-          $ref: '#/components/schemas/AuthorityPublicCmsBlob'
+          $ref: '#/components/schemas/AuthorityCmsBlob'
+        setsUrl:
+          $ref: '#/components/schemas/PublicSetCollection'
         zonesUrl:
           $ref: '#/components/schemas/PolygonZonePublicFeaturePropertiesFeatureCollection'
         ospsUrl:
