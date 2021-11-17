@@ -1,0 +1,4269 @@
+{
+  "item": [
+    {
+      "id": "e3f9a956-461d-40b4-b0da-d636cc822a14",
+      "name": "Bulk refunds a collection of payments",
+      "request": {
+        "name": "Bulk refunds a collection of payments",
+        "description": {
+          "content": "Bulk refunds a collection of payments",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "bulkRefundPayment"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "[\n    {\n        \"id\": \"<string>\",\n        \"amountToRefund\": \"<double>\",\n        \"reasonCode\": \"<string>\",\n        \"reasonComments\": \"<string>\"\n    },\n    {\n        \"id\": \"<string>\",\n        \"amountToRefund\": \"<double>\",\n        \"reasonCode\": \"<string>\",\n        \"reasonComments\": \"<string>\"\n    }\n]"
+        }
+      },
+      "response": [
+        {
+          "id": "2c1c6c86-7a70-43c9-8d7d-c36f6e997bfd",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "bulkRefundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"string\",\n        \"amountToRefund\": 0,\n        \"reasonCode\": \"string\",\n        \"reasonComments\": \"string\"\n    }\n]"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"succeeded\": [\n   \"string\"\n  ],\n  \"failed\": {}\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a43ec504-dcda-4db5-a5d4-cb254fb15f1d",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "bulkRefundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"string\",\n        \"amountToRefund\": 0,\n        \"reasonCode\": \"string\",\n        \"reasonComments\": \"string\"\n    }\n]"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1d5c478b-8f72-405e-aa95-594c8b412826",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "bulkRefundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"string\",\n        \"amountToRefund\": 0,\n        \"reasonCode\": \"string\",\n        \"reasonComments\": \"string\"\n    }\n]"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "be84e257-a8a8-4697-86d3-4b5cbd321962",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "bulkRefundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"string\",\n        \"amountToRefund\": 0,\n        \"reasonCode\": \"string\",\n        \"reasonComments\": \"string\"\n    }\n]"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "52262f70-1dbd-4b44-87b7-5ab27c161947",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "bulkRefundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n    {\n        \"id\": \"string\",\n        \"amountToRefund\": 0,\n        \"reasonCode\": \"string\",\n        \"reasonComments\": \"string\"\n    }\n]"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "988aa41e-3eda-40e7-bbe8-78ba44c9f23f",
+      "name": "Checks if a payment method is valid for use.",
+      "request": {
+        "name": "Checks if a payment method is valid for use.",
+        "description": {
+          "content": "Checks if a payment method is valid for use.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "checkPaymentMethodValidity"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ownerId\": \"<string>\",\n    \"paymentMethodId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "a080edb5-32df-494c-aa4f-575b9260d4b7",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkPaymentMethodValidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"code\": \"string\",\n   \"property\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "60147bd3-c667-4080-83dc-fcc8e331fad3",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkPaymentMethodValidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9ce69579-b3d7-4397-90ad-dcdf8e075f93",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkPaymentMethodValidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e9f5b3f0-c74d-43f6-bc20-93975636c078",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkPaymentMethodValidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "09bc2b69-e1a8-4c65-b4f3-ed0493bfa246",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkPaymentMethodValidity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b0555362-177b-48b3-bd8d-8e97c026a30b",
+      "name": "Deletes a payment card for an owner",
+      "request": {
+        "name": "Deletes a payment card for an owner",
+        "description": {
+          "content": "Deletes a payment card for an owner",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "deletePaymentCard"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\",\n    \"paymentCardId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "c49f00ec-ef8f-4eef-aef4-321dcd2eb225",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "deletePaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "10e71ce9-1988-4e0e-850e-f7706b8d03e8",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "deletePaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "bd5d16da-2056-4de7-946a-12ba862193c5",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "deletePaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "879068db-9979-4c8e-abad-ecbdaa2eb4f4",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "deletePaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "ed65ae61-d728-4ce5-bc1a-2a669207204d",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "deletePaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "676eb5dc-347d-4009-87e1-9cedd84415db",
+      "name": "Fetch the order summary",
+      "request": {
+        "name": "Fetch the order summary",
+        "description": {
+          "content": "Fetch the order summary",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchOrdersByUser"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "0469e792-5a14-4ec0-ba13-a4d26bd6159d",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrdersByUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"id\": \"string\",\n  \"clientServiceName\": \"string\",\n  \"clientServiceReference\": \"string\",\n  \"currency\": \"string\",\n  \"status\": 0,\n  \"amount\": 0,\n  \"authorityId\": \"string\",\n  \"userId\": \"string\",\n  \"paymentMethodId\": \"string\",\n  \"transactions\": [\n   {\n    \"id\": \"string\",\n    \"orderId\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"currency\": \"string\",\n    \"amount\": 0,\n    \"createdOn\": \"string\",\n    \"transactionType\": 1,\n    \"externalReferenceId\": \"string\",\n    \"authorisationCode\": \"string\",\n    \"failureSeverity\": 1,\n    \"failureReason\": 1,\n    \"failureCode\": \"string\",\n    \"failureMessage\": \"string\",\n    \"refundReasonCode\": \"string\",\n    \"refundReasonComments\": \"string\"\n   }\n  ],\n  \"totalPaid\": 0,\n  \"totalRefunded\": 0,\n  \"netPaid\": 0\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "73bb797d-4a9c-46a3-91a2-e1114f4b2cc6",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrdersByUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "e222fdd4-5f6c-417a-aec7-1743a8aa0aa2",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrdersByUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "80c46917-ae53-46ee-bdcb-bfb342743816",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrdersByUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b530b28d-f2f3-453c-8da2-0565b0a0eb4f",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrdersByUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6a050ce7-29ea-4c7b-be8d-1ae2ba14013e",
+      "name": "Fetch the statuses of multiple orders",
+      "request": {
+        "name": "Fetch the statuses of multiple orders",
+        "description": {
+          "content": "Fetch the statuses of multiple orders",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchOrderStatuses"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"clientServiceName\": \"<string>\",\n    \"clientServiceReferences\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "81e081af-ba92-4a0c-832f-fd6a037508c1",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderStatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReferences\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"clientServiceReference\": \"string\",\n   \"status\": 0,\n   \"lastPaymentAttemptFailed\": true\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "86247c95-baa7-4b59-b111-c8c807f4c2ae",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderStatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReferences\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "b44bc60d-df29-4e75-b1e1-77d6d8c38eff",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderStatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReferences\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2579031d-b3f7-4da2-8e09-ec6140dc0ffa",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderStatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReferences\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "61ba72d6-5a82-4b22-822c-9287e2f9f619",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderStatuses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReferences\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "786ac3ef-d9af-4d2e-95da-7e887a1dcf78",
+      "name": "Fetch the order summary",
+      "request": {
+        "name": "Fetch the order summary",
+        "description": {
+          "content": "Fetch the order summary",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchOrderSummary"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"clientServiceName\": \"<string>\",\n    \"clientServiceReference\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "f450a751-fd9a-4a91-b9f5-9efee1fa8898",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderSummary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"id\": \"string\",\n  \"clientServiceName\": \"string\",\n  \"clientServiceReference\": \"string\",\n  \"currency\": \"string\",\n  \"status\": 0,\n  \"amount\": 0,\n  \"authorityId\": \"string\",\n  \"userId\": \"string\",\n  \"paymentMethodId\": \"string\",\n  \"transactions\": [\n   {\n    \"id\": \"string\",\n    \"orderId\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"currency\": \"string\",\n    \"amount\": 0,\n    \"createdOn\": \"string\",\n    \"transactionType\": 1,\n    \"externalReferenceId\": \"string\",\n    \"authorisationCode\": \"string\",\n    \"failureSeverity\": 1,\n    \"failureReason\": 1,\n    \"failureCode\": \"string\",\n    \"failureMessage\": \"string\",\n    \"refundReasonCode\": \"string\",\n    \"refundReasonComments\": \"string\"\n   }\n  ],\n  \"totalPaid\": 0,\n  \"totalRefunded\": 0,\n  \"netPaid\": 0\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a0505ee0-8d34-48b7-9b48-a94709d069b0",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderSummary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8213ba24-4696-448d-865c-9318c220d285",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderSummary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "74c6f160-a0a5-4328-88e1-0842588463f1",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderSummary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "1e4afdff-adca-431c-9e80-313c5856b082",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOrderSummary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "25b5deb5-a087-4861-b4fe-967b055b236e",
+      "name": "Fetch a payment card",
+      "request": {
+        "name": "Fetch a payment card",
+        "description": {
+          "content": "Fetch a payment card",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchPaymentCardById"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "8641afad-cd3a-4179-a5de-b0d5c33973b7",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentCardById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"id\": \"string\",\n  \"isDeleted\": true,\n  \"ownerId\": \"string\",\n  \"ownerType\": 1,\n  \"lastFourDigits\": \"string\",\n  \"expiryDate\": \"string\",\n  \"paymentCardType\": 1,\n  \"paymentMethodType\": 1,\n  \"paymentToken\": \"string\",\n  \"organisationId\": \"string\",\n  \"walletDebtAmount\": 0\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "37861eb2-cba4-47a2-bf70-72e964acbfb8",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentCardById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "27dad48b-7a40-4d5d-9b5a-e1fc8fdeed39",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentCardById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "1abb6431-5685-4614-bd6c-dbccaf1ef0c2",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentCardById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "42f5a821-6d3a-42b6-b194-a6d17dcb1880",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchPaymentCardById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b91342b2-6f44-4524-8347-223dbd6d816e",
+      "name": "Fetch the wallet details wallet",
+      "request": {
+        "name": "Fetch the wallet details wallet",
+        "description": {
+          "content": "Fetch the wallet details wallet",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchWalletByOwnerId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ownerId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "181fc8f2-560c-43a0-8965-35817e7b4c47",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletByOwnerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"isAllowedToMakeNewPayments\": true,\n  \"debtAmount\": 0,\n  \"hasValidPaymentMethods\": true,\n  \"paymentMethods\": [\n   {\n    \"id\": \"string\",\n    \"lastFourDigits\": \"string\",\n    \"expiryYear\": 0,\n    \"expiryMonth\": 0,\n    \"paymentCardType\": 1,\n    \"paymentMethodType\": 1,\n    \"isDefault\": true,\n    \"isExpired\": true,\n    \"organisationId\": \"string\"\n   }\n  ]\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "44151627-2f0f-46ee-b57f-b961790a99df",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletByOwnerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "09fd7d9a-ca5d-4b65-ac93-7769331a5204",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletByOwnerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "d465834b-8575-4e87-92f2-5a3c77869f4a",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletByOwnerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8236a0b4-a622-4bfa-82d2-5217fed9db44",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletByOwnerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a4e942a3-5a45-42d4-a57e-89ab725f3c29",
+      "name": "Fetch wallet Ids that have unreconciled expired payment cards",
+      "request": {
+        "name": "Fetch wallet Ids that have unreconciled expired payment cards",
+        "description": {
+          "content": "Fetch wallet Ids that have unreconciled expired payment cards",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "\"<object>\""
+        }
+      },
+      "response": [
+        {
+          "id": "0be7c9fd-5d48-45b2-9164-9c648d5c62e2",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  \"string\"\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "59f2da44-1cac-428c-a16d-58f66569dfa7",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "02cf0ad4-3bb8-4be0-a4f4-fc59f2ceee61",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "a7782873-a736-470c-b024-6583e18da087",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e24ac874-4453-40b2-862c-128bf75b0dd7",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cc425e3f-dc57-4803-8558-22e50e623098",
+      "name": "Fetch wallets owned by user Ids",
+      "request": {
+        "name": "Fetch wallets owned by user Ids",
+        "description": {
+          "content": "Fetch wallets owned by user Ids",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "fetchWalletsByOwnerIds"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ownerIds\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "2f98a0fc-9c2b-4da8-bb4e-0480a3a8a5bf",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletsByOwnerIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"ownerId\": \"string\",\n   \"isAllowedToMakeNewPayments\": true,\n   \"debtAmount\": 0,\n   \"hasValidPaymentMethods\": true\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5a61f8cb-793f-4cbd-b98f-afeaaac81aea",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletsByOwnerIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f3fa380e-7e42-4e1b-9096-8e9424ce4175",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletsByOwnerIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "ccd77ca3-9fd7-4bee-a2f5-152fd721e850",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletsByOwnerIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c1a12723-43a4-49ed-b248-c537af52644a",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchWalletsByOwnerIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "15d90f9d-62d4-4d8d-abc0-549b1b294001",
+      "name": "Tells if a person is eligible to make payments based on the current state of their wallet",
+      "request": {
+        "name": "Tells if a person is eligible to make payments based on the current state of their wallet",
+        "description": {
+          "content": "Tells if a person is eligible to make payments based on the current state of their wallet",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "isAllowedToMakeNewPayments"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ownerId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "208ad5fb-daa4-4e11-97f5-222a199712da",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "isAllowedToMakeNewPayments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "cb1e1a3d-2333-4dbe-bd63-d48b61d382ce",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "isAllowedToMakeNewPayments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "de5f62ec-52e6-405f-863b-8398c3fb7147",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "isAllowedToMakeNewPayments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "621fc818-4bfa-4c5f-9848-11ad65746460",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "isAllowedToMakeNewPayments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c57a4d4e-3357-4bc8-a1c4-f178e0524c97",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "isAllowedToMakeNewPayments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "689fc797-6cb4-4138-a6b8-a8ea69831917",
+      "name": "Returns \"pong\" show the API is up and running",
+      "request": {
+        "name": "Returns \"pong\" show the API is up and running",
+        "description": {
+          "content": "Returns \"pong\" show the API is up and running",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "ping"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "30e388e9-345c-4468-a01d-3203ae724ca2",
+          "name": "The API is up and running",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "a3ff96f9-e199-42f5-99e4-0f78ad113910",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "6541ff1b-abf5-47dd-a924-8f307163c00d",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b5175025-6fb6-4a23-a572-170c58e0df3e",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "76ec261d-3906-43e6-9903-a80c3ec883e4",
+      "name": "Makes sure isExpired is synced on the payment cards",
+      "request": {
+        "name": "Makes sure isExpired is synced on the payment cards",
+        "description": {
+          "content": "Makes sure isExpired is synced on the payment cards",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "reconcileExpiredCards"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "86f7cbdc-706f-4743-bc6e-62e82eb15132",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileExpiredCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5e95a9de-bd91-45c9-8dc2-4957562452f6",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileExpiredCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "95448fd1-2972-46d3-80b1-02e79df294c4",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileExpiredCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "acf107c9-e9fe-49f4-9ec0-5367e995b2f8",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileExpiredCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "597437b8-6fb7-4980-9e3d-9259dbec4a1e",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileExpiredCards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "17fcf645-c50e-465f-bca9-46020d421ef4",
+      "name": "If debt is found, updates the total amount of debt on the wallet",
+      "request": {
+        "name": "If debt is found, updates the total amount of debt on the wallet",
+        "description": {
+          "content": "If debt is found, updates the total amount of debt on the wallet",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "reconcileWalletDebtAmount"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "38f90fb5-2199-438b-9900-4c2421d003b5",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletDebtAmount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c694fd49-7336-49ee-80e4-bd0c04e8290a",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletDebtAmount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2f6dfbbc-f6eb-4465-bcd4-56292dc09f31",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletDebtAmount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e884161a-7b5a-44e8-a05a-e7b7f006cc67",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletDebtAmount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e7c8f3bb-46e3-4dca-965f-121c25f7c2cc",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletDebtAmount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ef642d37-4fd6-44b0-a7a2-f85ce211ebd0",
+      "name": "Makes sure hasValidPaymentMethods is synced",
+      "request": {
+        "name": "Makes sure hasValidPaymentMethods is synced",
+        "description": {
+          "content": "Makes sure hasValidPaymentMethods is synced",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "reconcileWalletHasValidPaymentMethods"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "56acd85e-52b8-4f8c-9fac-1024e57ce671",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletHasValidPaymentMethods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f169dfee-10c7-425a-92c7-6a14e05167dc",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletHasValidPaymentMethods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f199ddf7-392c-4f7d-a683-1d007c23a9a6",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletHasValidPaymentMethods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b61c7370-0e41-4cf3-af7a-c1a475e68755",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletHasValidPaymentMethods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "211fa1b9-d767-4bfe-a91a-3b4397404357",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileWalletHasValidPaymentMethods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6c714d6d-666a-478d-b251-6bb3fc6a4917",
+      "name": "Refunds a payment",
+      "request": {
+        "name": "Refunds a payment",
+        "description": {
+          "content": "Refunds a payment",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "refundPayment"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\",\n    \"amountToRefund\": \"<double>\",\n    \"reasonCode\": \"<string>\",\n    \"reasonComments\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "2f138cdd-6c98-4002-bb4e-d43e4bcb3e37",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"amountToRefund\": 0,\n    \"reasonCode\": \"string\",\n    \"reasonComments\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9d637515-cd9d-4726-9239-1a5308dce031",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"amountToRefund\": 0,\n    \"reasonCode\": \"string\",\n    \"reasonComments\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "bce1120a-c1c5-464c-909f-b8af2554dcdc",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"amountToRefund\": 0,\n    \"reasonCode\": \"string\",\n    \"reasonComments\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "f745c9db-f246-48bb-baf2-216402ffd71f",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"amountToRefund\": 0,\n    \"reasonCode\": \"string\",\n    \"reasonComments\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "f9071375-88d6-4330-b697-c428218469b7",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"amountToRefund\": 0,\n    \"reasonCode\": \"string\",\n    \"reasonComments\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0d42e780-225b-4aa4-94b2-6d4f2a66aa8b",
+      "name": "This will issue refunds for all test users payments",
+      "request": {
+        "name": "This will issue refunds for all test users payments",
+        "description": {
+          "content": "This will issue refunds for all test users payments",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "refundTestUsers"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "d2317977-5a39-45cf-8269-4082616634de",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundTestUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d8087cf0-59e9-4161-8c3c-fb7327ad0a20",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundTestUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "24a475c4-3c35-4d63-92f5-e957471b7502",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundTestUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4017ad1c-d2fa-4014-883b-f4b07e4e81ea",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundTestUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "625c2235-a3e2-41c4-af8b-32e327edd581",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "refundTestUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6bdabfb0-3b29-4e26-90a9-bc418197079d",
+      "name": "Register a new order",
+      "request": {
+        "name": "Register a new order",
+        "description": {
+          "content": "Register a new order",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "registerPayment"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"authorityId\": \"<string>\",\n    \"clientServiceName\": \"<string>\",\n    \"clientServiceReference\": \"<string>\",\n    \"paymentMethodId\": \"<string>\",\n    \"amount\": \"<double>\",\n    \"userId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "fe6004cf-4eee-4bed-b2c7-3d3089faa7a5",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"authorityId\": \"string\",\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"amount\": 0,\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "fa3032cb-0808-4c1a-9cc1-176b10731213",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"authorityId\": \"string\",\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"amount\": 0,\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8fbf0494-be80-406a-b13a-5f148f21c44c",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"authorityId\": \"string\",\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"amount\": 0,\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "cb49f685-4a30-4510-9422-f602b826ca3d",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"authorityId\": \"string\",\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"amount\": 0,\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b023e548-bd3d-44c6-b440-d72a1fc561f6",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"authorityId\": \"string\",\n    \"clientServiceName\": \"string\",\n    \"clientServiceReference\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"amount\": 0,\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "22d47c70-1dac-4058-8392-b84d544089a8",
+      "name": "Registers an owner's payment card",
+      "request": {
+        "name": "Registers an owner's payment card",
+        "description": {
+          "content": "Registers an owner's payment card",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "registerPaymentCard"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"lastFourDigits\": \"<string>\",\n    \"paymentToken\": \"<string>\",\n    \"expiryDate\": \"<dateTime>\",\n    \"paymentCardType\": \"<integer>\",\n    \"ownerId\": \"<string>\",\n    \"ownerType\": \"<integer>\",\n    \"organisationId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "5120f356-5c57-4f29-92a3-d86f05548ea8",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"lastFourDigits\": \"string\",\n    \"paymentToken\": \"string\",\n    \"expiryDate\": \"string\",\n    \"paymentCardType\": 1,\n    \"ownerId\": \"string\",\n    \"ownerType\": 1,\n    \"organisationId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"paymentCardId\": \"string\",\n  \"responseMessage\": \"string\",\n  \"responseSuccess\": true\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d09cdf44-3bc5-43b5-a7a5-e374ac650f0c",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"lastFourDigits\": \"string\",\n    \"paymentToken\": \"string\",\n    \"expiryDate\": \"string\",\n    \"paymentCardType\": 1,\n    \"ownerId\": \"string\",\n    \"ownerType\": 1,\n    \"organisationId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f54928b4-047a-47d2-87a4-cc482dd66a77",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"lastFourDigits\": \"string\",\n    \"paymentToken\": \"string\",\n    \"expiryDate\": \"string\",\n    \"paymentCardType\": 1,\n    \"ownerId\": \"string\",\n    \"ownerType\": 1,\n    \"organisationId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8114ee0c-fca7-4f28-bbdf-486c153e7007",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"lastFourDigits\": \"string\",\n    \"paymentToken\": \"string\",\n    \"expiryDate\": \"string\",\n    \"paymentCardType\": 1,\n    \"ownerId\": \"string\",\n    \"ownerType\": 1,\n    \"organisationId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "866d2e9c-2f7b-4131-8ba7-fcc7e78970bf",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "registerPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"lastFourDigits\": \"string\",\n    \"paymentToken\": \"string\",\n    \"expiryDate\": \"string\",\n    \"paymentCardType\": 1,\n    \"ownerId\": \"string\",\n    \"ownerType\": 1,\n    \"organisationId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "af8e4f88-47f9-46b0-b5aa-79cd503f4f6c",
+      "name": "This will attempt to reprocess all 'debt' transactions with the specified payment card for a specific user",
+      "request": {
+        "name": "This will attempt to reprocess all 'debt' transactions with the specified payment card for a specific user",
+        "description": {
+          "content": "This will attempt to reprocess all 'debt' transactions with the specified payment card for a specific user",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "reprocessAllTransactionsWithDebt"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\",\n    \"paymentMethodId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "87297e6a-0fa5-4bf1-9ae0-0de61d0e45e9",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reprocessAllTransactionsWithDebt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0c10ace2-c019-43aa-893c-c594c13fde14",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reprocessAllTransactionsWithDebt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9c407a0f-909a-448b-9d3e-9e80644661b9",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reprocessAllTransactionsWithDebt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "75ac95fe-fea6-4229-b27e-f7b721c3534c",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reprocessAllTransactionsWithDebt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "6b716e6b-deb8-4545-80d5-f3a7ad599907",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reprocessAllTransactionsWithDebt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b1af5796-02de-47a9-973f-f8037ffe6c67",
+      "name": "Set an owner's default payment card",
+      "request": {
+        "name": "Set an owner's default payment card",
+        "description": {
+          "content": "Set an owner's default payment card",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "setDefaultPaymentCard"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\",\n    \"newDefaultPaymentCardId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "b607fd7f-84fd-44d2-a177-28b0f45bb9ca",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setDefaultPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"newDefaultPaymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "17d45d79-d8de-4620-8827-48cf6b77e6a6",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setDefaultPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"newDefaultPaymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "bb13f601-79b9-481d-9f53-70d0cdb3b7eb",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setDefaultPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"newDefaultPaymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "976de3ab-cb5f-46fd-8aae-4b2943618845",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setDefaultPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"newDefaultPaymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "d8b26c4b-8eb1-467f-96b4-db9a48a8ad49",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setDefaultPaymentCard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"newDefaultPaymentCardId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b8a80a66-e814-4146-8181-9d190660910f",
+      "name": "Attempts to take a payment with an optional new card id",
+      "request": {
+        "name": "Attempts to take a payment with an optional new card id",
+        "description": {
+          "content": "Attempts to take a payment with an optional new card id",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "takePayment"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\",\n    \"paymentMethodId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "94a824fb-1426-497d-aa2a-bfc491d6269e",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "takePayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3386f80a-4fbf-4b17-93ba-2f821b39df97",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "takePayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f1327704-32e3-409b-9365-d7bb01ce8480",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "takePayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fb5efa27-5ddf-47e7-947a-90028c1583a7",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "takePayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "da74b6f8-96a0-4b7f-ab38-e9de58c1cc4d",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "takePayment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\",\n    \"paymentMethodId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "type": "string",
+      "value": "https://api.appyway.com/parking/v1/payments"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "type": "string",
+        "value": "{{API-KEY-LIVE}}"
+      },
+      {
+        "key": "key",
+        "type": "string",
+        "value": "API-KEY"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "97e11b28-c12e-4ca9-9384-859078f9fe50",
+    "name": "Ylp.Payment.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (v1.0|LIVE|Public)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

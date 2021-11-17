@@ -1,0 +1,546 @@
+openapi: 3.0.1
+info:
+  title: Greenflux Acl API
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/integrations/greenflux/v1
+paths:
+  /beginEvChargingSession:
+    post:
+      tags:
+      - Commands
+      summary: Starts a EV charging session and a parking session
+      description: Starts a EV charging session and a parking session
+      operationId: post-beginevchargingsession
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BeginEvChargingSessionCommand'
+            example:
+              entityId: string
+              entityIndex: string
+              userId: string
+              vehicleRegistrationMark: string
+              paymentMethodId: string
+              duration: 3.17:25:30.5000000
+              evseId: string
+              connectorId: string
+              locationVerificationToken: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BeginEvChargingSessionCommand'
+            example:
+              entityId: string
+              entityIndex: string
+              userId: string
+              vehicleRegistrationMark: string
+              paymentMethodId: string
+              duration: 3.17:25:30.5000000
+              evseId: string
+              connectorId: string
+              locationVerificationToken: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BeginEvChargingSessionCommand'
+            example:
+              entityId: string
+              entityIndex: string
+              userId: string
+              vehicleRegistrationMark: string
+              paymentMethodId: string
+              duration: 3.17:25:30.5000000
+              evseId: string
+              connectorId: string
+              locationVerificationToken: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringAcceptedResponse'
+              example:
+                success: true
+                result: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchChargePointsByEntityId:
+    post:
+      tags:
+      - Queries
+      summary: Fetch EV charge points by entity ID
+      description: Fetch EV charge points by entity ID
+      operationId: post-fetchchargepointsbyentityid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchChargePointsByEntityIdQuery'
+            example:
+              entityId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchChargePointsByEntityIdQuery'
+            example:
+              entityId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchChargePointsByEntityIdQuery'
+            example:
+              entityId: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchChargePointsByEntityIdQueryResultItemIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - displayName: string
+                  connectorId: string
+                  evseId: string
+                  status: 0
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchEVChargingSessionStatusById:
+    post:
+      tags:
+      - Queries
+      summary: Fetch EV charging session status by ID
+      description: Fetch EV charging session status by ID
+      operationId: post-fetchevchargingsessionstatusbyid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchEvChargingSessionStatusByIdQuery'
+            example:
+              id: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchEvChargingSessionStatusByIdQuery'
+            example:
+              id: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchEvChargingSessionStatusByIdQuery'
+            example:
+              id: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChargeSessionStatusNullableOkResponse'
+              example:
+                success: true
+                result: 0
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchPotentiallyStuckEvChargingSessionIds:
+    post:
+      tags:
+      - Queries
+      summary: Fetch potentially stuck EV charging session IDs
+      description: Fetch potentially stuck EV charging session IDs
+      operationId: post-fetchpotentiallystuckevchargingsessionids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchPotentiallyStuckEvChargingSessionIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchPotentiallyStuckEvChargingSessionIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchPotentiallyStuckEvChargingSessionIdsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringIEnumerableOkResponse'
+              example:
+                success: true
+                result:
+                - string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /ping:
+    get:
+      tags:
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the service
+      operationId: get-ping
+      responses:
+        "200":
+          description: Success
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /reconcileEvChargingSessions:
+    post:
+      tags:
+      - Commands
+      summary: Reconcile potentially stuck EV charging sessions
+      description: Reconcile potentially stuck EV charging sessions
+      operationId: post-reconcileevchargingsessions
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /synchronizeSessionChargeStatus:
+    post:
+      tags:
+      - Commands
+      summary: Synchronize EV charging session charge status
+      description: Synchronize EV charging session charge status
+      operationId: post-synchronizesessionchargestatus
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SynchronizeSessionChargeStatusCommand'
+            example:
+              processId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SynchronizeSessionChargeStatusCommand'
+            example:
+              processId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SynchronizeSessionChargeStatusCommand'
+            example:
+              processId: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    AcceptedResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+      additionalProperties: false
+    BeginEvChargingSessionCommand:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: The id of the parking entity for the parking session
+          nullable: true
+        entityIndex:
+          type: string
+          description: Gets the parking index to use for calculating the cost of the parking session
+          nullable: true
+        userId:
+          type: string
+          description: The id of the user starting the parking session
+          nullable: true
+        vehicleRegistrationMark:
+          type: string
+          description: The vehicle registration mark being used for the parking session
+          nullable: true
+        paymentMethodId:
+          type: string
+          description: The payment card being used to pay for the parking session
+          nullable: true
+        duration:
+          type: string
+          description: The duration of the parking session
+          example: 3.17:25:30.5000000
+        evseId:
+          type: string
+          description: Electric vehicle supply equipment Id
+          nullable: true
+        connectorId:
+          type: string
+          description: Electric vehicle supply equipment connector Id
+          nullable: true
+        locationVerificationToken:
+          type: string
+          description: 'Location verification token coming from the verification system (eg: Sensors)'
+          nullable: true
+      additionalProperties: false
+    ChargePointStatus:
+      enum:
+      - 0
+      - 1
+      type: integer
+      description: |2+
+
+
+        *NotAvailable (0)
+        *Available (1)
+      format: int32
+    ChargeSessionStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+      description: |2+
+
+
+        *Requested (0)
+        *Starting (1)
+        *Charging (2)
+        *Stopping (3)
+        *Stopped (4)
+        *Failed (5)
+      format: int32
+    ChargeSessionStatusNullableOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/ChargeSessionStatus'
+      additionalProperties: false
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchChargePointsByEntityIdQuery:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: The id of the parking entity
+          nullable: true
+      additionalProperties: false
+    FetchChargePointsByEntityIdQueryResultItem:
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        connectorId:
+          type: string
+          nullable: true
+        evseId:
+          type: string
+          nullable: true
+        status:
+          $ref: '#/components/schemas/ChargePointStatus'
+      additionalProperties: false
+    FetchChargePointsByEntityIdQueryResultItemIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/FetchChargePointsByEntityIdQueryResultItem'
+          nullable: true
+      additionalProperties: false
+    FetchEvChargingSessionStatusByIdQuery:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the charging session
+          nullable: true
+      additionalProperties: false
+    FetchPotentiallyStuckEvChargingSessionIdsQuery:
+      type: object
+      additionalProperties: false
+    StringAcceptedResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: string
+          nullable: true
+      additionalProperties: false
+    StringIEnumerableOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    SynchronizeSessionChargeStatusCommand:
+      type: object
+      properties:
+        processId:
+          type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+

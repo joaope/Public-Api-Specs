@@ -1,214 +1,12 @@
 {
   "item": [
     {
-      "id": "da198c22-3651-40e5-bf72-dbda5619e6e6",
-      "name": "Set OnStreet Bay Availability by Id",
-      "request": {
-        "name": "Set OnStreet Bay Availability by Id",
-        "description": {
-          "content": "If the request is valid, it will be accepted for processing",
-          "type": "text/plain"
-        },
-        "url": {
-          "path": [
-            "commands",
-            "setOnStreetAvailability"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"bayId\": \"<string>\",\n    \"timeStamp\": \"<dateTime>\",\n    \"numCarsParked\": \"<integer>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "baf7cb56-359d-45eb-95d5-f3ef2b40a80b",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "commands",
-                "setOnStreetAvailability"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
-            }
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "2db4a900-317f-4d62-80b0-c3791ca8d2ac",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "commands",
-                "setOnStreetAvailability"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "7e22f861-0e53-48d5-8427-9c8bcf49847b",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "commands",
-                "setOnStreetAvailability"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "9eafe420-ae32-4572-9604-5cffa402b8fe",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "commands",
-                "setOnStreetAvailability"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "ceb78526-f9a3-4904-aad5-ee3b145a67ad",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "commands",
-                "setOnStreetAvailability"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"timeStamp\": \"string\",\n    \"bayId\": \"string\",\n    \"numCarsParked\": 0\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "d7f5bac4-0ebb-4e92-ba5c-924f47baa921",
+      "id": "113134ad-f3d6-4104-8f53-f99c3e195a32",
       "name": "Ping",
       "request": {
         "name": "Ping",
         "description": {
-          "content": "Returns Status (pong) of the Kaios API service",
+          "content": "Returns Status (pong) of the Availability Occupancy API service",
           "type": "text/plain"
         },
         "url": {
@@ -226,7 +24,7 @@
       },
       "response": [
         {
-          "id": "d2f5233b-34ee-41bf-912e-62c67e80ae20",
+          "id": "c6c9d56e-bf28-45ce-9fe0-9b6bf1209d76",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -255,7 +53,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ab452081-468d-4253-9fec-224df763afa2",
+          "id": "15b2ba9f-859d-437e-9c7f-3d20874b52a1",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -284,7 +82,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8f7171d6-902d-439c-8f65-e79e6e37ddbe",
+          "id": "671f7003-e69b-400f-b195-940ea34464a0",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -313,7 +111,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b8da058b-3f1e-47f4-8e4c-cb743aea408c",
+          "id": "c266e83f-3750-4f1e-9bb7-e10e9fc1067b",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -343,6 +141,199 @@
         }
       ],
       "event": []
+    },
+    {
+      "id": "df7a3830-b7c2-4ed7-a09e-406846c0812d",
+      "name": "/setupParkingPlatformUser - POST",
+      "request": {
+        "name": "/setupParkingPlatformUser - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "setupParkingPlatformUser"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"sourceApp\": \"<string>\",\n    \"organizationId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "50281ec9-6a31-4a13-aa0b-038039417333",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setupParkingPlatformUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"string\",\n    \"userId\": \"string\",\n    \"organizationId\": \"string\",\n    \"sourceApp\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2d623ed3-9dce-419a-8fd0-201550b40525",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setupParkingPlatformUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"string\",\n    \"userId\": \"string\",\n    \"organizationId\": \"string\",\n    \"sourceApp\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c3777c7d-67ef-446d-b7a0-2da4c1d1d974",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setupParkingPlatformUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"string\",\n    \"userId\": \"string\",\n    \"organizationId\": \"string\",\n    \"sourceApp\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "558e0e77-a4a7-4f16-b70c-7d2083644843",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setupParkingPlatformUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"string\",\n    \"userId\": \"string\",\n    \"organizationId\": \"string\",\n    \"sourceApp\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "71990e09-38a8-4e76-9e14-e59192092e72",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "setupParkingPlatformUser"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"string\",\n    \"userId\": \"string\",\n    \"organizationId\": \"string\",\n    \"sourceApp\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
     }
   ],
   "event": [],
@@ -350,7 +341,7 @@
     {
       "id": "baseUrl",
       "type": "string",
-      "value": "https://api.appyway.com/integrations/kaios/v1"
+      "value": "https://api.appyway.com/parking/v1/users"
     }
   ],
   "auth": {
@@ -369,8 +360,8 @@
     ]
   },
   "info": {
-    "_postman_id": "2d76b0b3-8c3b-43b1-b9cd-2a83a18bbbb9",
-    "name": "Kaios Acl API (v1.0|LIVE|Public)",
+    "_postman_id": "9d75e6cf-48db-4520-8900-ed5bc309e46d",
+    "name": "Parking Platform API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
       "content": "",

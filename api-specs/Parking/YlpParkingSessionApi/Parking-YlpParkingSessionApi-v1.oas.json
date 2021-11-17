@@ -1,0 +1,3338 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ylp.ParkingSession.Api, Version=3.7.1.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.appyway.com/parking/v1/sessions"
+    }
+  ],
+  "paths": {
+    "/beginParkingSession": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/beginParkingSession - POST",
+        "operationId": "post-beginparkingsession",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "parkingIndex": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "parkingIndex": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "parkingIndex": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "parkingIndex": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/beginScheduledParkingSession": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/beginScheduledParkingSession - POST",
+        "operationId": "post-beginscheduledparkingsession",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginScheduledParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "parkingIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "sourceSystem": "string",
+                "externalReferenceId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginScheduledParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "parkingIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "sourceSystem": "string",
+                "externalReferenceId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginScheduledParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "parkingIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "sourceSystem": "string",
+                "externalReferenceId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginScheduledParkingSessionCommand"
+              },
+              "example": {
+                "parkingAssetId": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "parkingIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "sourceSystem": "string",
+                "externalReferenceId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/changeParkingSessionRating": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/changeParkingSessionRating - POST",
+        "operationId": "post-changeparkingsessionrating",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeParkingSessionRatingCommand"
+              },
+              "example": {
+                "id": "string",
+                "newRating": 0
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeParkingSessionRatingCommand"
+              },
+              "example": {
+                "id": "string",
+                "newRating": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeParkingSessionRatingCommand"
+              },
+              "example": {
+                "id": "string",
+                "newRating": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeParkingSessionRatingCommand"
+              },
+              "example": {
+                "id": "string",
+                "newRating": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/changePrePaidExpiryReminderSetting": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/changePrePaidExpiryReminderSetting - POST",
+        "operationId": "post-changeprepaidexpiryremindersetting",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePrePaidExpiryReminderSettingCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newExpiryDurationInMinutes": 0
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePrePaidExpiryReminderSettingCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newExpiryDurationInMinutes": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePrePaidExpiryReminderSettingCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newExpiryDurationInMinutes": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePrePaidExpiryReminderSettingCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newExpiryDurationInMinutes": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/checkBeginParkingSessionCommandValidity": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/checkBeginParkingSessionCommandValidity - POST",
+        "operationId": "post-checkbeginparkingsessioncommandvalidity",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckBeginParkingSessionCommandValidityQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckBeginParkingSessionCommandValidityQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckBeginParkingSessionCommandValidityQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckBeginParkingSessionCommandValidityQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationFailureIReadOnlyCollectionOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "code": "string",
+                      "property": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/endParkingSession": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/endParkingSession - POST",
+        "operationId": "post-endparkingsession",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "endTime": "string",
+                "sessionStopMethod": 1
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "endTime": "string",
+                "sessionStopMethod": 1
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "endTime": "string",
+                "sessionStopMethod": 1
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "endTime": "string",
+                "sessionStopMethod": 1
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/endParkingSessionNow": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/endParkingSessionNow - POST",
+        "operationId": "post-endparkingsessionnow",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionNowCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionNowCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionNowCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndParkingSessionNowCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/endParkingSessionsThatArePastTheirExpectedEndTime": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/endParkingSessionsThatArePastTheirExpectedEndTime - POST",
+        "operationId": "post-endparkingsessionsthatarepasttheirexpectedendtime",
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/extendParkingSession": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/extendParkingSession - POST",
+        "operationId": "post-extendparkingsession",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtendParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "extensionDuration": "3.17:25:30.5000000"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtendParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "extensionDuration": "3.17:25:30.5000000"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtendParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "extensionDuration": "3.17:25:30.5000000"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtendParkingSessionCommand"
+              },
+              "example": {
+                "id": "string",
+                "extensionDuration": "3.17:25:30.5000000"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchCost": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchCost - POST",
+        "operationId": "post-fetchcost",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCostQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "parkingAssetId": "string",
+                "parkingAssetIndex": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "lastParkingSessionLocations": [
+                  {
+                    "locationNumber": "string",
+                    "lastParkingSessionValidUntil": "string"
+                  }
+                ]
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCostQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "parkingAssetId": "string",
+                "parkingAssetIndex": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "lastParkingSessionLocations": [
+                  {
+                    "locationNumber": "string",
+                    "lastParkingSessionValidUntil": "string"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCostQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "parkingAssetId": "string",
+                "parkingAssetIndex": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "lastParkingSessionLocations": [
+                  {
+                    "locationNumber": "string",
+                    "lastParkingSessionValidUntil": "string"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCostQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string",
+                "startTime": "string",
+                "duration": "3.17:25:30.5000000",
+                "parkingAssetId": "string",
+                "parkingAssetIndex": "string",
+                "entityId": "string",
+                "entityIndex": "string",
+                "lastParkingSessionLocations": [
+                  {
+                    "locationNumber": "string",
+                    "lastParkingSessionValidUntil": "string"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchCostQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "validUntil": "string",
+                    "totalCost": 0,
+                    "parkingCost": 0,
+                    "surchargeCost": 0,
+                    "convenienceCost": 0,
+                    "convenienceVatRate": 0,
+                    "maxEndDateTime": "string",
+                    "minimumDuration": "3.17:25:30.5000000",
+                    "minimumParkingCost": 0,
+                    "quoteStatus": 1,
+                    "restrictionReason": 0,
+                    "previousSessionValidUntil": "string",
+                    "noReturnUntilDateTime": "string",
+                    "unavailableUntil": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchCurrentParkingSessionCost": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchCurrentParkingSessionCost - POST",
+        "operationId": "post-fetchcurrentparkingsessioncost",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCurrentParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCurrentParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCurrentParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchCurrentParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingSessionCostResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "totalAmount": 0,
+                    "parkingAmount": 0,
+                    "surchargeAmount": 0,
+                    "convenienceAmount": 0,
+                    "convenienceVatRate": 0
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchLatestParkedLocations": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchLatestParkedLocations - POST",
+        "operationId": "post-fetchlatestparkedlocations",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLatestParkedLocationsQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLatestParkedLocationsQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLatestParkedLocationsQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLatestParkedLocationsQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LastParkingSessionLocationIEnumerableOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "locationNumber": "string",
+                      "lastParkingSessionValidUntil": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchParkingSessionByExternalId": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchParkingSessionByExternalId - POST",
+        "operationId": "post-fetchparkingsessionbyexternalid",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByExternalIdQuery"
+              },
+              "example": {
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByExternalIdQuery"
+              },
+              "example": {
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByExternalIdQuery"
+              },
+              "example": {
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByExternalIdQuery"
+              },
+              "example": {
+                "sourceSystem": "string",
+                "externalReferenceId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingSessionResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "parkingSessionId": "string",
+                    "sourceSystem": "string",
+                    "externalReferenceId": "string",
+                    "userId": "string",
+                    "createdTimestamp": "string",
+                    "startTime": "string",
+                    "endTime": "string",
+                    "scheduledEndTime": "string",
+                    "validUntil": "string",
+                    "maxStayDateTime": "string",
+                    "parkingSessionType": 0,
+                    "parkingSessionStatus": 100,
+                    "rating": 0,
+                    "entityId": "string",
+                    "entityType": 1,
+                    "entityIndex": "string",
+                    "parkingAssetId": "string",
+                    "parkingAssetType": 1,
+                    "parkingAssetIndex": "string",
+                    "locationNumber": "string",
+                    "restrictionType": "string",
+                    "city": "string",
+                    "country": "string",
+                    "postCode": "string",
+                    "street": "string",
+                    "latitude": 0,
+                    "longitude": 0,
+                    "authorityId": "string",
+                    "vehicleRegistrationMark": "string",
+                    "expiryReminderDurationInSeconds": 0,
+                    "sessionStopMethod": 1,
+                    "totalAmount": 0,
+                    "parkingAmount": 0,
+                    "convenienceAmount": 0,
+                    "convenienceVatRate": 0,
+                    "surchargeAmount": 0,
+                    "paymentMethodLastFourDigits": "string",
+                    "settlementTimeStamp": "string",
+                    "totalPaid": 0,
+                    "totalRefunded": 0,
+                    "quoteStartTime": "string",
+                    "quoteEndTime": "string",
+                    "vehicleType": 1,
+                    "vehicleFuelType": 0,
+                    "vehicleManufactureDate": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchParkingSessionById": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchParkingSessionById - POST",
+        "operationId": "post-fetchparkingsessionbyid",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByIdQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByIdQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByIdQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchParkingSessionByIdQuery"
+              },
+              "example": {
+                "parkingSessionId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingSessionResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "parkingSessionId": "string",
+                    "sourceSystem": "string",
+                    "externalReferenceId": "string",
+                    "userId": "string",
+                    "createdTimestamp": "string",
+                    "startTime": "string",
+                    "endTime": "string",
+                    "scheduledEndTime": "string",
+                    "validUntil": "string",
+                    "maxStayDateTime": "string",
+                    "parkingSessionType": 0,
+                    "parkingSessionStatus": 100,
+                    "rating": 0,
+                    "entityId": "string",
+                    "entityType": 1,
+                    "entityIndex": "string",
+                    "parkingAssetId": "string",
+                    "parkingAssetType": 1,
+                    "parkingAssetIndex": "string",
+                    "locationNumber": "string",
+                    "restrictionType": "string",
+                    "city": "string",
+                    "country": "string",
+                    "postCode": "string",
+                    "street": "string",
+                    "latitude": 0,
+                    "longitude": 0,
+                    "authorityId": "string",
+                    "vehicleRegistrationMark": "string",
+                    "expiryReminderDurationInSeconds": 0,
+                    "sessionStopMethod": 1,
+                    "totalAmount": 0,
+                    "parkingAmount": 0,
+                    "convenienceAmount": 0,
+                    "convenienceVatRate": 0,
+                    "surchargeAmount": 0,
+                    "paymentMethodLastFourDigits": "string",
+                    "settlementTimeStamp": "string",
+                    "totalPaid": 0,
+                    "totalRefunded": 0,
+                    "quoteStartTime": "string",
+                    "quoteEndTime": "string",
+                    "vehicleType": 1,
+                    "vehicleFuelType": 0,
+                    "vehicleManufactureDate": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchPrePaidExpiryReminderSetting": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchPrePaidExpiryReminderSetting - POST",
+        "operationId": "post-fetchprepaidexpiryremindersetting",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchPrePaidExpiryReminderSettingQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchPrePaidExpiryReminderSettingQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchPrePaidExpiryReminderSettingQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchPrePaidExpiryReminderSettingQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32OkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": 0
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchRecalculatedParkingSessionCost": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchRecalculatedParkingSessionCost - POST",
+        "operationId": "post-fetchrecalculatedparkingsessioncost",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchRecalculatedParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string",
+                "endTime": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchRecalculatedParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string",
+                "endTime": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchRecalculatedParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string",
+                "endTime": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchRecalculatedParkingSessionCostQuery"
+              },
+              "example": {
+                "parkingSessionId": "string",
+                "endTime": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingSessionCostResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "totalAmount": 0,
+                    "parkingAmount": 0,
+                    "surchargeAmount": 0,
+                    "convenienceAmount": 0,
+                    "convenienceVatRate": 0
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchUsersThatParkedUsingVehicleRegistrationMark": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchUsersThatParkedUsingVehicleRegistrationMark - POST",
+        "operationId": "post-fetchusersthatparkedusingvehicleregistrationmark",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery"
+              },
+              "example": {
+                "vehicleRegistrationMark": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringIEnumerableOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    "string"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findParkingSessions": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/findParkingSessions - POST",
+        "operationId": "post-findparkingsessions",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingSessionsQuery"
+              },
+              "example": {
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "size": 0,
+                "continuationToken": "string",
+                "parkingSessionId": "string",
+                "authorityId": "string",
+                "locationNumber": "string",
+                "sessionType": 0,
+                "sessionStatus": 100,
+                "wasValidUntil": "string",
+                "startedAfter": "string",
+                "sourceSystem": "string",
+                "parkingAssetId": "string",
+                "entityId": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingSessionsQuery"
+              },
+              "example": {
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "size": 0,
+                "continuationToken": "string",
+                "parkingSessionId": "string",
+                "authorityId": "string",
+                "locationNumber": "string",
+                "sessionType": 0,
+                "sessionStatus": 100,
+                "wasValidUntil": "string",
+                "startedAfter": "string",
+                "sourceSystem": "string",
+                "parkingAssetId": "string",
+                "entityId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingSessionsQuery"
+              },
+              "example": {
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "size": 0,
+                "continuationToken": "string",
+                "parkingSessionId": "string",
+                "authorityId": "string",
+                "locationNumber": "string",
+                "sessionType": 0,
+                "sessionStatus": 100,
+                "wasValidUntil": "string",
+                "startedAfter": "string",
+                "sourceSystem": "string",
+                "parkingAssetId": "string",
+                "entityId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindParkingSessionsQuery"
+              },
+              "example": {
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "size": 0,
+                "continuationToken": "string",
+                "parkingSessionId": "string",
+                "authorityId": "string",
+                "locationNumber": "string",
+                "sessionType": 0,
+                "sessionStatus": 100,
+                "wasValidUntil": "string",
+                "startedAfter": "string",
+                "sourceSystem": "string",
+                "parkingAssetId": "string",
+                "entityId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingSessionResultPaginatedQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "items": [
+                      {
+                        "parkingSessionId": "string",
+                        "sourceSystem": "string",
+                        "externalReferenceId": "string",
+                        "userId": "string",
+                        "createdTimestamp": "string",
+                        "startTime": "string",
+                        "endTime": "string",
+                        "scheduledEndTime": "string",
+                        "validUntil": "string",
+                        "maxStayDateTime": "string",
+                        "parkingSessionType": 0,
+                        "parkingSessionStatus": 100,
+                        "rating": 0,
+                        "entityId": "string",
+                        "entityType": 1,
+                        "entityIndex": "string",
+                        "parkingAssetId": "string",
+                        "parkingAssetType": 1,
+                        "parkingAssetIndex": "string",
+                        "locationNumber": "string",
+                        "restrictionType": "string",
+                        "city": "string",
+                        "country": "string",
+                        "postCode": "string",
+                        "street": "string",
+                        "latitude": 0,
+                        "longitude": 0,
+                        "authorityId": "string",
+                        "vehicleRegistrationMark": "string",
+                        "expiryReminderDurationInSeconds": 0,
+                        "sessionStopMethod": 1,
+                        "totalAmount": 0,
+                        "parkingAmount": 0,
+                        "convenienceAmount": 0,
+                        "convenienceVatRate": 0,
+                        "surchargeAmount": 0,
+                        "paymentMethodLastFourDigits": "string",
+                        "settlementTimeStamp": "string",
+                        "totalPaid": 0,
+                        "totalRefunded": 0,
+                        "quoteStartTime": "string",
+                        "quoteEndTime": "string",
+                        "vehicleType": 1,
+                        "vehicleFuelType": 0,
+                        "vehicleManufactureDate": "string"
+                      }
+                    ],
+                    "continuationToken": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/ping": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "/ping - GET",
+        "operationId": "get-ping",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/reconcileParkingSessionPaymentStatus": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/reconcileParkingSessionPaymentStatus - POST",
+        "operationId": "post-reconcileparkingsessionpaymentstatus",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReconcileParkingSessionPaymentStatusCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReconcileParkingSessionPaymentStatusCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReconcileParkingSessionPaymentStatusCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReconcileParkingSessionPaymentStatusCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/reconcileParkingSessionsPaymentStatuses": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/reconcileParkingSessionsPaymentStatuses - POST",
+        "operationId": "post-reconcileparkingsessionspaymentstatuses",
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/setParkingSessionPrePaidExpiryReminder": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/setParkingSessionPrePaidExpiryReminder - POST",
+        "operationId": "post-setparkingsessionprepaidexpiryreminder",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetParkingSessionPrePaidExpiryReminderCommand"
+              },
+              "example": {
+                "id": "string",
+                "expiryReminderDurationInSeconds": 0
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetParkingSessionPrePaidExpiryReminderCommand"
+              },
+              "example": {
+                "id": "string",
+                "expiryReminderDurationInSeconds": 0
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetParkingSessionPrePaidExpiryReminderCommand"
+              },
+              "example": {
+                "id": "string",
+                "expiryReminderDurationInSeconds": 0
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetParkingSessionPrePaidExpiryReminderCommand"
+              },
+              "example": {
+                "id": "string",
+                "expiryReminderDurationInSeconds": 0
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AcceptedResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BeginParkingSessionCommand": {
+        "type": "object",
+        "properties": {
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingIndex": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "entityIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodId": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "string",
+            "description": "Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]",
+            "nullable": true,
+            "example": "3.17:25:30.5000000"
+          },
+          "sourceSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReferenceId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BeginScheduledParkingSessionCommand": {
+        "type": "object",
+        "properties": {
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingIndex": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodId": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReferenceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "string",
+            "description": "Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]",
+            "example": "3.17:25:30.5000000"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeParkingSessionRatingCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "newRating": {
+            "$ref": "#/components/schemas/ParkingSessionRating"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangePrePaidExpiryReminderSettingCommand": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "newExpiryDurationInMinutes": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckBeginParkingSessionCommandValidityQuery": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodId": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "string",
+            "description": "Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]",
+            "nullable": true,
+            "example": "3.17:25:30.5000000"
+          },
+          "sourceSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReferenceId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EndParkingSessionCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sessionStopMethod": {
+            "$ref": "#/components/schemas/ParkingSessionStopMethod"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EndParkingSessionNowCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExtendParkingSessionCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "extensionDuration": {
+            "type": "string",
+            "description": "Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]",
+            "example": "3.17:25:30.5000000"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchCostQuery": {
+        "type": "object",
+        "properties": {
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "string",
+            "description": "Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]",
+            "example": "3.17:25:30.5000000"
+          },
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "parkingAssetIndex": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastParkingSessionLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LastParkingSessionLocation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchCostQueryResult": {
+        "type": "object",
+        "properties": {
+          "validUntil": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "parkingCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "surchargeCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "convenienceCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "convenienceVatRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxEndDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "minimumDuration": {
+            "type": "string",
+            "description": "Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]",
+            "example": "3.17:25:30.5000000"
+          },
+          "minimumParkingCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "quoteStatus": {
+            "$ref": "#/components/schemas/ParkingSessionQuoteStatus"
+          },
+          "restrictionReason": {
+            "$ref": "#/components/schemas/RestrictionReason"
+          },
+          "previousSessionValidUntil": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "noReturnUntilDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "unavailableUntil": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchCostQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FetchCostQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchCurrentParkingSessionCostQuery": {
+        "type": "object",
+        "properties": {
+          "parkingSessionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchLatestParkedLocationsQuery": {
+        "type": "object",
+        "properties": {
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchParkingSessionByExternalIdQuery": {
+        "type": "object",
+        "properties": {
+          "sourceSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReferenceId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchParkingSessionByIdQuery": {
+        "type": "object",
+        "properties": {
+          "parkingSessionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchPrePaidExpiryReminderSettingQuery": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchRecalculatedParkingSessionCostQuery": {
+        "type": "object",
+        "properties": {
+          "parkingSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchUsersThatParkedUsingVehicleRegistrationMarkQuery": {
+        "type": "object",
+        "properties": {
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindParkingSessionsQuery": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "continuationToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "authorityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "sessionType": {
+            "$ref": "#/components/schemas/ParkingSessionType"
+          },
+          "sessionStatus": {
+            "$ref": "#/components/schemas/ParkingSessionStatus"
+          },
+          "wasValidUntil": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "startedAfter": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sourceSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Int32OkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LastParkingSessionLocation": {
+        "type": "object",
+        "properties": {
+          "locationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastParkingSessionValidUntil": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LastParkingSessionLocationIEnumerableOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LastParkingSessionLocation"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionCostResult": {
+        "type": "object",
+        "properties": {
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "parkingAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "surchargeAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "convenienceAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "convenienceVatRate": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionCostResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ParkingSessionCostResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionQuoteStatus": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParkingSessionRating": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParkingSessionResult": {
+        "type": "object",
+        "properties": {
+          "parkingSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReferenceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdTimestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "scheduledEndTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "validUntil": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "maxStayDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "parkingSessionType": {
+            "$ref": "#/components/schemas/ParkingSessionType"
+          },
+          "parkingSessionStatus": {
+            "$ref": "#/components/schemas/ParkingSessionStatus"
+          },
+          "rating": {
+            "$ref": "#/components/schemas/ParkingSessionRating"
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/EntityType"
+          },
+          "entityIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "parkingAssetId": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "parkingAssetType": {
+            "$ref": "#/components/schemas/EntityType"
+          },
+          "parkingAssetIndex": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
+          },
+          "locationNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "restrictionType": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "postCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "authorityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryReminderDurationInSeconds": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sessionStopMethod": {
+            "$ref": "#/components/schemas/ParkingSessionStopMethod"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "parkingAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "convenienceAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "convenienceVatRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "surchargeAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "paymentMethodLastFourDigits": {
+            "type": "string",
+            "nullable": true
+          },
+          "settlementTimeStamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "totalPaid": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalRefunded": {
+            "type": "number",
+            "format": "double"
+          },
+          "quoteStartTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "quoteEndTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "vehicleType": {
+            "$ref": "#/components/schemas/VehicleType"
+          },
+          "vehicleFuelType": {
+            "$ref": "#/components/schemas/VehicleFuelType"
+          },
+          "vehicleManufactureDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ParkingSessionResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionResultPaginatedQueryResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingSessionResult"
+            },
+            "nullable": true
+          },
+          "continuationToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionResultPaginatedQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ParkingSessionResultPaginatedQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionStatus": {
+        "enum": [
+          100,
+          200,
+          300
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParkingSessionStopMethod": {
+        "enum": [
+          1,
+          3,
+          4,
+          5,
+          7
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParkingSessionType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ReconcileParkingSessionPaymentStatusCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RestrictionReason": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SetParkingSessionPrePaidExpiryReminderCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryReminderDurationInSeconds": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringIEnumerableOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidationFailure": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "property": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidationFailureIReadOnlyCollectionOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationFailure"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VehicleFuelType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "VehicleType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "name": "API-KEY",
+        "in": "header",
+        "type": "apiKey"
+      },
+      "oAuth2": {
+        "flows": {
+          "authorizationCode": {
+            "scopes": {},
+            "authorizationUrl": "https://auth.appyway.com/authorize",
+            "tokenUrl": "https://auth.appyway.com/oauth/token"
+          }
+        },
+        "type": "oauth2"
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Too many requests"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized"
+      },
+      "Forbidden": {
+        "description": "Forbidden"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "oAuth2": []
+    }
+  ]
+}

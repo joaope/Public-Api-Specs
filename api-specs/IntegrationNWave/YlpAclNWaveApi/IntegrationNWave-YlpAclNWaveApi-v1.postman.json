@@ -1,0 +1,2136 @@
+{
+  "item": [
+    {
+      "id": "2d94ed4f-52c1-47fc-87b0-1a34154abc55",
+      "name": "/beginOneClickParkingSession - POST",
+      "request": {
+        "name": "/beginOneClickParkingSession - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "beginOneClickParkingSession"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"entityId\": \"<string>\",\n    \"entityIndex\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"vehicleRegistrationMark\": \"<string>\",\n    \"paymentMethodId\": \"<string>\",\n    \"spotSearchSessionId\": \"<string>\",\n    \"sensorId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "2f18349e-2af2-4394-bfef-7de3a8bc26b4",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "beginOneClickParkingSession"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"spotSearchSessionId\": \"string\",\n    \"sensorId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2423d778-dfdc-4369-a4de-902ea40f4ea3",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "beginOneClickParkingSession"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"spotSearchSessionId\": \"string\",\n    \"sensorId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6cbaa002-efe6-4763-a476-dd4aad9b7d83",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "beginOneClickParkingSession"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"spotSearchSessionId\": \"string\",\n    \"sensorId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4b272ca2-129d-4b3d-8253-47d242ff2a4f",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "beginOneClickParkingSession"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"spotSearchSessionId\": \"string\",\n    \"sensorId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "332de02c-c4e1-4ae2-9b45-ec8fd1d6fbd0",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "beginOneClickParkingSession"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"paymentMethodId\": \"string\",\n    \"spotSearchSessionId\": \"string\",\n    \"sensorId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "982f976d-ec2e-48b7-8753-c2ecfcd8d846",
+      "name": "/checkOutSensor - POST",
+      "request": {
+        "name": "/checkOutSensor - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "checkOutSensor"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "e51052b4-816a-4022-ae1d-600eaf931962",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkOutSensor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d783029f-677a-4552-8f88-8d891ca40f86",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkOutSensor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "8c0277e0-5d9b-4e6f-9133-1185eb70f85c",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkOutSensor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "6255a5b4-8ffe-4021-9134-644fff863556",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkOutSensor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "23a6b92d-2094-44d5-a755-77299203982c",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "checkOutSensor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bd44446e-a585-49f1-88f2-fbaa8d55eaac",
+      "name": "/fetchLocationVerificationToken - POST",
+      "request": {
+        "name": "/fetchLocationVerificationToken - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchLocationVerificationToken"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"<string>\",\n            \"rssi\": \"<integer>\",\n            \"time\": \"<dateTime>\"\n        },\n        {\n            \"msd\": \"<string>\",\n            \"rssi\": \"<integer>\",\n            \"time\": \"<dateTime>\"\n        }\n    ]\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "93b861dc-da50-4b42-a62a-37acb46967cd",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchLocationVerificationToken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ]\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2610eae3-0887-48d6-8d72-c1c88422fa4c",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchLocationVerificationToken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ]\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "806dcfd6-caba-4d0a-85e5-a569e0486cbc",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchLocationVerificationToken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ]\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "6349db2a-717a-4529-8076-b9160f357a96",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchLocationVerificationToken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ]\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8c6105cc-4392-47f5-9bd7-eb8c68197e5e",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchLocationVerificationToken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ]\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ec886a48-2722-4b9a-936c-88de57e384a6",
+      "name": "/fetchOneClickSessionDetails - POST",
+      "request": {
+        "name": "/fetchOneClickSessionDetails - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchOneClickSessionDetails"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "d341e732-c748-4341-90ee-8977af317907",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOneClickSessionDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"id\": \"string\",\n  \"sensorId\": \"string\",\n  \"spotSearchSessionId\": \"string\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "04388552-b9ac-4f4d-b276-c3048d9fc261",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOneClickSessionDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5a795f66-a5c1-4914-bb2d-4e98eb3224fd",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOneClickSessionDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c3295e52-6e55-42fa-bae8-8ac7afedef7f",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOneClickSessionDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "2db46668-3a46-4a28-a371-6b5a1b1a32d1",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchOneClickSessionDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d1498d2b-8a05-4b0d-807e-7ef03249cfd8",
+      "name": "/fetchReleasedSensorsPendingCheckOut - POST",
+      "request": {
+        "name": "/fetchReleasedSensorsPendingCheckOut - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchReleasedSensorsPendingCheckOut"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "3c671bd2-3133-4a31-b77d-35e2574d1354",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchReleasedSensorsPendingCheckOut"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"checkInSessionId\": \"string\",\n  \"sensorReleaseTime\": \"string\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "47edfea5-81e1-40f8-a01d-4772f83dcb5c",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchReleasedSensorsPendingCheckOut"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b298938d-b53b-4af1-9e4c-11b1e8078c31",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchReleasedSensorsPendingCheckOut"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "50c5811b-67a3-4765-9908-26f72430ca7d",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchReleasedSensorsPendingCheckOut"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b5d03ca1-f7ad-4d57-a8f1-3580bdc182af",
+      "name": "/fetchSensorHealth - POST",
+      "request": {
+        "name": "/fetchSensorHealth - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchSensorHealth"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ownerIds\": [\n        \"<string>\",\n        \"<string>\"\n    ],\n    \"severity\": [\n        \"<integer>\",\n        \"<integer>\"\n    ],\n    \"incidentType\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "08af6dbc-15e7-4501-81f4-76d4a4bd4f10",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSensorHealth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ],\n    \"severity\": [\n        1\n    ],\n    \"incidentType\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"daysBroken\": 0,\n   \"severity\": 1,\n   \"errorDateTime\": \"string\",\n   \"errorType\": \"string\",\n   \"sensorId\": \"string\",\n   \"sensorType\": 0,\n   \"entityId\": \"string\",\n   \"entityType\": 1\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "12894602-9091-4edb-98ee-9439e16b8f26",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSensorHealth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ],\n    \"severity\": [\n        1\n    ],\n    \"incidentType\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "d93752c8-e772-491b-bc24-072b30c54050",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSensorHealth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ],\n    \"severity\": [\n        1\n    ],\n    \"incidentType\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fc44a70a-ec91-4586-ba02-dd78f780b641",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSensorHealth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ],\n    \"severity\": [\n        1\n    ],\n    \"incidentType\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fc938ac9-6f4e-4c0a-863a-ff44c1cf86c8",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSensorHealth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerIds\": [\n        \"string\"\n    ],\n    \"severity\": [\n        1\n    ],\n    \"incidentType\": [\n        \"string\"\n    ]\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dc6c6881-9879-4564-be3c-9f765c2205b7",
+      "name": "/fetchSpotSearchDetails - POST",
+      "request": {
+        "name": "/fetchSpotSearchDetails - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchSpotSearchDetails"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"spotSearchSessionId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "1566134e-d23a-49e8-9bb8-5f4abc7886c2",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSpotSearchDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"spotSearchSessionId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"spotSearchSessionId\": \"string\",\n  \"timestamp\": \"string\",\n  \"request\": \"string\",\n  \"response\": \"string\",\n  \"normalisedResponse\": \"string\",\n  \"suggestion\": \"string\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "cb4d87d3-8efe-419d-86ed-f8ee027d069c",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSpotSearchDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"spotSearchSessionId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "64eeb263-ac05-4c31-9e84-142855195d8e",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSpotSearchDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"spotSearchSessionId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b9439398-2058-461b-97fb-39f20ad7894d",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSpotSearchDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"spotSearchSessionId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "eec26c5e-6b05-483a-b944-f8da6a63a702",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchSpotSearchDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"spotSearchSessionId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0d7f8ad0-b501-4bcd-bfe8-fa0399943c1e",
+      "name": "/findSpotSearchHistory - POST",
+      "request": {
+        "name": "/findSpotSearchHistory - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "findSpotSearchHistory"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"<string>\",\n    \"continuationToken\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "f0b4f3e3-5d46-4804-b8dc-0b0b12f20507",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findSpotSearchHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"continuationToken\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"items\": [\n   {\n    \"spotSearchSessionId\": \"string\",\n    \"timestamp\": \"string\",\n    \"parkingSessionTypeSuggestion\": 0,\n    \"highestProbability\": 0,\n    \"highestProbabilitySensorId\": \"string\"\n   }\n  ],\n  \"continuationToken\": \"string\"\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6da15d3a-0ccd-4694-afd2-e5e3fdad6d40",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findSpotSearchHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"continuationToken\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2b78ee3f-3a21-470f-b4f0-57c56f326c34",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findSpotSearchHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"continuationToken\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "9fd6797c-b33a-4ac4-9a91-662521aca232",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findSpotSearchHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"continuationToken\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c71a2226-a323-48b5-bdc6-e292c2f01367",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "findSpotSearchHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"continuationToken\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0dd56cc3-9d30-49ae-8b11-97c400d6280b",
+      "name": "/parkingSensorSpotSearch - POST",
+      "request": {
+        "name": "/parkingSensorSpotSearch - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "parkingSensorSpotSearch"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"scanDuration\": \"<integer>\",\n    \"vehicleParkedTime\": \"<dateTime>\",\n    \"vehicleLocation\": {\n        \"latitude\": \"<double>\",\n        \"longitude\": \"<double>\",\n        \"accuracy\": \"<integer>\"\n    },\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"<string>\",\n            \"rssi\": \"<integer>\",\n            \"time\": \"<dateTime>\"\n        },\n        {\n            \"msd\": \"<string>\",\n            \"rssi\": \"<integer>\",\n            \"time\": \"<dateTime>\"\n        }\n    ],\n    \"isRunningInBackground\": \"<boolean>\",\n    \"platform\": \"<string>\",\n    \"deviceTimestamp\": \"<dateTime>\",\n    \"deviceModel\": \"<string>\",\n    \"androidActivityHistory\": [\n        {\n            \"activityType\": \"<string>\",\n            \"started\": \"<boolean>\",\n            \"timestamp\": \"<dateTime>\"\n        },\n        {\n            \"activityType\": \"<string>\",\n            \"started\": \"<boolean>\",\n            \"timestamp\": \"<dateTime>\"\n        }\n    ],\n    \"androidLatestActivity\": {\n        \"activityType\": \"<string>\",\n        \"timestamp\": \"<dateTime>\"\n    },\n    \"iosActivityHistory\": {\n        \"activityHistory\": [\n            {\n                \"automotive\": \"<boolean>\",\n                \"confidence\": \"<integer>\",\n                \"cycling\": \"<boolean>\",\n                \"startDate\": \"<dateTime>\",\n                \"stationary\": \"<boolean>\",\n                \"unknown\": \"<boolean>\",\n                \"walking\": \"<boolean>\"\n            },\n            {\n                \"automotive\": \"<boolean>\",\n                \"confidence\": \"<integer>\",\n                \"cycling\": \"<boolean>\",\n                \"startDate\": \"<dateTime>\",\n                \"stationary\": \"<boolean>\",\n                \"unknown\": \"<boolean>\",\n                \"walking\": \"<boolean>\"\n            }\n        ],\n        \"pedometerHistory\": [\n            {\n                \"endDate\": \"<dateTime>\",\n                \"startDate\": \"<dateTime>\",\n                \"stepCount\": \"<integer>\"\n            },\n            {\n                \"endDate\": \"<dateTime>\",\n                \"startDate\": \"<dateTime>\",\n                \"stepCount\": \"<integer>\"\n            }\n        ]\n    }\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "c77df684-df7a-4512-acf9-8423b9a75e0a",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "parkingSensorSpotSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sessionId\": \"string\",\n    \"userId\": \"string\",\n    \"scanDuration\": 0,\n    \"vehicleParkedTime\": \"string\",\n    \"vehicleLocation\": {\n        \"latitude\": 0,\n        \"longitude\": 0,\n        \"accuracy\": 0\n    },\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ],\n    \"isRunningInBackground\": true,\n    \"platform\": \"string\",\n    \"deviceTimestamp\": \"string\",\n    \"deviceModel\": \"string\",\n    \"androidActivityHistory\": [\n        {\n            \"activityType\": \"string\",\n            \"started\": true,\n            \"timestamp\": \"string\"\n        }\n    ],\n    \"androidLatestActivity\": {\n        \"activityType\": \"string\",\n        \"timestamp\": \"string\"\n    },\n    \"iosActivityHistory\": {\n        \"activityHistory\": [\n            {\n                \"automotive\": true,\n                \"confidence\": 0,\n                \"cycling\": true,\n                \"startDate\": \"string\",\n                \"stationary\": true,\n                \"unknown\": true,\n                \"walking\": true\n            }\n        ],\n        \"pedometerHistory\": [\n            {\n                \"endDate\": \"string\",\n                \"startDate\": \"string\",\n                \"stepCount\": 0\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"sessionId\": \"string\",\n  \"status\": 1,\n  \"parkingSessionSuggestion\": {\n   \"parkingSessionType\": 0,\n   \"entity\": {\n    \"id\": \"string\",\n    \"type\": 1,\n    \"latitude\": 0,\n    \"longitude\": 0,\n    \"locationNumber\": \"string\"\n   },\n   \"sensor\": {\n    \"id\": \"string\",\n    \"type\": 0\n   },\n   \"sensorProbability\": 0\n  }\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3999e70c-001e-4709-bc23-a5416d45cb48",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "parkingSensorSpotSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sessionId\": \"string\",\n    \"userId\": \"string\",\n    \"scanDuration\": 0,\n    \"vehicleParkedTime\": \"string\",\n    \"vehicleLocation\": {\n        \"latitude\": 0,\n        \"longitude\": 0,\n        \"accuracy\": 0\n    },\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ],\n    \"isRunningInBackground\": true,\n    \"platform\": \"string\",\n    \"deviceTimestamp\": \"string\",\n    \"deviceModel\": \"string\",\n    \"androidActivityHistory\": [\n        {\n            \"activityType\": \"string\",\n            \"started\": true,\n            \"timestamp\": \"string\"\n        }\n    ],\n    \"androidLatestActivity\": {\n        \"activityType\": \"string\",\n        \"timestamp\": \"string\"\n    },\n    \"iosActivityHistory\": {\n        \"activityHistory\": [\n            {\n                \"automotive\": true,\n                \"confidence\": 0,\n                \"cycling\": true,\n                \"startDate\": \"string\",\n                \"stationary\": true,\n                \"unknown\": true,\n                \"walking\": true\n            }\n        ],\n        \"pedometerHistory\": [\n            {\n                \"endDate\": \"string\",\n                \"startDate\": \"string\",\n                \"stepCount\": 0\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0d3aa71c-1f58-4d1f-8b97-8699cca6066c",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "parkingSensorSpotSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sessionId\": \"string\",\n    \"userId\": \"string\",\n    \"scanDuration\": 0,\n    \"vehicleParkedTime\": \"string\",\n    \"vehicleLocation\": {\n        \"latitude\": 0,\n        \"longitude\": 0,\n        \"accuracy\": 0\n    },\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ],\n    \"isRunningInBackground\": true,\n    \"platform\": \"string\",\n    \"deviceTimestamp\": \"string\",\n    \"deviceModel\": \"string\",\n    \"androidActivityHistory\": [\n        {\n            \"activityType\": \"string\",\n            \"started\": true,\n            \"timestamp\": \"string\"\n        }\n    ],\n    \"androidLatestActivity\": {\n        \"activityType\": \"string\",\n        \"timestamp\": \"string\"\n    },\n    \"iosActivityHistory\": {\n        \"activityHistory\": [\n            {\n                \"automotive\": true,\n                \"confidence\": 0,\n                \"cycling\": true,\n                \"startDate\": \"string\",\n                \"stationary\": true,\n                \"unknown\": true,\n                \"walking\": true\n            }\n        ],\n        \"pedometerHistory\": [\n            {\n                \"endDate\": \"string\",\n                \"startDate\": \"string\",\n                \"stepCount\": 0\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "252c1fea-ac82-4222-aee9-0ce6ea9a65c1",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "parkingSensorSpotSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sessionId\": \"string\",\n    \"userId\": \"string\",\n    \"scanDuration\": 0,\n    \"vehicleParkedTime\": \"string\",\n    \"vehicleLocation\": {\n        \"latitude\": 0,\n        \"longitude\": 0,\n        \"accuracy\": 0\n    },\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ],\n    \"isRunningInBackground\": true,\n    \"platform\": \"string\",\n    \"deviceTimestamp\": \"string\",\n    \"deviceModel\": \"string\",\n    \"androidActivityHistory\": [\n        {\n            \"activityType\": \"string\",\n            \"started\": true,\n            \"timestamp\": \"string\"\n        }\n    ],\n    \"androidLatestActivity\": {\n        \"activityType\": \"string\",\n        \"timestamp\": \"string\"\n    },\n    \"iosActivityHistory\": {\n        \"activityHistory\": [\n            {\n                \"automotive\": true,\n                \"confidence\": 0,\n                \"cycling\": true,\n                \"startDate\": \"string\",\n                \"stationary\": true,\n                \"unknown\": true,\n                \"walking\": true\n            }\n        ],\n        \"pedometerHistory\": [\n            {\n                \"endDate\": \"string\",\n                \"startDate\": \"string\",\n                \"stepCount\": 0\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fc574aed-4feb-44d5-adcc-686f52ffc3b2",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "parkingSensorSpotSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sessionId\": \"string\",\n    \"userId\": \"string\",\n    \"scanDuration\": 0,\n    \"vehicleParkedTime\": \"string\",\n    \"vehicleLocation\": {\n        \"latitude\": 0,\n        \"longitude\": 0,\n        \"accuracy\": 0\n    },\n    \"parkingSensorAdvertisements\": [\n        {\n            \"msd\": \"string\",\n            \"rssi\": 0,\n            \"time\": \"string\"\n        }\n    ],\n    \"isRunningInBackground\": true,\n    \"platform\": \"string\",\n    \"deviceTimestamp\": \"string\",\n    \"deviceModel\": \"string\",\n    \"androidActivityHistory\": [\n        {\n            \"activityType\": \"string\",\n            \"started\": true,\n            \"timestamp\": \"string\"\n        }\n    ],\n    \"androidLatestActivity\": {\n        \"activityType\": \"string\",\n        \"timestamp\": \"string\"\n    },\n    \"iosActivityHistory\": {\n        \"activityHistory\": [\n            {\n                \"automotive\": true,\n                \"confidence\": 0,\n                \"cycling\": true,\n                \"startDate\": \"string\",\n                \"stationary\": true,\n                \"unknown\": true,\n                \"walking\": true\n            }\n        ],\n        \"pedometerHistory\": [\n            {\n                \"endDate\": \"string\",\n                \"startDate\": \"string\",\n                \"stepCount\": 0\n            }\n        ]\n    }\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0c5c9c95-14f2-431c-b1c4-6d808549d542",
+      "name": "/ping - GET",
+      "request": {
+        "name": "/ping - GET",
+        "description": {},
+        "url": {
+          "path": [
+            "ping"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e8b2f1d3-804b-475d-9c8b-f7e6daa9c8c6",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "91d8cdd3-1665-4e8f-bf22-513b4033c83e",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4be60697-a801-4c05-bed0-26a8b6c72b34",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e426cd81-8f52-4f40-b2e4-329548d9c39b",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "97710842-95cf-4c4a-ac74-7e43f767dae0",
+      "name": "/reconcileSensorReleases - POST",
+      "request": {
+        "name": "/reconcileSensorReleases - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "reconcileSensorReleases"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e8bc0c27-315b-4bcc-a2e9-378879df873b",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileSensorReleases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "cbadb1d0-d953-4fb0-b7c2-6b8e47c35c49",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileSensorReleases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "4936fb8f-299c-4172-8765-924a3b4cb2ef",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileSensorReleases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "cfe2ebbb-3ad2-41d8-8e82-e5263fb1d779",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "reconcileSensorReleases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2fbd15fc-ad5a-4070-a9ea-64e91ca7dbc7",
+      "name": "/removeSpotSearchLogsPastRetentionPolicy - POST",
+      "request": {
+        "name": "/removeSpotSearchLogsPastRetentionPolicy - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "removeSpotSearchLogsPastRetentionPolicy"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "56103458-f8f5-48d3-b3f0-5c68f5485cc3",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "removeSpotSearchLogsPastRetentionPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "61c719ca-9106-48a3-8892-5301257e4ff0",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "removeSpotSearchLogsPastRetentionPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "dded652d-8e84-428c-a48f-aa4b3d766ae7",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "removeSpotSearchLogsPastRetentionPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "77bcc59d-7fca-4126-bc90-01fa01d778fd",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "removeSpotSearchLogsPastRetentionPolicy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "id": "baseUrl",
+      "type": "string",
+      "value": "https://api.appyway.com/integrations/nwave/v1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "type": "string",
+        "value": "{{API-KEY-LIVE}}"
+      },
+      {
+        "key": "key",
+        "type": "string",
+        "value": "API-KEY"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "175bfebf-0a7e-4e6b-b548-0a3720c95315",
+    "name": "Ylp.Acl.NWave.Api, Version=2.14.1.0, Culture=neutral, PublicKeyToken=null (v1.0|LIVE|Public)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

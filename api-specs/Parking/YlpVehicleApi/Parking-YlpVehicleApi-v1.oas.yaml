@@ -1,0 +1,1000 @@
+openapi: 3.0.1
+info:
+  title: Ylp.Vehicle.Api, Version=2.5.2.0, Culture=neutral, PublicKeyToken=null
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/parking/v1/vehicles
+paths:
+  /changeUserDefaultVehicle:
+    post:
+      tags:
+      - Commands
+      summary: Changes the user default vehicle
+      description: Changes the user default vehicle
+      operationId: post-changeuserdefaultvehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserDefaultVehicleCommand'
+            example:
+              id: string
+              newDefaultVehicle: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserDefaultVehicleCommand'
+            example:
+              id: string
+              newDefaultVehicle: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserDefaultVehicleCommand'
+            example:
+              id: string
+              newDefaultVehicle: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchVehicleByVrm:
+    post:
+      tags:
+      - Queries
+      summary: Fetch information for a specific vehicle by
+      description: Fetch information for a specific vehicle by
+      operationId: post-fetchvehiclebyvrm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleByVrmQuery'
+            example:
+              vehicleRegistrationMark: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleByVrmQuery'
+            example:
+              vehicleRegistrationMark: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleByVrmQuery'
+            example:
+              vehicleRegistrationMark: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchVehicleByVrmQueryResultOkResponse'
+              example:
+                success: true
+                result:
+                  vehicleRegistrationMark: string
+                  createdTimestamp: string
+                  userIdOptedInBarrierIntegration: string
+                  manufactureDate: string
+                  vehicleType: 1
+                  fuelType: 0
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchVehicleDetailsByVrm:
+    post:
+      tags:
+      - Queries
+      summary: Fetch vehicle information using the vehicle registration mark
+      description: Fetch vehicle information using the vehicle registration mark
+      operationId: post-fetchvehicledetailsbyvrm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleDetailsByVrmQuery'
+            example:
+              vrm: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleDetailsByVrmQuery'
+            example:
+              vrm: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleDetailsByVrmQuery'
+            example:
+              vrm: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchVehicleDetailsByVrmQueryResultOkResponse'
+              example:
+                success: true
+                result:
+                  vehicleRegistrationMark: string
+                  manufactureDate: string
+                  manufacturer: string
+                  model: string
+                  bodyStyle: string
+                  transmissionType: 0
+                  engineSizeCC: 0
+                  fuelType: 0
+                  roadTaxBand: string
+                  co2EmissionsGKM: 0
+                  vehicleType: 1
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchVehicleOwnersByVrm:
+    post:
+      tags:
+      - Queries
+      summary: Fetch vehicle's owner list
+      description: Fetch vehicle's owner list
+      operationId: post-fetchvehicleownersbyvrm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleOwnersByVrmQuery'
+            example:
+              vehicleRegistrationMark: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleOwnersByVrmQuery'
+            example:
+              vehicleRegistrationMark: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchVehicleOwnersByVrmQuery'
+            example:
+              vehicleRegistrationMark: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringIEnumerableOkResponse'
+              example:
+                success: true
+                result:
+                - string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchVehiclesByVrms:
+    post:
+      tags:
+      - Queries
+      summary: Fetch information for multiple specific vehicles
+      description: Fetch information for multiple specific vehicles
+      operationId: post-fetchvehiclesbyvrms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehiclesByVrmsQuery'
+            example:
+              vehicleRegistrationMarks:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehiclesByVrmsQuery'
+            example:
+              vehicleRegistrationMarks:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchVehiclesByVrmsQuery'
+            example:
+              vehicleRegistrationMarks:
+              - string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchVehicleByVrmQueryResultIEnumerableOkResponse'
+              example:
+                success: true
+                result:
+                - vehicleRegistrationMark: string
+                  createdTimestamp: string
+                  userIdOptedInBarrierIntegration: string
+                  manufactureDate: string
+                  vehicleType: 1
+                  fuelType: 0
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchVehiclesOwnedByUser:
+    post:
+      tags:
+      - Queries
+      summary: Fetch vehicles owned by a user
+      description: Fetch vehicles owned by a user
+      operationId: post-fetchvehiclesownedbyuser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehiclesOwnedByUserQuery'
+            example:
+              ownerId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchVehiclesOwnedByUserQuery'
+            example:
+              ownerId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchVehiclesOwnedByUserQuery'
+            example:
+              ownerId: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VehicleResultIListOkResponse'
+              example:
+                success: true
+                result:
+                - vehicleRegistrationMark: string
+                  ownerId: string
+                  manufactureDate: string
+                  vehicleType: 1
+                  fuelType: 0
+                  optedInBarrierIntegration: true
+                  createdTimestamp: string
+                  isDefault: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /optInBarrierIntegration:
+    post:
+      tags:
+      - Commands
+      summary: Opts in a vehicle to barrier integration
+      description: Opts in a vehicle to barrier integration
+      operationId: post-optinbarrierintegration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptInBarrierIntegrationCommand'
+            example:
+              id: string
+              ownerId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OptInBarrierIntegrationCommand'
+            example:
+              id: string
+              ownerId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OptInBarrierIntegrationCommand'
+            example:
+              id: string
+              ownerId: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /optOutBarrierIntegration:
+    post:
+      tags:
+      - Commands
+      summary: Opts in a vehicle to barrier integration
+      description: Opts in a vehicle to barrier integration
+      operationId: post-optoutbarrierintegration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptOutBarrierIntegrationCommand'
+            example:
+              id: string
+              ownerId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/OptOutBarrierIntegrationCommand'
+            example:
+              id: string
+              ownerId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/OptOutBarrierIntegrationCommand'
+            example:
+              id: string
+              ownerId: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /ping:
+    get:
+      tags:
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the Availability Occupancy API service
+      operationId: get-ping
+      responses:
+        "200":
+          description: Success
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /reconcileUserDefaultVehicle:
+    post:
+      tags:
+      - Commands
+      summary: Ensures that a default vehicle is set when the user has vehicles
+      description: Ensures that a default vehicle is set when the user has vehicles
+      operationId: post-reconcileuserdefaultvehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReconcileUserDefaultVehicleCommand'
+            example:
+              id: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReconcileUserDefaultVehicleCommand'
+            example:
+              id: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReconcileUserDefaultVehicleCommand'
+            example:
+              id: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /registerVehicleOwnership:
+    post:
+      tags:
+      - Commands
+      summary: Adds a new vehicle to the users account
+      description: Adds a new vehicle to the users account
+      operationId: post-registervehicleownership
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterVehicleOwnershipCommand'
+            example:
+              id: string
+              ignoreVrmValidation: true
+              ownerId: string
+              optInBarrierIntegration: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RegisterVehicleOwnershipCommand'
+            example:
+              id: string
+              ignoreVrmValidation: true
+              ownerId: string
+              optInBarrierIntegration: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RegisterVehicleOwnershipCommand'
+            example:
+              id: string
+              ignoreVrmValidation: true
+              ownerId: string
+              optInBarrierIntegration: true
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /unRegisterVehicleOwnership:
+    post:
+      tags:
+      - Commands
+      summary: Removes a user from the list of owners of a vehicle
+      description: Removes a user from the list of owners of a vehicle
+      operationId: post-unregistervehicleownership
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnRegisterVehicleOwnershipCommand'
+            example:
+              id: string
+              ownerId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnRegisterVehicleOwnershipCommand'
+            example:
+              id: string
+              ownerId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnRegisterVehicleOwnershipCommand'
+            example:
+              id: string
+              ownerId: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    AcceptedResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+      additionalProperties: false
+    ChangeUserDefaultVehicleCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        newDefaultVehicle:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchVehicleByVrmQuery:
+      type: object
+      properties:
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchVehicleByVrmQueryResult:
+      type: object
+      properties:
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+        createdTimestamp:
+          type: string
+          format: date-time
+        userIdOptedInBarrierIntegration:
+          type: string
+          nullable: true
+        manufactureDate:
+          type: string
+          format: date-time
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+        fuelType:
+          $ref: '#/components/schemas/VehicleFuelType'
+      additionalProperties: false
+    FetchVehicleByVrmQueryResultIEnumerableOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/FetchVehicleByVrmQueryResult'
+          nullable: true
+      additionalProperties: false
+    FetchVehicleByVrmQueryResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/FetchVehicleByVrmQueryResult'
+      additionalProperties: false
+    FetchVehicleDetailsByVrmQuery:
+      type: object
+      properties:
+        vrm:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchVehicleDetailsByVrmQueryResult:
+      type: object
+      properties:
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+        manufactureDate:
+          type: string
+          format: date-time
+        manufacturer:
+          type: string
+          nullable: true
+        model:
+          type: string
+          nullable: true
+        bodyStyle:
+          type: string
+          nullable: true
+        transmissionType:
+          $ref: '#/components/schemas/VehicleTransmissionType'
+        engineSizeCC:
+          type: integer
+          format: int32
+        fuelType:
+          $ref: '#/components/schemas/VehicleFuelType'
+        roadTaxBand:
+          type: string
+          nullable: true
+        co2EmissionsGKM:
+          type: integer
+          format: int32
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+      additionalProperties: false
+    FetchVehicleDetailsByVrmQueryResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/FetchVehicleDetailsByVrmQueryResult'
+      additionalProperties: false
+    FetchVehicleOwnersByVrmQuery:
+      type: object
+      properties:
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchVehiclesByVrmsQuery:
+      type: object
+      properties:
+        vehicleRegistrationMarks:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    FetchVehiclesOwnedByUserQuery:
+      type: object
+      properties:
+        ownerId:
+          type: string
+          description: The User that owns the vehicle
+          nullable: true
+      additionalProperties: false
+    OptInBarrierIntegrationCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        ownerId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    OptOutBarrierIntegrationCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        ownerId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ReconcileUserDefaultVehicleCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+      additionalProperties: false
+    RegisterVehicleOwnershipCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        ignoreVrmValidation:
+          type: boolean
+        ownerId:
+          type: string
+          nullable: true
+        optInBarrierIntegration:
+          type: boolean
+      additionalProperties: false
+    StringIEnumerableOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    UnRegisterVehicleOwnershipCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        ownerId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VehicleFuelType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      type: integer
+      description: |2+
+
+
+        *Unknown (0)
+        *Petrol (1)
+        *Diesel (2)
+        *Electric (3)
+        *HybridElectric (4)
+        *BiFuel (5)
+        *Gas (6)
+        *Steam (7)
+      format: int32
+    VehicleResult:
+      type: object
+      properties:
+        vehicleRegistrationMark:
+          type: string
+          nullable: true
+        ownerId:
+          type: string
+          nullable: true
+        manufactureDate:
+          type: string
+          format: date-time
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+        fuelType:
+          $ref: '#/components/schemas/VehicleFuelType'
+        optedInBarrierIntegration:
+          type: boolean
+        createdTimestamp:
+          type: string
+          format: date-time
+        isDefault:
+          type: boolean
+      additionalProperties: false
+    VehicleResultIListOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleResult'
+          nullable: true
+      additionalProperties: false
+    VehicleTransmissionType:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |2+
+
+
+        *Unknown (0)
+        *Manual (1)
+        *Automatic (2)
+        *SemiAutomatic (3)
+      format: int32
+    VehicleType:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      description: |2+
+
+
+        *Car (1)
+        *Motorcycle (2)
+        *Coach (3)
+        *Taxi (4)
+      format: int32
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+

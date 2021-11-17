@@ -1,0 +1,1847 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ylp.Acl.NWave.Api, Version=2.14.1.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.appyway.com/integrations/nwave/v1"
+    }
+  ],
+  "paths": {
+    "/beginOneClickParkingSession": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/beginOneClickParkingSession - POST",
+        "operationId": "post-beginoneclickparkingsession",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginOneClickParkingSessionRequest"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "spotSearchSessionId": "string",
+                "sensorId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginOneClickParkingSessionRequest"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "spotSearchSessionId": "string",
+                "sensorId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BeginOneClickParkingSessionRequest"
+              },
+              "example": {
+                "entityId": "string",
+                "entityIndex": "string",
+                "userId": "string",
+                "vehicleRegistrationMark": "string",
+                "paymentMethodId": "string",
+                "spotSearchSessionId": "string",
+                "sensorId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/checkOutSensor": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/checkOutSensor - POST",
+        "operationId": "post-checkoutsensor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutSensorCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutSensorCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckOutSensorCommand"
+              },
+              "example": {
+                "id": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchLocationVerificationToken": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchLocationVerificationToken - POST",
+        "operationId": "post-fetchlocationverificationtoken",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLocationVerificationTokenQuery"
+              },
+              "example": {
+                "parkingSensorAdvertisements": [
+                  {
+                    "msd": "string",
+                    "rssi": 0,
+                    "time": "string"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLocationVerificationTokenQuery"
+              },
+              "example": {
+                "parkingSensorAdvertisements": [
+                  {
+                    "msd": "string",
+                    "rssi": 0,
+                    "time": "string"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchLocationVerificationTokenQuery"
+              },
+              "example": {
+                "parkingSensorAdvertisements": [
+                  {
+                    "msd": "string",
+                    "rssi": 0,
+                    "time": "string"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchOneClickSessionDetails": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchOneClickSessionDetails - POST",
+        "operationId": "post-fetchoneclicksessiondetails",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOneClickSessionDetailsQuery"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOneClickSessionDetailsQuery"
+              },
+              "example": {
+                "id": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchOneClickSessionDetailsQuery"
+              },
+              "example": {
+                "id": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchOneClickSessionDetailsQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "id": "string",
+                    "sensorId": "string",
+                    "spotSearchSessionId": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchReleasedSensorsPendingCheckOut": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchReleasedSensorsPendingCheckOut - POST",
+        "operationId": "post-fetchreleasedsensorspendingcheckout",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchReleasedSensorsPendingCheckOutQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "checkInSessionId": "string",
+                    "sensorReleaseTime": "string"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchSensorHealth": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchSensorHealth - POST",
+        "operationId": "post-fetchsensorhealth",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchSensorHealthQuery"
+              },
+              "example": {
+                "ownerIds": [
+                  "string"
+                ],
+                "severity": [
+                  1
+                ],
+                "incidentType": [
+                  "string"
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchSensorHealthQuery"
+              },
+              "example": {
+                "ownerIds": [
+                  "string"
+                ],
+                "severity": [
+                  1
+                ],
+                "incidentType": [
+                  "string"
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchSensorHealthQuery"
+              },
+              "example": {
+                "ownerIds": [
+                  "string"
+                ],
+                "severity": [
+                  1
+                ],
+                "incidentType": [
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchSensorHealthQueryResultIEnumerableOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": [
+                    {
+                      "daysBroken": 0,
+                      "severity": 1,
+                      "errorDateTime": "string",
+                      "errorType": "string",
+                      "sensorId": "string",
+                      "sensorType": 0,
+                      "entityId": "string",
+                      "entityType": 1
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchSpotSearchDetails": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchSpotSearchDetails - POST",
+        "operationId": "post-fetchspotsearchdetails",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchSpotSearchDetailsQuery"
+              },
+              "example": {
+                "spotSearchSessionId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchSpotSearchDetailsQuery"
+              },
+              "example": {
+                "spotSearchSessionId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchSpotSearchDetailsQuery"
+              },
+              "example": {
+                "spotSearchSessionId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchSpotSearchDetailsQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "id": "string",
+                    "userId": "string",
+                    "spotSearchSessionId": "string",
+                    "timestamp": "string",
+                    "request": "string",
+                    "response": "string",
+                    "normalisedResponse": "string",
+                    "suggestion": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findSpotSearchHistory": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/findSpotSearchHistory - POST",
+        "operationId": "post-findspotsearchhistory",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindSpotSearchHistoryQuery"
+              },
+              "example": {
+                "userId": "string",
+                "continuationToken": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindSpotSearchHistoryQuery"
+              },
+              "example": {
+                "userId": "string",
+                "continuationToken": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindSpotSearchHistoryQuery"
+              },
+              "example": {
+                "userId": "string",
+                "continuationToken": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpotSearchHistoryResultPaginatedQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "items": [
+                      {
+                        "spotSearchSessionId": "string",
+                        "timestamp": "string",
+                        "parkingSessionTypeSuggestion": 0,
+                        "highestProbability": 0,
+                        "highestProbabilitySensorId": "string"
+                      }
+                    ],
+                    "continuationToken": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/parkingSensorSpotSearch": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/parkingSensorSpotSearch - POST",
+        "operationId": "post-parkingsensorspotsearch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParkingSensorSpotSearchQuery"
+              },
+              "example": {
+                "sessionId": "string",
+                "userId": "string",
+                "scanDuration": 0,
+                "vehicleParkedTime": "string",
+                "vehicleLocation": {
+                  "latitude": 0,
+                  "longitude": 0,
+                  "accuracy": 0
+                },
+                "parkingSensorAdvertisements": [
+                  {
+                    "msd": "string",
+                    "rssi": 0,
+                    "time": "string"
+                  }
+                ],
+                "isRunningInBackground": true,
+                "platform": "string",
+                "deviceTimestamp": "string",
+                "deviceModel": "string",
+                "androidActivityHistory": [
+                  {
+                    "activityType": "string",
+                    "started": true,
+                    "timestamp": "string"
+                  }
+                ],
+                "androidLatestActivity": {
+                  "activityType": "string",
+                  "timestamp": "string"
+                },
+                "iosActivityHistory": {
+                  "activityHistory": [
+                    {
+                      "automotive": true,
+                      "confidence": 0,
+                      "cycling": true,
+                      "startDate": "string",
+                      "stationary": true,
+                      "unknown": true,
+                      "walking": true
+                    }
+                  ],
+                  "pedometerHistory": [
+                    {
+                      "endDate": "string",
+                      "startDate": "string",
+                      "stepCount": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParkingSensorSpotSearchQuery"
+              },
+              "example": {
+                "sessionId": "string",
+                "userId": "string",
+                "scanDuration": 0,
+                "vehicleParkedTime": "string",
+                "vehicleLocation": {
+                  "latitude": 0,
+                  "longitude": 0,
+                  "accuracy": 0
+                },
+                "parkingSensorAdvertisements": [
+                  {
+                    "msd": "string",
+                    "rssi": 0,
+                    "time": "string"
+                  }
+                ],
+                "isRunningInBackground": true,
+                "platform": "string",
+                "deviceTimestamp": "string",
+                "deviceModel": "string",
+                "androidActivityHistory": [
+                  {
+                    "activityType": "string",
+                    "started": true,
+                    "timestamp": "string"
+                  }
+                ],
+                "androidLatestActivity": {
+                  "activityType": "string",
+                  "timestamp": "string"
+                },
+                "iosActivityHistory": {
+                  "activityHistory": [
+                    {
+                      "automotive": true,
+                      "confidence": 0,
+                      "cycling": true,
+                      "startDate": "string",
+                      "stationary": true,
+                      "unknown": true,
+                      "walking": true
+                    }
+                  ],
+                  "pedometerHistory": [
+                    {
+                      "endDate": "string",
+                      "startDate": "string",
+                      "stepCount": 0
+                    }
+                  ]
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParkingSensorSpotSearchQuery"
+              },
+              "example": {
+                "sessionId": "string",
+                "userId": "string",
+                "scanDuration": 0,
+                "vehicleParkedTime": "string",
+                "vehicleLocation": {
+                  "latitude": 0,
+                  "longitude": 0,
+                  "accuracy": 0
+                },
+                "parkingSensorAdvertisements": [
+                  {
+                    "msd": "string",
+                    "rssi": 0,
+                    "time": "string"
+                  }
+                ],
+                "isRunningInBackground": true,
+                "platform": "string",
+                "deviceTimestamp": "string",
+                "deviceModel": "string",
+                "androidActivityHistory": [
+                  {
+                    "activityType": "string",
+                    "started": true,
+                    "timestamp": "string"
+                  }
+                ],
+                "androidLatestActivity": {
+                  "activityType": "string",
+                  "timestamp": "string"
+                },
+                "iosActivityHistory": {
+                  "activityHistory": [
+                    {
+                      "automotive": true,
+                      "confidence": 0,
+                      "cycling": true,
+                      "startDate": "string",
+                      "stationary": true,
+                      "unknown": true,
+                      "walking": true
+                    }
+                  ],
+                  "pedometerHistory": [
+                    {
+                      "endDate": "string",
+                      "startDate": "string",
+                      "stepCount": 0
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingSensorSpotSearchQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "sessionId": "string",
+                    "status": 1,
+                    "parkingSessionSuggestion": {
+                      "parkingSessionType": 0,
+                      "entity": {
+                        "id": "string",
+                        "type": 1,
+                        "latitude": 0,
+                        "longitude": 0,
+                        "locationNumber": "string"
+                      },
+                      "sensor": {
+                        "id": "string",
+                        "type": 0
+                      },
+                      "sensorProbability": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/ping": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "/ping - GET",
+        "operationId": "get-ping",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
+    "/reconcileSensorReleases": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/reconcileSensorReleases - POST",
+        "operationId": "post-reconcilesensorreleases",
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/removeSpotSearchLogsPastRetentionPolicy": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/removeSpotSearchLogsPastRetentionPolicy - POST",
+        "operationId": "post-removespotsearchlogspastretentionpolicy",
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AcceptedResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AndroidActivityHistoryItem": {
+        "type": "object",
+        "properties": {
+          "activityType": {
+            "type": "string",
+            "nullable": true
+          },
+          "started": {
+            "type": "boolean"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AndroidLatestActivityItem": {
+        "type": "object",
+        "properties": {
+          "activityType": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BadRequestResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BeginOneClickParkingSessionRequest": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityIndex": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "vehicleRegistrationMark": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentMethodId": {
+            "type": "string",
+            "nullable": true
+          },
+          "spotSearchSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckOutSensorCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/EntityType"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "locationNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntityType": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchLocationVerificationTokenQuery": {
+        "type": "object",
+        "properties": {
+          "parkingSensorAdvertisements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingSensorAdvertisement"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchOneClickSessionDetailsQuery": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchOneClickSessionDetailsQueryResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "spotSearchSessionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchOneClickSessionDetailsQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FetchOneClickSessionDetailsQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchReleasedSensorsPendingCheckOutQueryResult": {
+        "type": "object",
+        "properties": {
+          "checkInSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorReleaseTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchReleasedSensorsPendingCheckOutQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FetchReleasedSensorsPendingCheckOutQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchSensorHealthQuery": {
+        "type": "object",
+        "properties": {
+          "ownerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "severity": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IncidentSeverity"
+            },
+            "nullable": true
+          },
+          "incidentType": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchSensorHealthQueryResult": {
+        "type": "object",
+        "properties": {
+          "daysBroken": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "severity": {
+            "$ref": "#/components/schemas/IncidentSeverity"
+          },
+          "errorDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "errorType": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorType": {
+            "$ref": "#/components/schemas/ParkingSensorType"
+          },
+          "entityId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/EntityType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchSensorHealthQueryResultIEnumerableOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FetchSensorHealthQueryResult"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchSpotSearchDetailsQuery": {
+        "type": "object",
+        "properties": {
+          "spotSearchSessionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchSpotSearchDetailsQueryResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "spotSearchSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "request": {
+            "type": "string",
+            "nullable": true
+          },
+          "response": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalisedResponse": {
+            "type": "string",
+            "nullable": true
+          },
+          "suggestion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchSpotSearchDetailsQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FetchSpotSearchDetailsQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindSpotSearchHistoryQuery": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "continuationToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeoLocation": {
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "accuracy": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IncidentSeverity": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "IOSActivityHistoryItem": {
+        "type": "object",
+        "properties": {
+          "automotive": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cycling": {
+            "type": "boolean"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "stationary": {
+            "type": "boolean"
+          },
+          "unknown": {
+            "type": "boolean"
+          },
+          "walking": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IOSActivityHistoryRoot": {
+        "type": "object",
+        "properties": {
+          "activityHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IOSActivityHistoryItem"
+            },
+            "nullable": true
+          },
+          "pedometerHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IOSPedometerHistoryItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IOSPedometerHistoryItem": {
+        "type": "object",
+        "properties": {
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "stepCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSensor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/ParkingSensorType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSensorAdvertisement": {
+        "type": "object",
+        "properties": {
+          "msd": {
+            "type": "string",
+            "nullable": true
+          },
+          "rssi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "time": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSensorSpotSearchQuery": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "scanDuration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vehicleParkedTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "vehicleLocation": {
+            "$ref": "#/components/schemas/GeoLocation"
+          },
+          "parkingSensorAdvertisements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParkingSensorAdvertisement"
+            },
+            "nullable": true
+          },
+          "isRunningInBackground": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "deviceTimestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "deviceModel": {
+            "type": "string",
+            "nullable": true
+          },
+          "androidActivityHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AndroidActivityHistoryItem"
+            },
+            "nullable": true
+          },
+          "androidLatestActivity": {
+            "$ref": "#/components/schemas/AndroidLatestActivityItem"
+          },
+          "iosActivityHistory": {
+            "$ref": "#/components/schemas/IOSActivityHistoryRoot"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSensorSpotSearchQueryResult": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ParkingSensorSpotSearchStatus"
+          },
+          "parkingSessionSuggestion": {
+            "$ref": "#/components/schemas/ParkingSessionSuggestion"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSensorSpotSearchQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ParkingSensorSpotSearchQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSensorSpotSearchStatus": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParkingSensorType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParkingSessionSuggestion": {
+        "type": "object",
+        "properties": {
+          "parkingSessionType": {
+            "$ref": "#/components/schemas/ParkingSessionType"
+          },
+          "entity": {
+            "$ref": "#/components/schemas/Entity"
+          },
+          "sensor": {
+            "$ref": "#/components/schemas/ParkingSensor"
+          },
+          "sensorProbability": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingSessionType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SpotSearchHistoryResult": {
+        "type": "object",
+        "properties": {
+          "spotSearchSessionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "parkingSessionTypeSuggestion": {
+            "$ref": "#/components/schemas/ParkingSessionType"
+          },
+          "highestProbability": {
+            "type": "number",
+            "format": "double"
+          },
+          "highestProbabilitySensorId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SpotSearchHistoryResultPaginatedQueryResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpotSearchHistoryResult"
+            },
+            "nullable": true
+          },
+          "continuationToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SpotSearchHistoryResultPaginatedQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/SpotSearchHistoryResultPaginatedQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "name": "API-KEY",
+        "in": "header",
+        "type": "apiKey"
+      },
+      "oAuth2": {
+        "flows": {
+          "authorizationCode": {
+            "scopes": {},
+            "authorizationUrl": "https://auth.appyway.com/authorize",
+            "tokenUrl": "https://auth.appyway.com/oauth/token"
+          }
+        },
+        "type": "oauth2"
+      }
+    },
+    "responses": {
+      "TooManyRequests": {
+        "description": "Too many requests"
+      },
+      "Unauthorized": {
+        "description": "Unauthorized"
+      },
+      "Forbidden": {
+        "description": "Forbidden"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    },
+    {
+      "oAuth2": []
+    }
+  ]
+}

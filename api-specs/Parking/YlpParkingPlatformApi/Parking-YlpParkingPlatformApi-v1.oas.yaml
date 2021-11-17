@@ -1,0 +1,162 @@
+openapi: 3.0.1
+info:
+  title: Parking Platform API
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/parking/v1/users
+paths:
+  /ping:
+    get:
+      tags:
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the Availability Occupancy API service
+      operationId: get-ping
+      responses:
+        "200":
+          description: Success
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+  /setupParkingPlatformUser:
+    post:
+      tags:
+      - Commands
+      summary: /setupParkingPlatformUser - POST
+      operationId: post-setupparkingplatformuser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetupParkingPlatformUserCommand'
+            example:
+              email: string
+              userId: string
+              organizationId: string
+              sourceApp: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SetupParkingPlatformUserCommand'
+            example:
+              email: string
+              userId: string
+              organizationId: string
+              sourceApp: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SetupParkingPlatformUserCommand'
+            example:
+              email: string
+              userId: string
+              organizationId: string
+              sourceApp: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    BadRequestResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        message:
+          type: string
+          nullable: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+          nullable: true
+      additionalProperties: false
+    Error:
+      type: object
+      properties:
+        property:
+          type: string
+          nullable: true
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    OkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    SetupParkingPlatformUserCommand:
+      required:
+      - email
+      - userId
+      type: object
+      properties:
+        userId:
+          minLength: 1
+          type: string
+        email:
+          minLength: 1
+          type: string
+        sourceApp:
+          type: string
+          nullable: true
+        organizationId:
+          type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+
