@@ -306,46 +306,46 @@ paths:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
-              endDate: 2020-01-20T00:00:00.0000000+00:00
+              endDate: 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
-              startDate: 2020-01-20T00:00:00.0000000+00:00
+              startDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              date: 2020-01-20T00:00:00.0000000+00:00
+              date: 2020-01-20T00:00:00.0000000
           text/json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
-              endDate: 2020-01-20T00:00:00.0000000+00:00
+              endDate: 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
-              startDate: 2020-01-20T00:00:00.0000000+00:00
+              startDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              date: 2020-01-20T00:00:00.0000000+00:00
+              date: 2020-01-20T00:00:00.0000000
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
-              endDate: 2020-01-20T00:00:00.0000000+00:00
+              endDate: 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
-              startDate: 2020-01-20T00:00:00.0000000+00:00
+              startDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              date: 2020-01-20T00:00:00.0000000+00:00
+              date: 2020-01-20T00:00:00.0000000
       responses:
         "200":
           description: Success
@@ -370,10 +370,10 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-16T00:00:00.0000000+00:00
-                      end: 2021-11-16T00:00:00.0000000+00:00
+                    - start: 2021-11-17T00:00:00.0000000
+                      end: 2021-11-17T00:00:00.0000000
                       isFree: true
-                      date: 2020-01-20T00:00:00.0000000+00:00
+                      date: 2020-01-20T00:00:00.0000000
                   notApplicableOperatingHours:
                   - paymentMethodIds:
                     - 0
@@ -387,10 +387,10 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-16T00:00:00.0000000+00:00
-                      end: 2021-11-16T00:00:00.0000000+00:00
+                    - start: 2021-11-17T00:00:00.0000000
+                      end: 2021-11-17T00:00:00.0000000
                       isFree: true
-                      date: 2020-01-20T00:00:00.0000000+00:00
+                      date: 2020-01-20T00:00:00.0000000
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -427,9 +427,9 @@ paths:
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              date: 2020-01-20T00:00:00.0000000+00:00
-              startDate: 2020-01-20T00:00:00.0000000+00:00
-              endDate: 2020-01-20T00:00:00.0000000+00:00
+              date: 2020-01-20T00:00:00.0000000
+              startDate: 2020-01-20T00:00:00.0000000
+              endDate: 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
           text/json:
             schema:
@@ -443,9 +443,9 @@ paths:
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              date: 2020-01-20T00:00:00.0000000+00:00
-              startDate: 2020-01-20T00:00:00.0000000+00:00
-              endDate: 2020-01-20T00:00:00.0000000+00:00
+              date: 2020-01-20T00:00:00.0000000
+              startDate: 2020-01-20T00:00:00.0000000
+              endDate: 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
           application/*+json:
             schema:
@@ -459,9 +459,9 @@ paths:
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              date: 2020-01-20T00:00:00.0000000+00:00
-              startDate: 2020-01-20T00:00:00.0000000+00:00
-              endDate: 2020-01-20T00:00:00.0000000+00:00
+              date: 2020-01-20T00:00:00.0000000
+              startDate: 2020-01-20T00:00:00.0000000
+              endDate: 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
       responses:
         "200":
@@ -487,10 +487,10 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-16T00:00:00.0000000+00:00
-                      end: 2021-11-16T00:00:00.0000000+00:00
+                    - start: 2021-11-17T00:00:00.0000000
+                      end: 2021-11-17T00:00:00.0000000
                       isFree: true
-                      date: 2020-01-20T00:00:00.0000000+00:00
+                      date: 2020-01-20T00:00:00.0000000
                   notApplicableOperatingHours:
                   - paymentMethodIds:
                     - 0
@@ -504,10 +504,10 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-16T00:00:00.0000000+00:00
-                      end: 2021-11-16T00:00:00.0000000+00:00
+                    - start: 2021-11-17T00:00:00.0000000
+                      end: 2021-11-17T00:00:00.0000000
                       isFree: true
-                      date: 2020-01-20T00:00:00.0000000+00:00
+                      date: 2020-01-20T00:00:00.0000000
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
