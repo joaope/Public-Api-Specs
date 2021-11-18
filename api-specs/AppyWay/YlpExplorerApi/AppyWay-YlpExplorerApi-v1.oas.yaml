@@ -370,8 +370,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-17T00:00:00.0000000
-                      end: 2021-11-17T00:00:00.0000000
+                    - start: 2021-11-18T00:00:00.0000000
+                      end: 2021-11-18T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                   notApplicableOperatingHours:
@@ -387,8 +387,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-17T00:00:00.0000000
-                      end: 2021-11-17T00:00:00.0000000
+                    - start: 2021-11-18T00:00:00.0000000
+                      end: 2021-11-18T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
         "401":
@@ -487,8 +487,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-17T00:00:00.0000000
-                      end: 2021-11-17T00:00:00.0000000
+                    - start: 2021-11-18T00:00:00.0000000
+                      end: 2021-11-18T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                   notApplicableOperatingHours:
@@ -504,8 +504,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-17T00:00:00.0000000
-                      end: 2021-11-17T00:00:00.0000000
+                    - start: 2021-11-18T00:00:00.0000000
+                      end: 2021-11-18T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
         "401":
@@ -2785,9 +2785,12 @@ components:
       additionalProperties: false
       description: Request for searching for Parking Quotes for a given viewport.  The viewport is supplied as a GeoJson polygon.
     FindSuggestionsByViewportQuery:
+      required:
+      - viewport
       type: object
       properties:
         viewport:
+          minLength: 1
           type: object
           properties:
             type:

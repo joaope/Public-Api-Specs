@@ -577,8 +577,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-17T00:00:00",
-                            "end": "2021-11-17T00:00:00",
+                            "start": "2021-11-18T00:00:00",
+                            "end": "2021-11-18T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00"
                           }
@@ -608,8 +608,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-17T00:00:00",
-                            "end": "2021-11-17T00:00:00",
+                            "start": "2021-11-18T00:00:00",
+                            "end": "2021-11-18T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00"
                           }
@@ -763,8 +763,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-17T00:00:00",
-                            "end": "2021-11-17T00:00:00",
+                            "start": "2021-11-18T00:00:00",
+                            "end": "2021-11-18T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00"
                           }
@@ -794,8 +794,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-17T00:00:00",
-                            "end": "2021-11-17T00:00:00",
+                            "start": "2021-11-18T00:00:00",
+                            "end": "2021-11-18T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00"
                           }
@@ -4006,9 +4006,13 @@
         "description": "Request for searching for Parking Quotes for a given viewport.  The viewport is supplied as a GeoJson polygon."
       },
       "FindSuggestionsByViewportQuery": {
+        "required": [
+          "viewport"
+        ],
         "type": "object",
         "properties": {
           "viewport": {
+            "minLength": 1,
             "type": "object",
             "properties": {
               "type": {
