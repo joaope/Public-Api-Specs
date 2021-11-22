@@ -577,10 +577,11 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-18T00:00:00",
-                            "end": "2021-11-18T00:00:00",
+                            "start": "2021-11-22T00:00:00",
+                            "end": "2021-11-22T00:00:00",
                             "isFree": true,
-                            "date": "2020-01-20T00:00:00"
+                            "date": "2020-01-20T00:00:00",
+                            "status": 1
                           }
                         ]
                       }
@@ -608,10 +609,11 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-18T00:00:00",
-                            "end": "2021-11-18T00:00:00",
+                            "start": "2021-11-22T00:00:00",
+                            "end": "2021-11-22T00:00:00",
                             "isFree": true,
-                            "date": "2020-01-20T00:00:00"
+                            "date": "2020-01-20T00:00:00",
+                            "status": 1
                           }
                         ]
                       }
@@ -763,10 +765,11 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-18T00:00:00",
-                            "end": "2021-11-18T00:00:00",
+                            "start": "2021-11-22T00:00:00",
+                            "end": "2021-11-22T00:00:00",
                             "isFree": true,
-                            "date": "2020-01-20T00:00:00"
+                            "date": "2020-01-20T00:00:00",
+                            "status": 1
                           }
                         ]
                       }
@@ -794,10 +797,11 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-18T00:00:00",
-                            "end": "2021-11-18T00:00:00",
+                            "start": "2021-11-22T00:00:00",
+                            "end": "2021-11-22T00:00:00",
                             "isFree": true,
-                            "date": "2020-01-20T00:00:00"
+                            "date": "2020-01-20T00:00:00",
+                            "status": 1
                           }
                         ]
                       }
@@ -4509,15 +4513,30 @@
           },
           "isFree": {
             "type": "boolean",
-            "description": "Specify if it is free for the open period"
+            "description": "Specify if it is free for the open period",
+            "readOnly": true,
+            "deprecated": true
           },
           "date": {
             "type": "string",
             "description": "The local date that the period belongs\r\nReturned in local format: YYYY-MM-DD (eg: 2021-01-01)",
             "example": "2020-01-20T00:00:00"
+          },
+          "status": {
+            "$ref": "#/components/schemas/OpenPeriodStatus"
           }
         },
         "additionalProperties": false
+      },
+      "OpenPeriodStatus": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "\n\n*Free (1)\r\n*Paid (2)\r\n*Mixed (3)\r\n",
+        "format": "int32"
       },
       "OperatingHours": {
         "type": "object",

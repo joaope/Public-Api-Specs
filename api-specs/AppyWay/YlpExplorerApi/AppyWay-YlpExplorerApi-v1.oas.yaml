@@ -370,10 +370,11 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-18T00:00:00.0000000
-                      end: 2021-11-18T00:00:00.0000000
+                    - start: 2021-11-22T00:00:00.0000000
+                      end: 2021-11-22T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
+                      status: 1
                   notApplicableOperatingHours:
                   - paymentMethodIds:
                     - 0
@@ -387,10 +388,11 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-18T00:00:00.0000000
-                      end: 2021-11-18T00:00:00.0000000
+                    - start: 2021-11-22T00:00:00.0000000
+                      end: 2021-11-22T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
+                      status: 1
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -487,10 +489,11 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-18T00:00:00.0000000
-                      end: 2021-11-18T00:00:00.0000000
+                    - start: 2021-11-22T00:00:00.0000000
+                      end: 2021-11-22T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
+                      status: 1
                   notApplicableOperatingHours:
                   - paymentMethodIds:
                     - 0
@@ -504,10 +507,11 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-18T00:00:00.0000000
-                      end: 2021-11-18T00:00:00.0000000
+                    - start: 2021-11-22T00:00:00.0000000
+                      end: 2021-11-22T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
+                      status: 1
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -3264,13 +3268,30 @@ components:
         isFree:
           type: boolean
           description: Specify if it is free for the open period
+          readOnly: true
+          deprecated: true
         date:
           type: string
           description: |-
             The local date that the period belongs
             Returned in local format: YYYY-MM-DD (eg: 2021-01-01)
           example: 2020-01-20T00:00:00.0000000
+        status:
+          $ref: '#/components/schemas/OpenPeriodStatus'
       additionalProperties: false
+    OpenPeriodStatus:
+      enum:
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |2+
+
+
+        *Free (1)
+        *Paid (2)
+        *Mixed (3)
+      format: int32
     OperatingHours:
       type: object
       properties:
