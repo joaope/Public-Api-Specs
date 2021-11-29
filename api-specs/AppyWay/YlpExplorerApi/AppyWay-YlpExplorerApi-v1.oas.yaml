@@ -5,6 +5,43 @@ info:
 servers:
 - url: https://api.appyway.com/v1/explorer
 paths:
+  /fetchAllIndicesDefinitions:
+    post:
+      tags:
+      - Queries
+      summary: Fetch all indices definitions
+      description: Fetch all indices definitions
+      operationId: post-fetchallindicesdefinitions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchAllIndicesDefinitionsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchAllIndicesDefinitionsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchAllIndicesDefinitionsQuery'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexDefinitionIReadOnlyCollectionOkResponse'
+              example:
+                success: true
+                result:
+                - name: string
+                  onStreetIndexName: string
+                  offStreetIndexName: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /fetchAuthorityById:
     post:
       tags:
@@ -2179,6 +2216,9 @@ components:
           $ref: '#/components/schemas/BasemapTranslation'
       additionalProperties: false
       description: Provides information about the geometry contained in the feature
+    FetchAllIndicesDefinitionsQuery:
+      type: object
+      additionalProperties: false
     FetchAuthorityByIdQuery:
       required:
       - id
@@ -3040,6 +3080,31 @@ components:
         *Kerb (2) - Single line along the kerbedge, will be of type "LineString"
         *Outline (3) - A complete representation of the parking area, will be of type "Polygon". Only available for Ordnance Survey base maps
       format: int32
+    IndexDefinition:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        onStreetIndexName:
+          type: string
+          nullable: true
+        offStreetIndexName:
+          type: string
+          nullable: true
+      additionalProperties: false
+    IndexDefinitionIReadOnlyCollectionOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndexDefinition'
+          nullable: true
+      additionalProperties: false
     LatLng:
       type: object
       properties:
