@@ -800,6 +800,47 @@ paths:
         content:
           application/json-patch+json:
             schema:
+              $ref: '#/components/schemas/LegacyExecuteCarparkImport'
+            example:
+              name: string
+              user: string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LegacyExecuteCarparkImport'
+            example:
+              name: string
+              user: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LegacyExecuteCarparkImport'
+            example:
+              name: string
+              user: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LegacyExecuteCarparkImport'
+            example:
+              name: string
+              user: string
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/execute-smart-carpark-import:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/execute-smart-carpark-import - POST
+      operationId: post-tasks-execute-smart-carpark-import
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
               $ref: '#/components/schemas/ExecuteCarparkImport'
             example:
               name: string
@@ -1784,6 +1825,17 @@ components:
           type: boolean
       additionalProperties: false
     ImportElginSuspensions:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          readOnly: true
+        user:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LegacyExecuteCarparkImport:
       type: object
       properties:
         name:

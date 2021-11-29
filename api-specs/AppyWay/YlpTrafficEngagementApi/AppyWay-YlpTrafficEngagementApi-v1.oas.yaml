@@ -73,7 +73,7 @@ paths:
               addressCountry: string
               feedbackText: string
               honeypot: string
-              ellapsedSeconds: 0
+              elapsedSeconds: 0
           text/json:
             schema:
               $ref: '#/components/schemas/Feedback'
@@ -92,7 +92,7 @@ paths:
               addressCountry: string
               feedbackText: string
               honeypot: string
-              ellapsedSeconds: 0
+              elapsedSeconds: 0
           application/*+json:
             schema:
               $ref: '#/components/schemas/Feedback'
@@ -111,7 +111,7 @@ paths:
               addressCountry: string
               feedbackText: string
               honeypot: string
-              ellapsedSeconds: 0
+              elapsedSeconds: 0
       responses:
         "200":
           description: Success
@@ -121,12 +121,12 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /manage/clearExpiredOrders:
+  /manage/anonymiseExpiredOrderFeedback:
     get:
       tags:
       - FeedbackManagement
-      summary: /manage/clearExpiredOrders - GET
-      operationId: get-manage-clearexpiredorders
+      summary: /manage/anonymiseExpiredOrderFeedback - GET
+      operationId: get-manage-anonymiseexpiredorderfeedback
       responses:
         "200":
           description: Success
@@ -615,7 +615,7 @@ components:
         honeypot:
           type: string
           nullable: true
-        ellapsedSeconds:
+        elapsedSeconds:
           type: integer
           format: int32
       additionalProperties: false
@@ -683,7 +683,7 @@ components:
         orderFeedbackStatus:
           $ref: '#/components/schemas/OrderFeedbackStatus'
         orderState:
-          $ref: '#/components/schemas/StaticOrderState'
+          $ref: '#/components/schemas/OrderState'
         feedbackScores:
           type: array
           items:
@@ -707,6 +707,19 @@ components:
             $ref: '#/components/schemas/OrderFeedbackSummary'
           nullable: true
       additionalProperties: false
+    OrderState:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      type: integer
+      format: int32
     OrderStatusCounts:
       type: object
       properties:
@@ -753,18 +766,6 @@ components:
       - 4
       - 5
       - 6
-      type: integer
-      format: int32
-    StaticOrderState:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
       type: integer
       format: int32
     ThreadStatus:

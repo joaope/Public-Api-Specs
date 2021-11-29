@@ -103,7 +103,7 @@
                 "addressCountry": "string",
                 "feedbackText": "string",
                 "honeypot": "string",
-                "ellapsedSeconds": 0
+                "elapsedSeconds": 0
               }
             },
             "text/json": {
@@ -125,7 +125,7 @@
                 "addressCountry": "string",
                 "feedbackText": "string",
                 "honeypot": "string",
-                "ellapsedSeconds": 0
+                "elapsedSeconds": 0
               }
             },
             "application/*+json": {
@@ -147,7 +147,7 @@
                 "addressCountry": "string",
                 "feedbackText": "string",
                 "honeypot": "string",
-                "ellapsedSeconds": 0
+                "elapsedSeconds": 0
               }
             }
           }
@@ -168,13 +168,13 @@
         }
       }
     },
-    "/manage/clearExpiredOrders": {
+    "/manage/anonymiseExpiredOrderFeedback": {
       "get": {
         "tags": [
           "FeedbackManagement"
         ],
-        "summary": "/manage/clearExpiredOrders - GET",
-        "operationId": "get-manage-clearexpiredorders",
+        "summary": "/manage/anonymiseExpiredOrderFeedback - GET",
+        "operationId": "get-manage-anonymiseexpiredorderfeedback",
         "responses": {
           "200": {
             "description": "Success"
@@ -929,7 +929,7 @@
             "type": "string",
             "nullable": true
           },
-          "ellapsedSeconds": {
+          "elapsedSeconds": {
             "type": "integer",
             "format": "int32"
           }
@@ -1018,7 +1018,7 @@
             "$ref": "#/components/schemas/OrderFeedbackStatus"
           },
           "orderState": {
-            "$ref": "#/components/schemas/StaticOrderState"
+            "$ref": "#/components/schemas/OrderState"
           },
           "feedbackScores": {
             "type": "array",
@@ -1053,6 +1053,21 @@
           }
         },
         "additionalProperties": false
+      },
+      "OrderState": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "OrderStatusCounts": {
         "type": "object",
@@ -1114,20 +1129,6 @@
           4,
           5,
           6
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "StaticOrderState": {
-        "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
         ],
         "type": "integer",
         "format": "int32"
