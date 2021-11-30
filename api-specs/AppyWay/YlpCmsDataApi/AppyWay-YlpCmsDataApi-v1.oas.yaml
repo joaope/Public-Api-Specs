@@ -67,6 +67,10 @@ paths:
                   - string
                   authorityType: 0
                   legalName: string
+                  defaultEntitlements:
+                  - restrictionTypeId: 0
+                    entitlements:
+                    - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityListResult'
@@ -115,6 +119,10 @@ paths:
                   - string
                   authorityType: 0
                   legalName: string
+                  defaultEntitlements:
+                  - restrictionTypeId: 0
+                    entitlements:
+                    - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -248,6 +256,10 @@ paths:
                   - string
                   authorityType: 0
                   legalName: string
+                  defaultEntitlements:
+                  - restrictionTypeId: 0
+                    entitlements:
+                    - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityResult'
@@ -296,6 +308,10 @@ paths:
                   - string
                   authorityType: 0
                   legalName: string
+                  defaultEntitlements:
+                  - restrictionTypeId: 0
+                    entitlements:
+                    - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -369,6 +385,10 @@ paths:
                   - string
                   authorityType: 0
                   legalName: string
+                  defaultEntitlements:
+                  - restrictionTypeId: 0
+                    entitlements:
+                    - 0
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityResult'
@@ -417,6 +437,10 @@ paths:
                   - string
                   authorityType: 0
                   legalName: string
+                  defaultEntitlements:
+                  - restrictionTypeId: 0
+                    entitlements:
+                    - 0
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -453,151 +477,6 @@ paths:
               example:
                 success: true
                 data:
-                  authorityUrl:
-                    authorityId: string
-                    authoritySlugs:
-                    - string
-                    regionId: string
-                    countryId: string
-                    fallbackZoneId: string
-                    authorityType: 0
-                    name: string
-                    shape:
-                      type: string
-                      crs:
-                        type: string
-                        properties:
-                          name: string
-                      coordinates:
-                      - - - 0
-                    notes:
-                    - noteVisibilityTypeId: 0
-                      appliesToRestrictionTypeIds:
-                      - 0
-                      priority: 0
-                      title: string
-                      message: string
-                      url: string
-                      telephone: string
-                    paymentProvider:
-                      name: string
-                      paymentUrl: string
-                      telephone: string
-                      cashlessMerchantId: string
-                    hasFreeParkingOutsideZone: true
-                    isPubliclyViewable: true
-                    sets:
-                      operatingHoursSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        operatingHours:
-                          standardDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                          eventDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                      exemptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exemptions:
-                        - exemptionTypeId: 0
-                          parkingEntitlementTypeId: 0
-                          exemptionTimeTypeId: 0
-                          exemptionApplies: true
-                          maxStay: 0
-                          noReturn: 0
-                      exceptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exceptions:
-                          allHolidaysRestrictionExceptionTypeId: 0
-                          daySpecificRestrictionExceptions:
-                          - publicHolidayOrNamedDayId: string
-                            restrictionExceptionTypeId: 0
-                      tariffSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        tariffs:
-                        - parkingEntitlementTypeIds:
-                          - 0
-                          details:
-                          - price: 0
-                            surcharge: 0
-                            surchargeDetail:
-                              surchargeType: 0
-                              value: 0
-                              notes: string
-                              ruleType: 0
-                            duration: 0
-                            minimumPriceIncrement: 0
-                            singlePaymentCanCrossMidnight: true
-                            from: 0
-                            upTo: 0
-                          timeFrom: 2021-11-29T00:00:00.0000000
-                          timeTo: 2021-11-29T00:00:00.0000000
-                          firstDate:
-                            month: 0
-                            day: 0
-                          lastDate:
-                            month: 0
-                            day: 0
-                          months:
-                          - 0
-                          days:
-                          - 0
-                          timeType: 0
-                    timeZoneId: string
-                    ordnanceSurvey:
-                      apiKey: string
-                      license: string
-                    privacyPolicyUrl: string
-                    tags:
-                    - string
                   setsUrl:
                     operatingHoursSets:
                     - setId: string
@@ -613,8 +492,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -626,7 +505,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                         eventDays:
                         - ruleTime:
                             months:
@@ -636,8 +515,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -649,7 +528,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                     exemptionsSets:
                     - setId: string
                       name: string
@@ -690,8 +569,8 @@ paths:
                           singlePaymentCanCrossMidnight: true
                           from: 0
                           upTo: 0
-                        timeFrom: 2021-11-29T00:00:00.0000000
-                        timeTo: 2021-11-29T00:00:00.0000000
+                        timeFrom: 2021-11-30T00:00:00.0000000
+                        timeTo: 2021-11-30T00:00:00.0000000
                         firstDate:
                           month: 0
                           day: 0
@@ -745,7 +624,7 @@ paths:
                         - string
                     properties: {}
                   ospsUrl:
-                    type: string
+                  - type: string
                     features:
                     - type: string
                       id: string
@@ -821,151 +700,6 @@ paths:
               example:
                 success: true
                 data:
-                  authorityUrl:
-                    authorityId: string
-                    authoritySlugs:
-                    - string
-                    regionId: string
-                    countryId: string
-                    fallbackZoneId: string
-                    authorityType: 0
-                    name: string
-                    shape:
-                      type: string
-                      crs:
-                        type: string
-                        properties:
-                          name: string
-                      coordinates:
-                      - - - 0
-                    notes:
-                    - noteVisibilityTypeId: 0
-                      appliesToRestrictionTypeIds:
-                      - 0
-                      priority: 0
-                      title: string
-                      message: string
-                      url: string
-                      telephone: string
-                    paymentProvider:
-                      name: string
-                      paymentUrl: string
-                      telephone: string
-                      cashlessMerchantId: string
-                    hasFreeParkingOutsideZone: true
-                    isPubliclyViewable: true
-                    sets:
-                      operatingHoursSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        operatingHours:
-                          standardDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                          eventDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                      exemptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exemptions:
-                        - exemptionTypeId: 0
-                          parkingEntitlementTypeId: 0
-                          exemptionTimeTypeId: 0
-                          exemptionApplies: true
-                          maxStay: 0
-                          noReturn: 0
-                      exceptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exceptions:
-                          allHolidaysRestrictionExceptionTypeId: 0
-                          daySpecificRestrictionExceptions:
-                          - publicHolidayOrNamedDayId: string
-                            restrictionExceptionTypeId: 0
-                      tariffSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        tariffs:
-                        - parkingEntitlementTypeIds:
-                          - 0
-                          details:
-                          - price: 0
-                            surcharge: 0
-                            surchargeDetail:
-                              surchargeType: 0
-                              value: 0
-                              notes: string
-                              ruleType: 0
-                            duration: 0
-                            minimumPriceIncrement: 0
-                            singlePaymentCanCrossMidnight: true
-                            from: 0
-                            upTo: 0
-                          timeFrom: 2021-11-29T00:00:00.0000000
-                          timeTo: 2021-11-29T00:00:00.0000000
-                          firstDate:
-                            month: 0
-                            day: 0
-                          lastDate:
-                            month: 0
-                            day: 0
-                          months:
-                          - 0
-                          days:
-                          - 0
-                          timeType: 0
-                    timeZoneId: string
-                    ordnanceSurvey:
-                      apiKey: string
-                      license: string
-                    privacyPolicyUrl: string
-                    tags:
-                    - string
                   setsUrl:
                     operatingHoursSets:
                     - setId: string
@@ -981,8 +715,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -994,7 +728,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                         eventDays:
                         - ruleTime:
                             months:
@@ -1004,8 +738,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -1017,7 +751,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                     exemptionsSets:
                     - setId: string
                       name: string
@@ -1058,8 +792,8 @@ paths:
                           singlePaymentCanCrossMidnight: true
                           from: 0
                           upTo: 0
-                        timeFrom: 2021-11-29T00:00:00.0000000
-                        timeTo: 2021-11-29T00:00:00.0000000
+                        timeFrom: 2021-11-30T00:00:00.0000000
+                        timeTo: 2021-11-30T00:00:00.0000000
                         firstDate:
                           month: 0
                           day: 0
@@ -1113,7 +847,7 @@ paths:
                         - string
                     properties: {}
                   ospsUrl:
-                    type: string
+                  - type: string
                     features:
                     - type: string
                       id: string
@@ -1219,151 +953,6 @@ paths:
               example:
                 success: true
                 data:
-                  authorityUrl:
-                    authorityId: string
-                    authoritySlugs:
-                    - string
-                    regionId: string
-                    countryId: string
-                    fallbackZoneId: string
-                    authorityType: 0
-                    name: string
-                    shape:
-                      type: string
-                      crs:
-                        type: string
-                        properties:
-                          name: string
-                      coordinates:
-                      - - - 0
-                    notes:
-                    - noteVisibilityTypeId: 0
-                      appliesToRestrictionTypeIds:
-                      - 0
-                      priority: 0
-                      title: string
-                      message: string
-                      url: string
-                      telephone: string
-                    paymentProvider:
-                      name: string
-                      paymentUrl: string
-                      telephone: string
-                      cashlessMerchantId: string
-                    hasFreeParkingOutsideZone: true
-                    isPubliclyViewable: true
-                    sets:
-                      operatingHoursSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        operatingHours:
-                          standardDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                          eventDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                      exemptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exemptions:
-                        - exemptionTypeId: 0
-                          parkingEntitlementTypeId: 0
-                          exemptionTimeTypeId: 0
-                          exemptionApplies: true
-                          maxStay: 0
-                          noReturn: 0
-                      exceptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exceptions:
-                          allHolidaysRestrictionExceptionTypeId: 0
-                          daySpecificRestrictionExceptions:
-                          - publicHolidayOrNamedDayId: string
-                            restrictionExceptionTypeId: 0
-                      tariffSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        tariffs:
-                        - parkingEntitlementTypeIds:
-                          - 0
-                          details:
-                          - price: 0
-                            surcharge: 0
-                            surchargeDetail:
-                              surchargeType: 0
-                              value: 0
-                              notes: string
-                              ruleType: 0
-                            duration: 0
-                            minimumPriceIncrement: 0
-                            singlePaymentCanCrossMidnight: true
-                            from: 0
-                            upTo: 0
-                          timeFrom: 2021-11-29T00:00:00.0000000
-                          timeTo: 2021-11-29T00:00:00.0000000
-                          firstDate:
-                            month: 0
-                            day: 0
-                          lastDate:
-                            month: 0
-                            day: 0
-                          months:
-                          - 0
-                          days:
-                          - 0
-                          timeType: 0
-                    timeZoneId: string
-                    ordnanceSurvey:
-                      apiKey: string
-                      license: string
-                    privacyPolicyUrl: string
-                    tags:
-                    - string
                   setsUrl:
                     operatingHoursSets:
                     - setId: string
@@ -1379,8 +968,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -1392,7 +981,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                         eventDays:
                         - ruleTime:
                             months:
@@ -1402,8 +991,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -1415,7 +1004,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                     exemptionsSets:
                     - setId: string
                       name: string
@@ -1456,8 +1045,8 @@ paths:
                           singlePaymentCanCrossMidnight: true
                           from: 0
                           upTo: 0
-                        timeFrom: 2021-11-29T00:00:00.0000000
-                        timeTo: 2021-11-29T00:00:00.0000000
+                        timeFrom: 2021-11-30T00:00:00.0000000
+                        timeTo: 2021-11-30T00:00:00.0000000
                         firstDate:
                           month: 0
                           day: 0
@@ -1511,7 +1100,7 @@ paths:
                         - string
                     properties: {}
                   ospsUrl:
-                    type: string
+                  - type: string
                     features:
                     - type: string
                       id: string
@@ -1587,151 +1176,6 @@ paths:
               example:
                 success: true
                 data:
-                  authorityUrl:
-                    authorityId: string
-                    authoritySlugs:
-                    - string
-                    regionId: string
-                    countryId: string
-                    fallbackZoneId: string
-                    authorityType: 0
-                    name: string
-                    shape:
-                      type: string
-                      crs:
-                        type: string
-                        properties:
-                          name: string
-                      coordinates:
-                      - - - 0
-                    notes:
-                    - noteVisibilityTypeId: 0
-                      appliesToRestrictionTypeIds:
-                      - 0
-                      priority: 0
-                      title: string
-                      message: string
-                      url: string
-                      telephone: string
-                    paymentProvider:
-                      name: string
-                      paymentUrl: string
-                      telephone: string
-                      cashlessMerchantId: string
-                    hasFreeParkingOutsideZone: true
-                    isPubliclyViewable: true
-                    sets:
-                      operatingHoursSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        operatingHours:
-                          standardDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                          eventDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                      exemptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exemptions:
-                        - exemptionTypeId: 0
-                          parkingEntitlementTypeId: 0
-                          exemptionTimeTypeId: 0
-                          exemptionApplies: true
-                          maxStay: 0
-                          noReturn: 0
-                      exceptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exceptions:
-                          allHolidaysRestrictionExceptionTypeId: 0
-                          daySpecificRestrictionExceptions:
-                          - publicHolidayOrNamedDayId: string
-                            restrictionExceptionTypeId: 0
-                      tariffSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        tariffs:
-                        - parkingEntitlementTypeIds:
-                          - 0
-                          details:
-                          - price: 0
-                            surcharge: 0
-                            surchargeDetail:
-                              surchargeType: 0
-                              value: 0
-                              notes: string
-                              ruleType: 0
-                            duration: 0
-                            minimumPriceIncrement: 0
-                            singlePaymentCanCrossMidnight: true
-                            from: 0
-                            upTo: 0
-                          timeFrom: 2021-11-29T00:00:00.0000000
-                          timeTo: 2021-11-29T00:00:00.0000000
-                          firstDate:
-                            month: 0
-                            day: 0
-                          lastDate:
-                            month: 0
-                            day: 0
-                          months:
-                          - 0
-                          days:
-                          - 0
-                          timeType: 0
-                    timeZoneId: string
-                    ordnanceSurvey:
-                      apiKey: string
-                      license: string
-                    privacyPolicyUrl: string
-                    tags:
-                    - string
                   setsUrl:
                     operatingHoursSets:
                     - setId: string
@@ -1747,8 +1191,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -1760,7 +1204,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                         eventDays:
                         - ruleTime:
                             months:
@@ -1770,8 +1214,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -1783,7 +1227,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                     exemptionsSets:
                     - setId: string
                       name: string
@@ -1824,8 +1268,8 @@ paths:
                           singlePaymentCanCrossMidnight: true
                           from: 0
                           upTo: 0
-                        timeFrom: 2021-11-29T00:00:00.0000000
-                        timeTo: 2021-11-29T00:00:00.0000000
+                        timeFrom: 2021-11-30T00:00:00.0000000
+                        timeTo: 2021-11-30T00:00:00.0000000
                         firstDate:
                           month: 0
                           day: 0
@@ -1879,7 +1323,7 @@ paths:
                         - string
                     properties: {}
                   ospsUrl:
-                    type: string
+                  - type: string
                     features:
                     - type: string
                       id: string
@@ -1985,151 +1429,6 @@ paths:
               example:
                 success: true
                 data:
-                  authorityUrl:
-                    authorityId: string
-                    authoritySlugs:
-                    - string
-                    regionId: string
-                    countryId: string
-                    fallbackZoneId: string
-                    authorityType: 0
-                    name: string
-                    shape:
-                      type: string
-                      crs:
-                        type: string
-                        properties:
-                          name: string
-                      coordinates:
-                      - - - 0
-                    notes:
-                    - noteVisibilityTypeId: 0
-                      appliesToRestrictionTypeIds:
-                      - 0
-                      priority: 0
-                      title: string
-                      message: string
-                      url: string
-                      telephone: string
-                    paymentProvider:
-                      name: string
-                      paymentUrl: string
-                      telephone: string
-                      cashlessMerchantId: string
-                    hasFreeParkingOutsideZone: true
-                    isPubliclyViewable: true
-                    sets:
-                      operatingHoursSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        operatingHours:
-                          standardDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                          eventDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                      exemptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exemptions:
-                        - exemptionTypeId: 0
-                          parkingEntitlementTypeId: 0
-                          exemptionTimeTypeId: 0
-                          exemptionApplies: true
-                          maxStay: 0
-                          noReturn: 0
-                      exceptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exceptions:
-                          allHolidaysRestrictionExceptionTypeId: 0
-                          daySpecificRestrictionExceptions:
-                          - publicHolidayOrNamedDayId: string
-                            restrictionExceptionTypeId: 0
-                      tariffSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        tariffs:
-                        - parkingEntitlementTypeIds:
-                          - 0
-                          details:
-                          - price: 0
-                            surcharge: 0
-                            surchargeDetail:
-                              surchargeType: 0
-                              value: 0
-                              notes: string
-                              ruleType: 0
-                            duration: 0
-                            minimumPriceIncrement: 0
-                            singlePaymentCanCrossMidnight: true
-                            from: 0
-                            upTo: 0
-                          timeFrom: 2021-11-29T00:00:00.0000000
-                          timeTo: 2021-11-29T00:00:00.0000000
-                          firstDate:
-                            month: 0
-                            day: 0
-                          lastDate:
-                            month: 0
-                            day: 0
-                          months:
-                          - 0
-                          days:
-                          - 0
-                          timeType: 0
-                    timeZoneId: string
-                    ordnanceSurvey:
-                      apiKey: string
-                      license: string
-                    privacyPolicyUrl: string
-                    tags:
-                    - string
                   setsUrl:
                     operatingHoursSets:
                     - setId: string
@@ -2145,8 +1444,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -2158,7 +1457,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                         eventDays:
                         - ruleTime:
                             months:
@@ -2168,8 +1467,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -2181,7 +1480,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                     tariffSets:
                     - setId: string
                       name: string
@@ -2202,8 +1501,8 @@ paths:
                           singlePaymentCanCrossMidnight: true
                           from: 0
                           upTo: 0
-                        timeFrom: 2021-11-29T00:00:00.0000000
-                        timeTo: 2021-11-29T00:00:00.0000000
+                        timeFrom: 2021-11-30T00:00:00.0000000
+                        timeTo: 2021-11-30T00:00:00.0000000
                         firstDate:
                           month: 0
                           day: 0
@@ -2286,151 +1585,6 @@ paths:
               example:
                 success: true
                 data:
-                  authorityUrl:
-                    authorityId: string
-                    authoritySlugs:
-                    - string
-                    regionId: string
-                    countryId: string
-                    fallbackZoneId: string
-                    authorityType: 0
-                    name: string
-                    shape:
-                      type: string
-                      crs:
-                        type: string
-                        properties:
-                          name: string
-                      coordinates:
-                      - - - 0
-                    notes:
-                    - noteVisibilityTypeId: 0
-                      appliesToRestrictionTypeIds:
-                      - 0
-                      priority: 0
-                      title: string
-                      message: string
-                      url: string
-                      telephone: string
-                    paymentProvider:
-                      name: string
-                      paymentUrl: string
-                      telephone: string
-                      cashlessMerchantId: string
-                    hasFreeParkingOutsideZone: true
-                    isPubliclyViewable: true
-                    sets:
-                      operatingHoursSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        operatingHours:
-                          standardDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                          eventDays:
-                          - ruleTime:
-                              months:
-                              - 0
-                              days:
-                              - 0
-                              weekNumbers:
-                              - 0
-                              hours:
-                              - start: 2021-11-29T00:00:00.0000000
-                                end: 2021-11-29T00:00:00.0000000
-                              firstDate:
-                                month: 0
-                                day: 0
-                              lastDate:
-                                month: 0
-                                day: 0
-                            parkingEntitlementTypeIds:
-                            - 0
-                            maxStay: 0
-                            minStay: 0
-                            noReturn: 0
-                            noReturnUntil: 2021-11-29T00:00:00.0000000
-                      exemptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exemptions:
-                        - exemptionTypeId: 0
-                          parkingEntitlementTypeId: 0
-                          exemptionTimeTypeId: 0
-                          exemptionApplies: true
-                          maxStay: 0
-                          noReturn: 0
-                      exceptionsSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        exceptions:
-                          allHolidaysRestrictionExceptionTypeId: 0
-                          daySpecificRestrictionExceptions:
-                          - publicHolidayOrNamedDayId: string
-                            restrictionExceptionTypeId: 0
-                      tariffSets:
-                      - setId: string
-                        name: string
-                        formattedName: string
-                        tariffs:
-                        - parkingEntitlementTypeIds:
-                          - 0
-                          details:
-                          - price: 0
-                            surcharge: 0
-                            surchargeDetail:
-                              surchargeType: 0
-                              value: 0
-                              notes: string
-                              ruleType: 0
-                            duration: 0
-                            minimumPriceIncrement: 0
-                            singlePaymentCanCrossMidnight: true
-                            from: 0
-                            upTo: 0
-                          timeFrom: 2021-11-29T00:00:00.0000000
-                          timeTo: 2021-11-29T00:00:00.0000000
-                          firstDate:
-                            month: 0
-                            day: 0
-                          lastDate:
-                            month: 0
-                            day: 0
-                          months:
-                          - 0
-                          days:
-                          - 0
-                          timeType: 0
-                    timeZoneId: string
-                    ordnanceSurvey:
-                      apiKey: string
-                      license: string
-                    privacyPolicyUrl: string
-                    tags:
-                    - string
                   setsUrl:
                     operatingHoursSets:
                     - setId: string
@@ -2446,8 +1600,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -2459,7 +1613,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                         eventDays:
                         - ruleTime:
                             months:
@@ -2469,8 +1623,8 @@ paths:
                             weekNumbers:
                             - 0
                             hours:
-                            - start: 2021-11-29T00:00:00.0000000
-                              end: 2021-11-29T00:00:00.0000000
+                            - start: 2021-11-30T00:00:00.0000000
+                              end: 2021-11-30T00:00:00.0000000
                             firstDate:
                               month: 0
                               day: 0
@@ -2482,7 +1636,7 @@ paths:
                           maxStay: 0
                           minStay: 0
                           noReturn: 0
-                          noReturnUntil: 2021-11-29T00:00:00.0000000
+                          noReturnUntil: 2021-11-30T00:00:00.0000000
                     tariffSets:
                     - setId: string
                       name: string
@@ -2503,8 +1657,8 @@ paths:
                           singlePaymentCanCrossMidnight: true
                           from: 0
                           upTo: 0
-                        timeFrom: 2021-11-29T00:00:00.0000000
-                        timeTo: 2021-11-29T00:00:00.0000000
+                        timeFrom: 2021-11-30T00:00:00.0000000
+                        timeTo: 2021-11-30T00:00:00.0000000
                         firstDate:
                           month: 0
                           day: 0
@@ -2684,6 +1838,10 @@ paths:
                 telephone: string
                 cashlessMerchantId: string
               osLicenseKey: string
+              defaultEntitlements:
+              - restrictionTypeId: 0
+                entitlements:
+                - 0
           application/json:
             schema:
               $ref: '#/components/schemas/AuthoritySettings'
@@ -2697,6 +1855,10 @@ paths:
                 telephone: string
                 cashlessMerchantId: string
               osLicenseKey: string
+              defaultEntitlements:
+              - restrictionTypeId: 0
+                entitlements:
+                - 0
           text/json:
             schema:
               $ref: '#/components/schemas/AuthoritySettings'
@@ -2710,6 +1872,10 @@ paths:
                 telephone: string
                 cashlessMerchantId: string
               osLicenseKey: string
+              defaultEntitlements:
+              - restrictionTypeId: 0
+                entitlements:
+                - 0
           application/*+json:
             schema:
               $ref: '#/components/schemas/AuthoritySettings'
@@ -2723,6 +1889,10 @@ paths:
                 telephone: string
                 cashlessMerchantId: string
               osLicenseKey: string
+              defaultEntitlements:
+              - restrictionTypeId: 0
+                entitlements:
+                - 0
       responses:
         "200":
           description: Success
@@ -2845,8 +2015,8 @@ paths:
                     weekNumbers:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     firstDate:
                       month: 0
                       day: 0
@@ -2863,8 +2033,8 @@ paths:
                       weekNumbers:
                       - 0
                       hours:
-                      - start: 2021-11-29T00:00:00.0000000
-                        end: 2021-11-29T00:00:00.0000000
+                      - start: 2021-11-30T00:00:00.0000000
+                        end: 2021-11-30T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -2887,8 +2057,8 @@ paths:
                         singlePaymentCanCrossMidnight: true
                         from: 0
                         upTo: 0
-                      timeFrom: 2021-11-29T00:00:00.0000000
-                      timeTo: 2021-11-29T00:00:00.0000000
+                      timeFrom: 2021-11-30T00:00:00.0000000
+                      timeTo: 2021-11-30T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -3034,8 +2204,8 @@ paths:
                     weekNumbers:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     firstDate:
                       month: 0
                       day: 0
@@ -3052,8 +2222,8 @@ paths:
                       weekNumbers:
                       - 0
                       hours:
-                      - start: 2021-11-29T00:00:00.0000000
-                        end: 2021-11-29T00:00:00.0000000
+                      - start: 2021-11-30T00:00:00.0000000
+                        end: 2021-11-30T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -3076,8 +2246,8 @@ paths:
                         singlePaymentCanCrossMidnight: true
                         from: 0
                         upTo: 0
-                      timeFrom: 2021-11-29T00:00:00.0000000
-                      timeTo: 2021-11-29T00:00:00.0000000
+                      timeFrom: 2021-11-30T00:00:00.0000000
+                      timeTo: 2021-11-30T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -3175,51 +2345,6 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /carparks/searchCarparksByTerm:
-    get:
-      tags:
-      - CarParks
-      summary: /carparks/searchCarparksByTerm - GET
-      operationId: get-carparks-searchcarparksbyterm
-      parameters:
-      - name: term
-        in: query
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/CarParkInfoListResult'
-              example: 
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CarParkInfoListResult'
-              example:
-                success: true
-                data:
-                - carparkId: 0
-                  name: string
-                  address: string
-                  operatingHoursText: string
-            text/json:
-              schema:
-                $ref: '#/components/schemas/CarParkInfoListResult'
-              example:
-                success: true
-                data:
-                - carparkId: 0
-                  name: string
-                  address: string
-                  operatingHoursText: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /carparks/searchSmartCarparksByTerm:
     get:
       tags:
@@ -3259,62 +2384,6 @@ paths:
                   name: string
                   address: string
                   operatingHoursText: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /carparks/updateCarparkTariff:
-    post:
-      tags:
-      - CarParks
-      summary: /carparks/updateCarparkTariff - POST
-      operationId: post-carparks-updatecarparktariff
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/CarparkTariffsRequest'
-            example:
-              carparkId: 0
-              operatingHoursText: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CarparkTariffsRequest'
-            example:
-              carparkId: 0
-              operatingHoursText: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/CarparkTariffsRequest'
-            example:
-              carparkId: 0
-              operatingHoursText: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/CarparkTariffsRequest'
-            example:
-              carparkId: 0
-              operatingHoursText: string
-      responses:
-        "200":
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Result'
-              example: 
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
-              example:
-                successValue: true
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Result'
-              example:
-                successValue: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -8989,8 +8058,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9010,8 +8079,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9031,8 +8100,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9052,8 +8121,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9083,8 +8152,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9106,8 +8175,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9189,8 +8258,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9212,8 +8281,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9260,8 +8329,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9283,8 +8352,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9318,8 +8387,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9339,8 +8408,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9360,8 +8429,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9381,8 +8450,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2021-11-29T00:00:00.0000000
-                  end: 2021-11-29T00:00:00.0000000
+                - start: 2021-11-30T00:00:00.0000000
+                  end: 2021-11-30T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -9412,8 +8481,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9435,8 +8504,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2021-11-29T00:00:00.0000000
-                      end: 2021-11-29T00:00:00.0000000
+                    - start: 2021-11-30T00:00:00.0000000
+                      end: 2021-11-30T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -9554,68 +8623,17 @@ components:
         legalName:
           type: string
           nullable: true
+        defaultEntitlements:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntitlementDefault'
+          nullable: true
       additionalProperties: false
     AuthorityChangeType:
       enum:
       - 0
       type: integer
       format: int32
-    AuthorityCmsBlob:
-      type: object
-      properties:
-        authorityId:
-          type: string
-          nullable: true
-        authoritySlugs:
-          type: array
-          items:
-            type: string
-          nullable: true
-        regionId:
-          type: string
-          nullable: true
-        countryId:
-          type: string
-          nullable: true
-        fallbackZoneId:
-          type: string
-          nullable: true
-        authorityType:
-          type: integer
-          format: int32
-        name:
-          type: string
-          nullable: true
-        shape:
-          $ref: '#/components/schemas/Polygon'
-        notes:
-          type: array
-          items:
-            $ref: '#/components/schemas/NoteCms'
-          nullable: true
-        paymentProvider:
-          $ref: '#/components/schemas/PaymentProviderCms'
-        hasFreeParkingOutsideZone:
-          type: boolean
-          nullable: true
-        isPubliclyViewable:
-          type: boolean
-        sets:
-          $ref: '#/components/schemas/SetCollection'
-        timeZoneId:
-          type: string
-          nullable: true
-        ordnanceSurvey:
-          $ref: '#/components/schemas/OrdnanceSurvey'
-        privacyPolicyUrl:
-          type: string
-          nullable: true
-        tags:
-          type: array
-          items:
-            type: string
-          nullable: true
-      additionalProperties: false
     AuthorityConfiguration:
       type: object
       properties:
@@ -9777,18 +8795,24 @@ components:
         osLicenseKey:
           type: string
           nullable: true
+        defaultEntitlements:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntitlementDefault'
+          nullable: true
       additionalProperties: false
     AuthoritySnapshotInfoDoc:
       type: object
       properties:
-        authorityUrl:
-          $ref: '#/components/schemas/AuthorityCmsBlob'
         setsUrl:
           $ref: '#/components/schemas/SetCollection'
         zonesUrl:
           $ref: '#/components/schemas/PolygonZoneFeatureCollection'
         ospsUrl:
-          $ref: '#/components/schemas/GeometryOspFeatureCollection'
+          type: array
+          items:
+            $ref: '#/components/schemas/GeometryOspFeatureCollection'
+          nullable: true
         date:
           type: string
           format: date-time
@@ -9992,34 +9016,6 @@ components:
       - 2
       type: integer
       format: int32
-    CarParkInfo:
-      type: object
-      properties:
-        carparkId:
-          type: integer
-          format: int32
-        name:
-          type: string
-          nullable: true
-        address:
-          type: string
-          nullable: true
-        operatingHoursText:
-          type: string
-          nullable: true
-      additionalProperties: false
-    CarParkInfoListResult:
-      type: object
-      properties:
-        success:
-          type: boolean
-          readOnly: true
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/CarParkInfo'
-          nullable: true
-      additionalProperties: false
     CarParkLight:
       type: object
       properties:
@@ -10046,16 +9042,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CarParkLight'
-          nullable: true
-      additionalProperties: false
-    CarparkTariffsRequest:
-      type: object
-      properties:
-        carparkId:
-          type: integer
-          format: int32
-        operatingHoursText:
-          type: string
           nullable: true
       additionalProperties: false
     CarParkTimesOfOperationCms:
@@ -10278,6 +9264,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ElectricConnectionCms'
+          nullable: true
+      additionalProperties: false
+    EntitlementDefault:
+      type: object
+      properties:
+        restrictionTypeId:
+          type: integer
+          format: int32
+        entitlements:
+          type: array
+          items:
+            type: integer
+            format: int32
           nullable: true
       additionalProperties: false
     ExceptionsCms:
@@ -11668,8 +10667,6 @@ components:
     PublicAuthoritySnapshotInfoDoc:
       type: object
       properties:
-        authorityUrl:
-          $ref: '#/components/schemas/AuthorityCmsBlob'
         setsUrl:
           $ref: '#/components/schemas/PublicSetCollection'
         zonesUrl:

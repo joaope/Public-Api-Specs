@@ -10,6 +10,45 @@
     }
   ],
   "paths": {
+    "/feedback/attachFiles": {
+      "post": {
+        "tags": [
+          "EngagementFeedback"
+        ],
+        "summary": "/feedback/attachFiles - POST",
+        "operationId": "post-feedback-attachfiles",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "FeedbackId": {
+                    "type": "string"
+                  },
+                  "Files": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/feedback/reply/{feedbackId}": {
       "post": {
         "tags": [
