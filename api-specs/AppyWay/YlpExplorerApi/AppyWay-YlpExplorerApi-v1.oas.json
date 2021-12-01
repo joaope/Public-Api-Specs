@@ -527,6 +527,127 @@
         }
       }
     },
+    "/fetchEventDatesById": {
+      "post": {
+        "tags": [
+          "Parking"
+        ],
+        "summary": "Fetch event dates by id",
+        "description": "Searches for event dates with the supplied ID.",
+        "operationId": "post-fetcheventdatesbyid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchEventDatesByIdQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "startDate": "2020-01-20T00:00:00",
+                "endDate": "2020-01-20T00:00:00"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchEventDatesByIdQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "startDate": "2020-01-20T00:00:00",
+                "endDate": "2020-01-20T00:00:00"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchEventDatesByIdQuery"
+              },
+              "example": {
+                "entityId": "string",
+                "vehicleOperatorContext": {
+                  "vehicleTypeId": 0,
+                  "activityTypeId": 0,
+                  "fuelTypeId": 0,
+                  "permits": [
+                    {
+                      "permitTypeId": 0
+                    }
+                  ]
+                },
+                "startDate": "2020-01-20T00:00:00",
+                "endDate": "2020-01-20T00:00:00"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParkingEntityEventDatesResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entityId": "string",
+                    "entityType": 1,
+                    "entityETag": "string",
+                    "timeZoneId": "string",
+                    "eventDates": [
+                      "2020-01-20T00:00:00"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/fetchOperatingHoursById": {
       "post": {
         "tags": [
@@ -544,8 +665,10 @@
               "example": {
                 "entityId": "string",
                 "endDate": "2020-01-20T00:00:00",
+                "dates": [
+                  "2020-01-20T00:00:00"
+                ],
                 "includeNotApplicableOperatingHours": true,
-                "startDate": "2020-01-20T00:00:00",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -556,7 +679,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00"
+                "date": "2020-01-20T00:00:00",
+                "startDate": "2020-01-20T00:00:00"
               }
             },
             "text/json": {
@@ -566,8 +690,10 @@
               "example": {
                 "entityId": "string",
                 "endDate": "2020-01-20T00:00:00",
+                "dates": [
+                  "2020-01-20T00:00:00"
+                ],
                 "includeNotApplicableOperatingHours": true,
-                "startDate": "2020-01-20T00:00:00",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -578,7 +704,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00"
+                "date": "2020-01-20T00:00:00",
+                "startDate": "2020-01-20T00:00:00"
               }
             },
             "application/*+json": {
@@ -588,8 +715,10 @@
               "example": {
                 "entityId": "string",
                 "endDate": "2020-01-20T00:00:00",
+                "dates": [
+                  "2020-01-20T00:00:00"
+                ],
                 "includeNotApplicableOperatingHours": true,
-                "startDate": "2020-01-20T00:00:00",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -600,7 +729,8 @@
                     }
                   ]
                 },
-                "date": "2020-01-20T00:00:00"
+                "date": "2020-01-20T00:00:00",
+                "startDate": "2020-01-20T00:00:00"
               }
             }
           }
@@ -637,8 +767,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-30T00:00:00",
-                            "end": "2021-11-30T00:00:00",
+                            "start": "2021-12-01T00:00:00",
+                            "end": "2021-12-01T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -669,8 +799,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-30T00:00:00",
-                            "end": "2021-11-30T00:00:00",
+                            "start": "2021-12-01T00:00:00",
+                            "end": "2021-12-01T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -740,6 +870,9 @@
                 "date": "2020-01-20T00:00:00",
                 "startDate": "2020-01-20T00:00:00",
                 "endDate": "2020-01-20T00:00:00",
+                "dates": [
+                  "2020-01-20T00:00:00"
+                ],
                 "includeNotApplicableOperatingHours": true
               }
             },
@@ -764,6 +897,9 @@
                 "date": "2020-01-20T00:00:00",
                 "startDate": "2020-01-20T00:00:00",
                 "endDate": "2020-01-20T00:00:00",
+                "dates": [
+                  "2020-01-20T00:00:00"
+                ],
                 "includeNotApplicableOperatingHours": true
               }
             },
@@ -788,6 +924,9 @@
                 "date": "2020-01-20T00:00:00",
                 "startDate": "2020-01-20T00:00:00",
                 "endDate": "2020-01-20T00:00:00",
+                "dates": [
+                  "2020-01-20T00:00:00"
+                ],
                 "includeNotApplicableOperatingHours": true
               }
             }
@@ -825,8 +964,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-30T00:00:00",
-                            "end": "2021-11-30T00:00:00",
+                            "start": "2021-12-01T00:00:00",
+                            "end": "2021-12-01T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -857,8 +996,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-11-30T00:00:00",
-                            "end": "2021-11-30T00:00:00",
+                            "start": "2021-12-01T00:00:00",
+                            "end": "2021-12-01T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -1039,7 +1178,6 @@
                 "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
                 "entityId": "string",
                 "vehicleOperatorContext": {
@@ -1052,7 +1190,8 @@
                     }
                   ]
                 },
-                "duration": "3.17:25:30.5000000"
+                "duration": "3.17:25:30.5000000",
+                "endTime": "string"
               }
             },
             "text/json": {
@@ -1060,7 +1199,6 @@
                 "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
                 "entityId": "string",
                 "vehicleOperatorContext": {
@@ -1073,7 +1211,8 @@
                     }
                   ]
                 },
-                "duration": "3.17:25:30.5000000"
+                "duration": "3.17:25:30.5000000",
+                "endTime": "string"
               }
             },
             "application/*+json": {
@@ -1081,7 +1220,6 @@
                 "$ref": "#/components/schemas/FetchParkingQuoteByIdQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
                 "entityId": "string",
                 "vehicleOperatorContext": {
@@ -1094,7 +1232,8 @@
                     }
                   ]
                 },
-                "duration": "3.17:25:30.5000000"
+                "duration": "3.17:25:30.5000000",
+                "endTime": "string"
               }
             }
           }
@@ -1207,7 +1346,7 @@
               },
               "example": {
                 "startTime": "string",
-                "endTime": "string",
+                "duration": "3.17:25:30.5000000",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1218,10 +1357,10 @@
                     }
                   ]
                 },
-                "duration": "3.17:25:30.5000000",
                 "ids": [
                   "string"
-                ]
+                ],
+                "endTime": "string"
               }
             },
             "text/json": {
@@ -1230,7 +1369,7 @@
               },
               "example": {
                 "startTime": "string",
-                "endTime": "string",
+                "duration": "3.17:25:30.5000000",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1241,10 +1380,10 @@
                     }
                   ]
                 },
-                "duration": "3.17:25:30.5000000",
                 "ids": [
                   "string"
-                ]
+                ],
+                "endTime": "string"
               }
             },
             "application/*+json": {
@@ -1253,7 +1392,7 @@
               },
               "example": {
                 "startTime": "string",
-                "endTime": "string",
+                "duration": "3.17:25:30.5000000",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -1264,10 +1403,10 @@
                     }
                   ]
                 },
-                "duration": "3.17:25:30.5000000",
                 "ids": [
                   "string"
-                ]
+                ],
+                "endTime": "string"
               }
             }
           }
@@ -2182,17 +2321,6 @@
                   "lng": 0
                 },
                 "startTime": "string",
-                "endTime": "string",
-                "filters": {
-                  "excludeEntityTypes": [
-                    1
-                  ],
-                  "excludePaidParking": true,
-                  "excludeFreeParking": true,
-                  "excludeNoParking": true,
-                  "excludeTruncatedParking": true,
-                  "excludeCostGreaterThan": 0
-                },
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -2203,7 +2331,18 @@
                     }
                   ]
                 },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                },
                 "duration": "3.17:25:30.5000000",
+                "endTime": "string",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2221,17 +2360,6 @@
                   "lng": 0
                 },
                 "startTime": "string",
-                "endTime": "string",
-                "filters": {
-                  "excludeEntityTypes": [
-                    1
-                  ],
-                  "excludePaidParking": true,
-                  "excludeFreeParking": true,
-                  "excludeNoParking": true,
-                  "excludeTruncatedParking": true,
-                  "excludeCostGreaterThan": 0
-                },
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -2242,7 +2370,18 @@
                     }
                   ]
                 },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                },
                 "duration": "3.17:25:30.5000000",
+                "endTime": "string",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2260,17 +2399,6 @@
                   "lng": 0
                 },
                 "startTime": "string",
-                "endTime": "string",
-                "filters": {
-                  "excludeEntityTypes": [
-                    1
-                  ],
-                  "excludePaidParking": true,
-                  "excludeFreeParking": true,
-                  "excludeNoParking": true,
-                  "excludeTruncatedParking": true,
-                  "excludeCostGreaterThan": 0
-                },
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
                   "activityTypeId": 0,
@@ -2281,7 +2409,18 @@
                     }
                   ]
                 },
+                "filters": {
+                  "excludeEntityTypes": [
+                    1
+                  ],
+                  "excludePaidParking": true,
+                  "excludeFreeParking": true,
+                  "excludeNoParking": true,
+                  "excludeTruncatedParking": true,
+                  "excludeCostGreaterThan": 0
+                },
                 "duration": "3.17:25:30.5000000",
+                "endTime": "string",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
@@ -2427,7 +2566,6 @@
                     ]
                   ]
                 },
-                "endTime": "string",
                 "startTime": "string",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
@@ -2449,11 +2587,12 @@
                   "excludeTruncatedParking": true,
                   "excludeCostGreaterThan": 0
                 },
-                "duration": "3.17:25:30.5000000",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
-                }
+                },
+                "duration": "3.17:25:30.5000000",
+                "endTime": "string"
               }
             },
             "text/json": {
@@ -2477,7 +2616,6 @@
                     ]
                   ]
                 },
-                "endTime": "string",
                 "startTime": "string",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
@@ -2499,11 +2637,12 @@
                   "excludeTruncatedParking": true,
                   "excludeCostGreaterThan": 0
                 },
-                "duration": "3.17:25:30.5000000",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
-                }
+                },
+                "duration": "3.17:25:30.5000000",
+                "endTime": "string"
               }
             },
             "application/*+json": {
@@ -2527,7 +2666,6 @@
                     ]
                   ]
                 },
-                "endTime": "string",
                 "startTime": "string",
                 "vehicleOperatorContext": {
                   "vehicleTypeId": 0,
@@ -2549,11 +2687,12 @@
                   "excludeTruncatedParking": true,
                   "excludeCostGreaterThan": 0
                 },
-                "duration": "3.17:25:30.5000000",
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
-                }
+                },
+                "duration": "3.17:25:30.5000000",
+                "endTime": "string"
               }
             }
           }
@@ -2833,7 +2972,6 @@
                 "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
                 "viewport": {
                   "type": "string",
@@ -2851,11 +2989,12 @@
                     ]
                   ]
                 },
-                "includeNotApplicableTimes": true,
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
                 },
+                "includeNotApplicableTimes": true,
+                "endTime": "string",
                 "onStreetParkingTypeIds": [
                   1
                 ]
@@ -2866,7 +3005,6 @@
                 "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
                 "viewport": {
                   "type": "string",
@@ -2884,11 +3022,12 @@
                     ]
                   ]
                 },
-                "includeNotApplicableTimes": true,
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
                 },
+                "includeNotApplicableTimes": true,
+                "endTime": "string",
                 "onStreetParkingTypeIds": [
                   1
                 ]
@@ -2899,7 +3038,6 @@
                 "$ref": "#/components/schemas/FindZoneDefaultRulesByViewportQuery"
               },
               "example": {
-                "endTime": "string",
                 "startTime": "string",
                 "viewport": {
                   "type": "string",
@@ -2917,11 +3055,12 @@
                     ]
                   ]
                 },
-                "includeNotApplicableTimes": true,
                 "distanceCalculationLocation": {
                   "lat": 0,
                   "lng": 0
                 },
+                "includeNotApplicableTimes": true,
+                "endTime": "string",
                 "onStreetParkingTypeIds": [
                   1
                 ]
@@ -3439,6 +3578,30 @@
         "additionalProperties": false,
         "description": "Request allowing a client to fetch a list of entities"
       },
+      "FetchEventDatesByIdQuery": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "description": "Identifier of the Parking Entity to fetch",
+            "nullable": true
+          },
+          "vehicleOperatorContext": {
+            "$ref": "#/components/schemas/VehicleOperatorContext"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "Start date for which to retrieve the event dates provided in local format: YYYY-MM-DD (eg: 2021-01-01).",
+            "example": "2020-01-20T00:00:00"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "End date for which to retrieve the event dates provided in local format: YYYY-MM-DD (eg: 2021-01-03).",
+            "example": "2020-01-20T00:00:00"
+          }
+        },
+        "additionalProperties": false
+      },
       "FetchOperatingHoursByIdQuery": {
         "required": [
           "entityId"
@@ -3470,6 +3633,16 @@
             "description": "End date for which to retrieve the operating hours provided in local format: YYYY-MM-DD (eg: 2021-01-03).\r\nDate takes precedence if set.",
             "nullable": true,
             "example": "2020-01-20T00:00:00"
+          },
+          "dates": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "ISO-8601 date pattern",
+              "example": "2020-01-20T00:00:00"
+            },
+            "description": "Dates for which to retrieve the operating hours provided in local format: YYYY-MM-DD (eg: 2021-01-03).\r\nDate, StartDate and EndDate takes precedence if set.",
+            "nullable": true
           },
           "includeNotApplicableOperatingHours": {
             "type": "boolean",
@@ -3510,6 +3683,16 @@
             "nullable": true,
             "example": "2020-01-20T00:00:00"
           },
+          "dates": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "ISO-8601 date pattern",
+              "example": "2020-01-20T00:00:00"
+            },
+            "description": "Dates for which to retrieve the operating hours provided in local format: YYYY-MM-DD (eg: 2021-01-03).\r\nDate, StartDate and EndDate takes precedence if set.",
+            "nullable": true
+          },
           "includeNotApplicableOperatingHours": {
             "type": "boolean",
             "description": "Include all operation hours requirements for contexts that do not apply to the driver making the request."
@@ -3533,7 +3716,6 @@
       },
       "FetchParkingQuoteByIdQuery": {
         "required": [
-          "endTime",
           "entityId",
           "startTime"
         ],
@@ -3551,7 +3733,6 @@
             "format": "date-time"
           },
           "endTime": {
-            "minLength": 1,
             "type": "string",
             "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
@@ -3570,17 +3751,10 @@
       },
       "FetchParkingQuotesByIdsQuery": {
         "required": [
-          "endTime",
           "startTime"
         ],
         "type": "object",
         "properties": {
-          "endTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
-            "format": "date-time"
-          },
           "startTime": {
             "minLength": 1,
             "type": "string",
@@ -3594,6 +3768,11 @@
             },
             "description": "List of Ids of entities to fetch",
             "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
           },
           "duration": {
             "type": "string",
@@ -3873,7 +4052,6 @@
       },
       "FindParkingQuotesByCentreAndViewportSizeQuery": {
         "required": [
-          "endTime",
           "startTime",
           "viewportCenter",
           "viewportSize"
@@ -3885,19 +4063,6 @@
             "type": "string",
             "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
-          },
-          "endTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
-            "format": "date-time"
-          },
-          "viewportSize": {
-            "maximum": 1225,
-            "minLength": 1,
-            "type": "integer",
-            "description": "Length of one side of the square viewport in meters. Required.",
-            "format": "int32"
           },
           "viewportCenter": {
             "minLength": 1,
@@ -3917,11 +4082,17 @@
             "additionalProperties": false,
             "description": "Centre point for the query. Required."
           },
-          "duration": {
+          "viewportSize": {
+            "maximum": 1225,
+            "minLength": 1,
+            "type": "integer",
+            "description": "Length of one side of the square viewport in meters. Required.",
+            "format": "int32"
+          },
+          "endTime": {
             "type": "string",
-            "description": "Requested duration",
-            "readOnly": true,
-            "example": "3.17:25:30.5000000"
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
           },
           "distanceCalculationLocation": {
             "type": "object",
@@ -3940,11 +4111,17 @@
             "additionalProperties": false,
             "description": "Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated\r\nfrom the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport."
           },
-          "filters": {
-            "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
+          "duration": {
+            "type": "string",
+            "description": "Requested duration",
+            "readOnly": true,
+            "example": "3.17:25:30.5000000"
           },
           "vehicleOperatorContext": {
             "$ref": "#/components/schemas/VehicleOperatorContext"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/FindParkingQuotesByViewportFilters"
           }
         },
         "additionalProperties": false,
@@ -3993,7 +4170,6 @@
       },
       "FindParkingQuotesByViewportQuery": {
         "required": [
-          "endTime",
           "startTime",
           "viewport"
         ],
@@ -4003,12 +4179,6 @@
             "minLength": 1,
             "type": "string",
             "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
-            "format": "date-time"
-          },
-          "endTime": {
-            "minLength": 1,
-            "type": "string",
-            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
           },
           "viewport": {
@@ -4045,6 +4215,11 @@
             "description": "Requested duration",
             "readOnly": true,
             "example": "3.17:25:30.5000000"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
           },
           "distanceCalculationLocation": {
             "type": "object",
@@ -4115,7 +4290,6 @@
       },
       "FindZoneDefaultRulesByViewportQuery": {
         "required": [
-          "endTime",
           "startTime",
           "viewport"
         ],
@@ -4157,7 +4331,6 @@
             "format": "date-time"
           },
           "endTime": {
-            "minLength": 1,
             "type": "string",
             "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
             "format": "date-time"
@@ -4781,6 +4954,53 @@
         },
         "additionalProperties": false,
         "description": "Base class for Map Entities that support parking, either onstreet or car parks"
+      },
+      "ParkingEntityEventDatesResult": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "description": "Identifier of the parking entity",
+            "nullable": true
+          },
+          "entityType": {
+            "$ref": "#/components/schemas/MapEntityType"
+          },
+          "entityETag": {
+            "type": "string",
+            "description": "The Etag of the current latest version of the Parking Entity referred to by this result. This allows\r\nclients to determine if they have the latest version of the parking entity in their local cache and only\r\nrequest the entity if it is missing.",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "string",
+            "description": "Entity Timezone Id in IANA (TZDB) format (eg: Europe/London)",
+            "nullable": true
+          },
+          "eventDates": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "ISO-8601 date pattern",
+              "example": "2020-01-20T00:00:00"
+            },
+            "description": "List of event dates for this parking entity.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParkingEntityEventDatesResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ParkingEntityEventDatesResult"
+          }
+        },
+        "additionalProperties": false
       },
       "ParkingEntityOkResponse": {
         "type": "object",

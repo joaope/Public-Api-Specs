@@ -329,6 +329,85 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /fetchEventDatesById:
+    post:
+      tags:
+      - Parking
+      summary: Fetch event dates by id
+      description: Searches for event dates with the supplied ID.
+      operationId: post-fetcheventdatesbyid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchEventDatesByIdQuery'
+            example:
+              entityId: string
+              vehicleOperatorContext:
+                vehicleTypeId: 0
+                activityTypeId: 0
+                fuelTypeId: 0
+                permits:
+                - permitTypeId: 0
+              startDate: 2020-01-20T00:00:00.0000000
+              endDate: 2020-01-20T00:00:00.0000000
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchEventDatesByIdQuery'
+            example:
+              entityId: string
+              vehicleOperatorContext:
+                vehicleTypeId: 0
+                activityTypeId: 0
+                fuelTypeId: 0
+                permits:
+                - permitTypeId: 0
+              startDate: 2020-01-20T00:00:00.0000000
+              endDate: 2020-01-20T00:00:00.0000000
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchEventDatesByIdQuery'
+            example:
+              entityId: string
+              vehicleOperatorContext:
+                vehicleTypeId: 0
+                activityTypeId: 0
+                fuelTypeId: 0
+                permits:
+                - permitTypeId: 0
+              startDate: 2020-01-20T00:00:00.0000000
+              endDate: 2020-01-20T00:00:00.0000000
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParkingEntityEventDatesResultOkResponse'
+              example:
+                success: true
+                result:
+                  entityId: string
+                  entityType: 1
+                  entityETag: string
+                  timeZoneId: string
+                  eventDates:
+                  - 2020-01-20T00:00:00.0000000
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+              example:
+                success: true
+                message: string
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /fetchOperatingHoursById:
     post:
       tags:
@@ -344,8 +423,9 @@ paths:
             example:
               entityId: string
               endDate: 2020-01-20T00:00:00.0000000
+              dates:
+              - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
-              startDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
@@ -353,14 +433,16 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000
+              startDate: 2020-01-20T00:00:00.0000000
           text/json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
               endDate: 2020-01-20T00:00:00.0000000
+              dates:
+              - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
-              startDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
@@ -368,14 +450,16 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000
+              startDate: 2020-01-20T00:00:00.0000000
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
               endDate: 2020-01-20T00:00:00.0000000
+              dates:
+              - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
-              startDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
@@ -383,6 +467,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               date: 2020-01-20T00:00:00.0000000
+              startDate: 2020-01-20T00:00:00.0000000
       responses:
         "200":
           description: Success
@@ -407,8 +492,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-30T00:00:00.0000000
-                      end: 2021-11-30T00:00:00.0000000
+                    - start: 2021-12-01T00:00:00.0000000
+                      end: 2021-12-01T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -425,8 +510,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-30T00:00:00.0000000
-                      end: 2021-11-30T00:00:00.0000000
+                    - start: 2021-12-01T00:00:00.0000000
+                      end: 2021-12-01T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -469,6 +554,8 @@ paths:
               date: 2020-01-20T00:00:00.0000000
               startDate: 2020-01-20T00:00:00.0000000
               endDate: 2020-01-20T00:00:00.0000000
+              dates:
+              - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
           text/json:
             schema:
@@ -485,6 +572,8 @@ paths:
               date: 2020-01-20T00:00:00.0000000
               startDate: 2020-01-20T00:00:00.0000000
               endDate: 2020-01-20T00:00:00.0000000
+              dates:
+              - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
           application/*+json:
             schema:
@@ -501,6 +590,8 @@ paths:
               date: 2020-01-20T00:00:00.0000000
               startDate: 2020-01-20T00:00:00.0000000
               endDate: 2020-01-20T00:00:00.0000000
+              dates:
+              - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
       responses:
         "200":
@@ -526,8 +617,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-30T00:00:00.0000000
-                      end: 2021-11-30T00:00:00.0000000
+                    - start: 2021-12-01T00:00:00.0000000
+                      end: 2021-12-01T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -544,8 +635,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2021-11-30T00:00:00.0000000
-                      end: 2021-11-30T00:00:00.0000000
+                    - start: 2021-12-01T00:00:00.0000000
+                      end: 2021-12-01T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -662,7 +753,6 @@ paths:
             schema:
               $ref: '#/components/schemas/FetchParkingQuoteByIdQuery'
             example:
-              endTime: string
               startTime: string
               entityId: string
               vehicleOperatorContext:
@@ -672,11 +762,11 @@ paths:
                 permits:
                 - permitTypeId: 0
               duration: 3.17:25:30.5000000
+              endTime: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchParkingQuoteByIdQuery'
             example:
-              endTime: string
               startTime: string
               entityId: string
               vehicleOperatorContext:
@@ -686,11 +776,11 @@ paths:
                 permits:
                 - permitTypeId: 0
               duration: 3.17:25:30.5000000
+              endTime: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchParkingQuoteByIdQuery'
             example:
-              endTime: string
               startTime: string
               entityId: string
               vehicleOperatorContext:
@@ -700,6 +790,7 @@ paths:
                 permits:
                 - permitTypeId: 0
               duration: 3.17:25:30.5000000
+              endTime: string
       responses:
         "200":
           description: Success
@@ -775,46 +866,46 @@ paths:
               $ref: '#/components/schemas/FetchParkingQuotesByIdsQuery'
             example:
               startTime: string
-              endTime: string
+              duration: 3.17:25:30.5000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              duration: 3.17:25:30.5000000
               ids:
               - string
+              endTime: string
           text/json:
             schema:
               $ref: '#/components/schemas/FetchParkingQuotesByIdsQuery'
             example:
               startTime: string
-              endTime: string
+              duration: 3.17:25:30.5000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              duration: 3.17:25:30.5000000
               ids:
               - string
+              endTime: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchParkingQuotesByIdsQuery'
             example:
               startTime: string
-              endTime: string
+              duration: 3.17:25:30.5000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
                 fuelTypeId: 0
                 permits:
                 - permitTypeId: 0
-              duration: 3.17:25:30.5000000
               ids:
               - string
+              endTime: string
       responses:
         "200":
           description: Success
@@ -1397,7 +1488,12 @@ paths:
                 lat: 0
                 lng: 0
               startTime: string
-              endTime: string
+              vehicleOperatorContext:
+                vehicleTypeId: 0
+                activityTypeId: 0
+                fuelTypeId: 0
+                permits:
+                - permitTypeId: 0
               filters:
                 excludeEntityTypes:
                 - 1
@@ -1406,13 +1502,8 @@ paths:
                 excludeNoParking: true
                 excludeTruncatedParking: true
                 excludeCostGreaterThan: 0
-              vehicleOperatorContext:
-                vehicleTypeId: 0
-                activityTypeId: 0
-                fuelTypeId: 0
-                permits:
-                - permitTypeId: 0
               duration: 3.17:25:30.5000000
+              endTime: string
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
@@ -1425,7 +1516,12 @@ paths:
                 lat: 0
                 lng: 0
               startTime: string
-              endTime: string
+              vehicleOperatorContext:
+                vehicleTypeId: 0
+                activityTypeId: 0
+                fuelTypeId: 0
+                permits:
+                - permitTypeId: 0
               filters:
                 excludeEntityTypes:
                 - 1
@@ -1434,13 +1530,8 @@ paths:
                 excludeNoParking: true
                 excludeTruncatedParking: true
                 excludeCostGreaterThan: 0
-              vehicleOperatorContext:
-                vehicleTypeId: 0
-                activityTypeId: 0
-                fuelTypeId: 0
-                permits:
-                - permitTypeId: 0
               duration: 3.17:25:30.5000000
+              endTime: string
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
@@ -1453,7 +1544,12 @@ paths:
                 lat: 0
                 lng: 0
               startTime: string
-              endTime: string
+              vehicleOperatorContext:
+                vehicleTypeId: 0
+                activityTypeId: 0
+                fuelTypeId: 0
+                permits:
+                - permitTypeId: 0
               filters:
                 excludeEntityTypes:
                 - 1
@@ -1462,13 +1558,8 @@ paths:
                 excludeNoParking: true
                 excludeTruncatedParking: true
                 excludeCostGreaterThan: 0
-              vehicleOperatorContext:
-                vehicleTypeId: 0
-                activityTypeId: 0
-                fuelTypeId: 0
-                permits:
-                - permitTypeId: 0
               duration: 3.17:25:30.5000000
+              endTime: string
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
@@ -1562,7 +1653,6 @@ paths:
                     name: string
                 coordinates:
                 - - - 0
-              endTime: string
               startTime: string
               vehicleOperatorContext:
                 vehicleTypeId: 0
@@ -1578,10 +1668,11 @@ paths:
                 excludeNoParking: true
                 excludeTruncatedParking: true
                 excludeCostGreaterThan: 0
-              duration: 3.17:25:30.5000000
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
+              duration: 3.17:25:30.5000000
+              endTime: string
           text/json:
             schema:
               $ref: '#/components/schemas/FindParkingQuotesByViewportQuery'
@@ -1594,7 +1685,6 @@ paths:
                     name: string
                 coordinates:
                 - - - 0
-              endTime: string
               startTime: string
               vehicleOperatorContext:
                 vehicleTypeId: 0
@@ -1610,10 +1700,11 @@ paths:
                 excludeNoParking: true
                 excludeTruncatedParking: true
                 excludeCostGreaterThan: 0
-              duration: 3.17:25:30.5000000
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
+              duration: 3.17:25:30.5000000
+              endTime: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/FindParkingQuotesByViewportQuery'
@@ -1626,7 +1717,6 @@ paths:
                     name: string
                 coordinates:
                 - - - 0
-              endTime: string
               startTime: string
               vehicleOperatorContext:
                 vehicleTypeId: 0
@@ -1642,10 +1732,11 @@ paths:
                 excludeNoParking: true
                 excludeTruncatedParking: true
                 excludeCostGreaterThan: 0
-              duration: 3.17:25:30.5000000
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
+              duration: 3.17:25:30.5000000
+              endTime: string
       responses:
         "200":
           description: Success
@@ -1821,7 +1912,6 @@ paths:
             schema:
               $ref: '#/components/schemas/FindZoneDefaultRulesByViewportQuery'
             example:
-              endTime: string
               startTime: string
               viewport:
                 type: string
@@ -1831,17 +1921,17 @@ paths:
                     name: string
                 coordinates:
                 - - - 0
-              includeNotApplicableTimes: true
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
+              includeNotApplicableTimes: true
+              endTime: string
               onStreetParkingTypeIds:
               - 1
           text/json:
             schema:
               $ref: '#/components/schemas/FindZoneDefaultRulesByViewportQuery'
             example:
-              endTime: string
               startTime: string
               viewport:
                 type: string
@@ -1851,17 +1941,17 @@ paths:
                     name: string
                 coordinates:
                 - - - 0
-              includeNotApplicableTimes: true
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
+              includeNotApplicableTimes: true
+              endTime: string
               onStreetParkingTypeIds:
               - 1
           application/*+json:
             schema:
               $ref: '#/components/schemas/FindZoneDefaultRulesByViewportQuery'
             example:
-              endTime: string
               startTime: string
               viewport:
                 type: string
@@ -1871,10 +1961,11 @@ paths:
                     name: string
                 coordinates:
                 - - - 0
-              includeNotApplicableTimes: true
               distanceCalculationLocation:
                 lat: 0
                 lng: 0
+              includeNotApplicableTimes: true
+              endTime: string
               onStreetParkingTypeIds:
               - 1
       responses:
@@ -2251,6 +2342,24 @@ components:
           $ref: '#/components/schemas/GeometryPreference'
       additionalProperties: false
       description: Request allowing a client to fetch a list of entities
+    FetchEventDatesByIdQuery:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Identifier of the Parking Entity to fetch
+          nullable: true
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+        startDate:
+          type: string
+          description: 'Start date for which to retrieve the event dates provided in local format: YYYY-MM-DD (eg: 2021-01-01).'
+          example: 2020-01-20T00:00:00.0000000
+        endDate:
+          type: string
+          description: 'End date for which to retrieve the event dates provided in local format: YYYY-MM-DD (eg: 2021-01-03).'
+          example: 2020-01-20T00:00:00.0000000
+      additionalProperties: false
     FetchOperatingHoursByIdQuery:
       required:
       - entityId
@@ -2281,6 +2390,16 @@ components:
             Date takes precedence if set.
           nullable: true
           example: 2020-01-20T00:00:00.0000000
+        dates:
+          type: array
+          items:
+            type: string
+            description: ISO-8601 date pattern
+            example: 2020-01-20T00:00:00.0000000
+          description: |-
+            Dates for which to retrieve the operating hours provided in local format: YYYY-MM-DD (eg: 2021-01-03).
+            Date, StartDate and EndDate takes precedence if set.
+          nullable: true
         includeNotApplicableOperatingHours:
           type: boolean
           description: Include all operation hours requirements for contexts that do not apply to the driver making the request.
@@ -2315,6 +2434,16 @@ components:
             Date takes precedence if set.
           nullable: true
           example: 2020-01-20T00:00:00.0000000
+        dates:
+          type: array
+          items:
+            type: string
+            description: ISO-8601 date pattern
+            example: 2020-01-20T00:00:00.0000000
+          description: |-
+            Dates for which to retrieve the operating hours provided in local format: YYYY-MM-DD (eg: 2021-01-03).
+            Date, StartDate and EndDate takes precedence if set.
+          nullable: true
         includeNotApplicableOperatingHours:
           type: boolean
           description: Include all operation hours requirements for contexts that do not apply to the driver making the request.
@@ -2331,7 +2460,6 @@ components:
       additionalProperties: false
     FetchParkingQuoteByIdQuery:
       required:
-      - endTime
       - entityId
       - startTime
       type: object
@@ -2348,7 +2476,6 @@ components:
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
         endTime:
-          minLength: 1
           type: string
           description: |-
             End of the window for which to retrieve state. Required.
@@ -2364,17 +2491,9 @@ components:
       additionalProperties: false
     FetchParkingQuotesByIdsQuery:
       required:
-      - endTime
       - startTime
       type: object
       properties:
-        endTime:
-          minLength: 1
-          type: string
-          description: |-
-            End of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
         startTime:
           minLength: 1
           type: string
@@ -2388,6 +2507,12 @@ components:
             type: string
           description: List of Ids of entities to fetch
           nullable: true
+        endTime:
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
         duration:
           type: string
           description: Requested duration
@@ -2651,7 +2776,6 @@ components:
       description: Models a single result from a Search Parking Entities by Viewport call
     FindParkingQuotesByCentreAndViewportSizeQuery:
       required:
-      - endTime
       - startTime
       - viewportCenter
       - viewportSize
@@ -2664,19 +2788,6 @@ components:
             Start of the window for which to retrieve state. Required.
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
-        endTime:
-          minLength: 1
-          type: string
-          description: |-
-            End of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        viewportSize:
-          maximum: 1225
-          minLength: 1
-          type: integer
-          description: Length of one side of the square viewport in meters. Required.
-          format: int32
         viewportCenter:
           minLength: 1
           type: object
@@ -2691,11 +2802,18 @@ components:
               format: double
           additionalProperties: false
           description: Centre point for the query. Required.
-        duration:
+        viewportSize:
+          maximum: 1225
+          minLength: 1
+          type: integer
+          description: Length of one side of the square viewport in meters. Required.
+          format: int32
+        endTime:
           type: string
-          description: Requested duration
-          readOnly: true
-          example: 3.17:25:30.5000000
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
         distanceCalculationLocation:
           type: object
           properties:
@@ -2711,10 +2829,15 @@ components:
           description: |-
             Custom location within the viewport from which to calculate distances for returned results. Optional. If omitted, distances will be calculated
             from the centre of the viewport. This field is useful if you want to display or order results by distance from a given point that is not the centre of your requested viewport.
-        filters:
-          $ref: '#/components/schemas/FindParkingQuotesByViewportFilters'
+        duration:
+          type: string
+          description: Requested duration
+          readOnly: true
+          example: 3.17:25:30.5000000
         vehicleOperatorContext:
           $ref: '#/components/schemas/VehicleOperatorContext'
+        filters:
+          $ref: '#/components/schemas/FindParkingQuotesByViewportFilters'
       additionalProperties: false
       description: |-
         Request for searching for Parking Quotes for a square viewport. The viewport is defined by the latitude and longitude of
@@ -2762,7 +2885,6 @@ components:
       description: Filters that a caller can apply to limit the results returned when searching for parking by viewport
     FindParkingQuotesByViewportQuery:
       required:
-      - endTime
       - startTime
       - viewport
       type: object
@@ -2772,13 +2894,6 @@ components:
           type: string
           description: |-
             Start of the window for which to retrieve state. Required.
-            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-          format: date-time
-        endTime:
-          minLength: 1
-          type: string
-          description: |-
-            End of the window for which to retrieve state. Required.
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
         viewport:
@@ -2807,6 +2922,12 @@ components:
           description: Requested duration
           readOnly: true
           example: 3.17:25:30.5000000
+        endTime:
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
         distanceCalculationLocation:
           type: object
           properties:
@@ -2858,7 +2979,6 @@ components:
       additionalProperties: false
     FindZoneDefaultRulesByViewportQuery:
       required:
-      - endTime
       - startTime
       - viewport
       type: object
@@ -2892,7 +3012,6 @@ components:
             Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
           format: date-time
         endTime:
-          minLength: 1
           type: string
           description: |-
             End of the window for which to retrieve state. Required.
@@ -3496,6 +3615,44 @@ components:
           nullable: true
       additionalProperties: false
       description: Base class for Map Entities that support parking, either onstreet or car parks
+    ParkingEntityEventDatesResult:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Identifier of the parking entity
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/MapEntityType'
+        entityETag:
+          type: string
+          description: |-
+            The Etag of the current latest version of the Parking Entity referred to by this result. This allows
+            clients to determine if they have the latest version of the parking entity in their local cache and only
+            request the entity if it is missing.
+          nullable: true
+        timeZoneId:
+          type: string
+          description: 'Entity Timezone Id in IANA (TZDB) format (eg: Europe/London)'
+          nullable: true
+        eventDates:
+          type: array
+          items:
+            type: string
+            description: ISO-8601 date pattern
+            example: 2020-01-20T00:00:00.0000000
+          description: List of event dates for this parking entity.
+          nullable: true
+      additionalProperties: false
+    ParkingEntityEventDatesResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/ParkingEntityEventDatesResult'
+      additionalProperties: false
     ParkingEntityOkResponse:
       type: object
       properties:
