@@ -767,8 +767,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-12-13T00:00:00",
-                            "end": "2021-12-13T00:00:00",
+                            "start": "2021-12-14T00:00:00",
+                            "end": "2021-12-14T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -799,8 +799,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-12-13T00:00:00",
-                            "end": "2021-12-13T00:00:00",
+                            "start": "2021-12-14T00:00:00",
+                            "end": "2021-12-14T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -964,8 +964,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-12-13T00:00:00",
-                            "end": "2021-12-13T00:00:00",
+                            "start": "2021-12-14T00:00:00",
+                            "end": "2021-12-14T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -996,8 +996,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2021-12-13T00:00:00",
-                            "end": "2021-12-13T00:00:00",
+                            "start": "2021-12-14T00:00:00",
+                            "end": "2021-12-14T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -1585,7 +1585,7 @@
         "tags": [
           "Zones"
         ],
-        "summary": "Fetch a zone By ID",
+        "summary": "Fetch a zone by ID",
         "description": "Returns a specific zone by its ID",
         "operationId": "post-fetchzonebyid",
         "requestBody": {
@@ -1689,12 +1689,136 @@
         }
       }
     },
+    "/fetchZoneDefaultRulesById": {
+      "post": {
+        "tags": [
+          "Zones"
+        ],
+        "summary": "Fetch zone default rules by id",
+        "description": "Returns default rules for parking entities by zone ID.",
+        "operationId": "post-fetchzonedefaultrulesbyid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchZoneDefaultRulesByIdQuery"
+              },
+              "example": {
+                "startTime": "string",
+                "id": "string",
+                "includeNotApplicableTimes": true,
+                "onStreetParkingTypeIds": [
+                  1
+                ],
+                "endTime": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchZoneDefaultRulesByIdQuery"
+              },
+              "example": {
+                "startTime": "string",
+                "id": "string",
+                "includeNotApplicableTimes": true,
+                "onStreetParkingTypeIds": [
+                  1
+                ],
+                "endTime": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchZoneDefaultRulesByIdQuery"
+              },
+              "example": {
+                "startTime": "string",
+                "id": "string",
+                "includeNotApplicableTimes": true,
+                "onStreetParkingTypeIds": [
+                  1
+                ],
+                "endTime": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneDefaultRulesResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "entityId": "string",
+                    "entityETag": "string",
+                    "defaults": [
+                      {
+                        "onStreetParkingTypeId": 1,
+                        "specialRestrictionTypeId": 0,
+                        "applicableTimes": [
+                          {
+                            "startTime": "string",
+                            "endTime": "string",
+                            "maxStay": 0
+                          }
+                        ],
+                        "notApplicableTimes": [
+                          {
+                            "startTime": "string",
+                            "endTime": "string"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/findAuthorityIdsByViewport": {
       "post": {
         "tags": [
           "Authorities"
         ],
-        "summary": "Find Authority Ids by viewport",
+        "summary": "Find authority ids by viewport",
         "description": "Returns the Ids of authorities that are at least partially within the specified GeoJson viewport.",
         "operationId": "post-findauthorityidsbyviewport",
         "requestBody": {
@@ -2051,7 +2175,7 @@
         "tags": [
           "Parking"
         ],
-        "summary": "Find Parking entities by viewport",
+        "summary": "Find parking entities by viewport",
         "description": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of all the parking entities within the bounds of that polygon, along with their distance from the DistanceCalculationLocation if supplied,\r\nor the viewport centre if not. Entities are ordered by this distance.",
         "operationId": "post-findparkingentitiesbyviewport",
         "requestBody": {
@@ -2540,7 +2664,7 @@
         "tags": [
           "Parking"
         ],
-        "summary": "Find Parking quotes by viewport",
+        "summary": "Find parking quotes by viewport",
         "description": "This query creates a custom viewport from the supplied GeoJson polygon.\r\nIt then returns a list of search results for all parking entities within the bounds of that polygon.\r\nResults are ordered by proximity to the DistanceCalculationLocation if supplied, or the viewport centre if not.\r\n            \r\nEach result indicates whether parking is allowed at that location. If parking is allowed for all or part of the requested window, \r\nthe result contains a list of quotes containing information such as price, payment methods, maximum stay and no return policy.",
         "operationId": "post-findparkingquotesbyviewport",
         "requestBody": {
@@ -2808,7 +2932,7 @@
         "tags": [
           "Suggestions"
         ],
-        "summary": "Find suggestions by Viewport",
+        "summary": "Find suggestions by viewport",
         "description": "Returns information about areas not covered by parking entities. The results are indicative of the probability whether you can or cannot park in that area.\r\nAttention must be paid to the on street signage",
         "operationId": "post-findsuggestionsbyviewport",
         "requestBody": {
@@ -2962,7 +3086,7 @@
         "tags": [
           "Zones"
         ],
-        "summary": "Find Zone Default Rules by Viewport",
+        "summary": "Find zone default rules by viewport",
         "description": "Returns default rules for parking entities for zones that are at least partially within the specified GeoJson viewport.",
         "operationId": "post-findzonedefaultrulesbyviewport",
         "requestBody": {
@@ -3809,6 +3933,44 @@
             "minLength": 1,
             "type": "string",
             "description": "Identifier of the Zone to fetch"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchZoneDefaultRulesByIdQuery": {
+        "required": [
+          "id",
+          "startTime"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Identifier of the Zone to fetch"
+          },
+          "startTime": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Start of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "End of the window for which to retrieve state. Required.\r\nDates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)",
+            "format": "date-time"
+          },
+          "onStreetParkingTypeIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnStreetParkingType"
+            },
+            "description": "On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types\r\nin the zone for which they are defined.\n\n*StandardBay (1) - Standard bay (paid or free)\r\n*DisabledBay (2) - A bay requiring a disabled badge / permit during restricted hours\r\n*MotorcycleBay (3) - Designated motorcycle bay\r\n*ElectricBay (4) - A bay designated for electric vehicles only\r\n*CarClubBay (5) - A bay designated for Car Club members only during restricted hours\r\n*CoachBay (6) - A bay with space for a coach\r\n*LoadingBay (7) - A bay that allows Loading Only during restricted hours\r\n*TaxiBay (8) - Taxi bay\r\n*ResidentBay (9) - A bay designated for resident permit holders during restricted hours\r\n*SpecialBay (10) - A bay with special restrictions, e.g. RNLI, High Court or Ambulance bays\r\n*SingleYellowLine (11) - Single yellow line\r\n*DoubleYellowLine (12) - Double yellow line\r\n*SingleRedLine (13) - Single red line\r\n*DoubleRedLine (14) - Double red line\r\n*SingleYellowKerbMark (15) - Single yellow kerb marks\r\n*DoubleYellowKerbMark (16) - Double yellow kerb marks\r\n*KeepClearLine (17) - Keep Clear lines\r\n*DroppedKerbDriveway (18) - A dropped kerb driveway\r\n*None (-1) - Standard bay (paid or free)\r\n",
+            "nullable": true
+          },
+          "includeNotApplicableTimes": {
+            "type": "boolean",
+            "description": "Include all the time windows for which the zone defaults not applies and intersect with the requested period."
           }
         },
         "additionalProperties": false
@@ -5645,6 +5807,43 @@
         },
         "additionalProperties": false,
         "description": "Represents a window of time during which a zone default do not applies."
+      },
+      "ZoneDefaultRulesResult": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "description": "Entity ID of the zone referred to by this result",
+            "nullable": true
+          },
+          "entityETag": {
+            "type": "string",
+            "description": "The Etag of the current latest version of the Zone referred to by this result. This allows\r\nclients to determine if they have the latest version of the zone in their local cache and only\r\nrequest the entity if it is missing.",
+            "nullable": true
+          },
+          "defaults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZoneDefault"
+            },
+            "description": "List of defaults for this zone",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZoneDefaultRulesResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/ZoneDefaultRulesResult"
+          }
+        },
+        "additionalProperties": false
       },
       "ZoneOkResponse": {
         "type": "object",
