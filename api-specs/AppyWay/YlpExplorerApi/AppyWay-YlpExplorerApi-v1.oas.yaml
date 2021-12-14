@@ -2407,6 +2407,7 @@ components:
           type: array
           items:
             type: string
+          description: List of Ids of entities to fetch capabilities for
           nullable: true
       additionalProperties: false
     FetchEntitiesByIdsQuery:
@@ -2609,6 +2610,7 @@ components:
         entityId:
           minLength: 1
           type: string
+          description: Identifier of the Parking Entity to fetch Payment Providers
       additionalProperties: false
     FetchZoneByIdQuery:
       required:
@@ -3083,7 +3085,7 @@ components:
         filters:
           $ref: '#/components/schemas/FindParkingQuotesByViewportFilters'
       additionalProperties: false
-      description: Request for searching for Parking Quotes for a given viewport.  The viewport is supplied as a GeoJson polygon.
+      description: Request for searching for Parking Quotes for a given viewport. The viewport is supplied as a GeoJson polygon.
     FindSuggestionsByViewportQuery:
       required:
       - viewport
@@ -3109,9 +3111,11 @@ components:
                     format: double
               nullable: true
           additionalProperties: false
+          description: Viewport for the query, expressed as a GeoJson polygon. Required.
         basemap:
           $ref: '#/components/schemas/BasemapTranslation'
       additionalProperties: false
+      description: Request for searching information about areas not covered by parking entities for a given viewport. The viewport is supplied as a GeoJson polygon.
     FindZoneDefaultRulesByViewportQuery:
       required:
       - startTime

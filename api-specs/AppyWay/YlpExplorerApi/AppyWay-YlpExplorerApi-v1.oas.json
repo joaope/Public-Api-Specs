@@ -3679,6 +3679,7 @@
             "items": {
               "type": "string"
             },
+            "description": "List of Ids of entities to fetch capabilities for",
             "nullable": true
           }
         },
@@ -3918,7 +3919,8 @@
         "properties": {
           "entityId": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of the Parking Entity to fetch Payment Providers"
           }
         },
         "additionalProperties": false
@@ -4408,7 +4410,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Request for searching for Parking Quotes for a given viewport.  The viewport is supplied as a GeoJson polygon."
+        "description": "Request for searching for Parking Quotes for a given viewport. The viewport is supplied as a GeoJson polygon."
       },
       "FindSuggestionsByViewportQuery": {
         "required": [
@@ -4442,13 +4444,15 @@
                 "nullable": true
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "description": "Viewport for the query, expressed as a GeoJson polygon. Required."
           },
           "basemap": {
             "$ref": "#/components/schemas/BasemapTranslation"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Request for searching information about areas not covered by parking entities for a given viewport. The viewport is supplied as a GeoJson polygon."
       },
       "FindZoneDefaultRulesByViewportQuery": {
         "required": [
