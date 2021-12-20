@@ -2233,6 +2233,70 @@
         }
       }
     },
+    "/exportApiKeys": {
+      "get": {
+        "tags": [
+          "ApiKey"
+        ],
+        "summary": "/exportApiKeys - GET",
+        "operationId": "get-exportapikeys",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "example": "string"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/exportUsers": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "/exportUsers - GET",
+        "operationId": "get-exportusers",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "example": "string"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/fetchAllApiKeys": {
       "post": {
         "tags": [
