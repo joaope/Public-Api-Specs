@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Ylp.Acl.NWave.Api, Version=2.14.1.0, Culture=neutral, PublicKeyToken=null",
+    "title": "NWave Acl API",
     "version": "1.0"
   },
   "servers": [
@@ -496,7 +496,8 @@
                       "sensorId": "string",
                       "sensorType": 0,
                       "entityId": "string",
-                      "entityType": 1
+                      "entityType": 1,
+                      "networkId": "string"
                     }
                   ]
                 }
@@ -1372,6 +1373,10 @@
           },
           "entityType": {
             "$ref": "#/components/schemas/EntityType"
+          },
+          "networkId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -2305,7 +2305,8 @@
           "changeSetIds": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             },
             "nullable": true
           },
@@ -2425,6 +2426,7 @@
           },
           "orderId": {
             "type": "string",
+            "format": "uuid",
             "nullable": true
           }
         },
@@ -2475,7 +2477,8 @@
           "authorityIds": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             },
             "nullable": true
           },
@@ -2501,7 +2504,7 @@
           },
           "authorityId": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           },
           "orderName": {
             "type": "string",

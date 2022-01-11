@@ -1529,6 +1529,7 @@ components:
           type: array
           items:
             type: string
+            format: uuid
           nullable: true
         dateOverride:
           type: string
@@ -1616,6 +1617,7 @@ components:
           nullable: true
         orderId:
           type: string
+          format: uuid
           nullable: true
       additionalProperties: false
     CalculateCoverage:
@@ -1654,6 +1656,7 @@ components:
           type: array
           items:
             type: string
+            format: uuid
           nullable: true
         user:
           type: string
@@ -1672,7 +1675,7 @@ components:
           readOnly: true
         authorityId:
           type: string
-          nullable: true
+          format: uuid
         orderName:
           type: string
           nullable: true
