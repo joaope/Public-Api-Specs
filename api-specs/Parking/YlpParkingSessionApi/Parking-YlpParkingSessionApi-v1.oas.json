@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Ylp.ParkingSession.Api, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null",
+    "title": "Parking Session API",
     "version": "1.0"
   },
   "servers": [
@@ -30,6 +30,8 @@
                 "entityIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
@@ -48,6 +50,8 @@
                 "entityIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
@@ -66,6 +70,8 @@
                 "entityIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
@@ -84,6 +90,8 @@
                 "entityIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
@@ -919,6 +927,8 @@
               },
               "example": {
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
                 "parkingAssetId": "string",
@@ -939,6 +949,8 @@
               },
               "example": {
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
                 "parkingAssetId": "string",
@@ -959,6 +971,8 @@
               },
               "example": {
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
                 "parkingAssetId": "string",
@@ -979,6 +993,8 @@
               },
               "example": {
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "startTime": "string",
                 "duration": "3.17:25:30.5000000",
                 "parkingAssetId": "string",
@@ -2311,6 +2327,12 @@
             "type": "string",
             "nullable": true
           },
+          "vehicleType": {
+            "$ref": "#/components/schemas/VehicleType"
+          },
+          "fuelType": {
+            "$ref": "#/components/schemas/VehicleFuelType"
+          },
           "paymentMethodId": {
             "type": "string",
             "nullable": true
@@ -2538,6 +2560,12 @@
           "vehicleRegistrationMark": {
             "type": "string",
             "nullable": true
+          },
+          "vehicleType": {
+            "$ref": "#/components/schemas/VehicleType"
+          },
+          "fuelType": {
+            "$ref": "#/components/schemas/VehicleFuelType"
           },
           "startTime": {
             "type": "string",

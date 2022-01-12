@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Ylp.ParkingSession.Api, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+  title: Parking Session API
   version: "1.0"
 servers:
 - url: https://api.appyway.com/parking/v1/sessions
@@ -23,6 +23,8 @@ paths:
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               startTime: string
               duration: 3.17:25:30.5000000
@@ -38,6 +40,8 @@ paths:
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               startTime: string
               duration: 3.17:25:30.5000000
@@ -53,6 +57,8 @@ paths:
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               startTime: string
               duration: 3.17:25:30.5000000
@@ -68,6 +74,8 @@ paths:
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               startTime: string
               duration: 3.17:25:30.5000000
@@ -625,6 +633,8 @@ paths:
               $ref: '#/components/schemas/FetchCostQuery'
             example:
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
               parkingAssetId: string
@@ -639,6 +649,8 @@ paths:
               $ref: '#/components/schemas/FetchCostQuery'
             example:
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
               parkingAssetId: string
@@ -653,6 +665,8 @@ paths:
               $ref: '#/components/schemas/FetchCostQuery'
             example:
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
               parkingAssetId: string
@@ -667,6 +681,8 @@ paths:
               $ref: '#/components/schemas/FetchCostQuery'
             example:
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
               parkingAssetId: string
@@ -1584,6 +1600,10 @@ components:
         vehicleRegistrationMark:
           type: string
           nullable: true
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+        fuelType:
+          $ref: '#/components/schemas/VehicleFuelType'
         paymentMethodId:
           type: string
           nullable: true
@@ -1753,6 +1773,10 @@ components:
         vehicleRegistrationMark:
           type: string
           nullable: true
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+        fuelType:
+          $ref: '#/components/schemas/VehicleFuelType'
         startTime:
           type: string
           format: date-time
