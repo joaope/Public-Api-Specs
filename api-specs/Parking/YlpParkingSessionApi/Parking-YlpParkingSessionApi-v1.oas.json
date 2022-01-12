@@ -169,6 +169,8 @@
                 "parkingIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "sourceSystem": "string",
                 "externalReferenceId": "string",
@@ -187,6 +189,8 @@
                 "parkingIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "sourceSystem": "string",
                 "externalReferenceId": "string",
@@ -205,6 +209,8 @@
                 "parkingIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "sourceSystem": "string",
                 "externalReferenceId": "string",
@@ -223,6 +229,8 @@
                 "parkingIndex": "string",
                 "userId": "string",
                 "vehicleRegistrationMark": "string",
+                "vehicleType": 1,
+                "fuelType": 0,
                 "paymentMethodId": "string",
                 "sourceSystem": "string",
                 "externalReferenceId": "string",
@@ -2386,6 +2394,12 @@
           "vehicleRegistrationMark": {
             "type": "string",
             "nullable": true
+          },
+          "vehicleType": {
+            "$ref": "#/components/schemas/VehicleType"
+          },
+          "fuelType": {
+            "$ref": "#/components/schemas/VehicleFuelType"
           },
           "paymentMethodId": {
             "type": "string",

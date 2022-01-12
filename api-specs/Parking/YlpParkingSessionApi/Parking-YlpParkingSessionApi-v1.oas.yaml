@@ -128,6 +128,8 @@ paths:
               parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               sourceSystem: string
               externalReferenceId: string
@@ -143,6 +145,8 @@ paths:
               parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               sourceSystem: string
               externalReferenceId: string
@@ -158,6 +162,8 @@ paths:
               parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               sourceSystem: string
               externalReferenceId: string
@@ -173,6 +179,8 @@ paths:
               parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
+              vehicleType: 1
+              fuelType: 0
               paymentMethodId: string
               sourceSystem: string
               externalReferenceId: string
@@ -1645,6 +1653,10 @@ components:
         vehicleRegistrationMark:
           type: string
           nullable: true
+        vehicleType:
+          $ref: '#/components/schemas/VehicleType'
+        fuelType:
+          $ref: '#/components/schemas/VehicleFuelType'
         paymentMethodId:
           type: string
           nullable: true
