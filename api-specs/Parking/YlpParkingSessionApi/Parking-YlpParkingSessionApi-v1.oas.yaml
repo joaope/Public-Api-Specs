@@ -17,9 +17,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
-              parkingIndex: string
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
@@ -34,9 +32,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
-              parkingIndex: string
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
@@ -51,9 +47,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
-              parkingIndex: string
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
@@ -68,9 +62,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
-              parkingIndex: string
               entityIndex: string
               userId: string
               vehicleRegistrationMark: string
@@ -122,10 +114,8 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginScheduledParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
               entityIndex: string
-              parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
               vehicleType: 1
@@ -139,10 +129,8 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginScheduledParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
               entityIndex: string
-              parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
               vehicleType: 1
@@ -156,10 +144,8 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginScheduledParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
               entityIndex: string
-              parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
               vehicleType: 1
@@ -173,10 +159,8 @@ paths:
             schema:
               $ref: '#/components/schemas/BeginScheduledParkingSessionCommand'
             example:
-              parkingAssetId: string
               entityId: string
               entityIndex: string
-              parkingIndex: string
               userId: string
               vehicleRegistrationMark: string
               vehicleType: 1
@@ -645,8 +629,6 @@ paths:
               fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
-              parkingAssetId: string
-              parkingAssetIndex: string
               entityId: string
               entityIndex: string
               lastParkingSessionLocations:
@@ -661,8 +643,6 @@ paths:
               fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
-              parkingAssetId: string
-              parkingAssetIndex: string
               entityId: string
               entityIndex: string
               lastParkingSessionLocations:
@@ -677,8 +657,6 @@ paths:
               fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
-              parkingAssetId: string
-              parkingAssetIndex: string
               entityId: string
               entityIndex: string
               lastParkingSessionLocations:
@@ -693,8 +671,6 @@ paths:
               fuelType: 0
               startTime: string
               duration: 3.17:25:30.5000000
-              parkingAssetId: string
-              parkingAssetIndex: string
               entityId: string
               entityIndex: string
               lastParkingSessionLocations:
@@ -922,9 +898,6 @@ paths:
                   entityId: string
                   entityType: 1
                   entityIndex: string
-                  parkingAssetId: string
-                  parkingAssetType: 1
-                  parkingAssetIndex: string
                   locationNumber: string
                   restrictionType: string
                   city: string
@@ -1024,9 +997,6 @@ paths:
                   entityId: string
                   entityType: 1
                   entityIndex: string
-                  parkingAssetId: string
-                  parkingAssetType: 1
-                  parkingAssetIndex: string
                   locationNumber: string
                   restrictionType: string
                   city: string
@@ -1277,7 +1247,6 @@ paths:
               wasValidUntil: string
               startedAfter: string
               sourceSystem: string
-              parkingAssetId: string
               entityId: string
           application/json:
             schema:
@@ -1295,7 +1264,6 @@ paths:
               wasValidUntil: string
               startedAfter: string
               sourceSystem: string
-              parkingAssetId: string
               entityId: string
           text/json:
             schema:
@@ -1313,7 +1281,6 @@ paths:
               wasValidUntil: string
               startedAfter: string
               sourceSystem: string
-              parkingAssetId: string
               entityId: string
           application/*+json:
             schema:
@@ -1331,7 +1298,6 @@ paths:
               wasValidUntil: string
               startedAfter: string
               sourceSystem: string
-              parkingAssetId: string
               entityId: string
       responses:
         "200":
@@ -1360,9 +1326,6 @@ paths:
                     entityId: string
                     entityType: 1
                     entityIndex: string
-                    parkingAssetId: string
-                    parkingAssetType: 1
-                    parkingAssetIndex: string
                     locationNumber: string
                     restrictionType: string
                     city: string
@@ -1588,17 +1551,9 @@ components:
     BeginParkingSessionCommand:
       type: object
       properties:
-        parkingAssetId:
-          type: string
-          nullable: true
-          deprecated: true
         entityId:
           type: string
           nullable: true
-        parkingIndex:
-          type: string
-          nullable: true
-          deprecated: true
         entityIndex:
           type: string
           nullable: true
@@ -1633,20 +1588,12 @@ components:
     BeginScheduledParkingSessionCommand:
       type: object
       properties:
-        parkingAssetId:
-          type: string
-          nullable: true
-          deprecated: true
         entityId:
           type: string
           nullable: true
         entityIndex:
           type: string
           nullable: true
-        parkingIndex:
-          type: string
-          nullable: true
-          deprecated: true
         userId:
           type: string
           nullable: true
@@ -1796,14 +1743,6 @@ components:
           type: string
           description: Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]
           example: 3.17:25:30.5000000
-        parkingAssetId:
-          type: string
-          nullable: true
-          deprecated: true
-        parkingAssetIndex:
-          type: string
-          nullable: true
-          deprecated: true
         entityId:
           type: string
           nullable: true
@@ -1968,10 +1907,6 @@ components:
         sourceSystem:
           type: string
           nullable: true
-        parkingAssetId:
-          type: string
-          nullable: true
-          deprecated: true
         entityId:
           type: string
           nullable: true
@@ -2108,16 +2043,6 @@ components:
         entityIndex:
           type: string
           nullable: true
-        parkingAssetId:
-          type: string
-          nullable: true
-          deprecated: true
-        parkingAssetType:
-          $ref: '#/components/schemas/EntityType'
-        parkingAssetIndex:
-          type: string
-          nullable: true
-          deprecated: true
         locationNumber:
           type: string
           nullable: true
