@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Occupancy Authentication API",
+    "title": "Occupancy Registration API",
     "version": "1.0"
   },
   "servers": [
@@ -62,7 +62,38 @@
         },
         "responses": {
           "202": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -113,7 +144,38 @@
         },
         "responses": {
           "202": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -170,7 +232,38 @@
         },
         "responses": {
           "202": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -187,7 +280,7 @@
     "/commands/registerAutomaticOccupancy": {
       "post": {
         "tags": [
-          "Commands"
+          "Occupancy"
         ],
         "summary": "/commands/registerAutomaticOccupancy - POST",
         "operationId": "post-commands-registerautomaticoccupancy",
@@ -230,7 +323,38 @@
         },
         "responses": {
           "202": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -299,7 +423,38 @@
         },
         "responses": {
           "202": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -313,26 +468,26 @@
         }
       }
     },
-    "/monitor": {
+    "/ping": {
       "get": {
         "tags": [
-          "Monitor"
+          "Status"
         ],
-        "summary": "Monitor",
-        "description": "Returns information on the health of the OccupancyAuthentication API service",
-        "operationId": "get-monitor",
+        "summary": "Ping",
+        "description": "Returns Status (pong) of the Occupancy Registration API service",
+        "operationId": "get-ping",
         "responses": {
           "200": {
             "description": "Success"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -408,7 +563,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -508,7 +663,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -602,7 +757,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -691,7 +846,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -785,7 +940,7 @@
                   "$ref": "#/components/schemas/BadRequestResponse"
                 },
                 "example": {
-                  "success": false,
+                  "success": true,
                   "message": "string",
                   "errors": [
                     {
@@ -813,18 +968,25 @@
   },
   "components": {
     "schemas": {
+      "AcceptedResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BadRequestResponse": {
         "type": "object",
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the request was successful",
-            "readOnly": true,
-            "example": false
+            "readOnly": true
           },
           "message": {
             "type": "string",
-            "description": "Human-readable message for this response",
             "nullable": true
           },
           "errors": {
@@ -832,12 +994,10 @@
             "items": {
               "$ref": "#/components/schemas/Error"
             },
-            "description": "Collection of validation errors caused by the request",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A response indicating the request was invalid"
+        "additionalProperties": false
       },
       "ChangeRegistrationDetailsCommand": {
         "type": "object",
@@ -980,7 +1140,6 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
@@ -988,12 +1147,10 @@
             "items": {
               "$ref": "#/components/schemas/GetActiveRegistrationsQueryResultItem"
             },
-            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "GetParkingAssetFloorsQuery": {
         "required": [
@@ -1026,15 +1183,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/GetParkingAssetFloorsQueryResult"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "GetParkingAssetHeadersQuery": {
         "required": [
@@ -1071,7 +1226,6 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
@@ -1079,12 +1233,10 @@
             "items": {
               "$ref": "#/components/schemas/GetParkingAssetHeadersQueryResultItem"
             },
-            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "GetRecentlyOccupiedBaysQuery": {
         "required": [
@@ -1122,7 +1274,6 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
@@ -1130,12 +1281,10 @@
             "items": {
               "$ref": "#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem"
             },
-            "description": "Payload of the response",
             "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "GetRegistrationQuery": {
         "required": [
@@ -1202,15 +1351,13 @@
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the response was successful",
             "readOnly": true
           },
           "result": {
             "$ref": "#/components/schemas/GetRegistrationQueryResultItem"
           }
         },
-        "additionalProperties": false,
-        "description": "A successful response"
+        "additionalProperties": false
       },
       "ParkingAssetBay": {
         "type": "object",

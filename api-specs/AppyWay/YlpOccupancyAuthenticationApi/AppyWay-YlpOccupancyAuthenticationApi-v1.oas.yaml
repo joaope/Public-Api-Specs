@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Occupancy Authentication API
+  title: Occupancy Registration API
   version: "1.0"
 servers:
 - url: https://api.appyway.com/v1/occupancy-authentication
@@ -46,6 +46,25 @@ paths:
       responses:
         "202":
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -78,6 +97,25 @@ paths:
       responses:
         "202":
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -116,6 +154,25 @@ paths:
       responses:
         "202":
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -125,7 +182,7 @@ paths:
   /commands/registerAutomaticOccupancy:
     post:
       tags:
-      - Commands
+      - Occupancy
       summary: /commands/registerAutomaticOccupancy - POST
       operationId: post-commands-registerautomaticoccupancy
       requestBody:
@@ -157,6 +214,25 @@ paths:
       responses:
         "202":
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -207,28 +283,47 @@ paths:
       responses:
         "202":
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /monitor:
+  /ping:
     get:
       tags:
-      - Monitor
-      summary: Monitor
-      description: Returns information on the health of the OccupancyAuthentication API service
-      operationId: get-monitor
+      - Status
+      summary: Ping
+      description: Returns Status (pong) of the Occupancy Registration API service
+      operationId: get-ping
       responses:
         "200":
           description: Success
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /queries/getActiveRegistrations:
     post:
       tags:
@@ -279,7 +374,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -341,7 +436,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -398,7 +493,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -453,7 +548,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -515,7 +610,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
               example:
-                success: false
+                success: true
                 message: string
                 errors:
                 - property: string
@@ -529,26 +624,28 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
 components:
   schemas:
+    AcceptedResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
     BadRequestResponse:
       type: object
       properties:
         success:
           type: boolean
-          description: Whether the request was successful
           readOnly: true
-          example: false
         message:
           type: string
-          description: Human-readable message for this response
           nullable: true
         errors:
           type: array
           items:
             $ref: '#/components/schemas/Error'
-          description: Collection of validation errors caused by the request
           nullable: true
       additionalProperties: false
-      description: A response indicating the request was invalid
     ChangeRegistrationDetailsCommand:
       type: object
       properties:
@@ -653,16 +750,13 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           type: array
           items:
             $ref: '#/components/schemas/GetActiveRegistrationsQueryResultItem'
-          description: Payload of the response
           nullable: true
       additionalProperties: false
-      description: A successful response
     GetParkingAssetFloorsQuery:
       required:
       - parkingAssetId
@@ -686,12 +780,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/GetParkingAssetFloorsQueryResult'
       additionalProperties: false
-      description: A successful response
     GetParkingAssetHeadersQuery:
       required:
       - parkingAssetIds
@@ -718,16 +810,13 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           type: array
           items:
             $ref: '#/components/schemas/GetParkingAssetHeadersQueryResultItem'
-          description: Payload of the response
           nullable: true
       additionalProperties: false
-      description: A successful response
     GetRecentlyOccupiedBaysQuery:
       required:
       - parkingAssetId
@@ -755,16 +844,13 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           type: array
           items:
             $ref: '#/components/schemas/GetRecentlyOccupiedBaysQueryResultItem'
-          description: Payload of the response
           nullable: true
       additionalProperties: false
-      description: A successful response
     GetRegistrationQuery:
       required:
       - id
@@ -814,12 +900,10 @@ components:
       properties:
         success:
           type: boolean
-          description: Whether the response was successful
           readOnly: true
         result:
           $ref: '#/components/schemas/GetRegistrationQueryResultItem'
       additionalProperties: false
-      description: A successful response
     ParkingAssetBay:
       type: object
       properties:
