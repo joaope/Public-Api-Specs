@@ -861,51 +861,6 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /tasks/generate-moving-order-docs:
-    post:
-      tags:
-      - Tasks
-      summary: /tasks/generate-moving-order-docs - POST
-      operationId: post-tasks-generate-moving-order-docs
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/GenerateMovingOrderDocuments'
-            example:
-              name: string
-              user: string
-              orderId: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GenerateMovingOrderDocuments'
-            example:
-              name: string
-              user: string
-              orderId: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/GenerateMovingOrderDocuments'
-            example:
-              name: string
-              user: string
-              orderId: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/GenerateMovingOrderDocuments'
-            example:
-              name: string
-              user: string
-              orderId: string
-      responses:
-        "200":
-          description: Success
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /tasks/generate-order-docs:
     post:
       tags:
@@ -1127,51 +1082,6 @@ paths:
               $ref: '#/components/schemas/PrepareFiles'
             example:
               name: string
-              user: string
-      responses:
-        "200":
-          description: Success
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /tasks/propose-moving-order:
-    post:
-      tags:
-      - Tasks
-      summary: /tasks/propose-moving-order - POST
-      operationId: post-tasks-propose-moving-order
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/ProposeMovingOrder'
-            example:
-              name: string
-              orderId: string
-              user: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ProposeMovingOrder'
-            example:
-              name: string
-              orderId: string
-              user: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ProposeMovingOrder'
-            example:
-              name: string
-              orderId: string
-              user: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ProposeMovingOrder'
-            example:
-              name: string
-              orderId: string
               user: string
       responses:
         "200":
@@ -1548,7 +1458,7 @@ components:
           nullable: true
         orderId:
           type: string
-          nullable: true
+          format: uuid
       additionalProperties: false
     BuildAndDeployMasterIndex:
       type: object
@@ -1756,20 +1666,6 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    GenerateMovingOrderDocuments:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-          readOnly: true
-        user:
-          type: string
-          nullable: true
-        orderId:
-          type: string
-          format: uuid
-      additionalProperties: false
     GenerateOrderDocuments:
       type: object
       properties:
@@ -1829,20 +1725,6 @@ components:
           type: string
           nullable: true
           readOnly: true
-        user:
-          type: string
-          nullable: true
-      additionalProperties: false
-    ProposeMovingOrder:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-          readOnly: true
-        orderId:
-          type: string
-          nullable: true
         user:
           type: string
           nullable: true
