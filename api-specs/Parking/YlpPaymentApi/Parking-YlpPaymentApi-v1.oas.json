@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Ylp.Payment.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "title": "Payment API",
     "version": "1.0"
   },
   "servers": [
@@ -693,7 +693,8 @@
                     "paymentMethodType": 1,
                     "paymentToken": "string",
                     "organisationId": "string",
-                    "walletDebtAmount": 0
+                    "walletDebtAmount": 0,
+                    "preAuthTransactionId": "string"
                   }
                 }
               }
@@ -2307,6 +2308,11 @@
             "type": "number",
             "description": "The amount of debt on the wallet",
             "format": "double"
+          },
+          "preAuthTransactionId": {
+            "type": "string",
+            "description": "The cybersource transaction id of the preauthorization transaction used to check the card's activity when it was registered.",
+            "nullable": true
           }
         },
         "additionalProperties": false
