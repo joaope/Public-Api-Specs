@@ -276,32 +276,32 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FetchSensorHealthQuery'
+              $ref: '#/components/schemas/FetchSensorHealthByOwnerIdsQuery'
             example:
               ownerIds:
               - string
               severity:
-              - 1
+              - 0
               incidentType:
               - string
           text/json:
             schema:
-              $ref: '#/components/schemas/FetchSensorHealthQuery'
+              $ref: '#/components/schemas/FetchSensorHealthByOwnerIdsQuery'
             example:
               ownerIds:
               - string
               severity:
-              - 1
+              - 0
               incidentType:
               - string
           application/*+json:
             schema:
-              $ref: '#/components/schemas/FetchSensorHealthQuery'
+              $ref: '#/components/schemas/FetchSensorHealthByOwnerIdsQuery'
             example:
               ownerIds:
               - string
               severity:
-              - 1
+              - 0
               incidentType:
               - string
       responses:
@@ -310,12 +310,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FetchSensorHealthQueryResultIEnumerableOkResponse'
+                $ref: '#/components/schemas/SensorHealthResultIEnumerableOkResponse'
               example:
                 success: true
                 result:
                 - daysBroken: 0
-                  severity: 1
+                  severity: 0
                   errorDateTime: string
                   errorType: string
                   deviceId: string
@@ -323,6 +323,152 @@ paths:
                   entityId: string
                   entityType: 1
                   networkId: string
+                  sourceNetworkId: string
+                  zoneName: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchSensorHealthByNetworkIds:
+    post:
+      tags:
+      - Queries
+      summary: /fetchSensorHealthByNetworkIds - POST
+      operationId: post-fetchsensorhealthbynetworkids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchSensorHealthByNetworkIdsQuery'
+            example:
+              networkIds:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchSensorHealthByNetworkIdsQuery'
+            example:
+              networkIds:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchSensorHealthByNetworkIdsQuery'
+            example:
+              networkIds:
+              - string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorHealthResultIEnumerableOkResponse'
+              example:
+                success: true
+                result:
+                - daysBroken: 0
+                  severity: 0
+                  errorDateTime: string
+                  errorType: string
+                  deviceId: string
+                  sensorType: 0
+                  entityId: string
+                  entityType: 1
+                  networkId: string
+                  sourceNetworkId: string
+                  zoneName: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchSensorHealthByOwnerIds:
+    post:
+      tags:
+      - Queries
+      summary: /fetchSensorHealthByOwnerIds - POST
+      operationId: post-fetchsensorhealthbyownerids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchSensorHealthByOwnerIdsQuery'
+            example:
+              ownerIds:
+              - string
+              severity:
+              - 0
+              incidentType:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchSensorHealthByOwnerIdsQuery'
+            example:
+              ownerIds:
+              - string
+              severity:
+              - 0
+              incidentType:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchSensorHealthByOwnerIdsQuery'
+            example:
+              ownerIds:
+              - string
+              severity:
+              - 0
+              incidentType:
+              - string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SensorHealthResultIEnumerableOkResponse'
+              example:
+                success: true
+                result:
+                - daysBroken: 0
+                  severity: 0
+                  errorDateTime: string
+                  errorType: string
+                  deviceId: string
+                  sensorType: 0
+                  entityId: string
+                  entityType: 1
+                  networkId: string
+                  sourceNetworkId: string
+                  zoneName: string
         "400":
           description: Bad Request
           content:
@@ -870,7 +1016,16 @@ components:
         result:
           $ref: '#/components/schemas/FetchReleasedSensorsPendingCheckOutQueryResult'
       additionalProperties: false
-    FetchSensorHealthQuery:
+    FetchSensorHealthByNetworkIdsQuery:
+      type: object
+      properties:
+        networkIds:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    FetchSensorHealthByOwnerIdsQuery:
       type: object
       properties:
         ownerIds:
@@ -887,48 +1042,6 @@ components:
           type: array
           items:
             type: string
-          nullable: true
-      additionalProperties: false
-    FetchSensorHealthQueryResult:
-      type: object
-      properties:
-        daysBroken:
-          type: integer
-          format: int32
-          nullable: true
-        severity:
-          $ref: '#/components/schemas/IncidentSeverity'
-        errorDateTime:
-          type: string
-          format: date-time
-          nullable: true
-        errorType:
-          type: string
-          nullable: true
-        deviceId:
-          type: string
-          nullable: true
-        sensorType:
-          $ref: '#/components/schemas/ParkingSensorType'
-        entityId:
-          type: string
-          nullable: true
-        entityType:
-          $ref: '#/components/schemas/EntityType'
-        networkId:
-          type: string
-          nullable: true
-      additionalProperties: false
-    FetchSensorHealthQueryResultIEnumerableOkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          readOnly: true
-        result:
-          type: array
-          items:
-            $ref: '#/components/schemas/FetchSensorHealthQueryResult'
           nullable: true
       additionalProperties: false
     FetchSpotSearchDetailsQuery:
@@ -1002,6 +1115,7 @@ components:
       additionalProperties: false
     IncidentSeverity:
       enum:
+      - 0
       - 1
       - 2
       - 3
@@ -1179,6 +1293,54 @@ components:
       - 2
       type: integer
       format: int32
+    SensorHealthResult:
+      type: object
+      properties:
+        daysBroken:
+          type: integer
+          format: int32
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/IncidentSeverity'
+        errorDateTime:
+          type: string
+          format: date-time
+          nullable: true
+        errorType:
+          type: string
+          nullable: true
+        deviceId:
+          type: string
+          nullable: true
+        sensorType:
+          $ref: '#/components/schemas/ParkingSensorType'
+        entityId:
+          type: string
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/EntityType'
+        networkId:
+          type: string
+          nullable: true
+        sourceNetworkId:
+          type: string
+          nullable: true
+        zoneName:
+          type: string
+          nullable: true
+      additionalProperties: false
+    SensorHealthResultIEnumerableOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/SensorHealthResult'
+          nullable: true
+      additionalProperties: false
     SpotSearchHistoryResult:
       type: object
       properties:

@@ -1241,6 +1241,57 @@
         }
       }
     },
+    "/tasks/execute-moving-import": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/execute-moving-import - POST",
+        "operationId": "post-tasks-execute-moving-import",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "OrderId": {
+                    "type": "string"
+                  },
+                  "AuthorityId": {
+                    "type": "string"
+                  },
+                  "AuthorityName": {
+                    "type": "string"
+                  },
+                  "Reproject": {
+                    "type": "boolean"
+                  },
+                  "Revoke": {
+                    "type": "boolean"
+                  },
+                  "Files": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/tasks/execute-standard-import": {
       "post": {
         "tags": [
@@ -1263,6 +1314,9 @@
                     "type": "string"
                   },
                   "Reproject": {
+                    "type": "boolean"
+                  },
+                  "Revoke": {
                     "type": "boolean"
                   },
                   "Files": {
