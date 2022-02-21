@@ -455,8 +455,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-02-16T00:00:00.0000000
-                      end: 2022-02-16T00:00:00.0000000
+                    - start: 2022-02-21T00:00:00.0000000
+                      end: 2022-02-21T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -473,8 +473,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-02-16T00:00:00.0000000
-                      end: 2022-02-16T00:00:00.0000000
+                    - start: 2022-02-21T00:00:00.0000000
+                      end: 2022-02-21T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -580,8 +580,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-02-16T00:00:00.0000000
-                      end: 2022-02-16T00:00:00.0000000
+                    - start: 2022-02-21T00:00:00.0000000
+                      end: 2022-02-21T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -598,8 +598,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-02-16T00:00:00.0000000
-                      end: 2022-02-16T00:00:00.0000000
+                    - start: 2022-02-21T00:00:00.0000000
+                      end: 2022-02-21T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -2330,6 +2330,18 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    DateTimeRange:
+      type: object
+      properties:
+        start:
+          type: string
+          description: ISO-8601 date/time pattern, extended as required to accommodate nanoseconds.
+          example: 2020-01-20T00:00:00.0000000
+        end:
+          type: string
+          description: ISO-8601 date/time pattern, extended as required to accommodate nanoseconds.
+          example: 2020-01-20T00:00:00.0000000
+      additionalProperties: false
     Error:
       type: object
       properties:
@@ -2575,6 +2587,36 @@ components:
           type: string
           description: Identifier of the Parking Entity to fetch Payment Providers
       additionalProperties: false
+    FetchRestrictedPeriodsByIdQuery:
+      required:
+      - startTime
+      type: object
+      properties:
+        startTime:
+          minLength: 1
+          type: string
+          description: |-
+            Start of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        entityId:
+          type: string
+          description: Identifier of the Parking Entity to fetch
+          nullable: true
+        endTime:
+          type: string
+          description: |-
+            End of the window for which to retrieve state. Required.
+            Dates/times should be provided in ISO8601 format: YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+          format: date-time
+        duration:
+          type: string
+          description: Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]
+          readOnly: true
+          example: 3.17:25:30.5000000
+        vehicleOperatorContext:
+          $ref: '#/components/schemas/VehicleOperatorContext'
+      additionalProperties: false
     FetchZoneByIdQuery:
       required:
       - id
@@ -2634,7 +2676,7 @@ components:
             *DoubleYellowKerbMark (16) - Double yellow kerb marks
             *KeepClearLine (17) - Keep Clear lines
             *DroppedKerbDriveway (18) - A dropped kerb driveway
-            *None (-1) - Standard bay (paid or free)
+            *None (-1)
           nullable: true
         includeNotApplicableTimes:
           type: boolean
@@ -2741,7 +2783,7 @@ components:
             *DoubleYellowKerbMark (16) - Double yellow kerb marks
             *KeepClearLine (17) - Keep Clear lines
             *DroppedKerbDriveway (18) - A dropped kerb driveway
-            *None (-1) - Standard bay (paid or free)
+            *None (-1)
           nullable: true
       additionalProperties: false
       description: |-
@@ -2836,7 +2878,7 @@ components:
             *DoubleYellowKerbMark (16) - Double yellow kerb marks
             *KeepClearLine (17) - Keep Clear lines
             *DroppedKerbDriveway (18) - A dropped kerb driveway
-            *None (-1) - Standard bay (paid or free)
+            *None (-1)
           nullable: true
         filters:
           $ref: '#/components/schemas/FindParkingEntitiesByViewportFilters'
@@ -3145,7 +3187,7 @@ components:
             *DoubleYellowKerbMark (16) - Double yellow kerb marks
             *KeepClearLine (17) - Keep Clear lines
             *DroppedKerbDriveway (18) - A dropped kerb driveway
-            *None (-1) - Standard bay (paid or free)
+            *None (-1)
           nullable: true
         distanceCalculationLocation:
           type: object
@@ -3478,7 +3520,7 @@ components:
             *DoubleYellowKerbMark (16) - Double yellow kerb marks
             *KeepClearLine (17) - Keep Clear lines
             *DroppedKerbDriveway (18) - A dropped kerb driveway
-            *None (-1) - Standard bay (paid or free)
+            *None (-1)
           nullable: true
         facilityTypeIds:
           type: array
@@ -3534,7 +3576,7 @@ components:
         *DoubleYellowKerbMark (16) - Double yellow kerb marks
         *KeepClearLine (17) - Keep Clear lines
         *DroppedKerbDriveway (18) - A dropped kerb driveway
-        *None (-1) - Standard bay (paid or free)
+        *None (-1)
       format: int32
     OpenPeriod:
       type: object
@@ -3706,7 +3748,7 @@ components:
             *DoubleYellowKerbMark (16) - Double yellow kerb marks
             *KeepClearLine (17) - Keep Clear lines
             *DroppedKerbDriveway (18) - A dropped kerb driveway
-            *None (-1) - Standard bay (paid or free)
+            *None (-1)
           nullable: true
         facilityTypeIds:
           type: array
@@ -4058,6 +4100,37 @@ components:
                 type: number
                 format: double
           nullable: true
+      additionalProperties: false
+    RestrictedPeriodResult:
+      type: object
+      properties:
+        entityId:
+          type: string
+          description: Identifier of the parking entity
+          nullable: true
+        entityType:
+          $ref: '#/components/schemas/MapEntityType'
+        authorityId:
+          type: string
+          nullable: true
+        restrictedPeriods:
+          type: array
+          items:
+            $ref: '#/components/schemas/DateTimeRange'
+          nullable: true
+        requestRestrictedDuration:
+          type: string
+          description: Duration in ISO format [-][d'.']hh':'mm':'ss['.'fffffff]
+          example: 3.17:25:30.5000000
+      additionalProperties: false
+    RestrictedPeriodResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/RestrictedPeriodResult'
       additionalProperties: false
     StringCapabilityArrayIDictionaryOkResponse:
       type: object
