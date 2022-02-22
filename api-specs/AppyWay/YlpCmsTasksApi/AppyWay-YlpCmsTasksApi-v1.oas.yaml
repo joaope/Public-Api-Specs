@@ -1035,28 +1035,28 @@ paths:
         content:
           application/json-patch+json:
             schema:
-              $ref: '#/components/schemas/LinkOverlappingOsps'
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
             example:
               name: string
               user: string
               authorityId: string
           application/json:
             schema:
-              $ref: '#/components/schemas/LinkOverlappingOsps'
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
             example:
               name: string
               user: string
               authorityId: string
           text/json:
             schema:
-              $ref: '#/components/schemas/LinkOverlappingOsps'
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
             example:
               name: string
               user: string
               authorityId: string
           application/*+json:
             schema:
-              $ref: '#/components/schemas/LinkOverlappingOsps'
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
             example:
               name: string
               user: string
@@ -1727,7 +1727,7 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    LinkOverlappingOsps:
+    LinkOverlappingOspsTask:
       type: object
       properties:
         name:
