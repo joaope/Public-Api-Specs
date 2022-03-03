@@ -125,96 +125,6 @@
         }
       }
     },
-    "/fetchCapabilitiesByIds": {
-      "post": {
-        "tags": [
-          "Parking"
-        ],
-        "summary": "Fetch parking entities capabilities by IDs",
-        "description": "Fetch parking entities capabilities by IDs",
-        "operationId": "post-fetchcapabilitiesbyids",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchCapabilitiesByIdsQuery"
-              },
-              "example": {
-                "entityIds": [
-                  "string"
-                ]
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchCapabilitiesByIdsQuery"
-              },
-              "example": {
-                "entityIds": [
-                  "string"
-                ]
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchCapabilitiesByIdsQuery"
-              },
-              "example": {
-                "entityIds": [
-                  "string"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringCapabilityArrayIDictionaryOkResponse"
-                },
-                "example": {
-                  "success": true,
-                  "result": {}
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
     "/fetchEntitiesByIds": {
       "post": {
         "tags": [
@@ -707,8 +617,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2022-03-01T00:00:00",
-                            "end": "2022-03-01T00:00:00",
+                            "start": "2022-03-03T00:00:00",
+                            "end": "2022-03-03T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -739,8 +649,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2022-03-01T00:00:00",
-                            "end": "2022-03-01T00:00:00",
+                            "start": "2022-03-03T00:00:00",
+                            "end": "2022-03-03T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -904,8 +814,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2022-03-01T00:00:00",
-                            "end": "2022-03-01T00:00:00",
+                            "start": "2022-03-03T00:00:00",
+                            "end": "2022-03-03T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -936,8 +846,8 @@
                         },
                         "openPeriods": [
                           {
-                            "start": "2022-03-01T00:00:00",
-                            "end": "2022-03-01T00:00:00",
+                            "start": "2022-03-03T00:00:00",
+                            "end": "2022-03-03T00:00:00",
                             "isFree": true,
                             "date": "2020-01-20T00:00:00",
                             "status": 1
@@ -3423,29 +3333,6 @@
         "type": "integer",
         "format": "int32"
       },
-      "Capability": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "support": {
-            "$ref": "#/components/schemas/CapabilitySupport"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CapabilitySupport": {
-        "enum": [
-          0,
-          1,
-          2
-        ],
-        "type": "integer",
-        "description": "\n\n*NotSupported (0)\r\n*Supported (1)\r\n*ComingSoon (2)\r\n",
-        "format": "int32"
-      },
       "CarPark": {
         "type": "object",
         "properties": {
@@ -3630,7 +3517,7 @@
       "FetchCapabilitiesByIdsQuery": {
         "type": "object",
         "properties": {
-          "entityIds": {
+          "ids": {
             "type": "array",
             "items": {
               "type": "string"
@@ -5569,7 +5456,7 @@
         },
         "additionalProperties": false
       },
-      "StringCapabilityArrayIDictionaryOkResponse": {
+      "StringStringIReadOnlyCollectionIDictionaryOkResponse": {
         "type": "object",
         "properties": {
           "success": {
@@ -5581,7 +5468,7 @@
             "additionalProperties": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/Capability"
+                "type": "string"
               }
             },
             "nullable": true
