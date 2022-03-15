@@ -424,11 +424,11 @@ paths:
         "429":
           $ref: '#/components/responses/TooManyRequests'
   /tasks/cancel/{taskId}:
-    post:
+    get:
       tags:
       - Tasks
-      summary: /tasks/cancel/{taskId} - POST
-      operationId: post-tasks-cancel-taskid
+      summary: /tasks/cancel/{taskId} - GET
+      operationId: get-tasks-cancel-taskid
       parameters:
       - name: taskId
         in: path
@@ -1016,6 +1016,51 @@ paths:
             example:
               name: string
               user: string
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/link-osps:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/link-osps - POST
+      operationId: post-tasks-link-osps
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
+            example:
+              name: string
+              user: string
+              authorityId: string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
+            example:
+              name: string
+              user: string
+              authorityId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
+            example:
+              name: string
+              user: string
+              authorityId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LinkOverlappingOspsTask'
+            example:
+              name: string
+              user: string
+              authorityId: string
       responses:
         "200":
           description: Success
@@ -1680,6 +1725,21 @@ components:
           readOnly: true
         user:
           type: string
+          nullable: true
+      additionalProperties: false
+    LinkOverlappingOspsTask:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          readOnly: true
+        user:
+          type: string
+          nullable: true
+        authorityId:
+          type: string
+          format: uuid
           nullable: true
       additionalProperties: false
     OperatingHoursTest:
