@@ -214,6 +214,7 @@ paths:
               name: string
               user: string
               orderId: string
+              applyAllOrders: true
           application/json:
             schema:
               $ref: '#/components/schemas/ApplyOrder'
@@ -221,6 +222,7 @@ paths:
               name: string
               user: string
               orderId: string
+              applyAllOrders: true
           text/json:
             schema:
               $ref: '#/components/schemas/ApplyOrder'
@@ -228,6 +230,7 @@ paths:
               name: string
               user: string
               orderId: string
+              applyAllOrders: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/ApplyOrder'
@@ -235,6 +238,7 @@ paths:
               name: string
               user: string
               orderId: string
+              applyAllOrders: true
       responses:
         "200":
           description: Success
@@ -1448,6 +1452,8 @@ components:
         orderId:
           type: string
           format: uuid
+        applyAllOrders:
+          type: boolean
       additionalProperties: false
     BuildAndDeployMasterIndex:
       type: object
