@@ -1,0 +1,375 @@
+openapi: 3.0.1
+info:
+  title: Traffic Requests
+  version: "1.0"
+servers:
+- url: https://api.appyway.com/v1/traffic-requests
+paths:
+  /monitor:
+    get:
+      tags:
+      - Monitor
+      summary: /monitor - GET
+      operationId: get-monitor
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /requests/anonymiseRequests:
+    post:
+      tags:
+      - Requests
+      summary: /requests/anonymiseRequests - POST
+      operationId: post-requests-anonymiserequests
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              example: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              example:
+                success: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              example:
+                success: true
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /requests/createRequest:
+    post:
+      tags:
+      - Requests
+      summary: /requests/createRequest - POST
+      operationId: post-requests-createrequest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeometryRequestPropertiesFeature'
+            example:
+              type: string
+              id: string
+              geometry:
+                type: string
+                crs:
+                  type: string
+                  properties:
+                    name: string
+              properties:
+                authorityId: string
+                requestDate: string
+                requestType: 1
+                firstName: string
+                lastName: string
+                email: string
+                address1: string
+                address2: string
+                city: string
+                county: string
+                postalCode: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GeometryRequestPropertiesFeature'
+            example:
+              type: string
+              id: string
+              geometry:
+                type: string
+                crs:
+                  type: string
+                  properties:
+                    name: string
+              properties:
+                authorityId: string
+                requestDate: string
+                requestType: 1
+                firstName: string
+                lastName: string
+                email: string
+                address1: string
+                address2: string
+                city: string
+                county: string
+                postalCode: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GeometryRequestPropertiesFeature'
+            example:
+              type: string
+              id: string
+              geometry:
+                type: string
+                crs:
+                  type: string
+                  properties:
+                    name: string
+              properties:
+                authorityId: string
+                requestDate: string
+                requestType: 1
+                firstName: string
+                lastName: string
+                email: string
+                address1: string
+                address2: string
+                city: string
+                county: string
+                postalCode: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              example: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              example:
+                success: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              example:
+                success: true
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /requests/getRequestsByAuthorityId:
+    get:
+      tags:
+      - Requests
+      summary: /requests/getRequestsByAuthorityId - GET
+      operationId: get-requests-getrequestsbyauthorityid
+      parameters:
+      - name: authorityId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GeometryRequestPropertiesFeatureCollectionApiResponse'
+              example: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeometryRequestPropertiesFeatureCollectionApiResponse'
+              example:
+                success: true
+                result:
+                  type: string
+                  features:
+                  - type: string
+                    id: string
+                    geometry:
+                      type: string
+                      crs:
+                        type: string
+                        properties:
+                          name: string
+                    properties:
+                      authorityId: string
+                      requestDate: string
+                      requestType: 1
+                      firstName: string
+                      lastName: string
+                      email: string
+                      address1: string
+                      address2: string
+                      city: string
+                      county: string
+                      postalCode: string
+                  properties: {}
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GeometryRequestPropertiesFeatureCollectionApiResponse'
+              example:
+                success: true
+                result:
+                  type: string
+                  features:
+                  - type: string
+                    id: string
+                    geometry:
+                      type: string
+                      crs:
+                        type: string
+                        properties:
+                          name: string
+                    properties:
+                      authorityId: string
+                      requestDate: string
+                      requestType: 1
+                      firstName: string
+                      lastName: string
+                      email: string
+                      address1: string
+                      address2: string
+                      city: string
+                      county: string
+                      postalCode: string
+                  properties: {}
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+      additionalProperties: false
+    Crs:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        properties:
+          $ref: '#/components/schemas/CrsProperties'
+      additionalProperties: false
+    CrsProperties:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Geometry:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        crs:
+          $ref: '#/components/schemas/Crs'
+      additionalProperties: false
+    GeometryRequestPropertiesFeature:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+        properties:
+          $ref: '#/components/schemas/RequestProperties'
+      additionalProperties: false
+    GeometryRequestPropertiesFeatureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeometryRequestPropertiesFeature'
+          nullable: true
+        properties:
+          nullable: true
+      additionalProperties: false
+    GeometryRequestPropertiesFeatureCollectionApiResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/GeometryRequestPropertiesFeatureCollection'
+      additionalProperties: false
+    RequestProperties:
+      type: object
+      properties:
+        authorityId:
+          type: string
+          format: uuid
+        requestDate:
+          type: string
+          format: date-time
+        requestType:
+          $ref: '#/components/schemas/RequestType'
+        firstName:
+          type: string
+          nullable: true
+        lastName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        address1:
+          type: string
+          nullable: true
+        address2:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        county:
+          type: string
+          nullable: true
+        postalCode:
+          type: string
+          nullable: true
+      additionalProperties: false
+    RequestType:
+      enum:
+      - 1
+      type: integer
+      format: int32
+  securitySchemes:
+    apiKey:
+      name: API-KEY
+      in: header
+      type: apiKey
+    oAuth2:
+      flows:
+        authorizationCode:
+          scopes: {}
+          authorizationUrl: https://auth.appyway.com/authorize
+          tokenUrl: https://auth.appyway.com/oauth/token
+      type: oauth2
+  responses:
+    TooManyRequests:
+      description: Too many requests
+    Unauthorized:
+      description: Unauthorized
+    Forbidden:
+      description: Forbidden
+security:
+- apiKey: []
+- oAuth2: []
+

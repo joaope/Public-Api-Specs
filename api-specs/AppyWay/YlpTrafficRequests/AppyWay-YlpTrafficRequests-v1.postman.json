@@ -1,17 +1,14 @@
 {
   "item": [
     {
-      "id": "5919c00d-dd3c-4a11-a017-f46e39ad0da7",
-      "name": "Returns \"pong\" show the API is up and running",
+      "id": "b7db9a28-5618-4d61-9d1b-7591523bc55a",
+      "name": "/monitor - GET",
       "request": {
-        "name": "Returns \"pong\" show the API is up and running",
-        "description": {
-          "content": "Returns \"pong\" show the API is up and running",
-          "type": "text/plain"
-        },
+        "name": "/monitor - GET",
+        "description": {},
         "url": {
           "path": [
-            "ping"
+            "monitor"
           ],
           "host": [
             "{{baseUrl}}"
@@ -24,12 +21,12 @@
       },
       "response": [
         {
-          "id": "e88357c9-513a-40ff-bb44-b8da9b588004",
+          "id": "224ac788-fef5-4429-88ad-7819b9231142",
           "name": "Success",
           "originalRequest": {
             "url": {
               "path": [
-                "ping"
+                "monitor"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -53,12 +50,12 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b7b57f95-b2ce-4f3c-9ccf-cad54af10a38",
+          "id": "739901ff-491f-47e7-ac4a-f2cb12359559",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
               "path": [
-                "ping"
+                "monitor"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -82,12 +79,12 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ba602dfe-caaa-4ede-8b24-707a2131d99c",
+          "id": "7333fab3-f116-4861-aa34-a49cbe700f7c",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
               "path": [
-                "ping"
+                "monitor"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -111,12 +108,12 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "496d3bf0-4edd-4536-8a66-62a1077b34b1",
+          "id": "6cc25a9e-bcb5-48a0-a34d-23af3474dde0",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
               "path": [
-                "ping"
+                "monitor"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -143,22 +140,163 @@
       "event": []
     },
     {
-      "id": "12e46d62-ed94-444b-be65-db669254294a",
-      "name": "queries",
+      "id": "24a5641e-821c-4c89-8715-4628fe17a5e9",
+      "name": "requests",
       "item": [
         {
-          "id": "e271c8fe-e478-4e64-9d4e-223517b130d4",
-          "name": "Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id",
+          "id": "d389fe2f-a68c-41bf-8dc7-587cd81c68d8",
+          "name": "/requests/anonymiseRequests - POST",
           "request": {
-            "name": "Fetch general daily availability summary (realtime, daily occupancy and daily predictions) by entity Id",
-            "description": {
-              "content": "Returns the daily availability general summary (realtime, daily occupancy and daily predictions) by entity Id",
-              "type": "text/plain"
-            },
+            "name": "/requests/anonymiseRequests - POST",
+            "description": {},
             "url": {
               "path": [
-                "queries",
-                "fetchDailyAvailabilitySummaryByEntityId"
+                "requests",
+                "anonymiseRequests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b59a25d-b3ac-4c8e-bb71-e3ecd6a00f1e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requests",
+                    "anonymiseRequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb143ffd-2e0d-45cf-a3bc-6da3e940f55e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requests",
+                    "anonymiseRequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "27914822-57fd-4901-98c0-f525240f9e11",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requests",
+                    "anonymiseRequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ab351f74-dd76-443f-9111-8a7b2c6b2ea3",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "requests",
+                    "anonymiseRequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "59ad68ef-f9ad-4c8f-8236-b722aa6ffd05",
+          "name": "/requests/createRequest - POST",
+          "request": {
+            "name": "/requests/createRequest - POST",
+            "description": {},
+            "url": {
+              "path": [
+                "requests",
+                "createRequest"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -176,18 +314,18 @@
             "auth": null,
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"id\": \"<string>\",\n    \"dateTime\": \"<dateTime>\"\n}"
+              "raw": "{\n    \"type\": \"<string>\",\n    \"id\": \"<string>\",\n    \"geometry\": {\n        \"type\": \"<string>\",\n        \"crs\": {\n            \"type\": \"<string>\",\n            \"properties\": {\n                \"name\": \"<string>\"\n            }\n        }\n    },\n    \"properties\": {\n        \"authorityId\": \"<uuid>\",\n        \"requestDate\": \"<dateTime>\",\n        \"requestType\": \"<integer>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"address1\": \"<string>\",\n        \"address2\": \"<string>\",\n        \"city\": \"<string>\",\n        \"county\": \"<string>\",\n        \"postalCode\": \"<string>\"\n    }\n}"
             }
           },
           "response": [
             {
-              "id": "233f618b-7a27-4826-b701-124b8dfa8a35",
+              "id": "b9ec722c-76fa-47eb-8f34-d55716c73014",
               "name": "Success",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchDailyAvailabilitySummaryByEntityId"
+                    "requests",
+                    "createRequest"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -198,7 +336,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
+                  "raw": "{\n    \"type\": \"string\",\n    \"id\": \"string\",\n    \"geometry\": {\n        \"type\": \"string\",\n        \"crs\": {\n            \"type\": \"string\",\n            \"properties\": {\n                \"name\": \"string\"\n            }\n        }\n    },\n    \"properties\": {\n        \"authorityId\": \"string\",\n        \"requestDate\": \"string\",\n        \"requestType\": 1,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"email\": \"string\",\n        \"address1\": \"string\",\n        \"address2\": \"string\",\n        \"city\": \"string\",\n        \"county\": \"string\",\n        \"postalCode\": \"string\"\n    }\n}"
                 }
               },
               "status": "OK",
@@ -209,51 +347,18 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": {\n  \"entityId\": \"string\",\n  \"currentAvailability\": [\n   {\n    \"entityId\": \"string\",\n    \"entityType\": 1,\n    \"dataSourceType\": 0,\n    \"groupId\": \"string\",\n    \"totalSpaces\": 0,\n    \"availableSpaces\": 0\n   }\n  ],\n  \"hourlyPredictions\": {},\n  \"occupancyHistoryForPrediction\": [\n   {\n    \"date\": \"string\",\n    \"entityId\": \"string\",\n    \"occupancyBySourceType\": [\n     {\n      \"dataSourceType\": 0,\n      \"hourlyOccupancy\": [\n       0\n      ]\n     }\n    ]\n   }\n  ]\n }\n}",
+              "body": "{\n \"success\": true\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "05f548bf-ff32-43c1-8dd4-05457310a5f2",
-              "name": "Bad Request",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchDailyAvailabilitySummaryByEntityId"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "57ca28cf-a73b-4152-8945-d0df4602cd28",
+              "id": "018d328b-8a00-426b-9bac-65b685a5322a",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchDailyAvailabilitySummaryByEntityId"
+                    "requests",
+                    "createRequest"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -264,7 +369,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
+                  "raw": "{\n    \"type\": \"string\",\n    \"id\": \"string\",\n    \"geometry\": {\n        \"type\": \"string\",\n        \"crs\": {\n            \"type\": \"string\",\n            \"properties\": {\n                \"name\": \"string\"\n            }\n        }\n    },\n    \"properties\": {\n        \"authorityId\": \"string\",\n        \"requestDate\": \"string\",\n        \"requestType\": 1,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"email\": \"string\",\n        \"address1\": \"string\",\n        \"address2\": \"string\",\n        \"city\": \"string\",\n        \"county\": \"string\",\n        \"postalCode\": \"string\"\n    }\n}"
                 }
               },
               "status": "Unauthorized",
@@ -280,13 +385,13 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "91b3e174-2f4d-44fa-a1b4-c7c86f597d0b",
+              "id": "c18732b9-19bf-4da3-a2c9-11e5d91eb2da",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchDailyAvailabilitySummaryByEntityId"
+                    "requests",
+                    "createRequest"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -297,7 +402,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
+                  "raw": "{\n    \"type\": \"string\",\n    \"id\": \"string\",\n    \"geometry\": {\n        \"type\": \"string\",\n        \"crs\": {\n            \"type\": \"string\",\n            \"properties\": {\n                \"name\": \"string\"\n            }\n        }\n    },\n    \"properties\": {\n        \"authorityId\": \"string\",\n        \"requestDate\": \"string\",\n        \"requestType\": 1,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"email\": \"string\",\n        \"address1\": \"string\",\n        \"address2\": \"string\",\n        \"city\": \"string\",\n        \"county\": \"string\",\n        \"postalCode\": \"string\"\n    }\n}"
                 }
               },
               "status": "Forbidden",
@@ -313,13 +418,13 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5572c9cf-b76a-474f-8b83-16953b6e016f",
+              "id": "497b884e-5e5d-41b0-a411-334443919a83",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchDailyAvailabilitySummaryByEntityId"
+                    "requests",
+                    "createRequest"
                   ],
                   "host": [
                     "{{baseUrl}}"
@@ -330,7 +435,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"dateTime\": \"string\"\n}"
+                  "raw": "{\n    \"type\": \"string\",\n    \"id\": \"string\",\n    \"geometry\": {\n        \"type\": \"string\",\n        \"crs\": {\n            \"type\": \"string\",\n            \"properties\": {\n                \"name\": \"string\"\n            }\n        }\n    },\n    \"properties\": {\n        \"authorityId\": \"string\",\n        \"requestDate\": \"string\",\n        \"requestType\": 1,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"email\": \"string\",\n        \"address1\": \"string\",\n        \"address2\": \"string\",\n        \"city\": \"string\",\n        \"county\": \"string\",\n        \"postalCode\": \"string\"\n    }\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -349,56 +454,54 @@
           "event": []
         },
         {
-          "id": "c12ece2d-8bda-422f-8281-6e65935de578",
-          "name": "/queries/fetchParkingEntitiesByAuthorityIds - POST",
+          "id": "6ad576fd-757d-4cfa-b2b3-f3c218d62e10",
+          "name": "/requests/getRequestsByAuthorityId - GET",
           "request": {
-            "name": "/queries/fetchParkingEntitiesByAuthorityIds - POST",
+            "name": "/requests/getRequestsByAuthorityId - GET",
             "description": {},
             "url": {
               "path": [
-                "queries",
-                "fetchParkingEntitiesByAuthorityIds"
+                "requests",
+                "getRequestsByAuthorityId"
               ],
               "host": [
                 "{{baseUrl}}"
               ],
-              "query": [],
+              "query": [
+                {
+                  "description": "Format - uuid.",
+                  "key": "authorityId",
+                  "value": "<string>"
+                }
+              ],
               "variable": []
             },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
-            }
+            "method": "GET",
+            "auth": null
           },
           "response": [
             {
-              "id": "dddc24ad-403e-4c94-a3f2-f0a778a6fd7c",
+              "id": "9b10b674-0779-4bcb-8ba3-88c1ab4f7e6c",
               "name": "Success",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchParkingEntitiesByAuthorityIds"
+                    "requests",
+                    "getRequestsByAuthorityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
                   "variable": []
                 },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
+                "method": "GET",
+                "body": {}
               },
               "status": "OK",
               "code": 200,
@@ -408,63 +511,32 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"entityParentId\": \"string\",\n   \"entityId\": \"string\",\n   \"name\": \"string\",\n   \"ownerId\": \"string\",\n   \"entityType\": 1,\n   \"location\": \"string\"\n  }\n ]\n}",
+              "body": "{\n \"success\": true,\n \"result\": {\n  \"type\": \"string\",\n  \"features\": [\n   {\n    \"type\": \"string\",\n    \"id\": \"string\",\n    \"geometry\": {\n     \"type\": \"string\",\n     \"crs\": {\n      \"type\": \"string\",\n      \"properties\": {\n       \"name\": \"string\"\n      }\n     }\n    },\n    \"properties\": {\n     \"authorityId\": \"string\",\n     \"requestDate\": \"string\",\n     \"requestType\": 1,\n     \"firstName\": \"string\",\n     \"lastName\": \"string\",\n     \"email\": \"string\",\n     \"address1\": \"string\",\n     \"address2\": \"string\",\n     \"city\": \"string\",\n     \"county\": \"string\",\n     \"postalCode\": \"string\"\n    }\n   }\n  ],\n  \"properties\": {}\n }\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "ab8fcaec-4f12-47d1-8d69-1f7ab5d1d5fd",
-              "name": "Bad Request",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchParkingEntitiesByAuthorityIds"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "50461640-3e6c-44bd-9f83-87b99554d46e",
+              "id": "bebaf9e5-a130-4c52-8c25-e9db84efaef0",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchParkingEntitiesByAuthorityIds"
+                    "requests",
+                    "getRequestsByAuthorityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
                   "variable": []
                 },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
+                "method": "GET",
+                "body": {}
               },
               "status": "Unauthorized",
               "code": 401,
@@ -479,25 +551,27 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "1690a5da-d6a6-4fed-a18e-595d59f8f3f1",
+              "id": "6c01102e-46d6-45c4-8ba5-1da7c74df8d7",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchParkingEntitiesByAuthorityIds"
+                    "requests",
+                    "getRequestsByAuthorityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
                   "variable": []
                 },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
+                "method": "GET",
+                "body": {}
               },
               "status": "Forbidden",
               "code": 403,
@@ -512,224 +586,27 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "ad55652c-42de-4964-a528-befc9f96394c",
+              "id": "1ef017f3-b6bc-4f7c-affc-243ba86506d2",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
                   "path": [
-                    "queries",
-                    "fetchParkingEntitiesByAuthorityIds"
+                    "requests",
+                    "getRequestsByAuthorityId"
                   ],
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
+                  "query": [
+                    {
+                      "key": "authorityId",
+                      "value": "<string>"
+                    }
+                  ],
                   "variable": []
                 },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
-              },
-              "status": "Too Many Requests",
-              "code": 429,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            }
-          ],
-          "event": []
-        },
-        {
-          "id": "cf01a43b-b866-4906-bb5c-84222856ce00",
-          "name": "/queries/fetchParkingOwnersEntitiesByIds - POST",
-          "request": {
-            "name": "/queries/fetchParkingOwnersEntitiesByIds - POST",
-            "description": {},
-            "url": {
-              "path": [
-                "queries",
-                "fetchParkingOwnersEntitiesByIds"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"ids\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
-            }
-          },
-          "response": [
-            {
-              "id": "5e158ae3-475d-4905-9973-53a78b0b3174",
-              "name": "Success",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchParkingOwnersEntitiesByIds"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"id\": \"string\",\n   \"name\": \"string\",\n   \"parkingEntities\": [\n    {\n     \"entityParentId\": \"string\",\n     \"entityId\": \"string\",\n     \"name\": \"string\",\n     \"ownerId\": \"string\",\n     \"entityType\": 1,\n     \"location\": \"string\"\n    }\n   ]\n  }\n ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "27e7023e-cc7e-4bd4-8bed-9e2ab3cfea1f",
-              "name": "Bad Request",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchParkingOwnersEntitiesByIds"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "4267404b-eda5-430e-ac8f-9cf77d72c8f7",
-              "name": "Unauthorized",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchParkingOwnersEntitiesByIds"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
-              },
-              "status": "Unauthorized",
-              "code": 401,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            },
-            {
-              "id": "d93b0d99-a1b4-44bf-898c-cee5b8a7c35e",
-              "name": "Forbidden",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchParkingOwnersEntitiesByIds"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
-              },
-              "status": "Forbidden",
-              "code": 403,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "text/plain"
-                }
-              ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
-            },
-            {
-              "id": "90fedaac-fd4d-42c2-867d-b0560c97bc93",
-              "name": "Too many requests",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "queries",
-                    "fetchParkingOwnersEntitiesByIds"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"ids\": [\n        \"string\"\n    ]\n}"
-                }
+                "method": "GET",
+                "body": {}
               },
               "status": "Too Many Requests",
               "code": 429,
@@ -755,7 +632,7 @@
     {
       "id": "baseUrl",
       "type": "string",
-      "value": "https://api.appyway.com/management/v1/availability"
+      "value": "https://api.appyway.com/v1/traffic-requests"
     }
   ],
   "auth": {
@@ -774,8 +651,8 @@
     ]
   },
   "info": {
-    "_postman_id": "a564fc7e-866f-4ec7-9a84-1f0d01d4fba6",
-    "name": "Availability Management API (v1.0|LIVE|Public)",
+    "_postman_id": "0af95a72-a751-46b2-b36a-2b086133a509",
+    "name": "Traffic Requests (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
       "content": "",
