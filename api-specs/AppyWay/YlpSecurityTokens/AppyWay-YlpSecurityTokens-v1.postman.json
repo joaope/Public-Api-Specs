@@ -1,7 +1,168 @@
 {
   "item": [
     {
-      "id": "0a871cf5-3517-44c6-9d69-ce0d7497889d",
+      "id": "6e75abfe-3d27-4ffb-a7ec-930883415332",
+      "name": "/fetchIdentityPermissions - POST",
+      "request": {
+        "name": "/fetchIdentityPermissions - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchIdentityPermissions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"prefix\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "2109c3f5-17e3-4ef5-8b91-45dcba2809a4",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchIdentityPermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"prefix\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": [\n  \"string\"\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5c0a98a1-28c3-4e0c-982c-aa2b31f8a26d",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchIdentityPermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"prefix\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "06207333-92bc-454e-8cca-911fb78bf7a3",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchIdentityPermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"prefix\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7724a1a0-96d2-49d5-a595-3b52472f2b28",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchIdentityPermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"prefix\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "57bb2411-1dac-41ad-a900-989b89e7229b",
       "name": "Takes a token without permissions and embeds the permissions in the returned token",
       "request": {
         "name": "Takes a token without permissions and embeds the permissions in the returned token",
@@ -24,7 +185,7 @@
       },
       "response": [
         {
-          "id": "647eb8e3-8f7e-4e97-9465-2b7125f908e9",
+          "id": "2acdd608-1ae6-4dac-97a8-b04c5a3eeaa2",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -53,7 +214,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b1ce5adb-2329-457c-b622-accb5d6030f0",
+          "id": "b88a5070-8dcd-4b40-a123-d1d80ab64db7",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -82,7 +243,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a4397892-4827-439a-ad3d-7af5155f7c4f",
+          "id": "7905b3da-3cad-4a37-910a-c9dcfd353829",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -111,7 +272,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "65e52b70-33ab-4970-bea7-3fcffd7b6d95",
+          "id": "6c166f6a-8039-4e85-8e5e-5639c9eeb78a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -140,7 +301,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "21a4d052-3533-440a-b784-092fb50a3b25",
+          "id": "242252d1-b264-4337-8529-8d1532ac8715",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -196,7 +357,7 @@
     ]
   },
   "info": {
-    "_postman_id": "f53bfaf0-1b77-4813-bba2-29cf724af2a2",
+    "_postman_id": "47b51385-e1b9-4016-aeec-6c046601f0cc",
     "name": "Tokens (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
