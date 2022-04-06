@@ -1567,69 +1567,6 @@
         }
       }
     },
-    "/tasks/prepare-files": {
-      "post": {
-        "tags": [
-          "Tasks"
-        ],
-        "summary": "/tasks/prepare-files - POST",
-        "operationId": "post-tasks-prepare-files",
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PrepareFiles"
-              },
-              "example": {
-                "name": "string",
-                "user": "string"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PrepareFiles"
-              },
-              "example": {
-                "name": "string",
-                "user": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PrepareFiles"
-              },
-              "example": {
-                "name": "string",
-                "user": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PrepareFiles"
-              },
-              "example": {
-                "name": "string",
-                "user": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
     "/tasks/propose-orders": {
       "post": {
         "tags": [
@@ -2521,21 +2458,6 @@
             "nullable": true
           },
           "operatingHours": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PrepareFiles": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "user": {
             "type": "string",
             "nullable": true
           }
