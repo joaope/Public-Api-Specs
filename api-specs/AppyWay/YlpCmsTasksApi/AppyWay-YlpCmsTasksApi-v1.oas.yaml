@@ -5,6 +5,35 @@ info:
 servers:
 - url: https://api.appyway.com/v1/traffic-tasks
 paths:
+  /diagnostics/getOrderApplicationTimeline:
+    get:
+      tags:
+      - Diagnostics
+      summary: /diagnostics/getOrderApplicationTimeline - GET
+      operationId: get-diagnostics-getorderapplicationtimeline
+      parameters:
+      - name: authorityId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      - name: regulationMode
+        in: query
+        description: Format - int32.
+        schema:
+          enum:
+          - 1
+          - 2
+          type: integer
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /index/carpark:
     get:
       tags:
@@ -558,6 +587,7 @@ paths:
               authorityId: string
               orderName: string
               user: string
+              regulationMode: 1
           application/json:
             schema:
               $ref: '#/components/schemas/CreateInitialOrderForAuthority'
@@ -566,6 +596,7 @@ paths:
               authorityId: string
               orderName: string
               user: string
+              regulationMode: 1
           text/json:
             schema:
               $ref: '#/components/schemas/CreateInitialOrderForAuthority'
@@ -574,6 +605,7 @@ paths:
               authorityId: string
               orderName: string
               user: string
+              regulationMode: 1
           application/*+json:
             schema:
               $ref: '#/components/schemas/CreateInitialOrderForAuthority'
@@ -582,6 +614,7 @@ paths:
               authorityId: string
               orderName: string
               user: string
+              regulationMode: 1
       responses:
         "200":
           description: Success
@@ -1546,6 +1579,8 @@ components:
         user:
           type: string
           nullable: true
+        regulationMode:
+          $ref: '#/components/schemas/RegulationMode'
       additionalProperties: false
     DeleteCarparkIndex:
       type: object
@@ -1668,6 +1703,12 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    RegulationMode:
+      enum:
+      - 1
+      - 2
+      type: integer
+      format: int32
     Test:
       type: object
       properties:
