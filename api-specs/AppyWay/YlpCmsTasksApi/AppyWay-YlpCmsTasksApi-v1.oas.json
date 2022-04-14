@@ -10,6 +10,88 @@
     }
   ],
   "paths": {
+    "/diagnostics/getEntityInformation": {
+      "get": {
+        "tags": [
+          "Diagnostics"
+        ],
+        "summary": "/diagnostics/getEntityInformation - GET",
+        "operationId": "get-diagnostics-getentityinformation",
+        "parameters": [
+          {
+            "name": "entityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/diagnostics/getMovingFeatureFromDataUpdateId": {
+      "get": {
+        "tags": [
+          "Diagnostics"
+        ],
+        "summary": "/diagnostics/getMovingFeatureFromDataUpdateId - GET",
+        "operationId": "get-diagnostics-getmovingfeaturefromdataupdateid",
+        "parameters": [
+          {
+            "name": "dataUpdateId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/diagnostics/getOrderApplicationTimeline": {
       "get": {
         "tags": [
@@ -36,6 +118,153 @@
                 2
               ],
               "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/diagnostics/getOspFromDataUpdateId": {
+      "get": {
+        "tags": [
+          "Diagnostics"
+        ],
+        "summary": "/diagnostics/getOspFromDataUpdateId - GET",
+        "operationId": "get-diagnostics-getospfromdataupdateid",
+        "parameters": [
+          {
+            "name": "dataUpdateId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/diagnostics/getSetFromDataUpdateId": {
+      "get": {
+        "tags": [
+          "Diagnostics"
+        ],
+        "summary": "/diagnostics/getSetFromDataUpdateId - GET",
+        "operationId": "get-diagnostics-getsetfromdataupdateid",
+        "parameters": [
+          {
+            "name": "dataUpdateId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/diagnostics/getZoneFromDataUpdateId": {
+      "get": {
+        "tags": [
+          "Diagnostics"
+        ],
+        "summary": "/diagnostics/getZoneFromDataUpdateId - GET",
+        "operationId": "get-diagnostics-getzonefromdataupdateid",
+        "parameters": [
+          {
+            "name": "dataUpdateId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
             }
           }
         ],
