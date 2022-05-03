@@ -5,6 +5,113 @@ info:
 servers:
 - url: https://api.appyway.com/parking/v1/users
 paths:
+  /changeUserConsents:
+    post:
+      tags:
+      - Commands
+      summary: /changeUserConsents - POST
+      operationId: post-changeuserconsents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserConsentsCommand'
+            example:
+              userId: string
+              newMarketingConsent: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserConsentsCommand'
+            example:
+              userId: string
+              newMarketingConsent: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserConsentsCommand'
+            example:
+              userId: string
+              newMarketingConsent: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchUserProfileById:
+    post:
+      tags:
+      - Queries
+      summary: /fetchUserProfileById - POST
+      operationId: post-fetchuserprofilebyid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchUserProfileByIdQuery'
+            example:
+              userId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchUserProfileByIdQuery'
+            example:
+              userId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchUserProfileByIdQuery'
+            example:
+              userId: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchUserProfileByIdQueryOkResponse'
+              example:
+                success: true
+                result:
+                  userId: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /ping:
     get:
       tags:
@@ -98,6 +205,17 @@ components:
             $ref: '#/components/schemas/Error'
           nullable: true
       additionalProperties: false
+    ChangeUserConsentsCommand:
+      required:
+      - userId
+      type: object
+      properties:
+        userId:
+          minLength: 1
+          type: string
+        newMarketingConsent:
+          type: boolean
+      additionalProperties: false
     Error:
       type: object
       properties:
@@ -110,6 +228,22 @@ components:
         message:
           type: string
           nullable: true
+      additionalProperties: false
+    FetchUserProfileByIdQuery:
+      type: object
+      properties:
+        userId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FetchUserProfileByIdQueryOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/FetchUserProfileByIdQuery'
       additionalProperties: false
     OkResponse:
       type: object

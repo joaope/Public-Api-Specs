@@ -2548,6 +2548,58 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /resendVerificationEmail:
+    post:
+      tags:
+      - User
+      summary: Resends verification email
+      description: Resends verification email
+      operationId: post-resendverificationemail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResendVerificationEmailCommand'
+            example:
+              email: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ResendVerificationEmailCommand'
+            example:
+              email: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ResendVerificationEmailCommand'
+            example:
+              email: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /resetUserPassword:
     post:
       tags:
@@ -4283,6 +4335,13 @@ components:
           type: string
           nullable: true
       additionalProperties: {}
+    ResendVerificationEmailCommand:
+      type: object
+      properties:
+        email:
+          type: string
+          nullable: true
+      additionalProperties: false
     ResetUserPasswordCommand:
       required:
       - redirectUrl

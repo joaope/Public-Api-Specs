@@ -1032,6 +1032,8 @@ paths:
                   type: string
                 Reproject:
                   type: boolean
+                MapSourceTags:
+                  type: boolean
                 Revoke:
                   type: boolean
                 Files:
@@ -1063,6 +1065,8 @@ paths:
                 AuthorityName:
                   type: string
                 Reproject:
+                  type: boolean
+                MapSourceTags:
                   type: boolean
                 Revoke:
                   type: boolean
@@ -1117,6 +1121,59 @@ paths:
               user: string
               orderId: string
               force: true
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/generate-sample-file:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/generate-sample-file - POST
+      operationId: post-tasks-generate-sample-file
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GenerateSampleFile'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              confidenceLevel: 0
+              marginOfError: 0
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateSampleFile'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              confidenceLevel: 0
+              marginOfError: 0
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GenerateSampleFile'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              confidenceLevel: 0
+              marginOfError: 0
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GenerateSampleFile'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              confidenceLevel: 0
+              marginOfError: 0
       responses:
         "200":
           description: Success
@@ -1213,6 +1270,28 @@ paths:
       - Tasks
       summary: /tasks/make-orders - POST
       operationId: post-tasks-make-orders
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /tasks/process-sample-file:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/process-sample-file - POST
+      operationId: post-tasks-process-sample-file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                File:
+                  type: string
       responses:
         "200":
           description: Success
@@ -1815,6 +1894,26 @@ components:
           format: uuid
         force:
           type: boolean
+      additionalProperties: false
+    GenerateSampleFile:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          readOnly: true
+        user:
+          type: string
+          nullable: true
+        authorityId:
+          type: string
+          format: uuid
+        confidenceLevel:
+          type: number
+          format: double
+        marginOfError:
+          type: number
+          format: double
       additionalProperties: false
     ImportElginSuspensions:
       type: object
