@@ -117,7 +117,7 @@ paths:
       tags:
       - Status
       summary: Ping
-      description: Returns Status (pong) of the Availability Occupancy API service
+      description: Returns Status (pong) of the service
       operationId: get-ping
       responses:
         "200":
@@ -230,11 +230,13 @@ components:
           nullable: true
       additionalProperties: false
     FetchUserProfileByIdQuery:
+      required:
+      - userId
       type: object
       properties:
         userId:
+          minLength: 1
           type: string
-          nullable: true
       additionalProperties: false
     FetchUserProfileByIdQueryOkResponse:
       type: object
@@ -264,6 +266,7 @@ components:
         email:
           minLength: 1
           type: string
+          format: email
         sourceApp:
           type: string
           nullable: true

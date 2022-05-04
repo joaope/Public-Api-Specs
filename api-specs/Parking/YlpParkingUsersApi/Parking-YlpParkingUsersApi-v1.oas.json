@@ -186,7 +186,7 @@
           "Status"
         ],
         "summary": "Ping",
-        "description": "Returns Status (pong) of the Availability Occupancy API service",
+        "description": "Returns Status (pong) of the service",
         "operationId": "get-ping",
         "responses": {
           "200": {
@@ -354,11 +354,14 @@
         "additionalProperties": false
       },
       "FetchUserProfileByIdQuery": {
+        "required": [
+          "userId"
+        ],
         "type": "object",
         "properties": {
           "userId": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -399,7 +402,8 @@
           },
           "email": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "format": "email"
           },
           "sourceApp": {
             "type": "string",
