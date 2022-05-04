@@ -1013,6 +1013,55 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /tasks/execute-data-rules:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/execute-data-rules - POST
+      operationId: post-tasks-execute-data-rules
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ExecuteDataRules'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              indexName: string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteDataRules'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              indexName: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteDataRules'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              indexName: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ExecuteDataRules'
+            example:
+              name: string
+              user: string
+              authorityId: string
+              indexName: string
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /tasks/execute-moving-import:
     post:
       tags:
@@ -1876,6 +1925,23 @@ components:
           nullable: true
           readOnly: true
         user:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ExecuteDataRules:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          readOnly: true
+        user:
+          type: string
+          nullable: true
+        authorityId:
+          type: string
+          format: uuid
+        indexName:
           type: string
           nullable: true
       additionalProperties: false
