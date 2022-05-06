@@ -329,10 +329,11 @@ paths:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
-              endDate: 2020-01-20T00:00:00.0000000
               dates:
               - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
+              includeApplicableOperatingHoursDetail: true
+              endDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
@@ -346,10 +347,11 @@ paths:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
-              endDate: 2020-01-20T00:00:00.0000000
               dates:
               - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
+              includeApplicableOperatingHoursDetail: true
+              endDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
@@ -363,10 +365,11 @@ paths:
               $ref: '#/components/schemas/FetchOperatingHoursByIdQuery'
             example:
               entityId: string
-              endDate: 2020-01-20T00:00:00.0000000
               dates:
               - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
+              includeApplicableOperatingHoursDetail: true
+              endDate: 2020-01-20T00:00:00.0000000
               vehicleOperatorContext:
                 vehicleTypeId: 0
                 activityTypeId: 0
@@ -399,8 +402,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-05T00:00:00.0000000
-                      end: 2022-05-05T00:00:00.0000000
+                    - start: 2022-05-06T00:00:00.0000000
+                      end: 2022-05-06T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -417,8 +420,26 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-05T00:00:00.0000000
-                      end: 2022-05-05T00:00:00.0000000
+                    - start: 2022-05-06T00:00:00.0000000
+                      end: 2022-05-06T00:00:00.0000000
+                      isFree: true
+                      date: 2020-01-20T00:00:00.0000000
+                      status: 1
+                  applicableOperatingHoursDetail:
+                  - paymentMethodIds:
+                    - 0
+                    requirements:
+                      vehicleTypeIds:
+                      - 0
+                      activityTypeIds:
+                      - 0
+                      fuelTypeIds:
+                      - 0
+                      permits:
+                      - permitTypeId: 0
+                    openPeriods:
+                    - start: 2022-05-06T00:00:00.0000000
+                      end: 2022-05-06T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -464,6 +485,7 @@ paths:
               dates:
               - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
+              includeApplicableOperatingHoursDetail: true
           text/json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdsQuery'
@@ -482,6 +504,7 @@ paths:
               dates:
               - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
+              includeApplicableOperatingHoursDetail: true
           application/*+json:
             schema:
               $ref: '#/components/schemas/FetchOperatingHoursByIdsQuery'
@@ -500,6 +523,7 @@ paths:
               dates:
               - 2020-01-20T00:00:00.0000000
               includeNotApplicableOperatingHours: true
+              includeApplicableOperatingHoursDetail: true
       responses:
         "200":
           description: Success
@@ -524,8 +548,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-05T00:00:00.0000000
-                      end: 2022-05-05T00:00:00.0000000
+                    - start: 2022-05-06T00:00:00.0000000
+                      end: 2022-05-06T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -542,8 +566,26 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-05T00:00:00.0000000
-                      end: 2022-05-05T00:00:00.0000000
+                    - start: 2022-05-06T00:00:00.0000000
+                      end: 2022-05-06T00:00:00.0000000
+                      isFree: true
+                      date: 2020-01-20T00:00:00.0000000
+                      status: 1
+                  applicableOperatingHoursDetail:
+                  - paymentMethodIds:
+                    - 0
+                    requirements:
+                      vehicleTypeIds:
+                      - 0
+                      activityTypeIds:
+                      - 0
+                      fuelTypeIds:
+                      - 0
+                      permits:
+                      - permitTypeId: 0
+                    openPeriods:
+                    - start: 2022-05-06T00:00:00.0000000
+                      end: 2022-05-06T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -2381,6 +2423,9 @@ components:
         includeNotApplicableOperatingHours:
           type: boolean
           description: Include all operation hours requirements for contexts that do not apply to the driver making the request.
+        includeApplicableOperatingHoursDetail:
+          type: boolean
+          description: Include a detail version of operation hours requirements that apply for the given context.
       additionalProperties: false
     FetchOperatingHoursByIdsQuery:
       type: object
@@ -2425,6 +2470,9 @@ components:
         includeNotApplicableOperatingHours:
           type: boolean
           description: Include all operation hours requirements for contexts that do not apply to the driver making the request.
+        includeApplicableOperatingHoursDetail:
+          type: boolean
+          description: Include a detail version of operation hours requirements that apply for the given context.
       additionalProperties: false
     FetchParkingEntityByIdQuery:
       required:
@@ -3762,6 +3810,12 @@ components:
           items:
             $ref: '#/components/schemas/OperatingHoursRequirements'
           description: Not applicable operation hours requirements
+          nullable: true
+        applicableOperatingHoursDetail:
+          type: array
+          items:
+            $ref: '#/components/schemas/OperatingHoursRequirements'
+          description: Applicable operation hours requirements details
           nullable: true
       additionalProperties: false
     ParkingEntityOperatingHoursResultOkResponse:
