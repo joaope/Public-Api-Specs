@@ -226,6 +226,67 @@
         }
       }
     },
+    "/orders/customer/{customer}": {
+      "get": {
+        "tags": [
+          "OrdersV2"
+        ],
+        "summary": "Gets a single order by customer.",
+        "description": "Gets a single order by customer.",
+        "operationId": "OrdersV2_GetByCustomer",
+        "parameters": [
+          {
+            "name": "customer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The order was successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                },
+                "example": "<Object />"
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Object"
+                },
+                "example": "<Object />"
+              }
+            }
+          },
+          "404": {
+            "description": "The order does not exist."
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          }
+        }
+      }
+    },
     "/people": {
       "get": {
         "tags": [
