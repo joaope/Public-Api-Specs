@@ -103,7 +103,10 @@
                       "capabilitiesState": {
                         "isPubliclyViewable": true,
                         "acceptChargePointRequests": true
-                      }
+                      },
+                      "highwayAuthority": "string",
+                      "dataQuality": 1,
+                      "lastTmoUpdate": "string"
                     }
                   ]
                 }
@@ -184,7 +187,10 @@
                       "capabilitiesState": {
                         "isPubliclyViewable": true,
                         "acceptChargePointRequests": true
-                      }
+                      },
+                      "highwayAuthority": "string",
+                      "dataQuality": 1,
+                      "lastTmoUpdate": "string"
                     }
                   ]
                 }
@@ -580,7 +586,10 @@
                     "capabilitiesState": {
                       "isPubliclyViewable": true,
                       "acceptChargePointRequests": true
-                    }
+                    },
+                    "highwayAuthority": "string",
+                    "dataQuality": 1,
+                    "lastTmoUpdate": "string"
                   }
                 }
               },
@@ -659,7 +668,10 @@
                     "capabilitiesState": {
                       "isPubliclyViewable": true,
                       "acceptChargePointRequests": true
-                    }
+                    },
+                    "highwayAuthority": "string",
+                    "dataQuality": 1,
+                    "lastTmoUpdate": "string"
                   }
                 }
               }
@@ -778,7 +790,10 @@
                     "capabilitiesState": {
                       "isPubliclyViewable": true,
                       "acceptChargePointRequests": true
-                    }
+                    },
+                    "highwayAuthority": "string",
+                    "dataQuality": 1,
+                    "lastTmoUpdate": "string"
                   }
                 }
               },
@@ -857,7 +872,10 @@
                     "capabilitiesState": {
                       "isPubliclyViewable": true,
                       "acceptChargePointRequests": true
-                    }
+                    },
+                    "highwayAuthority": "string",
+                    "dataQuality": 1,
+                    "lastTmoUpdate": "string"
                   }
                 }
               }
@@ -3039,7 +3057,10 @@
                 "capabilities": {
                   "allowIsPubliclyViewable": true,
                   "allowChargePointRequests": true
-                }
+                },
+                "highwayAuthority": "string",
+                "dataQuality": 1,
+                "lastTmoUpdate": "string"
               }
             },
             "application/json": {
@@ -3059,7 +3080,10 @@
                 "capabilities": {
                   "allowIsPubliclyViewable": true,
                   "allowChargePointRequests": true
-                }
+                },
+                "highwayAuthority": "string",
+                "dataQuality": 1,
+                "lastTmoUpdate": "string"
               }
             },
             "text/json": {
@@ -3079,7 +3103,10 @@
                 "capabilities": {
                   "allowIsPubliclyViewable": true,
                   "allowChargePointRequests": true
-                }
+                },
+                "highwayAuthority": "string",
+                "dataQuality": 1,
+                "lastTmoUpdate": "string"
               }
             },
             "application/*+json": {
@@ -3099,7 +3126,10 @@
                 "capabilities": {
                   "allowIsPubliclyViewable": true,
                   "allowChargePointRequests": true
-                }
+                },
+                "highwayAuthority": "string",
+                "dataQuality": 1,
+                "lastTmoUpdate": "string"
               }
             }
           }
@@ -8174,6 +8204,18 @@
           },
           "capabilitiesState": {
             "$ref": "#/components/schemas/CapabilitiesState"
+          },
+          "highwayAuthority": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataQuality": {
+            "$ref": "#/components/schemas/DataQuality"
+          },
+          "lastTmoUpdate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -8209,6 +8251,18 @@
           },
           "capabilities": {
             "$ref": "#/components/schemas/Capabilities"
+          },
+          "highwayAuthority": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataQuality": {
+            "$ref": "#/components/schemas/DataQuality"
+          },
+          "lastTmoUpdate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -8886,6 +8940,16 @@
           }
         },
         "additionalProperties": false
+      },
+      "DataQuality": {
+        "enum": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "DaySpecificRestrictionExceptionCms": {
         "type": "object",

@@ -76,6 +76,9 @@ paths:
                   capabilitiesState:
                     isPubliclyViewable: true
                     acceptChargePointRequests: true
+                  highwayAuthority: string
+                  dataQuality: 1
+                  lastTmoUpdate: string
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityListResult'
@@ -133,6 +136,9 @@ paths:
                   capabilitiesState:
                     isPubliclyViewable: true
                     acceptChargePointRequests: true
+                  highwayAuthority: string
+                  dataQuality: 1
+                  lastTmoUpdate: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -405,6 +411,9 @@ paths:
                   capabilitiesState:
                     isPubliclyViewable: true
                     acceptChargePointRequests: true
+                  highwayAuthority: string
+                  dataQuality: 1
+                  lastTmoUpdate: string
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityResult'
@@ -462,6 +471,9 @@ paths:
                   capabilitiesState:
                     isPubliclyViewable: true
                     acceptChargePointRequests: true
+                  highwayAuthority: string
+                  dataQuality: 1
+                  lastTmoUpdate: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -544,6 +556,9 @@ paths:
                   capabilitiesState:
                     isPubliclyViewable: true
                     acceptChargePointRequests: true
+                  highwayAuthority: string
+                  dataQuality: 1
+                  lastTmoUpdate: string
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthorityResult'
@@ -601,6 +616,9 @@ paths:
                   capabilitiesState:
                     isPubliclyViewable: true
                     acceptChargePointRequests: true
+                  highwayAuthority: string
+                  dataQuality: 1
+                  lastTmoUpdate: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1987,6 +2005,9 @@ paths:
               capabilities:
                 allowIsPubliclyViewable: true
                 allowChargePointRequests: true
+              highwayAuthority: string
+              dataQuality: 1
+              lastTmoUpdate: string
           application/json:
             schema:
               $ref: '#/components/schemas/AuthorityConfiguration'
@@ -2001,6 +2022,9 @@ paths:
               capabilities:
                 allowIsPubliclyViewable: true
                 allowChargePointRequests: true
+              highwayAuthority: string
+              dataQuality: 1
+              lastTmoUpdate: string
           text/json:
             schema:
               $ref: '#/components/schemas/AuthorityConfiguration'
@@ -2015,6 +2039,9 @@ paths:
               capabilities:
                 allowIsPubliclyViewable: true
                 allowChargePointRequests: true
+              highwayAuthority: string
+              dataQuality: 1
+              lastTmoUpdate: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/AuthorityConfiguration'
@@ -2029,6 +2056,9 @@ paths:
               capabilities:
                 allowIsPubliclyViewable: true
                 allowChargePointRequests: true
+              highwayAuthority: string
+              dataQuality: 1
+              lastTmoUpdate: string
       responses:
         "200":
           description: Success
@@ -5521,6 +5551,15 @@ components:
           $ref: '#/components/schemas/Capabilities'
         capabilitiesState:
           $ref: '#/components/schemas/CapabilitiesState'
+        highwayAuthority:
+          type: string
+          nullable: true
+        dataQuality:
+          $ref: '#/components/schemas/DataQuality'
+        lastTmoUpdate:
+          type: string
+          format: date-time
+          nullable: true
       additionalProperties: false
     AuthorityConfiguration:
       type: object
@@ -5546,6 +5585,15 @@ components:
           nullable: true
         capabilities:
           $ref: '#/components/schemas/Capabilities'
+        highwayAuthority:
+          type: string
+          nullable: true
+        dataQuality:
+          $ref: '#/components/schemas/DataQuality'
+        lastTmoUpdate:
+          type: string
+          format: date-time
+          nullable: true
       additionalProperties: false
     AuthorityInfo:
       type: object
@@ -6041,6 +6089,14 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    DataQuality:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      type: integer
+      format: int32
     DaySpecificRestrictionExceptionCms:
       type: object
       properties:
