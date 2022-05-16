@@ -402,8 +402,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-09T00:00:00.0000000
-                      end: 2022-05-09T00:00:00.0000000
+                    - start: 2022-05-16T00:00:00.0000000
+                      end: 2022-05-16T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -420,8 +420,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-09T00:00:00.0000000
-                      end: 2022-05-09T00:00:00.0000000
+                    - start: 2022-05-16T00:00:00.0000000
+                      end: 2022-05-16T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -438,8 +438,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-09T00:00:00.0000000
-                      end: 2022-05-09T00:00:00.0000000
+                    - start: 2022-05-16T00:00:00.0000000
+                      end: 2022-05-16T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -548,8 +548,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-09T00:00:00.0000000
-                      end: 2022-05-09T00:00:00.0000000
+                    - start: 2022-05-16T00:00:00.0000000
+                      end: 2022-05-16T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -566,8 +566,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-09T00:00:00.0000000
-                      end: 2022-05-09T00:00:00.0000000
+                    - start: 2022-05-16T00:00:00.0000000
+                      end: 2022-05-16T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -584,8 +584,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-09T00:00:00.0000000
-                      end: 2022-05-09T00:00:00.0000000
+                    - start: 2022-05-16T00:00:00.0000000
+                      end: 2022-05-16T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -2195,11 +2195,12 @@ components:
       enum:
       - 1
       - 2
-      - 3
-      - 4
-      - 5
-      - 6
       type: integer
+      description: |+
+        Enumeration for the different types of base maps
+
+        *OrdnanceSurvey (1) - Ordnance Survey: Realistic mapping
+        *OpenStreetMaps (2) - Open street map.
       format: int32
     CarPark:
       type: object
@@ -4138,6 +4139,13 @@ components:
       - 3
       - 4
       type: integer
+      description: |2+
+
+
+        *Restricted (1) - Unspecified sections of kerb are restricted (no parking) for everyone.
+        *LikelyRestricted (2) - Unspecified sections of kerb are likely to be restricted (no parking) for everyone.
+        *LikelyUnrestricted (3) - Unspecified sections of kerb are likely to be unrestricted (free parking)
+        *Unknown (4) - We cannot say with confidence whether or not unspecified kerb sections are restricted.
       format: int32
     SurchargeCriteria:
       type: object
