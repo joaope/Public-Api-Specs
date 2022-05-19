@@ -172,6 +172,7 @@ paths:
                     - 1
                     facilityTypeIds:
                     - 0
+                    venueId: string
                   zones:
                   - entityId: string
                     name: string
@@ -192,6 +193,7 @@ paths:
                     - message: string
                     authorityId: string
                     zoneType: 1
+                    venueId: string
                     entityType: 1
                   authorities:
                   - entityId: string
@@ -250,12 +252,6 @@ paths:
               $ref: '#/components/schemas/FetchEventDatesByIdQuery'
             example:
               entityId: string
-              vehicleOperatorContext:
-                vehicleTypeId: 0
-                activityTypeId: 0
-                fuelTypeId: 0
-                permits:
-                - permitTypeId: 0
               startDate: 2020-01-20T00:00:00.0000000
               endDate: 2020-01-20T00:00:00.0000000
           text/json:
@@ -263,12 +259,6 @@ paths:
               $ref: '#/components/schemas/FetchEventDatesByIdQuery'
             example:
               entityId: string
-              vehicleOperatorContext:
-                vehicleTypeId: 0
-                activityTypeId: 0
-                fuelTypeId: 0
-                permits:
-                - permitTypeId: 0
               startDate: 2020-01-20T00:00:00.0000000
               endDate: 2020-01-20T00:00:00.0000000
           application/*+json:
@@ -276,12 +266,6 @@ paths:
               $ref: '#/components/schemas/FetchEventDatesByIdQuery'
             example:
               entityId: string
-              vehicleOperatorContext:
-                vehicleTypeId: 0
-                activityTypeId: 0
-                fuelTypeId: 0
-                permits:
-                - permitTypeId: 0
               startDate: 2020-01-20T00:00:00.0000000
               endDate: 2020-01-20T00:00:00.0000000
       responses:
@@ -402,8 +386,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-16T00:00:00.0000000
-                      end: 2022-05-16T00:00:00.0000000
+                    - start: 2022-05-19T00:00:00.0000000
+                      end: 2022-05-19T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -420,8 +404,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-16T00:00:00.0000000
-                      end: 2022-05-16T00:00:00.0000000
+                    - start: 2022-05-19T00:00:00.0000000
+                      end: 2022-05-19T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -438,8 +422,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-16T00:00:00.0000000
-                      end: 2022-05-16T00:00:00.0000000
+                    - start: 2022-05-19T00:00:00.0000000
+                      end: 2022-05-19T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -548,8 +532,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-16T00:00:00.0000000
-                      end: 2022-05-16T00:00:00.0000000
+                    - start: 2022-05-19T00:00:00.0000000
+                      end: 2022-05-19T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -566,8 +550,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-16T00:00:00.0000000
-                      end: 2022-05-16T00:00:00.0000000
+                    - start: 2022-05-19T00:00:00.0000000
+                      end: 2022-05-19T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -584,8 +568,8 @@ paths:
                       permits:
                       - permitTypeId: 0
                     openPeriods:
-                    - start: 2022-05-16T00:00:00.0000000
-                      end: 2022-05-16T00:00:00.0000000
+                    - start: 2022-05-19T00:00:00.0000000
+                      end: 2022-05-19T00:00:00.0000000
                       isFree: true
                       date: 2020-01-20T00:00:00.0000000
                       status: 1
@@ -674,6 +658,7 @@ paths:
                   - 1
                   facilityTypeIds:
                   - 0
+                  venueId: string
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1016,6 +1001,7 @@ paths:
                   - message: string
                   authorityId: string
                   zoneType: 1
+                  venueId: string
                   entityType: 1
         "401":
           $ref: '#/components/responses/Unauthorized'
@@ -1318,6 +1304,7 @@ paths:
                       - 1
                       facilityTypeIds:
                       - 0
+                      venueId: string
                     distance: 0
         "400":
           description: Bad Request
@@ -1479,6 +1466,7 @@ paths:
                       - 1
                       facilityTypeIds:
                       - 0
+                      venueId: string
                     distance: 0
         "400":
           description: Bad Request
@@ -1842,7 +1830,7 @@ paths:
       summary: Find suggestions by viewport
       description: |-
         Returns information about areas not covered by parking entities. The results are indicative of the probability whether you can or cannot park in that area.
-        Attention must be paid to the on street signage
+        Attention must be paid to the on-street signage
       operationId: post-findsuggestionsbyviewport
       requestBody:
         content:
@@ -2246,12 +2234,12 @@ components:
           items:
             type: integer
             format: int32
-          description: Payment methods supported at this onstreet location.
+          description: Payment methods supported at this on-street location.
           nullable: true
-        operator:
-          $ref: '#/components/schemas/CarParkOperator'
         entityType:
           $ref: '#/components/schemas/MapEntityType'
+        operator:
+          $ref: '#/components/schemas/CarParkOperator'
       additionalProperties: false
       description: Models an off-street parking facility (car park) including surface and multi-storey car parks.
     CarParkOperator:
@@ -2370,8 +2358,6 @@ components:
           type: string
           description: Identifier of the Parking Entity to fetch
           nullable: true
-        vehicleOperatorContext:
-          $ref: '#/components/schemas/VehicleOperatorContext'
         startDate:
           type: string
           description: 'Start date for which to retrieve the event dates provided in local format: YYYY-MM-DD (eg: 2021-01-01).'
@@ -2626,7 +2612,7 @@ components:
           items:
             $ref: '#/components/schemas/OnStreetParkingType'
           description: |+
-            On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types
+            On-Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on-street parking types
             in the zone for which they are defined.
 
             *StandardBay (1) - Standard bay (paid or free)
@@ -2733,7 +2719,7 @@ components:
           items:
             $ref: '#/components/schemas/OnStreetParkingType'
           description: |+
-            If supplied, only on street parking entities that have the given On Street Parking types will be included in the response. If null,
+            If supplied, only on-street parking entities that have the given On-Street Parking types will be included in the response. If null,
             all types will be returned.
 
             *StandardBay (1) - Standard bay (paid or free)
@@ -2771,9 +2757,9 @@ components:
             If supplied, entities that have the given Map Entity types will be excluded from the response. Passing Zone or Authority
             entity types will result in a Bad Request response.
 
-            *OnStreet (1) - An on street parking area
+            *OnStreet (1) - An on-street parking area
             *Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.
-            *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.
+            *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of On-Street and Car park entities.
             A zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may
             define rules parking entities that can be overridden by individual entities.
             *Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.
@@ -2828,7 +2814,7 @@ components:
           items:
             $ref: '#/components/schemas/OnStreetParkingType'
           description: |+
-            If supplied, only on street parking entities that have the given On Street Parking types will be included in the response. If null,
+            If supplied, only on-street parking entities that have the given On-Street Parking types will be included in the response. If null,
             all types will be returned.
 
             *StandardBay (1) - Standard bay (paid or free)
@@ -2966,9 +2952,9 @@ components:
             If supplied, entities that have the given Map Entity types will be excluded from the response. Passing Zone or Authority
             entity types will result in a Bad Request response.
 
-            *OnStreet (1) - An on street parking area
+            *OnStreet (1) - An on-street parking area
             *Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.
-            *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.
+            *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of On-Street and Car park entities.
             A zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may
             define rules parking entities that can be overridden by individual entities.
             *Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.
@@ -3137,7 +3123,7 @@ components:
           items:
             $ref: '#/components/schemas/OnStreetParkingType'
           description: |+
-            On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on street parking types
+            On Street Parking types for which to return state. Optional. If omitted, defaults are returned for all the on-street parking types
             in the zone for which they are defined.
 
             *StandardBay (1) - Standard bay (paid or free)
@@ -3394,9 +3380,9 @@ components:
       description: |+
         Enumeration for the different types of Map Entity - objects returned by the API that can be drawn on a map.
 
-        *OnStreet (1) - An on street parking area
+        *OnStreet (1) - An on-street parking area
         *Carpark (2) - An off-street parking facility (car park) including surface and multi-storey car parks.
-        *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.
+        *Zone (3) - A zone is an area defined by the local authority that acts as a container for a set of On-Street and Car park entities.
         A zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may
         define rules parking entities that can be overridden by individual entities.
         *Authority (4) - Defines the area controlled by a particular local authority. Authorities may contain zones and may also contain parking entities directly.
@@ -3464,8 +3450,10 @@ components:
           items:
             type: integer
             format: int32
-          description: Payment methods supported at this onstreet location.
+          description: Payment methods supported at this on-street location.
           nullable: true
+        entityType:
+          $ref: '#/components/schemas/MapEntityType'
         onStreetParkingTypeIds:
           type: array
           items:
@@ -3498,12 +3486,14 @@ components:
           items:
             type: integer
             format: int32
-          description: Any special facilities available at this onstreet location, e.g. charging points for EVs. This property is only present for On Street Parking entities.
+          description: Any special facilities available at this on-street location, e.g. charging points for EVs. This property is only present for On Street Parking entities.
           nullable: true
-        entityType:
-          $ref: '#/components/schemas/MapEntityType'
+        venueId:
+          type: string
+          description: The venue id
+          nullable: true
       additionalProperties: false
-      description: Models an on-street bay
+      description: Models an On-Street bay
     OnStreetParkingType:
       enum:
       - 1
@@ -3690,7 +3680,7 @@ components:
           items:
             type: integer
             format: int32
-          description: Payment methods supported at this onstreet location.
+          description: Payment methods supported at this on-street location.
           nullable: true
         operator:
           $ref: '#/components/schemas/CarParkOperator'
@@ -3726,10 +3716,14 @@ components:
           items:
             type: integer
             format: int32
-          description: Any special facilities available at this onstreet location, e.g. charging points for EVs. This property is only present for On Street Parking entities.
+          description: Any special facilities available at this on-street location, e.g. charging points for EVs. This property is only present for On Street Parking entities.
+          nullable: true
+        venueId:
+          type: string
+          description: The venue id
           nullable: true
       additionalProperties: false
-      description: Base class for Map Entities that support parking, either onstreet or car parks
+      description: Base class for Map Entities that support parking, either on-street or car parks
     ParkingEntityEventDatesResult:
       type: object
       properties:
@@ -4190,24 +4184,24 @@ components:
       properties:
         vehicleTypeId:
           type: integer
-          description: Type of vehicle being operated
+          description: Type of vehicle being operated. See the reference API for more information.
           format: int32
           nullable: true
         activityTypeId:
           type: integer
-          description: Activity the operator is seeking to perform at the kerbside (parking, loading)
+          description: Activity the operator is seeking to perform at the kerbside (parking, loading). See the reference API for more information.
           format: int32
           nullable: true
         fuelTypeId:
           type: integer
-          description: Fuel type of the vehicle
+          description: Fuel type of the vehicle. See the reference API for more information.
           format: int32
           nullable: true
         permits:
           type: array
           items:
             $ref: '#/components/schemas/Permit'
-          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
+          description: Any permits types held by the operator (e.g. blue disabled badge, car club permit). See the reference API for more information.
           nullable: true
       additionalProperties: false
       description: |-
@@ -4221,27 +4215,27 @@ components:
           items:
             type: integer
             format: int32
-          description: Type of vehicles
+          description: Vehicles types. See the reference API for more information.
           nullable: true
         activityTypeIds:
           type: array
           items:
             type: integer
             format: int32
-          description: Activity the operators perform at the kerbside (parking, loading)
+          description: Activity the operators perform at the kerbside (parking, loading). See the reference API for more information.
           nullable: true
         fuelTypeIds:
           type: array
           items:
             type: integer
             format: int32
-          description: Fuel types of the vehicles
+          description: Fuel types of the vehicles. See the reference API for more information.
           nullable: true
         permits:
           type: array
           items:
             $ref: '#/components/schemas/Permit'
-          description: Any permits held by the operator (e.g. blue disabled badge, car club permit)
+          description: Any permits held by the operator (e.g. blue disabled badge, car club permit). See the reference API for more information.
           nullable: true
       additionalProperties: false
     Zone:
@@ -4276,11 +4270,15 @@ components:
           nullable: true
         zoneType:
           $ref: '#/components/schemas/ZoneType'
+        venueId:
+          type: string
+          description: The venue id
+          nullable: true
         entityType:
           $ref: '#/components/schemas/MapEntityType'
       additionalProperties: false
       description: |-
-        A zone is an area defined by the local authority that acts as a container for a set of OnStreet and Carpark entities.
+        A zone is an area defined by the local authority that acts as a container for a set of OnStreet and CarPark entities.
         A zone may define common parking rules that are applicable generally across parts of the kerb (e.g. Single Yellow Lines) and may
         define rules parking entities that can be overridden by individual entities.
     ZoneDefault:
