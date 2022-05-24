@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Reference
+  title: Reference API
   version: "1.0"
 servers:
 - url: https://api.appyway.com/v1/reference
@@ -9,8 +9,8 @@ paths:
     get:
       tags:
       - ActivityType
-      summary: List
-      description: Gets all activity types
+      summary: List All Activity Types
+      description: Returns a list with all the activity types.
       operationId: get-activitytype-list
       responses:
         "200":
@@ -50,8 +50,8 @@ paths:
     get:
       tags:
       - All
-      summary: List
-      description: Gets all reference data
+      summary: List All Reference data
+      description: Returns an object that contains all the existing reference data.
       operationId: get-all-list
       responses:
         "200":
@@ -167,8 +167,8 @@ paths:
                     events:
                     - name: string
                       date: 2020-01-20T00:00:00.0000000
-                      start: 2022-05-19T00:00:00.0000000
-                      end: 2022-05-19T00:00:00.0000000
+                      start: 2022-05-24T00:00:00.0000000
+                      end: 2022-05-24T00:00:00.0000000
                 restrictionTypes:
                 - id: 0
                   name: string
@@ -309,8 +309,8 @@ paths:
                     events:
                     - name: string
                       date: 2020-01-20T00:00:00.0000000
-                      start: 2022-05-19T00:00:00.0000000
-                      end: 2022-05-19T00:00:00.0000000
+                      start: 2022-05-24T00:00:00.0000000
+                      end: 2022-05-24T00:00:00.0000000
                 restrictionTypes:
                 - id: 0
                   name: string
@@ -355,8 +355,8 @@ paths:
     get:
       tags:
       - AuthorityType
-      summary: List
-      description: Gets all authority types
+      summary: List All Authority Types
+      description: Returns a list with all the authority types.
       operationId: get-authoritytype-list
       responses:
         "200":
@@ -400,8 +400,8 @@ paths:
     get:
       tags:
       - BaseMap
-      summary: List
-      description: Gets all base maps
+      summary: List All Base Maps
+      description: Return a list with all supported base maps and availability for supported countries.
       operationId: get-basemap-list
       responses:
         "200":
@@ -445,8 +445,8 @@ paths:
     get:
       tags:
       - Country
-      summary: Get
-      description: Gets a country by id
+      summary: Get Country By Id
+      description: Returns a country object if a valid identifier is provided.
       operationId: get-country-get-countryid
       parameters:
       - name: countryId
@@ -513,8 +513,8 @@ paths:
     get:
       tags:
       - Country
-      summary: List
-      description: Gets all countries
+      summary: List All Countries
+      description: Returns a list with all the supported countries.
       operationId: get-country-list
       responses:
         "200":
@@ -580,8 +580,8 @@ paths:
     post:
       tags:
       - Country
-      summary: Update
-      description: Updates a country
+      summary: Update Country
+      description: Updates the specified country information.
       operationId: post-country-update
       requestBody:
         content:
@@ -678,8 +678,8 @@ paths:
     get:
       tags:
       - EntitlementType
-      summary: List
-      description: Gets all entitlement types
+      summary: List All Entitlement Types
+      description: Returns a list with all the entitlement types.
       operationId: get-entitlementtype-list
       responses:
         "200":
@@ -737,8 +737,8 @@ paths:
     get:
       tags:
       - ExceptionType
-      summary: List
-      description: Gets all exception types
+      summary: List All Exception Types
+      description: Returns a list with all the exception types.
       operationId: get-exceptiontype-list
       responses:
         "200":
@@ -778,8 +778,8 @@ paths:
     get:
       tags:
       - ExemptionTimeType
-      summary: List
-      description: Gets all exemption time types
+      summary: List All Exemption Time Types
+      description: Returns a list with all the exemption time types.
       operationId: get-exemptiontimetype-list
       responses:
         "200":
@@ -819,8 +819,8 @@ paths:
     get:
       tags:
       - ExemptionType
-      summary: List
-      description: Gets all exemption types
+      summary: List All Exemption Types
+      description: Returns a list with all the exemption types.
       operationId: get-exemptiontype-list
       responses:
         "200":
@@ -860,8 +860,8 @@ paths:
     get:
       tags:
       - FacilityType
-      summary: List
-      description: Gets all facility types
+      summary: List All Facility Types
+      description: Returns a list with all the facility types.
       operationId: get-facilitytype-list
       responses:
         "200":
@@ -901,8 +901,8 @@ paths:
     get:
       tags:
       - FuelType
-      summary: List
-      description: Gets all fuel types
+      summary: List All Fuel Types
+      description: Returns a list with all the fuel types.
       operationId: get-fueltype-list
       responses:
         "200":
@@ -957,8 +957,8 @@ paths:
     get:
       tags:
       - MovingExceptionType
-      summary: List
-      description: Gets all moving exception types
+      summary: List All Moving Exception Types
+      description: Returns a list with all the moving exception types.
       operationId: get-movingexceptiontype-list
       responses:
         "200":
@@ -1006,8 +1006,8 @@ paths:
     get:
       tags:
       - MovingRestrictionType
-      summary: List
-      description: Gets all moving restriction types
+      summary: List All Moving Restriction Types
+      description: Returns a list with all the moving restriction types.
       operationId: get-movingrestrictiontype-list
       responses:
         "200":
@@ -1061,8 +1061,8 @@ paths:
     get:
       tags:
       - NoteVisibilityType
-      summary: List
-      description: Gets all note visibility types
+      summary: List All Note Visibility Types
+      description: Returns a list with all the note visibility types.
       operationId: get-notevisibilitytype-list
       responses:
         "200":
@@ -1102,8 +1102,8 @@ paths:
     get:
       tags:
       - OnStreetParkingType
-      summary: List
-      description: Gets all on street parking types
+      summary: List All On-Street Parking Types
+      description: Returns a list with all the on-street parking types.
       operationId: get-onstreetparkingtype-list
       responses:
         "200":
@@ -1143,8 +1143,8 @@ paths:
     get:
       tags:
       - PaymentMethod
-      summary: List
-      description: Gets all payment methods
+      summary: List All Payment Methods
+      description: Returns a list with all the supported payment methods.
       operationId: get-paymentmethod-list
       responses:
         "200":
@@ -1184,8 +1184,8 @@ paths:
     get:
       tags:
       - PermitType
-      summary: List
-      description: Gets all permit types
+      summary: List All Permit Types
+      description: Returns a list with all the permit types.
       operationId: get-permittype-list
       responses:
         "200":
@@ -1225,8 +1225,8 @@ paths:
     get:
       tags:
       - Region
-      summary: Get
-      description: Gets a region by id
+      summary: Get Region By Id
+      description: Returns a country region object if a valid identifier is provided.
       operationId: get-region-get-regionid
       parameters:
       - name: regionId
@@ -1258,8 +1258,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-05-19T00:00:00.0000000
-                    end: 2022-05-19T00:00:00.0000000
+                    start: 2022-05-24T00:00:00.0000000
+                    end: 2022-05-24T00:00:00.0000000
             text/json:
               schema:
                 $ref: '#/components/schemas/Region'
@@ -1275,8 +1275,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-05-19T00:00:00.0000000
-                    end: 2022-05-19T00:00:00.0000000
+                    start: 2022-05-24T00:00:00.0000000
+                    end: 2022-05-24T00:00:00.0000000
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1287,8 +1287,8 @@ paths:
     get:
       tags:
       - Region
-      summary: List
-      description: Gets all regions
+      summary: List All Regions
+      description: Returns a list with all the supported country regions.
       operationId: get-region-list
       responses:
         "200":
@@ -1317,8 +1317,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-05-19T00:00:00.0000000
-                    end: 2022-05-19T00:00:00.0000000
+                    start: 2022-05-24T00:00:00.0000000
+                    end: 2022-05-24T00:00:00.0000000
             text/json:
               schema:
                 type: array
@@ -1336,8 +1336,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-05-19T00:00:00.0000000
-                    end: 2022-05-19T00:00:00.0000000
+                    start: 2022-05-24T00:00:00.0000000
+                    end: 2022-05-24T00:00:00.0000000
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1348,8 +1348,8 @@ paths:
     post:
       tags:
       - Region
-      summary: Update
-      description: Updates a region
+      summary: Update Region
+      description: Updates the specified country region information.
       operationId: post-region-update
       requestBody:
         content:
@@ -1368,8 +1368,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-05-19T00:00:00.0000000
-                  end: 2022-05-19T00:00:00.0000000
+                  start: 2022-05-24T00:00:00.0000000
+                  end: 2022-05-24T00:00:00.0000000
           application/json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1385,8 +1385,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-05-19T00:00:00.0000000
-                  end: 2022-05-19T00:00:00.0000000
+                  start: 2022-05-24T00:00:00.0000000
+                  end: 2022-05-24T00:00:00.0000000
           text/json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1402,8 +1402,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-05-19T00:00:00.0000000
-                  end: 2022-05-19T00:00:00.0000000
+                  start: 2022-05-24T00:00:00.0000000
+                  end: 2022-05-24T00:00:00.0000000
           application/*+json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1419,8 +1419,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-05-19T00:00:00.0000000
-                  end: 2022-05-19T00:00:00.0000000
+                  start: 2022-05-24T00:00:00.0000000
+                  end: 2022-05-24T00:00:00.0000000
       responses:
         "200":
           description: Success
@@ -1434,8 +1434,8 @@ paths:
     get:
       tags:
       - RestrictionType
-      summary: List
-      description: Gets all restriction types
+      summary: List All Restriction Types
+      description: Returns a list with all the restriction types.
       operationId: get-restrictiontype-list
       responses:
         "200":
@@ -1485,8 +1485,8 @@ paths:
     get:
       tags:
       - SpecialRestrictions
-      summary: List
-      description: Gets all special restrictions
+      summary: List All Special Restrictions
+      description: Returns a list with all the special restrictions.
       operationId: get-specialrestriction-list
       responses:
         "200":
@@ -1526,8 +1526,8 @@ paths:
     get:
       tags:
       - VehicleType
-      summary: List
-      description: Gets all vehicle types
+      summary: List All Vehicle Types
+      description: Returns a list with all the vehicle types.
       operationId: get-vehicletype-list
       responses:
         "200":
@@ -1567,8 +1567,8 @@ paths:
     get:
       tags:
       - ZoneType
-      summary: List
-      description: Gets all zone types
+      summary: List All Zone Types
+      description: Returns a list with all the zone types.
       operationId: get-zonetype-list
       responses:
         "200":
@@ -1615,14 +1615,18 @@ components:
       properties:
         id:
           type: integer
+          description: ActivityType Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates what a vehicle operator can do at an OSP
     All:
       type: object
       properties:
@@ -1630,117 +1634,141 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ActivityType'
+          description: Activity Types types
           nullable: true
         authorityTypes:
           type: array
           items:
             $ref: '#/components/schemas/AuthorityType'
+          description: Authority types
           nullable: true
         baseMaps:
           type: array
           items:
             $ref: '#/components/schemas/BaseMap'
+          description: Base maps
           nullable: true
         countries:
           type: array
           items:
             $ref: '#/components/schemas/Country'
+          description: Countries
           nullable: true
         entitlementTypes:
           type: array
           items:
             $ref: '#/components/schemas/EntitlementType'
+          description: Entitlement types
           nullable: true
         exceptionTypes:
           type: array
           items:
             $ref: '#/components/schemas/ExceptionType'
+          description: Exception types
           nullable: true
         movingExceptionTypes:
           type: array
           items:
             $ref: '#/components/schemas/MovingExceptionType'
+          description: Exception types for moving traffic features
           nullable: true
         exemptionTimeTypes:
           type: array
           items:
             $ref: '#/components/schemas/ExemptionTimeType'
+          description: Exemption time types
           nullable: true
         exemptionTypes:
           type: array
           items:
             $ref: '#/components/schemas/ExemptionType'
+          description: Exemption types
           nullable: true
         facilityTypes:
           type: array
           items:
             $ref: '#/components/schemas/FacilityType'
+          description: Facility types
           nullable: true
         fuelTypes:
           type: array
           items:
             $ref: '#/components/schemas/FuelType'
+          description: Fuel types
           nullable: true
         noteVisibilityTypes:
           type: array
           items:
             $ref: '#/components/schemas/NoteVisibilityType'
+          description: Note visibility types
           nullable: true
         onStreetParkingTypes:
           type: array
           items:
             $ref: '#/components/schemas/OnStreetParkingType'
+          description: On-Street Parking Types
           nullable: true
         paymentMethods:
           type: array
           items:
             $ref: '#/components/schemas/PaymentMethod'
+          description: Payment methods
           nullable: true
         permitTypes:
           type: array
           items:
             $ref: '#/components/schemas/PermitType'
+          description: Permit types
           nullable: true
         regions:
           type: array
           items:
             $ref: '#/components/schemas/Region'
+          description: Regions
           nullable: true
         restrictionTypes:
           type: array
           items:
             $ref: '#/components/schemas/RestrictionType'
+          description: Restriction types
           nullable: true
         movingRestrictionTypes:
           type: array
           items:
             $ref: '#/components/schemas/MovingRestrictionType'
+          description: Restriction types for moving traffic features
           nullable: true
         specialRestrictions:
           type: array
           items:
             $ref: '#/components/schemas/SpecialRestriction'
+          description: Special Restrictions
           nullable: true
         vehicleTypes:
           type: array
           items:
             $ref: '#/components/schemas/VehicleType'
+          description: Vehicle types
           nullable: true
         zoneTypes:
           type: array
           items:
             $ref: '#/components/schemas/ZoneType'
+          description: Zone types
           nullable: true
       additionalProperties: false
+      description: A collection of all reference types
     ApplicableRestrictionType:
       type: object
       properties:
         movingRestrictionTypeId:
           type: integer
+          description: Id of the moving restriction type this exception type is applicable to
           format: int32
         movingRestrictionTypeOptionIds:
           type: array
           items: {}
+          description: Moving restriction option ids
           nullable: true
       additionalProperties: false
     AuthorityType:
@@ -1748,34 +1776,43 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         canHaveRestrictions:
           type: boolean
+          description: Indicates whether authorities of this type can have default restrictions
         canHaveShape:
           type: boolean
+          description: Indicates whether authorities of this type can have a shape
       additionalProperties: false
     BaseMap:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         availableInCountries:
           type: array
           items:
             type: string
+          description: Indicates in which countries this base map has tiles available
           nullable: true
       additionalProperties: false
     Country:
@@ -1783,6 +1820,7 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier
           nullable: true
         guid:
           type: string
@@ -1790,11 +1828,13 @@ components:
           readOnly: true
         name:
           type: string
+          description: Name of the country
           nullable: true
         specialDays:
           type: array
           items:
             $ref: '#/components/schemas/SpecialDay'
+          description: List of holidays and named days that apply to this country.
           nullable: true
         bounds:
           type: array
@@ -1803,21 +1843,25 @@ components:
             items:
               type: number
               format: double
+          description: A rectangular area indicating roughly where the country is situated
           nullable: true
         defaultBaseMapId:
           type: integer
+          description: The default basemap to use for this country
           format: int32
         entitlementTypes:
           type: array
           items:
             type: integer
             format: int32
+          description: Entitlement types available in this country
           nullable: true
         restrictionTypes:
           type: array
           items:
             type: integer
             format: int32
+          description: Restriction types available in this country
           nullable: true
       additionalProperties: false
     EntitlementType:
@@ -1825,54 +1869,64 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         code:
           type: string
+          description: Shorthand code that represents this entitlement.
           nullable: true
         restrictionTypeIds:
           type: array
           items:
             type: integer
             format: int32
+          description: Indicates the restriction types that this entitlement can apply to
           nullable: true
         applicableExemptionTypeIds:
           type: array
           items:
             type: integer
             format: int32
+          description: Indicates the exemption types that can apply to this entitlement
           nullable: true
         hasTariff:
           type: boolean
+          description: Indicates whether this entitlement needs a tariff
         restrictionTypeLegalNames:
           type: array
           items:
             $ref: '#/components/schemas/RestrictionTypeLegalName'
+          description: Indicates the legal names of the restriction type that this entitlement can apply to
           nullable: true
       additionalProperties: false
+      description: Indicates the condition on which availability of an OSP depends
     Event:
       type: object
       properties:
         name:
           type: string
+          description: Name of the event
           nullable: true
         date:
           type: string
-          description: ISO-8601 date pattern
+          description: Date when the event takes place
           example: 2020-01-20T00:00:00.0000000
         start:
           type: string
-          description: ISO-8601 time pattern, extended as required to accommodate nanoseconds.
+          description: Start time of the event
           nullable: true
           example: 00:00:00
         end:
           type: string
-          description: ISO-8601 time pattern, extended as required to accommodate nanoseconds.
+          description: End time of the event
           nullable: true
           example: 00:00:00
       additionalProperties: false
@@ -1881,82 +1935,106 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates how operating hours can be altered because of holidays or named days
     ExemptionTimeType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates the different definitions of when an exemption can be active
     ExemptionType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates what exemption there could be for a specific activity, vehicle or person
     FacilityType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates a facility that is available at an OSP
     FuelType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates the type of fuel
     MovingExceptionType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         applicableRestrictionTypes:
           type: array
           items:
             $ref: '#/components/schemas/ApplicableRestrictionType'
+          description: Applicable restriction types
           nullable: true
       additionalProperties: false
     MovingRestrictionType:
@@ -1964,23 +2042,29 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         property:
           type: string
+          description: Property
           nullable: true
         unit:
           type: string
+          description: Unit
           nullable: true
         options:
           type: array
           items:
             $ref: '#/components/schemas/MovingRestrictionTypeOption'
+          description: Options
           nullable: true
       additionalProperties: false
     MovingRestrictionTypeOption:
@@ -2004,58 +2088,75 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates when a note should be displayed or not
     OnStreetParkingType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Represents a type of On-Street Parking entity
     PaymentMethod:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates the method that you pay for a stay at an OSP
     PermitType:
       type: object
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates a permit a vehicle operator has
     Region:
       type: object
       properties:
         id:
           type: string
+          description: Unique identifier
           nullable: true
         guid:
           type: string
@@ -2063,14 +2164,17 @@ components:
           readOnly: true
         countryId:
           type: string
+          description: Id of the Country this region belongs to
           nullable: true
         name:
           type: string
+          description: Name of the region
           nullable: true
         venues:
           type: array
           items:
             $ref: '#/components/schemas/Venue'
+          description: A list of venues that are available in the region. Venues are linked to zones and will affect the operating hours on dates where there's an event at the venue
           nullable: true
       additionalProperties: false
     RestrictionType:
@@ -2078,25 +2182,33 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         code:
           type: string
+          description: Shorthand code that represents this entitlement.
           nullable: true
         canHaveTariff:
           type: boolean
+          description: Indicates whether there could be a tariff attached to this restriction type
         defaultWidth:
           type: number
+          description: Indicates the default width of this restriction type in meters.
           format: double
         isTroItem:
           type: boolean
+          description: Indicates that this restriction type is classed as part of Traffic Regulation Orders.
         legalName:
           type: string
+          description: The restriction type's alternative name used on legal traffic order documents.
           nullable: true
       additionalProperties: false
     RestrictionTypeLegalName:
@@ -2114,18 +2226,22 @@ components:
       properties:
         id:
           type: string
+          description: GUID of the speical day
           nullable: true
         name:
           type: string
+          description: Name
           nullable: true
         isHoliday:
           type: boolean
+          description: Indicates whether this day is considered a holiday
         dates:
           type: array
           items:
             type: string
             description: ISO-8601 date pattern
             example: 2020-01-20T00:00:00.0000000
+          description: Dates on which this day is in effect
           nullable: true
       additionalProperties: false
     SpecialRestriction:
@@ -2133,42 +2249,54 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates special restrictions that apply to an On-Street parking entity
     VehicleType:
       type: object
       properties:
         id:
           type: integer
+          description: VehicleType unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
       additionalProperties: false
+      description: Indicates the type of vehicle
     Venue:
       type: object
       properties:
         id:
           type: string
+          description: GUID of the venue
           nullable: true
         name:
           type: string
+          description: Name of the venue
           nullable: true
         eventsMustSupplyHours:
           type: boolean
+          description: Indicates whether an event at this venue supplies the hours or whether it should take the hours from the applicable operating hours
         events:
           type: array
           items:
             $ref: '#/components/schemas/Event'
+          description: List of events that will take place at this venue
           nullable: true
       additionalProperties: false
     ZoneType:
@@ -2176,17 +2304,22 @@ components:
       properties:
         id:
           type: integer
+          description: Unique identifier
           format: int32
         name:
           type: string
+          description: Name
           nullable: true
         description:
           type: string
+          description: Description
           nullable: true
         canHaveRestrictions:
           type: boolean
+          description: Indicates whether zones of this type can have default restrictions
         canHaveShape:
           type: boolean
+          description: Indicates whether zones of this type can have a shape
       additionalProperties: false
   securitySchemes:
     apiKey:

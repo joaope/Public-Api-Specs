@@ -1,12 +1,12 @@
 {
   "item": [
     {
-      "id": "85b3fb81-ee2f-41de-8cdf-61cb5b7287cd",
-      "name": "List",
+      "id": "612d4231-83bb-495a-a5c9-d8735de5c0eb",
+      "name": "List All Activity Types",
       "request": {
-        "name": "List",
+        "name": "List All Activity Types",
         "description": {
-          "content": "Gets all activity types",
+          "content": "Returns a list with all the activity types.",
           "type": "text/plain"
         },
         "url": {
@@ -25,7 +25,7 @@
       },
       "response": [
         {
-          "id": "9bc21fc3-b709-4263-8e44-8f0f4f837525",
+          "id": "889a8041-6b75-42d4-9bd0-b0f27566d5cb",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -55,7 +55,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "acb58d67-8836-4da9-b572-ab8c60518409",
+          "id": "99884e92-31ca-438e-b510-f6980a1ef1c5",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -85,7 +85,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8dddb699-f5cc-4c7f-9f21-85f52fc420b3",
+          "id": "fd54600f-8af8-4e6f-ab79-0323d20c6f4d",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -115,7 +115,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "d7e17b3b-5637-4a14-af94-8d351aae8ff5",
+          "id": "1cbdec08-7a0b-490c-9f3c-a733b8379a11",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -148,12 +148,12 @@
       "event": []
     },
     {
-      "id": "6463370d-a3c9-4f2a-ac76-8d838b717659",
-      "name": "List",
+      "id": "72f62640-b3f4-49d0-bb8a-2572efb6ec6e",
+      "name": "List All Reference data",
       "request": {
-        "name": "List",
+        "name": "List All Reference data",
         "description": {
-          "content": "Gets all reference data",
+          "content": "Returns an object that contains all the existing reference data.",
           "type": "text/plain"
         },
         "url": {
@@ -172,7 +172,7 @@
       },
       "response": [
         {
-          "id": "b5a8a23b-f7e5-475c-9c99-700cc673db10",
+          "id": "e8558a6c-83bb-48ad-b90e-5b3e9de29c24",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -197,12 +197,12 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n \"activityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"authorityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"canHaveRestrictions\": true,\n   \"canHaveShape\": true\n  }\n ],\n \"baseMaps\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"availableInCountries\": [\n    \"string\"\n   ]\n  }\n ],\n \"countries\": [\n  {\n   \"id\": \"string\",\n   \"guid\": \"string\",\n   \"name\": \"string\",\n   \"specialDays\": [\n    {\n     \"id\": \"string\",\n     \"name\": \"string\",\n     \"isHoliday\": true,\n     \"dates\": [\n      \"2020-01-20T00:00:00\"\n     ]\n    }\n   ],\n   \"bounds\": [\n    [\n     0\n    ]\n   ],\n   \"defaultBaseMapId\": 0,\n   \"entitlementTypes\": [\n    0\n   ],\n   \"restrictionTypes\": [\n    0\n   ]\n  }\n ],\n \"entitlementTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"code\": \"string\",\n   \"restrictionTypeIds\": [\n    0\n   ],\n   \"applicableExemptionTypeIds\": [\n    0\n   ],\n   \"hasTariff\": true,\n   \"restrictionTypeLegalNames\": [\n    {\n     \"restrictionTypeId\": 0,\n     \"legalName\": \"string\"\n    }\n   ]\n  }\n ],\n \"exceptionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"movingExceptionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"applicableRestrictionTypes\": [\n    {\n     \"movingRestrictionTypeId\": 0,\n     \"movingRestrictionTypeOptionIds\": [\n      {}\n     ]\n    }\n   ]\n  }\n ],\n \"exemptionTimeTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"exemptionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"facilityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"fuelTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"noteVisibilityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"onStreetParkingTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"paymentMethods\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"permitTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"regions\": [\n  {\n   \"id\": \"string\",\n   \"guid\": \"string\",\n   \"countryId\": \"string\",\n   \"name\": \"string\",\n   \"venues\": [\n    {\n     \"id\": \"string\",\n     \"name\": \"string\",\n     \"eventsMustSupplyHours\": true,\n     \"events\": [\n      {\n       \"name\": \"string\",\n       \"date\": \"2020-01-20T00:00:00\",\n       \"start\": \"2022-05-19T00:00:00\",\n       \"end\": \"2022-05-19T00:00:00\"\n      }\n     ]\n    }\n   ]\n  }\n ],\n \"restrictionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"code\": \"string\",\n   \"canHaveTariff\": true,\n   \"defaultWidth\": 0,\n   \"isTroItem\": true,\n   \"legalName\": \"string\"\n  }\n ],\n \"movingRestrictionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"property\": \"string\",\n   \"unit\": \"string\",\n   \"options\": [\n    {\n     \"movingRestrictionTypeId\": 0,\n     \"id\": 0,\n     \"name\": \"string\",\n     \"value\": 0\n    }\n   ]\n  }\n ],\n \"specialRestrictions\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"vehicleTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"zoneTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"canHaveRestrictions\": true,\n   \"canHaveShape\": true\n  }\n ]\n}",
+          "body": "{\n \"activityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"authorityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"canHaveRestrictions\": true,\n   \"canHaveShape\": true\n  }\n ],\n \"baseMaps\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"availableInCountries\": [\n    \"string\"\n   ]\n  }\n ],\n \"countries\": [\n  {\n   \"id\": \"string\",\n   \"guid\": \"string\",\n   \"name\": \"string\",\n   \"specialDays\": [\n    {\n     \"id\": \"string\",\n     \"name\": \"string\",\n     \"isHoliday\": true,\n     \"dates\": [\n      \"2020-01-20T00:00:00\"\n     ]\n    }\n   ],\n   \"bounds\": [\n    [\n     0\n    ]\n   ],\n   \"defaultBaseMapId\": 0,\n   \"entitlementTypes\": [\n    0\n   ],\n   \"restrictionTypes\": [\n    0\n   ]\n  }\n ],\n \"entitlementTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"code\": \"string\",\n   \"restrictionTypeIds\": [\n    0\n   ],\n   \"applicableExemptionTypeIds\": [\n    0\n   ],\n   \"hasTariff\": true,\n   \"restrictionTypeLegalNames\": [\n    {\n     \"restrictionTypeId\": 0,\n     \"legalName\": \"string\"\n    }\n   ]\n  }\n ],\n \"exceptionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"movingExceptionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"applicableRestrictionTypes\": [\n    {\n     \"movingRestrictionTypeId\": 0,\n     \"movingRestrictionTypeOptionIds\": [\n      {}\n     ]\n    }\n   ]\n  }\n ],\n \"exemptionTimeTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"exemptionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"facilityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"fuelTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"noteVisibilityTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"onStreetParkingTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"paymentMethods\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"permitTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"regions\": [\n  {\n   \"id\": \"string\",\n   \"guid\": \"string\",\n   \"countryId\": \"string\",\n   \"name\": \"string\",\n   \"venues\": [\n    {\n     \"id\": \"string\",\n     \"name\": \"string\",\n     \"eventsMustSupplyHours\": true,\n     \"events\": [\n      {\n       \"name\": \"string\",\n       \"date\": \"2020-01-20T00:00:00\",\n       \"start\": \"2022-05-24T00:00:00\",\n       \"end\": \"2022-05-24T00:00:00\"\n      }\n     ]\n    }\n   ]\n  }\n ],\n \"restrictionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"code\": \"string\",\n   \"canHaveTariff\": true,\n   \"defaultWidth\": 0,\n   \"isTroItem\": true,\n   \"legalName\": \"string\"\n  }\n ],\n \"movingRestrictionTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"property\": \"string\",\n   \"unit\": \"string\",\n   \"options\": [\n    {\n     \"movingRestrictionTypeId\": 0,\n     \"id\": 0,\n     \"name\": \"string\",\n     \"value\": 0\n    }\n   ]\n  }\n ],\n \"specialRestrictions\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"vehicleTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\"\n  }\n ],\n \"zoneTypes\": [\n  {\n   \"id\": 0,\n   \"name\": \"string\",\n   \"description\": \"string\",\n   \"canHaveRestrictions\": true,\n   \"canHaveShape\": true\n  }\n ]\n}",
           "cookie": [],
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "a0641c31-06fe-4cc5-b037-b48a838885bb",
+          "id": "09f74c7d-31de-4236-a4db-e2a8c2c61092",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -232,7 +232,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e3720205-378b-4522-bf3d-211994991ca6",
+          "id": "133bd939-a8fb-4ddb-bec6-af4502a38d24",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -262,7 +262,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "d5663f33-0c74-4283-9c5c-5b6b93a1d4a1",
+          "id": "d24e5aac-f165-4409-a5f9-451e3d59a550",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -295,12 +295,12 @@
       "event": []
     },
     {
-      "id": "b6b2c7e6-f5ad-42be-8e43-f192c8cfc302",
-      "name": "List",
+      "id": "1e617802-8bff-4d57-a767-4627d267fce5",
+      "name": "List All Authority Types",
       "request": {
-        "name": "List",
+        "name": "List All Authority Types",
         "description": {
-          "content": "Gets all authority types",
+          "content": "Returns a list with all the authority types.",
           "type": "text/plain"
         },
         "url": {
@@ -319,7 +319,7 @@
       },
       "response": [
         {
-          "id": "9ccbe369-c999-4009-b01c-65bbe8117e30",
+          "id": "33665bf5-e6f2-4f7d-a84a-b24d1bf8c69a",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -349,7 +349,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "bb5e0ce9-b296-4563-a542-20418e1f0412",
+          "id": "240c3145-1e96-482a-814f-51d16be96e3f",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -379,7 +379,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "054a9902-a96f-41a1-a344-24452fff918e",
+          "id": "5b5272c0-463d-443c-a941-58ae2593491c",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -409,7 +409,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7a3ba281-a2ae-4d39-8e0f-c4d145383e31",
+          "id": "0fc287cd-c8a7-4bab-9e17-f44071250ffd",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -442,12 +442,12 @@
       "event": []
     },
     {
-      "id": "c3b5f05e-6942-46bf-bf96-d2923a33ff0e",
-      "name": "List",
+      "id": "e466c3b2-5558-43f6-bb29-728cd8ecb1e4",
+      "name": "List All Base Maps",
       "request": {
-        "name": "List",
+        "name": "List All Base Maps",
         "description": {
-          "content": "Gets all base maps",
+          "content": "Return a list with all supported base maps and availability for supported countries.",
           "type": "text/plain"
         },
         "url": {
@@ -466,7 +466,7 @@
       },
       "response": [
         {
-          "id": "c5c27b89-e524-4577-a4f1-8729d05195b0",
+          "id": "dafc5d6f-6506-432c-a923-5775eaf01011",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -496,7 +496,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "518e7e9b-1296-4d7e-bdbd-42b04f9a3337",
+          "id": "dfbd9cf5-78e6-4892-8470-8be29307fc29",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -526,7 +526,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "683d871e-0e70-4736-8fab-1f97515ffd82",
+          "id": "42e76396-66ed-4d7f-8557-55474a003c4a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -556,7 +556,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4fb70767-a57f-46a6-8494-65e51690ee10",
+          "id": "b9f7a758-018b-4726-8185-28aefdb9f6ed",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -589,16 +589,16 @@
       "event": []
     },
     {
-      "id": "98dcd5a6-a5bc-4095-a4eb-3dd589ee19bf",
+      "id": "0d9dbb53-d8e1-47cd-a5c0-328234834c60",
       "name": "country",
       "item": [
         {
-          "id": "bbc5b1e0-4b4c-4b0b-bb8a-73004e9825f4",
-          "name": "Get",
+          "id": "08f37e0e-8099-4dc4-87e3-3a9be167da71",
+          "name": "Get Country By Id",
           "request": {
-            "name": "Get",
+            "name": "Get Country By Id",
             "description": {
-              "content": "Gets a country by id",
+              "content": "Returns a country object if a valid identifier is provided.",
               "type": "text/plain"
             },
             "url": {
@@ -625,7 +625,7 @@
           },
           "response": [
             {
-              "id": "308b340d-cf65-45da-9f57-9b98b927602d",
+              "id": "20f90bbc-4fef-4bb5-b09c-190eba8e96ef",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -661,7 +661,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "731a73b9-a433-42ab-9542-a12cbaa56c28",
+              "id": "a5346908-f072-4949-9ab6-cc2fb865b2c0",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -697,7 +697,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "29ccc6ca-2087-4db6-9cef-1de9e37b2f1e",
+              "id": "37b4adc1-7bb4-47f6-b40a-bf80f3c7e439",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -733,7 +733,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "80e2f2c7-728e-4301-a0d6-30361ced5eed",
+              "id": "c108f0c5-3b5d-4c03-bf03-e6b97240a1ba",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -772,12 +772,12 @@
           "event": []
         },
         {
-          "id": "037d98df-04fc-4192-b560-19c7e7f20582",
-          "name": "List",
+          "id": "04fa9972-3112-45d8-b70a-7ac3f5bfe7ea",
+          "name": "List All Countries",
           "request": {
-            "name": "List",
+            "name": "List All Countries",
             "description": {
-              "content": "Gets all countries",
+              "content": "Returns a list with all the supported countries.",
               "type": "text/plain"
             },
             "url": {
@@ -796,7 +796,7 @@
           },
           "response": [
             {
-              "id": "b9615f58-7000-479d-bc31-1c212a4fe9de",
+              "id": "7c59136d-daff-4187-8eff-b37f8c455457",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -826,7 +826,7 @@
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "63163b23-8c96-4695-9b9b-cc52af6c07fb",
+              "id": "38297934-6f98-4832-8b31-b8be9e4876ff",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -856,7 +856,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "5e6bdf39-a7ca-44e8-b8b9-af53d03d0e7e",
+              "id": "be658bbb-b4e0-43cf-a70a-d73f2f9afe83",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -886,7 +886,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "674316b1-10b1-4a21-bbe6-b8fe0293d7f7",
+              "id": "44f6214a-8143-48b1-8f78-f46eb542d90c",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -919,12 +919,12 @@
           "event": []
         },
         {
-          "id": "dbee0f69-95e3-4929-8ab6-cec8d770e639",
-          "name": "Update",
+          "id": "cc0f445e-ecb6-48fa-8917-aed8a9ba0247",
+          "name": "Update Country",
           "request": {
-            "name": "Update",
+            "name": "Update Country",
             "description": {
-              "content": "Updates a country",
+              "content": "Updates the specified country information.",
               "type": "text/plain"
             },
             "url": {
@@ -953,7 +953,7 @@
           },
           "response": [
             {
-              "id": "42252747-f4c1-4334-8fb7-9b47815cae9b",
+              "id": "6ad9a9fa-a57b-4a03-8dd0-8a13ec7d0a73",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -986,7 +986,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "091c97b1-08b6-4962-b930-095c566b3eb7",
+              "id": "d5491177-b41b-47f0-a457-5d84b0d30761",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -1019,7 +1019,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "cfec0bb7-c630-47d2-ab2a-049f538a06c2",
+              "id": "260e2ecf-27ed-4ba4-8035-fe883ae92e65",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -1052,7 +1052,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "3eac1e3d-7554-476e-ad66-94a644e73ad2",
+              "id": "719894bc-e1e9-4f5d-b321-c69b18740b9d",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -1091,12 +1091,12 @@
       "event": []
     },
     {
-      "id": "b691aa10-66c0-48c2-893c-65529b3de2bd",
-      "name": "List",
+      "id": "e93430b2-5851-4fcb-9ce1-d512fbdfd100",
+      "name": "List All Entitlement Types",
       "request": {
-        "name": "List",
+        "name": "List All Entitlement Types",
         "description": {
-          "content": "Gets all entitlement types",
+          "content": "Returns a list with all the entitlement types.",
           "type": "text/plain"
         },
         "url": {
@@ -1115,7 +1115,7 @@
       },
       "response": [
         {
-          "id": "18fdc447-f887-4111-af67-c6d592341ea1",
+          "id": "7e255ec4-db1e-4583-ba78-69685f95af3f",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1145,7 +1145,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "1fccb233-2598-4dae-897c-c3f5417a084e",
+          "id": "e4b5bf83-f1d6-4cd2-9ff0-172c811cafe9",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1175,7 +1175,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "1f80ba17-b548-4022-99bc-d79aa9de7a72",
+          "id": "6fb25479-f0a9-4986-a919-2f6f8213317a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1205,7 +1205,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "3bfeb390-b417-46ff-a3c2-8594d4542f06",
+          "id": "07702d07-8caf-4059-994c-fe18b4a59cde",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1238,12 +1238,12 @@
       "event": []
     },
     {
-      "id": "a2cd62eb-58f9-494c-b65d-75ab681ceceb",
-      "name": "List",
+      "id": "fbc14cf8-e3dd-46e9-986d-e5b16111833b",
+      "name": "List All Exception Types",
       "request": {
-        "name": "List",
+        "name": "List All Exception Types",
         "description": {
-          "content": "Gets all exception types",
+          "content": "Returns a list with all the exception types.",
           "type": "text/plain"
         },
         "url": {
@@ -1262,7 +1262,7 @@
       },
       "response": [
         {
-          "id": "571d918c-2f8c-46db-a918-73d65ae24ebb",
+          "id": "85be8066-16ae-42cc-9799-1ee0a24e7cfd",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1292,7 +1292,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "caea159f-f676-4337-9a3c-6f00440ddf2d",
+          "id": "c2d84781-ce48-4934-b52c-12233133b15c",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1322,7 +1322,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "03ab5bb1-dde1-4460-b544-aed5eeb11a64",
+          "id": "d983492d-d157-421f-a79d-a1f0ce746077",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1352,7 +1352,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b6a137db-0409-4d20-93c7-b38dd15afa41",
+          "id": "d07e80f2-bff7-4d59-a120-abfd6ef7ca2e",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1385,12 +1385,12 @@
       "event": []
     },
     {
-      "id": "38f6bc15-b78d-4598-8cfa-7f8428d45040",
-      "name": "List",
+      "id": "58c19fb3-a8c2-4442-bb0a-ba946e2212c4",
+      "name": "List All Exemption Time Types",
       "request": {
-        "name": "List",
+        "name": "List All Exemption Time Types",
         "description": {
-          "content": "Gets all exemption time types",
+          "content": "Returns a list with all the exemption time types.",
           "type": "text/plain"
         },
         "url": {
@@ -1409,7 +1409,7 @@
       },
       "response": [
         {
-          "id": "07df2bfe-742e-4c2d-8def-e9ad0963e2bf",
+          "id": "070c9464-6760-44db-927a-4f4cce77fe0e",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1439,7 +1439,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "22f17c99-87a2-40d7-bc43-a4ac4ff0e60a",
+          "id": "4c069499-1a13-4017-bc4f-475f783a28d3",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1469,7 +1469,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "9462dcc8-3b5e-482f-8768-9ec66a3587bd",
+          "id": "041823e0-d794-4701-81f0-a914984a0d89",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1499,7 +1499,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "6d22752f-0826-4c61-b5a4-73383740de4b",
+          "id": "cc369909-330c-439e-940b-054dda925c01",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1532,12 +1532,12 @@
       "event": []
     },
     {
-      "id": "0f65a49a-ca0c-4311-90a1-5ff2cbcf87eb",
-      "name": "List",
+      "id": "ffbe1c19-3228-462d-927d-64d2a3f307ed",
+      "name": "List All Exemption Types",
       "request": {
-        "name": "List",
+        "name": "List All Exemption Types",
         "description": {
-          "content": "Gets all exemption types",
+          "content": "Returns a list with all the exemption types.",
           "type": "text/plain"
         },
         "url": {
@@ -1556,7 +1556,7 @@
       },
       "response": [
         {
-          "id": "05bfda85-42bf-41f6-9027-11e1b3a7e6a3",
+          "id": "62ba9988-22c5-4f33-92ae-a3531d248b51",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1586,7 +1586,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "2355a8a7-9e23-4ec1-aee6-e62388914d28",
+          "id": "06f97255-8a1e-4c48-992c-08b8bfa0d386",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1616,7 +1616,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "daddfb43-d330-4686-a214-b2b1982411c1",
+          "id": "c245ee89-f663-4777-a924-5e56c47f67bf",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1646,7 +1646,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "5ef4f7db-e81f-4a8c-a4e1-a6b8bcaa6347",
+          "id": "a8c87916-a7d5-400e-9d65-e2dabce7b487",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1679,12 +1679,12 @@
       "event": []
     },
     {
-      "id": "3e99fbbc-fb80-4dd1-af3f-a6a74d085f39",
-      "name": "List",
+      "id": "ec46c626-d50c-4201-ac86-3559e9eb958b",
+      "name": "List All Facility Types",
       "request": {
-        "name": "List",
+        "name": "List All Facility Types",
         "description": {
-          "content": "Gets all facility types",
+          "content": "Returns a list with all the facility types.",
           "type": "text/plain"
         },
         "url": {
@@ -1703,7 +1703,7 @@
       },
       "response": [
         {
-          "id": "e1a01981-64dd-4b69-9d7f-3bbb23dcd469",
+          "id": "eda7146b-6539-492d-aa93-8731c2d1beea",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1733,7 +1733,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "a11f1941-dac5-4938-81be-d6e7d8ba5401",
+          "id": "a978dc69-cea5-44db-b2da-877f3fb387b5",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1763,7 +1763,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ccc379a7-2844-4675-82a5-a600806393ca",
+          "id": "98f94cdb-0ec1-4c1d-b846-8c38f14cdefd",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1793,7 +1793,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "3cf75d6f-5771-478d-a0e3-e34dcfe23d9c",
+          "id": "fea80836-a162-4dc4-a142-358bb0bf7411",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1826,12 +1826,12 @@
       "event": []
     },
     {
-      "id": "50ef0b00-3e8a-40a0-aca1-8ee41b6dd51e",
-      "name": "List",
+      "id": "2bd63e66-b093-456c-90f2-48d5d4c93b5d",
+      "name": "List All Fuel Types",
       "request": {
-        "name": "List",
+        "name": "List All Fuel Types",
         "description": {
-          "content": "Gets all fuel types",
+          "content": "Returns a list with all the fuel types.",
           "type": "text/plain"
         },
         "url": {
@@ -1850,7 +1850,7 @@
       },
       "response": [
         {
-          "id": "820cab28-f786-42d1-a9ec-3fc5a2cfec38",
+          "id": "882c6b65-a657-4d12-8099-c358dc81fee2",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1880,7 +1880,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "104048da-249c-4396-8626-a044437e2068",
+          "id": "44df3685-cadd-4e4c-a074-511a40631516",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1910,7 +1910,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "73813d62-9289-466a-8b28-ec1d86d4d6f2",
+          "id": "6cf2cc8b-bd89-41f9-8ec4-95c809782bed",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1940,7 +1940,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e5288ec1-7cd7-4732-948a-6379d9199664",
+          "id": "9819f0d1-d309-4120-ad72-c3f658d9e183",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1973,7 +1973,7 @@
       "event": []
     },
     {
-      "id": "48be19f2-0b0e-4736-a99f-34974d4e1741",
+      "id": "b1b612a5-536e-4554-b52b-a932a2308eeb",
       "name": "/monitor - GET",
       "request": {
         "name": "/monitor - GET",
@@ -1993,7 +1993,7 @@
       },
       "response": [
         {
-          "id": "c4695512-fbeb-46bd-95aa-27018f7bff6c",
+          "id": "eec3fec4-debf-44e8-8ebf-7d2aa3f04102",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2022,7 +2022,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "730c736d-c64f-4b48-9fc3-149134818e83",
+          "id": "dcb67cd2-512f-4de7-a289-0973d92d2ede",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2051,7 +2051,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "6320f925-572d-4b3a-a259-301404d7d707",
+          "id": "5ab916d5-8889-467c-bfc8-9c9062ed456a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2080,7 +2080,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "421a0ff7-2b04-4413-897b-52403fadde67",
+          "id": "50ef2a08-31b7-47b3-a3a0-9aa4afde8d85",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2112,12 +2112,12 @@
       "event": []
     },
     {
-      "id": "c74f8cf7-a5c1-4562-868b-b5e7bb81561e",
-      "name": "List",
+      "id": "25b897ee-8605-4ada-b0ee-3ae6becb2b01",
+      "name": "List All Moving Exception Types",
       "request": {
-        "name": "List",
+        "name": "List All Moving Exception Types",
         "description": {
-          "content": "Gets all moving exception types",
+          "content": "Returns a list with all the moving exception types.",
           "type": "text/plain"
         },
         "url": {
@@ -2136,7 +2136,7 @@
       },
       "response": [
         {
-          "id": "dfe40dee-5315-4c68-892e-8179fa4e92d5",
+          "id": "f566a9a9-1754-4d20-927f-d747a7e5be19",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2166,7 +2166,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "47cbeabb-2be7-4aaf-ae9e-9d8fc02c249a",
+          "id": "3eac2fc9-2c6b-46df-a5a4-d7cb19454445",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2196,7 +2196,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "90d69597-4bf5-4166-8cde-a5bd4d5f58c1",
+          "id": "ab433a1f-ce6d-47af-a64b-b5a2e5519a9b",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2226,7 +2226,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "6aa0b056-cf93-4b74-9896-b83d47dd27be",
+          "id": "07bf0e8a-ee2f-41ed-ac8a-adbdf97555a4",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2259,12 +2259,12 @@
       "event": []
     },
     {
-      "id": "a324680e-10be-47e9-a384-c1fc0c7e3271",
-      "name": "List",
+      "id": "eadc787c-3550-4eae-94f7-02c84c9319a7",
+      "name": "List All Moving Restriction Types",
       "request": {
-        "name": "List",
+        "name": "List All Moving Restriction Types",
         "description": {
-          "content": "Gets all moving restriction types",
+          "content": "Returns a list with all the moving restriction types.",
           "type": "text/plain"
         },
         "url": {
@@ -2283,7 +2283,7 @@
       },
       "response": [
         {
-          "id": "7ca7217f-d90c-4b9b-8483-347d86e0d0b8",
+          "id": "4240cc45-a7f7-439c-8e8a-bc714ab16e90",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2313,7 +2313,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "d6ebe1a9-c873-4b89-ba49-08372796ca8b",
+          "id": "5cfe9b33-963b-4b7c-824b-b0185bcfeac1",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2343,7 +2343,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "bf29183b-99eb-4ef8-8169-1f95e0460f80",
+          "id": "4e98ea1c-5cfd-47f3-8da1-693f10552545",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2373,7 +2373,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8328028a-f76b-4a65-bdbe-16bc0dd5d3ba",
+          "id": "b6c91b6a-8aad-4305-b8eb-76829590f63c",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2406,12 +2406,12 @@
       "event": []
     },
     {
-      "id": "75324610-b598-4145-8028-27e778680934",
-      "name": "List",
+      "id": "60aecd7b-b5eb-4118-aa34-6a3f124b6a78",
+      "name": "List All Note Visibility Types",
       "request": {
-        "name": "List",
+        "name": "List All Note Visibility Types",
         "description": {
-          "content": "Gets all note visibility types",
+          "content": "Returns a list with all the note visibility types.",
           "type": "text/plain"
         },
         "url": {
@@ -2430,7 +2430,7 @@
       },
       "response": [
         {
-          "id": "cbeded5d-7a1f-4ced-876b-04572697f5df",
+          "id": "3798113b-3dc2-416a-a339-fc6d920d93ff",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2460,7 +2460,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "fd858249-0fff-4bef-bd81-864852c8770f",
+          "id": "962f62cc-f5ab-4b74-b3af-c25fb19e1d80",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2490,7 +2490,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "6ff74c50-7142-4967-90ab-1c83f6bcd938",
+          "id": "07c4cd35-8e4e-413d-af8a-a6168c575f98",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2520,7 +2520,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "01719ad9-78c7-4b34-97ac-0bfe33b8c08a",
+          "id": "7f756402-1c34-4f62-a2b1-82de55e85e7d",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2553,12 +2553,12 @@
       "event": []
     },
     {
-      "id": "cf0007b1-58f1-41cf-9542-e291edd8f6c8",
-      "name": "List",
+      "id": "bb490ae7-61ac-4af5-a12f-1cbe4a69a911",
+      "name": "List All On-Street Parking Types",
       "request": {
-        "name": "List",
+        "name": "List All On-Street Parking Types",
         "description": {
-          "content": "Gets all on street parking types",
+          "content": "Returns a list with all the on-street parking types.",
           "type": "text/plain"
         },
         "url": {
@@ -2577,7 +2577,7 @@
       },
       "response": [
         {
-          "id": "70438440-9e5e-48e1-bf5f-af7ca1237655",
+          "id": "8ff3a1dc-ea50-43c2-a99f-044cde9532cc",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2607,7 +2607,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "3ee786e3-43fb-4f72-a027-8bb4e729994d",
+          "id": "b6ca82f1-849d-4f5c-abce-8f0cc70b8685",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2637,7 +2637,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "25834b79-f995-4088-8016-2553b86eb261",
+          "id": "4eb66be1-667a-4cc8-bf5c-0eb6143bac62",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2667,7 +2667,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "0dafd43c-5a08-4cea-9247-acd8a7f0fad3",
+          "id": "2f27d7f3-1ca5-4915-8166-7e1b8ad7fd74",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2700,12 +2700,12 @@
       "event": []
     },
     {
-      "id": "87c9c5e9-16b7-44a4-8fe8-ae9d075cbe9d",
-      "name": "List",
+      "id": "9be6f469-2587-4a6e-b93b-52d9288ab088",
+      "name": "List All Payment Methods",
       "request": {
-        "name": "List",
+        "name": "List All Payment Methods",
         "description": {
-          "content": "Gets all payment methods",
+          "content": "Returns a list with all the supported payment methods.",
           "type": "text/plain"
         },
         "url": {
@@ -2724,7 +2724,7 @@
       },
       "response": [
         {
-          "id": "e3fb1fd4-2425-4aa7-baae-fd8c0e271a68",
+          "id": "0de4e477-8576-4794-8da4-f6bc3f7686ac",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2754,7 +2754,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "5a77c024-7f34-43f0-b633-1cbb5ad514ff",
+          "id": "73ffe6b3-fe9b-4138-adb6-e52863202f1d",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2784,7 +2784,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "1f767d4b-7fd9-4861-9639-9bfb7778a85c",
+          "id": "32a76bbb-e2d0-4720-bf49-3559a28ba821",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2814,7 +2814,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "3170feae-2279-4c11-b0e7-d7b084fa0f3a",
+          "id": "eb09e00c-fc1f-4dcb-b643-52e9193757ea",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2847,12 +2847,12 @@
       "event": []
     },
     {
-      "id": "a699d70e-feae-4087-8210-dc44b8ce94ce",
-      "name": "List",
+      "id": "3c7078e6-eb97-46fb-a426-7d546564d4d4",
+      "name": "List All Permit Types",
       "request": {
-        "name": "List",
+        "name": "List All Permit Types",
         "description": {
-          "content": "Gets all permit types",
+          "content": "Returns a list with all the permit types.",
           "type": "text/plain"
         },
         "url": {
@@ -2871,7 +2871,7 @@
       },
       "response": [
         {
-          "id": "ea3620e0-5ae8-43d2-b90d-1d8f7deb3f83",
+          "id": "abd577b8-4433-45ec-972c-a895178e3d0f",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2901,7 +2901,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "8bbd8334-c9e2-44a2-a184-9168002c3932",
+          "id": "cb3f17d2-2099-4ba0-b604-3a371f307d64",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2931,7 +2931,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "c152c37d-f068-43bd-8fa7-02fccc15b836",
+          "id": "20f5282c-0a12-4fae-b353-5111ab950c45",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2961,7 +2961,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "caa69695-cb56-4005-ac24-8cf083d50047",
+          "id": "746bf71c-b2b3-4fc9-93f0-6f54d1326e10",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2994,16 +2994,16 @@
       "event": []
     },
     {
-      "id": "627c890c-ea51-4605-8ae1-e6b00396e129",
+      "id": "f0557780-7fb5-4c84-a5db-e932d269db77",
       "name": "region",
       "item": [
         {
-          "id": "ac4b2f5b-6be9-40bf-8413-9874567e9bcb",
-          "name": "Get",
+          "id": "5b244126-5786-4575-a5ff-6313442062b6",
+          "name": "Get Region By Id",
           "request": {
-            "name": "Get",
+            "name": "Get Region By Id",
             "description": {
-              "content": "Gets a region by id",
+              "content": "Returns a country region object if a valid identifier is provided.",
               "type": "text/plain"
             },
             "url": {
@@ -3030,7 +3030,7 @@
           },
           "response": [
             {
-              "id": "36022cf8-94b7-49f2-8a5a-d8ebb198e7fc",
+              "id": "f15d1e86-d826-41ae-b99f-12bd2458f965",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -3061,12 +3061,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n \"id\": \"string\",\n \"guid\": \"string\",\n \"countryId\": \"string\",\n \"name\": \"string\",\n \"venues\": [\n  {\n   \"id\": \"string\",\n   \"name\": \"string\",\n   \"eventsMustSupplyHours\": true,\n   \"events\": [\n    {\n     \"name\": \"string\",\n     \"date\": \"2020-01-20T00:00:00\",\n     \"start\": \"2022-05-19T00:00:00\",\n     \"end\": \"2022-05-19T00:00:00\"\n    }\n   ]\n  }\n ]\n}",
+              "body": "{\n \"id\": \"string\",\n \"guid\": \"string\",\n \"countryId\": \"string\",\n \"name\": \"string\",\n \"venues\": [\n  {\n   \"id\": \"string\",\n   \"name\": \"string\",\n   \"eventsMustSupplyHours\": true,\n   \"events\": [\n    {\n     \"name\": \"string\",\n     \"date\": \"2020-01-20T00:00:00\",\n     \"start\": \"2022-05-24T00:00:00\",\n     \"end\": \"2022-05-24T00:00:00\"\n    }\n   ]\n  }\n ]\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "3e3bd5a1-8e5f-4924-96a0-5fad4d8bb014",
+              "id": "e6917bba-b20e-40a9-8164-7b30ba289eb0",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3102,7 +3102,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "099def0e-db03-49da-89c9-e1957dd263eb",
+              "id": "49f4edaa-7fc3-4169-9faa-5f77674e736f",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3138,7 +3138,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "81336d99-35ed-46b4-b075-2d8d288cd1cd",
+              "id": "1c01e760-83a6-4b6a-a4bb-612f9fbd2297",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3177,12 +3177,12 @@
           "event": []
         },
         {
-          "id": "3f9f73b8-6836-4b0d-adf6-cacfc3633f85",
-          "name": "List",
+          "id": "ec68020f-bf28-4f01-807a-05d31ee88e50",
+          "name": "List All Regions",
           "request": {
-            "name": "List",
+            "name": "List All Regions",
             "description": {
-              "content": "Gets all regions",
+              "content": "Returns a list with all the supported country regions.",
               "type": "text/plain"
             },
             "url": {
@@ -3201,7 +3201,7 @@
           },
           "response": [
             {
-              "id": "b5dd6c39-b339-40c4-83cb-994f2c181cc9",
+              "id": "20785652-b9fa-43b6-b0ff-3530ef063c8a",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -3226,12 +3226,12 @@
                   "value": "application/json"
                 }
               ],
-              "body": "[\n {\n  \"id\": \"string\",\n  \"guid\": \"string\",\n  \"countryId\": \"string\",\n  \"name\": \"string\",\n  \"venues\": [\n   {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"eventsMustSupplyHours\": true,\n    \"events\": [\n     {\n      \"name\": \"string\",\n      \"date\": \"2020-01-20T00:00:00\",\n      \"start\": \"2022-05-19T00:00:00\",\n      \"end\": \"2022-05-19T00:00:00\"\n     }\n    ]\n   }\n  ]\n }\n]",
+              "body": "[\n {\n  \"id\": \"string\",\n  \"guid\": \"string\",\n  \"countryId\": \"string\",\n  \"name\": \"string\",\n  \"venues\": [\n   {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"eventsMustSupplyHours\": true,\n    \"events\": [\n     {\n      \"name\": \"string\",\n      \"date\": \"2020-01-20T00:00:00\",\n      \"start\": \"2022-05-24T00:00:00\",\n      \"end\": \"2022-05-24T00:00:00\"\n     }\n    ]\n   }\n  ]\n }\n]",
               "cookie": [],
               "_postman_previewlanguage": "json"
             },
             {
-              "id": "4c447cb5-32c4-42e5-a4bf-66f60ffa57d3",
+              "id": "caf9f71e-467d-4082-8c06-8900391f125e",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3261,7 +3261,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "6524b83d-c7ac-4e75-8a97-ac8e9932a00b",
+              "id": "bdf8b12f-1106-488a-a4b4-e5b4bb910b98",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3291,7 +3291,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "b9851557-e1cb-4cb0-b79a-13c674a8655d",
+              "id": "bf3d0c70-5d51-4c2b-8985-6b899893f625",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3324,12 +3324,12 @@
           "event": []
         },
         {
-          "id": "7c00be03-29e5-4a0f-8ea1-01ec8d77cadd",
-          "name": "Update",
+          "id": "3f2042a2-d029-4c15-9f32-b7137f6a0208",
+          "name": "Update Region",
           "request": {
-            "name": "Update",
+            "name": "Update Region",
             "description": {
-              "content": "Updates a region",
+              "content": "Updates the specified country region information.",
               "type": "text/plain"
             },
             "url": {
@@ -3358,7 +3358,7 @@
           },
           "response": [
             {
-              "id": "ccbf0e3c-2b50-40b3-abaf-ddd799d938bd",
+              "id": "6174254f-9b53-460e-add2-05b394c93504",
               "name": "Success",
               "originalRequest": {
                 "url": {
@@ -3375,7 +3375,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-19T00:00:00\",\n                    \"end\": \"2022-05-19T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-24T00:00:00\",\n                    \"end\": \"2022-05-24T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "OK",
@@ -3391,7 +3391,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "794b9562-263a-49c8-9d92-572ffdb1d17e",
+              "id": "2c459cdf-cefb-4f3e-aa96-ca21d4e56083",
               "name": "Unauthorized",
               "originalRequest": {
                 "url": {
@@ -3408,7 +3408,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-19T00:00:00\",\n                    \"end\": \"2022-05-19T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-24T00:00:00\",\n                    \"end\": \"2022-05-24T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Unauthorized",
@@ -3424,7 +3424,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "a5550195-0937-4cd3-88c0-fedbf0684a7e",
+              "id": "14429e56-c92e-41ab-a632-d24abd19a771",
               "name": "Forbidden",
               "originalRequest": {
                 "url": {
@@ -3441,7 +3441,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-19T00:00:00\",\n                    \"end\": \"2022-05-19T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-24T00:00:00\",\n                    \"end\": \"2022-05-24T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Forbidden",
@@ -3457,7 +3457,7 @@
               "_postman_previewlanguage": "text"
             },
             {
-              "id": "9badff02-8d22-4de4-b11a-c1527282658b",
+              "id": "0fc25c34-f71d-49e2-b08b-241bdcdb7d99",
               "name": "Too many requests",
               "originalRequest": {
                 "url": {
@@ -3474,7 +3474,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-19T00:00:00\",\n                    \"end\": \"2022-05-19T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
+                  "raw": "{\n    \"id\": \"string\",\n    \"guid\": \"string\",\n    \"countryId\": \"string\",\n    \"name\": \"string\",\n    \"venues\": [\n        {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"eventsMustSupplyHours\": true,\n            \"events\": [\n                {\n                    \"name\": \"string\",\n                    \"date\": \"2020-01-20T00:00:00\",\n                    \"start\": \"2022-05-24T00:00:00\",\n                    \"end\": \"2022-05-24T00:00:00\"\n                }\n            ]\n        }\n    ]\n}"
                 }
               },
               "status": "Too Many Requests",
@@ -3496,12 +3496,12 @@
       "event": []
     },
     {
-      "id": "fdb2cffe-fe00-407b-89db-b0e45352c3d1",
-      "name": "List",
+      "id": "37510344-ea08-496d-9d79-5f1799f0cb54",
+      "name": "List All Restriction Types",
       "request": {
-        "name": "List",
+        "name": "List All Restriction Types",
         "description": {
-          "content": "Gets all restriction types",
+          "content": "Returns a list with all the restriction types.",
           "type": "text/plain"
         },
         "url": {
@@ -3520,7 +3520,7 @@
       },
       "response": [
         {
-          "id": "72cb09e0-5d42-4331-b78f-526fd53f0296",
+          "id": "b6bab3dc-9812-4fff-8833-9fa56748ca18",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3550,7 +3550,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "acf93257-8183-45a5-bd43-ead47a961c57",
+          "id": "ade94517-7b9f-4745-8c9e-1b8f81b30a5b",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -3580,7 +3580,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "90d369a0-a06e-48fd-aa2c-8c396cd79a1c",
+          "id": "07ce57b4-394f-4f3e-8da2-a7fd7fd4eec4",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -3610,7 +3610,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "300d7721-622a-43c2-8da3-24f894940d3f",
+          "id": "3a8c14ce-ca2c-434d-944d-f1617be8edb2",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -3643,12 +3643,12 @@
       "event": []
     },
     {
-      "id": "a1a7ae27-5c7c-4baa-a478-acaa8f48b146",
-      "name": "List",
+      "id": "3e7f7f08-256d-49f6-8e8a-3af688278c98",
+      "name": "List All Special Restrictions",
       "request": {
-        "name": "List",
+        "name": "List All Special Restrictions",
         "description": {
-          "content": "Gets all special restrictions",
+          "content": "Returns a list with all the special restrictions.",
           "type": "text/plain"
         },
         "url": {
@@ -3667,7 +3667,7 @@
       },
       "response": [
         {
-          "id": "315d586f-f724-4b21-925c-3d8b879e1c48",
+          "id": "30664fd5-b861-4c1b-84f8-2d6a0f0b3ac3",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3697,7 +3697,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "6900f841-5a5f-4fb7-b38c-c2dbec9280e5",
+          "id": "9937029f-1054-4944-8ca4-384452f9254f",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -3727,7 +3727,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "06ef4ff2-006a-4c17-b060-aa1cfdbf6a64",
+          "id": "b37469b6-fc68-4026-aba6-5c03f79b420a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -3757,7 +3757,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e2a7410a-6fa0-4816-8c2d-c4cbe953100d",
+          "id": "943c0d09-5115-4c7d-a487-5bfb5e6cfb52",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -3790,12 +3790,12 @@
       "event": []
     },
     {
-      "id": "2938849c-248f-4590-83de-e8dfcc7241da",
-      "name": "List",
+      "id": "8a12b51b-46ca-457c-9adb-9f3a788fd453",
+      "name": "List All Vehicle Types",
       "request": {
-        "name": "List",
+        "name": "List All Vehicle Types",
         "description": {
-          "content": "Gets all vehicle types",
+          "content": "Returns a list with all the vehicle types.",
           "type": "text/plain"
         },
         "url": {
@@ -3814,7 +3814,7 @@
       },
       "response": [
         {
-          "id": "a9a079cb-3e20-4ef7-8665-af52ab158bfd",
+          "id": "68216590-17d7-4097-b46b-9b4889c99702",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3844,7 +3844,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "04100257-99f2-46aa-b834-54413120d171",
+          "id": "f2025b7d-d386-48a8-9bdb-8e3641ef4d35",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -3874,7 +3874,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "929d0906-e49d-4ae1-9f42-b13d7c187fe3",
+          "id": "4b199662-3d37-4d28-a5b1-0108ca26e770",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -3904,7 +3904,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "83f6c013-65d0-4d55-9387-986d38605aea",
+          "id": "c75b9702-a099-4036-ab8a-1e4ea97afb28",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -3937,12 +3937,12 @@
       "event": []
     },
     {
-      "id": "957576e0-80a3-4ce7-8d7f-87d5e8c3115f",
-      "name": "List",
+      "id": "23f045ce-207d-41eb-be4c-7b5f4dd153aa",
+      "name": "List All Zone Types",
       "request": {
-        "name": "List",
+        "name": "List All Zone Types",
         "description": {
-          "content": "Gets all zone types",
+          "content": "Returns a list with all the zone types.",
           "type": "text/plain"
         },
         "url": {
@@ -3961,7 +3961,7 @@
       },
       "response": [
         {
-          "id": "875989b6-2745-4d89-b4b4-f2da1cec1c4b",
+          "id": "b6b23799-51b2-4579-8f64-7ccbbb92b4c0",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3991,7 +3991,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "83b2b51a-4cf2-4a43-8eda-39c64551a877",
+          "id": "e54e5324-c495-4592-ba08-0e21190c6794",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -4021,7 +4021,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b6212dc8-67a1-4bbc-9483-6089ecaff92f",
+          "id": "9826a4dc-c472-47f1-8f15-273ed6f09a88",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -4051,7 +4051,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e64360ae-f6a7-4a6c-bafc-c8067571d797",
+          "id": "fbced70b-45e8-4c44-ac4c-27e13f7ea31f",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -4108,8 +4108,8 @@
     ]
   },
   "info": {
-    "_postman_id": "30297d1a-3808-4d59-a7a6-5084c618df6b",
-    "name": "Reference (v1.0|LIVE|Public)",
+    "_postman_id": "0757f496-af5f-46bd-ad4f-36dad08874c8",
+    "name": "Reference API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
       "content": "",

@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "cc617574-ff29-4b44-b391-7320e3758f26",
+      "id": "ad42beac-9ee1-4b67-9a2f-6032b26fd3ac",
       "name": "/changeUserConsents - POST",
       "request": {
         "name": "/changeUserConsents - POST",
@@ -26,12 +26,12 @@
         "auth": null,
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"userId\": \"<string>\",\n    \"newMarketingConsent\": \"<boolean>\"\n}"
+          "raw": "{\n    \"userId\": \"<string>\",\n    \"marketingConsent\": \"<boolean>\",\n    \"termsOfUseConsent\": \"<boolean>\",\n    \"privacyPolicyConsent\": \"<boolean>\"\n}"
         }
       },
       "response": [
         {
-          "id": "22c62ca4-be0f-4328-9316-8aa45d5c949e",
+          "id": "e052b93c-1ecb-461d-bd09-447d1ea74298",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -47,7 +47,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newMarketingConsent\": true\n}"
+              "raw": "{\n    \"userId\": \"string\",\n    \"privacyPolicyConsent\": true,\n    \"termsOfUseConsent\": true,\n    \"marketingConsent\": true\n}"
             }
           },
           "status": "Accepted",
@@ -63,7 +63,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "1a37e018-20d3-480b-be24-d31deca7a0e9",
+          "id": "86cb67a8-5bb2-4b27-905c-7f4585dc28de",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -79,7 +79,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newMarketingConsent\": true\n}"
+              "raw": "{\n    \"userId\": \"string\",\n    \"privacyPolicyConsent\": true,\n    \"termsOfUseConsent\": true,\n    \"marketingConsent\": true\n}"
             }
           },
           "status": "Bad Request",
@@ -95,7 +95,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "c51c02c7-7649-4daa-938d-948dd8b8924d",
+          "id": "32def831-7229-4054-9d56-2bd492897395",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -111,7 +111,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newMarketingConsent\": true\n}"
+              "raw": "{\n    \"userId\": \"string\",\n    \"privacyPolicyConsent\": true,\n    \"termsOfUseConsent\": true,\n    \"marketingConsent\": true\n}"
             }
           },
           "status": "Unauthorized",
@@ -127,7 +127,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "5fad726b-1a8c-4a3b-b429-8c1995dfcea1",
+          "id": "93e91fea-f7a6-45d8-b821-a678295a2fb6",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -143,7 +143,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newMarketingConsent\": true\n}"
+              "raw": "{\n    \"userId\": \"string\",\n    \"privacyPolicyConsent\": true,\n    \"termsOfUseConsent\": true,\n    \"marketingConsent\": true\n}"
             }
           },
           "status": "Forbidden",
@@ -159,7 +159,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "24d5b667-7ee6-4b04-9c2f-a416ab94cabc",
+          "id": "dedb5013-7f0f-464e-aeed-36f5d865f7f2",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -175,7 +175,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newMarketingConsent\": true\n}"
+              "raw": "{\n    \"userId\": \"string\",\n    \"privacyPolicyConsent\": true,\n    \"termsOfUseConsent\": true,\n    \"marketingConsent\": true\n}"
             }
           },
           "status": "Too Many Requests",
@@ -194,7 +194,7 @@
       "event": []
     },
     {
-      "id": "a8d21326-ac42-445f-b978-5dfa49e1e8ef",
+      "id": "fcb3eb53-8037-4b3a-86cb-fbd661a8de65",
       "name": "/fetchUserProfileById - POST",
       "request": {
         "name": "/fetchUserProfileById - POST",
@@ -224,7 +224,7 @@
       },
       "response": [
         {
-          "id": "d69cb7b0-f810-47e9-a7db-5caf35960fe7",
+          "id": "a3bfc4d9-1a8d-4cbb-8b43-6c79601cc019",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -251,12 +251,12 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n \"success\": true,\n \"result\": {\n  \"userId\": \"string\"\n }\n}",
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"userId\": \"string\",\n  \"consentInfo\": {\n   \"modifiedOnUtc\": \"string\",\n   \"marketingConsent\": true,\n   \"termsOfUseConsent\": true,\n   \"privacyPolicyConsent\": true\n  }\n }\n}",
           "cookie": [],
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "57bd7efb-24da-4cbe-b268-fcb8b53deafa",
+          "id": "bc3c827d-20eb-4360-ba4d-9dab71348d23",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -288,7 +288,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "664b5785-ead8-46e0-89f0-f25a6878bf22",
+          "id": "30992ba9-65b9-456b-9be6-ddfbc89d1f38",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -320,7 +320,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "0115589a-ff72-42e4-aea4-e3b4a51ab417",
+          "id": "6f4dab90-4aa3-4a71-ae07-5f6600496667",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -352,7 +352,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e8a8ff33-8b2d-434c-9511-060db38e7538",
+          "id": "3ae72b8e-4c9c-4b49-9fba-687fe91cd086",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -387,7 +387,7 @@
       "event": []
     },
     {
-      "id": "c806bc2a-ab13-44d1-ab9a-21dc33170cc4",
+      "id": "a664e287-c481-4186-b15f-ebbd928d23a0",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -410,7 +410,7 @@
       },
       "response": [
         {
-          "id": "62d936ff-c3fc-4283-8cd0-3f2c2edd3a00",
+          "id": "13cf37d5-4add-4da8-9af5-8fa216171575",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -439,7 +439,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "36d89baa-8c9b-4fc9-ba66-9a606b9ac552",
+          "id": "88d7c4bc-e0ad-4c4a-9933-594a7bc64f09",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -468,7 +468,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "2481f42a-458e-41b9-8751-268d7bb4c345",
+          "id": "9de41a6d-55bc-4d25-b301-3a16277cea77",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -497,7 +497,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "0840fcfb-e5d9-46e1-9f5d-0e61971b5e35",
+          "id": "956244b6-16f5-400f-9ebd-50f02d694800",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -529,7 +529,7 @@
       "event": []
     },
     {
-      "id": "d34d6ab9-e46e-4292-9699-4c6dd54d5bec",
+      "id": "f7383bb6-9bf9-4693-b31d-26fee65e1ecd",
       "name": "/setupParkingPlatformUser - POST",
       "request": {
         "name": "/setupParkingPlatformUser - POST",
@@ -559,7 +559,7 @@
       },
       "response": [
         {
-          "id": "e7bb0a7b-62c3-4093-b9c1-84bc3c1721ae",
+          "id": "c7037dd3-a027-423e-b018-af9b7d8cf61f",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -591,7 +591,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "a3932064-1950-46fe-a76d-8beb823c8b93",
+          "id": "b5032d23-d31b-4bd4-8996-31e629a366f8",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -623,7 +623,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "995ca842-cd41-454c-9455-4e3036b42652",
+          "id": "b0c466a7-da3a-417b-a322-db12270cbf3c",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -655,7 +655,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "237d2166-fcca-4645-be50-9f95f5080d9c",
+          "id": "039b1dad-a629-4813-b7b7-0735462fae33",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -687,7 +687,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "92dc7964-2551-48b0-816a-79b30fa5918c",
+          "id": "4f287c97-4825-45da-ac89-30a939fbc006",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -746,7 +746,7 @@
     ]
   },
   "info": {
-    "_postman_id": "fb414fb6-8536-4a70-8160-3d7a841c5b35",
+    "_postman_id": "2cd7a21b-0037-4cb7-9c32-1325dfb950fa",
     "name": "Parking Users API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

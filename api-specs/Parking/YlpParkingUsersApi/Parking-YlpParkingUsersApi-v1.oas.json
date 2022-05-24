@@ -25,7 +25,9 @@
               },
               "example": {
                 "userId": "string",
-                "newMarketingConsent": true
+                "privacyPolicyConsent": true,
+                "termsOfUseConsent": true,
+                "marketingConsent": true
               }
             },
             "text/json": {
@@ -34,7 +36,9 @@
               },
               "example": {
                 "userId": "string",
-                "newMarketingConsent": true
+                "privacyPolicyConsent": true,
+                "termsOfUseConsent": true,
+                "marketingConsent": true
               }
             },
             "application/*+json": {
@@ -43,7 +47,9 @@
               },
               "example": {
                 "userId": "string",
-                "newMarketingConsent": true
+                "privacyPolicyConsent": true,
+                "termsOfUseConsent": true,
+                "marketingConsent": true
               }
             }
           }
@@ -136,12 +142,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/FetchUserProfileByIdQueryOkResponse"
+                  "$ref": "#/components/schemas/FetchUserProfileByIdQueryResultOkResponse"
                 },
                 "example": {
                   "success": true,
                   "result": {
-                    "userId": "string"
+                    "userId": "string",
+                    "consentInfo": {
+                      "modifiedOnUtc": "string",
+                      "marketingConsent": true,
+                      "termsOfUseConsent": true,
+                      "privacyPolicyConsent": true
+                    }
                   }
                 }
               }
@@ -329,7 +341,13 @@
             "minLength": 1,
             "type": "string"
           },
-          "newMarketingConsent": {
+          "marketingConsent": {
+            "type": "boolean"
+          },
+          "termsOfUseConsent": {
+            "type": "boolean"
+          },
+          "privacyPolicyConsent": {
             "type": "boolean"
           }
         },
@@ -366,7 +384,20 @@
         },
         "additionalProperties": false
       },
-      "FetchUserProfileByIdQueryOkResponse": {
+      "FetchUserProfileByIdQueryResult": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "consentInfo": {
+            "$ref": "#/components/schemas/UserConsentInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchUserProfileByIdQueryResultOkResponse": {
         "type": "object",
         "properties": {
           "success": {
@@ -374,7 +405,7 @@
             "readOnly": true
           },
           "result": {
-            "$ref": "#/components/schemas/FetchUserProfileByIdQuery"
+            "$ref": "#/components/schemas/FetchUserProfileByIdQueryResult"
           }
         },
         "additionalProperties": false
@@ -412,6 +443,26 @@
           "organizationId": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserConsentInfo": {
+        "type": "object",
+        "properties": {
+          "modifiedOnUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "marketingConsent": {
+            "type": "boolean"
+          },
+          "termsOfUseConsent": {
+            "type": "boolean"
+          },
+          "privacyPolicyConsent": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
