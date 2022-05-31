@@ -1451,6 +1451,55 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /tasks/rollback-dataupdates:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/rollback-dataupdates - POST
+      operationId: post-tasks-rollback-dataupdates
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/RollbackDataUpdates'
+            example:
+              name: string
+              user: string
+              dataUpdateIds:
+              - string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RollbackDataUpdates'
+            example:
+              name: string
+              user: string
+              dataUpdateIds:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RollbackDataUpdates'
+            example:
+              name: string
+              user: string
+              dataUpdateIds:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RollbackDataUpdates'
+            example:
+              name: string
+              user: string
+              dataUpdateIds:
+              - string
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /tasks/test-onstreet-index:
     post:
       tags:
@@ -1487,55 +1536,6 @@ paths:
               name: string
               indexName: string
               user: string
-      responses:
-        "200":
-          description: Success
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /tasks/unapply-orders:
-    post:
-      tags:
-      - Tasks
-      summary: /tasks/unapply-orders - POST
-      operationId: post-tasks-unapply-orders
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/UnApplyOrders'
-            example:
-              name: string
-              user: string
-              orderIds:
-              - string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UnApplyOrders'
-            example:
-              name: string
-              user: string
-              orderIds:
-              - string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/UnApplyOrders'
-            example:
-              name: string
-              user: string
-              orderIds:
-              - string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/UnApplyOrders'
-            example:
-              name: string
-              user: string
-              orderIds:
-              - string
       responses:
         "200":
           description: Success
@@ -2076,6 +2076,23 @@ components:
       - 2
       type: integer
       format: int32
+    RollbackDataUpdates:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          readOnly: true
+        user:
+          type: string
+          nullable: true
+        dataUpdateIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      additionalProperties: false
     Test:
       type: object
       properties:
@@ -2120,23 +2137,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Test'
-          nullable: true
-      additionalProperties: false
-    UnApplyOrders:
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-          readOnly: true
-        user:
-          type: string
-          nullable: true
-        orderIds:
-          type: array
-          items:
-            type: string
-            format: uuid
           nullable: true
       additionalProperties: false
   securitySchemes:
