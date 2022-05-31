@@ -1496,6 +1496,55 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /tasks/unapply-orders:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/unapply-orders - POST
+      operationId: post-tasks-unapply-orders
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UnApplyOrders'
+            example:
+              name: string
+              user: string
+              orderIds:
+              - string
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnApplyOrders'
+            example:
+              name: string
+              user: string
+              orderIds:
+              - string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UnApplyOrders'
+            example:
+              name: string
+              user: string
+              orderIds:
+              - string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UnApplyOrders'
+            example:
+              name: string
+              user: string
+              orderIds:
+              - string
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /test/operating-hours:
     post:
       tags:
@@ -2071,6 +2120,23 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Test'
+          nullable: true
+      additionalProperties: false
+    UnApplyOrders:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+          readOnly: true
+        user:
+          type: string
+          nullable: true
+        orderIds:
+          type: array
+          items:
+            type: string
+            format: uuid
           nullable: true
       additionalProperties: false
   securitySchemes:
