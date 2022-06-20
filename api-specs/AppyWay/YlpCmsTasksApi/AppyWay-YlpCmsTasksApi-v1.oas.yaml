@@ -316,6 +316,32 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /tasks/add-roadsigns:
+    post:
+      tags:
+      - Tasks
+      summary: /tasks/add-roadsigns - POST
+      operationId: post-tasks-add-roadsigns
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                authorityId:
+                  type: string
+                authorityName:
+                  type: string
+                files:
+                  type: array
+      responses:
+        "200":
+          description: Success
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /tasks/apply-changesets:
     post:
       tags:
@@ -1027,7 +1053,8 @@ paths:
             example:
               name: string
               user: string
-              authorityId: string
+              authorityIds:
+              - string
               indexName: string
               orderId: string
           application/json:
@@ -1036,7 +1063,8 @@ paths:
             example:
               name: string
               user: string
-              authorityId: string
+              authorityIds:
+              - string
               indexName: string
               orderId: string
           text/json:
@@ -1045,7 +1073,8 @@ paths:
             example:
               name: string
               user: string
-              authorityId: string
+              authorityIds:
+              - string
               indexName: string
               orderId: string
           application/*+json:
@@ -1054,7 +1083,8 @@ paths:
             example:
               name: string
               user: string
-              authorityId: string
+              authorityIds:
+              - string
               indexName: string
               orderId: string
       responses:
@@ -1149,6 +1179,7 @@ paths:
               name: string
               user: string
               orderId: string
+              stateChangeId: string
               force: true
           application/json:
             schema:
@@ -1157,6 +1188,7 @@ paths:
               name: string
               user: string
               orderId: string
+              stateChangeId: string
               force: true
           text/json:
             schema:
@@ -1165,6 +1197,7 @@ paths:
               name: string
               user: string
               orderId: string
+              stateChangeId: string
               force: true
           application/*+json:
             schema:
@@ -1173,6 +1206,7 @@ paths:
               name: string
               user: string
               orderId: string
+              stateChangeId: string
               force: true
       responses:
         "200":
@@ -1991,9 +2025,12 @@ components:
         user:
           type: string
           nullable: true
-        authorityId:
-          type: string
-          format: uuid
+        authorityIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
         indexName:
           type: string
           nullable: true
@@ -2015,6 +2052,10 @@ components:
         orderId:
           type: string
           format: uuid
+        stateChangeId:
+          type: string
+          format: uuid
+          nullable: true
         force:
           type: boolean
       additionalProperties: false

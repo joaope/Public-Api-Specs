@@ -101,7 +101,8 @@
                         "allowChargePointRequests": true
                       },
                       "capabilitiesState": {
-                        "isPubliclyViewable": true,
+                        "isStaticPubliclyViewable": true,
+                        "isMovingPubliclyViewable": true,
                         "acceptChargePointRequests": true
                       },
                       "highwayAuthority": "string",
@@ -185,7 +186,8 @@
                         "allowChargePointRequests": true
                       },
                       "capabilitiesState": {
-                        "isPubliclyViewable": true,
+                        "isStaticPubliclyViewable": true,
+                        "isMovingPubliclyViewable": true,
                         "acceptChargePointRequests": true
                       },
                       "highwayAuthority": "string",
@@ -584,7 +586,8 @@
                       "allowChargePointRequests": true
                     },
                     "capabilitiesState": {
-                      "isPubliclyViewable": true,
+                      "isStaticPubliclyViewable": true,
+                      "isMovingPubliclyViewable": true,
                       "acceptChargePointRequests": true
                     },
                     "highwayAuthority": "string",
@@ -666,7 +669,8 @@
                       "allowChargePointRequests": true
                     },
                     "capabilitiesState": {
-                      "isPubliclyViewable": true,
+                      "isStaticPubliclyViewable": true,
+                      "isMovingPubliclyViewable": true,
                       "acceptChargePointRequests": true
                     },
                     "highwayAuthority": "string",
@@ -788,7 +792,8 @@
                       "allowChargePointRequests": true
                     },
                     "capabilitiesState": {
-                      "isPubliclyViewable": true,
+                      "isStaticPubliclyViewable": true,
+                      "isMovingPubliclyViewable": true,
                       "acceptChargePointRequests": true
                     },
                     "highwayAuthority": "string",
@@ -870,7 +875,8 @@
                       "allowChargePointRequests": true
                     },
                     "capabilitiesState": {
-                      "isPubliclyViewable": true,
+                      "isStaticPubliclyViewable": true,
+                      "isMovingPubliclyViewable": true,
                       "acceptChargePointRequests": true
                     },
                     "highwayAuthority": "string",
@@ -935,237 +941,6 @@
                 "example": {
                   "success": true,
                   "data": {
-                    "setsUrl": {
-                      "operatingHoursSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "operatingHours": {
-                            "standardDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ],
-                            "eventDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "exemptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exemptions": [
-                            {
-                              "exemptionTypeId": 0,
-                              "parkingEntitlementTypeId": 0,
-                              "exemptionTimeTypeId": 0,
-                              "exemptionApplies": true,
-                              "maxStay": 0,
-                              "noReturn": 0
-                            }
-                          ]
-                        }
-                      ],
-                      "exceptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exceptions": {
-                            "allHolidaysRestrictionExceptionTypeId": 0,
-                            "daySpecificRestrictionExceptions": [
-                              {
-                                "publicHolidayOrNamedDayId": "string",
-                                "restrictionExceptionTypeId": 0
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "tariffSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "tariffs": [
-                            {
-                              "parkingEntitlementTypeIds": [
-                                0
-                              ],
-                              "details": [
-                                {
-                                  "price": 0,
-                                  "surcharge": 0,
-                                  "surchargeDetail": {
-                                    "surchargeType": 0,
-                                    "value": 0,
-                                    "notes": "string",
-                                    "ruleType": 0
-                                  },
-                                  "duration": 0,
-                                  "minimumPriceIncrement": 0,
-                                  "singlePaymentCanCrossMidnight": true,
-                                  "from": 0,
-                                  "upTo": 0
-                                }
-                              ],
-                              "timeFrom": "2022-05-31T00:00:00",
-                              "timeTo": "2022-05-31T00:00:00",
-                              "firstDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "lastDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "months": [
-                                0
-                              ],
-                              "days": [
-                                0
-                              ],
-                              "timeType": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "zonesUrl": {
-                      "type": "string",
-                      "features": [
-                        {
-                          "type": "string",
-                          "id": "string",
-                          "geometry": {
-                            "type": "string",
-                            "crs": {
-                              "type": "string",
-                              "properties": {
-                                "name": "string"
-                              }
-                            },
-                            "coordinates": [
-                              [
-                                [
-                                  0
-                                ]
-                              ]
-                            ]
-                          },
-                          "properties": {
-                            "zoneId": "string",
-                            "authorityId": "string",
-                            "parentZoneId": "string",
-                            "type": 1,
-                            "name": "string",
-                            "restrictionTypeDetails": [
-                              {
-                                "restrictionTypeId": 0,
-                                "operatingHoursSet": [
-                                  {
-                                    "setId": "string",
-                                    "parkingEntitlementTypeIds": [
-                                      0
-                                    ]
-                                  }
-                                ],
-                                "exceptionsSet": {
-                                  "setId": "string"
-                                }
-                              }
-                            ],
-                            "notes": [
-                              {
-                                "noteVisibilityTypeId": 0,
-                                "appliesToRestrictionTypeIds": [
-                                  0
-                                ],
-                                "priority": 0,
-                                "title": "string",
-                                "message": "string",
-                                "url": "string",
-                                "telephone": "string"
-                              }
-                            ],
-                            "venueId": "string",
-                            "sourceTag": "string",
-                            "tags": [
-                              "string"
-                            ]
-                          }
-                        }
-                      ],
-                      "properties": {}
-                    },
                     "ospsUrl": [
                       {
                         "type": "string",
@@ -1270,8 +1045,251 @@
                         "properties": {}
                       }
                     ],
-                    "date": "string",
-                    "dataUpdateId": "string"
+                    "zonesUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "type": "string",
+                          "id": "string",
+                          "geometry": {
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            },
+                            "coordinates": [
+                              [
+                                [
+                                  0
+                                ]
+                              ]
+                            ]
+                          },
+                          "properties": {
+                            "zoneId": "string",
+                            "authorityId": "string",
+                            "parentZoneId": "string",
+                            "type": 1,
+                            "name": "string",
+                            "restrictionTypeDetails": [
+                              {
+                                "restrictionTypeId": 0,
+                                "operatingHoursSet": [
+                                  {
+                                    "setId": "string",
+                                    "parkingEntitlementTypeIds": [
+                                      0
+                                    ]
+                                  }
+                                ],
+                                "exceptionsSet": {
+                                  "setId": "string"
+                                }
+                              }
+                            ],
+                            "notes": [
+                              {
+                                "noteVisibilityTypeId": 0,
+                                "appliesToRestrictionTypeIds": [
+                                  0
+                                ],
+                                "priority": 0,
+                                "title": "string",
+                                "message": "string",
+                                "url": "string",
+                                "telephone": "string"
+                              }
+                            ],
+                            "venueId": "string",
+                            "sourceTag": "string",
+                            "tags": [
+                              "string"
+                            ]
+                          }
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "setsUrl": {
+                      "operatingHoursSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "operatingHours": {
+                            "standardDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ],
+                            "eventDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "exemptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exemptions": [
+                            {
+                              "exemptionTypeId": 0,
+                              "parkingEntitlementTypeId": 0,
+                              "exemptionTimeTypeId": 0,
+                              "exemptionApplies": true,
+                              "maxStay": 0,
+                              "noReturn": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "exceptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exceptions": {
+                            "allHolidaysRestrictionExceptionTypeId": 0,
+                            "daySpecificRestrictionExceptions": [
+                              {
+                                "publicHolidayOrNamedDayId": "string",
+                                "restrictionExceptionTypeId": 0
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tariffSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "tariffs": [
+                            {
+                              "parkingEntitlementTypeIds": [
+                                0
+                              ],
+                              "details": [
+                                {
+                                  "price": 0,
+                                  "surcharge": 0,
+                                  "surchargeDetail": {
+                                    "surchargeType": 0,
+                                    "value": 0,
+                                    "notes": "string",
+                                    "ruleType": 0
+                                  },
+                                  "duration": 0,
+                                  "minimumPriceIncrement": 0,
+                                  "singlePaymentCanCrossMidnight": true,
+                                  "from": 0,
+                                  "upTo": 0
+                                }
+                              ],
+                              "timeFrom": "2022-06-20T00:00:00",
+                              "timeTo": "2022-06-20T00:00:00",
+                              "firstDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "lastDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "months": [
+                                0
+                              ],
+                              "days": [
+                                0
+                              ],
+                              "timeType": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "mtfsUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "geoType": "string",
+                          "featureId": "string",
+                          "featureType": 0,
+                          "authorityId": "string",
+                          "note": "string",
+                          "streetName": "string"
+                        }
+                      ],
+                      "properties": {}
+                    }
                   }
                 }
               },
@@ -1282,237 +1300,6 @@
                 "example": {
                   "success": true,
                   "data": {
-                    "setsUrl": {
-                      "operatingHoursSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "operatingHours": {
-                            "standardDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ],
-                            "eventDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "exemptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exemptions": [
-                            {
-                              "exemptionTypeId": 0,
-                              "parkingEntitlementTypeId": 0,
-                              "exemptionTimeTypeId": 0,
-                              "exemptionApplies": true,
-                              "maxStay": 0,
-                              "noReturn": 0
-                            }
-                          ]
-                        }
-                      ],
-                      "exceptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exceptions": {
-                            "allHolidaysRestrictionExceptionTypeId": 0,
-                            "daySpecificRestrictionExceptions": [
-                              {
-                                "publicHolidayOrNamedDayId": "string",
-                                "restrictionExceptionTypeId": 0
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "tariffSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "tariffs": [
-                            {
-                              "parkingEntitlementTypeIds": [
-                                0
-                              ],
-                              "details": [
-                                {
-                                  "price": 0,
-                                  "surcharge": 0,
-                                  "surchargeDetail": {
-                                    "surchargeType": 0,
-                                    "value": 0,
-                                    "notes": "string",
-                                    "ruleType": 0
-                                  },
-                                  "duration": 0,
-                                  "minimumPriceIncrement": 0,
-                                  "singlePaymentCanCrossMidnight": true,
-                                  "from": 0,
-                                  "upTo": 0
-                                }
-                              ],
-                              "timeFrom": "2022-05-31T00:00:00",
-                              "timeTo": "2022-05-31T00:00:00",
-                              "firstDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "lastDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "months": [
-                                0
-                              ],
-                              "days": [
-                                0
-                              ],
-                              "timeType": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "zonesUrl": {
-                      "type": "string",
-                      "features": [
-                        {
-                          "type": "string",
-                          "id": "string",
-                          "geometry": {
-                            "type": "string",
-                            "crs": {
-                              "type": "string",
-                              "properties": {
-                                "name": "string"
-                              }
-                            },
-                            "coordinates": [
-                              [
-                                [
-                                  0
-                                ]
-                              ]
-                            ]
-                          },
-                          "properties": {
-                            "zoneId": "string",
-                            "authorityId": "string",
-                            "parentZoneId": "string",
-                            "type": 1,
-                            "name": "string",
-                            "restrictionTypeDetails": [
-                              {
-                                "restrictionTypeId": 0,
-                                "operatingHoursSet": [
-                                  {
-                                    "setId": "string",
-                                    "parkingEntitlementTypeIds": [
-                                      0
-                                    ]
-                                  }
-                                ],
-                                "exceptionsSet": {
-                                  "setId": "string"
-                                }
-                              }
-                            ],
-                            "notes": [
-                              {
-                                "noteVisibilityTypeId": 0,
-                                "appliesToRestrictionTypeIds": [
-                                  0
-                                ],
-                                "priority": 0,
-                                "title": "string",
-                                "message": "string",
-                                "url": "string",
-                                "telephone": "string"
-                              }
-                            ],
-                            "venueId": "string",
-                            "sourceTag": "string",
-                            "tags": [
-                              "string"
-                            ]
-                          }
-                        }
-                      ],
-                      "properties": {}
-                    },
                     "ospsUrl": [
                       {
                         "type": "string",
@@ -1617,8 +1404,251 @@
                         "properties": {}
                       }
                     ],
-                    "date": "string",
-                    "dataUpdateId": "string"
+                    "zonesUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "type": "string",
+                          "id": "string",
+                          "geometry": {
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            },
+                            "coordinates": [
+                              [
+                                [
+                                  0
+                                ]
+                              ]
+                            ]
+                          },
+                          "properties": {
+                            "zoneId": "string",
+                            "authorityId": "string",
+                            "parentZoneId": "string",
+                            "type": 1,
+                            "name": "string",
+                            "restrictionTypeDetails": [
+                              {
+                                "restrictionTypeId": 0,
+                                "operatingHoursSet": [
+                                  {
+                                    "setId": "string",
+                                    "parkingEntitlementTypeIds": [
+                                      0
+                                    ]
+                                  }
+                                ],
+                                "exceptionsSet": {
+                                  "setId": "string"
+                                }
+                              }
+                            ],
+                            "notes": [
+                              {
+                                "noteVisibilityTypeId": 0,
+                                "appliesToRestrictionTypeIds": [
+                                  0
+                                ],
+                                "priority": 0,
+                                "title": "string",
+                                "message": "string",
+                                "url": "string",
+                                "telephone": "string"
+                              }
+                            ],
+                            "venueId": "string",
+                            "sourceTag": "string",
+                            "tags": [
+                              "string"
+                            ]
+                          }
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "setsUrl": {
+                      "operatingHoursSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "operatingHours": {
+                            "standardDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ],
+                            "eventDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "exemptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exemptions": [
+                            {
+                              "exemptionTypeId": 0,
+                              "parkingEntitlementTypeId": 0,
+                              "exemptionTimeTypeId": 0,
+                              "exemptionApplies": true,
+                              "maxStay": 0,
+                              "noReturn": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "exceptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exceptions": {
+                            "allHolidaysRestrictionExceptionTypeId": 0,
+                            "daySpecificRestrictionExceptions": [
+                              {
+                                "publicHolidayOrNamedDayId": "string",
+                                "restrictionExceptionTypeId": 0
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tariffSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "tariffs": [
+                            {
+                              "parkingEntitlementTypeIds": [
+                                0
+                              ],
+                              "details": [
+                                {
+                                  "price": 0,
+                                  "surcharge": 0,
+                                  "surchargeDetail": {
+                                    "surchargeType": 0,
+                                    "value": 0,
+                                    "notes": "string",
+                                    "ruleType": 0
+                                  },
+                                  "duration": 0,
+                                  "minimumPriceIncrement": 0,
+                                  "singlePaymentCanCrossMidnight": true,
+                                  "from": 0,
+                                  "upTo": 0
+                                }
+                              ],
+                              "timeFrom": "2022-06-20T00:00:00",
+                              "timeTo": "2022-06-20T00:00:00",
+                              "firstDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "lastDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "months": [
+                                0
+                              ],
+                              "days": [
+                                0
+                              ],
+                              "timeType": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "mtfsUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "geoType": "string",
+                          "featureId": "string",
+                          "featureType": 0,
+                          "authorityId": "string",
+                          "note": "string",
+                          "streetName": "string"
+                        }
+                      ],
+                      "properties": {}
+                    }
                   }
                 }
               }
@@ -1677,237 +1707,6 @@
                 "example": {
                   "success": true,
                   "data": {
-                    "setsUrl": {
-                      "operatingHoursSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "operatingHours": {
-                            "standardDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ],
-                            "eventDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "exemptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exemptions": [
-                            {
-                              "exemptionTypeId": 0,
-                              "parkingEntitlementTypeId": 0,
-                              "exemptionTimeTypeId": 0,
-                              "exemptionApplies": true,
-                              "maxStay": 0,
-                              "noReturn": 0
-                            }
-                          ]
-                        }
-                      ],
-                      "exceptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exceptions": {
-                            "allHolidaysRestrictionExceptionTypeId": 0,
-                            "daySpecificRestrictionExceptions": [
-                              {
-                                "publicHolidayOrNamedDayId": "string",
-                                "restrictionExceptionTypeId": 0
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "tariffSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "tariffs": [
-                            {
-                              "parkingEntitlementTypeIds": [
-                                0
-                              ],
-                              "details": [
-                                {
-                                  "price": 0,
-                                  "surcharge": 0,
-                                  "surchargeDetail": {
-                                    "surchargeType": 0,
-                                    "value": 0,
-                                    "notes": "string",
-                                    "ruleType": 0
-                                  },
-                                  "duration": 0,
-                                  "minimumPriceIncrement": 0,
-                                  "singlePaymentCanCrossMidnight": true,
-                                  "from": 0,
-                                  "upTo": 0
-                                }
-                              ],
-                              "timeFrom": "2022-05-31T00:00:00",
-                              "timeTo": "2022-05-31T00:00:00",
-                              "firstDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "lastDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "months": [
-                                0
-                              ],
-                              "days": [
-                                0
-                              ],
-                              "timeType": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "zonesUrl": {
-                      "type": "string",
-                      "features": [
-                        {
-                          "type": "string",
-                          "id": "string",
-                          "geometry": {
-                            "type": "string",
-                            "crs": {
-                              "type": "string",
-                              "properties": {
-                                "name": "string"
-                              }
-                            },
-                            "coordinates": [
-                              [
-                                [
-                                  0
-                                ]
-                              ]
-                            ]
-                          },
-                          "properties": {
-                            "zoneId": "string",
-                            "authorityId": "string",
-                            "parentZoneId": "string",
-                            "type": 1,
-                            "name": "string",
-                            "restrictionTypeDetails": [
-                              {
-                                "restrictionTypeId": 0,
-                                "operatingHoursSet": [
-                                  {
-                                    "setId": "string",
-                                    "parkingEntitlementTypeIds": [
-                                      0
-                                    ]
-                                  }
-                                ],
-                                "exceptionsSet": {
-                                  "setId": "string"
-                                }
-                              }
-                            ],
-                            "notes": [
-                              {
-                                "noteVisibilityTypeId": 0,
-                                "appliesToRestrictionTypeIds": [
-                                  0
-                                ],
-                                "priority": 0,
-                                "title": "string",
-                                "message": "string",
-                                "url": "string",
-                                "telephone": "string"
-                              }
-                            ],
-                            "venueId": "string",
-                            "sourceTag": "string",
-                            "tags": [
-                              "string"
-                            ]
-                          }
-                        }
-                      ],
-                      "properties": {}
-                    },
                     "ospsUrl": [
                       {
                         "type": "string",
@@ -2012,8 +1811,251 @@
                         "properties": {}
                       }
                     ],
-                    "date": "string",
-                    "dataUpdateId": "string"
+                    "zonesUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "type": "string",
+                          "id": "string",
+                          "geometry": {
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            },
+                            "coordinates": [
+                              [
+                                [
+                                  0
+                                ]
+                              ]
+                            ]
+                          },
+                          "properties": {
+                            "zoneId": "string",
+                            "authorityId": "string",
+                            "parentZoneId": "string",
+                            "type": 1,
+                            "name": "string",
+                            "restrictionTypeDetails": [
+                              {
+                                "restrictionTypeId": 0,
+                                "operatingHoursSet": [
+                                  {
+                                    "setId": "string",
+                                    "parkingEntitlementTypeIds": [
+                                      0
+                                    ]
+                                  }
+                                ],
+                                "exceptionsSet": {
+                                  "setId": "string"
+                                }
+                              }
+                            ],
+                            "notes": [
+                              {
+                                "noteVisibilityTypeId": 0,
+                                "appliesToRestrictionTypeIds": [
+                                  0
+                                ],
+                                "priority": 0,
+                                "title": "string",
+                                "message": "string",
+                                "url": "string",
+                                "telephone": "string"
+                              }
+                            ],
+                            "venueId": "string",
+                            "sourceTag": "string",
+                            "tags": [
+                              "string"
+                            ]
+                          }
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "setsUrl": {
+                      "operatingHoursSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "operatingHours": {
+                            "standardDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ],
+                            "eventDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "exemptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exemptions": [
+                            {
+                              "exemptionTypeId": 0,
+                              "parkingEntitlementTypeId": 0,
+                              "exemptionTimeTypeId": 0,
+                              "exemptionApplies": true,
+                              "maxStay": 0,
+                              "noReturn": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "exceptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exceptions": {
+                            "allHolidaysRestrictionExceptionTypeId": 0,
+                            "daySpecificRestrictionExceptions": [
+                              {
+                                "publicHolidayOrNamedDayId": "string",
+                                "restrictionExceptionTypeId": 0
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tariffSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "tariffs": [
+                            {
+                              "parkingEntitlementTypeIds": [
+                                0
+                              ],
+                              "details": [
+                                {
+                                  "price": 0,
+                                  "surcharge": 0,
+                                  "surchargeDetail": {
+                                    "surchargeType": 0,
+                                    "value": 0,
+                                    "notes": "string",
+                                    "ruleType": 0
+                                  },
+                                  "duration": 0,
+                                  "minimumPriceIncrement": 0,
+                                  "singlePaymentCanCrossMidnight": true,
+                                  "from": 0,
+                                  "upTo": 0
+                                }
+                              ],
+                              "timeFrom": "2022-06-20T00:00:00",
+                              "timeTo": "2022-06-20T00:00:00",
+                              "firstDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "lastDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "months": [
+                                0
+                              ],
+                              "days": [
+                                0
+                              ],
+                              "timeType": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "mtfsUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "geoType": "string",
+                          "featureId": "string",
+                          "featureType": 0,
+                          "authorityId": "string",
+                          "note": "string",
+                          "streetName": "string"
+                        }
+                      ],
+                      "properties": {}
+                    }
                   }
                 }
               },
@@ -2024,237 +2066,6 @@
                 "example": {
                   "success": true,
                   "data": {
-                    "setsUrl": {
-                      "operatingHoursSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "operatingHours": {
-                            "standardDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ],
-                            "eventDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "exemptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exemptions": [
-                            {
-                              "exemptionTypeId": 0,
-                              "parkingEntitlementTypeId": 0,
-                              "exemptionTimeTypeId": 0,
-                              "exemptionApplies": true,
-                              "maxStay": 0,
-                              "noReturn": 0
-                            }
-                          ]
-                        }
-                      ],
-                      "exceptionsSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "exceptions": {
-                            "allHolidaysRestrictionExceptionTypeId": 0,
-                            "daySpecificRestrictionExceptions": [
-                              {
-                                "publicHolidayOrNamedDayId": "string",
-                                "restrictionExceptionTypeId": 0
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "tariffSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "tariffs": [
-                            {
-                              "parkingEntitlementTypeIds": [
-                                0
-                              ],
-                              "details": [
-                                {
-                                  "price": 0,
-                                  "surcharge": 0,
-                                  "surchargeDetail": {
-                                    "surchargeType": 0,
-                                    "value": 0,
-                                    "notes": "string",
-                                    "ruleType": 0
-                                  },
-                                  "duration": 0,
-                                  "minimumPriceIncrement": 0,
-                                  "singlePaymentCanCrossMidnight": true,
-                                  "from": 0,
-                                  "upTo": 0
-                                }
-                              ],
-                              "timeFrom": "2022-05-31T00:00:00",
-                              "timeTo": "2022-05-31T00:00:00",
-                              "firstDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "lastDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "months": [
-                                0
-                              ],
-                              "days": [
-                                0
-                              ],
-                              "timeType": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "zonesUrl": {
-                      "type": "string",
-                      "features": [
-                        {
-                          "type": "string",
-                          "id": "string",
-                          "geometry": {
-                            "type": "string",
-                            "crs": {
-                              "type": "string",
-                              "properties": {
-                                "name": "string"
-                              }
-                            },
-                            "coordinates": [
-                              [
-                                [
-                                  0
-                                ]
-                              ]
-                            ]
-                          },
-                          "properties": {
-                            "zoneId": "string",
-                            "authorityId": "string",
-                            "parentZoneId": "string",
-                            "type": 1,
-                            "name": "string",
-                            "restrictionTypeDetails": [
-                              {
-                                "restrictionTypeId": 0,
-                                "operatingHoursSet": [
-                                  {
-                                    "setId": "string",
-                                    "parkingEntitlementTypeIds": [
-                                      0
-                                    ]
-                                  }
-                                ],
-                                "exceptionsSet": {
-                                  "setId": "string"
-                                }
-                              }
-                            ],
-                            "notes": [
-                              {
-                                "noteVisibilityTypeId": 0,
-                                "appliesToRestrictionTypeIds": [
-                                  0
-                                ],
-                                "priority": 0,
-                                "title": "string",
-                                "message": "string",
-                                "url": "string",
-                                "telephone": "string"
-                              }
-                            ],
-                            "venueId": "string",
-                            "sourceTag": "string",
-                            "tags": [
-                              "string"
-                            ]
-                          }
-                        }
-                      ],
-                      "properties": {}
-                    },
                     "ospsUrl": [
                       {
                         "type": "string",
@@ -2359,101 +2170,251 @@
                         "properties": {}
                       }
                     ],
-                    "date": "string",
-                    "dataUpdateId": "string"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/authorities/getMovingRestrictionsByAuthorityId": {
-      "get": {
-        "tags": [
-          "Authorities"
-        ],
-        "summary": "/authorities/getMovingRestrictionsByAuthorityId - GET",
-        "operationId": "get-authorities-getmovingrestrictionsbyauthorityid",
-        "parameters": [
-          {
-            "name": "authorityId",
-            "in": "query",
-            "description": "Format - uuid.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "maxDate",
-            "in": "query",
-            "description": "Format - date-time (as date-time in RFC3339).",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/MFeatureCollectionResult"
-                },
-                "example": null
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MFeatureCollectionResult"
-                },
-                "example": {
-                  "success": true,
-                  "data": {
-                    "type": "string",
-                    "features": [
-                      {
-                        "geoType": "string",
-                        "featureId": "string",
-                        "featureType": 0,
-                        "authorityId": "string",
-                        "note": "string",
-                        "streetName": "string"
-                      }
-                    ],
-                    "properties": {}
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MFeatureCollectionResult"
-                },
-                "example": {
-                  "success": true,
-                  "data": {
-                    "type": "string",
-                    "features": [
-                      {
-                        "geoType": "string",
-                        "featureId": "string",
-                        "featureType": 0,
-                        "authorityId": "string",
-                        "note": "string",
-                        "streetName": "string"
-                      }
-                    ],
-                    "properties": {}
+                    "zonesUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "type": "string",
+                          "id": "string",
+                          "geometry": {
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            },
+                            "coordinates": [
+                              [
+                                [
+                                  0
+                                ]
+                              ]
+                            ]
+                          },
+                          "properties": {
+                            "zoneId": "string",
+                            "authorityId": "string",
+                            "parentZoneId": "string",
+                            "type": 1,
+                            "name": "string",
+                            "restrictionTypeDetails": [
+                              {
+                                "restrictionTypeId": 0,
+                                "operatingHoursSet": [
+                                  {
+                                    "setId": "string",
+                                    "parkingEntitlementTypeIds": [
+                                      0
+                                    ]
+                                  }
+                                ],
+                                "exceptionsSet": {
+                                  "setId": "string"
+                                }
+                              }
+                            ],
+                            "notes": [
+                              {
+                                "noteVisibilityTypeId": 0,
+                                "appliesToRestrictionTypeIds": [
+                                  0
+                                ],
+                                "priority": 0,
+                                "title": "string",
+                                "message": "string",
+                                "url": "string",
+                                "telephone": "string"
+                              }
+                            ],
+                            "venueId": "string",
+                            "sourceTag": "string",
+                            "tags": [
+                              "string"
+                            ]
+                          }
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "setsUrl": {
+                      "operatingHoursSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "operatingHours": {
+                            "standardDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ],
+                            "eventDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "exemptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exemptions": [
+                            {
+                              "exemptionTypeId": 0,
+                              "parkingEntitlementTypeId": 0,
+                              "exemptionTimeTypeId": 0,
+                              "exemptionApplies": true,
+                              "maxStay": 0,
+                              "noReturn": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "exceptionsSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "exceptions": {
+                            "allHolidaysRestrictionExceptionTypeId": 0,
+                            "daySpecificRestrictionExceptions": [
+                              {
+                                "publicHolidayOrNamedDayId": "string",
+                                "restrictionExceptionTypeId": 0
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tariffSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "tariffs": [
+                            {
+                              "parkingEntitlementTypeIds": [
+                                0
+                              ],
+                              "details": [
+                                {
+                                  "price": 0,
+                                  "surcharge": 0,
+                                  "surchargeDetail": {
+                                    "surchargeType": 0,
+                                    "value": 0,
+                                    "notes": "string",
+                                    "ruleType": 0
+                                  },
+                                  "duration": 0,
+                                  "minimumPriceIncrement": 0,
+                                  "singlePaymentCanCrossMidnight": true,
+                                  "from": 0,
+                                  "upTo": 0
+                                }
+                              ],
+                              "timeFrom": "2022-06-20T00:00:00",
+                              "timeTo": "2022-06-20T00:00:00",
+                              "firstDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "lastDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "months": [
+                                0
+                              ],
+                              "days": [
+                                0
+                              ],
+                              "timeType": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "mtfsUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "geoType": "string",
+                          "featureId": "string",
+                          "featureType": 0,
+                          "authorityId": "string",
+                          "note": "string",
+                          "streetName": "string"
+                        }
+                      ],
+                      "properties": {}
+                    }
                   }
                 }
               }
@@ -2512,186 +2473,6 @@
                 "example": {
                   "success": true,
                   "data": {
-                    "setsUrl": {
-                      "operatingHoursSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "operatingHours": {
-                            "standardDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ],
-                            "eventDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "tariffSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "tariffs": [
-                            {
-                              "parkingEntitlementTypeIds": [
-                                0
-                              ],
-                              "details": [
-                                {
-                                  "price": 0,
-                                  "surcharge": 0,
-                                  "surchargeDetail": {
-                                    "surchargeType": 0,
-                                    "value": 0,
-                                    "notes": "string",
-                                    "ruleType": 0
-                                  },
-                                  "duration": 0,
-                                  "minimumPriceIncrement": 0,
-                                  "singlePaymentCanCrossMidnight": true,
-                                  "from": 0,
-                                  "upTo": 0
-                                }
-                              ],
-                              "timeFrom": "2022-05-31T00:00:00",
-                              "timeTo": "2022-05-31T00:00:00",
-                              "firstDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "lastDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "months": [
-                                0
-                              ],
-                              "days": [
-                                0
-                              ],
-                              "timeType": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "zonesUrl": {
-                      "type": "string",
-                      "features": [
-                        {
-                          "type": "string",
-                          "id": "string",
-                          "geometry": {
-                            "type": "string",
-                            "crs": {
-                              "type": "string",
-                              "properties": {
-                                "name": "string"
-                              }
-                            },
-                            "coordinates": [
-                              [
-                                [
-                                  0
-                                ]
-                              ]
-                            ]
-                          },
-                          "properties": {
-                            "zoneId": "string",
-                            "authorityId": "string",
-                            "name": "string",
-                            "restrictionTypeDetails": [
-                              {
-                                "restrictionTypeId": 0,
-                                "operatingHoursSet": [
-                                  {
-                                    "setId": "string",
-                                    "parkingEntitlementTypeIds": [
-                                      0
-                                    ]
-                                  }
-                                ],
-                                "exceptionsSet": {
-                                  "setId": "string"
-                                }
-                              }
-                            ],
-                            "type": 1,
-                            "venueId": "string"
-                          }
-                        }
-                      ],
-                      "properties": {}
-                    },
                     "ospsUrl": [
                       {
                         "type": "string",
@@ -2751,8 +2532,200 @@
                         "properties": {}
                       }
                     ],
-                    "date": "string",
-                    "dataUpdateId": "string"
+                    "zonesUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "type": "string",
+                          "id": "string",
+                          "geometry": {
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            },
+                            "coordinates": [
+                              [
+                                [
+                                  0
+                                ]
+                              ]
+                            ]
+                          },
+                          "properties": {
+                            "zoneId": "string",
+                            "authorityId": "string",
+                            "name": "string",
+                            "restrictionTypeDetails": [
+                              {
+                                "restrictionTypeId": 0,
+                                "operatingHoursSet": [
+                                  {
+                                    "setId": "string",
+                                    "parkingEntitlementTypeIds": [
+                                      0
+                                    ]
+                                  }
+                                ],
+                                "exceptionsSet": {
+                                  "setId": "string"
+                                }
+                              }
+                            ],
+                            "type": 1,
+                            "venueId": "string"
+                          }
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "setsUrl": {
+                      "operatingHoursSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "operatingHours": {
+                            "standardDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ],
+                            "eventDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tariffSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "tariffs": [
+                            {
+                              "parkingEntitlementTypeIds": [
+                                0
+                              ],
+                              "details": [
+                                {
+                                  "price": 0,
+                                  "surcharge": 0,
+                                  "surchargeDetail": {
+                                    "surchargeType": 0,
+                                    "value": 0,
+                                    "notes": "string",
+                                    "ruleType": 0
+                                  },
+                                  "duration": 0,
+                                  "minimumPriceIncrement": 0,
+                                  "singlePaymentCanCrossMidnight": true,
+                                  "from": 0,
+                                  "upTo": 0
+                                }
+                              ],
+                              "timeFrom": "2022-06-20T00:00:00",
+                              "timeTo": "2022-06-20T00:00:00",
+                              "firstDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "lastDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "months": [
+                                0
+                              ],
+                              "days": [
+                                0
+                              ],
+                              "timeType": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "mtfsUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "geoType": "string",
+                          "featureId": "string",
+                          "featureType": 0,
+                          "authorityId": "string",
+                          "note": "string",
+                          "streetName": "string"
+                        }
+                      ],
+                      "properties": {}
+                    }
                   }
                 }
               },
@@ -2763,186 +2736,6 @@
                 "example": {
                   "success": true,
                   "data": {
-                    "setsUrl": {
-                      "operatingHoursSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "operatingHours": {
-                            "standardDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ],
-                            "eventDays": [
-                              {
-                                "ruleTime": {
-                                  "months": [
-                                    0
-                                  ],
-                                  "days": [
-                                    0
-                                  ],
-                                  "weekNumbers": [
-                                    0
-                                  ],
-                                  "hours": [
-                                    {
-                                      "start": "2022-05-31T00:00:00",
-                                      "end": "2022-05-31T00:00:00"
-                                    }
-                                  ],
-                                  "firstDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  },
-                                  "lastDate": {
-                                    "month": 0,
-                                    "day": 0
-                                  }
-                                },
-                                "parkingEntitlementTypeIds": [
-                                  0
-                                ],
-                                "maxStay": 0,
-                                "minStay": 0,
-                                "noReturn": 0,
-                                "noReturnUntil": "2022-05-31T00:00:00"
-                              }
-                            ]
-                          }
-                        }
-                      ],
-                      "tariffSets": [
-                        {
-                          "setId": "string",
-                          "name": "string",
-                          "formattedName": "string",
-                          "tariffs": [
-                            {
-                              "parkingEntitlementTypeIds": [
-                                0
-                              ],
-                              "details": [
-                                {
-                                  "price": 0,
-                                  "surcharge": 0,
-                                  "surchargeDetail": {
-                                    "surchargeType": 0,
-                                    "value": 0,
-                                    "notes": "string",
-                                    "ruleType": 0
-                                  },
-                                  "duration": 0,
-                                  "minimumPriceIncrement": 0,
-                                  "singlePaymentCanCrossMidnight": true,
-                                  "from": 0,
-                                  "upTo": 0
-                                }
-                              ],
-                              "timeFrom": "2022-05-31T00:00:00",
-                              "timeTo": "2022-05-31T00:00:00",
-                              "firstDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "lastDate": {
-                                "month": 0,
-                                "day": 0
-                              },
-                              "months": [
-                                0
-                              ],
-                              "days": [
-                                0
-                              ],
-                              "timeType": 0
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    "zonesUrl": {
-                      "type": "string",
-                      "features": [
-                        {
-                          "type": "string",
-                          "id": "string",
-                          "geometry": {
-                            "type": "string",
-                            "crs": {
-                              "type": "string",
-                              "properties": {
-                                "name": "string"
-                              }
-                            },
-                            "coordinates": [
-                              [
-                                [
-                                  0
-                                ]
-                              ]
-                            ]
-                          },
-                          "properties": {
-                            "zoneId": "string",
-                            "authorityId": "string",
-                            "name": "string",
-                            "restrictionTypeDetails": [
-                              {
-                                "restrictionTypeId": 0,
-                                "operatingHoursSet": [
-                                  {
-                                    "setId": "string",
-                                    "parkingEntitlementTypeIds": [
-                                      0
-                                    ]
-                                  }
-                                ],
-                                "exceptionsSet": {
-                                  "setId": "string"
-                                }
-                              }
-                            ],
-                            "type": 1,
-                            "venueId": "string"
-                          }
-                        }
-                      ],
-                      "properties": {}
-                    },
                     "ospsUrl": [
                       {
                         "type": "string",
@@ -3002,8 +2795,200 @@
                         "properties": {}
                       }
                     ],
-                    "date": "string",
-                    "dataUpdateId": "string"
+                    "zonesUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "type": "string",
+                          "id": "string",
+                          "geometry": {
+                            "type": "string",
+                            "crs": {
+                              "type": "string",
+                              "properties": {
+                                "name": "string"
+                              }
+                            },
+                            "coordinates": [
+                              [
+                                [
+                                  0
+                                ]
+                              ]
+                            ]
+                          },
+                          "properties": {
+                            "zoneId": "string",
+                            "authorityId": "string",
+                            "name": "string",
+                            "restrictionTypeDetails": [
+                              {
+                                "restrictionTypeId": 0,
+                                "operatingHoursSet": [
+                                  {
+                                    "setId": "string",
+                                    "parkingEntitlementTypeIds": [
+                                      0
+                                    ]
+                                  }
+                                ],
+                                "exceptionsSet": {
+                                  "setId": "string"
+                                }
+                              }
+                            ],
+                            "type": 1,
+                            "venueId": "string"
+                          }
+                        }
+                      ],
+                      "properties": {}
+                    },
+                    "setsUrl": {
+                      "operatingHoursSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "operatingHours": {
+                            "standardDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ],
+                            "eventDays": [
+                              {
+                                "ruleTime": {
+                                  "months": [
+                                    0
+                                  ],
+                                  "days": [
+                                    0
+                                  ],
+                                  "weekNumbers": [
+                                    0
+                                  ],
+                                  "hours": [
+                                    {
+                                      "start": "2022-06-20T00:00:00",
+                                      "end": "2022-06-20T00:00:00"
+                                    }
+                                  ],
+                                  "firstDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  },
+                                  "lastDate": {
+                                    "month": 0,
+                                    "day": 0
+                                  }
+                                },
+                                "parkingEntitlementTypeIds": [
+                                  0
+                                ],
+                                "maxStay": 0,
+                                "minStay": 0,
+                                "noReturn": 0,
+                                "noReturnUntil": "2022-06-20T00:00:00"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "tariffSets": [
+                        {
+                          "setId": "string",
+                          "name": "string",
+                          "formattedName": "string",
+                          "tariffs": [
+                            {
+                              "parkingEntitlementTypeIds": [
+                                0
+                              ],
+                              "details": [
+                                {
+                                  "price": 0,
+                                  "surcharge": 0,
+                                  "surchargeDetail": {
+                                    "surchargeType": 0,
+                                    "value": 0,
+                                    "notes": "string",
+                                    "ruleType": 0
+                                  },
+                                  "duration": 0,
+                                  "minimumPriceIncrement": 0,
+                                  "singlePaymentCanCrossMidnight": true,
+                                  "from": 0,
+                                  "upTo": 0
+                                }
+                              ],
+                              "timeFrom": "2022-06-20T00:00:00",
+                              "timeTo": "2022-06-20T00:00:00",
+                              "firstDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "lastDate": {
+                                "month": 0,
+                                "day": 0
+                              },
+                              "months": [
+                                0
+                              ],
+                              "days": [
+                                0
+                              ],
+                              "timeType": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "mtfsUrl": {
+                      "type": "string",
+                      "features": [
+                        {
+                          "geoType": "string",
+                          "featureId": "string",
+                          "featureType": 0,
+                          "authorityId": "string",
+                          "note": "string",
+                          "streetName": "string"
+                        }
+                      ],
+                      "properties": {}
+                    }
                   }
                 }
               }
@@ -3193,7 +3178,8 @@
                   }
                 ],
                 "capabilitiesState": {
-                  "isPubliclyViewable": true,
+                  "isStaticPubliclyViewable": true,
+                  "isMovingPubliclyViewable": true,
                   "acceptChargePointRequests": true
                 }
               }
@@ -3222,7 +3208,8 @@
                   }
                 ],
                 "capabilitiesState": {
-                  "isPubliclyViewable": true,
+                  "isStaticPubliclyViewable": true,
+                  "isMovingPubliclyViewable": true,
                   "acceptChargePointRequests": true
                 }
               }
@@ -3251,7 +3238,8 @@
                   }
                 ],
                 "capabilitiesState": {
-                  "isPubliclyViewable": true,
+                  "isStaticPubliclyViewable": true,
+                  "isMovingPubliclyViewable": true,
                   "acceptChargePointRequests": true
                 }
               }
@@ -3280,7 +3268,8 @@
                   }
                 ],
                 "capabilitiesState": {
-                  "isPubliclyViewable": true,
+                  "isStaticPubliclyViewable": true,
+                  "isMovingPubliclyViewable": true,
                   "acceptChargePointRequests": true
                 }
               }
@@ -3464,8 +3453,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "firstDate": {
@@ -3494,8 +3483,8 @@
                             ],
                             "hours": [
                               {
-                                "start": "2022-05-31T00:00:00",
-                                "end": "2022-05-31T00:00:00"
+                                "start": "2022-06-20T00:00:00",
+                                "end": "2022-06-20T00:00:00"
                               }
                             ],
                             "firstDate": {
@@ -3530,8 +3519,8 @@
                                 "upTo": 0
                               }
                             ],
-                            "timeFrom": "2022-05-31T00:00:00",
-                            "timeTo": "2022-05-31T00:00:00",
+                            "timeFrom": "2022-06-20T00:00:00",
+                            "timeTo": "2022-06-20T00:00:00",
                             "firstDate": {
                               "month": 0,
                               "day": 0
@@ -3732,8 +3721,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "firstDate": {
@@ -3762,8 +3751,8 @@
                             ],
                             "hours": [
                               {
-                                "start": "2022-05-31T00:00:00",
-                                "end": "2022-05-31T00:00:00"
+                                "start": "2022-06-20T00:00:00",
+                                "end": "2022-06-20T00:00:00"
                               }
                             ],
                             "firstDate": {
@@ -3798,8 +3787,8 @@
                                 "upTo": 0
                               }
                             ],
-                            "timeFrom": "2022-05-31T00:00:00",
-                            "timeTo": "2022-05-31T00:00:00",
+                            "timeFrom": "2022-06-20T00:00:00",
+                            "timeTo": "2022-06-20T00:00:00",
                             "firstDate": {
                               "month": 0,
                               "day": 0
@@ -4667,6 +4656,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "stateChangeId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4834,6 +4831,14 @@
         "parameters": [
           {
             "name": "orderId",
+            "in": "query",
+            "description": "Format - uuid.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stateChangeId",
             "in": "query",
             "description": "Format - uuid.",
             "schema": {
@@ -6835,7 +6840,7 @@
         "operationId": "get-orders-query-getlatestmade",
         "parameters": [
           {
-            "name": "ospId",
+            "name": "entityId",
             "in": "query",
             "description": "Format - uuid.",
             "schema": {
@@ -7340,8 +7345,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7372,8 +7377,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7404,8 +7409,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7436,8 +7441,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7482,8 +7487,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "startDate": "string",
@@ -7517,8 +7522,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "startDate": "string",
@@ -7649,8 +7654,8 @@
                           ],
                           "hours": [
                             {
-                              "start": "2022-05-31T00:00:00",
-                              "end": "2022-05-31T00:00:00"
+                              "start": "2022-06-20T00:00:00",
+                              "end": "2022-06-20T00:00:00"
                             }
                           ],
                           "startDate": "string",
@@ -7686,8 +7691,8 @@
                           ],
                           "hours": [
                             {
-                              "start": "2022-05-31T00:00:00",
-                              "end": "2022-05-31T00:00:00"
+                              "start": "2022-06-20T00:00:00",
+                              "end": "2022-06-20T00:00:00"
                             }
                           ],
                           "startDate": "string",
@@ -7762,8 +7767,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "startDate": "string",
@@ -7797,8 +7802,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "startDate": "string",
@@ -7853,8 +7858,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7885,8 +7890,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7917,8 +7922,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7949,8 +7954,8 @@
                     ],
                     "hours": [
                       {
-                        "start": "2022-05-31T00:00:00",
-                        "end": "2022-05-31T00:00:00"
+                        "start": "2022-06-20T00:00:00",
+                        "end": "2022-06-20T00:00:00"
                       }
                     ],
                     "startDate": "string",
@@ -7995,8 +8000,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "startDate": "string",
@@ -8030,8 +8035,8 @@
                         ],
                         "hours": [
                           {
-                            "start": "2022-05-31T00:00:00",
-                            "end": "2022-05-31T00:00:00"
+                            "start": "2022-06-20T00:00:00",
+                            "end": "2022-06-20T00:00:00"
                           }
                         ],
                         "startDate": "string",
@@ -8442,12 +8447,6 @@
       "AuthoritySnapshotInfoDoc": {
         "type": "object",
         "properties": {
-          "setsUrl": {
-            "$ref": "#/components/schemas/SetCollection"
-          },
-          "zonesUrl": {
-            "$ref": "#/components/schemas/PolygonZoneFeatureCollection"
-          },
           "ospsUrl": {
             "type": "array",
             "items": {
@@ -8455,14 +8454,14 @@
             },
             "nullable": true
           },
-          "date": {
-            "type": "string",
-            "format": "date-time"
+          "zonesUrl": {
+            "$ref": "#/components/schemas/PolygonZoneFeatureCollection"
           },
-          "dataUpdateId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
+          "setsUrl": {
+            "$ref": "#/components/schemas/SetCollection"
+          },
+          "mtfsUrl": {
+            "$ref": "#/components/schemas/MFeatureCollection"
           }
         },
         "additionalProperties": false
@@ -8507,7 +8506,10 @@
       "CapabilitiesState": {
         "type": "object",
         "properties": {
-          "isPubliclyViewable": {
+          "isStaticPubliclyViewable": {
+            "type": "boolean"
+          },
+          "isMovingPubliclyViewable": {
             "type": "boolean"
           },
           "acceptChargePointRequests": {
@@ -9686,19 +9688,6 @@
         },
         "additionalProperties": false
       },
-      "MFeatureCollectionResult": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "data": {
-            "$ref": "#/components/schemas/MFeatureCollection"
-          }
-        },
-        "additionalProperties": false
-      },
       "Modification": {
         "type": "object",
         "properties": {
@@ -10547,12 +10536,6 @@
       "PublicAuthoritySnapshotInfoDoc": {
         "type": "object",
         "properties": {
-          "setsUrl": {
-            "$ref": "#/components/schemas/PublicSetCollection"
-          },
-          "zonesUrl": {
-            "$ref": "#/components/schemas/PolygonZonePublicFeaturePropertiesFeatureCollection"
-          },
           "ospsUrl": {
             "type": "array",
             "items": {
@@ -10560,14 +10543,14 @@
             },
             "nullable": true
           },
-          "date": {
-            "type": "string",
-            "format": "date-time"
+          "zonesUrl": {
+            "$ref": "#/components/schemas/PolygonZonePublicFeaturePropertiesFeatureCollection"
           },
-          "dataUpdateId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
+          "setsUrl": {
+            "$ref": "#/components/schemas/PublicSetCollection"
+          },
+          "mtfsUrl": {
+            "$ref": "#/components/schemas/MFeatureCollection"
           }
         },
         "additionalProperties": false

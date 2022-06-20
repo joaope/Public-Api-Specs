@@ -500,6 +500,48 @@
         }
       }
     },
+    "/tasks/add-roadsigns": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "/tasks/add-roadsigns - POST",
+        "operationId": "post-tasks-add-roadsigns",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "authorityId": {
+                    "type": "string"
+                  },
+                  "authorityName": {
+                    "type": "string"
+                  },
+                  "files": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/tasks/apply-changesets": {
       "post": {
         "tags": [
@@ -1539,7 +1581,9 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "authorityId": "string",
+                "authorityIds": [
+                  "string"
+                ],
                 "indexName": "string",
                 "orderId": "string"
               }
@@ -1551,7 +1595,9 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "authorityId": "string",
+                "authorityIds": [
+                  "string"
+                ],
                 "indexName": "string",
                 "orderId": "string"
               }
@@ -1563,7 +1609,9 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "authorityId": "string",
+                "authorityIds": [
+                  "string"
+                ],
                 "indexName": "string",
                 "orderId": "string"
               }
@@ -1575,7 +1623,9 @@
               "example": {
                 "name": "string",
                 "user": "string",
-                "authorityId": "string",
+                "authorityIds": [
+                  "string"
+                ],
                 "indexName": "string",
                 "orderId": "string"
               }
@@ -1723,6 +1773,7 @@
                 "name": "string",
                 "user": "string",
                 "orderId": "string",
+                "stateChangeId": "string",
                 "force": true
               }
             },
@@ -1734,6 +1785,7 @@
                 "name": "string",
                 "user": "string",
                 "orderId": "string",
+                "stateChangeId": "string",
                 "force": true
               }
             },
@@ -1745,6 +1797,7 @@
                 "name": "string",
                 "user": "string",
                 "orderId": "string",
+                "stateChangeId": "string",
                 "force": true
               }
             },
@@ -1756,6 +1809,7 @@
                 "name": "string",
                 "user": "string",
                 "orderId": "string",
+                "stateChangeId": "string",
                 "force": true
               }
             }
@@ -2973,9 +3027,13 @@
             "type": "string",
             "nullable": true
           },
-          "authorityId": {
-            "type": "string",
-            "format": "uuid"
+          "authorityIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
           },
           "indexName": {
             "type": "string",
@@ -3004,6 +3062,11 @@
           "orderId": {
             "type": "string",
             "format": "uuid"
+          },
+          "stateChangeId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           },
           "force": {
             "type": "boolean"

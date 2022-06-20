@@ -74,7 +74,8 @@ paths:
                     allowIsPubliclyViewable: true
                     allowChargePointRequests: true
                   capabilitiesState:
-                    isPubliclyViewable: true
+                    isStaticPubliclyViewable: true
+                    isMovingPubliclyViewable: true
                     acceptChargePointRequests: true
                   highwayAuthority: string
                   dataQuality: 1
@@ -134,7 +135,8 @@ paths:
                     allowIsPubliclyViewable: true
                     allowChargePointRequests: true
                   capabilitiesState:
-                    isPubliclyViewable: true
+                    isStaticPubliclyViewable: true
+                    isMovingPubliclyViewable: true
                     acceptChargePointRequests: true
                   highwayAuthority: string
                   dataQuality: 1
@@ -409,7 +411,8 @@ paths:
                     allowIsPubliclyViewable: true
                     allowChargePointRequests: true
                   capabilitiesState:
-                    isPubliclyViewable: true
+                    isStaticPubliclyViewable: true
+                    isMovingPubliclyViewable: true
                     acceptChargePointRequests: true
                   highwayAuthority: string
                   dataQuality: 1
@@ -469,7 +472,8 @@ paths:
                     allowIsPubliclyViewable: true
                     allowChargePointRequests: true
                   capabilitiesState:
-                    isPubliclyViewable: true
+                    isStaticPubliclyViewable: true
+                    isMovingPubliclyViewable: true
                     acceptChargePointRequests: true
                   highwayAuthority: string
                   dataQuality: 1
@@ -554,7 +558,8 @@ paths:
                     allowIsPubliclyViewable: true
                     allowChargePointRequests: true
                   capabilitiesState:
-                    isPubliclyViewable: true
+                    isStaticPubliclyViewable: true
+                    isMovingPubliclyViewable: true
                     acceptChargePointRequests: true
                   highwayAuthority: string
                   dataQuality: 1
@@ -614,7 +619,8 @@ paths:
                     allowIsPubliclyViewable: true
                     allowChargePointRequests: true
                   capabilitiesState:
-                    isPubliclyViewable: true
+                    isStaticPubliclyViewable: true
+                    isMovingPubliclyViewable: true
                     acceptChargePointRequests: true
                   highwayAuthority: string
                   dataQuality: 1
@@ -656,152 +662,6 @@ paths:
               example:
                 success: true
                 data:
-                  setsUrl:
-                    operatingHoursSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      operatingHours:
-                        standardDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                        eventDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                    exemptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exemptions:
-                      - exemptionTypeId: 0
-                        parkingEntitlementTypeId: 0
-                        exemptionTimeTypeId: 0
-                        exemptionApplies: true
-                        maxStay: 0
-                        noReturn: 0
-                    exceptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exceptions:
-                        allHolidaysRestrictionExceptionTypeId: 0
-                        daySpecificRestrictionExceptions:
-                        - publicHolidayOrNamedDayId: string
-                          restrictionExceptionTypeId: 0
-                    tariffSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      tariffs:
-                      - parkingEntitlementTypeIds:
-                        - 0
-                        details:
-                        - price: 0
-                          surcharge: 0
-                          surchargeDetail:
-                            surchargeType: 0
-                            value: 0
-                            notes: string
-                            ruleType: 0
-                          duration: 0
-                          minimumPriceIncrement: 0
-                          singlePaymentCanCrossMidnight: true
-                          from: 0
-                          upTo: 0
-                        timeFrom: 2022-05-31T00:00:00.0000000
-                        timeTo: 2022-05-31T00:00:00.0000000
-                        firstDate:
-                          month: 0
-                          day: 0
-                        lastDate:
-                          month: 0
-                          day: 0
-                        months:
-                        - 0
-                        days:
-                        - 0
-                        timeType: 0
-                  zonesUrl:
-                    type: string
-                    features:
-                    - type: string
-                      id: string
-                      geometry:
-                        type: string
-                        crs:
-                          type: string
-                          properties:
-                            name: string
-                        coordinates:
-                        - - - 0
-                      properties:
-                        zoneId: string
-                        authorityId: string
-                        parentZoneId: string
-                        type: 1
-                        name: string
-                        restrictionTypeDetails:
-                        - restrictionTypeId: 0
-                          operatingHoursSet:
-                          - setId: string
-                            parkingEntitlementTypeIds:
-                            - 0
-                          exceptionsSet:
-                            setId: string
-                        notes:
-                        - noteVisibilityTypeId: 0
-                          appliesToRestrictionTypeIds:
-                          - 0
-                          priority: 0
-                          title: string
-                          message: string
-                          url: string
-                          telephone: string
-                        venueId: string
-                        sourceTag: string
-                        tags:
-                        - string
-                    properties: {}
                   ospsUrl:
                   - type: string
                     features:
@@ -870,160 +730,168 @@ paths:
                         linkedOspIds:
                         - string
                     properties: {}
-                  date: string
-                  dataUpdateId: string
+                  zonesUrl:
+                    type: string
+                    features:
+                    - type: string
+                      id: string
+                      geometry:
+                        type: string
+                        crs:
+                          type: string
+                          properties:
+                            name: string
+                        coordinates:
+                        - - - 0
+                      properties:
+                        zoneId: string
+                        authorityId: string
+                        parentZoneId: string
+                        type: 1
+                        name: string
+                        restrictionTypeDetails:
+                        - restrictionTypeId: 0
+                          operatingHoursSet:
+                          - setId: string
+                            parkingEntitlementTypeIds:
+                            - 0
+                          exceptionsSet:
+                            setId: string
+                        notes:
+                        - noteVisibilityTypeId: 0
+                          appliesToRestrictionTypeIds:
+                          - 0
+                          priority: 0
+                          title: string
+                          message: string
+                          url: string
+                          telephone: string
+                        venueId: string
+                        sourceTag: string
+                        tags:
+                        - string
+                    properties: {}
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2022-06-20T00:00:00.0000000
+                        timeTo: 2022-06-20T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
+                  mtfsUrl:
+                    type: string
+                    features:
+                    - geoType: string
+                      featureId: string
+                      featureType: 0
+                      authorityId: string
+                      note: string
+                      streetName: string
+                    properties: {}
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthoritySnapshotInfoDocResult'
               example:
                 success: true
                 data:
-                  setsUrl:
-                    operatingHoursSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      operatingHours:
-                        standardDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                        eventDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                    exemptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exemptions:
-                      - exemptionTypeId: 0
-                        parkingEntitlementTypeId: 0
-                        exemptionTimeTypeId: 0
-                        exemptionApplies: true
-                        maxStay: 0
-                        noReturn: 0
-                    exceptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exceptions:
-                        allHolidaysRestrictionExceptionTypeId: 0
-                        daySpecificRestrictionExceptions:
-                        - publicHolidayOrNamedDayId: string
-                          restrictionExceptionTypeId: 0
-                    tariffSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      tariffs:
-                      - parkingEntitlementTypeIds:
-                        - 0
-                        details:
-                        - price: 0
-                          surcharge: 0
-                          surchargeDetail:
-                            surchargeType: 0
-                            value: 0
-                            notes: string
-                            ruleType: 0
-                          duration: 0
-                          minimumPriceIncrement: 0
-                          singlePaymentCanCrossMidnight: true
-                          from: 0
-                          upTo: 0
-                        timeFrom: 2022-05-31T00:00:00.0000000
-                        timeTo: 2022-05-31T00:00:00.0000000
-                        firstDate:
-                          month: 0
-                          day: 0
-                        lastDate:
-                          month: 0
-                          day: 0
-                        months:
-                        - 0
-                        days:
-                        - 0
-                        timeType: 0
-                  zonesUrl:
-                    type: string
-                    features:
-                    - type: string
-                      id: string
-                      geometry:
-                        type: string
-                        crs:
-                          type: string
-                          properties:
-                            name: string
-                        coordinates:
-                        - - - 0
-                      properties:
-                        zoneId: string
-                        authorityId: string
-                        parentZoneId: string
-                        type: 1
-                        name: string
-                        restrictionTypeDetails:
-                        - restrictionTypeId: 0
-                          operatingHoursSet:
-                          - setId: string
-                            parkingEntitlementTypeIds:
-                            - 0
-                          exceptionsSet:
-                            setId: string
-                        notes:
-                        - noteVisibilityTypeId: 0
-                          appliesToRestrictionTypeIds:
-                          - 0
-                          priority: 0
-                          title: string
-                          message: string
-                          url: string
-                          telephone: string
-                        venueId: string
-                        sourceTag: string
-                        tags:
-                        - string
-                    properties: {}
                   ospsUrl:
                   - type: string
                     features:
@@ -1092,8 +960,162 @@ paths:
                         linkedOspIds:
                         - string
                     properties: {}
-                  date: string
-                  dataUpdateId: string
+                  zonesUrl:
+                    type: string
+                    features:
+                    - type: string
+                      id: string
+                      geometry:
+                        type: string
+                        crs:
+                          type: string
+                          properties:
+                            name: string
+                        coordinates:
+                        - - - 0
+                      properties:
+                        zoneId: string
+                        authorityId: string
+                        parentZoneId: string
+                        type: 1
+                        name: string
+                        restrictionTypeDetails:
+                        - restrictionTypeId: 0
+                          operatingHoursSet:
+                          - setId: string
+                            parkingEntitlementTypeIds:
+                            - 0
+                          exceptionsSet:
+                            setId: string
+                        notes:
+                        - noteVisibilityTypeId: 0
+                          appliesToRestrictionTypeIds:
+                          - 0
+                          priority: 0
+                          title: string
+                          message: string
+                          url: string
+                          telephone: string
+                        venueId: string
+                        sourceTag: string
+                        tags:
+                        - string
+                    properties: {}
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2022-06-20T00:00:00.0000000
+                        timeTo: 2022-06-20T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
+                  mtfsUrl:
+                    type: string
+                    features:
+                    - geoType: string
+                      featureId: string
+                      featureType: 0
+                      authorityId: string
+                      note: string
+                      streetName: string
+                    properties: {}
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1130,152 +1152,6 @@ paths:
               example:
                 success: true
                 data:
-                  setsUrl:
-                    operatingHoursSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      operatingHours:
-                        standardDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                        eventDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                    exemptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exemptions:
-                      - exemptionTypeId: 0
-                        parkingEntitlementTypeId: 0
-                        exemptionTimeTypeId: 0
-                        exemptionApplies: true
-                        maxStay: 0
-                        noReturn: 0
-                    exceptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exceptions:
-                        allHolidaysRestrictionExceptionTypeId: 0
-                        daySpecificRestrictionExceptions:
-                        - publicHolidayOrNamedDayId: string
-                          restrictionExceptionTypeId: 0
-                    tariffSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      tariffs:
-                      - parkingEntitlementTypeIds:
-                        - 0
-                        details:
-                        - price: 0
-                          surcharge: 0
-                          surchargeDetail:
-                            surchargeType: 0
-                            value: 0
-                            notes: string
-                            ruleType: 0
-                          duration: 0
-                          minimumPriceIncrement: 0
-                          singlePaymentCanCrossMidnight: true
-                          from: 0
-                          upTo: 0
-                        timeFrom: 2022-05-31T00:00:00.0000000
-                        timeTo: 2022-05-31T00:00:00.0000000
-                        firstDate:
-                          month: 0
-                          day: 0
-                        lastDate:
-                          month: 0
-                          day: 0
-                        months:
-                        - 0
-                        days:
-                        - 0
-                        timeType: 0
-                  zonesUrl:
-                    type: string
-                    features:
-                    - type: string
-                      id: string
-                      geometry:
-                        type: string
-                        crs:
-                          type: string
-                          properties:
-                            name: string
-                        coordinates:
-                        - - - 0
-                      properties:
-                        zoneId: string
-                        authorityId: string
-                        parentZoneId: string
-                        type: 1
-                        name: string
-                        restrictionTypeDetails:
-                        - restrictionTypeId: 0
-                          operatingHoursSet:
-                          - setId: string
-                            parkingEntitlementTypeIds:
-                            - 0
-                          exceptionsSet:
-                            setId: string
-                        notes:
-                        - noteVisibilityTypeId: 0
-                          appliesToRestrictionTypeIds:
-                          - 0
-                          priority: 0
-                          title: string
-                          message: string
-                          url: string
-                          telephone: string
-                        venueId: string
-                        sourceTag: string
-                        tags:
-                        - string
-                    properties: {}
                   ospsUrl:
                   - type: string
                     features:
@@ -1344,160 +1220,168 @@ paths:
                         linkedOspIds:
                         - string
                     properties: {}
-                  date: string
-                  dataUpdateId: string
+                  zonesUrl:
+                    type: string
+                    features:
+                    - type: string
+                      id: string
+                      geometry:
+                        type: string
+                        crs:
+                          type: string
+                          properties:
+                            name: string
+                        coordinates:
+                        - - - 0
+                      properties:
+                        zoneId: string
+                        authorityId: string
+                        parentZoneId: string
+                        type: 1
+                        name: string
+                        restrictionTypeDetails:
+                        - restrictionTypeId: 0
+                          operatingHoursSet:
+                          - setId: string
+                            parkingEntitlementTypeIds:
+                            - 0
+                          exceptionsSet:
+                            setId: string
+                        notes:
+                        - noteVisibilityTypeId: 0
+                          appliesToRestrictionTypeIds:
+                          - 0
+                          priority: 0
+                          title: string
+                          message: string
+                          url: string
+                          telephone: string
+                        venueId: string
+                        sourceTag: string
+                        tags:
+                        - string
+                    properties: {}
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2022-06-20T00:00:00.0000000
+                        timeTo: 2022-06-20T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
+                  mtfsUrl:
+                    type: string
+                    features:
+                    - geoType: string
+                      featureId: string
+                      featureType: 0
+                      authorityId: string
+                      note: string
+                      streetName: string
+                    properties: {}
             text/json:
               schema:
                 $ref: '#/components/schemas/AuthoritySnapshotInfoDocResult'
               example:
                 success: true
                 data:
-                  setsUrl:
-                    operatingHoursSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      operatingHours:
-                        standardDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                        eventDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                    exemptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exemptions:
-                      - exemptionTypeId: 0
-                        parkingEntitlementTypeId: 0
-                        exemptionTimeTypeId: 0
-                        exemptionApplies: true
-                        maxStay: 0
-                        noReturn: 0
-                    exceptionsSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      exceptions:
-                        allHolidaysRestrictionExceptionTypeId: 0
-                        daySpecificRestrictionExceptions:
-                        - publicHolidayOrNamedDayId: string
-                          restrictionExceptionTypeId: 0
-                    tariffSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      tariffs:
-                      - parkingEntitlementTypeIds:
-                        - 0
-                        details:
-                        - price: 0
-                          surcharge: 0
-                          surchargeDetail:
-                            surchargeType: 0
-                            value: 0
-                            notes: string
-                            ruleType: 0
-                          duration: 0
-                          minimumPriceIncrement: 0
-                          singlePaymentCanCrossMidnight: true
-                          from: 0
-                          upTo: 0
-                        timeFrom: 2022-05-31T00:00:00.0000000
-                        timeTo: 2022-05-31T00:00:00.0000000
-                        firstDate:
-                          month: 0
-                          day: 0
-                        lastDate:
-                          month: 0
-                          day: 0
-                        months:
-                        - 0
-                        days:
-                        - 0
-                        timeType: 0
-                  zonesUrl:
-                    type: string
-                    features:
-                    - type: string
-                      id: string
-                      geometry:
-                        type: string
-                        crs:
-                          type: string
-                          properties:
-                            name: string
-                        coordinates:
-                        - - - 0
-                      properties:
-                        zoneId: string
-                        authorityId: string
-                        parentZoneId: string
-                        type: 1
-                        name: string
-                        restrictionTypeDetails:
-                        - restrictionTypeId: 0
-                          operatingHoursSet:
-                          - setId: string
-                            parkingEntitlementTypeIds:
-                            - 0
-                          exceptionsSet:
-                            setId: string
-                        notes:
-                        - noteVisibilityTypeId: 0
-                          appliesToRestrictionTypeIds:
-                          - 0
-                          priority: 0
-                          title: string
-                          message: string
-                          url: string
-                          telephone: string
-                        venueId: string
-                        sourceTag: string
-                        tags:
-                        - string
-                    properties: {}
                   ospsUrl:
                   - type: string
                     features:
@@ -1566,69 +1450,162 @@ paths:
                         linkedOspIds:
                         - string
                     properties: {}
-                  date: string
-                  dataUpdateId: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /authorities/getMovingRestrictionsByAuthorityId:
-    get:
-      tags:
-      - Authorities
-      summary: /authorities/getMovingRestrictionsByAuthorityId - GET
-      operationId: get-authorities-getmovingrestrictionsbyauthorityid
-      parameters:
-      - name: authorityId
-        in: query
-        description: Format - uuid.
-        schema:
-          type: string
-      - name: maxDate
-        in: query
-        description: Format - date-time (as date-time in RFC3339).
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MFeatureCollectionResult'
-              example: 
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MFeatureCollectionResult'
-              example:
-                success: true
-                data:
-                  type: string
-                  features:
-                  - geoType: string
-                    featureId: string
-                    featureType: 0
-                    authorityId: string
-                    note: string
-                    streetName: string
-                  properties: {}
-            text/json:
-              schema:
-                $ref: '#/components/schemas/MFeatureCollectionResult'
-              example:
-                success: true
-                data:
-                  type: string
-                  features:
-                  - geoType: string
-                    featureId: string
-                    featureType: 0
-                    authorityId: string
-                    note: string
-                    streetName: string
-                  properties: {}
+                  zonesUrl:
+                    type: string
+                    features:
+                    - type: string
+                      id: string
+                      geometry:
+                        type: string
+                        crs:
+                          type: string
+                          properties:
+                            name: string
+                        coordinates:
+                        - - - 0
+                      properties:
+                        zoneId: string
+                        authorityId: string
+                        parentZoneId: string
+                        type: 1
+                        name: string
+                        restrictionTypeDetails:
+                        - restrictionTypeId: 0
+                          operatingHoursSet:
+                          - setId: string
+                            parkingEntitlementTypeIds:
+                            - 0
+                          exceptionsSet:
+                            setId: string
+                        notes:
+                        - noteVisibilityTypeId: 0
+                          appliesToRestrictionTypeIds:
+                          - 0
+                          priority: 0
+                          title: string
+                          message: string
+                          url: string
+                          telephone: string
+                        venueId: string
+                        sourceTag: string
+                        tags:
+                        - string
+                    properties: {}
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                    exemptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exemptions:
+                      - exemptionTypeId: 0
+                        parkingEntitlementTypeId: 0
+                        exemptionTimeTypeId: 0
+                        exemptionApplies: true
+                        maxStay: 0
+                        noReturn: 0
+                    exceptionsSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      exceptions:
+                        allHolidaysRestrictionExceptionTypeId: 0
+                        daySpecificRestrictionExceptions:
+                        - publicHolidayOrNamedDayId: string
+                          restrictionExceptionTypeId: 0
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2022-06-20T00:00:00.0000000
+                        timeTo: 2022-06-20T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
+                  mtfsUrl:
+                    type: string
+                    features:
+                    - geoType: string
+                      featureId: string
+                      featureType: 0
+                      authorityId: string
+                      note: string
+                      streetName: string
+                    properties: {}
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1665,119 +1642,6 @@ paths:
               example:
                 success: true
                 data:
-                  setsUrl:
-                    operatingHoursSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      operatingHours:
-                        standardDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                        eventDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                    tariffSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      tariffs:
-                      - parkingEntitlementTypeIds:
-                        - 0
-                        details:
-                        - price: 0
-                          surcharge: 0
-                          surchargeDetail:
-                            surchargeType: 0
-                            value: 0
-                            notes: string
-                            ruleType: 0
-                          duration: 0
-                          minimumPriceIncrement: 0
-                          singlePaymentCanCrossMidnight: true
-                          from: 0
-                          upTo: 0
-                        timeFrom: 2022-05-31T00:00:00.0000000
-                        timeTo: 2022-05-31T00:00:00.0000000
-                        firstDate:
-                          month: 0
-                          day: 0
-                        lastDate:
-                          month: 0
-                          day: 0
-                        months:
-                        - 0
-                        days:
-                        - 0
-                        timeType: 0
-                  zonesUrl:
-                    type: string
-                    features:
-                    - type: string
-                      id: string
-                      geometry:
-                        type: string
-                        crs:
-                          type: string
-                          properties:
-                            name: string
-                        coordinates:
-                        - - - 0
-                      properties:
-                        zoneId: string
-                        authorityId: string
-                        name: string
-                        restrictionTypeDetails:
-                        - restrictionTypeId: 0
-                          operatingHoursSet:
-                          - setId: string
-                            parkingEntitlementTypeIds:
-                            - 0
-                          exceptionsSet:
-                            setId: string
-                        type: 1
-                        venueId: string
-                    properties: {}
                   ospsUrl:
                   - type: string
                     features:
@@ -1813,127 +1677,135 @@ paths:
                           latitude: 0
                           longitude: 0
                     properties: {}
-                  date: string
-                  dataUpdateId: string
+                  zonesUrl:
+                    type: string
+                    features:
+                    - type: string
+                      id: string
+                      geometry:
+                        type: string
+                        crs:
+                          type: string
+                          properties:
+                            name: string
+                        coordinates:
+                        - - - 0
+                      properties:
+                        zoneId: string
+                        authorityId: string
+                        name: string
+                        restrictionTypeDetails:
+                        - restrictionTypeId: 0
+                          operatingHoursSet:
+                          - setId: string
+                            parkingEntitlementTypeIds:
+                            - 0
+                          exceptionsSet:
+                            setId: string
+                        type: 1
+                        venueId: string
+                    properties: {}
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2022-06-20T00:00:00.0000000
+                        timeTo: 2022-06-20T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
+                  mtfsUrl:
+                    type: string
+                    features:
+                    - geoType: string
+                      featureId: string
+                      featureType: 0
+                      authorityId: string
+                      note: string
+                      streetName: string
+                    properties: {}
             text/json:
               schema:
                 $ref: '#/components/schemas/PublicAuthoritySnapshotInfoDocResult'
               example:
                 success: true
                 data:
-                  setsUrl:
-                    operatingHoursSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      operatingHours:
-                        standardDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                        eventDays:
-                        - ruleTime:
-                            months:
-                            - 0
-                            days:
-                            - 0
-                            weekNumbers:
-                            - 0
-                            hours:
-                            - start: 2022-05-31T00:00:00.0000000
-                              end: 2022-05-31T00:00:00.0000000
-                            firstDate:
-                              month: 0
-                              day: 0
-                            lastDate:
-                              month: 0
-                              day: 0
-                          parkingEntitlementTypeIds:
-                          - 0
-                          maxStay: 0
-                          minStay: 0
-                          noReturn: 0
-                          noReturnUntil: 2022-05-31T00:00:00.0000000
-                    tariffSets:
-                    - setId: string
-                      name: string
-                      formattedName: string
-                      tariffs:
-                      - parkingEntitlementTypeIds:
-                        - 0
-                        details:
-                        - price: 0
-                          surcharge: 0
-                          surchargeDetail:
-                            surchargeType: 0
-                            value: 0
-                            notes: string
-                            ruleType: 0
-                          duration: 0
-                          minimumPriceIncrement: 0
-                          singlePaymentCanCrossMidnight: true
-                          from: 0
-                          upTo: 0
-                        timeFrom: 2022-05-31T00:00:00.0000000
-                        timeTo: 2022-05-31T00:00:00.0000000
-                        firstDate:
-                          month: 0
-                          day: 0
-                        lastDate:
-                          month: 0
-                          day: 0
-                        months:
-                        - 0
-                        days:
-                        - 0
-                        timeType: 0
-                  zonesUrl:
-                    type: string
-                    features:
-                    - type: string
-                      id: string
-                      geometry:
-                        type: string
-                        crs:
-                          type: string
-                          properties:
-                            name: string
-                        coordinates:
-                        - - - 0
-                      properties:
-                        zoneId: string
-                        authorityId: string
-                        name: string
-                        restrictionTypeDetails:
-                        - restrictionTypeId: 0
-                          operatingHoursSet:
-                          - setId: string
-                            parkingEntitlementTypeIds:
-                            - 0
-                          exceptionsSet:
-                            setId: string
-                        type: 1
-                        venueId: string
-                    properties: {}
                   ospsUrl:
                   - type: string
                     features:
@@ -1969,8 +1841,129 @@ paths:
                           latitude: 0
                           longitude: 0
                     properties: {}
-                  date: string
-                  dataUpdateId: string
+                  zonesUrl:
+                    type: string
+                    features:
+                    - type: string
+                      id: string
+                      geometry:
+                        type: string
+                        crs:
+                          type: string
+                          properties:
+                            name: string
+                        coordinates:
+                        - - - 0
+                      properties:
+                        zoneId: string
+                        authorityId: string
+                        name: string
+                        restrictionTypeDetails:
+                        - restrictionTypeId: 0
+                          operatingHoursSet:
+                          - setId: string
+                            parkingEntitlementTypeIds:
+                            - 0
+                          exceptionsSet:
+                            setId: string
+                        type: 1
+                        venueId: string
+                    properties: {}
+                  setsUrl:
+                    operatingHoursSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      operatingHours:
+                        standardDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                        eventDays:
+                        - ruleTime:
+                            months:
+                            - 0
+                            days:
+                            - 0
+                            weekNumbers:
+                            - 0
+                            hours:
+                            - start: 2022-06-20T00:00:00.0000000
+                              end: 2022-06-20T00:00:00.0000000
+                            firstDate:
+                              month: 0
+                              day: 0
+                            lastDate:
+                              month: 0
+                              day: 0
+                          parkingEntitlementTypeIds:
+                          - 0
+                          maxStay: 0
+                          minStay: 0
+                          noReturn: 0
+                          noReturnUntil: 2022-06-20T00:00:00.0000000
+                    tariffSets:
+                    - setId: string
+                      name: string
+                      formattedName: string
+                      tariffs:
+                      - parkingEntitlementTypeIds:
+                        - 0
+                        details:
+                        - price: 0
+                          surcharge: 0
+                          surchargeDetail:
+                            surchargeType: 0
+                            value: 0
+                            notes: string
+                            ruleType: 0
+                          duration: 0
+                          minimumPriceIncrement: 0
+                          singlePaymentCanCrossMidnight: true
+                          from: 0
+                          upTo: 0
+                        timeFrom: 2022-06-20T00:00:00.0000000
+                        timeTo: 2022-06-20T00:00:00.0000000
+                        firstDate:
+                          month: 0
+                          day: 0
+                        lastDate:
+                          month: 0
+                          day: 0
+                        months:
+                        - 0
+                        days:
+                        - 0
+                        timeType: 0
+                  mtfsUrl:
+                    type: string
+                    features:
+                    - geoType: string
+                      featureId: string
+                      featureType: 0
+                      authorityId: string
+                      note: string
+                      streetName: string
+                    properties: {}
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -2100,7 +2093,8 @@ paths:
                 entitlements:
                 - 0
               capabilitiesState:
-                isPubliclyViewable: true
+                isStaticPubliclyViewable: true
+                isMovingPubliclyViewable: true
                 acceptChargePointRequests: true
           application/json:
             schema:
@@ -2120,7 +2114,8 @@ paths:
                 entitlements:
                 - 0
               capabilitiesState:
-                isPubliclyViewable: true
+                isStaticPubliclyViewable: true
+                isMovingPubliclyViewable: true
                 acceptChargePointRequests: true
           text/json:
             schema:
@@ -2140,7 +2135,8 @@ paths:
                 entitlements:
                 - 0
               capabilitiesState:
-                isPubliclyViewable: true
+                isStaticPubliclyViewable: true
+                isMovingPubliclyViewable: true
                 acceptChargePointRequests: true
           application/*+json:
             schema:
@@ -2160,7 +2156,8 @@ paths:
                 entitlements:
                 - 0
               capabilitiesState:
-                isPubliclyViewable: true
+                isStaticPubliclyViewable: true
+                isMovingPubliclyViewable: true
                 acceptChargePointRequests: true
       responses:
         "200":
@@ -2284,8 +2281,8 @@ paths:
                     weekNumbers:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     firstDate:
                       month: 0
                       day: 0
@@ -2302,8 +2299,8 @@ paths:
                       weekNumbers:
                       - 0
                       hours:
-                      - start: 2022-05-31T00:00:00.0000000
-                        end: 2022-05-31T00:00:00.0000000
+                      - start: 2022-06-20T00:00:00.0000000
+                        end: 2022-06-20T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -2326,8 +2323,8 @@ paths:
                         singlePaymentCanCrossMidnight: true
                         from: 0
                         upTo: 0
-                      timeFrom: 2022-05-31T00:00:00.0000000
-                      timeTo: 2022-05-31T00:00:00.0000000
+                      timeFrom: 2022-06-20T00:00:00.0000000
+                      timeTo: 2022-06-20T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -2473,8 +2470,8 @@ paths:
                     weekNumbers:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     firstDate:
                       month: 0
                       day: 0
@@ -2491,8 +2488,8 @@ paths:
                       weekNumbers:
                       - 0
                       hours:
-                      - start: 2022-05-31T00:00:00.0000000
-                        end: 2022-05-31T00:00:00.0000000
+                      - start: 2022-06-20T00:00:00.0000000
+                        end: 2022-06-20T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -2515,8 +2512,8 @@ paths:
                         singlePaymentCanCrossMidnight: true
                         from: 0
                         upTo: 0
-                      timeFrom: 2022-05-31T00:00:00.0000000
-                      timeTo: 2022-05-31T00:00:00.0000000
+                      timeFrom: 2022-06-20T00:00:00.0000000
+                      timeTo: 2022-06-20T00:00:00.0000000
                       firstDate:
                         month: 0
                         day: 0
@@ -3091,6 +3088,11 @@ paths:
         description: Format - uuid.
         schema:
           type: string
+      - name: stateChangeId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
       responses:
         "200":
           description: Success
@@ -3205,6 +3207,11 @@ paths:
       operationId: get-orders-export-text
       parameters:
       - name: orderId
+        in: query
+        description: Format - uuid.
+        schema:
+          type: string
+      - name: stateChangeId
         in: query
         description: Format - uuid.
         schema:
@@ -4626,7 +4633,7 @@ paths:
       summary: /orders/query/getLatestMade - GET
       operationId: get-orders-query-getlatestmade
       parameters:
-      - name: ospId
+      - name: entityId
         in: query
         description: Format - uuid.
         schema:
@@ -4986,8 +4993,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5007,8 +5014,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5028,8 +5035,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5049,8 +5056,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5080,8 +5087,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5103,8 +5110,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5186,8 +5193,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5209,8 +5216,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5257,8 +5264,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5280,8 +5287,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5315,8 +5322,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5336,8 +5343,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5357,8 +5364,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5378,8 +5385,8 @@ paths:
               - days:
                 - 0
                 hours:
-                - start: 2022-05-31T00:00:00.0000000
-                  end: 2022-05-31T00:00:00.0000000
+                - start: 2022-06-20T00:00:00.0000000
+                  end: 2022-06-20T00:00:00.0000000
                 startDate: string
                 endDate: string
               timesText: string
@@ -5409,8 +5416,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5432,8 +5439,8 @@ paths:
                   - days:
                     - 0
                     hours:
-                    - start: 2022-05-31T00:00:00.0000000
-                      end: 2022-05-31T00:00:00.0000000
+                    - start: 2022-06-20T00:00:00.0000000
+                      end: 2022-06-20T00:00:00.0000000
                     startDate: string
                     endDate: string
                   timesText: string
@@ -5721,22 +5728,17 @@ components:
     AuthoritySnapshotInfoDoc:
       type: object
       properties:
-        setsUrl:
-          $ref: '#/components/schemas/SetCollection'
-        zonesUrl:
-          $ref: '#/components/schemas/PolygonZoneFeatureCollection'
         ospsUrl:
           type: array
           items:
             $ref: '#/components/schemas/GeometryOspFeatureCollection'
           nullable: true
-        date:
-          type: string
-          format: date-time
-        dataUpdateId:
-          type: string
-          format: uuid
-          nullable: true
+        zonesUrl:
+          $ref: '#/components/schemas/PolygonZoneFeatureCollection'
+        setsUrl:
+          $ref: '#/components/schemas/SetCollection'
+        mtfsUrl:
+          $ref: '#/components/schemas/MFeatureCollection'
       additionalProperties: false
     AuthoritySnapshotInfoDocResult:
       type: object
@@ -5766,7 +5768,9 @@ components:
     CapabilitiesState:
       type: object
       properties:
-        isPubliclyViewable:
+        isStaticPubliclyViewable:
+          type: boolean
+        isMovingPubliclyViewable:
           type: boolean
         acceptChargePointRequests:
           type: boolean
@@ -6631,15 +6635,6 @@ components:
         properties:
           nullable: true
       additionalProperties: false
-    MFeatureCollectionResult:
-      type: object
-      properties:
-        success:
-          type: boolean
-          readOnly: true
-        data:
-          $ref: '#/components/schemas/MFeatureCollection'
-      additionalProperties: false
     Modification:
       type: object
       properties:
@@ -7261,22 +7256,17 @@ components:
     PublicAuthoritySnapshotInfoDoc:
       type: object
       properties:
-        setsUrl:
-          $ref: '#/components/schemas/PublicSetCollection'
-        zonesUrl:
-          $ref: '#/components/schemas/PolygonZonePublicFeaturePropertiesFeatureCollection'
         ospsUrl:
           type: array
           items:
             $ref: '#/components/schemas/GeometryOspPublicFeaturePropertiesFeatureCollection'
           nullable: true
-        date:
-          type: string
-          format: date-time
-        dataUpdateId:
-          type: string
-          format: uuid
-          nullable: true
+        zonesUrl:
+          $ref: '#/components/schemas/PolygonZonePublicFeaturePropertiesFeatureCollection'
+        setsUrl:
+          $ref: '#/components/schemas/PublicSetCollection'
+        mtfsUrl:
+          $ref: '#/components/schemas/MFeatureCollection'
       additionalProperties: false
     PublicAuthoritySnapshotInfoDocResult:
       type: object
