@@ -664,6 +664,88 @@
         }
       }
     },
+    "/requestAccountDeletion": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/requestAccountDeletion - POST",
+        "operationId": "post-requestaccountdeletion",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAccountDeletionCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAccountDeletionCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAccountDeletionCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/setupParkingPlatformUser": {
       "post": {
         "tags": [
@@ -1044,6 +1126,19 @@
           "success": {
             "type": "boolean",
             "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestAccountDeletionCommand": {
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
