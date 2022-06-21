@@ -101,6 +101,173 @@
         }
       }
     },
+    "/changeUserEmail": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/changeUserEmail - POST",
+        "operationId": "post-changeuseremail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUserEmailCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newEmail": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUserEmailCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newEmail": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeUserEmailCommand"
+              },
+              "example": {
+                "userId": "string",
+                "newEmail": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/deleteAccount": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/deleteAccount - POST",
+        "operationId": "post-deleteaccount",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAccountCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAccountCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteAccountCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
     "/fetchUserProfileById": {
       "post": {
         "tags": [
@@ -154,6 +321,287 @@
                       "termsOfUseConsent": true,
                       "privacyPolicyConsent": true
                     }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchUsersByIds": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchUsersByIds - POST",
+        "operationId": "post-fetchusersbyids",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersByIdsQuery"
+              },
+              "example": {
+                "ids": [
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "id": "string",
+                    "email": "string",
+                    "emailConfirmed": true,
+                    "name": "string",
+                    "createdOn": "string",
+                    "loginProvider": "string",
+                    "securitySystem": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchUserTrialById": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/fetchUserTrialById - POST",
+        "operationId": "post-fetchusertrialbyid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUserTrialByIdQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUserTrialByIdQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUserTrialByIdQuery"
+              },
+              "example": {
+                "userId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchUserTrialByIdQueryResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "startDate": "string",
+                    "endDate": "string",
+                    "isActive": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/findUsers": {
+      "post": {
+        "tags": [
+          "Queries"
+        ],
+        "summary": "/findUsers - POST",
+        "operationId": "post-findusers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindUsersQuery"
+              },
+              "example": {
+                "byId": "string",
+                "byEmail": "string",
+                "byName": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindUsersQuery"
+              },
+              "example": {
+                "byId": "string",
+                "byEmail": "string",
+                "byName": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FindUsersQuery"
+              },
+              "example": {
+                "byId": "string",
+                "byEmail": "string",
+                "byName": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "id": "string",
+                    "email": "string",
+                    "emailConfirmed": true,
+                    "name": "string",
+                    "createdOn": "string",
+                    "loginProvider": "string",
+                    "securitySystem": "string"
                   }
                 }
               }
@@ -306,6 +754,88 @@
           }
         }
       }
+    },
+    "/startUserTrial": {
+      "post": {
+        "tags": [
+          "Commands"
+        ],
+        "summary": "/startUserTrial - POST",
+        "operationId": "post-startusertrial",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartUserTrialCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartUserTrialCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartUserTrialCommand"
+              },
+              "example": {
+                "userId": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkResponse"
+                },
+                "example": {
+                  "success": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -349,6 +879,30 @@
           },
           "privacyPolicyConsent": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChangeUserEmailCommand": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "newEmail": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteAccountCommand": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -410,6 +964,80 @@
         },
         "additionalProperties": false
       },
+      "FetchUsersByIdsQuery": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchUserTrialByIdQuery": {
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchUserTrialByIdQueryResult": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchUserTrialByIdQueryResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/FetchUserTrialByIdQueryResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FindUsersQuery": {
+        "type": "object",
+        "properties": {
+          "byId": {
+            "type": "string",
+            "nullable": true
+          },
+          "byEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "byName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "OkResponse": {
         "type": "object",
         "properties": {
@@ -447,6 +1075,19 @@
         },
         "additionalProperties": false
       },
+      "StartUserTrialCommand": {
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "UserConsentInfo": {
         "type": "object",
         "properties": {
@@ -463,6 +1104,52 @@
           },
           "privacyPolicyConsent": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "loginProvider": {
+            "type": "string",
+            "nullable": true
+          },
+          "securitySystem": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserResultOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/UserResult"
           }
         },
         "additionalProperties": false
