@@ -1,7 +1,393 @@
 {
   "item": [
     {
-      "id": "c1afa1ce-3e1d-45c0-96a6-57edeb1bbcc1",
+      "id": "419b0041-3bd1-4704-96b4-de1e070efbc7",
+      "name": "/changeNotificationDispatchTypes - POST",
+      "request": {
+        "name": "/changeNotificationDispatchTypes - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "changeNotificationDispatchTypes"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"<string>\",\n    \"newNotificationDispatchTypes\": \"<integer>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "ed1b366c-0482-4ce0-97e2-dd79862ad611",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeNotificationDispatchTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newNotificationDispatchTypes\": 0\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3d0f8486-b944-4747-ab07-f61cee081e15",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeNotificationDispatchTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newNotificationDispatchTypes\": 0\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "849e91a5-a1bb-408a-9306-ede89ba5ea3f",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeNotificationDispatchTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newNotificationDispatchTypes\": 0\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c5eecdf9-e1d9-4c59-961a-f3bdab14f349",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeNotificationDispatchTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newNotificationDispatchTypes\": 0\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "20b5b1d8-b314-4440-b18a-0689850d31bd",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeNotificationDispatchTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newNotificationDispatchTypes\": 0\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f217f8be-fc36-46fb-8b78-1af8681f09a2",
+      "name": "/changeSessionExpiryReminderDuration - POST",
+      "request": {
+        "name": "/changeSessionExpiryReminderDuration - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "changeSessionExpiryReminderDuration"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"<string>\",\n    \"newDurationInMinutes\": \"<integer>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "971f5ea0-e861-4dd3-bbb4-60903b64da80",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeSessionExpiryReminderDuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newDurationInMinutes\": 0\n}"
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "152b349a-4849-4969-b543-a4ad893d9c88",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeSessionExpiryReminderDuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newDurationInMinutes\": 0\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "4d36e3f5-315a-4dc4-8a10-524c0f8eb10b",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeSessionExpiryReminderDuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newDurationInMinutes\": 0\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "f02790ba-f7c9-4ccc-b086-31d02636b508",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeSessionExpiryReminderDuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newDurationInMinutes\": 0\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "9fd8e261-5f43-4082-9f65-8396cefb9046",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "changeSessionExpiryReminderDuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\",\n    \"newDurationInMinutes\": 0\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f25ae99a-cbd2-4545-90e1-36a2567d768e",
       "name": "/changeUserConsents - POST",
       "request": {
         "name": "/changeUserConsents - POST",
@@ -31,7 +417,7 @@
       },
       "response": [
         {
-          "id": "a3afe56b-a82c-4aff-813e-13f5f8b674aa",
+          "id": "b8ba8d28-f29c-4704-99ee-4a41e1d7af17",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -63,7 +449,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "0c0c758b-159c-4561-8508-ebb79e1df979",
+          "id": "e1b9396b-8167-49f5-a0f9-1d83f4675658",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -95,7 +481,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "daf31a1c-348b-452b-a343-abf0d81c2a2d",
+          "id": "9b93ef16-4686-45d7-a396-52012e2dca32",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -127,7 +513,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "408e30c4-9a86-4318-ab65-8a838003301f",
+          "id": "2e985e86-e7c6-4ae9-a7d6-16d00daebe9e",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -159,7 +545,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "33fac2dd-a337-48a9-96c6-ec7ae88dab25",
+          "id": "046708f3-1be2-4e93-bc13-c9e5d150dec9",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -194,7 +580,7 @@
       "event": []
     },
     {
-      "id": "5231c547-b9c0-4868-a048-bc2f9f135a4a",
+      "id": "e41dc3f1-ba1c-48fa-a118-a117510e3cdf",
       "name": "/changeUserEmail - POST",
       "request": {
         "name": "/changeUserEmail - POST",
@@ -219,12 +605,12 @@
         "auth": null,
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"userId\": \"<string>\",\n    \"newEmail\": \"<string>\"\n}"
+          "raw": "{\n    \"newEmail\": \"<email>\",\n    \"userId\": \"<string>\"\n}"
         }
       },
       "response": [
         {
-          "id": "f198f63d-08ee-4e70-9be6-e72132502de7",
+          "id": "d2525cb9-49c3-4334-ada0-631d5886397a",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -240,7 +626,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newEmail\": \"string\"\n}"
+              "raw": "{\n    \"newEmail\": \"string\",\n    \"userId\": \"string\"\n}"
             }
           },
           "status": "Accepted",
@@ -256,7 +642,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "a1f6d41b-f96a-4b37-a556-ffd0b5788928",
+          "id": "c36876d5-5e9f-49ca-a121-1920b353ed72",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -272,7 +658,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newEmail\": \"string\"\n}"
+              "raw": "{\n    \"newEmail\": \"string\",\n    \"userId\": \"string\"\n}"
             }
           },
           "status": "Bad Request",
@@ -288,7 +674,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "678035f6-524e-4529-8e5f-42eb27d788e8",
+          "id": "57353061-c952-440a-a056-31a919e52f35",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -304,7 +690,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newEmail\": \"string\"\n}"
+              "raw": "{\n    \"newEmail\": \"string\",\n    \"userId\": \"string\"\n}"
             }
           },
           "status": "Unauthorized",
@@ -320,7 +706,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "5578ae4d-16b2-4ec6-a72d-1241fdbed956",
+          "id": "afa1f464-f5be-42ae-b465-548936c8e3f9",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -336,7 +722,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newEmail\": \"string\"\n}"
+              "raw": "{\n    \"newEmail\": \"string\",\n    \"userId\": \"string\"\n}"
             }
           },
           "status": "Forbidden",
@@ -352,7 +738,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ee376793-766a-4d53-9787-b5eb92c00856",
+          "id": "aee88fe6-c03c-4a9b-82a7-b0eabb3e73e8",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -368,7 +754,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newEmail\": \"string\"\n}"
+              "raw": "{\n    \"newEmail\": \"string\",\n    \"userId\": \"string\"\n}"
             }
           },
           "status": "Too Many Requests",
@@ -387,7 +773,7 @@
       "event": []
     },
     {
-      "id": "664e128b-245d-4f04-a665-d3be1b7e1f2f",
+      "id": "969bd7d4-ba6b-4b47-b01b-1fbe3906cbcc",
       "name": "/deleteAccount - POST",
       "request": {
         "name": "/deleteAccount - POST",
@@ -417,7 +803,7 @@
       },
       "response": [
         {
-          "id": "a0dca60f-58e0-4711-b0a4-eda6345c366b",
+          "id": "9dbb8f15-0cbc-4563-b421-08a16f9c5c86",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -449,7 +835,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "b65eb352-0231-4a21-9c9d-b52b1089d39a",
+          "id": "9000f7f4-0555-4e20-9507-badab68c9390",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -481,7 +867,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "27312724-4e06-4fac-940d-17a86e0e8a41",
+          "id": "73503449-931d-428e-996f-af55612c04dd",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -513,7 +899,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "83a9676d-2eec-4e11-9c84-1d1a76b365a9",
+          "id": "b533a711-03fd-4fa5-9f0e-d327de89574e",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -545,7 +931,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "da893cc1-9e5d-48b4-9e62-8f893d0ee587",
+          "id": "7f647636-b5cb-4c16-908f-e0417fcad90e",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -580,7 +966,200 @@
       "event": []
     },
     {
-      "id": "43ba68cc-b3c1-403c-a53c-f865f09406e0",
+      "id": "8c3724e0-19cd-45a8-8d4d-4422535837a7",
+      "name": "/fetchTestUserIds - POST",
+      "request": {
+        "name": "/fetchTestUserIds - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchTestUserIds"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "\"<object>\""
+        }
+      },
+      "response": [
+        {
+          "id": "3a91bdce-0d35-4cf9-9129-2eb87c0e68ed",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchTestUserIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "26d86958-cc5d-4a8b-8610-21142d6ea29a",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchTestUserIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a56687be-f00f-4804-8f96-b85f56a7c03b",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchTestUserIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "1e7fb88a-e945-4251-9944-7490a20f1d19",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchTestUserIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8ff63a98-8932-471e-9a3b-59673a5e6749",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchTestUserIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "\"<object>\""
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3600d60d-99da-4e84-baf4-976cfe4109f6",
       "name": "/fetchUserProfileById - POST",
       "request": {
         "name": "/fetchUserProfileById - POST",
@@ -610,7 +1189,7 @@
       },
       "response": [
         {
-          "id": "d686a73d-ffe8-4610-9932-ba78251725bf",
+          "id": "63e8e861-b6fa-4296-bf80-5832ab03f5c3",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -642,7 +1221,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "92740238-68d8-4db1-b3dd-ea869e1a172b",
+          "id": "fd6e9406-06ec-40d7-8124-d2dfd0e3934d",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -674,7 +1253,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "23f98cf0-c05f-42d6-8d9e-e15a4b46ed82",
+          "id": "462ee655-401f-4f35-b191-6582f78e487b",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -706,7 +1285,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "40d54da9-4fc1-41be-a6d5-61c16a1bf9a8",
+          "id": "43ec3982-55b2-4bec-ac9b-b9d2a9d53e99",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -738,7 +1317,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "fc8b424e-6806-4b1a-8bad-df1f506ed90c",
+          "id": "83451909-0930-4013-96cd-d26b83efbeca",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -773,7 +1352,7 @@
       "event": []
     },
     {
-      "id": "8570f5f6-8f40-47ed-883e-555efd9a24fd",
+      "id": "0806192f-775e-45a2-844c-bd0dbcd23e22",
       "name": "/fetchUsersByIds - POST",
       "request": {
         "name": "/fetchUsersByIds - POST",
@@ -803,7 +1382,7 @@
       },
       "response": [
         {
-          "id": "e89620cb-45d5-40da-ab57-295aeacbe821",
+          "id": "4316983e-4e97-40a9-837c-1987b9193f18",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -835,7 +1414,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "afb565b5-2d87-4688-8e77-387b9f4e382b",
+          "id": "24d6cc7f-3b05-438a-85f8-dc471732419e",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -867,7 +1446,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "22c27a9d-d6c3-428b-ac9d-1ea72ccfd700",
+          "id": "707fcb1d-b1ac-457c-b706-7eaa5ef57c6e",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -899,7 +1478,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "688e5e33-ad9c-47f9-abb0-bf2d577fbd9e",
+          "id": "9c9bdc1f-9c60-4700-a138-996ce8454038",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -931,7 +1510,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "d27e758d-1c44-4309-8cd0-b47ddde74e51",
+          "id": "e3d22da6-fd8e-4f06-804b-70c377f607f2",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -966,7 +1545,200 @@
       "event": []
     },
     {
-      "id": "ca77fd71-3e1d-4485-94e9-429345e6c6be",
+      "id": "5703a89c-7608-4d4a-a81b-1951287b447f",
+      "name": "/fetchUserSettingsById - POST",
+      "request": {
+        "name": "/fetchUserSettingsById - POST",
+        "description": {},
+        "url": {
+          "path": [
+            "fetchUserSettingsById"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"<string>\"\n}"
+        }
+      },
+      "response": [
+        {
+          "id": "12361ce8-d90c-4d18-9556-f02fbace30c3",
+          "name": "Success",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchUserSettingsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"result\": {\n  \"sessionExpiryReminderDurationInMinutes\": 0,\n  \"notificationDispatchTypes\": 0\n }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6e03cc1f-ab67-4f29-9552-34af4dc9634d",
+          "name": "Bad Request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchUserSettingsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "82719613-bc21-4b98-be6e-f43bccd3f3ac",
+          "name": "Unauthorized",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchUserSettingsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "d39192b9-f197-481f-a6be-0caea3498f06",
+          "name": "Forbidden",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchUserSettingsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7eb08b99-7001-458f-bb4b-2562f9e5900d",
+          "name": "Too many requests",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "fetchUserSettingsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"string\"\n}"
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ad2e199f-4993-42ad-a5c7-dc292a2a641a",
       "name": "/fetchUserTrialById - POST",
       "request": {
         "name": "/fetchUserTrialById - POST",
@@ -996,7 +1768,7 @@
       },
       "response": [
         {
-          "id": "c7d9b1af-d1e8-4c34-a962-85a68cb0e590",
+          "id": "948eb704-3941-44c4-a6ef-5e14388e90b8",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1028,7 +1800,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "fb03154a-ca15-4804-9afa-05723ed471c9",
+          "id": "cd79a2b6-bcf6-415e-a1c0-5186cb7ce7b5",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1060,7 +1832,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "151fe707-1d94-4096-911c-aca6847d9ccc",
+          "id": "8c6b937a-ca41-4f2d-930d-f00365815a69",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1092,7 +1864,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "bb2acd1f-61a8-43a7-9a8e-dd024aadde9e",
+          "id": "83eaf0f7-65be-49aa-a274-ae96f6a9981e",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1124,7 +1896,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "5445c8f1-6be6-4f7a-b013-ff2a87dd397a",
+          "id": "f9228ba3-b1f1-4a79-9a45-1d900b04e2eb",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1159,7 +1931,7 @@
       "event": []
     },
     {
-      "id": "8936bfa8-f800-46cd-8f40-7469577e2958",
+      "id": "fb1c5449-6797-45c9-b303-ef4d7b41fee9",
       "name": "/findUsers - POST",
       "request": {
         "name": "/findUsers - POST",
@@ -1189,7 +1961,7 @@
       },
       "response": [
         {
-          "id": "facdabdf-c232-4a14-89b6-138871adafd3",
+          "id": "08e9de01-dda2-4d94-ae3f-6b667eb587e7",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1221,7 +1993,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "0da97d75-79e8-4d06-84a6-08fd32d878ca",
+          "id": "2ee0e3f5-c63f-4276-a766-e14cb9f9d641",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1253,7 +2025,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "b8092c85-7245-498c-a66f-7918595d7514",
+          "id": "12d80892-211c-4fc8-8c6b-bea254cb438c",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1285,7 +2057,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4252e3c1-add6-49c3-ab6a-3fce65de5c2b",
+          "id": "257bc90d-32ef-423a-85fd-9b20315708fb",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1317,7 +2089,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e1b8935f-7f22-4a39-a8e8-3703dba03627",
+          "id": "b56a4adf-3ce5-45af-a4f7-1447319b5406",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1352,7 +2124,7 @@
       "event": []
     },
     {
-      "id": "dc801ba0-08ee-4e30-9e8f-a484c4aa8779",
+      "id": "bf02401c-996b-4f1f-91d3-596856b70f15",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -1375,7 +2147,7 @@
       },
       "response": [
         {
-          "id": "e408c7cd-b168-46b0-ba9b-2706edcf79c0",
+          "id": "4f90155d-2947-415c-aa46-cf070c09dd08",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1404,7 +2176,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8d8bb48a-743f-4105-9cce-eef8263f1daa",
+          "id": "6f8fc809-da7b-4a55-930e-fd38000b6d6e",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1433,7 +2205,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4022e563-c144-4d58-9a51-3d483269dead",
+          "id": "88a40f0a-41d8-4ea8-8eac-5020dac79113",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1462,7 +2234,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "32ac0b39-93ad-40dd-a1a2-66eca278cf09",
+          "id": "74c34403-06a4-46f8-a2af-1a4ac2e91731",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1494,7 +2266,7 @@
       "event": []
     },
     {
-      "id": "528a04ae-5d7f-4b2f-8fea-f32167111270",
+      "id": "b7f84a4e-e11f-49d0-b6ae-a0b1c72efc10",
       "name": "/requestAccountDeletion - POST",
       "request": {
         "name": "/requestAccountDeletion - POST",
@@ -1524,7 +2296,7 @@
       },
       "response": [
         {
-          "id": "afdf45a7-c3d8-42fb-828f-3032c0e20ef0",
+          "id": "c1078236-2b16-4640-bc64-d07d43fe6882",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1556,7 +2328,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "de55bf41-0d3a-4433-a6aa-79d5a81223ce",
+          "id": "b4aaee33-7437-4f2b-b088-c87e2e15cfe4",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1588,7 +2360,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "dd5397e8-a02a-4feb-8376-1754e26fa44b",
+          "id": "a45ccb60-cc88-4b24-8996-2800284b4bc3",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1620,7 +2392,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "d3efdd1b-0063-4f1d-b312-dac13cda87e7",
+          "id": "90ca6c8d-612f-46b7-95bf-4181b678eee5",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1652,7 +2424,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "b425c9b5-53aa-471c-9b41-f4dcf95d483f",
+          "id": "effc2413-612d-4f37-91c8-11aad4ef18b9",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1687,7 +2459,7 @@
       "event": []
     },
     {
-      "id": "9265e50b-eace-4a98-bb60-d32dbff63b96",
+      "id": "88490148-06de-4218-93e1-f1ae5051321e",
       "name": "/setupParkingPlatformUser - POST",
       "request": {
         "name": "/setupParkingPlatformUser - POST",
@@ -1717,7 +2489,7 @@
       },
       "response": [
         {
-          "id": "3b0d0364-7377-4a59-92ab-70d7db65d7c7",
+          "id": "d07880d5-064b-4119-834c-7c1de93aa2f7",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1749,7 +2521,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "fbabf4a6-b219-4589-8985-a40fb75bbb1a",
+          "id": "ba684484-f346-4b9a-8d3c-74ad09884c8b",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1781,7 +2553,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "284411d7-5bb0-4a3b-9fbb-46a45108d915",
+          "id": "10f4eb1b-c439-4196-8a6d-29832a68f837",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1813,7 +2585,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "58c31a01-d15d-4003-8acb-c49668a253b0",
+          "id": "773fe1ad-d899-4531-a9b9-34ed436bf354",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1845,7 +2617,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "18143688-6dd1-4d56-9043-92244c4c4ae1",
+          "id": "d785ffaa-bc8f-41da-8032-078a205e0e64",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1880,7 +2652,7 @@
       "event": []
     },
     {
-      "id": "3c64913b-5ced-4151-8ef4-e3dc9f126c58",
+      "id": "7b3bb803-8706-407b-935d-2a5fa4234238",
       "name": "/startUserTrial - POST",
       "request": {
         "name": "/startUserTrial - POST",
@@ -1910,7 +2682,7 @@
       },
       "response": [
         {
-          "id": "75f0dcff-8ef8-46d5-9d90-e33a467188b1",
+          "id": "9c837fa5-f072-42f2-941b-e6a3c6616077",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1942,7 +2714,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "db579532-b44d-434b-a6d1-96ce2b8968b9",
+          "id": "5d5431dc-542c-4a0b-a2c9-bb32ca4ff2ca",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1974,7 +2746,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "b3ab2eda-4edc-4581-8b05-ce782fa80da5",
+          "id": "8076e81e-125d-49ad-ac08-f57868a65346",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2006,7 +2778,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "3fd4054e-480a-4d45-9bd8-ecb661848ab5",
+          "id": "75387473-de1b-4769-a7b4-e654d01820e8",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2038,7 +2810,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "88d2d20d-d5ba-4b9c-b3b1-2ae3f4d0f462",
+          "id": "d102b1d7-8578-4ee5-b4bb-e93970707422",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2097,7 +2869,7 @@
     ]
   },
   "info": {
-    "_postman_id": "b7b26053-8b27-416b-a679-4e2b99b5a3c7",
+    "_postman_id": "80ce9c03-648d-433a-9bdb-ea8ec7f851f7",
     "name": "Parking Users API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

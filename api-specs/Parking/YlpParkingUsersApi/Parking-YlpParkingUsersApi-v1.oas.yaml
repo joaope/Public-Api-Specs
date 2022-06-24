@@ -5,6 +5,114 @@ info:
 servers:
 - url: https://api.appyway.com/parking/v1/users
 paths:
+  /changeNotificationDispatchTypes:
+    post:
+      tags:
+      - Commands
+      summary: /changeNotificationDispatchTypes - POST
+      operationId: post-changenotificationdispatchtypes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeNotificationDispatchTypesCommand'
+            example:
+              userId: string
+              newNotificationDispatchTypes: 0
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangeNotificationDispatchTypesCommand'
+            example:
+              userId: string
+              newNotificationDispatchTypes: 0
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangeNotificationDispatchTypesCommand'
+            example:
+              userId: string
+              newNotificationDispatchTypes: 0
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /changeSessionExpiryReminderDuration:
+    post:
+      tags:
+      - Commands
+      summary: /changeSessionExpiryReminderDuration - POST
+      operationId: post-changesessionexpiryreminderduration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeSessionExpiryReminderDurationCommand'
+            example:
+              userId: string
+              newDurationInMinutes: 0
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangeSessionExpiryReminderDurationCommand'
+            example:
+              userId: string
+              newDurationInMinutes: 0
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangeSessionExpiryReminderDurationCommand'
+            example:
+              userId: string
+              newDurationInMinutes: 0
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /changeUserConsents:
     post:
       tags:
@@ -77,20 +185,20 @@ paths:
             schema:
               $ref: '#/components/schemas/ChangeUserEmailCommand'
             example:
-              userId: string
               newEmail: string
+              userId: string
           text/json:
             schema:
               $ref: '#/components/schemas/ChangeUserEmailCommand'
             example:
-              userId: string
               newEmail: string
+              userId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/ChangeUserEmailCommand'
             example:
-              userId: string
               newEmail: string
+              userId: string
       responses:
         "202":
           description: Success
@@ -144,6 +252,51 @@ paths:
               userId: string
       responses:
         "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchTestUserIds:
+    post:
+      tags:
+      - Queries
+      summary: /fetchTestUserIds - POST
+      operationId: post-fetchtestuserids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchTestUserIdsQuery'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchTestUserIdsQuery'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchTestUserIdsQuery'
+      responses:
+        "200":
           description: Success
           content:
             application/json:
@@ -271,6 +424,60 @@ paths:
                   createdOn: string
                   loginProvider: string
                   securitySystem: string
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+  /fetchUserSettingsById:
+    post:
+      tags:
+      - Queries
+      summary: /fetchUserSettingsById - POST
+      operationId: post-fetchusersettingsbyid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FetchUserSettingsByIdQuery'
+            example:
+              userId: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FetchUserSettingsByIdQuery'
+            example:
+              userId: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FetchUserSettingsByIdQuery'
+            example:
+              userId: string
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchUserSettingsByIdQueryResultOkResponse'
+              example:
+                success: true
+                result:
+                  sessionExpiryReminderDurationInMinutes: 0
+                  notificationDispatchTypes: 0
         "400":
           description: Bad Request
           content:
@@ -605,6 +812,32 @@ components:
             $ref: '#/components/schemas/Error'
           nullable: true
       additionalProperties: false
+    ChangeNotificationDispatchTypesCommand:
+      required:
+      - userId
+      type: object
+      properties:
+        userId:
+          minLength: 1
+          type: string
+        newNotificationDispatchTypes:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ChangeSessionExpiryReminderDurationCommand:
+      required:
+      - userId
+      type: object
+      properties:
+        userId:
+          minLength: 1
+          type: string
+        newDurationInMinutes:
+          minimum: 0
+          exclusiveMinimum: true
+          type: integer
+          format: int32
+      additionalProperties: false
     ChangeUserConsentsCommand:
       required:
       - userId
@@ -621,21 +854,27 @@ components:
           type: boolean
       additionalProperties: false
     ChangeUserEmailCommand:
+      required:
+      - newEmail
+      - userId
       type: object
       properties:
         userId:
+          minLength: 1
           type: string
-          nullable: true
         newEmail:
+          minLength: 1
           type: string
-          nullable: true
+          format: email
       additionalProperties: false
     DeleteAccountCommand:
+      required:
+      - userId
       type: object
       properties:
         userId:
+          minLength: 1
           type: string
-          nullable: true
       additionalProperties: false
     Error:
       type: object
@@ -649,6 +888,9 @@ components:
         message:
           type: string
           nullable: true
+      additionalProperties: false
+    FetchTestUserIdsQuery:
+      type: object
       additionalProperties: false
     FetchUserProfileByIdQuery:
       required:
@@ -685,6 +927,34 @@ components:
           items:
             type: string
           nullable: true
+      additionalProperties: false
+    FetchUserSettingsByIdQuery:
+      required:
+      - userId
+      type: object
+      properties:
+        userId:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    FetchUserSettingsByIdQueryResult:
+      type: object
+      properties:
+        sessionExpiryReminderDurationInMinutes:
+          type: integer
+          format: int32
+        notificationDispatchTypes:
+          type: integer
+          format: int32
+      additionalProperties: false
+    FetchUserSettingsByIdQueryResultOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          $ref: '#/components/schemas/FetchUserSettingsByIdQueryResult'
       additionalProperties: false
     FetchUserTrialByIdQuery:
       required:
