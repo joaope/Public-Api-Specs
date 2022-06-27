@@ -1428,6 +1428,8 @@
                       "firstName": "string",
                       "lastName": "string",
                       "picture": "string",
+                      "isTestUser": true,
+                      "isLegacyUser": true,
                       "isAuth0User": true,
                       "createdOn": "string",
                       "loginType": "string"
@@ -2842,6 +2844,8 @@
                       "firstName": "string",
                       "lastName": "string",
                       "picture": "string",
+                      "isTestUser": true,
+                      "isLegacyUser": true,
                       "isAuth0User": true,
                       "createdOn": "string",
                       "loginType": "string"
@@ -3053,6 +3057,8 @@
                     "createdOn": "string",
                     "lastLogin": "string",
                     "blocked": true,
+                    "isTestUser": true,
+                    "isLegacyUser": true,
                     "loginType": "string",
                     "managedGroups": [
                       "string"
@@ -3182,6 +3188,8 @@
                       "createdOn": "string",
                       "lastLogin": "string",
                       "blocked": true,
+                      "isTestUser": true,
+                      "isLegacyUser": true,
                       "loginType": "string",
                       "managedGroups": [
                         "string"
@@ -3312,6 +3320,8 @@
                       "createdOn": "string",
                       "lastLogin": "string",
                       "blocked": true,
+                      "isTestUser": true,
+                      "isLegacyUser": true,
                       "loginType": "string",
                       "managedGroups": [
                         "string"
@@ -3743,6 +3753,8 @@
                         "createdOn": "string",
                         "lastLogin": "string",
                         "blocked": true,
+                        "isTestUser": true,
+                        "isLegacyUser": true,
                         "loginType": "string",
                         "managedGroups": [
                           "string"
@@ -3891,6 +3903,8 @@
                         "createdOn": "string",
                         "lastLogin": "string",
                         "blocked": true,
+                        "isTestUser": true,
+                        "isLegacyUser": true,
                         "loginType": "string",
                         "managedGroups": [
                           "string"
@@ -7165,6 +7179,14 @@
             "type": "string",
             "nullable": true
           },
+          "isTestUser": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isLegacyUser": {
+            "type": "boolean",
+            "nullable": true
+          },
           "isAuth0User": {
             "type": "boolean"
           },
@@ -7244,6 +7266,14 @@
           "blocked": {
             "type": "boolean",
             "description": "Currently blocked from logging in",
+            "nullable": true
+          },
+          "isTestUser": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isLegacyUser": {
+            "type": "boolean",
             "nullable": true
           },
           "loginType": {

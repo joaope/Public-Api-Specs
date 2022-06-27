@@ -908,6 +908,8 @@ paths:
                     firstName: string
                     lastName: string
                     picture: string
+                    isTestUser: true
+                    isLegacyUser: true
                     isAuth0User: true
                     createdOn: string
                     loginType: string
@@ -1795,6 +1797,8 @@ paths:
                   firstName: string
                   lastName: string
                   picture: string
+                  isTestUser: true
+                  isLegacyUser: true
                   isAuth0User: true
                   createdOn: string
                   loginType: string
@@ -1935,6 +1939,8 @@ paths:
                   createdOn: string
                   lastLogin: string
                   blocked: true
+                  isTestUser: true
+                  isLegacyUser: true
                   loginType: string
                   managedGroups:
                   - string
@@ -2019,6 +2025,8 @@ paths:
                   createdOn: string
                   lastLogin: string
                   blocked: true
+                  isTestUser: true
+                  isLegacyUser: true
                   loginType: string
                   managedGroups:
                   - string
@@ -2103,6 +2111,8 @@ paths:
                   createdOn: string
                   lastLogin: string
                   blocked: true
+                  isTestUser: true
+                  isLegacyUser: true
                   loginType: string
                   managedGroups:
                   - string
@@ -2392,6 +2402,8 @@ paths:
                     createdOn: string
                     lastLogin: string
                     blocked: true
+                    isTestUser: true
+                    isLegacyUser: true
                     loginType: string
                     managedGroups:
                     - string
@@ -2492,6 +2504,8 @@ paths:
                     createdOn: string
                     lastLogin: string
                     blocked: true
+                    isTestUser: true
+                    isLegacyUser: true
                     loginType: string
                     managedGroups:
                     - string
@@ -4739,6 +4753,12 @@ components:
         picture:
           type: string
           nullable: true
+        isTestUser:
+          type: boolean
+          nullable: true
+        isLegacyUser:
+          type: boolean
+          nullable: true
         isAuth0User:
           type: boolean
         createdOn:
@@ -4798,6 +4818,12 @@ components:
         blocked:
           type: boolean
           description: Currently blocked from logging in
+          nullable: true
+        isTestUser:
+          type: boolean
+          nullable: true
+        isLegacyUser:
+          type: boolean
           nullable: true
         loginType:
           type: string
