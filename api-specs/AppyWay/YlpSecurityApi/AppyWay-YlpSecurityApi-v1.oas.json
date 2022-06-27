@@ -2455,17 +2455,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FetchAllRolesQuery"
+                "$ref": "#/components/schemas/FetchAllGroupsQuery"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FetchAllRolesQuery"
+                "$ref": "#/components/schemas/FetchAllGroupsQuery"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FetchAllRolesQuery"
+                "$ref": "#/components/schemas/FetchAllGroupsQuery"
               }
             }
           }
@@ -3212,6 +3212,130 @@
                       ]
                     }
                   ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestResponse"
+                },
+                "example": {
+                  "success": true,
+                  "message": "string",
+                  "errors": [
+                    {
+                      "property": "string",
+                      "code": "string",
+                      "message": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          }
+        }
+      }
+    },
+    "/fetchUsersByEmail": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Fetch users by email",
+        "description": "Fetch users by email",
+        "operationId": "post-fetchusersbyemail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersByEmailQuery"
+              },
+              "example": {
+                "email": "string",
+                "includeRoles": true,
+                "includeGroups": true
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersByEmailQuery"
+              },
+              "example": {
+                "email": "string",
+                "includeRoles": true,
+                "includeGroups": true
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FetchUsersByEmailQuery"
+              },
+              "example": {
+                "email": "string",
+                "includeRoles": true,
+                "includeGroups": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResultOkResponse"
+                },
+                "example": {
+                  "success": true,
+                  "result": {
+                    "id": "string",
+                    "appyUserId": "string",
+                    "email": "string",
+                    "emailVerified": true,
+                    "firstName": "string",
+                    "lastName": "string",
+                    "organisation": "string",
+                    "picture": "string",
+                    "createdOn": "string",
+                    "lastLogin": "string",
+                    "blocked": true,
+                    "isTestUser": true,
+                    "isLegacyUser": true,
+                    "loginType": "string",
+                    "managedGroups": [
+                      "string"
+                    ],
+                    "groups": [
+                      "string"
+                    ],
+                    "roles": [
+                      {
+                        "roleId": "string",
+                        "resourceAssignments": [
+                          {
+                            "resourceTypeId": "string",
+                            "resourceIds": [
+                              "string"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -6088,6 +6212,10 @@
         "type": "object",
         "additionalProperties": false
       },
+      "FetchAllGroupsQuery": {
+        "type": "object",
+        "additionalProperties": false
+      },
       "FetchAllOrganisationsQuery": {
         "type": "object",
         "additionalProperties": false
@@ -6158,6 +6286,26 @@
             "items": {
               "type": "string"
             }
+          },
+          "includeGroups": {
+            "type": "boolean"
+          },
+          "includeRoles": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FetchUsersByEmailQuery": {
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
           },
           "includeGroups": {
             "type": "boolean"
