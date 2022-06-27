@@ -558,6 +558,7 @@
                   "success": true,
                   "result": {
                     "userId": "string",
+                    "isLegacyUser": true,
                     "consentInfo": {
                       "modifiedOnUtc": "string",
                       "marketingConsent": true,
@@ -1090,9 +1091,10 @@
               },
               "example": {
                 "email": "string",
-                "userId": "string",
+                "sourceApp": "string",
                 "organizationId": "string",
-                "sourceApp": "string"
+                "externalUserId": "string",
+                "userId": "string"
               }
             },
             "text/json": {
@@ -1101,9 +1103,10 @@
               },
               "example": {
                 "email": "string",
-                "userId": "string",
+                "sourceApp": "string",
                 "organizationId": "string",
-                "sourceApp": "string"
+                "externalUserId": "string",
+                "userId": "string"
               }
             },
             "application/*+json": {
@@ -1112,9 +1115,10 @@
               },
               "example": {
                 "email": "string",
-                "userId": "string",
+                "sourceApp": "string",
                 "organizationId": "string",
-                "sourceApp": "string"
+                "externalUserId": "string",
+                "userId": "string"
               }
             }
           }
@@ -1404,6 +1408,10 @@
             "type": "string",
             "nullable": true
           },
+          "isLegacyUser": {
+            "type": "boolean",
+            "nullable": true
+          },
           "consentInfo": {
             "$ref": "#/components/schemas/UserConsentInfo"
           }
@@ -1562,19 +1570,23 @@
       },
       "SetupParkingPlatformUserCommand": {
         "required": [
-          "email",
-          "userId"
+          "email"
         ],
         "type": "object",
         "properties": {
-          "userId": {
-            "minLength": 1,
-            "type": "string"
-          },
           "email": {
             "minLength": 1,
             "type": "string",
             "format": "email"
+          },
+          "externalUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true,
+            "deprecated": true
           },
           "sourceApp": {
             "type": "string",

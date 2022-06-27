@@ -357,6 +357,7 @@ paths:
                 success: true
                 result:
                   userId: string
+                  isLegacyUser: true
                   consentInfo:
                     modifiedOnUtc: string
                     marketingConsent: true
@@ -697,25 +698,28 @@ paths:
               $ref: '#/components/schemas/SetupParkingPlatformUserCommand'
             example:
               email: string
-              userId: string
-              organizationId: string
               sourceApp: string
+              organizationId: string
+              externalUserId: string
+              userId: string
           text/json:
             schema:
               $ref: '#/components/schemas/SetupParkingPlatformUserCommand'
             example:
               email: string
-              userId: string
-              organizationId: string
               sourceApp: string
+              organizationId: string
+              externalUserId: string
+              userId: string
           application/*+json:
             schema:
               $ref: '#/components/schemas/SetupParkingPlatformUserCommand'
             example:
               email: string
-              userId: string
-              organizationId: string
               sourceApp: string
+              organizationId: string
+              externalUserId: string
+              userId: string
       responses:
         "200":
           description: Success
@@ -907,6 +911,9 @@ components:
         userId:
           type: string
           nullable: true
+        isLegacyUser:
+          type: boolean
+          nullable: true
         consentInfo:
           $ref: '#/components/schemas/UserConsentInfo'
       additionalProperties: false
@@ -1018,16 +1025,19 @@ components:
     SetupParkingPlatformUserCommand:
       required:
       - email
-      - userId
       type: object
       properties:
-        userId:
-          minLength: 1
-          type: string
         email:
           minLength: 1
           type: string
           format: email
+        externalUserId:
+          type: string
+          nullable: true
+        userId:
+          type: string
+          nullable: true
+          deprecated: true
         sourceApp:
           type: string
           nullable: true
