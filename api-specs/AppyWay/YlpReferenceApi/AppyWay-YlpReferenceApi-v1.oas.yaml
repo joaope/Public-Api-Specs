@@ -167,8 +167,8 @@ paths:
                     events:
                     - name: string
                       date: 2020-01-20T00:00:00.0000000
-                      start: 2022-06-27T00:00:00.0000000
-                      end: 2022-06-27T00:00:00.0000000
+                      start: 2022-06-28T00:00:00.0000000
+                      end: 2022-06-28T00:00:00.0000000
                 restrictionTypes:
                 - id: 0
                   name: string
@@ -309,8 +309,8 @@ paths:
                     events:
                     - name: string
                       date: 2020-01-20T00:00:00.0000000
-                      start: 2022-06-27T00:00:00.0000000
-                      end: 2022-06-27T00:00:00.0000000
+                      start: 2022-06-28T00:00:00.0000000
+                      end: 2022-06-28T00:00:00.0000000
                 restrictionTypes:
                 - id: 0
                   name: string
@@ -938,6 +938,33 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /meta/serverTime:
+    get:
+      tags:
+      - Metadata
+      summary: Get current server time
+      description: Returns the server time in UTC to be used for reference when/if needed
+      operationId: get-meta-servertime
+      responses:
+        "200":
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/TimeResult'
+              example: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeResult'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
   /monitor:
     get:
       tags:
@@ -1258,8 +1285,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-06-27T00:00:00.0000000
-                    end: 2022-06-27T00:00:00.0000000
+                    start: 2022-06-28T00:00:00.0000000
+                    end: 2022-06-28T00:00:00.0000000
             text/json:
               schema:
                 $ref: '#/components/schemas/Region'
@@ -1275,8 +1302,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-06-27T00:00:00.0000000
-                    end: 2022-06-27T00:00:00.0000000
+                    start: 2022-06-28T00:00:00.0000000
+                    end: 2022-06-28T00:00:00.0000000
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1317,8 +1344,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-06-27T00:00:00.0000000
-                    end: 2022-06-27T00:00:00.0000000
+                    start: 2022-06-28T00:00:00.0000000
+                    end: 2022-06-28T00:00:00.0000000
             text/json:
               schema:
                 type: array
@@ -1336,8 +1363,8 @@ paths:
                   events:
                   - name: string
                     date: 2020-01-20T00:00:00.0000000
-                    start: 2022-06-27T00:00:00.0000000
-                    end: 2022-06-27T00:00:00.0000000
+                    start: 2022-06-28T00:00:00.0000000
+                    end: 2022-06-28T00:00:00.0000000
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -1368,8 +1395,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-06-27T00:00:00.0000000
-                  end: 2022-06-27T00:00:00.0000000
+                  start: 2022-06-28T00:00:00.0000000
+                  end: 2022-06-28T00:00:00.0000000
           application/json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1385,8 +1412,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-06-27T00:00:00.0000000
-                  end: 2022-06-27T00:00:00.0000000
+                  start: 2022-06-28T00:00:00.0000000
+                  end: 2022-06-28T00:00:00.0000000
           text/json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1402,8 +1429,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-06-27T00:00:00.0000000
-                  end: 2022-06-27T00:00:00.0000000
+                  start: 2022-06-28T00:00:00.0000000
+                  end: 2022-06-28T00:00:00.0000000
           application/*+json:
             schema:
               $ref: '#/components/schemas/Region'
@@ -1419,8 +1446,8 @@ paths:
                 events:
                 - name: string
                   date: 2020-01-20T00:00:00.0000000
-                  start: 2022-06-27T00:00:00.0000000
-                  end: 2022-06-27T00:00:00.0000000
+                  start: 2022-06-28T00:00:00.0000000
+                  end: 2022-06-28T00:00:00.0000000
       responses:
         "200":
           description: Success
@@ -2261,6 +2288,9 @@ components:
           nullable: true
       additionalProperties: false
       description: Indicates special restrictions that apply to an On-Street parking entity
+    TimeResult:
+      type: object
+      additionalProperties: false
     VehicleType:
       type: object
       properties:
