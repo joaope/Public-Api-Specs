@@ -588,11 +588,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResultOkResponse'
+                $ref: '#/components/schemas/UserResultIEnumerableOkResponse'
               example:
                 success: true
                 result:
-                  id: string
+                - id: string
                   email: string
                   emailConfirmed: true
                   name: string
@@ -1090,6 +1090,18 @@ components:
           nullable: true
         securitySystem:
           type: string
+          nullable: true
+      additionalProperties: false
+    UserResultIEnumerableOkResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          readOnly: true
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserResult'
           nullable: true
       additionalProperties: false
     UserResultOkResponse:

@@ -920,19 +920,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserResultOkResponse"
+                  "$ref": "#/components/schemas/UserResultIEnumerableOkResponse"
                 },
                 "example": {
                   "success": true,
-                  "result": {
-                    "id": "string",
-                    "email": "string",
-                    "emailConfirmed": true,
-                    "name": "string",
-                    "createdOn": "string",
-                    "loginProvider": "string",
-                    "securitySystem": "string"
-                  }
+                  "result": [
+                    {
+                      "id": "string",
+                      "email": "string",
+                      "emailConfirmed": true,
+                      "name": "string",
+                      "createdOn": "string",
+                      "loginProvider": "string",
+                      "securitySystem": "string"
+                    }
+                  ]
                 }
               }
             }
@@ -1660,6 +1662,23 @@
           },
           "securitySystem": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserResultIEnumerableOkResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserResult"
+            },
             "nullable": true
           }
         },
