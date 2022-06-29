@@ -6770,15 +6770,11 @@
         "additionalProperties": {}
       },
       "ResendVerificationEmailCommand": {
-        "required": [
-          "email"
-        ],
         "type": "object",
         "properties": {
           "email": {
-            "minLength": 1,
             "type": "string",
-            "format": "email"
+            "nullable": true
           }
         },
         "additionalProperties": false
