@@ -60,6 +60,64 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
+  /changeUserVehicleDescription:
+    post:
+      tags:
+      - Commands
+      summary: Changes the user default vehicle
+      description: Changes the user default vehicle
+      operationId: post-changeuservehicledescription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserVehicleDescriptionCommand'
+            example:
+              id: string
+              ownerId: string
+              newDescription: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserVehicleDescriptionCommand'
+            example:
+              id: string
+              ownerId: string
+              newDescription: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangeUserVehicleDescriptionCommand'
+            example:
+              id: string
+              ownerId: string
+              newDescription: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /fetchVehicleByVrm:
     post:
       tags:
@@ -335,6 +393,7 @@ paths:
                 result:
                 - vehicleRegistrationMark: string
                   ownerId: string
+                  description: string
                   manufactureDate: string
                   vehicleType: 1
                   fuelType: 0
@@ -554,6 +613,7 @@ paths:
               id: string
               ignoreVrmValidation: true
               ownerId: string
+              description: string
               optInBarrierIntegration: true
           text/json:
             schema:
@@ -562,6 +622,7 @@ paths:
               id: string
               ignoreVrmValidation: true
               ownerId: string
+              description: string
               optInBarrierIntegration: true
           application/*+json:
             schema:
@@ -570,6 +631,7 @@ paths:
               id: string
               ignoreVrmValidation: true
               ownerId: string
+              description: string
               optInBarrierIntegration: true
       responses:
         "202":
@@ -685,6 +747,19 @@ components:
           type: string
           nullable: true
         newDefaultVehicle:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ChangeUserVehicleDescriptionCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        ownerId:
+          type: string
+          nullable: true
+        newDescription:
           type: string
           nullable: true
       additionalProperties: false
@@ -861,6 +936,9 @@ components:
         ownerId:
           type: string
           nullable: true
+        description:
+          type: string
+          nullable: true
         optInBarrierIntegration:
           type: boolean
       additionalProperties: false
@@ -916,6 +994,9 @@ components:
           type: string
           nullable: true
         ownerId:
+          type: string
+          nullable: true
+        description:
           type: string
           nullable: true
         manufactureDate:
