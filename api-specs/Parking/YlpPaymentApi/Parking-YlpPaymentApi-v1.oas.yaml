@@ -5,6 +5,64 @@ info:
 servers:
 - url: https://api.appyway.com/parking/v1/payments
 paths:
+  /changePaymentMethodDescription:
+    post:
+      tags:
+      - Commands
+      summary: Deletes a payment card for an owner
+      description: Deletes a payment card for an owner
+      operationId: post-changepaymentmethoddescription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePaymentMethodDescriptionCommand'
+            example:
+              id: string
+              paymentMethodId: string
+              newDescription: string
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangePaymentMethodDescriptionCommand'
+            example:
+              id: string
+              paymentMethodId: string
+              newDescription: string
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangePaymentMethodDescriptionCommand'
+            example:
+              id: string
+              paymentMethodId: string
+              newDescription: string
+      responses:
+        "202":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptedResponse'
+              example:
+                success: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+              example:
+                success: true
+                message: string
+                errors:
+                - property: string
+                  code: string
+                  message: string
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "403":
+          $ref: '#/components/responses/Forbidden'
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
   /checkPaymentMethodValidity:
     post:
       tags:
@@ -385,6 +443,7 @@ paths:
                   ownerId: string
                   ownerType: 1
                   lastFourDigits: string
+                  description: string
                   expiryDate: string
                   paymentCardType: 1
                   paymentMethodType: 1
@@ -451,6 +510,7 @@ paths:
                   paymentMethods:
                   - id: string
                     lastFourDigits: string
+                    description: string
                     expiryYear: 0
                     expiryMonth: 0
                     paymentCardType: 1
@@ -1239,6 +1299,19 @@ components:
         result:
           type: boolean
       additionalProperties: false
+    ChangePaymentMethodDescriptionCommand:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        paymentMethodId:
+          type: string
+          nullable: true
+        newDescription:
+          type: string
+          nullable: true
+      additionalProperties: false
     CheckPaymentMethodValidityQuery:
       type: object
       properties:
@@ -1405,6 +1478,10 @@ components:
           type: string
           description: The Last Four Digits of the Payment Card Number
           nullable: true
+        description:
+          type: string
+          description: The nickname of the Payment Card
+          nullable: true
         expiryDate:
           type: string
           description: The Expiry Date of the Payment Card
@@ -1415,7 +1492,7 @@ components:
           $ref: '#/components/schemas/PaymentMethodType'
         paymentToken:
           type: string
-          description: Cybersource Payment Token for Paymend Card
+          description: Cybersource Payment Token for Payment Card
           nullable: true
         organisationId:
           type: string
@@ -1648,6 +1725,10 @@ components:
         lastFourDigits:
           type: string
           description: The Last Four Digits of the Payment Card Number
+          nullable: true
+        description:
+          type: string
+          description: The nickname of the payment method
           nullable: true
         expiryYear:
           type: integer
