@@ -15,8 +15,8 @@
         "tags": [
           "Commands"
         ],
-        "summary": "Deletes a payment card for an owner",
-        "description": "Deletes a payment card for an owner",
+        "summary": "Changes the description of the payment method",
+        "description": "Changes the description of the payment method",
         "operationId": "post-changepaymentmethoddescription",
         "requestBody": {
           "content": {
@@ -278,122 +278,6 @@
         }
       }
     },
-    "/fetchOrdersByUser": {
-      "post": {
-        "tags": [
-          "Queries"
-        ],
-        "summary": "Fetch the order summary",
-        "description": "Fetch the order summary",
-        "operationId": "post-fetchordersbyuser",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchOrdersByUserQuery"
-              },
-              "example": {
-                "userId": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchOrdersByUserQuery"
-              },
-              "example": {
-                "userId": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchOrdersByUserQuery"
-              },
-              "example": {
-                "userId": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FetchOrderSummaryQueryResultOkResponse"
-                },
-                "example": {
-                  "success": true,
-                  "result": {
-                    "id": "string",
-                    "clientServiceName": "string",
-                    "clientServiceReference": "string",
-                    "currency": "string",
-                    "status": 0,
-                    "amount": 0,
-                    "authorityId": "string",
-                    "userId": "string",
-                    "paymentMethodId": "string",
-                    "transactions": [
-                      {
-                        "id": "string",
-                        "orderId": "string",
-                        "paymentMethodId": "string",
-                        "currency": "string",
-                        "amount": 0,
-                        "createdOn": "string",
-                        "transactionType": 1,
-                        "externalReferenceId": "string",
-                        "authorisationCode": "string",
-                        "failureSeverity": 1,
-                        "failureReason": 1,
-                        "failureCode": "string",
-                        "failureMessage": "string",
-                        "refundReasonCode": "string",
-                        "refundReasonComments": "string"
-                      }
-                    ],
-                    "totalPaid": 0,
-                    "totalRefunded": 0,
-                    "netPaid": 0
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
     "/fetchOrderStatuses": {
       "post": {
         "tags": [
@@ -456,125 +340,6 @@
                       "lastPaymentAttemptFailed": true
                     }
                   ]
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/fetchOrderSummary": {
-      "post": {
-        "tags": [
-          "Queries"
-        ],
-        "summary": "Fetch the order summary",
-        "description": "Fetch the order summary",
-        "operationId": "post-fetchordersummary",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchOrderSummaryQuery"
-              },
-              "example": {
-                "clientServiceName": "string",
-                "clientServiceReference": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchOrderSummaryQuery"
-              },
-              "example": {
-                "clientServiceName": "string",
-                "clientServiceReference": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchOrderSummaryQuery"
-              },
-              "example": {
-                "clientServiceName": "string",
-                "clientServiceReference": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FetchOrderSummaryQueryResultOkResponse"
-                },
-                "example": {
-                  "success": true,
-                  "result": {
-                    "id": "string",
-                    "clientServiceName": "string",
-                    "clientServiceReference": "string",
-                    "currency": "string",
-                    "status": 0,
-                    "amount": 0,
-                    "authorityId": "string",
-                    "userId": "string",
-                    "paymentMethodId": "string",
-                    "transactions": [
-                      {
-                        "id": "string",
-                        "orderId": "string",
-                        "paymentMethodId": "string",
-                        "currency": "string",
-                        "amount": 0,
-                        "createdOn": "string",
-                        "transactionType": 1,
-                        "externalReferenceId": "string",
-                        "authorisationCode": "string",
-                        "failureSeverity": 1,
-                        "failureReason": 1,
-                        "failureCode": "string",
-                        "failureMessage": "string",
-                        "refundReasonCode": "string",
-                        "refundReasonComments": "string"
-                      }
-                    ],
-                    "totalPaid": 0,
-                    "totalRefunded": 0,
-                    "netPaid": 0
-                  }
                 }
               }
             }
@@ -812,180 +577,6 @@
         }
       }
     },
-    "/fetchWalletIdsThatHaveUnReconciledExpiredPaymentCards": {
-      "post": {
-        "tags": [
-          "Queries"
-        ],
-        "summary": "Fetch wallet Ids that have unreconciled expired payment cards",
-        "description": "Fetch wallet Ids that have unreconciled expired payment cards",
-        "operationId": "post-fetchwalletidsthathaveunreconciledexpiredpaymentcards",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchWalletIdsThatHaveUnReconciledExpiredPaymentCardsQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchWalletIdsThatHaveUnReconciledExpiredPaymentCardsQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchWalletIdsThatHaveUnReconciledExpiredPaymentCardsQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringIEnumerableOkResponse"
-                },
-                "example": {
-                  "success": true,
-                  "result": [
-                    "string"
-                  ]
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/fetchWalletsByOwnerIds": {
-      "post": {
-        "tags": [
-          "Queries"
-        ],
-        "summary": "Fetch wallets owned by user Ids",
-        "description": "Fetch wallets owned by user Ids",
-        "operationId": "post-fetchwalletsbyownerids",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchWalletsByOwnerIdsQuery"
-              },
-              "example": {
-                "ownerIds": [
-                  "string"
-                ]
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchWalletsByOwnerIdsQuery"
-              },
-              "example": {
-                "ownerIds": [
-                  "string"
-                ]
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/FetchWalletsByOwnerIdsQuery"
-              },
-              "example": {
-                "ownerIds": [
-                  "string"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FetchWalletsByOwnerIdsQueryResultIEnumerableOkResponse"
-                },
-                "example": {
-                  "success": true,
-                  "result": [
-                    {
-                      "ownerId": "string",
-                      "isAllowedToMakeNewPayments": true,
-                      "debtAmount": 0,
-                      "hasValidPaymentMethods": true
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
     "/isAllowedToMakeNewPayments": {
       "post": {
         "tags": [
@@ -1090,597 +681,6 @@
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
-          }
-        }
-      }
-    },
-    "/reconcileExpiredCards": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "Makes sure isExpired is synced on the payment cards",
-        "description": "Makes sure isExpired is synced on the payment cards",
-        "operationId": "post-reconcileexpiredcards",
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/reconcileWalletDebtAmount": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "If debt is found, updates the total amount of debt on the wallet",
-        "description": "If debt is found, updates the total amount of debt on the wallet",
-        "operationId": "post-reconcilewalletdebtamount",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReconcileWalletDebtAmountCommand"
-              },
-              "example": {
-                "id": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReconcileWalletDebtAmountCommand"
-              },
-              "example": {
-                "id": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReconcileWalletDebtAmountCommand"
-              },
-              "example": {
-                "id": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/reconcileWalletHasValidPaymentMethods": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "Makes sure hasValidPaymentMethods is synced",
-        "description": "Makes sure hasValidPaymentMethods is synced",
-        "operationId": "post-reconcilewallethasvalidpaymentmethods",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReconcileWalletHasValidPaymentMethodsCommand"
-              },
-              "example": {
-                "id": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReconcileWalletHasValidPaymentMethodsCommand"
-              },
-              "example": {
-                "id": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReconcileWalletHasValidPaymentMethodsCommand"
-              },
-              "example": {
-                "id": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/refundPayment": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "Refunds a payment",
-        "description": "Refunds a payment",
-        "operationId": "post-refundpayment",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefundPaymentCommand"
-              },
-              "example": {
-                "id": "string",
-                "amountToRefund": 0,
-                "reasonCode": "string",
-                "reasonComments": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefundPaymentCommand"
-              },
-              "example": {
-                "id": "string",
-                "amountToRefund": 0,
-                "reasonCode": "string",
-                "reasonComments": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefundPaymentCommand"
-              },
-              "example": {
-                "id": "string",
-                "amountToRefund": 0,
-                "reasonCode": "string",
-                "reasonComments": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/refundTestUsers": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "This will issue refunds for all test users payments",
-        "description": "This will issue refunds for all test users payments",
-        "operationId": "post-refundtestusers",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefundTestUsersCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefundTestUsersCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RefundTestUsersCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/registerPayment": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "Register a new order",
-        "description": "Register a new order",
-        "operationId": "post-registerpayment",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterPaymentRequest"
-              },
-              "example": {
-                "authorityId": "string",
-                "clientServiceName": "string",
-                "clientServiceReference": "string",
-                "paymentMethodId": "string",
-                "amount": 0,
-                "userId": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterPaymentRequest"
-              },
-              "example": {
-                "authorityId": "string",
-                "clientServiceName": "string",
-                "clientServiceReference": "string",
-                "paymentMethodId": "string",
-                "amount": 0,
-                "userId": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterPaymentRequest"
-              },
-              "example": {
-                "authorityId": "string",
-                "clientServiceName": "string",
-                "clientServiceReference": "string",
-                "paymentMethodId": "string",
-                "amount": 0,
-                "userId": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
-    },
-    "/registerPaymentCard": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "Registers an owner's payment card",
-        "description": "Registers an owner's payment card",
-        "operationId": "post-registerpaymentcard",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterPaymentCardRequest"
-              },
-              "example": {
-                "lastFourDigits": "string",
-                "paymentToken": "string",
-                "expiryDate": "string",
-                "paymentCardType": 1,
-                "ownerId": "string",
-                "ownerType": 1,
-                "organisationId": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterPaymentCardRequest"
-              },
-              "example": {
-                "lastFourDigits": "string",
-                "paymentToken": "string",
-                "expiryDate": "string",
-                "paymentCardType": 1,
-                "ownerId": "string",
-                "ownerType": 1,
-                "organisationId": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterPaymentCardRequest"
-              },
-              "example": {
-                "lastFourDigits": "string",
-                "paymentToken": "string",
-                "expiryDate": "string",
-                "paymentCardType": 1,
-                "ownerId": "string",
-                "ownerType": 1,
-                "organisationId": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RegisterPaymentCardResponseOkResponse"
-                },
-                "example": {
-                  "success": true,
-                  "result": {
-                    "paymentCardId": "string",
-                    "responseMessage": "string",
-                    "responseSuccess": true
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
           }
         }
       }
@@ -1856,92 +856,6 @@
           }
         }
       }
-    },
-    "/takePayment": {
-      "post": {
-        "tags": [
-          "Commands"
-        ],
-        "summary": "Attempts to take a payment with an optional new card id",
-        "description": "Attempts to take a payment with an optional new card id",
-        "operationId": "post-takepayment",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TakePaymentCommand"
-              },
-              "example": {
-                "id": "string",
-                "paymentMethodId": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TakePaymentCommand"
-              },
-              "example": {
-                "id": "string",
-                "paymentMethodId": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TakePaymentCommand"
-              },
-              "example": {
-                "id": "string",
-                "paymentMethodId": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AcceptedResponse"
-                },
-                "example": {
-                  "success": true
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BadRequestResponse"
-                },
-                "example": {
-                  "success": true,
-                  "message": "string",
-                  "errors": [
-                    {
-                      "property": "string",
-                      "code": "string",
-                      "message": "string"
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/TooManyRequests"
-          }
-        }
-      }
     }
   },
   "components": {
@@ -1995,14 +909,17 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "paymentMethodId": {
             "type": "string",
+            "description": "The payment method id",
             "nullable": true
           },
           "newDescription": {
             "type": "string",
+            "description": "The nickname to give to the payment method",
             "nullable": true
           }
         },
@@ -2013,10 +930,12 @@
         "properties": {
           "ownerId": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "paymentMethodId": {
             "type": "string",
+            "description": "The payment method id",
             "nullable": true
           }
         },
@@ -2027,10 +946,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "paymentCardId": {
             "type": "string",
+            "description": "The payment card id",
             "nullable": true
           }
         },
@@ -2059,6 +980,7 @@
         "properties": {
           "userId": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           }
         },
@@ -2069,6 +991,7 @@
         "properties": {
           "clientServiceName": {
             "type": "string",
+            "description": "The name of the service that requested the payment initially (e.g. \"ParkingSession\")",
             "nullable": true
           },
           "clientServiceReferences": {
@@ -2076,6 +999,7 @@
             "items": {
               "type": "string"
             },
+            "description": "The ids that were used by the service that requested the payments initially (e.g. \"ParkingSessionId\")",
             "nullable": true
           }
         },
@@ -2086,13 +1010,15 @@
         "properties": {
           "clientServiceReference": {
             "type": "string",
+            "description": "The name of the service that requested the payment initially (e.g. \"ParkingSession\")",
             "nullable": true
           },
           "status": {
             "$ref": "#/components/schemas/OrderStatus"
           },
           "lastPaymentAttemptFailed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not the last payment attempt failed"
           }
         },
         "additionalProperties": false
@@ -2119,10 +1045,12 @@
         "properties": {
           "clientServiceName": {
             "type": "string",
+            "description": "The name of the service that requested the payment initially (e.g. \"ParkingSession\")",
             "nullable": true
           },
           "clientServiceReference": {
             "type": "string",
+            "description": "The id that was used by the service that requested the payment initially (e.g. \"ParkingSessionId\")",
             "nullable": true
           }
         },
@@ -2133,18 +1061,22 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The order id",
             "nullable": true
           },
           "clientServiceName": {
             "type": "string",
+            "description": "The name of the service that requested the payment initially (e.g. \"ParkingSession\")",
             "nullable": true
           },
           "clientServiceReference": {
             "type": "string",
+            "description": "The id that was used by the service that requested the payment initially (e.g. \"ParkingSessionId\")",
             "nullable": true
           },
           "currency": {
             "type": "string",
+            "description": "The currency of the payment",
             "nullable": true
           },
           "status": {
@@ -2152,18 +1084,22 @@
           },
           "amount": {
             "type": "number",
+            "description": "The amount",
             "format": "double"
           },
           "authorityId": {
             "type": "string",
+            "description": "The authority id",
             "nullable": true
           },
           "userId": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "paymentMethodId": {
             "type": "string",
+            "description": "The payment method id used for the payment",
             "nullable": true
           },
           "transactions": {
@@ -2171,18 +1107,22 @@
             "items": {
               "$ref": "#/components/schemas/Transaction"
             },
+            "description": "The list of payment or refund attempts",
             "nullable": true
           },
           "totalPaid": {
             "type": "number",
+            "description": "The total paid amount",
             "format": "double"
           },
           "totalRefunded": {
             "type": "number",
+            "description": "The total refunded amount",
             "format": "double"
           },
           "netPaid": {
             "type": "number",
+            "description": "The total amount that has been paid excluding the total refunded amount",
             "format": "double",
             "readOnly": true
           }
@@ -2207,6 +1147,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The payment method id",
             "nullable": true
           }
         },
@@ -2294,6 +1235,7 @@
         "properties": {
           "ownerId": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           }
         },
@@ -2351,6 +1293,7 @@
             "items": {
               "type": "string"
             },
+            "description": "The user ids",
             "nullable": true
           }
         },
@@ -2361,6 +1304,7 @@
         "properties": {
           "ownerId": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "isAllowedToMakeNewPayments": {
@@ -2401,6 +1345,7 @@
         "properties": {
           "ownerId": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           }
         },
@@ -2549,6 +1494,7 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           }
         },
@@ -2701,10 +1647,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "paymentMethodId": {
             "type": "string",
+            "description": "The payment method id to use",
             "nullable": true
           }
         },
@@ -2715,10 +1663,12 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The user id",
             "nullable": true
           },
           "newDefaultPaymentCardId": {
             "type": "string",
+            "description": "The new default payment card id",
             "nullable": true
           }
         },
@@ -2760,26 +1710,32 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "The payment/refund transaction id",
             "nullable": true
           },
           "orderId": {
             "type": "string",
+            "description": "The order id",
             "nullable": true
           },
           "paymentMethodId": {
             "type": "string",
+            "description": "The payment method used",
             "nullable": true
           },
           "currency": {
             "type": "string",
+            "description": "The currency",
             "nullable": true
           },
           "amount": {
             "type": "number",
+            "description": "The amount",
             "format": "double"
           },
           "createdOn": {
             "type": "string",
+            "description": "Timestamp of the transaction",
             "format": "date-time"
           },
           "transactionType": {
@@ -2787,10 +1743,12 @@
           },
           "externalReferenceId": {
             "type": "string",
+            "description": "The reference id used by the third party system (e.g cybersource transaction id)",
             "nullable": true
           },
           "authorisationCode": {
             "type": "string",
+            "description": "The authorization id used by the third party system (e.g cybersource authorization id)",
             "nullable": true
           },
           "failureSeverity": {
@@ -2801,18 +1759,22 @@
           },
           "failureCode": {
             "type": "string",
+            "description": "The failure code",
             "nullable": true
           },
           "failureMessage": {
             "type": "string",
+            "description": "The failure message",
             "nullable": true
           },
           "refundReasonCode": {
             "type": "string",
+            "description": "The refund reason code",
             "nullable": true
           },
           "refundReasonComments": {
             "type": "string",
+            "description": "The refund reason comments",
             "nullable": true
           }
         },

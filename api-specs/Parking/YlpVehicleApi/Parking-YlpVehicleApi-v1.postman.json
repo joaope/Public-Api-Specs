@@ -1,7 +1,7 @@
 {
   "item": [
     {
-      "id": "59505faf-902c-41bd-87eb-02121d7b2dba",
+      "id": "1dc9c596-8a7b-4239-98e9-c003009fce82",
       "name": "Changes the user default vehicle",
       "request": {
         "name": "Changes the user default vehicle",
@@ -34,7 +34,7 @@
       },
       "response": [
         {
-          "id": "7e17b0b9-aaf7-481d-8a24-c62ba29014ac",
+          "id": "32b30c46-5420-4268-9822-691d97b03304",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -66,7 +66,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "44afbbdf-5552-4392-a115-8898dfec9d5b",
+          "id": "a5dfd51a-aa4e-426d-b65c-7d03dbb14017",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -98,7 +98,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "e815f653-c7d9-4115-ba84-eefa513f8f22",
+          "id": "aaebfc00-89d8-4515-8d44-28eed17c3896",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -130,7 +130,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7450542b-af05-44d8-84ee-ae11b6453b28",
+          "id": "6db86c60-a63f-4179-b15e-a83be89537f1",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -162,7 +162,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "574f2aca-57e8-4f5b-b08e-52affaafe7f9",
+          "id": "a63319b3-698f-49ce-8d4f-ff8b0224b20b",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -197,7 +197,7 @@
       "event": []
     },
     {
-      "id": "272d38f9-224b-4e73-a69f-96ac9856995c",
+      "id": "855e7547-295d-48c0-87e0-11b8947624e2",
       "name": "Changes the user default vehicle",
       "request": {
         "name": "Changes the user default vehicle",
@@ -230,7 +230,7 @@
       },
       "response": [
         {
-          "id": "16afdfd7-a73d-4bdf-9a1b-68947178d7e7",
+          "id": "efd77613-89b6-4614-b482-2216ff54de96",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -262,7 +262,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "13a6042d-fad5-452a-a725-13bbce15d58d",
+          "id": "a6e2a2fb-e0ca-42f2-a75d-f4367672cdfd",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -294,7 +294,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "d2219a79-5609-4ca6-8a78-f481ba02fcf4",
+          "id": "67336fec-7e7b-444f-b703-cc3605210e7c",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -326,7 +326,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "08234393-c627-4ef3-90d3-ecafeaaf9bb0",
+          "id": "fe6262bf-4abf-4f9f-8259-63cdfdd7b2cd",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -358,7 +358,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "88ec8aef-7a91-46e9-9f07-9e4487c99a00",
+          "id": "888e3c63-af7f-4759-bb4b-f2917c2fa9aa",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -393,203 +393,7 @@
       "event": []
     },
     {
-      "id": "f813b790-e3f6-4787-8191-cb357e7dc3ee",
-      "name": "Fetch information for a specific vehicle by",
-      "request": {
-        "name": "Fetch information for a specific vehicle by",
-        "description": {
-          "content": "Fetch information for a specific vehicle by",
-          "type": "text/plain"
-        },
-        "url": {
-          "path": [
-            "fetchVehicleByVrm"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"vehicleRegistrationMark\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "c8319e1f-e30d-4345-bafe-994575de1033",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": {\n  \"vehicleRegistrationMark\": \"string\",\n  \"createdTimestamp\": \"string\",\n  \"userIdOptedInBarrierIntegration\": \"string\",\n  \"manufactureDate\": \"string\",\n  \"vehicleType\": 1,\n  \"fuelType\": 0\n }\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "c9f6ebfc-ca19-48d9-96c4-4a9928e29e60",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "7587f9b0-155e-46f5-b99f-b801a706ad8f",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "9457fce7-8174-482f-9a9c-35e1b37e068b",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "4bab8816-69fe-4c2a-96c7-fbe3e2f1c8ba",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "c00027c8-f65f-475b-a32b-4b5b6e4ada61",
+      "id": "fd0c66a5-2965-47f7-bd22-d004df8e067e",
       "name": "Fetch vehicle information using the vehicle registration mark",
       "request": {
         "name": "Fetch vehicle information using the vehicle registration mark",
@@ -622,7 +426,7 @@
       },
       "response": [
         {
-          "id": "e2ad1280-b0a4-4644-8042-ef001f37f6d6",
+          "id": "eb40b437-ea1f-419c-9159-55c185cc6c50",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -654,7 +458,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "4c7c29cf-125f-41ec-ba58-0e822ace8d0c",
+          "id": "9f0e0dd2-5a18-4370-a7d7-33dbc32a38f1",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -686,7 +490,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "137bdb0f-9af7-4472-9703-48e613b43ad2",
+          "id": "0c7f5b6e-06a2-477a-87f2-30041ceea97a",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -718,7 +522,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "bcf56e02-524f-4978-a8d3-b4756195e91c",
+          "id": "eae04a80-5b56-46cb-8af6-a62775926c68",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -750,7 +554,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4507a060-bfa2-4aa4-88d7-382e571dc291",
+          "id": "7e9a1384-1797-4076-8ebd-ef69b059b42b",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -785,399 +589,7 @@
       "event": []
     },
     {
-      "id": "cedb5192-b0e7-4689-881e-26dc2bd1fbcc",
-      "name": "Fetch vehicle's owner list",
-      "request": {
-        "name": "Fetch vehicle's owner list",
-        "description": {
-          "content": "Fetch vehicle's owner list",
-          "type": "text/plain"
-        },
-        "url": {
-          "path": [
-            "fetchVehicleOwnersByVrm"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"vehicleRegistrationMark\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "7fbb1919-69e7-4091-bd84-475daf0a78af",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleOwnersByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": [\n  \"string\"\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "2813140b-c016-4dd3-a321-c7d04c5b11e6",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleOwnersByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "23973819-73d3-4a79-8d2b-3204d0e357f6",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleOwnersByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "2871c7a1-08f2-4a31-8310-6de5205adf7a",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleOwnersByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "60c99b13-917a-48b6-b2e8-d15bc4352082",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehicleOwnersByVrm"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "4ce862e7-2070-488a-bab0-4c7940f82156",
-      "name": "Fetch information for multiple specific vehicles",
-      "request": {
-        "name": "Fetch information for multiple specific vehicles",
-        "description": {
-          "content": "Fetch information for multiple specific vehicles",
-          "type": "text/plain"
-        },
-        "url": {
-          "path": [
-            "fetchVehiclesByVrms"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"vehicleRegistrationMarks\": [\n        \"<string>\",\n        \"<string>\"\n    ]\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "83e5eca2-df44-4512-83d4-b657d2bd56b8",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehiclesByVrms"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMarks\": [\n        \"string\"\n    ]\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"vehicleRegistrationMark\": \"string\",\n   \"createdTimestamp\": \"string\",\n   \"userIdOptedInBarrierIntegration\": \"string\",\n   \"manufactureDate\": \"string\",\n   \"vehicleType\": 1,\n   \"fuelType\": 0\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "783d79f0-6eee-4f04-a0ae-c1cdf58241b6",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehiclesByVrms"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMarks\": [\n        \"string\"\n    ]\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "81f24ede-8272-4ffe-9178-d1688d856762",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehiclesByVrms"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMarks\": [\n        \"string\"\n    ]\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "3afca0f6-dc0e-45f9-bb01-56caf1269422",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehiclesByVrms"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMarks\": [\n        \"string\"\n    ]\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "e5513e8a-b2d2-4ab1-9a90-1bc6d0537bf4",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchVehiclesByVrms"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMarks\": [\n        \"string\"\n    ]\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "141e3679-564b-464c-ad5c-3ef2b6520c53",
+      "id": "330a2776-fdcf-4570-9d7e-cbe44d586b71",
       "name": "Fetch vehicles owned by a user",
       "request": {
         "name": "Fetch vehicles owned by a user",
@@ -1210,7 +622,7 @@
       },
       "response": [
         {
-          "id": "c1f21f57-9b7a-470e-969f-ce1be17adabc",
+          "id": "2a0e741f-007c-4162-a575-7b827a4f2232",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1242,7 +654,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "b1a7db16-3786-4a73-99ec-d1ef0c703168",
+          "id": "bced7a5c-c189-4dbd-bd19-5c95cde19b46",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1274,7 +686,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "39af95d6-9b90-4767-bf5c-ae0cd86ef0e2",
+          "id": "70ba2d24-2127-4e7a-af93-3e68234b9bfc",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1306,7 +718,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ab7cb9a4-2581-45c9-85d0-360997f1d0e1",
+          "id": "b7c21267-71c7-4e21-85d2-1d6ead416134",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1338,7 +750,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7200c5c8-6056-4468-9002-45648373eda3",
+          "id": "2d3b66e1-5931-4725-8b3e-3c64c0d1b7c8",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1373,7 +785,7 @@
       "event": []
     },
     {
-      "id": "e2c2fa28-cec9-4485-a400-e890508459f9",
+      "id": "e18970bf-6063-48cf-85a6-b1a0f6a0f65c",
       "name": "Opts in a vehicle to barrier integration",
       "request": {
         "name": "Opts in a vehicle to barrier integration",
@@ -1406,7 +818,7 @@
       },
       "response": [
         {
-          "id": "c8886a1a-fab4-4031-ad4f-8294e8947c82",
+          "id": "31dab16c-82df-4931-9b1b-46d6d14fe7ce",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1438,7 +850,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "da61916e-a012-4b04-b24b-6d2359615fe5",
+          "id": "67c0417f-3eb9-43df-a7d1-e0622d162649",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1470,7 +882,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "0872d2d7-3943-4bdc-8109-81ed5148730e",
+          "id": "3f4c897a-6b41-411c-8edb-ede014c8e378",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1502,7 +914,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "98b0e4b8-2b57-445b-802c-3f7833c65955",
+          "id": "892f99f8-9474-4265-9bc5-3a1f66bf50fc",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1534,7 +946,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "eaaa9d72-9a47-4e90-a13b-1d7a5ed57c45",
+          "id": "62032c56-45ab-44fe-851c-876524d7b968",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1569,7 +981,7 @@
       "event": []
     },
     {
-      "id": "039bc1f6-3016-4080-809a-760a838b9792",
+      "id": "4aabc2ee-4784-483e-ba55-820e0bf52b48",
       "name": "Opts in a vehicle to barrier integration",
       "request": {
         "name": "Opts in a vehicle to barrier integration",
@@ -1602,7 +1014,7 @@
       },
       "response": [
         {
-          "id": "c092f07c-558a-487b-8cb0-64280cc3ad89",
+          "id": "2a7058ac-79f5-4cef-8428-cfb9c5bf3538",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1634,7 +1046,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "561311c0-eee8-4b1d-8c0b-847bb836cfc9",
+          "id": "956a6836-885c-4348-a802-92030aca1935",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1666,7 +1078,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "2257b773-0ea5-4123-9ed7-be3676c42961",
+          "id": "4a93b93b-e3f9-437a-89d1-021dd6c2d952",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1698,7 +1110,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7b562677-2539-4e3e-aed2-7b31b477b7f2",
+          "id": "582fb86b-5fb2-425d-91b8-6ce0da279156",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1730,7 +1142,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "283ccb97-adbf-4217-86f6-cf8d55456042",
+          "id": "10961314-7a8a-4645-bd3a-49323617ac05",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1765,7 +1177,7 @@
       "event": []
     },
     {
-      "id": "0928de72-5fc2-4bb8-a5af-869123592e58",
+      "id": "fd133f8d-31ce-4dfe-8621-a5385695527f",
       "name": "Ping",
       "request": {
         "name": "Ping",
@@ -1788,7 +1200,7 @@
       },
       "response": [
         {
-          "id": "960e5942-36b0-4f99-b9e0-5df132bbfa1c",
+          "id": "aa93527d-8aaa-48ca-9493-d11e303eb8ef",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1817,7 +1229,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "01fd2fdd-3362-4143-b2fd-58e2746fbf4d",
+          "id": "b651f71c-e99a-4540-a8bd-ea2efb7cbe4b",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1846,7 +1258,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7d390514-834d-4ebc-a0bf-df6c95327bf8",
+          "id": "82401e04-9606-4521-af9a-a13c1ab1ab3f",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1875,7 +1287,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "2fe2f55b-e972-4806-944c-16c1bf70f163",
+          "id": "7f4246ef-364c-493a-bdc7-f935cd536646",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1907,203 +1319,7 @@
       "event": []
     },
     {
-      "id": "6e145b89-5e88-42e7-9bcb-f37e0e457c33",
-      "name": "Ensures that a default vehicle is set when the user has vehicles",
-      "request": {
-        "name": "Ensures that a default vehicle is set when the user has vehicles",
-        "description": {
-          "content": "Ensures that a default vehicle is set when the user has vehicles",
-          "type": "text/plain"
-        },
-        "url": {
-          "path": [
-            "reconcileUserDefaultVehicle"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"id\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "794163a5-0fcf-4934-ab11-1f4ae525c088",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileUserDefaultVehicle"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "2e33a8a9-3291-4fe7-9407-915badd9f26f",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileUserDefaultVehicle"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "f41d1d69-6db7-47d5-bc53-1dbcd93ae33d",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileUserDefaultVehicle"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "a9054f56-01b0-4ba3-bcea-14aca3cbd1b8",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileUserDefaultVehicle"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "24928496-d0c8-43ec-a74d-5a2dd9e1c94d",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileUserDefaultVehicle"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "54131772-a0f6-4ae5-9aca-e15f8f060155",
+      "id": "34a7c498-f73b-4620-9b30-852e6ffa8b40",
       "name": "Adds a new vehicle to the users account",
       "request": {
         "name": "Adds a new vehicle to the users account",
@@ -2136,7 +1352,7 @@
       },
       "response": [
         {
-          "id": "991c6fdd-22e2-4ecf-9b72-149358793833",
+          "id": "3f7ed5e4-f99c-4128-ad97-5dfa8d20cc0b",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2168,7 +1384,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "076a50ee-678f-420c-aebd-88f93fcf84fe",
+          "id": "62357c96-af8f-41f5-acf9-8b90d4f092f4",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -2200,7 +1416,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "55e088a8-41c4-4e90-846e-ab1fbe759404",
+          "id": "04c92aa8-ec60-4429-86f5-38b9e8ded616",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2232,7 +1448,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4a73b347-29de-4dc8-bf60-c910998d8846",
+          "id": "0467bd18-136e-4dd8-931e-f370932d1f8a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2264,7 +1480,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7afd3d4a-6560-40d3-b602-0c35b58e7428",
+          "id": "9bf6ef80-e24e-4889-a3df-fc7be6b09073",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2299,7 +1515,7 @@
       "event": []
     },
     {
-      "id": "e50c6399-29e9-4698-a38a-3b48035eb5e6",
+      "id": "bd38bb0e-e20c-478f-a97e-36ab8513110e",
       "name": "Removes a user from the list of owners of a vehicle",
       "request": {
         "name": "Removes a user from the list of owners of a vehicle",
@@ -2332,7 +1548,7 @@
       },
       "response": [
         {
-          "id": "9ec19f0b-a088-4e88-8a61-2c324d52a96e",
+          "id": "66239bdd-cc8d-43b6-a6c9-235a03d4d348",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2364,7 +1580,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "b49e2aec-f083-4590-882a-e77812a3e8da",
+          "id": "db9c7e2d-cc8a-4b06-b54e-e7b0c0c50a3f",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -2396,7 +1612,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "96dbd05c-c5b2-4ffe-8c80-c370458eeb97",
+          "id": "d12f8c3b-f377-40b6-9688-b9033905d090",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2428,7 +1644,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ec05fa30-6079-4667-90dd-3d0658d1ada6",
+          "id": "d1de763e-2059-41bd-b327-271f9423bef3",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2460,7 +1676,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "190d5492-78c1-4f22-a5ef-a56600d43f0a",
+          "id": "01272ba9-65c3-4e7d-88ba-7af21549ca60",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2519,7 +1735,7 @@
     ]
   },
   "info": {
-    "_postman_id": "e732c3f3-eef7-4ce0-97ac-e30f4ee7fc1e",
+    "_postman_id": "7cbabf1a-1578-4a64-9a17-2864da51d83a",
     "name": "Vehicle API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
