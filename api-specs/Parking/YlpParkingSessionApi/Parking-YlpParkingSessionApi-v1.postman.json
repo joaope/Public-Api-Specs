@@ -1,200 +1,7 @@
 {
   "item": [
     {
-      "id": "2fa34f4c-3a71-4905-9bac-c175cc79520d",
-      "name": "/beginParkingSession - POST",
-      "request": {
-        "name": "/beginParkingSession - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "beginParkingSession"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"entityId\": \"<string>\",\n    \"entityIndex\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"vehicleRegistrationMark\": \"<string>\",\n    \"vehicleType\": \"<integer>\",\n    \"fuelType\": \"<integer>\",\n    \"paymentMethodId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"duration\": \"<string>\",\n    \"sourceSystem\": \"<string>\",\n    \"externalReferenceId\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "850d5920-61c4-4968-812f-e1455fa160f9",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "beginParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": \"string\"\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "c7b2f71e-0b57-46c4-be0c-199a3b250114",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "beginParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "eb2a2650-813d-4c56-98ba-4ff2000a7fbc",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "beginParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "bb0c826a-67b6-40b1-9658-ed219bb93b28",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "beginParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "6777006c-c094-481d-9f5f-0bcd74597b88",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "beginParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "cd4699ac-349a-4e70-bd72-d897b7f0dc69",
+      "id": "88662c9e-2254-4640-b36a-8c180a66c0c5",
       "name": "/beginScheduledParkingSession - POST",
       "request": {
         "name": "/beginScheduledParkingSession - POST",
@@ -219,12 +26,12 @@
         "auth": null,
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"entityId\": \"<string>\",\n    \"entityIndex\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"vehicleRegistrationMark\": \"<string>\",\n    \"vehicleType\": \"<integer>\",\n    \"fuelType\": \"<integer>\",\n    \"paymentMethodId\": \"<string>\",\n    \"sourceSystem\": \"<string>\",\n    \"externalReferenceId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"duration\": \"<string>\"\n}"
+          "raw": "{\n    \"entityId\": \"<string>\",\n    \"entityIndex\": \"<string>\",\n    \"userId\": \"<string>\",\n    \"vehicleRegistrationMark\": \"<string>\",\n    \"vehicleType\": \"<integer>\",\n    \"fuelType\": \"<integer>\",\n    \"paymentMethodId\": \"<string>\",\n    \"startTime\": \"<dateTime>\",\n    \"duration\": \"<string>\"\n}"
         }
       },
       "response": [
         {
-          "id": "8fdbe2cf-aac8-4102-ae45-e2c3f6ae487d",
+          "id": "409b636d-c349-4457-8c55-ec37d3c27dd9",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -240,7 +47,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
             }
           },
           "status": "OK",
@@ -256,7 +63,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "8088c408-1109-42e7-ab47-3a8c666456bb",
+          "id": "1b296f52-5af3-4d73-a7d2-13a0dfa7f041",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -272,7 +79,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
             }
           },
           "status": "Bad Request",
@@ -288,7 +95,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "ebb4ddc3-5b71-40ba-b43d-7da04197ee4d",
+          "id": "8508eca6-06f6-4465-8c48-5270d54b3c8f",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -304,7 +111,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
             }
           },
           "status": "Unauthorized",
@@ -320,7 +127,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "323f070f-9999-4c36-a5cf-d0c8d4cd3b44",
+          "id": "b8a7e758-04a6-49ae-a456-5241a36eb6d0",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -336,7 +143,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
             }
           },
           "status": "Forbidden",
@@ -352,7 +159,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a20a8834-fb65-4cfe-bd85-2e18e1edb9f1",
+          "id": "4cf8769e-c429-4a35-942e-03b8f38939d8",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -368,7 +175,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
+              "raw": "{\n    \"entityId\": \"string\",\n    \"entityIndex\": \"string\",\n    \"userId\": \"string\",\n    \"vehicleRegistrationMark\": \"string\",\n    \"vehicleType\": 1,\n    \"fuelType\": 0,\n    \"paymentMethodId\": \"string\",\n    \"startTime\": \"string\",\n    \"duration\": \"3.17:25:30.5000000\"\n}"
             }
           },
           "status": "Too Many Requests",
@@ -387,7 +194,7 @@
       "event": []
     },
     {
-      "id": "b84ac4d0-7418-4340-a1e1-2051498a0cfd",
+      "id": "af95ec06-58d5-4705-9aea-588415b510e0",
       "name": "/changeParkingSessionRating - POST",
       "request": {
         "name": "/changeParkingSessionRating - POST",
@@ -417,7 +224,7 @@
       },
       "response": [
         {
-          "id": "97d710f7-2b8d-4c30-acef-80fe844e90b0",
+          "id": "2fe94cdf-c896-4c26-b0aa-7764eb1d458a",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -449,7 +256,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "ba0e86d8-3b7a-4575-a15e-9db6d8166aaa",
+          "id": "c17b507e-3d3a-4e8c-9b58-7dd3cb972997",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -481,7 +288,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "dd7af2a1-0912-4dd9-b8d3-57f6aa724321",
+          "id": "e097589b-fbac-4434-8c7d-973c0b4a357f",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -513,7 +320,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "9f86d07c-91dc-401d-a87d-60effcf759c6",
+          "id": "9f209ce0-b5cb-4418-b071-fdb53066d7f1",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -545,7 +352,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "0156fcf6-228d-4f52-9bfb-66220c0e0d15",
+          "id": "24942d38-399c-4509-b1a3-f6c96c560dd3",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -580,200 +387,7 @@
       "event": []
     },
     {
-      "id": "874030c5-11b8-41b4-af26-1a49012b6a3b",
-      "name": "/changePrePaidExpiryReminderSetting - POST",
-      "request": {
-        "name": "/changePrePaidExpiryReminderSetting - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "changePrePaidExpiryReminderSetting"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"userId\": \"<string>\",\n    \"newExpiryDurationInMinutes\": \"<integer>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "b0636460-a72b-4c02-8c1e-8ea86a8a1e8d",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "changePrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newExpiryDurationInMinutes\": 0\n}"
-            }
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "16232a92-9bee-4d83-b425-ef4c95777e02",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "changePrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newExpiryDurationInMinutes\": 0\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "f80e073c-f2e0-40f5-bcdc-75f2bc678307",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "changePrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newExpiryDurationInMinutes\": 0\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "52a1f1bb-4e8b-40dc-a40f-ba22a8d965ad",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "changePrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newExpiryDurationInMinutes\": 0\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "c6e80a63-1d94-47e6-99c2-7dd5fea0c2e4",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "changePrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\",\n    \"newExpiryDurationInMinutes\": 0\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "8d21b174-fdba-406a-ab3b-0121299488b8",
+      "id": "072851c8-4e5f-418c-901d-7a945a8f07d4",
       "name": "/checkBeginParkingSessionCommandValidity - POST",
       "request": {
         "name": "/checkBeginParkingSessionCommandValidity - POST",
@@ -803,7 +417,7 @@
       },
       "response": [
         {
-          "id": "ca725c39-99b2-45a5-bb28-37b3d5921acb",
+          "id": "2f071ecb-cd58-4587-935e-339ce8e04350",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -835,7 +449,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "dc30e8a2-6bc2-467b-9c30-2ff69fef8a24",
+          "id": "c67d593d-8896-499b-b864-1642715c4d54",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -867,7 +481,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "28873b31-3510-4bf2-950f-480989a6279a",
+          "id": "4a049d8a-6c0d-440f-888e-e5ab0672c108",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -899,7 +513,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "f336bc6e-c01d-48a0-a010-45e3dd95b68e",
+          "id": "1ed62e1c-797d-4c63-832a-ea215895f470",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -931,7 +545,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e05d389c-2bb8-49c7-825d-de10cbe24e94",
+          "id": "43f96b82-5f64-4ec9-ac6e-fdd8b2a2fcb5",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -966,200 +580,7 @@
       "event": []
     },
     {
-      "id": "77831744-9fa6-46f9-8c98-c7a4225244b5",
-      "name": "/endParkingSession - POST",
-      "request": {
-        "name": "/endParkingSession - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "endParkingSession"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"id\": \"<string>\",\n    \"endTime\": \"<dateTime>\",\n    \"sessionStopMethod\": \"<integer>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "9ca5b62e-14fd-45f1-96dc-764b5e6613ca",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\",\n    \"endTime\": \"string\",\n    \"sessionStopMethod\": 1\n}"
-            }
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "19aaf6f3-5940-4788-9988-d6333cf8caf4",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\",\n    \"endTime\": \"string\",\n    \"sessionStopMethod\": 1\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "73cf4bc8-2618-47c8-b0f1-aced525c065e",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\",\n    \"endTime\": \"string\",\n    \"sessionStopMethod\": 1\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "1af91c88-32d9-4fb6-a055-a8be28d0aa20",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\",\n    \"endTime\": \"string\",\n    \"sessionStopMethod\": 1\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "8e402223-37de-4251-8ec6-34f1040e4f0d",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSession"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\",\n    \"endTime\": \"string\",\n    \"sessionStopMethod\": 1\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "1500a5e9-dc57-475f-8452-25a4262fd4b1",
+      "id": "f478a840-bdf4-4f07-bdd7-64040f296e87",
       "name": "/endParkingSessionNow - POST",
       "request": {
         "name": "/endParkingSessionNow - POST",
@@ -1189,7 +610,7 @@
       },
       "response": [
         {
-          "id": "b40f6d82-dda7-40c3-9f1a-48d8708d7ca0",
+          "id": "3002472d-f8c1-49e0-99af-c934218b48ae",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1221,7 +642,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "e83806b5-3e3f-463d-a3c5-ff2821242b13",
+          "id": "ef863705-ba27-45f6-ad9c-e3666857980d",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1253,7 +674,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "e1c03520-9687-4afa-b1b4-ccef20452e1c",
+          "id": "131150a7-8f73-4936-9075-969bc3115b85",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1285,7 +706,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "4b2d8928-a3c6-4210-ae32-dd3fe4219c97",
+          "id": "57dca2eb-a1a2-4a81-9602-b16e0c8e9d2a",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1317,7 +738,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "39b0ba8a-4fab-4bda-a457-d2bb7353a410",
+          "id": "50a4e77f-d447-4803-a185-606b751566dd",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1352,146 +773,7 @@
       "event": []
     },
     {
-      "id": "3bfeaec9-f1df-4f54-a7a4-396230cb6468",
-      "name": "/endParkingSessionsThatArePastTheirExpectedEndTime - POST",
-      "request": {
-        "name": "/endParkingSessionsThatArePastTheirExpectedEndTime - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "endParkingSessionsThatArePastTheirExpectedEndTime"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "method": "POST",
-        "auth": null
-      },
-      "response": [
-        {
-          "id": "be883f4d-60e1-4cac-a127-0ff7be34a912",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSessionsThatArePastTheirExpectedEndTime"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "0ad63cd4-f4bc-48c5-838d-7776beec83b4",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSessionsThatArePastTheirExpectedEndTime"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "a7ca3723-345a-4aad-8917-6bbf9dc58f99",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSessionsThatArePastTheirExpectedEndTime"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "eceb4f19-dbf0-43fa-949c-5105b2084080",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "endParkingSessionsThatArePastTheirExpectedEndTime"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "42ec50f5-a4db-4335-b7ee-f7f0a605ddd8",
+      "id": "a4981317-41cd-4de8-a5e9-34a56f5a66b3",
       "name": "/extendParkingSession - POST",
       "request": {
         "name": "/extendParkingSession - POST",
@@ -1521,7 +803,7 @@
       },
       "response": [
         {
-          "id": "442f7106-b973-4998-86fa-a091fd6671a1",
+          "id": "67a3898e-17b7-4bae-981c-6a5a5e80ffb8",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1553,7 +835,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "8f065fba-fc8e-4810-86e9-a7bdac3f9c67",
+          "id": "bd393e59-194e-4f43-91aa-8e3b4f65c972",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1585,7 +867,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "cbfdcdcd-37e5-4060-be48-8e3861330fbc",
+          "id": "de34c736-cb1f-4efa-9a9a-5e43c8a3eb60",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1617,7 +899,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "df9a0f02-891d-4f0a-9c1f-7f4fd20324f6",
+          "id": "aab0993f-16b1-48f6-b22f-d340688f992e",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1649,7 +931,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "9ce18ad5-c87e-47cb-8a32-710f4519eceb",
+          "id": "392c1bb5-b1c0-4121-b2ee-f5ebc023c7fa",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1684,7 +966,7 @@
       "event": []
     },
     {
-      "id": "bd834d95-af95-446d-a5b5-d36e727450b9",
+      "id": "70cb3d80-0572-4eb1-98ba-4bc83a793b0e",
       "name": "/fetchCost - POST",
       "request": {
         "name": "/fetchCost - POST",
@@ -1714,7 +996,7 @@
       },
       "response": [
         {
-          "id": "1d77338e-cd22-4da7-bb70-efd9a7f0dfdb",
+          "id": "ead2ec90-582c-4d6d-a4ad-66d0abe13091",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1746,7 +1028,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "f8b299ca-dc09-44b0-97b7-449000ceb190",
+          "id": "94df8694-1c12-4264-b729-4d343a1a80a1",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1778,7 +1060,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "812b18d0-1720-4753-a7dd-c6ff03759b3a",
+          "id": "22a20ae5-2dc6-4d40-8a2e-232a4b0df453",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -1810,7 +1092,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "ed3923f1-2980-4a59-909a-48a573bc7f92",
+          "id": "6f1d7cfd-89db-4797-88a7-50e80eb2f7f0",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -1842,7 +1124,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "07e06286-d3eb-4630-9e13-2eeb62a6da6f",
+          "id": "9237d018-3a9a-47b0-b0e0-d85bea18de8a",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -1877,7 +1159,7 @@
       "event": []
     },
     {
-      "id": "ad2f5339-2684-46f7-bb98-f9994a056e04",
+      "id": "3b3dfc14-1886-447c-839a-f740e95c5145",
       "name": "/fetchCurrentParkingSessionCost - POST",
       "request": {
         "name": "/fetchCurrentParkingSessionCost - POST",
@@ -1907,7 +1189,7 @@
       },
       "response": [
         {
-          "id": "f45d8577-9de4-4f7e-afaa-dcf3178d7d8e",
+          "id": "3b4b2d27-bcf5-4bb1-9ff8-6c400a000e37",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -1939,7 +1221,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "2d019418-9ba5-47b7-94b0-93a779978ae4",
+          "id": "e93a1959-666a-4ec6-a501-5eb7d7709288",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -1971,7 +1253,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "03eed48f-e755-4ddf-9d51-36448083945e",
+          "id": "7a3e9371-8963-4032-a90c-d4574c0663f9",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2003,7 +1285,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "71a84ec2-7808-4baa-82b5-d7abc71e8375",
+          "id": "f7645b8d-fcbd-43da-8628-01ff54986adc",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2035,7 +1317,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a6baf23f-ee21-4942-bd7f-9683af4e0c8e",
+          "id": "a0fbd83e-e2b3-42df-90ae-f76482714330",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2070,393 +1352,7 @@
       "event": []
     },
     {
-      "id": "b49f0362-1d8b-4c0c-8962-521a092f4cff",
-      "name": "/fetchLatestParkedLocations - POST",
-      "request": {
-        "name": "/fetchLatestParkedLocations - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "fetchLatestParkedLocations"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"vehicleRegistrationMark\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "6ff4bf2d-cb8e-47f5-8b5d-d0baa6f6caf8",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchLatestParkedLocations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": [\n  {\n   \"locationNumber\": \"string\",\n   \"lastParkingSessionValidUntil\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "2cfd4c1e-155c-4398-b68b-9e9195442c71",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchLatestParkedLocations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "4a104405-3118-4f14-8ab3-26a32753b1f5",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchLatestParkedLocations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "2ea8866c-79c0-4bbd-8121-bbdc8dce242e",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchLatestParkedLocations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "8bc15e4c-e234-4e88-93c3-1cffbb176535",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchLatestParkedLocations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "95184e6e-e0f7-4a18-a424-b1feb0f88bfb",
-      "name": "/fetchParkingSessionByExternalId - POST",
-      "request": {
-        "name": "/fetchParkingSessionByExternalId - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "fetchParkingSessionByExternalId"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"sourceSystem\": \"<string>\",\n    \"externalReferenceId\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "8b1d0b2d-3cb5-4d88-912d-47eab52b0189",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchParkingSessionByExternalId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": {\n  \"parkingSessionId\": \"string\",\n  \"sourceSystem\": \"string\",\n  \"externalReferenceId\": \"string\",\n  \"userId\": \"string\",\n  \"createdTimestamp\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"scheduledEndTime\": \"string\",\n  \"validUntil\": \"string\",\n  \"maxStayDateTime\": \"string\",\n  \"parkingSessionType\": 0,\n  \"parkingSessionStatus\": 100,\n  \"rating\": 0,\n  \"entityId\": \"string\",\n  \"entityType\": 1,\n  \"entityIndex\": \"string\",\n  \"locationNumber\": \"string\",\n  \"restrictionType\": \"string\",\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"postCode\": \"string\",\n  \"street\": \"string\",\n  \"latitude\": 0,\n  \"longitude\": 0,\n  \"authorityId\": \"string\",\n  \"vehicleRegistrationMark\": \"string\",\n  \"expiryReminderDurationInSeconds\": 0,\n  \"sessionStopMethod\": 1,\n  \"totalAmount\": 0,\n  \"parkingAmount\": 0,\n  \"convenienceAmount\": 0,\n  \"convenienceVatRate\": 0,\n  \"surchargeAmount\": 0,\n  \"paymentMethodLastFourDigits\": \"string\",\n  \"settlementTimeStamp\": \"string\",\n  \"totalPaid\": 0,\n  \"totalRefunded\": 0,\n  \"quoteStartTime\": \"string\",\n  \"quoteEndTime\": \"string\",\n  \"vehicleType\": 1,\n  \"vehicleFuelType\": 0,\n  \"vehicleManufactureDate\": \"string\"\n }\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "89898bbe-981d-4303-80b5-f1d59b33f680",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchParkingSessionByExternalId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "97c84a7b-f288-49cc-b593-7d57b6434fde",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchParkingSessionByExternalId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "9a775949-38bf-4f00-a1da-1e9594671c5f",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchParkingSessionByExternalId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "29a834d3-fae5-445f-be21-684f52e4a2dc",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchParkingSessionByExternalId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"sourceSystem\": \"string\",\n    \"externalReferenceId\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "93d71451-ad8e-4d4b-860d-d2ad10a2b068",
+      "id": "dd9b06f0-5240-4445-aa43-98e68c03e59d",
       "name": "/fetchParkingSessionById - POST",
       "request": {
         "name": "/fetchParkingSessionById - POST",
@@ -2486,7 +1382,7 @@
       },
       "response": [
         {
-          "id": "4a9fd60d-1497-4e9d-95ce-b93929dd9389",
+          "id": "16be2867-ddcc-4565-a044-394a11857c08",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2518,7 +1414,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "d31a52d4-00c6-4db8-9e99-e82c2b3cc032",
+          "id": "dbbc12bc-e4e1-4f21-95e7-0508129d3b25",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -2550,7 +1446,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "92015f94-4190-427e-ab4e-c5998e94436f",
+          "id": "4f328e4e-5dcf-431b-ac46-2a881f380402",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2582,7 +1478,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7fa15d94-5390-495d-80c5-72b399d94fdb",
+          "id": "9d232e68-1a11-4adf-b367-e263096ea5e0",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -2614,7 +1510,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "8fdd8f74-d089-4d82-94b5-d5c70c40cc16",
+          "id": "0ca762af-d334-496b-bc21-826a0b764976",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -2649,200 +1545,7 @@
       "event": []
     },
     {
-      "id": "26bbbdad-3cb6-4d48-adc9-ee957da37d44",
-      "name": "/fetchPrePaidExpiryReminderSetting - POST",
-      "request": {
-        "name": "/fetchPrePaidExpiryReminderSetting - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "fetchPrePaidExpiryReminderSetting"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"userId\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "0a97b112-f10f-420f-8c95-8326673f5045",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchPrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": 0\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "161cf3af-fe5d-48a2-a1f6-2df765470253",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchPrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "b3c753f9-a123-4fc1-b991-61ae2eb78cba",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchPrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "f0bf749e-f290-40a2-976f-12c09aaf22b1",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchPrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "3296edef-bad0-4a9a-90cc-db0e18de7b22",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchPrePaidExpiryReminderSetting"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"userId\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "d3f461e6-599a-41e7-9d56-48021a7d07ad",
+      "id": "e3ef903b-a093-4fb5-8022-035617f8c9c3",
       "name": "/fetchRecalculatedParkingSessionCost - POST",
       "request": {
         "name": "/fetchRecalculatedParkingSessionCost - POST",
@@ -2872,7 +1575,7 @@
       },
       "response": [
         {
-          "id": "96451e10-2927-4880-9127-5fce41b031e3",
+          "id": "38373919-0303-4434-b561-be5ee42ab0ca",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -2904,7 +1607,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "4dab4117-fd25-400f-afef-4e014d6c5f1d",
+          "id": "b61c8dc9-8566-40b7-952c-54e427d0226a",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -2936,7 +1639,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "925737e0-854b-4f07-9fda-9b9547224f9e",
+          "id": "d47d14ca-e574-42bd-9684-6f9fccbab388",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -2968,7 +1671,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7983aaf5-1ecb-4439-b8ec-5955d60fc8f5",
+          "id": "5201940d-2ad0-41d9-b362-359c5177f485",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -3000,7 +1703,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "50102960-cfe1-44eb-95f1-04ae6a64a22e",
+          "id": "cfdf9f97-7eba-47c7-ae63-8249192e72a4",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -3035,200 +1738,7 @@
       "event": []
     },
     {
-      "id": "ec53d11f-2fea-4970-ac2a-7682c73e86b8",
-      "name": "/fetchUsersThatParkedUsingVehicleRegistrationMark - POST",
-      "request": {
-        "name": "/fetchUsersThatParkedUsingVehicleRegistrationMark - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "fetchUsersThatParkedUsingVehicleRegistrationMark"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"vehicleRegistrationMark\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "f8caefee-3e31-4d95-aabe-6f480d69e3dc",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchUsersThatParkedUsingVehicleRegistrationMark"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"result\": [\n  \"string\"\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "84ace76b-aca9-42ee-b00b-8cfc62d3169a",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchUsersThatParkedUsingVehicleRegistrationMark"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "89c9e29e-9d04-4f5c-9ab8-057ad59ac1df",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchUsersThatParkedUsingVehicleRegistrationMark"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "457c2403-b34c-45f9-858e-2af4b0419571",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchUsersThatParkedUsingVehicleRegistrationMark"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "b3bb0e64-d2a4-4e58-ba0e-030f8ad4dce9",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "fetchUsersThatParkedUsingVehicleRegistrationMark"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"vehicleRegistrationMark\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "f4f42e8f-4674-4db2-b839-91bb8c2ce932",
+      "id": "8f9359f0-a73d-48f0-8745-4bce3a3ad19b",
       "name": "/findParkingSessions - POST",
       "request": {
         "name": "/findParkingSessions - POST",
@@ -3258,7 +1768,7 @@
       },
       "response": [
         {
-          "id": "03cf7703-44b8-4027-9287-2194e9f8252c",
+          "id": "8993968b-c7f9-4aa8-97be-60c271b07e5e",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3290,7 +1800,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "c5f05528-0246-4d2b-ae39-71ccda56043a",
+          "id": "03260e7b-c9bb-41b3-98d1-8cf029106b38",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -3322,7 +1832,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "58a112bf-ce95-4771-9fe3-70a1357e55f6",
+          "id": "a8795cea-de2c-4c7c-aa53-863ae6bb2de7",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -3354,7 +1864,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "5d9e67e8-781b-49e8-a4b7-9117cee5d982",
+          "id": "163f9b6d-3641-4b56-8d40-c2544942c4a4",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -3386,7 +1896,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "1345ef17-9d33-4781-9e22-f40325cc8902",
+          "id": "697ef622-e14a-487a-a7e1-fb5593872a07",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -3421,7 +1931,7 @@
       "event": []
     },
     {
-      "id": "8ae0fb2b-e7ea-4936-870e-74a27113bb02",
+      "id": "b376651f-a446-4f4d-85f2-266671bbaac5",
       "name": "/ping - GET",
       "request": {
         "name": "/ping - GET",
@@ -3441,7 +1951,7 @@
       },
       "response": [
         {
-          "id": "4d14aba8-e797-4e16-95a4-6b2f7eebda6d",
+          "id": "bd2807ef-a157-4b56-a2bf-8a8d18598c09",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3470,7 +1980,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "a598bb60-68e2-4c14-ad0e-04836689bb5b",
+          "id": "ea6fd8dc-5378-4ca5-b114-de3a9822e71c",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -3499,7 +2009,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "09268f3d-3d7c-414b-8418-cf2e84602eb8",
+          "id": "d01f874a-1b18-4ad7-bc3a-06d27b0033c4",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -3528,7 +2038,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "e01e5604-e627-42db-b91d-8aedc46580f4",
+          "id": "83c7f83e-8c8e-4821-8c03-3605bd64ea66",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -3560,339 +2070,7 @@
       "event": []
     },
     {
-      "id": "54fcf698-95a7-4fe0-9be3-a0f351579b1b",
-      "name": "/reconcileParkingSessionPaymentStatus - POST",
-      "request": {
-        "name": "/reconcileParkingSessionPaymentStatus - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "reconcileParkingSessionPaymentStatus"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "method": "POST",
-        "auth": null,
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"id\": \"<string>\"\n}"
-        }
-      },
-      "response": [
-        {
-          "id": "5230f830-6dff-485e-8e25-324b75961b40",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionPaymentStatus"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "05681289-4d42-4615-a0df-be7de1405bd7",
-          "name": "Bad Request",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionPaymentStatus"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Bad Request",
-          "code": 400,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true,\n \"message\": \"string\",\n \"errors\": [\n  {\n   \"property\": \"string\",\n   \"code\": \"string\",\n   \"message\": \"string\"\n  }\n ]\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "b8982750-3b0b-48d9-9836-807cee81cd8e",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionPaymentStatus"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "e5483b3e-238e-43ac-a027-d092eef5679b",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionPaymentStatus"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "35a55890-da5c-4efd-8506-bf6999d4423b",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionPaymentStatus"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"id\": \"string\"\n}"
-            }
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "0d7f8800-e1a7-41b6-afdb-5b8bf46232dd",
-      "name": "/reconcileParkingSessionsPaymentStatuses - POST",
-      "request": {
-        "name": "/reconcileParkingSessionsPaymentStatuses - POST",
-        "description": {},
-        "url": {
-          "path": [
-            "reconcileParkingSessionsPaymentStatuses"
-          ],
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "query": [],
-          "variable": []
-        },
-        "method": "POST",
-        "auth": null
-      },
-      "response": [
-        {
-          "id": "e229defb-7203-4f8b-bc52-20e42a4c3748",
-          "name": "Success",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionsPaymentStatuses"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Accepted",
-          "code": 202,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": "{\n \"success\": true\n}",
-          "cookie": [],
-          "_postman_previewlanguage": "json"
-        },
-        {
-          "id": "fc07daf8-cdb9-4755-aedc-f4325ae99e9f",
-          "name": "Unauthorized",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionsPaymentStatuses"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Unauthorized",
-          "code": 401,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "3b34f515-2b56-4317-a818-549026db5ee2",
-          "name": "Forbidden",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionsPaymentStatuses"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Forbidden",
-          "code": 403,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        },
-        {
-          "id": "f0fdc58e-c399-429b-8a5a-11d3fb91ed60",
-          "name": "Too many requests",
-          "originalRequest": {
-            "url": {
-              "path": [
-                "reconcileParkingSessionsPaymentStatuses"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {}
-          },
-          "status": "Too Many Requests",
-          "code": 429,
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "text/plain"
-            }
-          ],
-          "body": "",
-          "cookie": [],
-          "_postman_previewlanguage": "text"
-        }
-      ],
-      "event": []
-    },
-    {
-      "id": "c9253f21-d2ef-4628-bda0-4872742adf58",
+      "id": "90ad9aaf-8a0a-43c4-bb47-d573061ad28a",
       "name": "/setParkingSessionPrePaidExpiryReminder - POST",
       "request": {
         "name": "/setParkingSessionPrePaidExpiryReminder - POST",
@@ -3922,7 +2100,7 @@
       },
       "response": [
         {
-          "id": "48214295-f1ff-43b5-af30-822ad800532b",
+          "id": "9f1de75e-5784-4734-9181-d08b534e8808",
           "name": "Success",
           "originalRequest": {
             "url": {
@@ -3954,7 +2132,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "d7688be9-37be-4a1d-ba95-d6d205685bf6",
+          "id": "3b891c8d-dac3-4108-b62f-ea2bfcd336a7",
           "name": "Bad Request",
           "originalRequest": {
             "url": {
@@ -3986,7 +2164,7 @@
           "_postman_previewlanguage": "json"
         },
         {
-          "id": "692e55bb-25e9-4c06-a96f-8bdafe5c44e6",
+          "id": "df9b68d1-cb6c-4be1-bbd1-149bdd0c6cf0",
           "name": "Unauthorized",
           "originalRequest": {
             "url": {
@@ -4018,7 +2196,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "7e3aa421-cd96-45ed-9120-b97c17823fb0",
+          "id": "c7399dd1-c970-406d-afd0-c6ac7823d347",
           "name": "Forbidden",
           "originalRequest": {
             "url": {
@@ -4050,7 +2228,7 @@
           "_postman_previewlanguage": "text"
         },
         {
-          "id": "6c5407d6-4763-449b-b1de-b72f3e30d58c",
+          "id": "a9c7542b-4f23-4957-a334-0db7c0720e6b",
           "name": "Too many requests",
           "originalRequest": {
             "url": {
@@ -4109,7 +2287,7 @@
     ]
   },
   "info": {
-    "_postman_id": "50cf207e-6131-4b77-9966-d503a78dd886",
+    "_postman_id": "4a5f5461-5cc4-41a1-83a9-ec3702efe3eb",
     "name": "Parking Session API (v1.0|LIVE|Public)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

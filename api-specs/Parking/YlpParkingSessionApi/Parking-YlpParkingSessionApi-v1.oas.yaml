@@ -5,103 +5,6 @@ info:
 servers:
 - url: https://api.appyway.com/parking/v1/sessions
 paths:
-  /beginParkingSession:
-    post:
-      tags:
-      - Commands
-      summary: /beginParkingSession - POST
-      operationId: post-beginparkingsession
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/BeginParkingSessionCommand'
-            example:
-              entityId: string
-              entityIndex: string
-              userId: string
-              vehicleRegistrationMark: string
-              vehicleType: 1
-              fuelType: 0
-              paymentMethodId: string
-              startTime: string
-              duration: 3.17:25:30.5000000
-              sourceSystem: string
-              externalReferenceId: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BeginParkingSessionCommand'
-            example:
-              entityId: string
-              entityIndex: string
-              userId: string
-              vehicleRegistrationMark: string
-              vehicleType: 1
-              fuelType: 0
-              paymentMethodId: string
-              startTime: string
-              duration: 3.17:25:30.5000000
-              sourceSystem: string
-              externalReferenceId: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/BeginParkingSessionCommand'
-            example:
-              entityId: string
-              entityIndex: string
-              userId: string
-              vehicleRegistrationMark: string
-              vehicleType: 1
-              fuelType: 0
-              paymentMethodId: string
-              startTime: string
-              duration: 3.17:25:30.5000000
-              sourceSystem: string
-              externalReferenceId: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/BeginParkingSessionCommand'
-            example:
-              entityId: string
-              entityIndex: string
-              userId: string
-              vehicleRegistrationMark: string
-              vehicleType: 1
-              fuelType: 0
-              paymentMethodId: string
-              startTime: string
-              duration: 3.17:25:30.5000000
-              sourceSystem: string
-              externalReferenceId: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StringOkResponse'
-              example:
-                success: true
-                result: string
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /beginScheduledParkingSession:
     post:
       tags:
@@ -121,8 +24,6 @@ paths:
               vehicleType: 1
               fuelType: 0
               paymentMethodId: string
-              sourceSystem: string
-              externalReferenceId: string
               startTime: string
               duration: 3.17:25:30.5000000
           application/json:
@@ -136,8 +37,6 @@ paths:
               vehicleType: 1
               fuelType: 0
               paymentMethodId: string
-              sourceSystem: string
-              externalReferenceId: string
               startTime: string
               duration: 3.17:25:30.5000000
           text/json:
@@ -151,8 +50,6 @@ paths:
               vehicleType: 1
               fuelType: 0
               paymentMethodId: string
-              sourceSystem: string
-              externalReferenceId: string
               startTime: string
               duration: 3.17:25:30.5000000
           application/*+json:
@@ -166,8 +63,6 @@ paths:
               vehicleType: 1
               fuelType: 0
               paymentMethodId: string
-              sourceSystem: string
-              externalReferenceId: string
               startTime: string
               duration: 3.17:25:30.5000000
       responses:
@@ -231,66 +126,6 @@ paths:
             example:
               id: string
               newRating: 0
-      responses:
-        "202":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AcceptedResponse'
-              example:
-                success: true
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /changePrePaidExpiryReminderSetting:
-    post:
-      tags:
-      - Commands
-      summary: /changePrePaidExpiryReminderSetting - POST
-      operationId: post-changeprepaidexpiryremindersetting
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/ChangePrePaidExpiryReminderSettingCommand'
-            example:
-              userId: string
-              newExpiryDurationInMinutes: 0
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ChangePrePaidExpiryReminderSettingCommand'
-            example:
-              userId: string
-              newExpiryDurationInMinutes: 0
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ChangePrePaidExpiryReminderSettingCommand'
-            example:
-              userId: string
-              newExpiryDurationInMinutes: 0
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ChangePrePaidExpiryReminderSettingCommand'
-            example:
-              userId: string
-              newExpiryDurationInMinutes: 0
       responses:
         "202":
           description: Success
@@ -411,70 +246,6 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /endParkingSession:
-    post:
-      tags:
-      - Commands
-      summary: /endParkingSession - POST
-      operationId: post-endparkingsession
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/EndParkingSessionCommand'
-            example:
-              id: string
-              endTime: string
-              sessionStopMethod: 1
-          application/json:
-            schema:
-              $ref: '#/components/schemas/EndParkingSessionCommand'
-            example:
-              id: string
-              endTime: string
-              sessionStopMethod: 1
-          text/json:
-            schema:
-              $ref: '#/components/schemas/EndParkingSessionCommand'
-            example:
-              id: string
-              endTime: string
-              sessionStopMethod: 1
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/EndParkingSessionCommand'
-            example:
-              id: string
-              endTime: string
-              sessionStopMethod: 1
-      responses:
-        "202":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AcceptedResponse'
-              example:
-                success: true
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /endParkingSessionNow:
     post:
       tags:
@@ -525,27 +296,6 @@ paths:
                 - property: string
                   code: string
                   message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /endParkingSessionsThatArePastTheirExpectedEndTime:
-    post:
-      tags:
-      - Commands
-      summary: /endParkingSessionsThatArePastTheirExpectedEndTime - POST
-      operationId: post-endparkingsessionsthatarepasttheirexpectedendtime
-      responses:
-        "202":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AcceptedResponse'
-              example:
-                success: true
         "401":
           $ref: '#/components/responses/Unauthorized'
         "403":
@@ -781,168 +531,6 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /fetchLatestParkedLocations:
-    post:
-      tags:
-      - Queries
-      summary: /fetchLatestParkedLocations - POST
-      operationId: post-fetchlatestparkedlocations
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FetchLatestParkedLocationsQuery'
-            example:
-              vehicleRegistrationMark: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FetchLatestParkedLocationsQuery'
-            example:
-              vehicleRegistrationMark: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FetchLatestParkedLocationsQuery'
-            example:
-              vehicleRegistrationMark: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FetchLatestParkedLocationsQuery'
-            example:
-              vehicleRegistrationMark: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LastParkingSessionLocationIEnumerableOkResponse'
-              example:
-                success: true
-                result:
-                - locationNumber: string
-                  lastParkingSessionValidUntil: string
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /fetchParkingSessionByExternalId:
-    post:
-      tags:
-      - Queries
-      summary: /fetchParkingSessionByExternalId - POST
-      operationId: post-fetchparkingsessionbyexternalid
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FetchParkingSessionByExternalIdQuery'
-            example:
-              sourceSystem: string
-              externalReferenceId: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FetchParkingSessionByExternalIdQuery'
-            example:
-              sourceSystem: string
-              externalReferenceId: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FetchParkingSessionByExternalIdQuery'
-            example:
-              sourceSystem: string
-              externalReferenceId: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FetchParkingSessionByExternalIdQuery'
-            example:
-              sourceSystem: string
-              externalReferenceId: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ParkingSessionResultOkResponse'
-              example:
-                success: true
-                result:
-                  parkingSessionId: string
-                  sourceSystem: string
-                  externalReferenceId: string
-                  userId: string
-                  createdTimestamp: string
-                  startTime: string
-                  endTime: string
-                  scheduledEndTime: string
-                  validUntil: string
-                  maxStayDateTime: string
-                  parkingSessionType: 0
-                  parkingSessionStatus: 100
-                  rating: 0
-                  entityId: string
-                  entityType: 1
-                  entityIndex: string
-                  locationNumber: string
-                  restrictionType: string
-                  city: string
-                  country: string
-                  postCode: string
-                  street: string
-                  latitude: 0
-                  longitude: 0
-                  authorityId: string
-                  vehicleRegistrationMark: string
-                  expiryReminderDurationInSeconds: 0
-                  sessionStopMethod: 1
-                  totalAmount: 0
-                  parkingAmount: 0
-                  convenienceAmount: 0
-                  convenienceVatRate: 0
-                  surchargeAmount: 0
-                  paymentMethodLastFourDigits: string
-                  settlementTimeStamp: string
-                  totalPaid: 0
-                  totalRefunded: 0
-                  quoteStartTime: string
-                  quoteEndTime: string
-                  vehicleType: 1
-                  vehicleFuelType: 0
-                  vehicleManufactureDate: string
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /fetchParkingSessionById:
     post:
       tags:
@@ -1042,63 +630,6 @@ paths:
           $ref: '#/components/responses/Forbidden'
         "429":
           $ref: '#/components/responses/TooManyRequests'
-  /fetchPrePaidExpiryReminderSetting:
-    post:
-      tags:
-      - Queries
-      summary: /fetchPrePaidExpiryReminderSetting - POST
-      operationId: post-fetchprepaidexpiryremindersetting
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FetchPrePaidExpiryReminderSettingQuery'
-            example:
-              userId: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FetchPrePaidExpiryReminderSettingQuery'
-            example:
-              userId: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FetchPrePaidExpiryReminderSettingQuery'
-            example:
-              userId: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FetchPrePaidExpiryReminderSettingQuery'
-            example:
-              userId: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Int32OkResponse'
-              example:
-                success: true
-                result: 0
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /fetchRecalculatedParkingSessionCost:
     post:
       tags:
@@ -1146,64 +677,6 @@ paths:
                   surchargeAmount: 0
                   convenienceAmount: 0
                   convenienceVatRate: 0
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /fetchUsersThatParkedUsingVehicleRegistrationMark:
-    post:
-      tags:
-      - Queries
-      summary: /fetchUsersThatParkedUsingVehicleRegistrationMark - POST
-      operationId: post-fetchusersthatparkedusingvehicleregistrationmark
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery'
-            example:
-              vehicleRegistrationMark: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery'
-            example:
-              vehicleRegistrationMark: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery'
-            example:
-              vehicleRegistrationMark: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/FetchUsersThatParkedUsingVehicleRegistrationMarkQuery'
-            example:
-              vehicleRegistrationMark: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StringIEnumerableOkResponse'
-              example:
-                success: true
-                result:
-                - string
         "400":
           description: Bad Request
           content:
@@ -1387,83 +860,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         "403":
           $ref: '#/components/responses/Forbidden'
-  /reconcileParkingSessionPaymentStatus:
-    post:
-      tags:
-      - Commands
-      summary: /reconcileParkingSessionPaymentStatus - POST
-      operationId: post-reconcileparkingsessionpaymentstatus
-      requestBody:
-        content:
-          application/json-patch+json:
-            schema:
-              $ref: '#/components/schemas/ReconcileParkingSessionPaymentStatusCommand'
-            example:
-              id: string
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReconcileParkingSessionPaymentStatusCommand'
-            example:
-              id: string
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ReconcileParkingSessionPaymentStatusCommand'
-            example:
-              id: string
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ReconcileParkingSessionPaymentStatusCommand'
-            example:
-              id: string
-      responses:
-        "202":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AcceptedResponse'
-              example:
-                success: true
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequestResponse'
-              example:
-                success: true
-                message: string
-                errors:
-                - property: string
-                  code: string
-                  message: string
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
-  /reconcileParkingSessionsPaymentStatuses:
-    post:
-      tags:
-      - Commands
-      summary: /reconcileParkingSessionsPaymentStatuses - POST
-      operationId: post-reconcileparkingsessionspaymentstatuses
-      responses:
-        "202":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AcceptedResponse'
-              example:
-                success: true
-        "401":
-          $ref: '#/components/responses/Unauthorized'
-        "403":
-          $ref: '#/components/responses/Forbidden'
-        "429":
-          $ref: '#/components/responses/TooManyRequests'
   /setParkingSessionPrePaidExpiryReminder:
     post:
       tags:
@@ -1607,12 +1003,6 @@ components:
         paymentMethodId:
           type: string
           nullable: true
-        sourceSystem:
-          type: string
-          nullable: true
-        externalReferenceId:
-          type: string
-          nullable: true
         startTime:
           type: string
           format: date-time
@@ -1629,16 +1019,6 @@ components:
           nullable: true
         newRating:
           $ref: '#/components/schemas/ParkingSessionRating'
-      additionalProperties: false
-    ChangePrePaidExpiryReminderSettingCommand:
-      type: object
-      properties:
-        userId:
-          type: string
-          nullable: true
-        newExpiryDurationInMinutes:
-          type: integer
-          format: int32
       additionalProperties: false
     CheckBeginParkingSessionCommandValidityQuery:
       type: object
@@ -1844,13 +1224,6 @@ components:
           type: string
           nullable: true
       additionalProperties: false
-    FetchPrePaidExpiryReminderSettingQuery:
-      type: object
-      properties:
-        userId:
-          type: string
-          nullable: true
-      additionalProperties: false
     FetchRecalculatedParkingSessionCostQuery:
       type: object
       properties:
@@ -1910,16 +1283,6 @@ components:
         entityId:
           type: string
           nullable: true
-      additionalProperties: false
-    Int32OkResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-          readOnly: true
-        result:
-          type: integer
-          format: int32
       additionalProperties: false
     LastParkingSessionLocation:
       type: object
